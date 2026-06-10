@@ -40,7 +40,7 @@ Mark ☑ only after `/verify-render` passes on the final image.
 10. **Warn on unknown RENDER_RES** instead of silent preview fallback (`lqv/config.py`).
 
 ### Housekeeping
-11. `wesly.txt` (unrelated call transcript) and `_archive`-worthy `render.png` (stale toy EEVEE render) are still at project root — ignored via `.claudeignore`/`.gitignore`; Ivan to confirm moving them out.
+11. ~~`wesly.txt` / `render.png` cleanup~~ DONE 2026-06-09: `wesly.txt` moved out of the project, `render.png` + pre-refactor backups moved to `_archive/` (ignored by git and Claude). Reference docs now live in `docs/`.
 
 ## Decisions log
 
@@ -50,5 +50,5 @@ Mark ☑ only after `/verify-render` passes on the final image.
 
 ## Environment
 
-- Blender 4.2.3 LTS on PATH; Cycles GPU autodetect (HIP/ROCm on this machine), CPU fallback.
+- Blender 4.2.3 LTS on PATH; Cycles GPU autodetect exists in `lqv/engine.py` but **this machine renders on CPU** — AMD RX 6400 (Navi 24) + Vega iGPU present, no ROCm/HIP runtime installed (verified 2026-06-09: `device=CPU backend=None`). Budget render times accordingly. Optional speedup: install AMD's HIP runtime (system-level, sudo — Ivan's call).
 - blender-mcp available for interactive work; Poly Haven via MCP.

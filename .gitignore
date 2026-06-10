@@ -19,6 +19,5 @@ __pycache__/
 .vscode/
 .claude/settings.local.json
 
-# Unrelated / stale root files pending manual removal (see STATUS.md housekeeping)
-wesly.txt
-render.png
+# Stale artifacts kept out of history (reference-only monolith, old renders)
+_archive/

@@ -4,17 +4,17 @@ This project renders **La Quebrada Viva**, a cob/bottle earthen smart home on a 
 
 ## Document map — which file is authoritative for what
 
-- `paraguay_clay_house_research.md` — **v2 research, site CONFIRMED (Escobar, Paraguarí)**. Authoritative for location, stream/hydrology, orientation. Supersedes MASTER_BRIEF where they conflict.
-- `MASTER_BRIEF.md` — design brief: zones, climate constraints, smart-home stack, flora inventory, Blender tech specs (§12), variants/cameras (§13), the 10 rules (§14).
-- `prompt_house_render.md` / `prompt_location_scene.md` — shot-level art direction. They describe a **Variant C (night/blue hour with fireflies) that is NOT implemented in code** — see Variants below.
+- `docs/paraguay_clay_house_research.md` — **v2 research, site CONFIRMED (Escobar, Paraguarí)**. Authoritative for location, stream/hydrology, orientation. Supersedes MASTER_BRIEF where they conflict.
+- `docs/MASTER_BRIEF.md` — design brief: zones, climate constraints, smart-home stack, flora inventory, Blender tech specs (§12), variants/cameras (§13), the 10 rules (§14).
+- `docs/prompt_house_render.md` / `docs/prompt_location_scene.md` — shot-level art direction. They describe a **Variant C (night/blue hour with fireflies) that is NOT implemented in code** — see Variants below.
 - `ARCHITECTURE.md` — map of the `lqv/` package + fragility notes. **Read before editing any code.**
 - `STATUS.md` — render manifest, open tasks, current state. **Read at session start, update at session end.**
-- `claude_code_blender_best_practices.md` — generic tooling reference; read on demand only.
+- `docs/claude_code_blender_best_practices.md` — generic tooling reference; read on demand only.
 
 ## Current state of the code — do not "fix" what already works
 
 - The renderer is **already Cycles** (`lqv/engine.py:15`) with GPU autodetect, OptiX/OIDN denoise, AgX "Punchy", caustics on. There is no EEVEE anywhere. If a doc says otherwise it is stale.
-- `build_scene.py` is a thin driver over the `lqv/` package. The pre-refactor monolith lives at `build_scene.py.pre-refactor.bak` — **reference only, never edit or import it**.
+- `build_scene.py` is a thin driver over the `lqv/` package. The pre-refactor monolith lives at `_archive/build_scene.py.pre-refactor.bak` — **reference only, never edit or import it**. `_archive/` holds stale artifacts; ignore it.
 
 ## How to run (use the scripts — they back up scene.blend first)
 

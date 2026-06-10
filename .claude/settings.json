@@ -1,5 +1,4 @@
 {
-  "_note": "Claude Code cannot write .claude/settings.json itself (self-modification guard). Review and rename this file to settings.json to activate: hooks run the py_compile check after every Python edit; permissions pre-approve the render scripts and blender-mcp tools and block the dangerous commands.",
   "permissions": {
     "allow": [
       "Bash(blender:*)",

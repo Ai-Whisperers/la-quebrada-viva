@@ -3,7 +3,7 @@ La Quebrada Viva — scene builder for Blender Cycles.
 
 Thin driver: wires the `lqv/` package modules in the order the legacy monolith
 ran them. All scene-building lives in `lqv/`. The pre-refactor monolith is
-kept at `build_scene.py.pre-refactor.bak` as the byte-identity reference.
+kept at `_archive/build_scene.py.pre-refactor.bak` as the byte-identity reference.
 
 Run headless:
 
