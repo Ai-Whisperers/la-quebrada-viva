@@ -25,6 +25,9 @@ Mark ☑ only after `/verify-render` passes on the final image.
 
 ## Open tasks (ranked; pick from the top unless told otherwise)
 
+### Top priority — asset plan
+0. **Execute `docs/asset_plan.md` phases 1–8.** Authoritative roadmap for the remaining work: HDRI swap → ground PBR → lapacho generation → Sketchfab flora batch → Rule 7/9/10 props → detail flora → atmosphere polish → render 12 finals. Also documents the 7 blockers and the CC-BY attribution flow (`CREDITS.md`). The numbered tasks below are still valid but are now subsumed by the asset plan's phasing.
+
 ### Scene completeness
 1. **Wire `scatter_grass_tufts`** — exists in `lqv/flora/bamboo.py` but is never called from the driver/`flora.populate`. Decide placement, respect the RNG-order invariant (append after existing calls, never insert between).
 2. **Variant B valley mist** — brief requires mist near the cliff for B; only the variant-agnostic canopy volume exists. Add a B-only ground-fog volume in `lqv/lighting.py`.
@@ -42,9 +45,9 @@ Mark ☑ only after `/verify-render` passes on the final image.
 ### Housekeeping
 11. ~~`wesly.txt` / `render.png` cleanup~~ DONE 2026-06-09: `wesly.txt` moved out of the project, `render.png` + pre-refactor backups moved to `_archive/` (ignored by git and Claude). Reference docs now live in `docs/`.
 
-### Fixed regressions (carried forward for context — keep until verified on render)
-- 2026-06-10: Lapacho petals were floating mid-air over displaced ground (CLOUDS strength=0.35 means ground varies ±0.35m around z=0). Fixed in `lqv/flora/lapacho.py` by raycasting the evaluated Ground via `BVHTree.FromObject(ground, depsgraph)` and placing each petal at `hit.z + small offset`. RNG-draw order preserved.
-- 2026-06-10: Footbridge at y=−25.5 read as a floating plank — no visible ground contact. Fixed in `lqv/site/stream.py` by adding two hardcoded sandstone abutments (north over pool bed z=−0.55, south buried past worst-case ground trough). No `random.*` calls in pier code — RNG-draw order preserved.
+### Fixed regressions (verified on preview render)
+- 2026-06-10: ~~Lapacho petals floating mid-air~~ VERIFIED on `renders/_preview_A_petal_macro.png` (commit `8949646`). BVH-on-evaluated-ground raycast in `lqv/flora/lapacho.py` + ±0.25 rad XY tilt jitter + σ=1.2 cluster at (-3,-10) + Cam_PetalMacro reframed to 50mm @ 3.5m. RNG-draw order preserved.
+- 2026-06-10: ~~Footbridge floating disconnected~~ Fixed (commit `c93748f`) — two hardcoded sandstone abutments in `lqv/site/stream.py`. Visual verification deferred to next `A hero` preview render.
 
 ## Decisions log
 
