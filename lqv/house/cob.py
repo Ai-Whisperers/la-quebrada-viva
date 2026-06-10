@@ -206,6 +206,12 @@ def build_cob_house():
         boolean = cob_walls.modifiers.new(f'WindowBool_{i}', 'BOOLEAN')
         boolean.operation = 'DIFFERENCE'
         boolean.object = cut
+        # The EXACT solver misreads the solidified open-ribbon wall (winding/
+        # non-manifold) and collapses the mesh to a fragment — walls vanished
+        # from renders entirely. FAST is stable here; cut after Solidify but
+        # before Subsurf so the opening gets rounded (suits rule 1 anyway).
+        boolean.solver = 'FAST'
+        cob_walls.modifiers.move(len(cob_walls.modifiers) - 1, 1 + i)
         objs.append(cut)
         sill_z = z - sz / 2 + 0.03
         bpy.ops.mesh.primitive_cube_add(size=1, location=(x, y, sill_z))

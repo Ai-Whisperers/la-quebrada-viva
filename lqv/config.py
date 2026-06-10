@@ -42,11 +42,20 @@ class Config:
 
 def parse() -> Config:
     variant = os.environ.get('RENDER_VARIANT', 'A').upper()
+    # Fail here, not after a multi-minute build (variant C crashes in lighting.py).
+    if variant not in ('A', 'B'):
+        raise SystemExit(
+            f"[config] RENDER_VARIANT={variant!r} not implemented — only A and B exist "
+            "(C is tracked in STATUS.md task 8)")
     cam_name = os.environ.get('RENDER_CAM', 'hero').lower()
     samples = int(os.environ.get('RENDER_SAMPLES', '128'))
     res_mode = os.environ.get('RENDER_RES', 'preview').lower()
     skip_render = os.environ.get('RENDER_SKIP', '0') == '1'
-    res_x, res_y = RES_PRESETS.get(res_mode, RES_PRESETS['preview'])
+    if res_mode not in RES_PRESETS:
+        print(f"[config] WARNING: unknown RENDER_RES={res_mode!r}, falling back to "
+              f"preview 1280x720 (valid: {'|'.join(sorted(set(RES_PRESETS)))})")
+        res_mode = 'preview'
+    res_x, res_y = RES_PRESETS[res_mode]
     is_preview = res_mode in ('preview', '720')
     os.makedirs(RENDERS_DIR, exist_ok=True)
     return Config(
