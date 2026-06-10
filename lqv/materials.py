@@ -293,6 +293,10 @@ def build_materials():
         'fern_frond':   principled('FernFrond',  hex_to_rgb('#4A6A28'), roughness=0.75),
         'bamboo':       principled('Bamboo',     hex_to_rgb('#8AA055'), roughness=0.7),
         'agave_blade':  principled('AgaveBlade', COL['agave'], roughness=0.55, sss=(0.1, (0.5, 0.6, 0.4))),
+        'anthurium_leaf': principled(
+            'AnthuriumLeaf', hex_to_rgb('#2E4A1E'),
+            roughness=0.42, sss=(0.08, (0.4, 0.55, 0.3)),
+        ),
         'glass_bottle_cobalt': principled('BottleCobalt', COL['bottle_cobalt'], roughness=0.03, ior=1.52, transmission=1.0),
         'glass_bottle_amber':  principled('BottleAmber',  COL['bottle_amber'],  roughness=0.03, ior=1.52, transmission=1.0),
         'glass_bottle_green':  principled('BottleGreen',  COL['bottle_green'],  roughness=0.03, ior=1.52, transmission=1.0),

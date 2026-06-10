@@ -72,9 +72,15 @@ def main():
     flora.populate(flowering_lapacho=flowering)
     if flowering:
         flora.scatter_lapacho_petals(n=100)
+    # Scene-completeness detail. Appended AFTER scatter_lapacho_petals so the
+    # petal RNG draw stays byte-identical to the pre-Phase-6 baseline; grass
+    # tufts and anthurium epiphytes consume RNG state that is otherwise unused.
+    flora.scatter_grass_tufts(n=80)
+    flora.scatter_anthuriums()
 
     lighting.setup_world_and_sun(scene, cfg.variant)
     lighting.build_canopy_volume(skip=cfg.is_preview)
+    lighting.build_valley_mist(cfg.variant, skip=cfg.is_preview)
     cams = cameras.build_cameras()
 
     cam_name = cfg.cam_name

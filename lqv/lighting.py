@@ -139,3 +139,39 @@ def build_canopy_volume(skip: bool = False):
     else:
         dom.data.materials.append(mat)
     return dom
+
+
+def build_valley_mist(variant: str, skip: bool = False):
+    """B-only ground-hugging mist cube along the gorge.
+
+    Sits below the canopy volume (canopy z range ≈ 4–14) so the two domains
+    don't overlap and double-scatter. Centered on the stream (x≈11) and
+    extending the gorge length (-25 ≤ y ≤ +5). Higher density + lower
+    anisotropy than the canopy gives a diffuse fog read rather than god rays.
+    """
+    if variant != 'B' or skip:
+        return None
+    cx, cy, cz = 11.0, -10.0, 0.3
+    sx, sy, sz = 8.0, 30.0, 2.0
+    bpy.ops.mesh.primitive_cube_add(size=1, location=(cx, cy, cz))
+    dom = bpy.context.active_object
+    dom.name = 'ValleyMistDomain'
+    dom.scale = (sx, sy, sz)
+    bpy.ops.object.transform_apply(scale=True)
+    dom.display_type = 'WIRE'
+    dom.hide_select = True
+
+    mat = bpy.data.materials.new('ValleyMist')
+    mat.use_nodes = True
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new('ShaderNodeOutputMaterial')
+    vs = nt.nodes.new('ShaderNodeVolumeScatter')
+    vs.inputs['Density'].default_value = 0.04
+    vs.inputs['Anisotropy'].default_value = 0.3
+    nt.links.new(vs.outputs['Volume'], out.inputs['Volume'])
+    if dom.data.materials:
+        dom.data.materials[0] = mat
+    else:
+        dom.data.materials.append(mat)
+    return dom

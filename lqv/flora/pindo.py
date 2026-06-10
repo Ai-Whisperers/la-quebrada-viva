@@ -24,6 +24,15 @@ def add_pindo_palm(x, y, scale=1.0):
     trunk = bpy.context.active_object
     trunk.name = f'PindoTrunk_{x:.0f}_{y:.0f}'
     add_subdiv_displace(trunk, levels=2, noise_scale=18.0, strength=0.025, smooth=False)
+    # Retained leaf bases — Syagrus trunks carry diamond-tile scars from
+    # shed fronds. Overlay a finer-scale CLOUDS displace so the silhouette
+    # reads as scarred bark, not smooth pipe. No subdiv pass — reuses the
+    # mesh density from the first add_subdiv_displace call.
+    tex_scars = bpy.data.textures.new(trunk.name + 'LeafBases', type='CLOUDS')
+    tex_scars.noise_scale = 0.55
+    disp_scars = trunk.modifiers.new('DispLeafBases', 'DISPLACE')
+    disp_scars.texture = tex_scars
+    disp_scars.strength = 0.035
     assign(trunk, MAT['pindo_trunk'])
 
     crown_z = trunk_h
