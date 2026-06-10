@@ -1,0 +1,24 @@
+# Regenerable Blender state (scene rebuilds from code every headless run)
+*.blend
+*.blend1
+*.blend@
+*.blend.lock
+scene.blend.session-backup
+
+# Previews are throwaway; finals (renders/<V>_<cam>.png) stay tracked
+renders/_preview_*.png
+*.exr
+
+__pycache__/
+*.pyc
+*.bak
+*.pre-refactor.bak*
+.venv/
+.DS_Store
+.idea/
+.vscode/
+.claude/settings.local.json
+
+# Unrelated / stale root files pending manual removal (see STATUS.md housekeeping)
+wesly.txt
+render.png

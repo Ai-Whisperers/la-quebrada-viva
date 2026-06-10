@@ -1,0 +1,25 @@
+# Binary / regenerable Blender state
+*.blend
+*.blend1
+*.blend@
+*.blend.lock
+scene.blend.session-backup
+
+# Backups and grep traps — never read these (the .bak monolith is reference-only,
+# wesly.txt is an unrelated transcript, render.png is a stale pre-Cycles toy render)
+*.bak
+*.pre-refactor.bak*
+wesly.txt
+render.png
+
+# NOTE: renders/ is deliberately NOT ignored — verification requires Reading the
+# preview/final PNGs. Only raw EXR passes are excluded.
+*.exr
+
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.idea/
+.vscode/
+.git/

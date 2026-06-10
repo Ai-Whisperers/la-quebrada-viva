@@ -1,0 +1,44 @@
+{
+  "_note": "Claude Code cannot write .claude/settings.json itself (self-modification guard). Review and rename this file to settings.json to activate: hooks run the py_compile check after every Python edit; permissions pre-approve the render scripts and blender-mcp tools and block the dangerous commands.",
+  "permissions": {
+    "allow": [
+      "Bash(blender:*)",
+      "Bash(python3:*)",
+      "Bash(scripts/smoke_test.sh:*)",
+      "Bash(scripts/render_preview.sh:*)",
+      "Bash(scripts/render_final.sh:*)",
+      "Bash(scripts/render_all_finals.sh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "mcp__blender__execute_blender_code",
+      "mcp__blender__get_viewport_screenshot",
+      "mcp__blender__get_scene_info",
+      "mcp__blender__get_object_info",
+      "mcp__blender__search_polyhaven_assets",
+      "mcp__blender__download_polyhaven_asset",
+      "mcp__blender__get_polyhaven_categories",
+      "mcp__blender__get_polyhaven_status"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(git push --force:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/check-python.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
