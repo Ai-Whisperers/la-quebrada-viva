@@ -21,3 +21,8 @@ __pycache__/
 
 # Stale artifacts kept out of history (reference-only monolith, old renders)
 _archive/
+
+# Regenerable assets — re-fetched by scripts/download_assets.sh (HDRIs + PBR
+# textures from Poly Haven CC0). assets/models/ stays tracked.
+assets/hdris/
+assets/textures/

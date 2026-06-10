@@ -2,12 +2,31 @@
 from __future__ import annotations
 
 import math
+import os
 
 import bpy
 
 
+# Poly Haven CC0 HDRIs fetched by scripts/download_assets.sh. If the file is
+# missing the world falls back to the procedural Nishita sky so the renderer
+# still works on a fresh clone.
+_HDRI_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    'assets', 'hdris',
+)
+_HDRI_BY_VARIANT = {
+    'A': ('kiara_1_dawn_4k.exr', 0.8),
+    'B': ('misty_pines_4k.exr', 1.4),
+}
+
+
 def setup_world_and_sun(scene, variant: str):
-    """Build the world shader and sun lamp for Variant A or B."""
+    """Build the world shader and sun lamp for Variant A or B.
+
+    World env: real-world HDRI from `assets/hdris/` if present, else Nishita
+    procedural sky. The explicit Sun lamp stays in both paths — HDRIs give
+    ambient + sky color but the directional rakes/shadows come from the lamp.
+    """
     world = bpy.data.worlds.new('World')
     scene.world = world
     world.use_nodes = True
@@ -15,44 +34,62 @@ def setup_world_and_sun(scene, variant: str):
     nt.nodes.clear()
     out = nt.nodes.new('ShaderNodeOutputWorld')
     bg = nt.nodes.new('ShaderNodeBackground')
-    sky = nt.nodes.new('ShaderNodeTexSky')
-    sky.sky_type = 'NISHITA'
-    sky.air_density = 1.0
-    sky.dust_density = 1.0
-    sky.ozone_density = 1.0
+
+    if variant == 'A':
+        sun_energy = 5.5
+        sun_color = (1.0, 0.78, 0.48, 1.0)
+        sun_angle_deg = 1.5
+        sun_rot = (math.radians(77), 0, math.radians(-22))
+        sky_strength_fallback = 0.35
+        sky_kwargs = dict(
+            sun_elevation=math.radians(13),
+            sun_rotation=math.radians(-22),
+            sun_intensity=0.0,
+        )
+    elif variant == 'B':
+        sun_energy = 0.5
+        sun_color = (0.85, 0.88, 0.95, 1.0)
+        sun_angle_deg = 8.0
+        sun_rot = (math.radians(55), 0, math.radians(80))
+        sky_strength_fallback = 1.4
+        sky_kwargs = dict(
+            sun_elevation=math.radians(35),
+            sun_rotation=math.radians(80),
+            sun_intensity=0.1,
+        )
+    else:
+        raise ValueError(f'Unknown variant {variant!r}')
+
+    hdri_name, hdri_strength = _HDRI_BY_VARIANT[variant]
+    hdri_path = os.path.join(_HDRI_DIR, hdri_name)
+    if os.path.isfile(hdri_path):
+        env = nt.nodes.new('ShaderNodeTexEnvironment')
+        env.image = bpy.data.images.load(hdri_path, check_existing=True)
+        # Rotate HDRI Z so its painted sun aligns with the directional sun
+        # lamp's azimuth — otherwise reflections + ambient direction disagree.
+        mapping = nt.nodes.new('ShaderNodeMapping')
+        tex_coord = nt.nodes.new('ShaderNodeTexCoord')
+        mapping.inputs['Rotation'].default_value[2] = -sky_kwargs['sun_rotation']
+        nt.links.new(tex_coord.outputs['Generated'], mapping.inputs['Vector'])
+        nt.links.new(mapping.outputs['Vector'], env.inputs['Vector'])
+        nt.links.new(env.outputs['Color'], bg.inputs['Color'])
+        bg.inputs['Strength'].default_value = hdri_strength
+    else:
+        sky = nt.nodes.new('ShaderNodeTexSky')
+        sky.sky_type = 'NISHITA'
+        sky.air_density = 1.0
+        sky.dust_density = 1.0
+        sky.ozone_density = 1.0
+        for attr, val in sky_kwargs.items():
+            setattr(sky, attr, val)
+        bg.inputs['Strength'].default_value = sky_strength_fallback
+        nt.links.new(sky.outputs['Color'], bg.inputs['Color'])
 
     # Sub-canopy light shafts come from LOCAL volume domains (cube around the
     # canopy + cube around the corredor bottle-wall sight line), not the world
     # volume — wiring Volume Scatter to world.Volume creates an unbounded
     # scattering medium that, with finite volume_bounces, blacks out the image.
 
-    if variant == 'A':
-        # Winter golden hour, sun NNW low and warm. Elevation pulled from 20°
-        # → 13° so the light rakes across the laterite + cob west face instead
-        # of hitting from near-midday. Sky strength dropped so the sun reads as
-        # the dominant directional source rather than a hot ambient flood.
-        sky.sun_elevation = math.radians(13)
-        sky.sun_rotation = math.radians(-22)  # NNW = -22.5° from north
-        sky.sun_intensity = 0.0  # kill sky sun disk; explicit Sun lamp below provides directional light
-        bg.inputs['Strength'].default_value = 0.35
-        sun_energy = 5.5
-        sun_color = (1.0, 0.78, 0.48, 1.0)
-        sun_angle_deg = 1.5
-        sun_rot = (math.radians(77), 0, math.radians(-22))
-    elif variant == 'B':
-        # Morning overcast — diffuse, slight blue cast
-        sky.sun_elevation = math.radians(35)
-        sky.sun_rotation = math.radians(80)
-        sky.sun_intensity = 0.1
-        bg.inputs['Strength'].default_value = 1.4
-        sun_energy = 0.5
-        sun_color = (0.85, 0.88, 0.95, 1.0)
-        sun_angle_deg = 8.0  # diffuse, no hard shadows
-        sun_rot = (math.radians(55), 0, math.radians(80))
-    else:
-        raise ValueError(f'Unknown variant {variant!r}')
-
-    nt.links.new(sky.outputs['Color'], bg.inputs['Color'])
     nt.links.new(bg.outputs['Background'], out.inputs['Surface'])
 
     bpy.ops.object.light_add(type='SUN', location=(0, 0, 30))
