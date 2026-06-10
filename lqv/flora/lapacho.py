@@ -84,12 +84,17 @@ def scatter_lapacho_petals(n=400, area_radius=12.0):
     the air in troughs and buries petals in crests. Raycast the evaluated
     ground mesh per petal to anchor them on the actual surface.
     """
+    # Force the depsgraph to evaluate Ground's Displace modifier before we
+    # build the BVH — otherwise FromObject reads the flat base mesh and every
+    # petal lands at z=0 (buried in crests / floating over troughs).
+    bpy.context.view_layer.update()
     depsgraph = bpy.context.evaluated_depsgraph_get()
     ground = bpy.data.objects.get('Ground')
     bvh = None
     if ground is not None:
         from mathutils.bvhtree import BVHTree
-        bvh = BVHTree.FromObject(ground, depsgraph)
+        ground_eval = ground.evaluated_get(depsgraph)
+        bvh = BVHTree.FromObject(ground_eval, depsgraph)
 
     def ground_z(x, y):
         if bvh is None:
@@ -107,10 +112,12 @@ def scatter_lapacho_petals(n=400, area_radius=12.0):
 
     parts = []
     for _ in range(n):
-        # Cluster more densely under the foreground lapacho at (-3, -10)
-        if random.random() < 0.55:
-            x = -3 + random.gauss(0, 3.5)
-            y = -10 + random.gauss(0, 3.5)
+        # Cluster densely under the foreground lapacho at (-3, -10). σ=1.2 keeps
+        # 86% of cluster petals within 2.5m — needed for Cam_PetalMacro's tight
+        # ~43cm frame at 85mm to actually show petals, not just laterite.
+        if random.random() < 0.75:
+            x = -3 + random.gauss(0, 1.2)
+            y = -10 + random.gauss(0, 1.2)
         else:
             x = random.uniform(-area_radius, area_radius)
             y = random.uniform(-area_radius, area_radius)
@@ -118,7 +125,13 @@ def scatter_lapacho_petals(n=400, area_radius=12.0):
         bpy.ops.mesh.primitive_plane_add(size=0.12, location=(x, y, z))
         p = bpy.context.active_object
         p.name = 'Petal'
-        p.rotation_euler = (0, 0, random.uniform(0, math.tau))
+        # Small X/Y tilt so petals don't read as flat cardstock — fallen
+        # petals settle at angles against soil bumps.
+        p.rotation_euler = (
+            random.uniform(-0.25, 0.25),
+            random.uniform(-0.25, 0.25),
+            random.uniform(0, math.tau),
+        )
         p.scale = (random.uniform(0.7, 1.3), random.uniform(0.7, 1.3), 1.0)
         bpy.ops.object.transform_apply(scale=True, rotation=True)
         assign(p, MAT['lapacho_flower'])

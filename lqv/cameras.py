@@ -33,6 +33,8 @@ def build_cameras():
     cams['cliff'] = add_camera('Cam_Cliff', location=(-2.0, -18.0, 1.6), look_at=(-2.0, 35.0, 20.0), lens=24.0)
     # 5. Dusk / blue hour — glade, low angle
     cams['dusk'] = add_camera('Cam_Dusk', location=(2.0, -22.0, 0.8), look_at=(0.0, -5.0, 2.0), lens=35.0)
-    # 6. Detail — lapacho petals on wet rock
-    cams['petal_macro'] = add_camera('Cam_PetalMacro', location=(-3.0, -11.0, 0.4), look_at=(-3.0, -10.0, 0.05), lens=85.0)
+    # 6. Detail — lapacho petals carpeting laterite. 85mm at 1m framed a 43cm
+    # patch and caught ~2 petals; pulled back to 3.5m with 50mm so the dense
+    # σ=1.2 cluster around (-3,-10) reads as a carpet.
+    cams['petal_macro'] = add_camera('Cam_PetalMacro', location=(-3.0, -13.5, 0.8), look_at=(-3.0, -10.0, 0.2), lens=50.0)
     return cams
