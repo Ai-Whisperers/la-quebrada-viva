@@ -1,7 +1,4 @@
-"""Lapacho (Handroanthus impetiginosus) — variant-aware: bare+pink vs leafed.
-
-Preserves the monolith's MAT['mango_trunk'] keying (Tier 2 fix candidate).
-"""
+"""Lapacho (Handroanthus impetiginosus) — variant-aware: bare+pink vs leafed."""
 from __future__ import annotations
 
 import math
@@ -23,7 +20,7 @@ def add_lapacho(x, y, scale=1.0, flowering=True):
     trunk = bpy.context.active_object
     trunk.name = f'LapachoTrunk_{x:.0f}_{y:.0f}'
     add_subdiv_displace(trunk, levels=2, noise_scale=14.0, strength=0.04, smooth=False)
-    assign(trunk, MAT['mango_trunk'])
+    assign(trunk, MAT['lapacho_bark'])
     parts = [trunk]
 
     crown_z = trunk_h
@@ -43,20 +40,36 @@ def add_lapacho(x, y, scale=1.0, flowering=True):
         dx, dy, dz = end_x - x, end_y - y, end_z - crown_z
         limb.rotation_mode = 'XYZ'
         limb.rotation_euler = Vector((dx, dy, dz)).to_track_quat('Z', 'Y').to_euler()
-        assign(limb, MAT['mango_trunk'])
+        assign(limb, MAT['lapacho_bark'])
         parts.append(limb)
 
         if flowering:
-            # Hot-pink puffballs at limb tips
-            for _ in range(3):
+            # Trumpet flowers per limb tip — narrow calyx (radius1) → wide mouth
+            # (radius2) along a randomly tilted axis. Replaces the earlier
+            # icosphere puffballs so the silhouette reads as Handroanthus
+            # trumpets, not pink cotton balls.
+            for _ in range(4):
                 ox = end_x + random.uniform(-0.5, 0.5)
                 oy = end_y + random.uniform(-0.5, 0.5)
                 oz = end_z + random.uniform(-0.4, 0.4)
-                bpy.ops.mesh.primitive_ico_sphere_add(radius=0.5 * scale, location=(ox, oy, oz), subdivisions=2)
-                puff = bpy.context.active_object
-                puff.name = 'LapachoFlowerCluster'
-                assign(puff, MAT['lapacho_flower'])
-                parts.append(puff)
+                bpy.ops.mesh.primitive_cone_add(
+                    vertices=12,
+                    radius1=0.04 * scale,
+                    radius2=0.18 * scale,
+                    depth=0.30 * scale,
+                    location=(ox, oy, oz),
+                )
+                flower = bpy.context.active_object
+                flower.name = 'LapachoFlower'
+                # Tilt the cone so its open mouth (top) faces outward+down,
+                # mimicking gravity-hung trumpets. Random roll around the
+                # outward axis avoids the cluster looking lattice-aligned.
+                outward = Vector((ox - x, oy - y, -0.3))
+                flower.rotation_mode = 'XYZ'
+                flower.rotation_euler = outward.to_track_quat('Z', 'Y').to_euler()
+                flower.rotation_euler.z += random.uniform(0, math.tau)
+                assign(flower, MAT['lapacho_flower'])
+                parts.append(flower)
         else:
             # Leafed crown — 2–3 overlapping displaced balls per limb so silhouette
             # reads as foliage mass rather than a smooth icosphere.

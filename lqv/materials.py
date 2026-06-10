@@ -208,6 +208,7 @@ COL = {
     'canopy_lit':     hex_to_rgb('#4A7A2A'),
     'lapacho_pink':   hex_to_rgb('#F4C0D1'),
     'lapacho_bloom':  hex_to_rgb('#E85A8C'),
+    'lapacho_bark':   hex_to_rgb('#5C4A3A'),
     'water_deep':     hex_to_rgb('#2A3528'),
     'water_shallow':  hex_to_rgb('#A85832'),
     'lapacho_timber': hex_to_rgb('#5C2D17'),
@@ -272,6 +273,16 @@ def build_materials():
             displacement_strength=0.03,
         ),
         'lapacho_timber': principled('LapachoTimber', COL['lapacho_timber'], roughness=0.55),
+        # Bark for the living trunk + limbs — tree_bark_03 PBR set tinted toward
+        # the lapacho_bark palette. uv_scale ~1/0.6 gives one tile every ~60cm,
+        # matched to the 40cm-diameter trunk so bark grain reads at hero distance.
+        'lapacho_bark': textured_principled(
+            'LapachoBark', 'tree_bark_03',
+            uv_scale=1.0 / 0.6,
+            tint_color=COL['lapacho_bark'], tint_fac=0.25,
+            displacement_strength=0.02,
+            normal_strength=1.4,
+        ),
         'sod_canopy':   add_noise_displacement(principled('SodRoof',  COL['canopy_lit'],   roughness=0.95, sheen=0.15), scale=10.0, strength=0.06),
         'canopy':       principled('Canopy', COL['canopy_deep'], roughness=0.85),
         'lapacho_leaf': principled('LapachoLeaf', COL['canopy_lit'], roughness=0.7),
