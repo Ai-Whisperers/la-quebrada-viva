@@ -67,6 +67,9 @@ def main():
     # housing at the weir is already in the scene as a paired reference.
     # All deterministic — preserves the RNG draw order for flora.populate.
     build_services()
+    # Variant C only — no-op for A/B (preserves RNG byte-identity).
+    from lqv.house import build_window_emission
+    build_window_emission(cfg.variant)
 
     flowering = (cfg.variant == 'A')
     flora.populate(flowering_lapacho=flowering)
@@ -77,6 +80,8 @@ def main():
     # tufts and anthurium epiphytes consume RNG state that is otherwise unused.
     flora.scatter_grass_tufts(n=80)
     flora.scatter_anthuriums()
+    # Variant C fireflies — last in the RNG chain so A/B paths stay identical.
+    flora.scatter_fireflies(n=80, variant=cfg.variant)
 
     lighting.setup_world_and_sun(scene, cfg.variant)
     lighting.build_canopy_volume(skip=cfg.is_preview)
@@ -89,7 +94,12 @@ def main():
         cam_name = 'hero'
     scene.camera = cams[cam_name]
 
-    scene.view_settings.exposure = -0.2 if cfg.variant == 'A' else 0.3
+    if cfg.variant == 'A':
+        scene.view_settings.exposure = -0.2
+    elif cfg.variant == 'B':
+        scene.view_settings.exposure = 0.3
+    else:
+        scene.view_settings.exposure = 0.6
     scene.render.filepath = cfg.output_path
 
     render.save_blend(config.BLEND_PATH)

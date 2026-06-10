@@ -10,6 +10,7 @@ from .fern import add_tree_fern
 from .bamboo import add_bamboo_clump, scatter_grass_tufts
 from .agave import add_agave
 from .anthurium import scatter_anthuriums
+from .fireflies import scatter_fireflies
 
 
 def populate(flowering_lapacho: bool):
@@ -52,5 +53,5 @@ def populate(flowering_lapacho: bool):
 __all__ = [
     'add_pindo_palm', 'add_lapacho', 'add_mango', 'add_tree_fern',
     'add_bamboo_clump', 'add_agave', 'populate', 'scatter_lapacho_petals',
-    'scatter_grass_tufts', 'scatter_anthuriums',
+    'scatter_grass_tufts', 'scatter_anthuriums', 'scatter_fireflies',
 ]

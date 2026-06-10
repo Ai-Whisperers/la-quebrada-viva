@@ -42,11 +42,9 @@ class Config:
 
 def parse() -> Config:
     variant = os.environ.get('RENDER_VARIANT', 'A').upper()
-    # Fail here, not after a multi-minute build (variant C crashes in lighting.py).
-    if variant not in ('A', 'B'):
+    if variant not in ('A', 'B', 'C'):
         raise SystemExit(
-            f"[config] RENDER_VARIANT={variant!r} not implemented — only A and B exist "
-            "(C is tracked in STATUS.md task 8)")
+            f"[config] RENDER_VARIANT={variant!r} not implemented — only A, B, C exist")
     cam_name = os.environ.get('RENDER_CAM', 'hero').lower()
     samples = int(os.environ.get('RENDER_SAMPLES', '128'))
     res_mode = os.environ.get('RENDER_RES', 'preview').lower()

@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# Usage: scripts/render_preview.sh <A|B> <hero|stream_up|terrace|cliff|dusk|petal_macro>
+# Usage: scripts/render_preview.sh <A|B|C> <hero|stream_up|terrace|cliff|dusk|petal_macro>
 # 1280x720, 128 samples -> renders/_preview_<V>_<cam>.png
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-variant="${1:?usage: render_preview.sh <A|B> <cam>}"
-cam="${2:?usage: render_preview.sh <A|B> <cam>}"
+variant="${1:?usage: render_preview.sh <A|B|C> <cam>}"
+cam="${2:?usage: render_preview.sh <A|B|C> <cam>}"
 case "$variant" in
-  A|B) ;;
-  *) echo "Variant '$variant' not supported (C is not implemented — see STATUS.md)" >&2; exit 1 ;;
+  A|B|C) ;;
+  *) echo "Variant '$variant' not supported (A/B/C only)" >&2; exit 1 ;;
 esac
 
 [ -f scene.blend ] && cp scene.blend scene.blend.session-backup

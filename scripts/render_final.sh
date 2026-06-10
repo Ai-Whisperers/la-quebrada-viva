@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# Usage: scripts/render_final.sh <A|B> <hero|stream_up|terrace|cliff|dusk|petal_macro>
+# Usage: scripts/render_final.sh <A|B|C> <hero|stream_up|terrace|cliff|dusk|petal_macro>
 # Samples policy: hero cam 512 @ 2560x1440, all others 256 @ 1920x1080.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-variant="${1:?usage: render_final.sh <A|B> <cam>}"
-cam="${2:?usage: render_final.sh <A|B> <cam>}"
+variant="${1:?usage: render_final.sh <A|B|C> <cam>}"
+cam="${2:?usage: render_final.sh <A|B|C> <cam>}"
 case "$variant" in
-  A|B) ;;
-  *) echo "Variant '$variant' not supported (C is not implemented — see STATUS.md)" >&2; exit 1 ;;
+  A|B|C) ;;
+  *) echo "Variant '$variant' not supported (A/B/C only)" >&2; exit 1 ;;
 esac
 
 if [ "$cam" = "hero" ]; then

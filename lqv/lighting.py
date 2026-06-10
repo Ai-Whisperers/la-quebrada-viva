@@ -17,6 +17,7 @@ _HDRI_DIR = os.path.join(
 _HDRI_BY_VARIANT = {
     'A': ('kiara_1_dawn_4k.exr', 0.8),
     'B': ('misty_pines_4k.exr', 1.4),
+    'C': ('qwantani_dusk_2_4k.exr', 0.5),
 }
 
 
@@ -56,6 +57,19 @@ def setup_world_and_sun(scene, variant: str):
             sun_elevation=math.radians(35),
             sun_rotation=math.radians(80),
             sun_intensity=0.1,
+        )
+    elif variant == 'C':
+        # Night / blue hour — moonlight stand-in as a low-energy cool Sun lamp.
+        # HDRI strength 0.5 (set above) keeps sky read; sun gives a soft rake.
+        sun_energy = 0.15
+        sun_color = (0.6, 0.75, 1.0, 1.0)
+        sun_angle_deg = 5.0
+        sun_rot = (math.radians(85), 0, 0)
+        sky_strength_fallback = 0.05
+        sky_kwargs = dict(
+            sun_elevation=math.radians(-3),
+            sun_rotation=0.0,
+            sun_intensity=0.0,
         )
     else:
         raise ValueError(f'Unknown variant {variant!r}')

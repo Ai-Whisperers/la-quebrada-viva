@@ -11,6 +11,17 @@ from ..geometry import new_object_from_bmesh
 from ..materials import MAT, assign
 
 
+# Module-level so build_window_emission can reuse the same coordinates as the
+# Boolean cutouts. (x, y, z, sx, sy, sz, normal_axis) — normal is the wall axis
+# the cutout extends through.
+WINDOW_SPECS = [
+    (-4.0, -2.25, 2.1, 1.0, 1.4, 1.2, 'y'),  # south wall, west arm (faces corredor)
+    ( 4.0, -2.25, 2.1, 1.0, 1.4, 1.2, 'y'),  # south wall, east arm (faces corredor)
+    ( 6.25, 2.0, 2.1, 1.4, 1.0, 1.2, 'x'),   # east external wall, mid-arm
+    (-6.25, 2.0, 2.1, 1.4, 1.0, 1.2, 'x'),   # west external wall, mid-arm
+]
+
+
 def build_cob_house():
     """U-shaped sculpted cob house on the upper terrace platform.
 
@@ -188,14 +199,7 @@ def build_cob_house():
     # the displaced surface without leaving slivers. Each opening gets a
     # lapacho-timber sill below it — the most legible vernacular cue for a
     # deep adobe window from the hero camera distance.
-    window_specs = [
-        # (x, y, z, sx, sy, sz, normal_axis)
-        (-4.0, -2.25, 2.1, 1.0, 1.4, 1.2, 'y'),  # south wall, west arm (faces corredor)
-        ( 4.0, -2.25, 2.1, 1.0, 1.4, 1.2, 'y'),  # south wall, east arm (faces corredor)
-        ( 6.25, 2.0, 2.1, 1.4, 1.0, 1.2, 'x'),   # east external wall, mid-arm
-        (-6.25, 2.0, 2.1, 1.4, 1.0, 1.2, 'x'),   # west external wall, mid-arm
-    ]
-    for i, (x, y, z, sx, sy, sz, normal) in enumerate(window_specs):
+    for i, (x, y, z, sx, sy, sz, normal) in enumerate(WINDOW_SPECS):
         bpy.ops.mesh.primitive_cube_add(size=1, location=(x, y, z))
         cut = bpy.context.active_object
         cut.name = f'WindowCut_{i}'
@@ -292,4 +296,29 @@ def build_cob_house():
     assign(cor_roof, MAT['lapacho_timber'])
     objs.append(cor_roof)
 
+
+def build_window_emission(variant: str):
+    """Variant C only — glowing planes inside each WINDOW_SPECS opening.
+
+    Reads as warm interior lamps through the cob cutouts. Plane sits at the
+    cutout centre (between inner/outer wall faces), sized 0.85× the opening
+    so the framing stays legible. Not Boolean-cut by the wall — the wall's
+    DIFFERENCE modifier only operates on cob_walls geometry.
+    """
+    if variant != 'C':
+        return []
+    objs = []
+    for i, (x, y, z, sx, sy, sz, normal) in enumerate(WINDOW_SPECS):
+        bpy.ops.mesh.primitive_plane_add(size=1, location=(x, y, z))
+        plane = bpy.context.active_object
+        plane.name = f'WindowGlow_{i}'
+        if normal == 'y':
+            plane.rotation_euler = (math.radians(90), 0, 0)
+            plane.scale = (sx * 0.85, sz * 0.85, 1.0)
+        else:
+            plane.rotation_euler = (math.radians(90), 0, math.radians(90))
+            plane.scale = (sy * 0.85, sz * 0.85, 1.0)
+        bpy.ops.object.transform_apply(rotation=True, scale=True)
+        assign(plane, MAT['window_glow'])
+        objs.append(plane)
     return objs

@@ -22,13 +22,13 @@ This project renders **La Quebrada Viva**, a cob/bottle earthen smart home on a 
 scripts/smoke_test.sh                  # build only, no render (RENDER_SKIP=1) — run after any code edit
 scripts/render_preview.sh A hero       # 1280x720 preview -> renders/_preview_A_hero.png
 scripts/render_final.sh A hero         # full-res final  -> renders/A_hero.png
-scripts/render_all_finals.sh           # all 12 finals (A/B x 6 cams)
+scripts/render_all_finals.sh           # all 18 finals (A/B/C x 6 cams)
 ```
 
 **Every headless run overwrites `scene.blend`** (the script rebuilds the scene from code and saves). The scripts copy `scene.blend` to `scene.blend.session-backup` before running. Never run `blender --background --python build_scene.py` bare without that backup.
 
 Env vars (full reference in `build_scene.py` docstring):
-`RENDER_VARIANT=A|B` · `RENDER_CAM=hero|stream_up|terrace|cliff|dusk|petal_macro` · `RENDER_SAMPLES=<int>` · `RENDER_RES=preview|final|hero` · `RENDER_SKIP=1`
+`RENDER_VARIANT=A|B|C` · `RENDER_CAM=hero|stream_up|terrace|cliff|dusk|petal_macro` · `RENDER_SAMPLES=<int>` · `RENDER_RES=preview|final|hero` · `RENDER_SKIP=1`
 
 **Trap:** an unknown `RENDER_RES` value silently falls back to 1280×720 preview. Only `preview|720`, `final|1080`, `hero|1440` exist. There is no 4K preset; the prompt docs' "4K minimum" is aspirational, current deliverable spec is hero 2560×1440, others 1920×1080.
 
@@ -38,7 +38,7 @@ Env vars (full reference in `build_scene.py` docstring):
 
 - **Variant A — winter golden hour** (hero): lapacho bare + pink bloom, petal carpet, sun NNW (elevation deliberately 13° in code vs brief's 20° — keep), exposure −0.2. IMPLEMENTED.
 - **Variant B — morning overcast**: fully leafed, soft diffuse, exposure +0.3. IMPLEMENTED (valley mist still missing — see STATUS.md).
-- **Variant C — night/blue hour with fireflies**: in the prompt docs only. **NOT implemented — `RENDER_VARIANT=C` builds the whole scene then crashes in `lqv/lighting.py`.** Do not attempt it; it's a tracked task in STATUS.md. Current deliverable target is **12 finals** (A/B × 6 cams), not 18. The `dusk` camera renders under A/B lighting for now.
+- **Variant C — night/blue hour with fireflies**: IMPLEMENTED 2026-06-10. Cool moonlight + low blue sky strength (`lqv/lighting.py`), warm window-glow emission planes inside the cob cutouts (`lqv/house/cob.py:build_window_emission`), ~80 firefly emission spheres scattered over corredor + lower terrace (`lqv/flora/fireflies.py`). Variant C exposure +0.6 in `build_scene.py`. Deliverable target is now **18 finals** (A/B/C × 6 cams).
 
 ## The 10 design rules (MASTER_BRIEF §14) — never violate
 
@@ -100,7 +100,6 @@ This is a git repo. Commit after every working change (`git add -A && git commit
 - Modeling the house as boxes/cubes (rule 1).
 - Solar panels on the living roof (rule 9).
 - "Tuscan villa", "Bali resort", "Earthship" framing (rule 8).
-- `RENDER_VARIANT=C` until lighting.py implements it.
 
 ## When you don't know
 

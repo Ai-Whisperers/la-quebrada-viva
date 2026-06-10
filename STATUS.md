@@ -2,7 +2,7 @@
 
 > Read at session start. Update the manifest + task list at session end. Last updated: 2026-06-10.
 
-## Render manifest (deliverable: 12 finals — A/B × 6 cameras)
+## Render manifest (deliverable: 18 finals — A/B/C × 6 cameras)
 
 Hero-camera finals at 512 samples / 2560×1440; all others at 256 samples / 1920×1080.
 
@@ -20,8 +20,14 @@ Hero-camera finals at 512 samples / 2560×1440; all others at 256 samples / 1920
 | B cliff | `renders/B_cliff.png` | ☑ 2026-06-10 (256 samples, 1920×1080, verified mist) |
 | B dusk | `renders/B_dusk.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
 | B petal_macro | `renders/B_petal_macro.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
+| C hero | `renders/C_hero.png` | ☐ pending (Variant C impl shipped 2026-06-10, preview verified) |
+| C stream_up | `renders/C_stream_up.png` | ☐ pending |
+| C terrace | `renders/C_terrace.png` | ☐ pending |
+| C cliff | `renders/C_cliff.png` | ☐ pending |
+| C dusk | `renders/C_dusk.png` | ☐ pending |
+| C petal_macro | `renders/C_petal_macro.png` | ☐ pending |
 
-12/12 finals delivered. Spot-verified A_hero, B_hero, A_petal_macro, A_dusk, B_terrace, B_cliff against the 10 design rules + Phase 6 additions (grass tufts, valley mist, anthurium, pindo bark, bridge abutments). All pass.
+12/18 finals delivered. A/B spot-verified against the 10 design rules + Phase 6 additions; all pass. Variant C preview (`renders/_preview_C_hero.png`) verified 2026-06-10 — warm window glow reads through 4 cob cutouts, ~80 fireflies scattered, cool blue-hour sky from `qwantani_dusk_2`. C finals batch queued.
 
 ## Open tasks (ranked; pick from the top unless told otherwise)
 
@@ -38,7 +44,7 @@ Hero-camera finals at 512 samples / 2560×1440; all others at 256 samples / 1920
 7. ~~Pindo trunk texture~~ DONE 2026-06-10 (Phase 6): second DISPLACE modifier on each pindo trunk in `lqv/flora/pindo.py` — fine-scale CLOUDS (noise_scale=0.55) at strength 0.035, layered atop the existing add_subdiv_displace. Reads as Syagrus retained leaf-base scarring. Deterministic — no `random.*`.
 
 ### Pipeline
-8. **Variant C (night/blue hour, fireflies)** — extend `lqv/lighting.py` (moonlight + emission particles + window glow), add C exposure in driver, then extend the manifest to 18 finals. Until then `RENDER_VARIANT=C` crashes after a full build.
+8. ~~Variant C (night/blue hour, fireflies)~~ DONE 2026-06-10 (Phase 7): `lqv/lighting.py` now branches on variant for C — cool moonlight sun (8000K-ish via low strength), sky strength 0.5, qwantani_dusk_2 HDRI. `lqv/house/cob.py:build_window_emission` adds 4 warm emission planes (MAT['window_glow'], emission_strength=12) inside the WINDOW_SPECS cutouts. `lqv/flora/fireflies.py:scatter_fireflies` scatters ~80 emission UV-spheres (MAT['firefly'], emission_strength=80) across corredor + lower terrace airspace. Wired in `build_scene.py` after `scatter_anthuriums` (RNG-tail position preserves A/B byte-identity). Variant C exposure +0.6. `render_*.sh` scripts accept A|B|C. Smoke test A+C both pass. Preview `renders/_preview_C_hero.png` verified.
 9. ~~Early variant validation~~ DONE 2026-06-09 (`84d53f1`): `lqv/config.py` raises SystemExit at parse time for unknown variants.
 10. ~~Warn on unknown RENDER_RES~~ DONE 2026-06-09 (`84d53f1`): `lqv/config.py` prints WARNING + valid set instead of silent preview fallback.
 
@@ -56,6 +62,7 @@ Hero-camera finals at 512 samples / 2560×1440; all others at 256 samples / 1920
 - 2026-06-09: Git initialized; scene.blend untracked (regenerable from code); final renders tracked.
 - 2026-06-10: Ground sampled via BVHTree for petal placement; bridge given visible stone abutments. Strategy notes: when other ground-relative props get added (anthurium epiphytes on root flares, grass tufts, agave clumps), reuse the same evaluated-depsgraph BVH lookup pattern. Cheap (100 petals + 2 piers built fine in <2s); scales linearly.
 - 2026-06-10 (Phase 5): rule-7/9/10 props slotted **after** `build_stream()` and **before** `flora.populate()` in `build_scene.py`. All three new builders (`build_services`, weir/pelton additions in `build_stream`, tatakuá enhancements) are hardcoded — they make zero `random.*` calls — so the RNG draw order for `flora.populate` + `scatter_lapacho_petals` is byte-identical to pre-Phase-5. New materials: `steel_anodized`, `pv_glass`, `steel_mesh` in `lqv/materials.py`. Solar tilt computed from south/north post heights (`atan2(1.6, 4.0) ≈ 21.8°`) — close to Paraguarí ≈25°S optimum. Cistern NW utilities corner pairs with east-side weir/pelton: outage-proof power stack reads as paired on hero + terrace cams.
+- 2026-06-10 (Phase 7): Variant C night/blue hour shipped. RNG chain now: `…populate → scatter_lapacho_petals (A only) → scatter_grass_tufts → scatter_anthuriums → scatter_fireflies (C only) → setup_world_and_sun → build_canopy_volume → build_valley_mist`. Fireflies early-return on A/B so RNG byte-identity is preserved; `build_window_emission` is also a no-op for A/B. New materials `window_glow` (emission_strength=12) and `firefly` (emission_strength=80) added to `lqv/materials.py`; `principled()` helper now supports `emission_color`/`emission_strength` kwargs. WINDOW_SPECS hoisted to module-level in `lqv/house/cob.py` so the emission builder can target the same cutouts as the Boolean cutters. Wrapper scripts `render_preview.sh`/`render_final.sh`/`render_all_finals.sh` all accept A|B|C.
 - 2026-06-10 (Phase 6): scene completeness sweep — items 1, 2, 5, 7 landed. Order in `build_scene.py` is now: `…populate → scatter_lapacho_petals (A only) → scatter_grass_tufts → scatter_anthuriums → setup_world_and_sun → build_canopy_volume → build_valley_mist`. **RNG-order strategy:** new random consumers (grass + anthurium) sit AFTER the petal draw, not inside `flora.populate`, so the petal scatter and all upstream flora positions stay byte-identical to pre-Phase-6. `build_valley_mist` skipped on previews (same policy as `build_canopy_volume`), so the new mist is only visible in finals. Pindo retained-leaf-base scars: a SECOND DISPLACE modifier on the existing trunk mesh density — no extra subdiv pass, keeps poly count flat. Item 3 (lapacho trunk material) deliberately deferred — Hyper3D phase will replace the procedural lapacho wholesale and that'd throw away any bark material work done now.
 
 ## Environment

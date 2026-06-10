@@ -326,6 +326,16 @@ def build_materials():
             'SteelMesh', hex_to_rgb('#3A3A3D'),
             roughness=0.32, metallic=0.85, ior=1.45, alpha=0.55,
         ),
+        # Variant C emissives. Window glow reads as warm interior lamps through
+        # the cob openings; firefly emission carries the night atmosphere.
+        'window_glow': principled(
+            'WindowGlow', hex_to_rgb('#FFC76A'), roughness=0.5,
+            emission_color=hex_to_rgb('#FFB252'), emission_strength=12.0,
+        ),
+        'firefly': principled(
+            'Firefly', hex_to_rgb('#FFFF80'),
+            emission_color=hex_to_rgb('#E6FF80'), emission_strength=80.0,
+        ),
     })
     MAT['pool_water'] = _make_pool_water()
     return MAT
