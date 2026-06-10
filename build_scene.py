@@ -36,7 +36,7 @@ if _HERE not in sys.path:
 
 from lqv import config, engine, materials, render, lighting, cameras, flora
 from lqv.site import build_escarpment, build_ground, build_terraces, build_stream
-from lqv.house import build_cob_house, build_bottle_wall, build_tatakua
+from lqv.house import build_cob_house, build_bottle_wall, build_tatakua, build_services
 
 
 def main():
@@ -63,6 +63,10 @@ def main():
     build_bottle_wall()
     build_tatakua()
     build_stream()
+    # Rule 7/9/10 service props. Slotted after build_stream so the pelton
+    # housing at the weir is already in the scene as a paired reference.
+    # All deterministic — preserves the RNG draw order for flora.populate.
+    build_services()
 
     flowering = (cfg.variant == 'A')
     flora.populate(flowering_lapacho=flowering)

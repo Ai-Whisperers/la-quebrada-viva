@@ -32,9 +32,9 @@ Mark ☑ only after `/verify-render` passes on the final image.
 1. **Wire `scatter_grass_tufts`** — exists in `lqv/flora/bamboo.py` but is never called from the driver/`flora.populate`. Decide placement, respect the RNG-order invariant (append after existing calls, never insert between).
 2. **Variant B valley mist** — brief requires mist near the cliff for B; only the variant-agnostic canopy volume exists. Add a B-only ground-fog volume in `lqv/lighting.py`.
 3. **Lapacho trunk material** — uses `MAT['mango_trunk']`; give lapacho its own bark material (flagged in `lqv/flora/lapacho.py` docstring).
-4. **Stream zones** — brief defines 5 zones (gorge, flat sandstone pool, colonial weir, channeled riparian, bamboo belt); code has a straight channel + pool + cascades. The **weir** is the biggest visible gap (also rule 7's micro-hydro anchor).
+4. ~~Stream zones — weir~~ DONE 2026-06-10: weir (3 sandstone blocks at y=-11.0, x∈{-1.2,0,+1.2}+11, centre block notched lower for spillway) + penstock + pelton housing + tailrace in `lqv/site/stream.py`. Channel + pool + cascades + weir + bridge now read as 4 of the 5 brief zones; gorge headwall + bamboo belt are the remaining gaps.
 5. **Anthurium epiphytes** — in species list, not modelled.
-6. **Rule-7/9/10 props for detail shots** — micro-hydro at weir, solar on separate steel frame, meshed cistern. Needed before any close-up/detail finals.
+6. ~~Rule-7/9/10 props for detail shots~~ DONE 2026-06-10 (Phase 5): micro-hydro at weir (penstock + pelton housing + tailrace), solar PV on separate anodized-steel frame in east yard (4 posts x∈{+7.5,+9.5} y∈{-2,+2}, south posts 3.2m / north 1.6m → 21.8° tilt, panel→`MAT['pv_glass']`), cob cistern with 0.5mm steel-mesh cap + anodized rim + downspout at (-9,+5), LiFePO4 battery cabinet at (-11.4,+5), tatakuá enhanced with chimney + lip + ash door + firewood pile. All builders deterministic — no `random.*` — RNG-draw order preserved.
 7. **Pindo trunk texture** — retained leaf bases (rough trunk), currently smooth + noise.
 
 ### Pipeline
@@ -55,6 +55,7 @@ Mark ☑ only after `/verify-render` passes on the final image.
 - 2026-06-09: Variant A sun elevation kept at 13° (code) vs 20° (brief) — deliberate aesthetic call.
 - 2026-06-09: Git initialized; scene.blend untracked (regenerable from code); final renders tracked.
 - 2026-06-10: Ground sampled via BVHTree for petal placement; bridge given visible stone abutments. Strategy notes: when other ground-relative props get added (anthurium epiphytes on root flares, grass tufts, agave clumps), reuse the same evaluated-depsgraph BVH lookup pattern. Cheap (100 petals + 2 piers built fine in <2s); scales linearly.
+- 2026-06-10 (Phase 5): rule-7/9/10 props slotted **after** `build_stream()` and **before** `flora.populate()` in `build_scene.py`. All three new builders (`build_services`, weir/pelton additions in `build_stream`, tatakuá enhancements) are hardcoded — they make zero `random.*` calls — so the RNG draw order for `flora.populate` + `scatter_lapacho_petals` is byte-identical to pre-Phase-5. New materials: `steel_anodized`, `pv_glass`, `steel_mesh` in `lqv/materials.py`. Solar tilt computed from south/north post heights (`atan2(1.6, 4.0) ≈ 21.8°`) — close to Paraguarí ≈25°S optimum. Cistern NW utilities corner pairs with east-side weir/pelton: outage-proof power stack reads as paired on hero + terrace cams.
 
 ## Environment
 

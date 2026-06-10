@@ -104,4 +104,63 @@ def build_stream():
     assign(deck, MAT['lapacho_timber'])
     objs.append(deck)
 
+    # Rule 7 — weir + pelton micro-hydro. Placed at y=-11.0, mid-stream between
+    # cascade clusters at y=-8 and y=-14, well clear of the pool (top edge
+    # ~y=-16.5) and downstream of the +Y boulder Y-jitter (worst case y=-7.2).
+    # Hardcoded — no random.* — to preserve RNG-draw order for downstream
+    # flora.populate / scatter_lapacho_petals.
+    weir_y = -11.0
+    # Sandstone block dam — three masonry courses with a notched centre block
+    # (lower) so the spillway reads on camera. Each block applied scale so
+    # subsequent boolean-free placement of the spillway notch is implicit.
+    for cx, scale_x, top_z in (
+        (-1.20, 1.20, 0.55),  # left abutment block
+        ( 0.00, 1.20, 0.30),  # spillway notch (lower top)
+        ( 1.20, 1.20, 0.55),  # right abutment block
+    ):
+        bpy.ops.mesh.primitive_cube_add(size=1, location=(11.0 + cx, weir_y, top_z / 2 - 0.05))
+        block = bpy.context.active_object
+        block.name = f'WeirBlock_x{cx:+.2f}'
+        block.scale = (scale_x, 0.50, top_z + 0.10)
+        bpy.ops.object.transform_apply(scale=True)
+        add_subdiv_displace(block, levels=2, noise_scale=8.0, strength=0.03)
+        assign(block, MAT['sandstone'])
+        objs.append(block)
+
+    # Penstock pipe — anodized steel, runs east from the spillway notch to the
+    # pelton housing on the east bank. Cylinder oriented along +X.
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.10, depth=2.40, location=(12.50, weir_y, 0.18))
+    penstock = bpy.context.active_object
+    penstock.name = 'Penstock'
+    penstock.rotation_euler = (0, math.radians(90), 0)
+    bpy.ops.object.transform_apply(rotation=True)
+    assign(penstock, MAT['steel_anodized'])
+    objs.append(penstock)
+
+    # Pelton housing — small cob/sandstone hut on the east bank, sealed (rule 3:
+    # no open standing water near the channel). Body + lapacho-timber lid.
+    bpy.ops.mesh.primitive_cube_add(size=1, location=(14.20, weir_y, 0.45))
+    pelton = bpy.context.active_object
+    pelton.name = 'PeltonHousing'
+    pelton.scale = (0.90, 1.10, 0.90)
+    bpy.ops.object.transform_apply(scale=True)
+    add_subdiv_displace(pelton, levels=2, noise_scale=7.0, strength=0.04)
+    assign(pelton, MAT['cob_raw'])
+    objs.append(pelton)
+    bpy.ops.mesh.primitive_cube_add(size=1, location=(14.20, weir_y, 0.95))
+    pelton_lid = bpy.context.active_object
+    pelton_lid.name = 'PeltonHousingLid'
+    pelton_lid.scale = (1.00, 1.20, 0.08)
+    bpy.ops.object.transform_apply(scale=True)
+    assign(pelton_lid, MAT['lapacho_timber'])
+    objs.append(pelton_lid)
+    # Tailrace pipe — water return downstream, lower than penstock.
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.08, depth=1.20, location=(13.50, weir_y - 0.20, 0.05))
+    tailrace = bpy.context.active_object
+    tailrace.name = 'PeltonTailrace'
+    tailrace.rotation_euler = (math.radians(90), 0, math.radians(60))
+    bpy.ops.object.transform_apply(rotation=True)
+    assign(tailrace, MAT['steel_anodized'])
+    objs.append(tailrace)
+
     return objs

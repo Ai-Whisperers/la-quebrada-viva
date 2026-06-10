@@ -304,6 +304,24 @@ def build_materials():
             tint_color=hex_to_rgb('#5A4E3C'), tint_fac=0.40,
             displacement_strength=0.04,
         ),
+        # Rule 9 / 10 props — solar steel frame, PV cover glass, mesh tank cap.
+        # Deterministic principled BSDFs (no random) so the Phase-5 props build
+        # without shifting the RNG draw order downstream.
+        'steel_anodized': principled(
+            'SteelAnodized', hex_to_rgb('#2A2A2C'),
+            roughness=0.42, metallic=0.92, ior=1.45,
+        ),
+        'pv_glass': principled(
+            'PvGlass', hex_to_rgb('#0A1A2A'),
+            roughness=0.12, metallic=0.0, ior=1.5,
+        ),
+        # 0.5mm stainless mesh cap (rule 10). Real woven texture would need an
+        # alpha-mapped image; this dark metallic + alpha=0.55 reads as a fine
+        # porous cover at hero distance, which is what we need to verify rule 10.
+        'steel_mesh': principled(
+            'SteelMesh', hex_to_rgb('#3A3A3D'),
+            roughness=0.32, metallic=0.85, ior=1.45, alpha=0.55,
+        ),
     })
     MAT['pool_water'] = _make_pool_water()
     return MAT
