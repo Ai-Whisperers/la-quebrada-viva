@@ -74,6 +74,20 @@ def build_stream():
     # Footbridge moved south of the pool (y=-25.5 instead of -19) so it no
     # longer occludes the pool from Cam_Hero. Cam looks NW from (18,-33) toward
     # (10,-20), so a bridge at y=-19 sits dead-centre over the hero pool.
+    # Stone abutments anchor both ends — without them the beams read as a
+    # floating plank against displaced ground (strength=0.35 → ±0.35m). North
+    # end seats on the pool bed (z=-0.55), south end buries past worst-case
+    # trough. Hardcoded — no random.* — to preserve the RNG-draw order.
+    for pier_y, pier_zc, pier_h in ((-22.5, -0.15, 0.80), (-28.5, -0.10, 0.70)):
+        bpy.ops.mesh.primitive_cylinder_add(
+            radius=0.32, depth=pier_h, location=(11.0, pier_y, pier_zc),
+        )
+        pier = bpy.context.active_object
+        pier.name = f'BridgePier_y{pier_y:+.1f}'
+        pier.scale = (1.6, 1.0, 1.0)
+        bpy.ops.object.transform_apply(scale=True)
+        assign(pier, MAT['sandstone'])
+        objs.append(pier)
     for x_off in (-0.18, 0.18):
         bpy.ops.mesh.primitive_cube_add(size=1, location=(11.0 + x_off, -25.5, 0.25))
         beam = bpy.context.active_object

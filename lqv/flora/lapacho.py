@@ -78,7 +78,27 @@ def add_lapacho(x, y, scale=1.0, flowering=True):
 
 
 def scatter_lapacho_petals(n=400, area_radius=12.0):
-    """Small pink discs scattered on the laterite ground for Variant A."""
+    """Small pink discs scattered on the laterite ground for Variant A.
+
+    Ground has a CLOUDS displace of strength 0.35, so a fixed z carpets
+    the air in troughs and buries petals in crests. Raycast the evaluated
+    ground mesh per petal to anchor them on the actual surface.
+    """
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    ground = bpy.data.objects.get('Ground')
+    bvh = None
+    if ground is not None:
+        from mathutils.bvhtree import BVHTree
+        bvh = BVHTree.FromObject(ground, depsgraph)
+
+    def ground_z(x, y):
+        if bvh is None:
+            return 0.0
+        hit, _normal, _idx, _dist = bvh.ray_cast(
+            (x, y, 10.0), (0.0, 0.0, -1.0),
+        )
+        return hit.z if hit is not None else 0.0
+
     bpy.ops.mesh.primitive_plane_add(size=0.12, location=(0, 0, 0.02))
     proto = bpy.context.active_object
     proto.name = 'PetalProto'
@@ -94,7 +114,7 @@ def scatter_lapacho_petals(n=400, area_radius=12.0):
         else:
             x = random.uniform(-area_radius, area_radius)
             y = random.uniform(-area_radius, area_radius)
-        z = 0.02 + random.uniform(0, 0.02)
+        z = ground_z(x, y) + random.uniform(0.005, 0.025)
         bpy.ops.mesh.primitive_plane_add(size=0.12, location=(x, y, z))
         p = bpy.context.active_object
         p.name = 'Petal'

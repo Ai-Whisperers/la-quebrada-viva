@@ -1,6 +1,6 @@
 # STATUS — La Quebrada Viva render pipeline
 
-> Read at session start. Update the manifest + task list at session end. Last updated: 2026-06-09.
+> Read at session start. Update the manifest + task list at session end. Last updated: 2026-06-10.
 
 ## Render manifest (deliverable: 12 finals — A/B × 6 cameras)
 
@@ -36,17 +36,22 @@ Mark ☑ only after `/verify-render` passes on the final image.
 
 ### Pipeline
 8. **Variant C (night/blue hour, fireflies)** — extend `lqv/lighting.py` (moonlight + emission particles + window glow), add C exposure in driver, then extend the manifest to 18 finals. Until then `RENDER_VARIANT=C` crashes after a full build.
-9. **Early variant validation** — `lqv/config.py` should reject unknown variants at parse time instead of crashing post-build in lighting.py.
-10. **Warn on unknown RENDER_RES** instead of silent preview fallback (`lqv/config.py`).
+9. ~~Early variant validation~~ DONE 2026-06-09 (`84d53f1`): `lqv/config.py` raises SystemExit at parse time for unknown variants.
+10. ~~Warn on unknown RENDER_RES~~ DONE 2026-06-09 (`84d53f1`): `lqv/config.py` prints WARNING + valid set instead of silent preview fallback.
 
 ### Housekeeping
 11. ~~`wesly.txt` / `render.png` cleanup~~ DONE 2026-06-09: `wesly.txt` moved out of the project, `render.png` + pre-refactor backups moved to `_archive/` (ignored by git and Claude). Reference docs now live in `docs/`.
+
+### Fixed regressions (carried forward for context — keep until verified on render)
+- 2026-06-10: Lapacho petals were floating mid-air over displaced ground (CLOUDS strength=0.35 means ground varies ±0.35m around z=0). Fixed in `lqv/flora/lapacho.py` by raycasting the evaluated Ground via `BVHTree.FromObject(ground, depsgraph)` and placing each petal at `hit.z + small offset`. RNG-draw order preserved.
+- 2026-06-10: Footbridge at y=−25.5 read as a floating plank — no visible ground contact. Fixed in `lqv/site/stream.py` by adding two hardcoded sandstone abutments (north over pool bed z=−0.55, south buried past worst-case ground trough). No `random.*` calls in pier code — RNG-draw order preserved.
 
 ## Decisions log
 
 - 2026-06-09: Deliverable target set to **12 finals** (A/B×6); Variant C deferred to task 8. Samples policy fixed: 128 preview / 512 hero finals / 256 other finals. No 4K preset — prompt docs' "4K minimum" deferred until requested.
 - 2026-06-09: Variant A sun elevation kept at 13° (code) vs 20° (brief) — deliberate aesthetic call.
 - 2026-06-09: Git initialized; scene.blend untracked (regenerable from code); final renders tracked.
+- 2026-06-10: Ground sampled via BVHTree for petal placement; bridge given visible stone abutments. Strategy notes: when other ground-relative props get added (anthurium epiphytes on root flares, grass tufts, agave clumps), reuse the same evaluated-depsgraph BVH lookup pattern. Cheap (100 petals + 2 piers built fine in <2s); scales linearly.
 
 ## Environment
 
