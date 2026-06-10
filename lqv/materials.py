@@ -1,7 +1,21 @@
 """Material helpers, palette, and the MAT registry."""
 from __future__ import annotations
 
+import os
+
 import bpy
+
+
+_TEX_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    'assets', 'textures',
+)
+
+
+def _load_image(path: str):
+    if not os.path.isfile(path):
+        return None
+    return bpy.data.images.load(path, check_existing=True)
 
 
 def hex_to_rgb(h: str) -> tuple[float, float, float, float]:
@@ -68,6 +82,111 @@ def add_color_variegation(mat, scale, lit_color, dark_color, mix_fac=0.5):
     return mat
 
 
+def textured_principled(name, asset_id, uv_scale=1.0, tint_color=None, tint_fac=0.0,
+                        roughness_bias=0.0, displacement_strength=0.05,
+                        normal_strength=1.0):
+    """PBR material built from a Poly Haven texture set in assets/textures/<asset_id>/.
+
+    Wires Diffuse (optionally tinted toward `tint_color` via MULTIPLY mix),
+    nor_gl, Rough, AO-into-base-color, and true Displacement on Material Output.
+    Falls back to a flat principled tint if any diffuse map is missing — keeps
+    the build resilient on a fresh clone before scripts/download_assets.sh runs.
+    """
+    base = tint_color if tint_color is not None else (0.5, 0.5, 0.5, 1.0)
+    m = principled(name, base, roughness=0.9)
+    nt = m.node_tree
+    bsdf = nt.nodes.get('Principled BSDF')
+
+    asset_dir = os.path.join(_TEX_DIR, asset_id)
+    diff = _load_image(os.path.join(asset_dir, f'{asset_id}_Diffuse_4k.jpg'))
+    if diff is None:
+        return m
+
+    norm = _load_image(os.path.join(asset_dir, f'{asset_id}_nor_gl_4k.jpg'))
+    rough = _load_image(os.path.join(asset_dir, f'{asset_id}_Rough_4k.jpg'))
+    ao = _load_image(os.path.join(asset_dir, f'{asset_id}_AO_4k.jpg'))
+    disp = _load_image(os.path.join(asset_dir, f'{asset_id}_Displacement_4k.jpg'))
+
+    # World-space Position from the Geometry node — gives true metric tiling
+    # (uv_scale=1/8 ⇒ one tile per 8m), unlike Generated/UV which normalize to
+    # the bounding box and would stretch one tile across the whole ground.
+    geom = nt.nodes.new('ShaderNodeNewGeometry')
+    mapping = nt.nodes.new('ShaderNodeMapping')
+    mapping.inputs['Scale'].default_value = (uv_scale, uv_scale, uv_scale)
+    nt.links.new(geom.outputs['Position'], mapping.inputs['Vector'])
+
+    diff_node = nt.nodes.new('ShaderNodeTexImage')
+    diff_node.image = diff
+    nt.links.new(mapping.outputs['Vector'], diff_node.inputs['Vector'])
+    base_socket = diff_node.outputs['Color']
+
+    if ao is not None:
+        ao.colorspace_settings.name = 'Non-Color'
+        ao_node = nt.nodes.new('ShaderNodeTexImage')
+        ao_node.image = ao
+        nt.links.new(mapping.outputs['Vector'], ao_node.inputs['Vector'])
+        ao_mul = nt.nodes.new('ShaderNodeMixRGB')
+        ao_mul.blend_type = 'MULTIPLY'
+        # Cycles already computes its own AO from geometry; texture-baked AO is
+        # just a low-frequency cavity hint. Keep contribution gentle.
+        ao_mul.inputs['Fac'].default_value = 0.2
+        nt.links.new(base_socket, ao_mul.inputs['Color1'])
+        nt.links.new(ao_node.outputs['Color'], ao_mul.inputs['Color2'])
+        base_socket = ao_mul.outputs['Color']
+
+    if tint_color is not None and tint_fac > 0.0:
+        tint = nt.nodes.new('ShaderNodeMixRGB')
+        # Plain MIX (linear interpolation) — holds the brief palette luminance
+        # while keeping texture variation via the inverse fac toward diffuse.
+        tint.blend_type = 'MIX'
+        tint.inputs['Fac'].default_value = tint_fac
+        tint.inputs['Color2'].default_value = tint_color
+        nt.links.new(base_socket, tint.inputs['Color1'])
+        base_socket = tint.outputs['Color']
+
+    nt.links.new(base_socket, bsdf.inputs['Base Color'])
+
+    if norm is not None:
+        norm.colorspace_settings.name = 'Non-Color'
+        norm_node = nt.nodes.new('ShaderNodeTexImage')
+        norm_node.image = norm
+        nt.links.new(mapping.outputs['Vector'], norm_node.inputs['Vector'])
+        nm = nt.nodes.new('ShaderNodeNormalMap')
+        nm.inputs['Strength'].default_value = normal_strength
+        nt.links.new(norm_node.outputs['Color'], nm.inputs['Color'])
+        nt.links.new(nm.outputs['Normal'], bsdf.inputs['Normal'])
+
+    if rough is not None:
+        rough.colorspace_settings.name = 'Non-Color'
+        rough_node = nt.nodes.new('ShaderNodeTexImage')
+        rough_node.image = rough
+        nt.links.new(mapping.outputs['Vector'], rough_node.inputs['Vector'])
+        if roughness_bias != 0.0:
+            add = nt.nodes.new('ShaderNodeMath')
+            add.operation = 'ADD'
+            add.inputs[1].default_value = roughness_bias
+            add.use_clamp = True
+            nt.links.new(rough_node.outputs['Color'], add.inputs[0])
+            nt.links.new(add.outputs['Value'], bsdf.inputs['Roughness'])
+        else:
+            nt.links.new(rough_node.outputs['Color'], bsdf.inputs['Roughness'])
+
+    if disp is not None and displacement_strength > 0.0:
+        disp.colorspace_settings.name = 'Non-Color'
+        disp_node = nt.nodes.new('ShaderNodeTexImage')
+        disp_node.image = disp
+        nt.links.new(mapping.outputs['Vector'], disp_node.inputs['Vector'])
+        disp_shader = nt.nodes.new('ShaderNodeDisplacement')
+        disp_shader.inputs['Scale'].default_value = displacement_strength
+        disp_shader.inputs['Midlevel'].default_value = 0.5
+        nt.links.new(disp_node.outputs['Color'], disp_shader.inputs['Height'])
+        out_node = nt.nodes.get('Material Output')
+        if out_node is not None:
+            nt.links.new(disp_shader.outputs['Displacement'], out_node.inputs['Displacement'])
+
+    return m
+
+
 def assign(obj, material):
     if obj.data.materials:
         obj.data.materials[0] = material
@@ -130,10 +249,27 @@ def build_materials():
     MAT.update({
         'lime_wash':    add_noise_displacement(principled('LimeWash', COL['cob_lime_white'], roughness=0.92), scale=22.0, strength=0.08),
         'cob_raw':      add_noise_displacement(principled('CobRaw',   COL['cob_raw'],       roughness=0.95), scale=12.0, strength=0.18),
-        'laterite':     add_noise_displacement(principled('Laterite', COL['laterite_dry'], roughness=1.0),   scale=2.5,  strength=0.10),
-        'sandstone':    add_color_variegation(
-            add_noise_displacement(principled('Sandstone', COL['sandstone_lit'], roughness=0.95), scale=4.0, strength=0.20),
-            scale=1.8, lit_color=COL['sandstone_lit'], dark_color=COL['sandstone_dark'], mix_fac=0.55,
+        # Ground PBR per asset_plan.md §C.2. Tint multiplies the Diffuse toward
+        # the brief palette so Paraguayan laterite reads warm-red regardless of
+        # the Poly Haven source plate.
+        'laterite':     textured_principled(
+            'Laterite', 'aerial_mud_1',
+            uv_scale=1.0 / 8.0,  # 8m tile across hero camera frame
+            tint_color=COL['laterite_dry'], tint_fac=0.65,
+            displacement_strength=0.04,
+        ),
+        'sandstone':    textured_principled(
+            'Sandstone', 'dry_riverbed_rock',
+            uv_scale=1.0 / 4.0,  # ~4m tile so boulder grain reads at hero distance
+            tint_color=COL['sandstone_lit'], tint_fac=0.30,
+            displacement_strength=0.06,
+            normal_strength=1.2,
+        ),
+        'moss':         textured_principled(
+            'Moss', 'aerial_grass_rock',
+            uv_scale=1.0 / 6.0,
+            tint_color=COL['moss_wet'], tint_fac=0.35,
+            displacement_strength=0.03,
         ),
         'lapacho_timber': principled('LapachoTimber', COL['lapacho_timber'], roughness=0.55),
         'sod_canopy':   add_noise_displacement(principled('SodRoof',  COL['canopy_lit'],   roughness=0.95, sheen=0.15), scale=10.0, strength=0.06),
@@ -151,7 +287,12 @@ def build_materials():
         'glass_bottle_green':  principled('BottleGreen',  COL['bottle_green'],  roughness=0.03, ior=1.52, transmission=1.0),
         'glass_bottle_brown':  principled('BottleBrown',  COL['bottle_brown'],  roughness=0.03, ior=1.52, transmission=1.0),
         'pool_water':   None,
-        'stream_bed':   add_noise_displacement(principled('StreamBed', hex_to_rgb('#5A4E3C'), roughness=0.95), scale=6.0, strength=0.15),
+        'stream_bed':   textured_principled(
+            'StreamBed', 'dry_riverbed_rock',
+            uv_scale=1.0 / 3.0,
+            tint_color=hex_to_rgb('#5A4E3C'), tint_fac=0.40,
+            displacement_strength=0.04,
+        ),
     })
     MAT['pool_water'] = _make_pool_water()
     return MAT
