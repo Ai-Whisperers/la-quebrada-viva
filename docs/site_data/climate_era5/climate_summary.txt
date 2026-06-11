@@ -1,0 +1,42 @@
+======================================================================
+ERA5 Climate Summary — La Quebrada Viva site
+======================================================================
+Period: 1990-2025 (36 years)
+Property center: -25.63, -57.03
+Nearest grid: -25.75, -57.0 (5x5 grid over 1.0 deg bbox)
+
+OVERALL STATS (at nearest grid point):
+  2m temperature      : mean=   22.04 C, min=   12.65, max=   29.49, std=  3.78
+  monthly precip      : mean=  144.68 mm, min=    6.92, max=  461.20, std= 82.64
+  10m wind speed      : mean=    1.31 m/s, min=    0.40, max=    2.62, std=  0.36
+  solar radiation     : mean=   17.73 MJ/m^2/day, min=    7.75, max=   28.73, std=  5.18
+
+ANNUAL CLIMATOLOGY:
+  Mean annual 2m temp:  22.04 C (range: 21.09-23.03)
+  Mean annual precip:   1736 mm/yr (range: 1172-2509)
+
+MONTHLY CLIMATOLOGY (long-term mean):
+  Month    Temp C   Precip mm   Wind m/s  Solar MJ/m2/d
+   Jan     26.83       142.9       1.10          24.24
+   Feb     26.13       147.1       1.03          21.81
+   Mar     25.05       134.9       1.16          19.22
+   Apr     22.27       156.0       1.25          15.28
+   May     18.50       145.7       1.27          11.62
+   Jun     17.14       127.5       1.38           9.95
+   Jul     16.55        88.3       1.44          11.36
+   Aug     18.58        79.4       1.52          14.56
+   Sep     20.42       139.2       1.50          17.44
+   Oct     22.89       211.1       1.50          19.96
+   Nov     24.17       186.3       1.45          23.02
+   Dec     25.92       177.8       1.16          24.30
+
+DESIGN RULE 6 CHECK — Passive cooling:
+  Warmest month: Jan (26.8 C) -- < 35 C? True
+  Coolest month: Jul (16.6 C)
+  Wet months (>100 mm): ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Sep', 'Oct', 'Nov', 'Dec']
+  Dry months (<50 mm): none
+  Peak solar month: Dec (24.3 MJ/m^2/day)
+  Windiest month: Aug (1.5 m/s)
+
+Source: ECMWF ERA5 reanalysis, monthly means on single levels
+Citation: Hersbach et al. (2020), doi:10.1002/qj.3803
