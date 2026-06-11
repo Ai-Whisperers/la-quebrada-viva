@@ -127,6 +127,20 @@ Empty for now. Add as work happens.
 - [`docs/CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md) — operational T-7 / T-5 / T-2 / signing-day / T+30 checklist that consumes findings of R02 (Anexo I) and R03 (municipal land use)
 - `STATUS.md` — render manifest (12/18 done; not blocked by this research)
 
+### Extended back-pointers (additive 2026-06-10)
+
+This file has always been *referenced forward* by adjacent docs but the reverse pointers were never collected here. Listed below with *why* each back-link matters; the 8 outbound bullets above are unchanged.
+
+- `CLAUDE.md` §"Action lists Claude must consult" — entry-point doc for cold-start Claude sessions names this file as the canonical action list. Any new session must read this first before recommending next-task work, so that suggestions align with the open R01–R34 ledger rather than re-deriving priorities from scratch.
+- `docs/research_index.md` Tier-1 + §"Cross-references" — research_index identifies this file as the *negative-space companion* to its own positive-space catalogue. research_index enumerates *what we surveyed*; this file enumerates *what we still don't know how to procure or decide*. Together they bound the research posture.
+- `docs/asset_plan.md` §G + §G second-pass — asset_plan procurement decisions on missing PBR slugs, Sketchfab fauna, Hyper3D generations are gated on R05/R06/R12/R13/R21/R22/R23/R24/R26/R34 closure status here. asset_plan calls these out as A-tier-doable; this file is the canonical status ledger.
+- `docs/wesley_brief_onepager.md` §"Open questions" — the 5 priority questions the Wesley one-pager surfaces are direct extracts of R01/R04/R02/R03 from this file. Any rewording of those questions must update this file's R## entries in lockstep, not just the one-pager.
+- `docs/MASTER_BRIEF.md` §"Tier-1 next must-do" + §"Drone LiDAR R35" — MASTER_BRIEF treats this file as the master ranking; R35 (drone LiDAR) is named explicitly as the next-after-Tier-1 priority. Any MASTER_BRIEF re-prioritisation must reflect changes here first.
+- `docs/SESSION_LOG.md` (multiple ticks) — SESSION_LOG references this file as the open-tracker each session-end summary writes against. The "still pending (carried)" section in every tick is a delta on the R01–R34 ledger.
+- `STATUS.md` §3 Tier-1 priority block + §9 Cross-references — STATUS §3 enumerates the R01–R08 items blocking the next 17 days. STATUS is the snapshot view; this file is the living tracker. If STATUS §3 contradicts a current R## status here, this file wins.
+- `docs/CLOSING_DAY_PREP.md` — CLOSING_DAY_PREP's T-7/T-5/T-2/signing-day checklist explicitly consumes R02 (Anexo I) and R03 (municipal land use) findings. The escritura blocking-path is this file's R02+R03 closure path.
+- `docs/SESSION_LOG.md` tick 19 (2026-06-10) — canonical audit-trail entry for when this back-pointer closure landed. Cold-start reconstruction path.
+
 ---
 
 ## How to use this doc

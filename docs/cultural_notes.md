@@ -106,3 +106,15 @@ Even though we are visualizing, not catering, the renders read more authentic wh
 - `docs/photographic_references.md` (planned) — annotated source images grouped by motif.
 - `lqv/restaurant/dining_hall.py` NOTES — sod-roof restaurant continuation of the LQV language.
 - `lqv/typologies/adobe_courtyard.py` — most overtly Rule-8 typology of the eight.
+
+### Extended back-pointers (additive 2026-06-10)
+
+This file has always been *referenced forward* by adjacent docs (CLAUDE.md Tier-1, asset_plan.md §C.3/§C.4, research_index.md Tier-1 + multiple cross-reference tables, photographic_references.md Cross-references, wesley_deliverable_bundle.md Tier-1) but the reverse pointers were never collected here. Listed below with *why* each back-link matters; the 6 outbound bullets above are unchanged.
+
+- `CLAUDE.md` §"Tier-1 docs Claude must read at session start" — entry-point doc for cold-start Claude sessions names this file as the canonical Rule 8 backing. Reciprocal of CLAUDE.md "Plant species" + "Material color references" sections. Any future session inheriting a Rule-8-touching question begins here.
+- `docs/asset_plan.md` §C.3 + §C.4 — every flora/material pick (lapacho, pindo palm, mango, tatakuá, cob-panel, laterite, sandstone, lapacho timber) traces back to a cultural_notes entry. asset_plan is the *what we procure*; this file is the *why we picked it*. No `[USED]` flip in asset_plan §C.3/§C.4 is valid without a backing cultural_notes citation.
+- `docs/research_index.md` §"Tier-1 references" + §"Plant species cross-reference" + §"Materials cross-reference" + §"Cultural authenticity sweep" — research_index treats this file as Tier-1 reading and uses it as the cultural authenticity baseline for every Phase 7.5 evaluation. The 4 separate research_index sections that point here each test a different cultural axis (plants / materials / construction / ritual).
+- `docs/photographic_references.md` Cross-references — photographic_references is the *parallel reference-photo catalog*; this file is the *why-it-matters cultural narrative*. Both feed asset_plan procurement and Wesley bundle authenticity claims, but operate on different artefact classes (photo vs cultural-semantic argument).
+- `docs/wesley_deliverable_bundle.md` Tier-1 deliverables item #5 + §"Authenticity backing" — cultural_notes is in the Wesley client bundle as the cultural authenticity backing for the 2026-06-27 escritura presentation. The "culturally Paraguayan first" claim Wesley uses with buyers/architects/community traces back to this file.
+- `docs/SESSION_LOG.md` tick 18 + tick 19 (2026-06-10) — canonical audit-trail entries documenting when the cross-reference closure pattern was applied across the doc mesh. Any future cold-start session can reconstruct the doc-mesh discoverability state from the SESSION_LOG tick-by-tick narrative.
+- `STATUS.md` §4 task ledger — Tasks #10/#12 (Sketchfab flora + Lapacho Hyper3D GUI) procurement decisions are gated on cultural_notes §Plants verifying species candidacy. Cultural mismatch is a procurement veto, independent of asset-quality scores.

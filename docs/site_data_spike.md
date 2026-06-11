@@ -93,3 +93,15 @@ When DEM arrives:
 - `lqv/site/site_plan.py` — current placeholder coords.
 - `lqv/site/terrain_62ha.py` — render-side DEM mesher (dormant).
 - `lqv/site/section_view.py` — section line that needs DEM to be accurate.
+
+### Extended back-pointers (additive 2026-06-10)
+
+This file has always been *referenced forward* by adjacent docs but the reverse pointers were never collected here. Listed below with *why* each back-link matters; the 6 outbound bullets above are unchanged.
+
+- `CLAUDE.md` §"Tier-1 docs Claude must read at session start" — entry-point doc names this file as the canonical site-survey-constants source. Cold-start sessions inheriting any positional/topographic question (escarpment line, footbridge y, contour topology, water-line position) begin here. Reciprocal to ARCHITECTURE.md "Positional coupling" invariant.
+- `docs/asset_plan.md` §C.1 + §C.2 — HDRI selection (Nishita sky strength + sun angle) and ground PBR selection (laterite/sandstone vs other terrain) are constrained by site_data_spike findings. This file is the empirical input; asset_plan §C is the asset-side response. Any §C revision must re-cite this file's constants.
+- `docs/research_index.md` §"Tier-1 references" + §"Coordinate-system notes" + §"Survey constants" — research_index treats this file as Tier-1 reading and points to §coordinate-system-notes from the cross-reference table. Phase 7.5 procurement validates against the survey constants here before any `[USED]` flip.
+- `docs/bom.md` Surveyor row (mensura — line 133) — bom.md procures the surveyor mensura *against* this file's Tier-1 spec; the line-item description names this file explicitly. bom is the cost-side response; this file is the scope spec.
+- `docs/housing_park_phasing.md` §"2026-08 milestone" — surveyor mensura completion in the phasing timeline points here as the Tier-1 deliverable. Any phasing slippage must update this file's Tier-1 status.
+- `docs/energy_budget.md` §"Hydro head" — the 12 m measured drop hydro spec carries a "verify after `site_data_spike` survey" caveat naming this file. Pelton turbine sizing locks once this file's hydro section closes.
+- `docs/SESSION_LOG.md` tick 19 (2026-06-10) + STATUS.md §1.1 satellite block — canonical audit-trail entries for the Batch 10 Sentinel-2 + DEM + OSM + GEDI + GBIF site_data spike that landed alongside this doc. Cold-start sessions reconstruct the spike-execution state from those audit entries.
