@@ -6,9 +6,18 @@ cd "$(dirname "$0")/.."
 [ -f scene.blend ] && cp scene.blend scene.blend.session-backup
 
 log=$(mktemp)
+# Build + audit in one Blender session. --python-expr runs after --python so
+# ten_rules_check inspects the actually-built scene; sys.exit(1) on real
+# violations propagates back as a non-zero exit from Blender.
+audit='from lqv.util import ten_rules_check; import sys; v = ten_rules_check.run(); sys.exit(2 if v else 0)'
 if ! RENDER_SKIP=1 RENDER_RES=preview RENDER_VARIANT="${RENDER_VARIANT:-A}" \
-     blender --background --python build_scene.py 2>&1 | tee "$log"; then
-  echo "SMOKE TEST FAILED: blender exited non-zero" >&2
+     blender --background --python build_scene.py --python-expr "$audit" 2>&1 | tee "$log"; then
+  rc=${PIPESTATUS[0]}
+  if [ "$rc" = "2" ]; then
+    echo "SMOKE TEST FAILED: ten_rules_check found design-rule violations (see [ten_rules_check] lines above)" >&2
+  else
+    echo "SMOKE TEST FAILED: blender exited $rc" >&2
+  fi
   exit 1
 fi
 if grep -q "Traceback (most recent call last)" "$log"; then

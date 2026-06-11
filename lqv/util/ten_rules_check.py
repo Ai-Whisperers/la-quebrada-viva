@@ -108,15 +108,24 @@ CHECKS = (
 
 
 def run(verbose: bool = True) -> List[str]:
+    """Return real violations only. Skipped checks are printed but excluded
+    from the returned list — per the module docstring, "skipped" means the
+    audit could not verify the rule and must not be treated as a false
+    positive (e.g., by CI gates)."""
     all_violations: List[str] = []
     for label, fn in CHECKS:
         try:
             v = fn()
         except Exception as exc:
             v = [f"{label}: check raised {exc!r}"]
+        real = [line for line in v if 'skipped' not in line.lower()]
         if verbose:
-            print(f"[ten_rules_check] {label}: {len(v)} issue(s)")
+            skipped = len(v) - len(real)
+            tag = f"{len(real)} issue(s)"
+            if skipped:
+                tag += f", {skipped} skipped"
+            print(f"[ten_rules_check] {label}: {tag}")
             for line in v:
                 print(f"  - {line}")
-        all_violations.extend(v)
+        all_violations.extend(real)
     return all_violations
