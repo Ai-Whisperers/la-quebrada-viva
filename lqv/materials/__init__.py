@@ -16,15 +16,16 @@ The implementation is split into thematic submodules for navigability:
 * :mod:`.glass`   — bottle cobalt/amber/green/brown, pool water (volumetric).
 * :mod:`.props`   — steel anodized/mesh, PV glass, window glow, firefly.
 
-Only ``MAT``, ``assign``, ``build_materials``, and ``COL`` are part of the
-public surface — downstream code already imports those by name from
-``lqv.materials``.
+Public surface: ``MAT``, ``COL``, ``assign``, ``build_materials``,
+``principled``, ``textured_principled``. Downstream code (e.g.
+``lqv.house.tatakua``) imports the shader primitives by name from
+``lqv.materials`` and the split must preserve that.
 """
 from __future__ import annotations
 
 from lqv.materials import earth, foliage, glass, props, wood
 from lqv.materials._palette import COL
-from lqv.materials._shaders import assign
+from lqv.materials._shaders import assign, principled, textured_principled
 
 MAT: dict = {}
 
@@ -46,4 +47,4 @@ def build_materials() -> None:
     MAT['pool_water'] = glass.make_pool_water()
 
 
-__all__ = ['MAT', 'COL', 'assign', 'build_materials']
+__all__ = ['MAT', 'COL', 'assign', 'build_materials', 'principled', 'textured_principled']
