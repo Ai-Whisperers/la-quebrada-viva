@@ -32,6 +32,13 @@
 | `lqv/flora/fern.py` | 2.8m trunk + 6 frond ellipsoids | Reuses `MAT['pindo_trunk']` |
 | `lqv/flora/bamboo.py` | Leaning culm clumps + leaf masses | `scatter_grass_tufts(n=80)` exists but is **not wired into the driver yet** |
 | `lqv/flora/agave.py` | 14-blade rosettes | |
+| `lqv/flora/fireflies.py` | ~80 firefly emission spheres scattered on corredor + lower terrace | Variant C only; warm yellow-green emission, low-strength point sources; placed AFTER `random.seed()` so per-cam regeneration stays deterministic |
+
+### Variant C additions (2026-06-10) — already in code, listed for navigation
+
+- `lqv/lighting.py` — Variant C branch (cool moonlight + low blue sky strength, exposure +0.6 set in `build_scene.py`). The "Anything else raises ValueError" note above predates C and is now stale; C is a valid variant.
+- `lqv/house/cob.py:build_window_emission` — warm window-glow emission planes positioned inside the hidden `WindowCut_*` cutouts so windows read as lit-from-within on Variant C only.
+- `lqv/flora/fireflies.py` — see Subpackages row above.
 
 ## Coordinate convention
 
@@ -51,3 +58,18 @@
 - Variant A sun elevation 13° not 20° (looked better; commented in lighting.py).
 - Hero camera 2.4m / 28mm vs brief's 0.6m / 35mm.
 - Laterite primary `#C4522A` is slightly outside the documented photo range (warmer read under AgX).
+
+## Cross-references (additive 2026-06-10)
+
+This file is the navigation entry for the `lqv/` Python package; multiple docs *point at* this file for code-location lookups but the reverse pointers were missing. Closed here without modifying the module tables, fragility list, or known-divergences block above.
+
+- `CLAUDE.md` §"Document map" — names this file as the read-before-editing-code authority + lists code invariants (RNG seed ordering, MAT registry, hidden `WindowCut_*` cutters, positional coupling web) that this file's Fragility section enforces. The two files together are the contract: CLAUDE.md says *why* the invariant exists; this file says *which module enforces it*.
+- `STATUS.md` — current render manifest + open-task ledger; pairs with the module table above to answer "which builder produced the artefact that's now on disk."
+- `docs/SESSION_LOG.md` — narrative log of the 2026-06-10 mega-session including Variant C implementation. The "Variant C additions" block at §"Variant C additions (2026-06-10)" above is the code-side index; SESSION_LOG is the decision-side index for the same work.
+- `docs/asset_plan.md` §C + §G (Cross-references) — Phase 8 asset-import plan that lands inside `lqv/asset_loader.py` (planned module, not yet in the table above). When that module is added, the table will need a new row; until then asset_plan §G is the forward-looking pointer.
+- `docs/external_assets.md` §Cross-references — Sketchfab + Poly Haven download log; `USE_EXTERNAL_FLORA` flag location is documented there as targeting this package's flora subpackage.
+- `docs/license_obligations.md` — Variant C procedural-recipe carve-out names the three code paths (`lqv/lighting.py` Variant C branch, `lqv/house/cob.py:build_window_emission`, `lqv/flora/fireflies.py`) listed in the §"Variant C additions" block above; the two docs must stay in sync.
+- `docs/wesley_deliverable_bundle.md` §Cross-references — Tier-2 USB/cloud bundle includes "`lqv/*` Python package as a zipped reference"; this file is the navigation aid the bundle recipient (Wesley + future maintainers) uses to read that zip.
+- `CREDITS.md` + `LICENSE_BUNDLE.md` — per-asset attribution + per-license summary; the procedural-recipe Variant C additions add zero new attribution rows, which both docs explicitly note. The §"Variant C additions" block above is the reciprocal source-of-truth for that "zero new third-party assets" claim.
+- `docs/research/README.md` (Phase 7.5 research synthesis) — 10 design rules + 80-repo catalogue. The Fragility section above is the code-side enforcement of design rules 1 (no right angles in cob — bmesh + subdiv + displacement only), 4 (raised foundation — `lqv/house/cob.py`), 5 (wide overhangs — sod roof bbox ±0.9m), 8 (cultural Paraguay first — corredor module + tatakua module).
+- `_archive/build_scene.py.pre-refactor.bak` — pre-refactor monolith; reference only, never edit or import. Listed here so readers tracing module ancestry know where the historical version lives without grepping for it.

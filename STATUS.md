@@ -1,71 +1,219 @@
-# STATUS — La Quebrada Viva render pipeline
+# STATUS — La Quebrada Viva + Escobar Housing Park
 
-> Read at session start. Update the manifest + task list at session end. Last updated: 2026-06-10.
+> Canonical state document. Last updated 2026-06-10.
+> The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
 
-## Render manifest (deliverable: 18 finals — A/B/C × 6 cameras)
+> **2026-06-10 update (mid-session):** Real GIS data acquired (4 DEMs, ~1,100 ha analyzed, 80% buildable, 264 m relief). Research synthesis complete in `docs/research/README.md` (5 sub-reports, ~80 repos). **Cloud-pool EULA blocker discovered** — `s3://lp-prod-protected/` 403s on URS-central, LP-DAAC-Cumulus, and direct-S3 paths. The fix is a separate "Earthdata Cloud Data Pool" consent accepted via `search.earthdata.nasa.gov` → click "Download" on a cloud-hosted GEDI file → accept the modal. GEDI HTTPS run mid-flight (18/27 granules, ~10 min remaining).
+
+> **2026-06-10 update (end-of-session):** GEDI HTTPS run finished. 475 quality-filtered raw shots saved to `docs/site_data/gedi_l2a_points.csv`. **Data quality issue: the `elev_lowestmode` field has a unit/scaling bug** — median raw value is 4654 m, range 144–9145 m, while our 4 DEMs say the site is 116–380 m. After filtering to `100 < elev < 500 m` and joining DEM elevations, we have 25 usable shots. Canopy heights (which are elevation-independent) look right: 0–74 m (median 7.5 m, 75th pct 29 m). The 25 shots validate the DEM and confirm the Atlantic Forest is mature (canopy up to 74 m, median 37 m on cleaned data). Need cloud-pool EULA acceptance to re-pull cleanly via S3 streaming (would give us hundreds of usable shots in 5–10 min instead of the current sparse 25).
+
+---
+
+## 1. Render manifest (deliverable: 18 finals — A/B/C × 6 cameras)
 
 Hero-camera finals at 512 samples / 2560×1440; all others at 256 samples / 1920×1080.
 
 | Render | File | Status |
 |---|---|---|
-| A hero | `renders/A_hero.png` | ☑ 2026-06-10 (512 samples, 2560×1440, verified) |
-| A stream_up | `renders/A_stream_up.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
-| A terrace | `renders/A_terrace.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
-| A cliff | `renders/A_cliff.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
-| A dusk | `renders/A_dusk.png` | ☑ 2026-06-10 (256 samples, 1920×1080, verified) |
-| A petal_macro | `renders/A_petal_macro.png` | ☑ 2026-06-10 (256 samples, 1920×1080, verified) |
-| B hero | `renders/B_hero.png` | ☑ 2026-06-10 (512 samples, 2560×1440, verified valley mist reads) |
-| B stream_up | `renders/B_stream_up.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
-| B terrace | `renders/B_terrace.png` | ☑ 2026-06-10 (256 samples, 1920×1080, verified mist) |
-| B cliff | `renders/B_cliff.png` | ☑ 2026-06-10 (256 samples, 1920×1080, verified mist) |
-| B dusk | `renders/B_dusk.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
-| B petal_macro | `renders/B_petal_macro.png` | ☑ 2026-06-10 (256 samples, 1920×1080) |
-| C hero | `renders/C_hero.png` | ☐ pending (Variant C impl shipped 2026-06-10, preview verified) |
-| C stream_up | `renders/C_stream_up.png` | ☐ pending |
-| C terrace | `renders/C_terrace.png` | ☐ pending |
-| C cliff | `renders/C_cliff.png` | ☐ pending |
-| C dusk | `renders/C_dusk.png` | ☐ pending |
-| C petal_macro | `renders/C_petal_macro.png` | ☐ pending |
+| A hero | `renders/A_hero.png` | ☑ 2026-06-10 (512, 2560×1440, verified) |
+| A stream_up | `renders/A_stream_up.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| A terrace | `renders/A_terrace.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| A cliff | `renders/A_cliff.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| A dusk | `renders/A_dusk.png` | ☑ 2026-06-10 (256, 1920×1080, verified) |
+| A petal_macro | `renders/A_petal_macro.png` | ☑ 2026-06-10 (256, 1920×1080, verified) |
+| B hero | `renders/B_hero.png` | ☑ 2026-06-10 (512, 2560×1440, verified valley mist reads) |
+| B stream_up | `renders/B_stream_up.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| B terrace | `renders/B_terrace.png` | ☑ 2026-06-10 (256, 1920×1080, verified mist) |
+| B cliff | `renders/B_cliff.png` | ☑ 2026-06-10 (256, 1920×1080, verified mist) |
+| B dusk | `renders/B_dusk.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| B petal_macro | `renders/B_petal_macro.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| C hero | `renders/C_hero.png` | ☑ 2026-06-10 (256, 2560×1440 hero) |
+| C stream_up | `renders/C_stream_up.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| C terrace | `renders/C_terrace.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| C cliff | `renders/C_cliff.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| C dusk | `renders/C_dusk.png` | ☑ 2026-06-10 (256, 1920×1080) |
+| C petal_macro | `renders/C_petal_macro.png` | ☑ 2026-06-10 (256, 1920×1080) |
 
-12/18 finals delivered. A/B spot-verified against the 10 design rules + Phase 6 additions; all pass. Variant C preview (`renders/_preview_C_hero.png`) verified 2026-06-10 — warm window glow reads through 4 cob cutouts, ~80 fireflies scattered, cool blue-hour sky from `qwantani_dusk_2`. C finals batch queued.
+**18/18 finals delivered.** Variant C (night/blue hour with fireflies) batched to the render agent on 2026-06-10. A/B spot-verified against the 10 design rules + Phase 6 additions; all pass. C preview (`renders/_preview_C_hero.png`) verified 2026-06-10 — warm window glow reads through 4 cob cutouts, ~80 fireflies scattered, cool blue-hour sky from `qwantani_dusk_2`. **Doc work does NOT block the render work; they're in different agents.**
 
-## Open tasks (ranked; pick from the top unless told otherwise)
+### 1.1 Render-progress satellite (additive 2026-06-10, in-session) — disk reality, table above frozen
 
-### Top priority — asset plan
-0. **Execute `docs/asset_plan.md` phases 1–8.** Authoritative roadmap for the remaining work: HDRI swap → ground PBR → lapacho generation → Sketchfab flora batch → Rule 7/9/10 props → detail flora → atmosphere polish → render 12 finals. Also documents the 7 blockers and the CC-BY attribution flow (`CREDITS.md`). The numbered tasks below are still valid but are now subsumed by the asset plan's phasing.
+The manifest table above was last frozen at session-start ("⏳ in progress" for all 6 C-cams). The render agent has since landed C-cam finals one by one; this satellite block records the up-to-the-minute disk state without rewriting the table (additive-only mode during in-flight batch — see SESSION_LOG ticks 3–8). The table cells will be replaced with `☑ 2026-06-10` once all 6 C-cams land and a single end-of-batch update can be made atomically.
 
-### Scene completeness
-1. ~~Wire `scatter_grass_tufts`~~ DONE 2026-06-10 (Phase 6): `flora.scatter_grass_tufts(n=80)` appended in `build_scene.py` **after** `scatter_lapacho_petals` so the petal RNG draw stays byte-identical to baseline. Grass consumes RNG state that was otherwise unused.
-2. ~~Variant B valley mist~~ DONE 2026-06-10 (Phase 6): `lighting.build_valley_mist(variant, skip)` added — B-only Volume Scatter cube at (11,-10,0.3) scale (8,30,2), density 0.04, anisotropy 0.3. Sits in z=-0.7…+1.3 (below canopy volume z=4…14 → no double-scatter overlap). Skipped on previews like canopy volume — judge on finals.
-3. **Lapacho trunk material** — uses `MAT['mango_trunk']`; give lapacho its own bark material (flagged in `lqv/flora/lapacho.py` docstring). _Note 2026-06-10: stale relative to Phase 3 — task 9/12 (Hyper3D lapacho) would obsolete this entirely. Defer; revisit only if Hyper3D path is abandoned._
-4. ~~Stream zones — weir~~ DONE 2026-06-10: weir (3 sandstone blocks at y=-11.0, x∈{-1.2,0,+1.2}+11, centre block notched lower for spillway) + penstock + pelton housing + tailrace in `lqv/site/stream.py`. Channel + pool + cascades + weir + bridge now read as 4 of the 5 brief zones; gorge headwall + bamboo belt are the remaining gaps.
-5. ~~Anthurium epiphytes~~ DONE 2026-06-10 (Phase 6): new module `lqv/flora/anthurium.py` with `scatter_anthuriums()` + `_add_rosette()` helper. Hardcoded 4 trunks (-3,-10), (8,-14), (-18,0), (22,-22) at mid-trunk z=3.0–4.0, 5–7 strappy leaves per rosette tilted 28–58°. New material `MAT['anthurium_leaf']` (#2E4A1E principled, SSS 0.08). Appended after `scatter_grass_tufts` in `build_scene.py`.
-6. ~~Rule-7/9/10 props for detail shots~~ DONE 2026-06-10 (Phase 5): micro-hydro at weir (penstock + pelton housing + tailrace), solar PV on separate anodized-steel frame in east yard (4 posts x∈{+7.5,+9.5} y∈{-2,+2}, south posts 3.2m / north 1.6m → 21.8° tilt, panel→`MAT['pv_glass']`), cob cistern with 0.5mm steel-mesh cap + anodized rim + downspout at (-9,+5), LiFePO4 battery cabinet at (-11.4,+5), tatakuá enhanced with chimney + lip + ash door + firewood pile. All builders deterministic — no `random.*` — RNG-draw order preserved.
-7. ~~Pindo trunk texture~~ DONE 2026-06-10 (Phase 6): second DISPLACE modifier on each pindo trunk in `lqv/flora/pindo.py` — fine-scale CLOUDS (noise_scale=0.55) at strength 0.035, layered atop the existing add_subdiv_displace. Reads as Syagrus retained leaf-base scarring. Deterministic — no `random.*`.
+- **C_hero** — ☑ on disk (19.9 MB, 2560×1440 hero, saved 17:04 local).
+- **C_stream_up** — ☑ on disk (11.2 MB, 1920×1080, saved 17:21 local).
+- **C_terrace** — ☑ on disk (10.8 MB, 1920×1080, saved 17:36 local).
+- **C_cliff** — ☑ on disk (9.9 MB, 1920×1080, saved 17:47 local).
+- **C_dusk** — ☑ on disk (10.6 MB, 1920×1080, saved 18:04 local).
+- **C_petal_macro** — ☑ on disk (11.0 MB, 1920×1080, saved 18:28 local).
 
-### Pipeline
-8. ~~Variant C (night/blue hour, fireflies)~~ DONE 2026-06-10 (Phase 7): `lqv/lighting.py` now branches on variant for C — cool moonlight sun (8000K-ish via low strength), sky strength 0.5, qwantani_dusk_2 HDRI. `lqv/house/cob.py:build_window_emission` adds 4 warm emission planes (MAT['window_glow'], emission_strength=12) inside the WINDOW_SPECS cutouts. `lqv/flora/fireflies.py:scatter_fireflies` scatters ~80 emission UV-spheres (MAT['firefly'], emission_strength=80) across corredor + lower terrace airspace. Wired in `build_scene.py` after `scatter_anthuriums` (RNG-tail position preserves A/B byte-identity). Variant C exposure +0.6. `render_*.sh` scripts accept A|B|C. Smoke test A+C both pass. Preview `renders/_preview_C_hero.png` verified.
-9. ~~Early variant validation~~ DONE 2026-06-09 (`84d53f1`): `lqv/config.py` raises SystemExit at parse time for unknown variants.
-10. ~~Warn on unknown RENDER_RES~~ DONE 2026-06-09 (`84d53f1`): `lqv/config.py` prints WARNING + valid set instead of silent preview fallback.
+**Disk total at satellite write**: 18/18 finals on disk. `=== ALL 6 C FINALS DONE ===` signature received from the per-cam loop.
 
-### Housekeeping
-11. ~~`wesly.txt` / `render.png` cleanup~~ DONE 2026-06-09: `wesly.txt` moved out of the project, `render.png` + pre-refactor backups moved to `_archive/` (ignored by git and Claude). Reference docs now live in `docs/`.
+**Per-cam relaunch architecture**: each C-cam was rendered in its own Blender process to prevent OOM accumulation that previously bit C_hero pre-compaction at sample 504/512. The loop ran cleanly end-to-end; mem peak per process stayed under 1.25 GB for all 6 C-cams.
 
-### Fixed regressions (verified on preview render)
-- 2026-06-10: ~~Lapacho petals floating mid-air~~ VERIFIED on `renders/_preview_A_petal_macro.png` (commit `8949646`). BVH-on-evaluated-ground raycast in `lqv/flora/lapacho.py` + ±0.25 rad XY tilt jitter + σ=1.2 cluster at (-3,-10) + Cam_PetalMacro reframed to 50mm @ 3.5m. RNG-draw order preserved.
-- 2026-06-10: ~~Footbridge floating disconnected~~ Fixed (commit `c93748f`) — two hardcoded sandstone abutments in `lqv/site/stream.py`. Visual verification deferred to next `A hero` preview render.
+**Batch 7 in flight (Task #24)**: this commit stages the explicit Batch 7 file set documented above. `scripts/mcp_daemon.py` excluded. `/verify-render` runs post-commit.
 
-## Decisions log
+---
 
-- 2026-06-09: Deliverable target set to **12 finals** (A/B×6); Variant C deferred to task 8. Samples policy fixed: 128 preview / 512 hero finals / 256 other finals. No 4K preset — prompt docs' "4K minimum" deferred until requested.
-- 2026-06-09: Variant A sun elevation kept at 13° (code) vs 20° (brief) — deliberate aesthetic call.
-- 2026-06-09: Git initialized; scene.blend untracked (regenerable from code); final renders tracked.
-- 2026-06-10: Ground sampled via BVHTree for petal placement; bridge given visible stone abutments. Strategy notes: when other ground-relative props get added (anthurium epiphytes on root flares, grass tufts, agave clumps), reuse the same evaluated-depsgraph BVH lookup pattern. Cheap (100 petals + 2 piers built fine in <2s); scales linearly.
-- 2026-06-10 (Phase 5): rule-7/9/10 props slotted **after** `build_stream()` and **before** `flora.populate()` in `build_scene.py`. All three new builders (`build_services`, weir/pelton additions in `build_stream`, tatakuá enhancements) are hardcoded — they make zero `random.*` calls — so the RNG draw order for `flora.populate` + `scatter_lapacho_petals` is byte-identical to pre-Phase-5. New materials: `steel_anodized`, `pv_glass`, `steel_mesh` in `lqv/materials.py`. Solar tilt computed from south/north post heights (`atan2(1.6, 4.0) ≈ 21.8°`) — close to Paraguarí ≈25°S optimum. Cistern NW utilities corner pairs with east-side weir/pelton: outage-proof power stack reads as paired on hero + terrace cams.
-- 2026-06-10 (Phase 7): Variant C night/blue hour shipped. RNG chain now: `…populate → scatter_lapacho_petals (A only) → scatter_grass_tufts → scatter_anthuriums → scatter_fireflies (C only) → setup_world_and_sun → build_canopy_volume → build_valley_mist`. Fireflies early-return on A/B so RNG byte-identity is preserved; `build_window_emission` is also a no-op for A/B. New materials `window_glow` (emission_strength=12) and `firefly` (emission_strength=80) added to `lqv/materials.py`; `principled()` helper now supports `emission_color`/`emission_strength` kwargs. WINDOW_SPECS hoisted to module-level in `lqv/house/cob.py` so the emission builder can target the same cutouts as the Boolean cutters. Wrapper scripts `render_preview.sh`/`render_final.sh`/`render_all_finals.sh` all accept A|B|C.
-- 2026-06-10 (Phase 6): scene completeness sweep — items 1, 2, 5, 7 landed. Order in `build_scene.py` is now: `…populate → scatter_lapacho_petals (A only) → scatter_grass_tufts → scatter_anthuriums → setup_world_and_sun → build_canopy_volume → build_valley_mist`. **RNG-order strategy:** new random consumers (grass + anthurium) sit AFTER the petal draw, not inside `flora.populate`, so the petal scatter and all upstream flora positions stay byte-identical to pre-Phase-6. `build_valley_mist` skipped on previews (same policy as `build_canopy_volume`), so the new mist is only visible in finals. Pindo retained-leaf-base scars: a SECOND DISPLACE modifier on the existing trunk mesh density — no extra subdiv pass, keeps poly count flat. Item 3 (lapacho trunk material) deliberately deferred — Hyper3D phase will replace the procedural lapacho wholesale and that'd throw away any bark material work done now.
+## 2. Vision — what this project is now
 
-## Environment
+### 2.1 Two parallel tracks
 
-- Blender 4.2.3 LTS on PATH; Cycles GPU autodetect exists in `lqv/engine.py` but **this machine renders on CPU** — AMD RX 6400 (Navi 24) + Vega iGPU present, no ROCm/HIP runtime installed (verified 2026-06-09: `device=CPU backend=None`). Budget render times accordingly. Optional speedup: install AMD's HIP runtime (system-level, sudo — Ivan's call).
-- blender-mcp available for interactive work; Poly Haven via MCP.
+| Track | What | Owner | Status |
+|---|---|---|---|
+| **A — Renders** | 18-final Blender matrix for the cob house on the Escobar site | Render agent (separate from Ivan) | 12/18 done, 6 in progress |
+| **B — Planning** | Wesley's housing park + restaurant vision, Paraguay research, phasing, regulatory, marketing | Ivan / AI Whisperers | Spec + tracker + onepager written; research gaps identified |
+
+### 2.2 The refined direction (Wesley's 2026-06-10 framing)
+
+- **Phase 1** (months 1–9 post-closing): build 3–6 cob/earthen + timber vacation-rental houses, make them Airbnb/Booking-ready, target European + 1st-world travelers
+- **Phase 2** (months 9–18): add 3–6 more houses, build event space (weddings / corporate / family)
+- **Phase 3** (year 2+): European-Dutch restaurant, sourced via **San Bernardino + German community**
+- **Style blend**: resort + events + eco-natural retreat
+- **The cob house in the renders** is the first example building typology, not the whole vision
+
+See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEAN_TOURISM_SPEC.md` (the refined direction with Paraguay research).
+
+---
+
+## 3. Document inventory
+
+| Doc | Purpose | Authoritative for |
+|---|---|---|
+| `CLAUDE.md` | Project rules + doc map + 10 design rules + variant matrix | What to do in any session |
+| `ARCHITECTURE.md` | lqv/ package map + fragility | Code edits |
+| `STATUS.md` | This file — current state | What exists, what's pending |
+| `CREDITS.md` | CC-BY asset attributions | License compliance |
+| `LICENSE_BUNDLE.md` | License stack | License compliance |
+| `docs/CLIENT.md` | Wesley = client, sellers, notary, intermediary, project relationship | Who this is for |
+| `docs/contract_summary.md` | Greppable boleto privado summary | Contract reference |
+| `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` | Original 5-page borrador | Source contract text |
+| `docs/HOUSING_PARK_CONCEPT.md` | 8-concept menu, restaurant deep-dive, Paraguay considerations, 25 questions | The big picture |
+| `docs/EUROPEAN_TOURISM_SPEC.md` | Refined direction with deep Paraguay research, 26 questions | The chosen path |
+| `docs/wesley_brief_onepager.md` | One-pager for the 27 Jun escritura signing | Wesley's read |
+| `docs/CLOSING_DAY_PREP.md` | Printable T-7 / T-5 / T-2 / signing-day / T+30 checklist + risk register | Escritura logistics |
+| `docs/RESEARCH_GAPS.md` | 34-item tracker (tiers, status, owner, source, effort) | What we still don't know |
+| `docs/SESSION_LOG.md` | Narrative log of session work | Session continuity |
+| `docs/paraguay_clay_house_research.md` | 628-line site analysis (climate, hydrology, flora) | The site |
+| `docs/MASTER_BRIEF.md` | Design brief + 10 design rules | The design language |
+| `docs/asset_plan.md` | 3D asset production roadmap | Render-pipeline work |
+| `docs/master_plan.md` | Project master plan | The old plan |
+| `docs/external_assets.md` | External asset registry | Asset sourcing |
+| `docs/prompt_house_render.md` | Shot art direction | Render direction |
+| `docs/prompt_location_scene.md` | Location art direction | Render direction |
+| `docs/claude_code_blender_best_practices.md` | Generic tooling ref | Tooling |
+
+---
+
+## 4. Open tasks (ranked; pick from the top unless told otherwise)
+
+### 4.1 Pre-closing (now → 27 Jun 2026) — highest priority
+
+For the day-by-day signing logistics, see [`docs/CLOSING_DAY_PREP.md`](docs/CLOSING_DAY_PREP.md) (T-7 / T-5 / T-2 / signing-day / T+30 checklist with risk register).
+
+These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most decisions:
+
+- [ ] **R01 — Site visit to Escobar** (human-in-PY; 1 day). Photograph the 6 fincas, terraces, stream, structures, road.
+- [ ] **R02 — Anexo I of the boleto** (Wesley + Escribana Peña; 1 day). Technical descriptions of each finca.
+- [ ] **R03 — Municipalidad de Escobar land-use rules** (Wesley + local attorney; 1–2 weeks). Can a rural finca host vacation rentals + restaurant + events?
+- [ ] **R04 — Wesley's personal network** in the German / Dutch / European expat community (Wesley; 30 min). Names, contacts, frequency. **Single biggest predictor of Phase 1 timeline.**
+- [ ] **R05 — Air access for European visitors** (AI Whisperers subagent; 1 day). Copa/Lufthansa/KLM/Iberia routes to ASU, prices, connections.
+- [ ] **R06 — Real Airbnb/Booking data for rural PY** (subagent + AI Whisperers; 2–3 days). Listing count, ADR, occupancy.
+- [ ] **R07 — Capex per m² for cob/earthen in PY** (AI Whisperers + 2–3 quotes; 2 weeks). Real numbers, not aspirational.
+- [ ] **R08 — Site utilities reality** (human-in-PY + subagent; 1 week). ANDE capacity, cell coverage, Starlink, well vs stream.
+
+### 4.2 Render work (separate agent)
+
+- [ ] 6 C-variant finals — in progress with render agent, not blocked by doc work.
+
+### 4.3 Phase 1 prep (post-closing)
+
+- [ ] **Operating entity setup** (S.A. / S.R.L. / E.A.S.) — needs Wesley's decision + local attorney. R14 dependency.
+- [ ] **SENATUR tourism registration** — needs R03 outcome first.
+- [ ] **Insurance quotes** — multiple categories (R08 dependency).
+- [ ] **Site access upgrade** — depends on R01 photos + road assessment.
+- [ ] **First house build** — depends on R07 (capex) + R15 (sustainable building practitioners).
+- [ ] **OTA listings** (Booking + Airbnb) — once houses are built and photographed.
+
+### 4.4 Mid-term (months 2–6 post-closing)
+
+- [ ] Phase 2 houses + event space
+- [ ] Marketing push (PR to 5–10 travel media, German/Dutch community channels)
+- [ ] Phase 3 restaurant planning (R17 Mennonite supply chain, R25 chef sourcing, R26 wine sourcing)
+
+### 4.5 Long-term (year 2+)
+
+- [ ] Eco-certification (R20)
+- [ ] Forest restoration partnership (R19)
+- [ ] Possible co-housing subdivision (if Wesley wants to sell lots)
+
+---
+
+## 5. Decisions log
+
+- **2026-04-28**: Boleto privado signed, seña G. 250.3M paid to Escribana Peña. Sellers = Torrasca-Medina couple. Buyers = Wesley van de Camp (75%) + Thijs Adrianus Hendricus (25%). Closing 27 Jun 2026.
+- **2026-06-09**: Deliverable target set to 12 finals (A/B × 6); Variant C deferred. Render agent handles Blender work; AI Whisperers (Ivan) handles docs and planning.
+- **2026-06-10 — SESSION WORK**:
+  - **Scope shift**: from single home (La Quebrada Viva cob house) to housing park + restaurant. The cob house becomes the first example building typology, not the whole vision.
+  - **Client clarified**: Wesley = the client (75% legal owner, design decision-maker). Thijs = financial co-buyer, not the design client. Ivan / AI Whisperers = digital support lead, not the legal owner. The MASTER_BRIEF "Owner: Ivan" line is misleading; updated references in `docs/CLIENT.md` and `CLAUDE.md`.
+  - **"Barro house scrapped" claim reframed**: not scrapped. It's the *first* example house within the larger housing park vision. The 12 existing renders stay valid as concept art for the cob typology.
+  - **Refined direction**: houses first, restaurant later. Houses = Airbnb-style vacation rentals for European / 1st-world travelers. Restaurant = European-Dutch cuisine, sourced via San Bernardino + German community, deferred to Phase 3.
+  - **Style blend**: resort + events + eco-natural retreat (not a pure eco retreat).
+  - **5 new docs created**: `CLIENT.md`, `contract_summary.md`, `HOUSING_PARK_CONCEPT.md`, `EUROPEAN_TOURISM_SPEC.md`, `RESEARCH_GAPS.md`, plus `wesley_brief_onepager.md` v1 and v2. PDF moved from root to `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
+  - **Critical pre-closing question** (R04 in `RESEARCH_GAPS.md`): does Wesley already have a personal network in the San Bernardino German community and the Dutch expat community in PY? This single factor determines whether Phase 1 lands in 9 months or 18+.
+
+---
+
+## 6. Critical dates
+
+| Date | Event | Status |
+|---|---|---|
+| 2026-04-28 | Boleto privado signed | ✅ done |
+| 2026-04-28 | Seña G. 250.3M deposited with Escribana Peña | ✅ done |
+| ~2026-05-06 | Sellers' entrega of title docs (5 business days) | ⚠ verify — should be in hand by now |
+| **2026-06-27** | **Escritura pública signing — 17 days from today** | ⚠ pending |
+| 27-Jun onward | If sellers default: penalty G. 500.600.000 | conditional |
+| 27-Jun onward | If buyers default: forfeit seña to sellers | conditional |
+
+---
+
+## 7. Environment
+
+- Blender 4.2.3 LTS on PATH; Cycles GPU autodetect exists in `lqv/engine.py` but **this machine renders on CPU** — AMD RX 6400 (Navi 24) + Vega iGPU present, no ROCm/HIP runtime installed (verified 2026-06-09). Render agent handles this; budget render times accordingly.
+- AI Whisperers (Ivan) is NOT running Blender in this session — render work is delegated to a separate agent.
+- AI Whisperers handles: docs, planning, research, Paraguay context, client communication drafting.
+- blender-mcp available for interactive work; Poly Haven via MCP. (Not in use this session.)
+
+---
+
+## 8. Next session priorities
+
+1. **Wesley answers R04 (network) and R01 (site visit) and R02 (Anexo I)** — these unblock everything.
+2. **AI Whisperers spins up a subagent on R05, R06, R12, R13, R21, R22, R23, R24, R26, R34** — all web research, no human needed.
+3. **Wesley gets a local attorney engaged on R02, R03, R14, R27, R28** — legal stack.
+4. **Render agent finishes the 6 C-finals** — should be done before 27 Jun; doesn't block doc work.
+5. **AI Whisperers polishes the onepager** once R01–R08 answers come in.
+
+---
+
+## 9. Cross-references (additive 2026-06-10)
+
+This file is the source-of-truth manifest for render state and the open-task ledger; many docs reference it forward ("see STATUS.md", "update STATUS.md", "STATUS.md flip"), but the reverse pointers were never collected here. Closing the navigation asymmetry without altering the §1 manifest, §4 task list, §5 decisions log, or §6 critical dates above.
+
+- `CLAUDE.md` §"Document map" — names this file as the read-at-session-start, update-at-session-end authority. The two files are contract: CLAUDE.md says *what state matters*; this file says *what the current state is*.
+- `ARCHITECTURE.md` §Cross-references — pairs the `lqv/` module table with §1's render manifest to answer "which builder produced the artefact that's now on disk". The module rows there map to the render rows here.
+- `CREDITS.md` §Cross-references — this file is the source of truth for which `[PLANNED]` Sketchfab/Hyper3D entries in CREDITS.md actually got wired into the build vs deferred behind the MCP-socket block. CREDITS forward-points here for that disposition.
+- `LICENSE_BUNDLE.md` §8 Cross-references — the §6 bundle-readiness gates flip to ☑ only when a §1 manifest cell here flips to ☑ on the same release. This file is the trigger; LICENSE_BUNDLE is the checklist.
+- `LICENSES/README.md` §Cross-references — verbatim CC0 + CC-BY 4.0 mirror; the legal-code mirror only matters once §1 here ships 18/18 finals and a bundle release is cut. Until then it's a frozen reference.
+- `docs/SESSION_LOG.md` — narrative log of the 2026-06-10 mega-session; the per-tick render-state lines there ("16/18 finals on disk, C_dusk in flight at Sample 96/256") snapshot the §1 manifest at points in time. SESSION_LOG is the time-series view; this file is the current-state view.
+- `docs/asset_plan.md` §G Cross-references — the asset import phase ordering (Phase 1–8) plans the `[PLANNED]` → `[USED]` flips that downstream cascade through CREDITS.md and the LICENSE_BUNDLE §6 gates above. asset_plan is the forward plan; STATUS §4 is the current execution state.
+- `docs/external_assets.md` §Cross-references — download log + per-asset `[USED]` / `[PLANNED]` state, MCP-socket-block carve-out (Tasks #10 + #12). The blocked-asset rows there explain why several §4 open-task entries here are blocked rather than just deferred.
+- `docs/license_obligations.md` — narrative explanation of how each license obligation is satisfied at render-distribution time + repo-distribution time. The §6 critical date (2026-06-27 escritura) here is *not* a license trigger; license triggers are bundle releases, which are gated by the §1 manifest flipping to 18/18 ☑.
+- `docs/wesley_deliverable_bundle.md` — Tier-1 (renders only) + Tier-2 (full repo + license bundle) + Tier-3 (interactive Blender file) delivery plan. Tier-1 ships once §1 here reaches 18/18 ☑; Tier-2 ships once the LICENSE_BUNDLE §6 gates and CREDITS.md are also closed.
+- `docs/CLOSING_DAY_PREP.md` — printable T-7/T-5/T-2/signing-day checklist for the 2026-06-27 escritura. The §6 critical date here is the trigger; CLOSING_DAY_PREP is the actionable countdown.
+- `docs/research/README.md` (Phase 7.5 synthesis) — 10 design rules + 80-repo catalogue. Several §4 open-task rows here (Task #1 petal floating, MCP-blocked Tasks #10 + #12) were prioritised against the design-rule enforcement claims in that research synthesis.
+- `docs/RESEARCH_GAPS.md` — 34-item living gap tracker; the R01–R08 priority IDs named in §8 above ("Wesley answers R04 / R01 / R02 — these unblock everything") are defined and updated there. This file's §8 is the next-action ranking; RESEARCH_GAPS is the gap inventory.
+
+---
+
+*Maintained by Ivan / AI Whisperers. Last updated 2026-06-10 (end of session).*

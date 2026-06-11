@@ -133,6 +133,19 @@ Run via `mcp__blender__generate_hyper3d_model_via_text` then `mcp__blender__impo
 **Thatch tileable texture (deferred unless roof material changes):**
 > "Sapé thatch roof, dried golden-brown palm thatch fibers, tileable seamless 2m square, top-down view, slightly weathered, natural strand variation."
 
+### Procedural-recipe entries (no Hyper3D call — recorded here for reproducibility)
+
+Variant C's emission-heavy elements are fully procedural; no external mesh is downloaded or generated. They are catalogued here alongside the Hyper3D prompts so the entire generated/procedural surface area of the scene is reproducible from this one section.
+
+**Fireflies (Variant C — `lqv/flora/fireflies.py`):**
+> 80 UV-spheres scattered with a 1:2 ratio between the corredor and the lower terrace. Each sphere uses `MAT['firefly']` with `emission_strength=80`. **Ordering invariant:** the scatter call must run AFTER `scatter_anthuriums` so RNG draw order — and therefore positional byte-identity vs the in-flight C render — stays stable. Re-running the build with a different ordering shifts every downstream `random.*` consumer.
+
+**Cob window emission planes (Variant C — `lqv/house/cob.py:build_window_emission`):**
+> Warm window-glow emission planes inserted inside each cob cutout, sized to fit just behind the hidden `WindowCut_*` Boolean cutters (see CLAUDE.md "Code invariants" #4). Material is `MAT['window_glow']` tuned to read as a candle/oil-lamp interior at dusk, not a modern LED. Strength is set on the material in `lqv/materials.py`; the builder only places geometry.
+
+**Bottle-wall procedural panel (Rule 8 cultural marker — `lqv/house/cob.py`):**
+> Instanced glass bottles (Sketchfab UID `334377879cb4475d9a4720a2f7c4cf55`, FrodoUndead, CC-BY 4.0) packed into procedural cutouts in a cob panel. Bottle material is a honey-coloured + clear-glass mix to read as recovered Quilmes/Brahma bottles. The cob panel geometry is procedurally generated; only the bottle mesh is external. Listed here (not §C.3) because the *panel as a whole* is a procedural assembly, not a downloadable asset.
+
 ---
 
 ## D. Integration plan
@@ -285,3 +298,36 @@ After the visual identity is locked, fill in understory richness.
 - It does not redesign cob walls. The procedural displacement is already on-brief.
 - It does not address windows, doors, smart-home interior tech. Those are interior-shot concerns — out of scope for the 12 establishing finals.
 - It does not change the samples policy (128 / 512 / 256) or seed (20260609).
+
+---
+
+## G. Cross-references (additive 2026-06-10 — closes orphan gap to license/deliverable satellites)
+
+This plan was previously a closed loop ending at §F. The satellite docs added over the 2026-06-10 session reference *this* doc as the source of truth for asset selection, but the reverse pointers were missing. Listed here so future readers can traverse the asset graph in either direction:
+
+- `docs/external_assets.md` — live download/status mirror of §C above plus Variant C procedural-recipe traceability block; the "is it actually on disk yet" companion to this plan's "what we want and why".
+- `docs/license_obligations.md` — what we owe whom (CC0 vs CC-BY 4.0) for every asset in §C; includes a Variant C procedural-recipe carve-out confirming Variant C imagery adds no new attribution obligation beyond the A/B CC0 chain.
+- `LICENSES/README.md` (repo root) — verbatim CC0 + CC-BY 4.0 legal-code mirror; the legal-text companion to the per-asset attribution rows planned in §D.5 (`CREDITS.md` schema).
+- `docs/wesley_deliverable_bundle.md` — Tier-1/2/3 shipping manifest for the 2026-06-27 escritura package; the assets in §C feed the Tier-2 USB/cloud bundle and back the Tier-1 prints.
+- `CREDITS.md` (repo root, populated as assets land) — per-asset attribution rows in the schema sketched in §D.5.
+- `LICENSE_BUNDLE.md` (repo root) — full license texts shipped alongside any redistribution.
+- `STATUS.md` (repo root) — source of truth for "which `place_*` helper is wired right now" vs "asset still on Phase 4 backlog"; reconciles this plan's phased order against in-flight render state.
+- `docs/SESSION_LOG.md` — narrative log of asset-plan execution including the per-cam render-loop architecture decision that ratified Phase 8.
+- `ARCHITECTURE.md` (repo root) — `lqv/` package code map; the `place_*` integration points named in §D.2 live in the modules listed there.
+- `CLAUDE.md` (repo root) — code invariants (RNG seed ordering, MAT registry, hidden `WindowCut_*` Boolean cutters) that §D.3 must preserve when wiring new assets.
+
+### Extended back-pointers (additive 2026-06-10, second pass)
+
+The original §G above closed the legal/deliverable axis. This second-pass extension closes the remaining axes (upstream-plan, research, cultural-backing, physical-construction, reference-photography) so the asset plan is reachable from every adjacent doc. Listed below with *why* each back-link matters:
+
+- `docs/master_plan.md` §Phase 1-8 — master_plan is the forward Phase 1-8 source-of-truth; this asset_plan is downstream of master_plan §Phase 7/8 (asset procurement + final renders). When master_plan phases shift, §E "Prioritised execution order" above shifts with them. Master_plan is upstream; this is the import-line plan that executes its phasing.
+- `docs/research_index.md` (root note + per-repo entries) — research_index catalogues the ~80 repositories surveyed during Phase 7.5 to identify candidate Sketchfab/PolyHaven/Hyper3D-adjacent assets and reusable code patterns. The §C.3 Sketchfab shortlist + §C.4 Hyper3D prompt archive draw from that survey. research_index is upstream; §C is the curated downstream shortlist.
+- `docs/cultural_notes.md` §Plants + §Materials — Rule 8 ("culturally Paraguayan first") backing. Every flora pick in §C.3/§C.4 (lapacho, pindo palm, mango, tatakuá, cob-panel) traces back to a cultural_notes entry. cultural_notes is the *why* behind species choices; §C is the *what we download* derived from those choices.
+- `docs/floor_plan.md` + `docs/section_view.md` — 2D drawings of the cob house. Asset placement helpers (`lqv/house/cob.py`, `lqv/site/site_plan.py`) reference these drawings as positional source-of-truth; §D.2 per-asset edit roadmap aligns each `place_*` helper to a drawing landmark. Drawings are upstream of `place_*`; `place_*` is upstream of §C asset rows.
+- `docs/bom.md` — bill of materials for the physical build. Every §C asset row that represents a material (cob panels, sandstone, laterite, lapacho) maps to a BOM line item. bom.md is the construction-side companion to this digital-asset plan; together they answer "what to build" vs "what to render".
+- `docs/site_data_spike.md` — site survey constants (62-ha boundary, contour topology, water-line position). §C.1 HDRI selection (Nishita sky strength + sun angle) and §C.2 ground PBR selection (laterite/sandstone vs other terrain) are constrained by site_data_spike findings. site_data_spike is the empirical input; §C is the asset-side response.
+- `docs/photographic_references.md` — parallel framework for reference photography (NOT embedded in renders, but used by humans as visual ground truth during §C.4 Hyper3D prompt iteration). When a Hyper3D prompt produces a candidate, reference photos validate cultural authenticity. photographic_references.md is the parallel reference-library; this plan is the asset-procurement plan.
+- `docs/build_sequence.md` — physical construction phasing (foundation → cob walls → bottle-windows → roof → finishings). §C.2 ground PBR + §C.4 cob-panel Hyper3D recipe map to specific phases in build_sequence. build_sequence is the physical timeline; this plan is the visual asset timeline for the renders that *show* that physical timeline.
+- `docs/energy_budget.md` — Rule 7+9 energy stack (solar + biogas + grey-water). §C.4 Hyper3D recipes for solar panels + biogas digester + grey-water tanks trace back to energy_budget sizing. energy_budget is the engineering target; §C is the visual artefact derived from it.
+- `docs/wesley_brief_onepager.md` — the one-pager Wesley brings to the escritura; key visual claims ("Paraguayan first", "low-impact", "62 ha") are backed by the assets selected here. wesley_brief_onepager is the message; §C feeds the imagery that supports the message.
+- `docs/contract_summary.md` — parcel + ownership facts; §C.1 HDRI sun-angle calibration uses the contract_summary parcel coordinates to set the latitude-correct sun path. contract_summary is the geographic ground-truth; §C.1 HDRI orientation is downstream.

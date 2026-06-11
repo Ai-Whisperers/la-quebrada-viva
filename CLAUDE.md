@@ -1,15 +1,53 @@
 # house-field — project instructions
 
-This project renders **La Quebrada Viva**, a cob/bottle earthen smart home on a real stream-side property in **Escobar District, Paraguarí, Paraguay**. Render first; real build eventual.
+This project supports **Wesley van de Camp** in visualizing a real 62-ha property in **Escobar District, Paraguarí, Paraguay**, on which Wesley plans a **housing park + restaurant + amenities**. The current 3D work renders **La Quebrada Viva**, a cob/bottle earthen house that's the first example building typology on the site. Renders are concept art; the site model is the durable deliverable. See `docs/HOUSING_PARK_CONCEPT.md` for the full vision and `docs/CLIENT.md` for who Wesley is.
 
 ## Document map — which file is authoritative for what
 
+- `docs/CLIENT.md` — **Wesley van de Camp = client & 75% owner** (Thijs = 25% co-buyer, not the design client); AI Whisperers (Ivan) = digital support lead. Sellers, notary, intermediary, **escritura deadline 2026-06-27**. Read first for "who is this for".
+- `docs/HOUSING_PARK_CONCEPT.md` — **Wesley's expanded vision (2026-06-10)**: 62 ha as a housing park + restaurant + amenities in Escobar, Paraguarí. 8 concept models, restaurant deep-dive, Paraguay-specific legal/tax/cultural/climate considerations, phasing, **25 open questions for Wesley**, suggested next steps. The current cob/bottle design is one example house on the larger site, not the whole vision.
+- `docs/wesley_brief_onepager.md` — **DRAFT one-pager for the 27 Jun escritura signing** (short version of HOUSING_PARK_CONCEPT). Will be polished once Wesley answers the 5 priority questions.
+- `docs/EUROPEAN_TOURISM_SPEC.md` — **Refined direction (2026-06-10, latest)**: houses-first vacation rentals for European / 1st-world travelers, restaurant later (European + Dutch, sourced via San Bernardino + German community). Style blend: resort + events + eco-natural retreat. Deep Paraguay research: target market, San Bernardino / German / Dutch community supply chain, comparable properties, vacation-rental typology, events, eco positioning, restaurant plan, regulatory (SENATUR / SET / municipal), marketing channels, refined phasing, 26 open questions.
+- `docs/RESEARCH_GAPS.md` — **Living tracker of what we still need to find out**. 34 items across 5 tiers, with status (🔴 open / 🟡 in-progress / 🟢 done / ⚫ blocked), owner (W / I / A / H / L), source, effort. Tier 1 (8 items) targets the 27 Jun closing. Findings log at the bottom. This is the action list.
+- `docs/SESSION_LOG.md` — **Narrative log of the 2026-06-10 session** (the one that produced all the planning docs). What was created, decisions made, what's at risk, what's next. Read after a break to re-orient.
+- `docs/research/README.md` — **Research synthesis 2026-06-10** (5 sub-reports, ~80 repos catalogued). Includes 10 design rules, 5 site-selection criteria, 5 case studies (Chaa Creek / Awasi / Inkaterra / San Bernardino / Mennonite colonies), Tier-1/2/3 GIS layers, GEDI tooling, Blender GIS, Earthdata auth + cloud-pool EULA diagnosis. The "what to adopt / not adopt" punchlist is at the bottom.
+- `docs/site_data/DATA_INVENTORY.md` — **Clear-language reference of all the data we got from NASA + OpenTopography** (4 DEMs, GEDI L2A, derived analyses). For Wesley read-through — explains each dataset, what it shows, key findings, cross-validation, what's still missing, scripts to re-fetch.
+- `docs/research/REPO_CATALOG.md` — **141 GitHub repos across 6 domains** (Blender GIS, geospatial Python, NASA Earthdata, real estate, Paraguay/Atlantic Forest, vegetation 3D), each with verdict (adopt / reference / skip / dead). The 51/97 user-supplied URLs that were 404 are flagged honestly. Top 10 to drop in: pysheds, pyflwdir, whitebox-python, earthaccess, nasa/GEDI-Data-Resources, simonbesnard1/gedidb, joewdavies/geoblender, johnbalvin/pyairbnb, ics-py, melizeche/dolarPy.
+- `docs/AI_WHISPERERS_STYLE.md` — **Ivan's communication & execution rules** (self-improvement, learned 2026-06-10). Read first by every AI Whisperers session working on this project. No preambles, no narration, one complete deliverable per message.
+- `docs/AI_WHISPERERS_STYLE.md` — **Ivan's communication & execution rules** (self-improvement, learned 2026-06-10). Read first by every AI Whisperers session working on this project. No preambles, no narration, one complete deliverable per message.
+- `docs/MASTER_BRIEF.md` §16-19 — Vacation-rental synthesis added: 5 site-selection criteria, 5 case studies, 10 eco-retreat design rules, Tier-1/2/3 GIS layers. §1-15 unchanged (the cob design rules + render spec).
+- `docs/contract_summary.md` — quick-reference for the 2026-04-28 boleto privado. Greppable parcel/price/penalty table. Full text: `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
+- `docs/CLOSING_DAY_PREP.md` — printable actionable T-7 / T-5 / T-2 / signing-day / T+30 checklist for the 27 Jun escritura signing, with risk register. Companion to `contract_summary.md`.
 - `docs/paraguay_clay_house_research.md` — **v2 research, site CONFIRMED (Escobar, Paraguarí)**. Authoritative for location, stream/hydrology, orientation. Supersedes MASTER_BRIEF where they conflict.
-- `docs/MASTER_BRIEF.md` — design brief: zones, climate constraints, smart-home stack, flora inventory, Blender tech specs (§12), variants/cameras (§13), the 10 rules (§14).
+- `docs/MASTER_BRIEF.md` — design brief: zones, climate constraints, smart-home stack, flora inventory, Blender tech specs (§12), variants/cameras (§13), the 10 rules (§14). **Owner line (Ivan) is the architect/visualizer — not the legal landowner.** Land is Thijs + Wesley's per `CLIENT.md`.
 - `docs/prompt_house_render.md` / `docs/prompt_location_scene.md` — shot-level art direction. They describe a **Variant C (night/blue hour with fireflies) that is NOT implemented in code** — see Variants below.
 - `ARCHITECTURE.md` — map of the `lqv/` package + fragility notes. **Read before editing any code.**
-- `STATUS.md` — render manifest, open tasks, current state. **Read at session start, update at session end.**
+- `STATUS.md` — canonical current state (render manifest, vision summary, doc inventory, open tasks, decisions log, critical dates, next session priorities). **Read at session start, update at session end.**
 - `docs/claude_code_blender_best_practices.md` — generic tooling reference; read on demand only.
+
+### Supplementary docs (Tier 2 — planning + research artefacts, 2026-06-10 mega-session)
+
+These supplement the primary Document map above; named here so future sessions can discover them without grep. Authority remains with the primary-map docs when they conflict.
+
+- `docs/master_plan.md` — original asset-import + phase plan that drove the 2026-06-10 work (Phases 1-8). Forward source-of-truth for the import ordering; downstream consumers are `asset_plan.md` §G and `external_assets.md`.
+- `docs/asset_plan.md` — per-phase asset shortlist with §§A/B/C breakdowns and §C.4 Hyper3D prompt archive. §G is the phase plan.
+- `docs/external_assets.md` — per-asset download register; `[USED]` vs `[PLANNED]` ledger. Cross-references `LICENSES/README.md` (legal-text backing-store) and `CREDITS.md` (attribution lines).
+- `docs/research_index.md` — index of the ~80 catalogued repos from `docs/research/`; ASCII-tree navigation.
+- `docs/photographic_references.md` — separate license framework for reference photography in `assets/references/` (parallel to `LICENSES/README.md`, but for reference photos not assets).
+- `docs/cultural_notes.md` — Paraguayan cultural specifics underlying Rule 8 (corredor / tatakuá / tereré / mate / lapacho timber semantics). Reciprocal of CLAUDE.md "Plant species" + "Material color references" sections.
+- `docs/build_sequence.md` — physical construction phasing for the cob/bottle house (foundation → cob courses → bottle wall → roof → finishes). Pairs with `docs/bom.md`.
+- `docs/floor_plan.md` / `docs/section_view.md` — 2D drawings (plan + section) backing the procedural geometry in `lqv/house/`.
+- `docs/site_data_spike.md` — site survey constants (UTM coordinates, elevation, stream profile, escarpment line y=20, footbridge y=−25.5). Reciprocal to `ARCHITECTURE.md` "Positional coupling" invariant.
+- `docs/bom.md` — bill of materials for the cob house (rough quantities). Pairs with `build_sequence.md`.
+- `docs/energy_budget.md` — Rule 7 + Rule 9 energy stack (micro-hydro + LiFePO4 + PV) sizing notes.
+- `docs/license_obligations.md` — narrative of how each license obligation (CC0 traceability, CC-BY 4.0 attribution, CC-BY-SA exclusion) is satisfied at distribution time. Reciprocal of `LICENSE_BUNDLE.md` §§1-6 and `LICENSES/README.md`.
+- `docs/housing_park_phasing.md` — 5-year phase plan for the broader 62-ha housing park (downstream of `HOUSING_PARK_CONCEPT.md`). Independent of the cob-house render delivery.
+- `docs/wesley_deliverable_bundle.md` — Tier 1 / Tier 2 / Tier 3 packaging spec for the Wesley deliverable. Tier 2 USB bundle includes `CREDITS.md`, `LICENSE_BUNDLE.md`, `LICENSES/` directory.
+- `docs/research/README.md` is the synthesis; `docs/research/*.md` are the sub-reports (already linked via that README).
+- `CREDITS.md` (repo root) — per-asset attribution lines (CC-BY 4.0 required, CC0 traceability).
+- `LICENSE_BUNDLE.md` (repo root) — per-license summary + bundle-readiness checklist. Cross-references CLAUDE.md "Things to refuse / push back on" for the CC-BY-SA exclusion rationale.
+- `LICENSES/README.md` — verbatim CC0-1.0 + CC-BY-4.0 legal-code mirror (offline-complete legal corpus for the redistribution bundle). The triple `CREDITS.md` + `LICENSE_BUNDLE.md` + `LICENSES/README.md` together satisfies CC-BY 4.0 attribution at distribution time (this is *why* the bundle-readiness gates in LICENSE_BUNDLE.md §6 are written the way they are).
+- `LICENSE` (repo root) — MIT license for `lqv/`, `build_scene.py`, `scripts/`, `docs/` code. Does NOT cover `assets/` or `renders/`.
 
 ## Current state of the code — do not "fix" what already works
 

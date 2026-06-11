@@ -274,3 +274,31 @@ assets/
 6. **Phase 9** — Poly Haven ground PBR `forest_ground_04` overlay under canopy via `under_canopy` vertex mask.
 7. **Phase 10** — Variant C extension (gated on Phase 7 completion).
 8. **Phase 11** — re-render 18 finals, populate `CREDITS.md`, tag `v1.0-bundle`.
+
+---
+
+## Variant C — procedural recipes (no third-party asset, listed for traceability)
+
+Variant C (night / blue hour) shipped 2026-06-10. Two of its three visual signatures are **procedural**, not third-party — they don't need a Sketchfab or Poly Haven download and therefore have no license obligation. Listed here so a future session doesn't go looking for an "asset" that was actually code.
+
+- **Fireflies** — `lqv/flora/fireflies.py` — ~80 small emission spheres scattered on the corredor + lower terrace; warm yellow-green emission, low strength (point-source), placed AFTER `random.seed()` so per-cam regeneration stays deterministic across cameras. No mesh asset needed.
+- **Warm window glow** — `lqv/house/cob.py:build_window_emission` — emission planes positioned **inside the hidden `WindowCut_*` Boolean cutter outlines**, so windows read as lit-from-within without baking lights into materials. Gated on Variant C only.
+- **Cool moonlight + low blue sky strength** — `lqv/lighting.py` Variant C branch — Nishita sky strength reduced, sun colour shifted cool, exposure +0.6 set in `build_scene.py`. Authoritative source for "where does the C palette come from".
+
+The only third-party C-dependent asset shortlist that still requires a download is the bonfire / firewood / hammock / mate / chicken-coop Phase 8 batch already listed above (Sketchfab CC-BY 4.0 + CC0). Those are NOT C-only — they enhance all three variants.
+
+See also: `CREDITS.md` §"Hyper3D / Hunyuan3D generated assets" (currently lapacho A/B only); `docs/asset_plan.md` §C.4 (prompt archive); `ARCHITECTURE.md` §"Variant C additions (2026-06-10)" (code-side navigation).
+
+## Cross-references (additive 2026-06-10)
+
+The inline "See also" pointer above covers the immediate Variant-C neighborhood. Several other docs reference *this* file as the source of truth for downloadable-asset planning, but the reverse pointers were missing — closed here without modifying the frozen asset-shortlist content above.
+
+- `docs/asset_plan.md` §C.3 + §G (Cross-references) — the asset shortlist & integration plan; this doc is the live download/status mirror of §C.3 plus the Phase 8–10 execution scaffolding.
+- `docs/license_obligations.md` — CC0 / CC-BY 4.0 obligation framework; this doc's Sketchfab shortlist must respect the CC-BY-SA exclusion declared there, and the Variant C procedural-recipe carve-out is mirrored verbatim in both docs.
+- `docs/wesley_deliverable_bundle.md` — Tier-1/2/3 escritura shipping manifest for 2026-06-27; the bundle assumes A+B are publishable independent of any download blocked on the dead MCP socket (see "Open questions / blockers" above), so this file's MCP-blocked status feeds the Risk-register #1 mitigation there.
+- `CREDITS.md` (repo root) — per-asset attribution rows that this doc's manifests must populate as Phase 8a–11 lands new third-party imports.
+- `LICENSES/README.md` (repo root) — verbatim CC0 + CC-BY 4.0 legal-code mirror; the attribution-row schema in this doc's `CREDITS.md` section depends on those texts being shipped in the Tier-2 USB / cloud bundle.
+- `STATUS.md` (repo root) — current render manifest + open-task ledger; reconciles "which assets actually got wired into the build" against this doc's Phase 8 work-order backlog.
+- `docs/SESSION_LOG.md` — narrative log of the 2026-06-10 session including the per-cam render-loop architecture decision that produced the 18-final batch this asset plan ultimately serves.
+- `ARCHITECTURE.md` (repo root) — `lqv/` package code map; the Phase 8a `lqv/asset_loader.py` + `USE_EXTERNAL_FLORA` flag this doc proposes will land as a new module documented there.
+- `CLAUDE.md` (repo root) — code invariants (RNG seed ordering, `MAT` registry, hidden `WindowCut_*` cutters); any asset import via this doc's Phase 8c wiring must preserve those invariants downstream of `build_materials()`.
