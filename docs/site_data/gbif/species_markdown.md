@@ -2,208 +2,61 @@
 
 Bbox: -25.645°S to -25.615°S, -57.045°W to -57.015°W
 
+## Species (54 records)
 
-## Species (200 records)
-
-| # | Species | Common Name | Group | Family | IUCN |
+| # | Species | Common Name | Class | Family | IUCN |
 |---|---------|-------------|-------|--------|------|
-| 1 | *Natronobacterium gregoryi* | — | Halobacteria | Natrialbaceae | — |
-| 2 | *Halosimplex carlsbadense* | — | Halobacteria | Haloarculaceae | — |
-| 3 | *Natrinema pallidum* | — | Halobacteria | Natrialbaceae | — |
-| 4 | *Natrinema pellirubrum* | — | Halobacteria | Natrialbaceae | — |
-| 5 | *Natrinema altunense* | — | Halobacteria | Natrialbaceae | — |
-| 6 | *Natrinema versiforme* | — | Halobacteria | Natrialbaceae | — |
-| 7 | *Natronorubrum bangense* | — | Halobacteria | Natrialbaceae | — |
-| 8 | *Natronorubrum tibetense* | — | Halobacteria | Natrialbaceae | — |
-| 9 | *Natronorubrum aibiense* | — | Halobacteria | Natrialbaceae | — |
-| 10 | *Halobacterium halobium* | — | Halobacteria | Halobacteriaceae | — |
-| 11 | *Halobacterium cutirubrum* | — | Halobacteria | Halobacteriaceae | — |
-| 12 | *Halobacterium noricense* | — | Halobacteria | Halobacteriaceae | — |
-| 13 | *Halobaculum gomorrense* | — | Halobacteria | Haloferacaceae | — |
-| 14 | *Halomicrobium mukohataei* | — | Halobacteria | Haloarculaceae | — |
-| 15 | *Haloarcula mukohataei* | — | Halobacteria | Haloarculaceae | — |
-| 16 | *Halalkalicoccus tibetensis* | — | Halobacteria | Halalkalicoccaceae | — |
-| 17 | *Haloferax alexandrinus* | — | Halobacteria | Haloferacaceae | — |
-| 18 | *Haloferax denitrificans* | — | Halobacteria | Haloferacaceae | — |
-| 19 | *Halobacterium denitrificans* | — | Halobacteria | Haloferacaceae | — |
-| 20 | *Haloferax gibbonsii* | — | Halobacteria | Haloferacaceae | — |
-| 21 | *Haloferax sulfurifontis* | — | Halobacteria | Haloferacaceae | — |
-| 22 | *Haloferax volcanii* | — | Halobacteria | Haloferacaceae | — |
-| 23 | *Halobacterium volcanii* | — | Halobacteria | Haloferacaceae | — |
-| 24 | *Haloferax mediterranei* | — | Halobacteria | Haloferacaceae | — |
-| 25 | *Halobacterium mediterranei* | — | Halobacteria | Haloferacaceae | — |
-| 26 | *Halorubrum distributum* | — | Halobacteria | Haloferacaceae | — |
-| 27 | *Halorubrobacterium distributum* | — | Halobacteria | Haloferacaceae | — |
-| 28 | *Halorubrum aidingense* | — | Halobacteria | Haloferacaceae | — |
-| 29 | *Halorubrum terrestre* | — | Halobacteria | Haloferacaceae | — |
-| 30 | *Halorubrum alkaliphilum* | — | Halobacteria | Haloferacaceae | — |
-| 31 | *Halorubrum trapanicum* | — | Halobacteria | Haloferacaceae | — |
-| 32 | *Halobacterium trapanicum* | — | Halobacteria | Haloferacaceae | — |
-| 33 | *Halorubrum sodomense* | — | Halobacteria | Haloferacaceae | — |
-| 34 | *Halobacterium sodomense* | — | Halobacteria | Haloferacaceae | — |
-| 35 | *Halorubrobacterium sodomense* | — | Halobacteria | Haloferacaceae | — |
-| 36 | *Halorubrum tebenquichense* | — | Halobacteria | Haloferacaceae | — |
-| 37 | *Halorubrum vacuolatum* | — | Halobacteria | Haloferacaceae | — |
-| 38 | *Halorubrum tibetense* | — | Halobacteria | Haloferacaceae | — |
-| 39 | *Halorubrum coriense* | — | Halobacteria | Haloferacaceae | — |
-| 40 | *Halorubrum lipolyticum* | — | Halobacteria | Haloferacaceae | — |
-| 41 | *Halorubrum lacusprofundi* | — | Halobacteria | Haloferacaceae | — |
-| 42 | *Halobacterium lacusprofundi* | — | Halobacteria | Haloferacaceae | — |
-| 43 | *Halorubrobacterium lacusprofundi* | — | Halobacteria | Haloferacaceae | — |
-| 44 | *Halorubrum saccharovorum* | — | Halobacteria | Haloferacaceae | — |
-| 45 | *Halorubrobacterium saccharovorum* | — | Halobacteria | Haloferacaceae | — |
-| 46 | *Halobacterium saccharovorum* | — | Halobacteria | Haloferacaceae | — |
-| 47 | *Halorubrum xinjiangense* | — | Halobacteria | Haloferacaceae | — |
-| 48 | *Halorubrum ezzemoulense* | — | Halobacteria | Haloferacaceae | — |
-| 49 | *Halovivax asiaticus* | — | Halobacteria | Natrialbaceae | — |
-| 50 | *Halostagnicola larsenii* | — | Halobacteria | Natrialbaceae | — |
-| 51 | *Natronococcus amylolyticus* | — | Halobacteria | Natrialbaceae | — |
-| 52 | *Natronococcus occultus* | — | Halobacteria | Natrialbaceae | — |
-| 53 | *Halobiforma haloterrestris* | — | Halobacteria | Natrialbaceae | — |
-| 54 | *Halobiforma nitratireducens* | — | Halobacteria | Natrialbaceae | — |
-| 55 | *Natronobacterium nitratireducens* | — | Halobacteria | Natrialbaceae | — |
-| 56 | *Halobiforma lacisalsi* | — | Halobacteria | Natrialbaceae | — |
-| 57 | *Halorhabdus utahensis* | — | Halobacteria | Haloarculaceae | — |
-| 58 | *Haloarcula argentinensis* | — | Halobacteria | Haloarculaceae | — |
-| 59 | *Haloarcula hispanica* | — | Halobacteria | Haloarculaceae | — |
-| 60 | *Haloarcula quadrata* | — | Halobacteria | Haloarculaceae | — |
-| 61 | *Haloarcula vallismortis* | — | Halobacteria | Haloarculaceae | — |
-| 62 | *Halobacterium vallismortis* | — | Halobacteria | Haloarculaceae | — |
-| 63 | *Haloarcula japonica* | — | Halobacteria | Haloarculaceae | — |
-| 64 | *Haloterrigena longa* | — | Halobacteria | Natrialbaceae | — |
-| 65 | *Haloterrigena thermotolerans* | — | Halobacteria | Natrialbaceae | — |
-| 66 | *Haloterrigena turkmenica* | — | Halobacteria | Natrialbaceae | — |
-| 67 | *Haloterrigena limicola* | — | Halobacteria | Natrialbaceae | — |
-| 68 | *Haloterrigena saccharevitans* | — | Halobacteria | Natrialbaceae | — |
-| 69 | *Natrialba taiwanensis* | — | Halobacteria | Natrialbaceae | — |
-| 70 | *Natrialba chahannaoensis* | — | Halobacteria | Natrialbaceae | — |
-| 71 | *Natrialba hulunbeirensis* | — | Halobacteria | Natrialbaceae | — |
-| 72 | *Natrialba magadii* | — | Halobacteria | Natrialbaceae | — |
-| 73 | *Natronobacterium magadii* | — | Halobacteria | Natrialbaceae | — |
-| 74 | *Natronomonas pharaonis* | — | Halobacteria | Haloarculaceae | — |
-| 75 | *Halobacterium pharaonis* | — | Halobacteria | Haloarculaceae | — |
-| 76 | *Natronobacterium pharaonis* | — | Halobacteria | Haloarculaceae | — |
-| 77 | *Natronolimnobius baerhuensis* | — | Halobacteria | Natrialbaceae | — |
-| 78 | *Natronolimnobius innermongolicus* | — | Halobacteria | Natrialbaceae | — |
-| 79 | *Halogeometricum borinquense* | — | Halobacteria | Haloferacaceae | — |
-| 80 | *Methanobacterium subterraneum* | — | Methanobacteria | Methanobacteriaceae | — |
-| 81 | *Methanobacterium ivanovii* | — | Methanobacteria | Methanobacteriaceae | — |
-| 82 | *Methanobacterium uliginosum* | — | Methanobacteria | Methanobacteriaceae | — |
-| 83 | *Methanobacterium beijingense* | — | Methanobacteria | Methanobacteriaceae | — |
-| 84 | *Methanobacterium formicicum* | — | Methanobacteria | Methanobacteriaceae | — |
-| 85 | *Methanobacterium thermoformicicum* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 86 | *Methanobacterium aarhusense* | — | Methanobacteria | Methanobacteriaceae | — |
-| 87 | *Methanobacterium bryantii* | — | Methanobacteria | Methanobacteriaceae | — |
-| 88 | *Methanobacterium oryzae* | — | Methanobacteria | Methanobacteriaceae | — |
-| 89 | *Methanobacterium palustre* | — | Methanobacteria | Methanobacteriaceae | — |
-| 90 | *Methanobacterium espanolae* | — | Methanobacteria | Methanobacteriaceae | — |
-| 91 | *Methanobacterium congolense* | — | Methanobacteria | Methanobacteriaceae | — |
-| 92 | *Methanobacterium alcaliphilum* | — | Methanobacteria | Methanobacteriaceae | — |
-| 93 | *Methanobrevibacter smithii* | — | Methanobacteria | Methanobacteriaceae | — |
-| 94 | *Methanobrevibacter filiformis* | — | Methanobacteria | Methanobacteriaceae | — |
-| 95 | *Methanobrevibacter wolinii* | — | Methanobacteria | Methanobacteriaceae | — |
-| 96 | *Methanobrevibacter ruminantium* | — | Methanobacteria | Methanobacteriaceae | — |
-| 97 | *Methanobacterium ruminantium* | — | Methanobacteria | Methanobacteriaceae | — |
-| 98 | *Methanobrevibacter acididurans* | — | Methanobacteria | Methanobacteriaceae | — |
-| 99 | *Methanobrevibacter oralis* | — | Methanobacteria | Methanobacteriaceae | — |
-| 100 | *Methanobrevibacter woesei* | — | Methanobacteria | Methanobacteriaceae | — |
-| 101 | *Methanobacterium arbophilicum* | — | Methanobacteria | Methanobacteriaceae | — |
-| 102 | *Methanobrevibacter curvatus* | — | Methanobacteria | Methanobacteriaceae | — |
-| 103 | *Methanobrevibacter cuticularis* | — | Methanobacteria | Methanobacteriaceae | — |
-| 104 | *Methanobrevibacter thaueri* | — | Methanobacteria | Methanobacteriaceae | — |
-| 105 | *Methanobrevibacter gottschalkii* | — | Methanobacteria | Methanobacteriaceae | — |
-| 106 | *Methanothermobacter thermophilus* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 107 | *Methanobacterium thermophilum* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 108 | *Methanothermobacter thermautotrophicus* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 109 | *Methanothermobacter defluvii* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 110 | *Methanobacterium defluvii* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 111 | *Methanothermobacter wolfeii* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 112 | *Methanobacterium wolfei* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 113 | *Methanothermobacter thermoflexus* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 114 | *Methanobacterium thermoflexum* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 115 | *Methanothermobacter marburgensis* | — | Methanobacteria | Methanothermobacteraceae | — |
-| 116 | *Methanosphaera cuniculi* | — | Methanobacteria | Methanobacteriaceae | — |
-| 117 | *Methanosphaera stadtmanae* | — | Methanobacteria | Methanobacteriaceae | — |
-| 118 | *Methanothermus fervidus* | — | Methanobacteria | Methanothermaceae | — |
-| 119 | *Methanothermus sociabilis* | — | Methanobacteria | Methanothermaceae | — |
-| 120 | *Methanococcus voltae* | — | Methanococci | Methanococcaceae | — |
-| 121 | *Methanococcus deltae* | — | Methanococci | Methanococcaceae | — |
-| 122 | *Methanococcus spec.* | — | Methanococci | Methanococcaceae | — |
-| 123 | *Methanococcus aeolicus* | — | Methanococci | Methanococcaceae | — |
-| 124 | *Methanothermococcus thermolithotrophicus* | — | Methanococci | Methanococcaceae | — |
-| 125 | *Methanococcus thermolithotrophicus* | — | Methanococci | Methanococcaceae | — |
-| 126 | *Methanothermococcus okinawensis* | — | Methanococci | Methanococcaceae | — |
-| 127 | *Methanotorris igneus* | — | Methanococci | Methanococcaceae | — |
-| 128 | *Methanococcus igneus* | — | Methanococci | Methanococcaceae | — |
-| 129 | *Methanotorris formicicus* | — | Methanococci | Methanococcaceae | — |
-| 130 | *Methanocaldococcus fervens* | — | Methanococci | Methanocaldococcaceae | — |
-| 131 | *Methanococcus fervens* | — | Methanococci | Methanocaldococcaceae | — |
-| 132 | *Methanocaldococcus indicus* | — | Methanococci | Methanocaldococcaceae | — |
-| 133 | *Methanocaldococcus infernus* | — | Methanococci | Methanocaldococcaceae | — |
-| 134 | *Methanococcus infernus* | — | Methanococci | Methanocaldococcaceae | — |
-| 135 | *Methanocaldococcus jannaschii* | — | Methanococci | Methanocaldococcaceae | — |
-| 136 | *Methanococcus jannaschii* | — | Methanococci | Methanocaldococcaceae | — |
-| 137 | *Methanocaldococcus vulcanius* | — | Methanococci | Methanocaldococcaceae | — |
-| 138 | *Methanococcus vulcanius* | — | Methanococci | Methanocaldococcaceae | — |
-| 139 | *Thermococcus aggregans* | — | Thermococci | Thermococcaceae | — |
-| 140 | *Thermococcus barophilus* | — | Thermococci | Thermococcaceae | — |
-| 141 | *Thermococcus siculi* | — | Thermococci | Thermococcaceae | — |
-| 142 | *Thermococcus stetteri* | — | Thermococci | Thermococcaceae | — |
-| 143 | *Ferroplasma acidiphilum* | — | Thermoplasmata | Thermoplasmataceae | — |
-| 144 | *Picrophilus torridus* | — | Thermoplasmata | Thermoplasmataceae | — |
-| 145 | *Picrophilus oshimae* | — | Thermoplasmata | Thermoplasmataceae | — |
-| 146 | *Thermoplasma acidophilum* | — | Thermoplasmata | Thermoplasmataceae | — |
-| 147 | *Thermoplasma volcanium* | — | Thermoplasmata | Thermoplasmataceae | — |
-| 148 | *Caldisphaera lagunensis* | — | Thermoproteia | Acidilobaceae | — |
-| 149 | *Pyrodictium occultum* | — | Thermoproteia | Pyrodictiaceae | — |
-| 150 | *Pyrodictium abyssi* | — | Thermoproteia | Pyrodictiaceae | — |
-| 151 | *Pyrodictium brockii* | — | Thermoproteia | Pyrodictiaceae | — |
-| 152 | *Hyperthermus butylicus* | — | Thermoproteia | Pyrodictiaceae | — |
-| 153 | *Pyrolobus fumarii* | — | Thermoproteia | Pyrodictiaceae | — |
-| 154 | *Acidilobus aceticus* | — | Thermoproteia | Acidilobaceae | — |
-| 155 | *Ignisphaera aggregans* | — | Thermoproteia | Ignisphaeraceae | — |
-| 156 | *Thermosphaera aggregans* | — | Thermoproteia | Desulfurococcaceae | — |
-| 157 | *Stetteria hydrogenophila* | — | Thermoproteia | Desulfurococcaceae | — |
-| 158 | *Sulfophobococcus zilligii* | — | Thermoproteia | Desulfurococcaceae | — |
-| 159 | *Desulfurococcus mobilis* | — | Thermoproteia | Desulfurococcaceae | — |
-| 160 | *Desulfurococcus fermentans* | — | Thermoproteia | Desulfurococcaceae | — |
-| 161 | *Desulfurococcus amylolyticus* | — | Thermoproteia | Desulfurococcaceae | — |
-| 162 | *Desulfurococcus mucosus* | — | Thermoproteia | Desulfurococcaceae | — |
-| 163 | *Staphylothermus hellenicus* | — | Thermoproteia | Desulfurococcaceae | — |
-| 164 | *Staphylothermus marinus* | — | Thermoproteia | Desulfurococcaceae | — |
-| 165 | *Thermodiscus maritimus* | — | Thermoproteia | Desulfurococcaceae | — |
-| 166 | *Ignicoccus pacificus* | — | Thermoproteia | Ignicoccaceae | — |
-| 167 | *Ignicoccus islandicus* | — | Thermoproteia | Ignicoccaceae | — |
-| 168 | *Aeropyrum camini* | — | Thermoproteia | Acidilobaceae | — |
-| 169 | *Aeropyrum pernix* | — | Thermoproteia | Acidilobaceae | — |
-| 170 | *Sulfurococcus mirabilis* | — | Thermoproteia | Sulfolobaceae | — |
-| 171 | *Sulfurisphaera ohwakuensis* | — | Thermoproteia | Sulfolobaceae | — |
-| 172 | *Acidianus infernus* | — | Thermoproteia | Sulfolobaceae | — |
-| 173 | *Acidianus brierleyi* | — | Thermoproteia | Sulfolobaceae | — |
-| 174 | *Sulfolobus brierleyi* | — | Thermoproteia | Sulfolobaceae | — |
-| 175 | *Acidianus ambivalens* | — | Thermoproteia | Sulfolobaceae | — |
-| 176 | *Desulfurolobus ambivalens* | — | Thermoproteia | Sulfolobaceae | — |
-| 177 | *Sulfolobus yangmingensis* | — | Thermoproteia | Sulfolobaceae | — |
-| 178 | *Sulfolobus solfataricus* | — | Thermoproteia | Sulfolobaceae | — |
-| 179 | *Sulfolobus acidocaldarius* | — | Thermoproteia | Sulfolobaceae | — |
-| 180 | *Sulfolobus shibatae* | — | Thermoproteia | Sulfolobaceae | — |
-| 181 | *Sulfolobus metallicus* | — | Thermoproteia | Sulfolobaceae | — |
-| 182 | *Sulfolobus tokodaii* | — | Thermoproteia | Sulfolobaceae | — |
-| 183 | *Metallosphaera prunae* | — | Thermoproteia | Sulfolobaceae | — |
-| 184 | *Metallosphaera sedula* | — | Thermoproteia | Sulfolobaceae | — |
-| 185 | *Metallosphaera hakonensis* | — | Thermoproteia | Sulfolobaceae | — |
-| 186 | *Sulfolobus hakonensis* | — | Thermoproteia | Sulfolobaceae | — |
-| 187 | *Stygiolobus azoricus* | — | Thermoproteia | Sulfolobaceae | — |
-| 188 | *Thermofilum pendens* | — | Thermoproteia | Thermofilaceae | — |
-| 189 | *Thermoproteus neutrophilus* | — | Thermoproteia | Thermoproteaceae | — |
-| 190 | *Thermoproteus tenax* | — | Thermoproteia | Thermoproteaceae | — |
-| 191 | *Thermoproteus uzoniensis* | — | Thermoproteia | Thermoproteaceae | — |
-| 192 | *Caldivirga maquilingensis* | — | Thermoproteia | Thermocladiaceae | — |
-| 193 | *Thermocladium modestius* | — | Thermoproteia | Thermocladiaceae | — |
-| 194 | *Pyrobaculum oguniense* | — | Thermoproteia | Thermoproteaceae | — |
-| 195 | *Pyrobaculum aerophilum* | — | Thermoproteia | Thermoproteaceae | — |
-| 196 | *Pyrobaculum islandicum* | — | Thermoproteia | Thermoproteaceae | — |
-| 197 | *Pyrobaculum arsenaticum* | — | Thermoproteia | Thermoproteaceae | — |
-| 198 | *Pyrobaculum organotrophum* | — | Thermoproteia | Thermoproteaceae | — |
-| 199 | *Vulcanisaeta distributa* | — | Thermoproteia | Thermocladiaceae | — |
-| 200 | *Vulcanisaeta souniana* | — | Thermoproteia | Thermocladiaceae | — |
+| 1 | *Machetornis rixosa (Vieillot, 1819)* | Cattle Tyrant | Aves | Tyrannidae | LC |
+| 2 | *Troglodytes musculus J.F.Naumann, 1823* | Southern House Wren | Aves | Troglodytidae | — |
+| 3 | *Leptotila verreauxi Bonaparte, 1855* | White-tipped Dove | Aves | Columbidae | LC |
+| 4 | *Pitangus sulphuratus (Linnaeus, 1766)* | Great Kiskadee | Aves | Tyrannidae | LC |
+| 5 | *Furnarius rufus (Gmelin, 1788)* | Rufous Hornero | Aves | Furnariidae | LC |
+| 6 | *Thamnophilus doliatus (Linnaeus, 1764)* | Barred Antshrike | Aves | Thamnophilidae | LC |
+| 7 | *Columbina talpacoti (Temminck, 1810)* | Ruddy Ground Dove | Aves | Columbidae | LC |
+| 8 | *Coryphospingus cucullatus (P.L.S.Müller, 1776)* | Red-crested Finch | Aves | Thraupidae | LC |
+| 9 | *Chlorostilbon lucidus (Shaw, 1812)* | Glittering-bellied Emerald | Aves | Trochilidae | — |
+| 10 | *Dryobates passerinus (Linnaeus, 1766)* | Little Woodpecker | Aves | Picidae | — |
+| 11 | *Taraba major (Vieillot, 1816)* | Great Antshrike | Aves | Thamnophilidae | LC |
+| 12 | *Guira guira (Gmelin, 1788)* | Guira Cuckoo | Aves | Cuculidae | LC |
+| 13 | *Vanellus chilensis (Molina, 1782)* | Southern Lapwing | Aves | Charadriidae | LC |
+| 14 | *Paroaria coronata (J.F.Miller, 1776)* | Red-crested Cardinal | Aves | Thraupidae | LC |
+| 15 | *Tyrannus melancholicus Vieillot, 1819* | Tropical Kingbird | Aves | Tyrannidae | LC |
+| 16 | *Zonotrichia capensis (P.L.S.Müller, 1776)* | Rufous-collared Sparrow | Aves | Passerellidae | LC |
+| 17 | *Thraupis sayaca (Linnaeus, 1766)* | Sayaca Tanager | Aves | Thraupidae | LC |
+| 18 | *Coragyps atratus (Bechstein, 1793)* | Black Vulture | Aves | Cathartidae | LC |
+| 19 | *Syrigma sibilatrix (Temminck, 1824)* | Whistling Heron | Aves | Ardeidae | LC |
+| 20 | *Turdus leucomelas Vieillot, 1818* | Pale-breasted Thrush | Aves | Turdidae | LC |
+| 21 | *Crotophaga ani Linnaeus, 1758* | Smooth-billed Ani | Aves | Cuculidae | LC |
+| 22 | *Forpus xanthopterygius (Spix, 1824)* | Cobalt-rumped Parrotlet | Aves | Psittacidae | — |
+| 23 | *Cyanocorax cyanomelas (Vieillot, 1818)* | Purplish Jay | Aves | Corvidae | LC |
+| 24 | *Brotogeris chiriri (Vieillot, 1818)* | Yellow-chevroned Parakeet | Aves | Psittacidae | LC |
+| 25 | *Dacnis cayana (Linnaeus, 1766)* | Blue Dacnis | Aves | Thraupidae | LC |
+| 26 | *Lepidocolaptes angustirostris (Vieillot, 1818)* | Narrow-billed Woodcreeper | Aves | Furnariidae | LC |
+| 27 | *Basileuterus culicivorus (Deppe, 1830)* | Golden-crowned Warbler | Aves | Parulidae | LC |
+| 28 | *Polioptila dumicola (Vieillot, 1817)* | Masked Gnatcatcher | Aves | Polioptilidae | LC |
+| 29 | *Colaptes campestris (Vieillot, 1818)* | Campo Flicker | Aves | Picidae | LC |
+| 30 | *Tapera naevia (Linnaeus, 1766)* | Striped Cuckoo | Aves | Cuculidae | LC |
+| 31 | *Columbina picui (Temminck, 1813)* | Picui Ground Dove | Aves | Columbidae | LC |
+| 32 | *Turdus rufiventris Vieillot, 1818* | Rufous-bellied Thrush | Aves | Turdidae | LC |
+| 33 | *Mimus saturninus (Lichtenstein, 1823)* | Chalk-browed Mockingbird | Aves | Mimidae | LC |
+| 34 | *Myiodynastes maculatus (Statius Muller, 1776)* | Streaked Flycatcher | Aves | Tyrannidae | LC |
+| 35 | *Pteroglossus castanotis Gould, 1834* | Chestnut-eared Aracari | Aves | Ramphastidae | LC |
+| 36 | *Celeus lugubris (Malherbe, 1851)* | Pale-crested Woodpecker | Aves | Picidae | LC |
+| 37 | *Piaya cayana (Linnaeus, 1766)* | Squirrel Cuckoo | Aves | Cuculidae | LC |
+| 38 | *Sporophila angolensis (Linnaeus, 1766)* | Chestnut-bellied Seed-Finch | Aves | Thraupidae | LC |
+| 39 | *Melanerpes candidus (Otto, 1796)* | White Woodpecker | Aves | Picidae | LC |
+| 40 | *Cacicus haemorrhous (Linnaeus, 1766)* | Red-rumped Cacique | Aves | Icteridae | LC |
+| 41 | *Myiarchus tyrannulus (Statius Muller, 1776)* | Brown-crested Flycatcher | Aves | Tyrannidae | LC |
+| 42 | *Pachyramphus validus (Lichtenstein, 1823)* | Crested Becard | Aves | Cotingidae | LC |
+| 43 | *Saltator coerulescens Vieillot, 1817* | Bluish-gray Saltator | Aves | Thraupidae | LC |
+| 44 | *Cyclarhis gujanensis (Gmelin, 1789)* | Rufous-browed Peppershrike | Aves | Vireonidae | LC |
+| 45 | *Xiphocolaptes major (Vieillot, 1818)* | Great Rufous Woodcreeper | Aves | Furnariidae | LC |
+| 46 | *Nystalus chacuru (Vieillot, 1816)* | White-eared Puffbird | Aves | Bucconidae | LC |
+| 47 | *Colaptes melanochloros (J.F.Gmelin, 1788)* | Green-barred Woodpecker | Aves | Picidae | LC |
+| 48 | *Pseudoleistes guirahuro (Vieillot, 1819)* | Yellow-rumped Marshbird | Aves | Icteridae | LC |
+| 49 | *Spinus magellanicus (Vieillot, 1805)* | Hooded Siskin | Aves | Fringillidae | LC |
+| 50 | *Cyanocorax chrysops (Vieillot, 1818)* | Plush-crested Jay | Aves | Corvidae | LC |
+| 51 | *Atrachelacris unicolor Giglio-Tos, 1894* | — | Insecta | Acrididae | — |
+| 52 | *Ludwigia peruviana (L.) H.Hara* | — | Magnoliopsida | Onagraceae | — |
+| 53 | *Jacquemontia fruticulosa Hallier fil.* | — | Magnoliopsida | Convolvulaceae | — |
+| 54 | *Tropidurus spinulosus (Cope, 1862)* | — | Squamata | Tropiduridae | LC |
