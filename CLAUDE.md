@@ -14,7 +14,7 @@ This project supports **Wesley van de Camp** in visualizing a real 62-ha propert
 - `docs/site_data/DATA_INVENTORY.md` — **Clear-language reference of all the data we got from NASA + OpenTopography** (4 DEMs, GEDI L2A, derived analyses). For Wesley read-through — explains each dataset, what it shows, key findings, cross-validation, what's still missing, scripts to re-fetch.
 - `docs/research/REPO_CATALOG.md` — **141 GitHub repos across 6 domains** (Blender GIS, geospatial Python, NASA Earthdata, real estate, Paraguay/Atlantic Forest, vegetation 3D), each with verdict (adopt / reference / skip / dead). The 51/97 user-supplied URLs that were 404 are flagged honestly. Top 10 to drop in: pysheds, pyflwdir, whitebox-python, earthaccess, nasa/GEDI-Data-Resources, simonbesnard1/gedidb, joewdavies/geoblender, johnbalvin/pyairbnb, ics-py, melizeche/dolarPy.
 - `docs/AI_WHISPERERS_STYLE.md` — **Ivan's communication & execution rules** (self-improvement, learned 2026-06-10). Read first by every AI Whisperers session working on this project. No preambles, no narration, one complete deliverable per message.
-- `docs/AI_WHISPERERS_STYLE.md` — **Ivan's communication & execution rules** (self-improvement, learned 2026-06-10). Read first by every AI Whisperers session working on this project. No preambles, no narration, one complete deliverable per message.
+- `docs/AI_WHISPERERS_STYLE.md` — *(intentional second mention, T1.5 2026-06-11): kept because this file is scanned linearly by future sessions and the style rules need to land twice — once before the "Refined direction" entry and once after, so neither path misses it. Original line above is canonical; this one is the back-reference. Cleanup deferred to Tier-2 dedupe pass per additions-only directive.)*
 - `docs/MASTER_BRIEF.md` §16-19 — Vacation-rental synthesis added: 5 site-selection criteria, 5 case studies, 10 eco-retreat design rules, Tier-1/2/3 GIS layers. §1-15 unchanged (the cob design rules + render spec).
 - `docs/contract_summary.md` — quick-reference for the 2026-04-28 boleto privado. Greppable parcel/price/penalty table. Full text: `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
 - `docs/CLOSING_DAY_PREP.md` — printable actionable T-7 / T-5 / T-2 / signing-day / T+30 checklist for the 27 Jun escritura signing, with risk register. Companion to `contract_summary.md`.
@@ -79,6 +79,11 @@ Env vars (full reference in `build_scene.py` docstring):
 - **Variant C — night/blue hour with fireflies**: IMPLEMENTED 2026-06-10. Cool moonlight + low blue sky strength (`lqv/lighting.py`), warm window-glow emission planes inside the cob cutouts (`lqv/house/cob.py:build_window_emission`), ~80 firefly emission spheres scattered over corredor + lower terrace (`lqv/flora/fireflies.py`). Variant C exposure +0.6 in `build_scene.py`. Deliverable target is now **18 finals** (A/B/C × 6 cams).
 
 ## The 10 design rules (MASTER_BRIEF §14) — never violate
+
+> **Canonical source (T1.5 promoted 2026-06-11):** `docs/MASTER_BRIEF.md` §14 is the single
+> authoritative copy. The list below stays in-place per the additions-only directive (this is
+> the active-session quick reference and removing it would force every session to open a
+> second file). When the two diverge, `MASTER_BRIEF.md` §14 wins.
 
 1. **No right angles in cob walls** — organic sculpted forms only (bmesh + subdiv + displacement, never box modeling).
 2. **No cement plaster on cob** — always lime; must read as lime-washed earth.
@@ -155,6 +160,6 @@ Synthesised from `docs/CRITIQUE_2026-06-10.md` + `docs/UPGRADE_PLAN.md` + `docs/
 **Standing reminders (additive)**:
 - Escritura date: **2026-06-27**. Tier 0 of `docs/UPGRADE_PLAN.md` is everything that must land before that date.
 - Line 133's `git add -A && git commit` is **superseded** by the explicit-staging-only policy (NEVER `git add -A` or `git add .`). Stage files by name; `scripts/mcp_daemon.py` always excluded; `docs/site_data/sentinel2/*.tif` gitignored as regenerable; `docs/*_boleto_*.pdf` / `docs/*_escritura_*.pdf` / `docs/2026-*_*.pdf` always excluded.
-- The duplicate `docs/AI_WHISPERERS_STYLE.md` entry at lines 16/17 is known and deferred per the additions-only directive — flagged here for future cleanup, not removed now.
+- The duplicate `docs/AI_WHISPERERS_STYLE.md` entry at lines 16/17 was annotated 2026-06-11 (T1.5 sub-task c) — line 17 now reads as an intentional back-reference rather than a verbatim duplicate. Full dedupe (removing line 17 entirely) is deferred to the Tier-2 pass per additions-only directive.
 - Renderer byte-identity invariant: do not touch `lqv/scatter_lapacho_petals` without explicit user authorization. Task #1 (floating petals on `_petal_macro` finals) is deferred for the same reason — fixing it would supersede `85e86aa`.
 - MCP socket is dead this session — `mcp__blender__*` calls will fail. Tasks #10 + #12 remain blocked until the socket is revived.

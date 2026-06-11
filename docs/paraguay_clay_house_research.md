@@ -5,6 +5,12 @@
 **Status:** Research and design phase — Blender render in development  
 **Last updated:** June 2026 (v2 — location confirmed, stream analysis complete)
 
+> **Navigation (added 2026-06-11, T1.5).** This doc is the canonical source for **site, geology,
+> hydrology, climate, earthen-architecture rules, smart-home stack, water, energy**. For a
+> topic-indexed map of every Paraguay-specific concern across the project (including the
+> market / community / regulatory material in `EUROPEAN_TOURISM_SPEC.md`), see
+> **`docs/paraguay_context.md`** — that doc is the single navigational root.
+
 ---
 
 ## 1. Project Identity
@@ -598,6 +604,12 @@ Two-layer approach:
 ---
 
 ## 18. The 10 Design Rules — Never Violate
+
+> **Canonical source (T1.5 promoted 2026-06-11):** `docs/MASTER_BRIEF.md` §14 is the single
+> authoritative copy of these 10 rules. The list below is preserved verbatim per the
+> additions-only directive but is a **mirror, not a source** — if the two ever diverge,
+> `MASTER_BRIEF.md` §14 wins. Cross-referenced from `CLAUDE.md` "The 10 design rules" section
+> and `docs/research/README.md`.
 
 1. No right angles in the cob walls — organic sculpted forms only
 2. No cement plaster anywhere on cob — always lime

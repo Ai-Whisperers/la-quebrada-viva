@@ -4,6 +4,19 @@
 >
 > See `STATUS.md` for the canonical current state and `docs/RESEARCH_GAPS.md` for the action list.
 
+> **Navigation (added 2026-06-11, T1.5).** This file is now an **append-only archive** of
+> session arcs. Newest arc lives at the bottom under `## Continuation arc` (and successive
+> dated headers as they accrue). Existing content is preserved verbatim per the additions-only
+> directive — nothing is removed or rewritten. Quick jumps:
+>
+> - **Current state:** `STATUS.md` (canonical) and `docs/RESEARCH_GAPS.md` (open items).
+> - **Latest tick:** scroll to the last `## Continuation arc …` header.
+> - **Topic indexes:** `docs/paraguay_context.md` (Paraguay-specific), `MASTER_BRIEF.md` (project root).
+> - **Design rules:** `MASTER_BRIEF.md` §14 is canonical (mirrored in `CLAUDE.md` and `docs/paraguay_clay_house_research.md` §18).
+>
+> When this file grows past ~1000 lines, split older arcs into `docs/session_log/archive_<YYYY-MM>.md`
+> and link from this header — deferred until then per additions-only.
+
 ---
 
 ## Session arc

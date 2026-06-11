@@ -6,6 +6,14 @@
 >
 > This doc collects Paraguay-specific data, market context, and a refined phasing plan. It complements the menu doc — that one is "what's possible," this one is "what Wesley is choosing."
 
+> **Navigation (added 2026-06-11, T1.5).** This doc is the canonical source for **target market,
+> San Bernardino / German / Dutch supply chain, vacation-rental typologies, events, eco
+> positioning, restaurant plan, regulatory (SENATUR / SET / municipal), tax, foreign ownership,
+> marketing channels, phasing**. For a topic-indexed map of every Paraguay-specific concern
+> across the project (including the site / hydrology / climate material in
+> `paraguay_clay_house_research.md`), see **`docs/paraguay_context.md`** — that doc is the
+> single navigational root.
+
 ---
 
 ## 1. The target market — who is coming, from where, and why
