@@ -1,0 +1,7 @@
+OpenTopography global DEMs — 2026-06-10T19:40:04.655268Z
+Bbox: W=-57.045 S=-25.645 E=-57.015 N=-25.615
+
+AW3D30: ALOS World 3D 30m (JAXA)  |  elev 116–380 m (range 264 m, mean 162 m)  |  pixel 0 m
+COP30: Copernicus DEM 30m (GLO-30)  |  elev 116–380 m (range 264 m, mean 161 m)  |  pixel 0 m
+SRTMGL1: SRTM v3 GL1 30m (NASA / USGS)  |  elev 118–375 m (range 257 m, mean 163 m)  |  pixel 0 m
+NASADEM: NASADEM 30m (NASA)  |  elev 115–371 m (range 256 m, mean 160 m)  |  pixel 0 m

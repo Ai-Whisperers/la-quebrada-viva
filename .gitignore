@@ -37,3 +37,9 @@ assets/textures/
 docs/*_boleto_*.pdf
 docs/*_escritura_*.pdf
 docs/2026-*_*.pdf
+
+# Regenerable raw Sentinel-2 raster bands (each ~50-250 MB, over GitHub's
+# 100 MB per-file hard limit). Re-fetch with `python scripts/fetch_sentinel2.py`
+# from the Element84 / AWS Earth Search STAC. preview_rgb.png + metadata.json
+# stay tracked so the AOI/timestamp is reproducible without a re-fetch.
+docs/site_data/sentinel2/*.tif

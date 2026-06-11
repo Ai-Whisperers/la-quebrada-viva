@@ -1,0 +1,12 @@
+SUMMARY BY GROUP
+========================================
+  Halobacteria: 79
+  Thermoproteia: 53
+  Methanobacteria: 40
+  Methanococci: 19
+  Thermoplasmata: 5
+  Thermococci: 4
+
+Total: 200 species
+Region: -25.645°S to -25.615°S, -57.045°W to -57.015°W
+Source: GBIF.org, accessed 2026-06-10
