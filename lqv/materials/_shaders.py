@@ -1,4 +1,9 @@
-"""Material helpers, palette, and the MAT registry."""
+"""Shader builder primitives — Principled BSDF, noise displacement, PBR.
+
+All thematic submodules (earth/wood/foliage/glass/props) build their materials
+on top of these helpers. No randomness is permitted here — the no-RNG-in-
+materials contract is asserted by tests/test_rng_invariants.py.
+"""
 from __future__ import annotations
 
 import os
@@ -7,7 +12,7 @@ import bpy
 
 
 _TEX_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
     'assets', 'textures',
 )
 
@@ -16,12 +21,6 @@ def _load_image(path: str):
     if not os.path.isfile(path):
         return None
     return bpy.data.images.load(path, check_existing=True)
-
-
-def hex_to_rgb(h: str) -> tuple[float, float, float, float]:
-    h = h.lstrip('#')
-    r, g, b = int(h[0:2], 16) / 255.0, int(h[2:4], 16) / 255.0, int(h[4:6], 16) / 255.0
-    return (r, g, b, 1.0)
 
 
 def principled(name, base_color, roughness=0.7, metallic=0.0, ior=1.45,
@@ -192,150 +191,3 @@ def assign(obj, material):
         obj.data.materials[0] = material
     else:
         obj.data.materials.append(material)
-
-
-# Site palette — keyed to MASTER_BRIEF §2.3 and §12
-COL = {
-    'laterite_dry':   hex_to_rgb('#C4522A'),
-    'laterite_wet':   hex_to_rgb('#8B3A1A'),
-    'cob_lime_white': hex_to_rgb('#E8E2D2'),
-    'cob_raw':        hex_to_rgb('#A85838'),
-    'sandstone_lit':  hex_to_rgb('#7A7268'),
-    'sandstone_dark': hex_to_rgb('#5A5448'),
-    'moss_wet':       hex_to_rgb('#8BA048'),
-    'moss_dry':       hex_to_rgb('#3D4F1A'),
-    'canopy_deep':    hex_to_rgb('#1A3A1A'),
-    'canopy_lit':     hex_to_rgb('#4A7A2A'),
-    'lapacho_pink':   hex_to_rgb('#F4C0D1'),
-    'lapacho_bloom':  hex_to_rgb('#E85A8C'),
-    'lapacho_bark':   hex_to_rgb('#5C4A3A'),
-    'water_deep':     hex_to_rgb('#2A3528'),
-    'water_shallow':  hex_to_rgb('#A85832'),
-    'lapacho_timber': hex_to_rgb('#5C2D17'),
-    'metal_roof':     hex_to_rgb('#3D3026'),
-    'bottle_cobalt':  hex_to_rgb('#0047AB'),
-    'bottle_amber':   hex_to_rgb('#8B6914'),
-    'bottle_green':   hex_to_rgb('#2D5A1B'),
-    'bottle_brown':   hex_to_rgb('#4A2C16'),
-    'agave':          hex_to_rgb('#7B8F6A'),
-}
-
-MAT: dict = {}
-
-
-def _make_pool_water():
-    """Two-layer water — clear surface + light volume tint for laterite turbidity."""
-    m = bpy.data.materials.new('PoolWater')
-    m.use_nodes = True
-    nt = m.node_tree
-    nt.nodes.clear()
-    out = nt.nodes.new('ShaderNodeOutputMaterial')
-    bsdf = nt.nodes.new('ShaderNodeBsdfPrincipled')
-    bsdf.inputs['Base Color'].default_value = COL['water_deep']
-    bsdf.inputs['Roughness'].default_value = 0.02
-    bsdf.inputs['IOR'].default_value = 1.333
-    bsdf.inputs['Transmission Weight'].default_value = 1.0
-    vol = nt.nodes.new('ShaderNodeVolumeAbsorption')
-    vol.inputs['Color'].default_value = COL['water_shallow']
-    vol.inputs['Density'].default_value = 1.6
-    nt.links.new(bsdf.outputs['BSDF'], out.inputs['Surface'])
-    nt.links.new(vol.outputs['Volume'], out.inputs['Volume'])
-    return m
-
-
-def build_materials():
-    """Populate MAT in the order the monolith built them. Must be called
-    after engine.reset_scene() — materials need a fresh bpy.data."""
-    MAT.clear()
-    MAT.update({
-        'lime_wash':    add_noise_displacement(principled('LimeWash', COL['cob_lime_white'], roughness=0.92), scale=22.0, strength=0.08),
-        'cob_raw':      add_noise_displacement(principled('CobRaw',   COL['cob_raw'],       roughness=0.95), scale=12.0, strength=0.18),
-        # Ground PBR per asset_plan.md §C.2. Tint multiplies the Diffuse toward
-        # the brief palette so Paraguayan laterite reads warm-red regardless of
-        # the Poly Haven source plate.
-        'laterite':     textured_principled(
-            'Laterite', 'aerial_mud_1',
-            uv_scale=1.0 / 8.0,  # 8m tile across hero camera frame
-            tint_color=COL['laterite_dry'], tint_fac=0.65,
-            displacement_strength=0.04,
-        ),
-        'sandstone':    textured_principled(
-            'Sandstone', 'dry_riverbed_rock',
-            uv_scale=1.0 / 4.0,  # ~4m tile so boulder grain reads at hero distance
-            tint_color=COL['sandstone_lit'], tint_fac=0.30,
-            displacement_strength=0.06,
-            normal_strength=1.2,
-        ),
-        'moss':         textured_principled(
-            'Moss', 'aerial_grass_rock',
-            uv_scale=1.0 / 6.0,
-            tint_color=COL['moss_wet'], tint_fac=0.35,
-            displacement_strength=0.03,
-        ),
-        'lapacho_timber': principled('LapachoTimber', COL['lapacho_timber'], roughness=0.55),
-        # Bark for the living trunk + limbs — tree_bark_03 PBR set tinted toward
-        # the lapacho_bark palette. uv_scale ~1/0.6 gives one tile every ~60cm,
-        # matched to the 40cm-diameter trunk so bark grain reads at hero distance.
-        'lapacho_bark': textured_principled(
-            'LapachoBark', 'tree_bark_03',
-            uv_scale=1.0 / 0.6,
-            tint_color=COL['lapacho_bark'], tint_fac=0.25,
-            displacement_strength=0.02,
-            normal_strength=1.4,
-        ),
-        'sod_canopy':   add_noise_displacement(principled('SodRoof',  COL['canopy_lit'],   roughness=0.95, sheen=0.15), scale=10.0, strength=0.06),
-        'canopy':       principled('Canopy', COL['canopy_deep'], roughness=0.85),
-        'lapacho_leaf': principled('LapachoLeaf', COL['canopy_lit'], roughness=0.7),
-        'lapacho_flower': principled('LapachoFlower', COL['lapacho_bloom'], roughness=0.55, sss=(0.2, (0.6, 0.2, 0.4))),
-        'pindo_trunk':  principled('PindoTrunk', hex_to_rgb('#6A6258'), roughness=0.85),
-        'pindo_frond':  principled('PindoFrond', hex_to_rgb('#3D5828'), roughness=0.75),
-        'mango_trunk':  principled('MangoTrunk', hex_to_rgb('#3A2A1E'), roughness=0.9),
-        'fern_frond':   principled('FernFrond',  hex_to_rgb('#4A6A28'), roughness=0.75),
-        'bamboo':       principled('Bamboo',     hex_to_rgb('#8AA055'), roughness=0.7),
-        'agave_blade':  principled('AgaveBlade', COL['agave'], roughness=0.55, sss=(0.1, (0.5, 0.6, 0.4))),
-        'anthurium_leaf': principled(
-            'AnthuriumLeaf', hex_to_rgb('#2E4A1E'),
-            roughness=0.42, sss=(0.08, (0.4, 0.55, 0.3)),
-        ),
-        'glass_bottle_cobalt': principled('BottleCobalt', COL['bottle_cobalt'], roughness=0.03, ior=1.52, transmission=1.0),
-        'glass_bottle_amber':  principled('BottleAmber',  COL['bottle_amber'],  roughness=0.03, ior=1.52, transmission=1.0),
-        'glass_bottle_green':  principled('BottleGreen',  COL['bottle_green'],  roughness=0.03, ior=1.52, transmission=1.0),
-        'glass_bottle_brown':  principled('BottleBrown',  COL['bottle_brown'],  roughness=0.03, ior=1.52, transmission=1.0),
-        'pool_water':   None,
-        'stream_bed':   textured_principled(
-            'StreamBed', 'dry_riverbed_rock',
-            uv_scale=1.0 / 3.0,
-            tint_color=hex_to_rgb('#5A4E3C'), tint_fac=0.40,
-            displacement_strength=0.04,
-        ),
-        # Rule 9 / 10 props — solar steel frame, PV cover glass, mesh tank cap.
-        # Deterministic principled BSDFs (no random) so the Phase-5 props build
-        # without shifting the RNG draw order downstream.
-        'steel_anodized': principled(
-            'SteelAnodized', hex_to_rgb('#2A2A2C'),
-            roughness=0.42, metallic=0.92, ior=1.45,
-        ),
-        'pv_glass': principled(
-            'PvGlass', hex_to_rgb('#0A1A2A'),
-            roughness=0.12, metallic=0.0, ior=1.5,
-        ),
-        # 0.5mm stainless mesh cap (rule 10). Real woven texture would need an
-        # alpha-mapped image; this dark metallic + alpha=0.55 reads as a fine
-        # porous cover at hero distance, which is what we need to verify rule 10.
-        'steel_mesh': principled(
-            'SteelMesh', hex_to_rgb('#3A3A3D'),
-            roughness=0.32, metallic=0.85, ior=1.45, alpha=0.55,
-        ),
-        # Variant C emissives. Window glow reads as warm interior lamps through
-        # the cob openings; firefly emission carries the night atmosphere.
-        'window_glow': principled(
-            'WindowGlow', hex_to_rgb('#FFC76A'), roughness=0.5,
-            emission_color=hex_to_rgb('#FFB252'), emission_strength=12.0,
-        ),
-        'firefly': principled(
-            'Firefly', hex_to_rgb('#FFFF80'),
-            emission_color=hex_to_rgb('#E6FF80'), emission_strength=80.0,
-        ),
-    })
-    MAT['pool_water'] = _make_pool_water()
-    return MAT
