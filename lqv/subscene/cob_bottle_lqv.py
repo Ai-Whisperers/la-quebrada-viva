@@ -12,8 +12,8 @@ from lqv.subscene import base
 
 
 def _build():
-    from lqv.typologies.cob_bottle_lqv import build
-    build()
+    from lqv.house.cob import build_cob_house
+    build_cob_house()
 
 
 if __name__ == '__main__':
