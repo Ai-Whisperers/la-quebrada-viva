@@ -9,6 +9,10 @@ scene.blend.session-backup
 renders/_preview_*.png
 *.exr
 
+# Sub-render driver outputs — regenerable from lqv/subscene/<asset>.py.
+# Each is a single-asset preview; not part of the 18-frame final matrix.
+renders/sub/
+
 __pycache__/
 *.pyc
 *.bak
@@ -21,6 +25,22 @@ __pycache__/
 .idea/
 .vscode/
 .claude/settings.local.json
+
+# Editor swap / backup files (vim, emacs, generic)
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+
+# Local-only MCP transport daemon — pinned out of history per project policy.
+scripts/mcp_daemon.py
+
+# Crash dumps, runtime logs, transient archives
+*.log
+*.tmp
+*.crdownload
+*.part
 
 # Stale artifacts kept out of history (reference-only monolith, old renders)
 _archive/
