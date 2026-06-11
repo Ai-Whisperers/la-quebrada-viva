@@ -14,6 +14,9 @@ __pycache__/
 *.bak
 *.pre-refactor.bak*
 .venv/
+.env.local
+.env
+*.env
 .DS_Store
 .idea/
 .vscode/
@@ -26,3 +29,11 @@ _archive/
 # textures from Poly Haven CC0). assets/models/ stays tracked.
 assets/hdris/
 assets/textures/
+
+# Private legal contract scans (boleto de compraventa, escritura drafts) —
+# reproduced with permission of the parties under the carve-out in LICENSE;
+# MUST NOT be redistributed via the git history. Protected from accidental
+# staging by glob match; share via secure channel only.
+docs/*_boleto_*.pdf
+docs/*_escritura_*.pdf
+docs/2026-*_*.pdf

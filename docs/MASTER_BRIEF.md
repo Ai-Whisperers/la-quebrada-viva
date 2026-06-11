@@ -426,4 +426,67 @@ Two-layer approach:
 
 ---
 
-*Document compiled from research session, June 2026. All data derived from primary sources verified during research.*
+## 16. Site-Selection Criteria (from vacation-rental / eco-retreat prior art)
+
+Synthesized 2026-06-10 from 5 case studies (Chaa Creek, Awasi, Inkaterra, San Bernardino, Mennonite colonies) + GSTC criteria + Crinion (1998). These 5 criteria predict survival past year 5 in the vacation-rental / eco-retreat sector.
+
+| # | Criterion | How to measure on our 62 ha |
+|---|---|---|
+| 1 | **A defensible, named natural feature** within walking/short-driving distance (river, falls, escarpment, ruin) | Our hero feature: pick one (highest waterfall on the stream? the cliff edge? a specific lapacho grove?). It appears on the brochure cover. |
+| 2 | **Distance to international airport, but NOT inside the noise/light cone** | We're 1.5 hr from Silvio Pettirossi (ASU). Map the 60 dB Ldn flight-path contour and exclude that zone from any guest cabin siting. |
+| 3 | **A pre-existing land use that the project can *redeem*, not *replace*** | Paraguay reduced deforestation 82–95% since 2003. Map degraded pasture vs intact forest. Reforestation story is gold for GSTC + EU sustainability marketing. |
+| 4 | **Existing community, language, and supply-chain footprint** | ~450k ethnic Germans in PY, 9 eastern Mennonite colonies in our biome, Colegio Goethe, Club Alemán, German bakeries within 50 km. Tap this for bilingual staff + German/European cuisine supply. |
+| 5 | **A defensible narrative a European guest can retell at dinner** | "We slept in a cob-and-timber cabin carved into the edge of an Atlantic Forest escarpment, 80 km from the German-Mennonite colonies that built Paraguay's dairy industry, and ate cheese from the same co-op the settlers used in 1927." |
+
+## 17. Case Studies (synthesized 2026-06-10)
+
+| Project | Location | Built footprint | Why it matters |
+|---|---|---|---|
+| **The Lodge at Chaa Creek** | Macal River, Belize (1981) | 2 cottages → 28 over 25 years on 500 acres | Closest analog. Started under 5 keys, grew organically, never built the 200-key "resort." Owner-operator 40+ years. |
+| **Awasi** (5 lodges) | Patagonia / Atacama / Santa Catarina / Iguazú / Mendoza | "Private guide + 4×4 per room" model | Awasi Iguazú is the only 5-star in the last Atlantic Rainforest fragment in Argentina, marketed to Germans + French. Conservation as product. |
+| **Inkaterra** | Peru (1975) | 4 properties, ~50 ha cloud-forest reserve | Oldest continuous eco-tourism in South America. German family founder. Cloud-forest research station + hotel model. |
+| **San Bernardino, PY** | Lago Ypacaraí, 80 km from site (1881) | German/Swiss-founded lake town, German bakeries still operating | The on-the-ground precedent. Proof of concept: 144 years of European-coded leisure tourism in eastern Paraguay. |
+| **Mennonite colonies in PY** | 25 colonies, 38,731 people, 9 in eastern PY | Dairy, agriculture, German-language communities | Domestic supply chain + market for German-coded tourism. Plautdietsch + Standard German + Hunsrik speakers. |
+
+## 18. Eco-Retreat Design Rules (Tier-2 expansion of §14)
+
+Synthesized 2026-06-10 from GSTC + Crinion + case studies. These are site-planning rules, not the cob/material rules in §14.
+
+| # | Rule | Source |
+|---|---|---|
+| 1 | **Establish the building envelope before designing the building.** The site dictates the architecture. | GSTC, Chaa Creek, Inkaterra all built *into* the terrain, not on top. |
+| 2 | **Concentrate the footprint, distribute the experience.** Cluster service/restaurant at the lowest visual/noise point, *disperse* cabins into the highest-value viewshed zones, each private from the next. | Awasi (private guide per room = "cabin as destination"), Chaa Creek (28 keys / 500 acres). |
+| 3 | **Always site within 5 min walk of the named hero feature, but never *on top* of it (30–100 m setback).** | Inkaterra cloud-forest reserve buffer; Chaa Creek Macal River setback. |
+| 4 | **Conservation = product.** A conservation action (reforestation, species reintroduction, archaeological dig) must be visible, attributable, and narratable. | Awasi Patagonia puma reserve, Awasi Santa Catarina Bee Route, Chaa Creek Natural History Centre. |
+| 5 | **Cabin count = landscape capacity, not market demand.** 62 ha + 264 m relief + cob/timber = 12–16 keys, period. | All 5 case studies hold their key count low. |
+| 6 | **Road < impact footprint < building footprint.** Minimize road length, use the existing farm road as the spine, put the heaviest infrastructure in the *least ecologically sensitive* zone. | Inkaterra Reserva Amazónica: 17,000 ha, <5 km of road. |
+| 7 | **Energy and water are closed-loop at the cabin scale.** Solar hot water + rainwater cistern per cabin. Greywater to constructed wetland. | Chaa Creek per-cottage solar. Awasi Santa Catarina rainwater + recycling. |
+| 8 | **Material provenance is part of the design language.** Cob/earthen + timber (the brief) is *the* material story — but it must be sourced within the watershed. | Inkaterra 100% local materials; Awasi native reforestation. |
+| 9 | **Local employment + multilingualism are non-optional.** Hire within 30 km. Train. Pay above local average. Publish who works there. | GSTC mandatory; Awasi explicit on this. |
+| 10 | **Certify, or it didn't happen.** GSTC (cheapest), B Corp (most EU-recognized), Relais & Châteaux (most PR-effective). | GSTC 4 pillars; Awasi is R&C-certified. |
+
+## 19. GIS Layers Beyond Slope & Aspect (research-surfaced 2026-06-10)
+
+| Tier | Layer | Tool | Notes |
+|---|---|---|---|
+| 1 | **Viewshed cumulative** | GRASS `r.viewshed` or `pyviewshed` | Run from every cabin candidate. Awasi sells "view of Torres del Paine puma reserve" — that's a pre-built viewshed. |
+| 1 | **Slope + aspect + hillshade composite** | QGIS `gdaldem` | Slate cabins to <15% slope, N-NE facing (Southern Hemisphere = north-facing for solar). |
+| 1 | **Hydrology + 30 m riparian buffer** | QGIS `r.watershed` (via `pysheds`) | Year-round stream is hero feature AND erosion risk. No cabin within 30 m. |
+| 1 | **NDWI seasonal** | Sentinel-2, free, 10 m, weekly | Hidden gallery wetlands in Atlantic Forest — surface in Feb wet season. |
+| 1 | **Solar exposure** | PVGIS (EU JRC, free) | Passive-solar siting: N-NE face, deciduous east/west, evergreens south. |
+| 1 | **Wildfire risk** | MODIS LST + fuel-load proxy + road proximity | Chaco fires 2019–2023. Map defensible firebreaks (rivers, rock outcrops, roads). |
+| 1 | **Road cost raster** | QGIS GRASS `r.cost` | 1 km of new access through Atlantic Forest = costly + damaging. Optimize routing. |
+| 2 | **Acoustic environment** | On-site calibrated SPL meter, 4×/season | 35 dB nighttime = premium pricing. Single most cited differentiator. |
+| 2 | **Light pollution** | NOAA VIIRS + on-site SQM | Bortle 2–3 in PY is achievable. Make "no external light > 2700K, fully shielded" a code. |
+| 2 | **Biodiversity corridors** | WWF Atlantic Forest restoration-priority map | Connect to a recognized corridor 10× the value of a stand-alone fragment. |
+| 2 | **Fauna presence** | 12-month camera-trap survey ($80/cam × 12) | Map tapir, jaguarundi corridors. Move cabins 200 m off corridors. |
+| 2 | **Cultural / archaeological** | Paraguayan archaeologist + Pai Tavytera / Aché consultation | Inkaterra's 70-site Maya archaeology layer turned "a hotel" into "a 4,000-year-old cultural landscape." Eastern PY has Guaraní pre-Columbian sites. |
+| 3 | **Climate projection 2050/2100** | WorldClim 2.1 + CMIP6 downscaled | Where is "always wet" forest under future climate? That's where cabins go. |
+| 3 | **30-year land-use change** | MapBiomas Paraguay (open annual maps since 1985) | Surrounding 5 km losing or gaining forest? Determines whether we add or subtract from regional connectivity. |
+| 3 | **Water balance / aquifer** | QGIS SWAT or piezometers | Year-round stream is the best amenity + biggest liability if aquifer gets over-pumped. |
+
+The Tier-1 stack is the next must-do after the drone LiDAR (R35 in RESEARCH_GAPS.md).
+
+---
+
+*Document compiled from research session, June 2026. All data derived from primary sources verified during research. Sections 16–19 added 2026-06-10 from the vacation-rental / eco-retreat research synthesis (5 parallel subagents, ~80 repos catalogued, see `docs/research/README.md`).*

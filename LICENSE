@@ -1,0 +1,33 @@
+MIT License
+
+Copyright (c) 2026 Wesley van de Camp, AI Whisperers (Ivan Weiss van der Pol)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+This MIT license covers ONLY the code in this repository (`lqv/`, `build_scene.py`,
+`scripts/`, project documentation under `docs/`). It does NOT cover:
+
+- Third-party 3D models, textures, and HDRIs under `assets/` — see `CREDITS.md`
+  and `LICENSE_BUNDLE.md` for per-asset terms (mostly CC0 and CC-BY 4.0).
+- Final render outputs under `renders/` — these are derivative works of the
+  assets above and inherit attribution requirements from CC-BY contributors.
+- The legal contract scans under `docs/2026-04-28_*.pdf` — these are private
+  legal documents reproduced with permission of the parties; do not redistribute.
