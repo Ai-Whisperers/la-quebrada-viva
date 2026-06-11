@@ -15,7 +15,11 @@ from __future__ import annotations
 
 import os
 
-ASSETS = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'assets', 'site_data')
+ASSETS = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    'assets',
+    'site_data',
+)
 
 
 def is_available() -> bool:

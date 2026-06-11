@@ -63,7 +63,7 @@ print("GEDI L2A — S3 streaming with h5py selective read (EULA-gated)")
 print("=" * 70)
 print(f"Bbox: W={BBOX['west']} S={BBOX['south']} E={BBOX['east']} N={BBOX['north']}")
 print(f"Reads per granule: {len(NEEDED_DATASETS)} datasets × ~8 beams = {len(NEEDED_DATASETS)*8} reads")
-print(f"Expected per-granule network: ~50-200 MB (vs 1.2 GB full file)")
+print("Expected per-granule network: ~50-200 MB (vs 1.2 GB full file)")
 
 # 1) S3 creds (1h lifetime)
 print("\n[1/5] Fetching short-lived S3 creds…")
@@ -136,7 +136,7 @@ for i, (gid, tstart, key, sz_mb) in enumerate(s3_keys, 1):
                     # Selective read: only the datasets we need
                     try:
                         columns = {ds: h5[f"{beam}/{ds}"][:] for ds in NEEDED_DATASETS}
-                    except KeyError as e:
+                    except KeyError:
                         continue
                     lat = columns["lat_lowestmode"]
                     lon = columns["lon_lowestmode"]

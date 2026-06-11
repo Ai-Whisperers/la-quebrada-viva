@@ -25,7 +25,6 @@ import numpy as np
 import pandas as pd
 import requests
 from dotenv import load_dotenv
-from typing import Optional
 
 HERE = Path(__file__).parent.parent
 load_dotenv(dotenv_path=HERE / ".env.local")

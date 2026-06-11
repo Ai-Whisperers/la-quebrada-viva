@@ -17,9 +17,6 @@ Use: cross-validate the climate section in docs/MASTER_BRIEF.md against
 real WorldClim values for this exact site. Useful for the brochure and
 for the "always-wet" GIS layer in the site analysis.
 """
-import os
-import re
-import sys
 import time
 from pathlib import Path
 
@@ -55,7 +52,7 @@ def download(url: str, out: Path, attempts: int = 3):
                     for chunk in r.iter_content(chunk_size=1024 * 64):
                         f.write(chunk)
             return out.stat().st_size
-        except Exception as e:
+        except Exception:
             if i == attempts - 1:
                 raise
             time.sleep(2 * (i + 1))

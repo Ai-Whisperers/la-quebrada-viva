@@ -3,14 +3,14 @@ from __future__ import annotations
 
 import random
 
-from .pindo import add_pindo_palm
-from .lapacho import add_lapacho, scatter_lapacho_petals
-from .mango import add_mango
-from .fern import add_tree_fern
-from .bamboo import add_bamboo_clump, scatter_grass_tufts
 from .agave import add_agave
 from .anthurium import scatter_anthuriums
+from .bamboo import add_bamboo_clump, scatter_grass_tufts
+from .fern import add_tree_fern
 from .fireflies import scatter_fireflies
+from .lapacho import add_lapacho, scatter_lapacho_petals
+from .mango import add_mango
+from .pindo import add_pindo_palm
 
 
 def populate(flowering_lapacho: bool):

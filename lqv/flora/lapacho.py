@@ -78,7 +78,9 @@ def add_lapacho(x, y, scale=1.0, flowering=True):
                 jy = end_y + random.uniform(-0.6, 0.6) * scale
                 jz = end_z + random.uniform(-0.3, 0.5) * scale
                 r = random.uniform(1.1, 1.5) * scale
-                bpy.ops.mesh.primitive_ico_sphere_add(radius=r, location=(jx, jy, jz), subdivisions=3)
+                bpy.ops.mesh.primitive_ico_sphere_add(
+                    radius=r, location=(jx, jy, jz), subdivisions=3,
+                )
                 crown = bpy.context.active_object
                 crown.name = 'LapachoCrown'
                 crown.scale = (1.0, 1.0, 0.75)

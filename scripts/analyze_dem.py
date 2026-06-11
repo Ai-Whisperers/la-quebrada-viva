@@ -14,18 +14,15 @@ Outputs (in docs/site_data/analysis/):
   - analysis_summary.txt            (numbers)
   - site_diagnostic.md              (markdown interpretation)
 """
-import json
-import os
-import sys
 from datetime import datetime
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import rasterio
-from rasterio.transform import rowcol
 from dotenv import load_dotenv
 
 HERE = Path(__file__).parent.parent
@@ -151,7 +148,7 @@ cbar.ax.set_yticklabels([class_names[i] for i in range(5)])
 plt.tight_layout()
 plt.savefig(OUT_DIR / "slope_and_buildability.png", dpi=110, bbox_inches="tight")
 plt.close()
-print(f"      wrote slope_and_buildability.png")
+print("      wrote slope_and_buildability.png")
 
 # Composite: hillshade + buildability + contours
 fig, ax = plt.subplots(figsize=(12, 12), dpi=120)
@@ -173,7 +170,7 @@ cbar.ax.set_yticklabels([class_names[i] for i in range(5)])
 plt.tight_layout()
 plt.savefig(OUT_DIR / "site_diagnostic.png", dpi=120, bbox_inches="tight")
 plt.close()
-print(f"      wrote site_diagnostic.png")
+print("      wrote site_diagnostic.png")
 
 # 5) Elevation-by-class stats
 print("\n[5/5] Per-class elevation stats…")

@@ -34,14 +34,17 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
 
-from lqv import config, engine, materials, render, lighting, cameras, flora
-from lqv.site import build_escarpment, build_ground, build_terraces, build_stream
-from lqv.house import build_cob_house, build_bottle_wall, build_tatakua, build_services
+from lqv import cameras, config, engine, flora, lighting, materials, render
+from lqv.house import build_bottle_wall, build_cob_house, build_services, build_tatakua
+from lqv.site import build_escarpment, build_ground, build_stream, build_terraces
 
 
 def main():
     cfg = config.parse()
-    print(f"[build] variant={cfg.variant} cam={cfg.cam_name} samples={cfg.samples} res={cfg.res_x}x{cfg.res_y}")
+    print(
+        f"[build] variant={cfg.variant} cam={cfg.cam_name} "
+        f"samples={cfg.samples} res={cfg.res_x}x{cfg.res_y}"
+    )
 
     scene = engine.reset_scene()
     engine.setup_cycles(scene, cfg)

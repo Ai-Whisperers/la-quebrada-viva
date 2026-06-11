@@ -21,7 +21,7 @@ from __future__ import annotations
 
 import ast
 import os
-from typing import Iterable, List, Set
+from collections.abc import Iterable
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 LQV = os.path.join(ROOT, 'lqv')
@@ -34,13 +34,13 @@ def _iter_py_files(root: str) -> Iterable[str]:
                 yield os.path.join(dirpath, fname)
 
 
-def _collect_mat_keys_in_file(path: str) -> Set[str]:
+def _collect_mat_keys_in_file(path: str) -> set[str]:
     with open(path, encoding='utf-8') as fh:
         try:
             tree = ast.parse(fh.read(), filename=path)
         except SyntaxError:
             return set()
-    out: Set[str] = set()
+    out: set[str] = set()
     for node in ast.walk(tree):
         if (
             isinstance(node, ast.Subscript)
@@ -53,16 +53,16 @@ def _collect_mat_keys_in_file(path: str) -> Set[str]:
     return out
 
 
-def collect_referenced_keys() -> Set[str]:
+def collect_referenced_keys() -> set[str]:
     """Static scan: every literal ``MAT['…']`` access in lqv/."""
-    keys: Set[str] = set()
+    keys: set[str] = set()
     for path in _iter_py_files(LQV):
         keys.update(_collect_mat_keys_in_file(path))
     return keys
 
 
-def short_or_suspicious(keys: Iterable[str]) -> List[str]:
-    out: List[str] = []
+def short_or_suspicious(keys: Iterable[str]) -> list[str]:
+    out: list[str] = []
     for k in keys:
         if len(k) < 3:
             out.append(f"suspiciously short key {k!r}")
@@ -82,7 +82,7 @@ def run_static() -> int:
     return 2 if warns else 0
 
 
-def run_with_registry(verbose: bool = True) -> List[str]:
+def run_with_registry(verbose: bool = True) -> list[str]:
     """Inside Blender: compare static refs to the real MAT registry."""
     from lqv.materials import MAT  # imported lazily so static mode has no bpy dep
 
@@ -90,7 +90,7 @@ def run_with_registry(verbose: bool = True) -> List[str]:
     present = set(MAT.keys())
     missing = refs - present
     unused = present - refs
-    msgs: List[str] = []
+    msgs: list[str] = []
     for k in sorted(missing):
         msgs.append(f"MISSING in MAT but referenced: {k!r}")
     for k in sorted(unused):

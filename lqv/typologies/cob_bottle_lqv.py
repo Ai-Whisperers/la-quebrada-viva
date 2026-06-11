@@ -31,5 +31,6 @@ def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
     function will dispatch to ``lqv.house.cob.build_house`` with offset.
     """
     raise NotImplementedError(
-        'cob_bottle_lqv.build is a forward-declaration; call lqv.house.cob.build_house directly for now.'
+        'cob_bottle_lqv.build is a forward-declaration; '
+        'call lqv.house.cob.build_house directly for now.'
     )

@@ -42,10 +42,8 @@ def fetch_occurrences():
     while offset < MAX_TOTAL:
         params = {
             'geometry': wkt,
-            'hasCoordinate': True,
             'limit': PER_PAGE,
             'offset': offset,
-            'basisOfRecord': 'OBSERVATION,OCCURRENCE,MACHINE_OBSERVATION',
         }
         r = requests.get(GBIF_OCC, params=params, timeout=30)
         r.raise_for_status()

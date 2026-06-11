@@ -24,19 +24,31 @@ def build_cameras():
     # 1. Hero wide — Z2 pool foreground, cob house mid, escarpment behind.
     #    Pool is at (12,-22,-0.18); pull camera back and tilt down so the pool
     #    fills the lower third of frame and the house sits mid-ground.
-    cams['hero'] = add_camera('Cam_Hero', location=(18.0, -33.0, 2.4), look_at=(10.0, -20.0, 0.1), lens=28.0)
+    cams['hero'] = add_camera(
+        'Cam_Hero', location=(18.0, -33.0, 2.4), look_at=(10.0, -20.0, 0.1), lens=28.0,
+    )
     # 2. Stream upstream — from footbridge looking up the channel
-    cams['stream_up'] = add_camera('Cam_StreamUp', location=(11.0, -19.0, 1.4), look_at=(11.5, 0.0, 1.0), lens=35.0)
+    cams['stream_up'] = add_camera(
+        'Cam_StreamUp', location=(11.0, -19.0, 1.4), look_at=(11.5, 0.0, 1.0), lens=35.0,
+    )
     # 3. Terrace overview — from house position looking downhill
-    cams['terrace'] = add_camera('Cam_Terrace', location=(0.0, -4.0, 2.5), look_at=(5.0, -22.0, 0.0), lens=28.0)
+    cams['terrace'] = add_camera(
+        'Cam_Terrace', location=(0.0, -4.0, 2.5), look_at=(5.0, -22.0, 0.0), lens=28.0,
+    )
     # 4. Cliff backdrop — from glade looking north, pindo palms in foreground
-    cams['cliff'] = add_camera('Cam_Cliff', location=(-2.0, -18.0, 1.6), look_at=(-2.0, 35.0, 20.0), lens=24.0)
+    cams['cliff'] = add_camera(
+        'Cam_Cliff', location=(-2.0, -18.0, 1.6), look_at=(-2.0, 35.0, 20.0), lens=24.0,
+    )
     # 5. Dusk / blue hour — glade, low angle
-    cams['dusk'] = add_camera('Cam_Dusk', location=(2.0, -22.0, 0.8), look_at=(0.0, -5.0, 2.0), lens=35.0)
+    cams['dusk'] = add_camera(
+        'Cam_Dusk', location=(2.0, -22.0, 0.8), look_at=(0.0, -5.0, 2.0), lens=35.0,
+    )
     # 6. Detail — lapacho petals carpeting laterite. 85mm at 1m framed a 43cm
     # patch and caught ~2 petals; pulled back to 3.5m with 50mm so the dense
     # σ=1.2 cluster around (-3,-10) reads as a carpet.
-    cams['petal_macro'] = add_camera('Cam_PetalMacro', location=(-3.0, -13.5, 0.8), look_at=(-3.0, -10.0, 0.2), lens=50.0)
+    cams['petal_macro'] = add_camera(
+        'Cam_PetalMacro', location=(-3.0, -13.5, 0.8), look_at=(-3.0, -10.0, 0.2), lens=50.0,
+    )
     return cams
 
 

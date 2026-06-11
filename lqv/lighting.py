@@ -6,7 +6,6 @@ import os
 
 import bpy
 
-
 # Poly Haven CC0 HDRIs fetched by scripts/download_assets.sh. If the file is
 # missing the world falls back to the procedural Nishita sky so the renderer
 # still works on a fresh clone.

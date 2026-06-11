@@ -16,6 +16,7 @@ from datetime import datetime
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
@@ -129,14 +130,14 @@ def main():
         print(f"\n[{demtype}] fetching {label}…")
         content = fetch_dem(demtype)
         if content is None:
-            print(f"      FAILED, skipping")
+            print("      FAILED, skipping")
             summary_lines.append(f"{demtype}: FAILED")
             continue
         tif = OUT_DIR / f"{prefix}_dem.tif"
         tif.write_bytes(content)
         print(f"      wrote {tif}  ({len(content):,} bytes)")
 
-        print(f"      computing hillshade + stats…")
+        print("      computing hillshade + stats…")
         hs, stats = make_hillshade(tif, OUT_DIR / f"{prefix}_hillshade.png", label)
         if stats is None:
             continue

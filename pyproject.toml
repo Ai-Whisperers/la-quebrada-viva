@@ -1,0 +1,30 @@
+[project]
+name = "la-quebrada-viva"
+version = "0.1.0"
+description = "La Quebrada Viva — 62 ha regenerative landscape + house render package (Blender/Cycles, La Cordillera, Paraguay)."
+requires-python = ">=3.11"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = [
+    "_archive",
+    "docs/site_data",
+    "renders",
+    "subrenders",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# Top-level driver: bootstraps lqv/ onto sys.path before importing it.
+"build_scene.py" = ["E402"]
+# Sub-render drivers: standalone entry points that insert repo root onto sys.path
+# before importing lqv/.* — intentional and load-bearing for `blender --python`.
+"lqv/subscene/*.py" = ["E402"]
+# Ad-hoc data/analysis scripts: many embed long URLs, captured stdout, and
+# sys.path/dotenv shims before imports. They also use one-line if/return ladders
+# (E701), semicolon-chained matplotlib axis labels (E702), zip without strict=
+# (B905), and unused-but-named loop tuple slots (B007). Lint floor stays at F.
+"scripts/*.py" = ["E402", "E501", "E701", "E702", "E741", "B007", "B905"]

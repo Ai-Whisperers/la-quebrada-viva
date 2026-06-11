@@ -11,10 +11,9 @@ Outputs:
   - docs/site_data/sentinel2/preview_rgb.png
 """
 import json
-import os
 import sys
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import requests
@@ -41,7 +40,7 @@ DAYS_BACK = 730       # last 2 years
 
 
 def find_best_scene():
-    end = datetime.now(timezone.utc)
+    end = datetime.now(UTC)
     start = end - timedelta(days=DAYS_BACK)
     body = {
         'collections': [COLLECTION],
@@ -120,7 +119,7 @@ def main():
         print("  no bands downloaded — aborting")
         return 1
 
-    print(f"\n[3/4] Building composite RGB preview from red/green/blue…")
+    print("\n[3/4] Building composite RGB preview from red/green/blue…")
     try:
         import numpy as np
         import rasterio
@@ -163,13 +162,13 @@ def main():
     except Exception as e:
         print(f"  preview failed: {type(e).__name__}: {str(e)[:100]}")
 
-    print(f"\n[4/4] Summary")
+    print("\n[4/4] Summary")
     print(f"  Scene: {best['id']}")
     print(f"  Date: {best['properties'].get('datetime', '?')[:10]}")
     print(f"  Cloud: {best['properties'].get('eo:cloud_cover')}%")
     print(f"  Bands downloaded: {sorted(downloaded.keys())}")
     print(f"  Total: {sum(p.stat().st_size for p in downloaded.values())//1024} KB")
-    print(f"\nDONE.")
+    print("\nDONE.")
     return 0
 
 

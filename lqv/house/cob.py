@@ -10,7 +10,6 @@ import bpy
 from ..geometry import new_object_from_bmesh
 from ..materials import MAT, assign
 
-
 # Module-level so build_window_emission can reuse the same coordinates as the
 # Boolean cutouts. (x, y, z, sx, sy, sz, normal_axis) — normal is the wall axis
 # the cutout extends through.
@@ -280,7 +279,9 @@ def build_cob_house():
     # Posts bumped from 0.12 → 0.18 radius — at hero cam distance (~28m, 28mm)
     # the original posts were a 1px sliver and read as cracks rather than columns.
     for x in (-5.5, -3.0, 0.0, 3.0, 5.5):
-        bpy.ops.mesh.primitive_cylinder_add(radius=0.18, depth=wall_h, location=(x, -3.5, corredor_z + wall_h / 2))
+        bpy.ops.mesh.primitive_cylinder_add(
+            radius=0.18, depth=wall_h, location=(x, -3.5, corredor_z + wall_h / 2),
+        )
         post = bpy.context.active_object
         post.name = f'CorredorPost_{x:+.1f}'
         assign(post, MAT['lapacho_timber'])

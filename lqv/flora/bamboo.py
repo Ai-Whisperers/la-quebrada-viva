@@ -45,7 +45,11 @@ def add_bamboo_clump(x, y, n=8, scale=1.0):
             leaf = bpy.context.active_object
             leaf.name = 'BambooLeafMass'
             leaf.scale = (1.0, 1.0, 0.55)
-            leaf.rotation_euler = (random.uniform(-0.4, 0.4), random.uniform(-0.4, 0.4), random.uniform(0, math.tau))
+            leaf.rotation_euler = (
+                random.uniform(-0.4, 0.4),
+                random.uniform(-0.4, 0.4),
+                random.uniform(0, math.tau),
+            )
             bpy.ops.object.transform_apply(scale=True, rotation=True)
             add_subdiv_displace(leaf, levels=1, noise_scale=4.0, strength=0.18)
             assign(leaf, MAT['bamboo'])
@@ -81,11 +85,17 @@ def scatter_grass_tufts(n=80, x_range=(-18.0, 22.0), y_range=(-26.0, 4.0)):
             ox = x + random.uniform(-0.12, 0.12)
             oy = y + random.uniform(-0.12, 0.12)
             h = random.uniform(0.10, 0.22)
-            bpy.ops.mesh.primitive_ico_sphere_add(radius=0.05, location=(ox, oy, h / 2), subdivisions=1)
+            bpy.ops.mesh.primitive_ico_sphere_add(
+                radius=0.05, location=(ox, oy, h / 2), subdivisions=1,
+            )
             blade = bpy.context.active_object
             blade.name = 'GrassTuft'
             blade.scale = (0.35, 0.35, h / 0.05)
-            blade.rotation_euler = (random.uniform(-0.2, 0.2), random.uniform(-0.2, 0.2), random.uniform(0, math.tau))
+            blade.rotation_euler = (
+                random.uniform(-0.2, 0.2),
+                random.uniform(-0.2, 0.2),
+                random.uniform(0, math.tau),
+            )
             bpy.ops.object.transform_apply(scale=True, rotation=True)
             assign(blade, MAT['bamboo'])
             parts.append(blade)

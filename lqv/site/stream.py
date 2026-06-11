@@ -155,7 +155,9 @@ def build_stream():
     assign(pelton_lid, MAT['lapacho_timber'])
     objs.append(pelton_lid)
     # Tailrace pipe — water return downstream, lower than penstock.
-    bpy.ops.mesh.primitive_cylinder_add(radius=0.08, depth=1.20, location=(13.50, weir_y - 0.20, 0.05))
+    bpy.ops.mesh.primitive_cylinder_add(
+        radius=0.08, depth=1.20, location=(13.50, weir_y - 0.20, 0.05),
+    )
     tailrace = bpy.context.active_object
     tailrace.name = 'PeltonTailrace'
     tailrace.rotation_euler = (math.radians(90), 0, math.radians(60))

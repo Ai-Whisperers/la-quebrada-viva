@@ -27,7 +27,6 @@ builders run as before — zero behavior change.
 from __future__ import annotations
 
 import os
-from typing import Optional, Tuple
 
 import bpy
 
@@ -35,7 +34,7 @@ from .config import PROJECT_DIR
 
 ASSETS_ROOT = os.path.join(PROJECT_DIR, 'assets')
 
-Vec3 = Tuple[float, float, float]
+Vec3 = tuple[float, float, float]
 
 
 def _make_parent(name: str, location: Vec3, rotation: Vec3, scale: float) -> bpy.types.Object:
@@ -78,7 +77,7 @@ def import_sketchfab(
     location: Vec3,
     rotation: Vec3 = (0.0, 0.0, 0.0),
     scale: float = 1.0,
-) -> Optional[bpy.types.Object]:
+) -> bpy.types.Object | None:
     """Load ``assets/sketchfab/<uid>/scene.gltf`` and return the root Empty.
 
     Returns None if the asset folder, scene.gltf, or gltf2 import operator is
@@ -108,7 +107,7 @@ def import_blenderkit(
     location: Vec3,
     rotation: Vec3 = (0.0, 0.0, 0.0),
     scale: float = 1.0,
-) -> Optional[bpy.types.Object]:
+) -> bpy.types.Object | None:
     """Append every object from ``assets/blenderkit/<asset_id>.blend``.
 
     Uses ``wm.append`` with link=False so the asset becomes part of the .blend
@@ -148,7 +147,7 @@ def import_polyhaven_model(
     rotation: Vec3 = (0.0, 0.0, 0.0),
     scale: float = 1.0,
     res: str = '4k',
-) -> Optional[bpy.types.Object]:
+) -> bpy.types.Object | None:
     """Append from ``assets/polyhaven/models/<slug>/<slug>_<res>.blend``."""
     model_dir = os.path.join(ASSETS_ROOT, 'polyhaven', 'models', slug)
     blend_path = os.path.join(model_dir, f"{slug}_{res}.blend")

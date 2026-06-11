@@ -20,7 +20,8 @@ import bpy
 EXPECTED_BY_VARIANT = {
     'A': {'elevation_deg': 13.0, 'azimuth_deg': 337.5, 'tolerance_deg': 2.5},  # NNW
     'B': {'elevation_deg': 35.0, 'azimuth_deg': 90.0, 'tolerance_deg': 5.0},   # morning E
-    'C': {'elevation_deg': -8.0, 'azimuth_deg': 270.0, 'tolerance_deg': 5.0},  # below horizon, moonlight from W
+    # below horizon, moonlight from W
+    'C': {'elevation_deg': -8.0, 'azimuth_deg': 270.0, 'tolerance_deg': 5.0},
 }
 
 

@@ -16,8 +16,6 @@ Outputs:
   - docs/site_data/osm_summary.txt
 """
 import json
-import os
-import sys
 import time
 from pathlib import Path
 

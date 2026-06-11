@@ -31,4 +31,6 @@ def build_scatter_modifier(target_mesh_name: str, source_collection_name: str, d
     Determinism: seed must be threaded through from build_scene.py so reruns
     match. Do NOT pull from ``random.random()`` inside the node-tree builder.
     """
-    raise NotImplementedError('Pending: needs node-tree builder + parity test vs procedural scatter.')
+    raise NotImplementedError(
+        'Pending: needs node-tree builder + parity test vs procedural scatter.',
+    )

@@ -117,7 +117,7 @@ for g in granules:
 print(f"\n[3/5] {len(s3_keys)} S3 keys ready")
 
 # 4) Stream each granule, extract bbox-relevant shots
-print("\n[4/5] Streaming {n} granules via s3fs + h5py…".format(n=len(s3_keys)))
+print(f"\n[4/5] Streaming {len(s3_keys)} granules via s3fs + h5py…")
 all_shots = []
 n_processed = 0
 n_beams_skipped = 0

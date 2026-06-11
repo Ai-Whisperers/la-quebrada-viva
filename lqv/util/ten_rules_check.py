@@ -13,19 +13,17 @@ never mutates objects, materials, or modifiers.
 """
 from __future__ import annotations
 
-from typing import List
-
 import bpy
 
 
-def _check_no_box_walls() -> List[str]:
+def _check_no_box_walls() -> list[str]:
     """Rule 1: no right angles in cob walls.
 
     Heuristic: any mesh whose name starts with "CobWall_" must have at least
     one subdivision-surface modifier OR a displacement modifier. A pure box
     has neither.
     """
-    out: List[str] = []
+    out: list[str] = []
     for obj in bpy.data.objects:
         if obj.type != 'MESH' or not obj.name.startswith('CobWall_'):
             continue
@@ -35,13 +33,13 @@ def _check_no_box_walls() -> List[str]:
     return out
 
 
-def _check_no_cement_plaster() -> List[str]:
+def _check_no_cement_plaster() -> list[str]:
     """Rule 2: no cement plaster on cob; lime only.
 
     Heuristic: scan material names for 'cement' or 'concrete' substrings on
     any object whose name starts with CobWall_.
     """
-    out: List[str] = []
+    out: list[str] = []
     forbidden = ('cement', 'concrete')
     for obj in bpy.data.objects:
         if not obj.name.startswith('CobWall_'):
@@ -55,13 +53,13 @@ def _check_no_cement_plaster() -> List[str]:
     return out
 
 
-def _check_no_standing_water() -> List[str]:
+def _check_no_standing_water() -> list[str]:
     """Rule 3: no standing water other than the mandated stream pool.
 
     Heuristic: any mesh whose name contains 'puddle', 'cistern_open', or
     'pond' is a violation.
     """
-    out: List[str] = []
+    out: list[str] = []
     forbidden = ('puddle', 'cistern_open', 'pond')
     for obj in bpy.data.objects:
         n = obj.name.lower()
@@ -70,9 +68,9 @@ def _check_no_standing_water() -> List[str]:
     return out
 
 
-def _check_walls_off_ground() -> List[str]:
+def _check_walls_off_ground() -> list[str]:
     """Rule 4: earthen walls never touch ground; 60cm stone foundation."""
-    out: List[str] = []
+    out: list[str] = []
     for obj in bpy.data.objects:
         if obj.type != 'MESH' or not obj.name.startswith('CobWall_'):
             continue
@@ -82,9 +80,9 @@ def _check_walls_off_ground() -> List[str]:
     return out
 
 
-def _check_solar_not_on_living_roof() -> List[str]:
+def _check_solar_not_on_living_roof() -> list[str]:
     """Rule 9: solar must sit on a separate steel frame, never on the sod roof."""
-    out: List[str] = []
+    out: list[str] = []
     sod_roof = bpy.data.objects.get('SodRoof')
     if sod_roof is None:
         return ['rule 9: skipped — no SodRoof object']
@@ -92,9 +90,15 @@ def _check_solar_not_on_living_roof() -> List[str]:
     for obj in bpy.data.objects:
         if 'solar' not in obj.name.lower() and 'pv_' not in obj.name.lower():
             continue
-        min_z = min((obj.matrix_world @ v.co).z for v in obj.data.vertices) if obj.type == 'MESH' else obj.location.z
+        if obj.type == 'MESH':
+            min_z = min((obj.matrix_world @ v.co).z for v in obj.data.vertices)
+        else:
+            min_z = obj.location.z
         if min_z < sod_max_z + 0.20:
-            out.append(f"rule 9: {obj.name} min_z={min_z:.2f}m close to/below SodRoof max_z={sod_max_z:.2f}m")
+            out.append(
+                f"rule 9: {obj.name} min_z={min_z:.2f}m close to/below "
+                f"SodRoof max_z={sod_max_z:.2f}m"
+            )
     return out
 
 
@@ -107,12 +111,12 @@ CHECKS = (
 )
 
 
-def run(verbose: bool = True) -> List[str]:
+def run(verbose: bool = True) -> list[str]:
     """Return real violations only. Skipped checks are printed but excluded
     from the returned list — per the module docstring, "skipped" means the
     audit could not verify the rule and must not be treated as a false
     positive (e.g., by CI gates)."""
-    all_violations: List[str] = []
+    all_violations: list[str] = []
     for label, fn in CHECKS:
         try:
             v = fn()

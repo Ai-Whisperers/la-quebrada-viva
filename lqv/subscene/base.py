@@ -23,13 +23,12 @@ import bpy
 from lqv import cameras, config, engine, lighting, materials, render
 from lqv.materials import MAT, assign
 
-
 SUBRENDER_DIR = os.path.join(config.RENDERS_DIR, 'sub')
 
 
 def derive_seed(asset: str, variant: str) -> int:
     """SHA-256(SEED:asset:variant) → 32-bit int. Per-asset isolation."""
-    blob = f"{config.SEED}:{asset}:{variant}".encode('utf-8')
+    blob = f"{config.SEED}:{asset}:{variant}".encode()
     return int.from_bytes(hashlib.sha256(blob).digest()[:4], 'big')
 
 
@@ -41,7 +40,10 @@ def setup(asset: str, cfg=None):
     """
     if cfg is None:
         cfg = config.parse()
-    print(f"[subscene:{asset}] variant={cfg.variant} samples={cfg.samples} res={cfg.res_x}x{cfg.res_y}")
+    print(
+        f"[subscene:{asset}] variant={cfg.variant} "
+        f"samples={cfg.samples} res={cfg.res_x}x{cfg.res_y}"
+    )
 
     scene = engine.reset_scene()
     engine.setup_cycles(scene, cfg)

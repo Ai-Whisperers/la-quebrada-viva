@@ -19,19 +19,18 @@ import ast
 import json
 import os
 import sys
-from typing import List, Tuple
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DRIVER = os.path.join(ROOT, 'build_scene.py')
 
 
-def _collect_calls(tree: ast.AST) -> List[Tuple[int, str]]:
+def _collect_calls(tree: ast.AST) -> list[tuple[int, str]]:
     """Return [(lineno, fullname), ...] for every function-call expression."""
-    out: List[Tuple[int, str]] = []
+    out: list[tuple[int, str]] = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Call):
             fn = node.func
-            parts: List[str] = []
+            parts: list[str] = []
             while isinstance(fn, ast.Attribute):
                 parts.insert(0, fn.attr)
                 fn = fn.value
@@ -47,29 +46,42 @@ def audit(path: str = DRIVER) -> dict:
         tree = ast.parse(fh.read(), filename=path)
     calls = _collect_calls(tree)
 
-    seed_line = next((ln for ln, n in calls if n.endswith('random.seed') or n == 'seed'), None)
+    seed_line = next(
+        (ln for ln, n in calls if n.endswith('random.seed') or n == 'seed'),
+        None,
+    )
     materials_line = next((ln for ln, n in calls if 'build_materials' in n), None)
-    build_lines = [(ln, n) for ln, n in calls if n.startswith('build_') and 'build_materials' not in n]
-    random_use_lines = [(ln, n) for ln, n in calls if n.startswith('random.') and not n.endswith('seed')]
+    build_lines = [
+        (ln, n) for ln, n in calls
+        if n.startswith('build_') and 'build_materials' not in n
+    ]
+    random_use_lines = [
+        (ln, n) for ln, n in calls
+        if n.startswith('random.') and not n.endswith('seed')
+    ]
 
-    violations: List[str] = []
+    violations: list[str] = []
     if seed_line is None:
         violations.append('no random.seed() call found in build_scene.py')
     if materials_line is None:
         violations.append('no build_materials() call found in build_scene.py')
     if seed_line and materials_line and seed_line < materials_line:
         violations.append(
-            f'random.seed() at line {seed_line} runs BEFORE build_materials() at line {materials_line}'
+            f'random.seed() at line {seed_line} runs BEFORE '
+            f'build_materials() at line {materials_line}'
         )
     if seed_line and build_lines:
         first_build_ln = min(ln for ln, _ in build_lines)
         if seed_line > first_build_ln:
             violations.append(
-                f'random.seed() at line {seed_line} runs AFTER first build_* at line {first_build_ln}'
+                f'random.seed() at line {seed_line} runs AFTER '
+                f'first build_* at line {first_build_ln}'
             )
     for ln, n in random_use_lines:
         if seed_line and ln < seed_line:
-            violations.append(f'random.* call ({n}) at line {ln} runs BEFORE seed at line {seed_line}')
+            violations.append(
+                f'random.* call ({n}) at line {ln} runs BEFORE seed at line {seed_line}'
+            )
 
     return {
         'seed_line': seed_line,

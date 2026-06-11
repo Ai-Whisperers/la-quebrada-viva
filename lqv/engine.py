@@ -43,7 +43,10 @@ def setup_cycles(scene, config: Config):
 
     scene.cycles.samples = config.samples
     scene.cycles.use_denoising = True
-    scene.cycles.denoiser = 'OPTIX' if (scene.cycles.device == 'GPU' and selected_backend == 'OPTIX') else 'OPENIMAGEDENOISE'
+    scene.cycles.denoiser = (
+        'OPTIX' if (scene.cycles.device == 'GPU' and selected_backend == 'OPTIX')
+        else 'OPENIMAGEDENOISE'
+    )
     scene.cycles.denoising_input_passes = 'RGB_ALBEDO_NORMAL'
 
     scene.cycles.max_bounces = 12

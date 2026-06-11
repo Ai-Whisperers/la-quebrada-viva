@@ -16,14 +16,13 @@ Heuristics:
   - Recompute canopy as elev_highestreturn - dem_elev_m where the canopy
     value looks reasonable, else keep the original GEDI canopy.
 """
-import os
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import rasterio
-from rasterio.transform import rowcol
 from dotenv import load_dotenv
+from rasterio.transform import rowcol
 
 HERE = Path('/home/ai-whisperers/blender-projects/house-field')
 load_dotenv(dotenv_path=HERE / '.env.local')
@@ -86,7 +85,7 @@ print(f"  dem_elev_m: min {df['dem_elev_m'].min():.1f}, "
       f"median {df['dem_elev_m'].median():.1f}")
 
 # 3) Recompute canopy as elev_highestreturn - dem_elev_m
-print(f"\n[3/3] Recomputing canopy with DEM-anchored base...")
+print("\n[3/3] Recomputing canopy with DEM-anchored base...")
 df['elev_highestreturn_m'] = df['ground_elevation_m'] + df['canopy_height_m']
 df['canopy_from_dem_m'] = (df['elev_highestreturn_m'] - df['dem_elev_m']).clip(lower=0, upper=80)
 df['canopy_height_m_final'] = df['canopy_from_dem_m']

@@ -19,9 +19,9 @@ import json
 import os
 import sys
 import time
-from pathlib import Path
-import urllib.request
 import urllib.error
+import urllib.request
+from pathlib import Path
 
 API = "https://api.sketchfab.com/v3"
 

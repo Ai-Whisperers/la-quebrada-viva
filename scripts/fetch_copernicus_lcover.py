@@ -13,11 +13,10 @@ Outputs:
   - docs/site_data/cgls_lcover/lcover_summary.txt  (class breakdown)
 """
 import json
-import os
 import sys
-import time
 from pathlib import Path
 
+import numpy as np
 import requests
 from dotenv import load_dotenv
 
@@ -85,9 +84,9 @@ def crop_to_bbox(in_path: Path, out_path: Path):
 
 def generate_preview(tif_path: Path, out_png: Path):
     """Generate a false-color RGB preview of the land cover."""
+    import matplotlib
     import numpy as np
     import rasterio
-    import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
 
@@ -187,7 +186,6 @@ def main():
     print(f'Tile: {TILE} | Bbox: W={BBOX["west"]} S={BBOX["south"]} E={BBOX["east"]} N={BBOX["north"]}')
     print('=' * 70)
 
-    import numpy as np
 
     # Try direct JRC API first
     response = None

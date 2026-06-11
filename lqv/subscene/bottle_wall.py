@@ -14,7 +14,7 @@ from lqv.subscene import base
 def _build():
     # Bottle wall is meaningless without its host wall — bring cob_house too
     # so the bottles read embedded rather than floating in space.
-    from lqv.house import build_cob_house, build_bottle_wall
+    from lqv.house import build_bottle_wall, build_cob_house
     build_cob_house()
     build_bottle_wall()
 

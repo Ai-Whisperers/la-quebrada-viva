@@ -13,7 +13,9 @@ def add_mango(x, y, scale=1.0):
     reads as foliage mass rather than a single billiard ball.
     """
     trunk_h = 6.0 * scale
-    bpy.ops.mesh.primitive_cylinder_add(radius=0.45 * scale, depth=trunk_h, location=(x, y, trunk_h / 2))
+    bpy.ops.mesh.primitive_cylinder_add(
+        radius=0.45 * scale, depth=trunk_h, location=(x, y, trunk_h / 2),
+    )
     trunk = bpy.context.active_object
     trunk.name = f'MangoTrunk_{x:.0f}_{y:.0f}'
     add_subdiv_displace(trunk, levels=2, noise_scale=12.0, strength=0.05, smooth=False)
