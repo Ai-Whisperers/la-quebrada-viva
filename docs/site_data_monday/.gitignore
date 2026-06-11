@@ -1,0 +1,11 @@
+# Bulk raw tiles (regenerable, > 100 MB total)
+dem/*_data.tif
+dem/*_elevation.tif
+hd_imagery/esri_z*/**/*.jpg
+hd_imagery/esri_z*/**/*.png
+sentinel2/B0*.tif
+sentinel2/SCL.tif
+landcover/ESA_WorldCover_10m_*.tif
+osm/overpass_monday.json
+__pycache__/
+*.pyc
