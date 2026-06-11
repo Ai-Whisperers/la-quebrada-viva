@@ -7,9 +7,11 @@ cannot accidentally couple their RNG streams.
 """
 from __future__ import annotations
 
+import datetime as _dt
 import hashlib
 import os
 import random
+import shutil
 import sys
 
 # Blender --background does not put the project root on sys.path. Drivers
@@ -24,6 +26,27 @@ from lqv import cameras, config, engine, lighting, materials, render
 from lqv.materials import MAT, assign
 
 SUBRENDER_DIR = os.path.join(config.RENDERS_DIR, 'sub')
+SUBRENDER_RUNS_DIR = os.path.join(SUBRENDER_DIR, 'runs')
+SUBRENDER_LATEST_DIR = os.path.join(SUBRENDER_DIR, 'latest')
+
+# Per-process run id — every sub-render driver invoked in the same Blender
+# process (e.g. via RENDER_RUN_ID=... blender ... ; blender ...) ends up in the
+# same folder so A/B/C variants of a single batch stay grouped. The caller can
+# pin the id via env to group multi-invocation batches.
+_RUN_ID = os.environ.get('RENDER_RUN_ID') or _dt.datetime.now().strftime('%Y%m%d_%H%M%S')
+
+
+def run_id() -> str:
+    return _RUN_ID
+
+
+def run_dir(asset: str) -> str:
+    """renders/sub/runs/<run_id>_<asset>/ — created on demand."""
+    suffix = os.environ.get('RENDER_RUN_TAG', '')
+    folder = f"{_RUN_ID}_{asset}" + (f"_{suffix}" if suffix else "")
+    path = os.path.join(SUBRENDER_RUNS_DIR, folder)
+    os.makedirs(path, exist_ok=True)
+    return path
 
 
 def derive_seed(asset: str, variant: str) -> int:
@@ -76,13 +99,17 @@ def setup_world(scene, variant: str):
 
 
 def save_subrender(scene, asset: str, cfg) -> str:
-    """Point the render output at renders/sub/<asset>_<variant>.png and run.
+    """Write to renders/sub/runs/<run_id>_<asset>/<variant>.png and run.
 
-    Returns the output path. Honors cfg.skip_render — useful for framework
+    Also mirrors to renders/sub/latest/<asset>_<variant>.png (overwriting) so a
+    quick-look location always exists, and copies into the legacy flat path at
+    renders/sub/<asset>_<variant>.png for back-compat with existing scripts.
+
+    Returns the run-folder path. Honors cfg.skip_render — useful for framework
     smoke tests (build the scene, don't burn samples).
     """
-    os.makedirs(SUBRENDER_DIR, exist_ok=True)
-    out = os.path.join(SUBRENDER_DIR, f"{asset}_{cfg.variant}.png")
+    run_folder = run_dir(asset)
+    out = os.path.join(run_folder, f"{cfg.variant}.png")
     scene.render.filepath = out
 
     if cfg.variant == 'A':
@@ -94,9 +121,17 @@ def save_subrender(scene, asset: str, cfg) -> str:
 
     if cfg.skip_render:
         print(f"[subscene:{asset}] skipped (RENDER_SKIP=1) — would write {out}")
-    else:
-        render.run(scene)
-        print(f"[subscene:{asset}] wrote {out}")
+        return out
+
+    render.run(scene)
+    print(f"[subscene:{asset}] wrote {out}")
+
+    os.makedirs(SUBRENDER_LATEST_DIR, exist_ok=True)
+    latest = os.path.join(SUBRENDER_LATEST_DIR, f"{asset}_{cfg.variant}.png")
+    shutil.copy2(out, latest)
+    legacy = os.path.join(SUBRENDER_DIR, f"{asset}_{cfg.variant}.png")
+    shutil.copy2(out, legacy)
+    print(f"[subscene:{asset}] mirrored → {latest}")
     return out
 
 
