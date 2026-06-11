@@ -53,6 +53,8 @@ The manifest table above was last frozen at session-start ("⏳ in progress" for
 
 **Batch 7 in flight (Task #24)**: this commit stages the explicit Batch 7 file set documented above. `scripts/mcp_daemon.py` excluded. `/verify-render` runs post-commit.
 
+**Batches 8/9/10 landed (additive 2026-06-10, SESSION_LOG tick 19)**: post-render infra-completion. `ccfea1d feat(docs): Tier-2 + LICENSES expansion + reciprocal extensions` (Batch 8) → `cd851e9 feat(lqv,scripts): Phase 1-7 + Variant C scene-graph + Phase 7.5 data pipeline` (Batch 9, 57 files / 4036 insertions(+)) → `07bb7bb data: Phase 7.5 research corpus + site_data DEM spike + GBIF/OSM/GEDI` (Batch 10, 40 files / 8455 insertions(+)). Commit chain: `07bb7bb` ← `cd851e9` ← `ccfea1d` ← `85e86aa` (Batch 7) on `master`. `scripts/mcp_daemon.py` correctly excluded from all four batches. `.gitignore` hardened to exclude `docs/site_data/sentinel2/*.tif` (5 raw raster bands, 58-243 MB each — over GitHub's 100 MB per-file hard limit; regenerable via `scripts/fetch_sentinel2.py` from the Element84 / AWS Earth Search STAC, with `preview_rgb.png` + `metadata.json` kept tracked so AOI/timestamp stays reproducible). `git status --short` at tick close shows only `?? scripts/mcp_daemon.py`. Renderer byte-identity preserved across all four batches — zero `lqv/*` or `assets/*` or `renders/*` edits.
+
 ---
 
 ## 2. Vision — what this project is now
