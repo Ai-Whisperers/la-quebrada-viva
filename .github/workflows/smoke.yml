@@ -1,0 +1,33 @@
+name: smoke-render
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'  # nightly 06:00 UTC
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BLENDER_VERSION: '4.2.3'
+      BLENDER_URL: 'https://download.blender.org/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Blender install
+        id: cache-blender
+        uses: actions/cache@v4
+        with:
+          path: /opt/blender
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
+      - name: Install Blender 4.2.3 LTS
+        if: steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          curl -fsSL -o /tmp/blender.tar.xz "$BLENDER_URL"
+          sudo mkdir -p /opt/blender
+          sudo tar -xJf /tmp/blender.tar.xz -C /opt/blender --strip-components=1
+          /opt/blender/blender --version
+      - name: Headless smoke (RENDER_SKIP=1 + ten_rules_check)
+        run: |
+          export PATH="/opt/blender:$PATH"
+          bash scripts/smoke_test.sh
