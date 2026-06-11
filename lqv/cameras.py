@@ -38,3 +38,15 @@ def build_cameras():
     # σ=1.2 cluster around (-3,-10) reads as a carpet.
     cams['petal_macro'] = add_camera('Cam_PetalMacro', location=(-3.0, -13.5, 0.8), look_at=(-3.0, -10.0, 0.2), lens=50.0)
     return cams
+
+
+def subscene_camera(target=(0.0, 0.0, 1.0), distance: float = 6.0,
+                    height: float = 2.4, lens: float = 35.0):
+    """Single 3/4-front camera for sub-render drivers.
+
+    Placed at (+distance, -distance, height) so the asset reads from the
+    typical south-east hero angle without rebuilding the 6-camera matrix.
+    """
+    tx, ty, _tz = target
+    loc = (tx + distance, ty - distance, height)
+    return add_camera('Cam_Subscene', location=loc, look_at=target, lens=lens)
