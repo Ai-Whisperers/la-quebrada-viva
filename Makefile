@@ -20,7 +20,7 @@ help:
 	@echo "  make audit                      Static audits: ruff + pytest + random_audit + material_audit"
 	@echo "  make lint                       ruff check ."
 	@echo "  make test                       pytest tests/"
-	@echo "  make pdf                        Build Wesley one-pager PDF (not yet implemented — task #41)"
+	@echo "  make pdf                        Build Wesley one-pager PDF -> docs/wesley_brief_onepager.pdf"
 	@echo ""
 	@echo "Variables: VARIANT (A|B|C), CAM (hero|stream_up|terrace|cliff|dusk|petal_macro),"
 	@echo "           ASSET (any module under lqv/subscene/, minus .py)"
@@ -51,5 +51,4 @@ audit: lint test
 	python3 -m lqv.util.material_audit run_static
 
 pdf:
-	@echo "Wesley PDF builder not yet implemented (UPGRADE_PLAN task #41 / T0.3)." >&2
-	@exit 1
+	python3 scripts/build_wesley_onepager_pdf.py
