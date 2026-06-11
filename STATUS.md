@@ -217,6 +217,23 @@ This file is the source-of-truth manifest for render state and the open-task led
 - `docs/CLOSING_DAY_PREP.md` — printable T-7/T-5/T-2/signing-day checklist for the 2026-06-27 escritura. The §6 critical date here is the trigger; CLOSING_DAY_PREP is the actionable countdown.
 - `docs/research/README.md` (Phase 7.5 synthesis) — 10 design rules + 80-repo catalogue. Several §4 open-task rows here (Task #1 petal floating, MCP-blocked Tasks #10 + #12) were prioritised against the design-rule enforcement claims in that research synthesis.
 - `docs/RESEARCH_GAPS.md` — 34-item living gap tracker; the R01–R08 priority IDs named in §8 above ("Wesley answers R04 / R01 / R02 — these unblock everything") are defined and updated there. This file's §8 is the next-action ranking; RESEARCH_GAPS is the gap inventory.
+- `docs/CRITIQUE_2026-06-10.md` — 8-section honest critique of the repo: hygiene, `lqv/` code bloat (`materials.py` 341 lines), doc over-indexing (29 .md / ~470 KB), 14 dormant stubs, no remote, dead MCP socket. The §4 task ledger here was re-ranked against the critique's "over-documented as artifact, under-engineered as product" summary; §10 below captures the actionable defect carry-forward.
+- `docs/UPGRADE_PLAN.md` — tiered fix plan derived from CRITIQUE: Tier 0 (escritura-critical, 17 days), Tier 1 (high-value, 1-2 wks), Tier 2 (post-escritura), Tier 3 (research/long-tail). §4 open tasks #41-#46 in the next ledger refresh map to UPGRADE_PLAN T0.1-T0.6 + T1.1-T1.7.
+- `docs/sub_render_strategy.md` — architectural shift to sub-render-first workflow (31 targets, per-asset RNG derivation, `lqv/subscene/<asset>.py` drivers, `renders/sub/<asset>_<variant>.png` outputs). Composite via existing `build_scene.py` unchanged. The 14 dormant stubs called out in CRITIQUE §2 become parallelisable work once T1.1 lands the framework.
+
+---
+
+## 10. Known defects (additive 2026-06-10)
+
+Defects discovered or carried forward against the 18/18 finals shipped at commit `85e86aa`. Each row names a defect, its symptom, why it is deferred (or scheduled), and the cross-reference into the plan.
+
+- **#1 — `scatter_lapacho_petals` floating petals**. Petals on A/B/C `_petal_macro` finals show ~5-15 cm Z-offset above ground/stream surfaces instead of contact. Defect-source: `lqv/scatter_lapacho_petals.py` ground-projection raycast misses the per-face displacement on the stream-side meshes. **Deferred** under the additions-only directive — fixing it would force re-render of A/B/C `_petal_macro` and supersede `85e86aa`'s byte-identity. Re-renders scheduled to ride with the final composite pass at the end of the sub-render programme (sub_render_strategy.md §10 step 8 / UPGRADE_PLAN T1.1 tail). Sub-render `petal_carpet` (queue #9) will isolate the defect before the composite re-render. Owner: AI Whisperers next session.
+- **#10 — Phase 4 Sketchfab flora batch — MCP-blocked**. Sketchfab fauna/people/tools downloads cannot proceed; `mcp__blender__search_sketchfab_models` calls fail (socket dead). 7-9 missing PBR slugs + Hyper3D pindo/mango/tatakuá/cob-panel generations also stalled. **Deferred** until MCP socket revived (UPGRADE_PLAN Tier 3 — daemon revival). No render-state impact; 18/18 already on disk + master.
+- **#12 — Phase 3b Lapacho Hyper3D GUI session — MCP-blocked**. Same root cause as #10. Lapacho variant-B leafed crown was procedurally substituted; a Hyper3D-generated higher-fidelity crown is the planned upgrade. **Deferred** until socket revived. No escritura-impact.
+- **Self-contradiction at `CLAUDE.md` line 133** — `git add -A && git commit` contradicts the standing explicit-staging-only constraint. Per additions-only directive, the contradicting line is not deleted; the new "Critique-derived standing rules" section flags it as superseded. Future cleanup pass should re-write line 133 directly.
+- **Duplicate `docs/AI_WHISPERERS_STYLE.md` entry at `CLAUDE.md` lines 16/17** — exact verbatim duplicate from doc-map enumeration. Per additions-only directive, deferred. Future cleanup pass should collapse to a single bullet.
+- **GBIF working-tree regression (unstaged)** — `scripts/fetch_gbif_species.py` strips two API filter params (`hasCoordinate`, `basisOfRecord`); `docs/site_data/gbif/{species_list.json,species_markdown.md,species_summary.txt}` carry matching unstaged deltas. Auto Mode classifier denied `git checkout` revert as destructive. Deferred until user authorisation; the regenerable nature of the file means re-fetch would also resolve the regression.
+- **No GitHub remote (single-disk SPOF)** — UPGRADE_PLAN T0.1 + Critique-derived standing rule #2. 17-day escritura window puts a live SPOF on a single working tree. Highest-priority Tier-0 infra task.
 
 ---
 

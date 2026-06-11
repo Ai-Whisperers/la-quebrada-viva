@@ -142,3 +142,19 @@ This is a git repo. Commit after every working change (`git add -A && git commit
 ## When you don't know
 
 Check `STATUS.md`, then `ARCHITECTURE.md`, then the doc map above. If the docs are silent, pick a default consistent with rules 1, 2, and 8, note it in the commit message, continue. Don't ask the user to make Blender/engineering decisions.
+
+## Critique-derived standing rules (additive 2026-06-10)
+
+Synthesised from `docs/CRITIQUE_2026-06-10.md` + `docs/UPGRADE_PLAN.md` + `docs/sub_render_strategy.md`. These are additive; they supersede any conflicting older guidance above without removing it (per the additions-only directive).
+
+1. **Sub-render-first is the default workflow** for any new asset / typology / amenity. The monolithic `build_scene.py` is only for the final composite. See `docs/sub_render_strategy.md` — `lqv/subscene/<asset>.py` drivers + per-asset RNG derivation + `renders/sub/<asset>_<variant>.png` outputs. 31-target queue covers 5 house + 5 landscape + 7 flora + 8 typology + 6 amenity.
+2. **Push to GitHub remote** before further doc work — escritura is 2026-06-27 (single-disk SPOF risk on a 17-day window). UPGRADE_PLAN.md T0.1. The repo currently has no remote; this is the highest-priority infra task.
+3. **RNG invariant must be tested** (UPGRADE_PLAN T1.2 — `tests/test_rng_invariants.py`) before any `build_scene.py` reorder or touch. The composite seed ordering is load-bearing for byte-identity across the 18 finals at `85e86aa`.
+4. **Doc consolidation > doc extension** — before adding a back-pointer or new research doc, check if an existing doc can absorb it. The mesh has reached 15-node bidirectional closure; further extensions risk over-indexing.
+
+**Standing reminders (additive)**:
+- Escritura date: **2026-06-27**. Tier 0 of `docs/UPGRADE_PLAN.md` is everything that must land before that date.
+- Line 133's `git add -A && git commit` is **superseded** by the explicit-staging-only policy (NEVER `git add -A` or `git add .`). Stage files by name; `scripts/mcp_daemon.py` always excluded; `docs/site_data/sentinel2/*.tif` gitignored as regenerable; `docs/*_boleto_*.pdf` / `docs/*_escritura_*.pdf` / `docs/2026-*_*.pdf` always excluded.
+- The duplicate `docs/AI_WHISPERERS_STYLE.md` entry at lines 16/17 is known and deferred per the additions-only directive — flagged here for future cleanup, not removed now.
+- Renderer byte-identity invariant: do not touch `lqv/scatter_lapacho_petals` without explicit user authorization. Task #1 (floating petals on `_petal_macro` finals) is deferred for the same reason — fixing it would supersede `85e86aa`.
+- MCP socket is dead this session — `mcp__blender__*` calls will fail. Tasks #10 + #12 remain blocked until the socket is revived.
