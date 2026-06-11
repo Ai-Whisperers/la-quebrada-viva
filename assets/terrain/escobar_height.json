@@ -1,0 +1,20 @@
+{
+  "source": "docs/site_data/alos_aw3d30_dem.tif",
+  "source_sha256": "56fdae2daa4a5f10b9040a7bd3b07647c177de058bdca8a27ca8e23799d06b3d",
+  "z_min_m": 116.0,
+  "z_max_m": 380.0,
+  "z_observed_min_m": 116.0,
+  "z_observed_max_m": 380.0,
+  "z_observed_mean_m": 162.0233154296875,
+  "shape": [
+    108,
+    108
+  ],
+  "crs": "EPSG:4326",
+  "bbox": {
+    "left": -57.04499999998285,
+    "bottom": -25.645000000015603,
+    "right": -57.01499999998285,
+    "top": -25.6150000000156
+  }
+}
