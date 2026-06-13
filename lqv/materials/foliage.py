@@ -35,3 +35,7 @@ def build(MAT: dict) -> None:
         'AnthuriumLeaf', hex_to_rgb('#2E4A1E'), roughness=0.42,
         sss=(0.08, (0.4, 0.55, 0.3)),
     )
+    MAT['palm_thatch'] = add_noise_displacement(
+        principled('PalmThatch', COL['palm_thatch'], roughness=0.88, sheen=0.25),
+        scale=18.0, strength=0.04,
+    )

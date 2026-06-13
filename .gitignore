@@ -46,9 +46,18 @@ scripts/mcp_daemon.py
 _archive/
 
 # Regenerable assets — re-fetched by scripts/download_assets.sh (HDRIs + PBR
-# textures from Poly Haven CC0). assets/models/ stays tracked.
+# textures from Poly Haven CC0). assets/models/ is now 16 GB of fetched
+# Poly Haven .blend bundles; regenerable via
+# `python scripts/download_polyhaven_assets.py`, attribution preserved in
+# LICENSES/*.txt stubs. Excluded from the tree to stay under GitHub limits.
 assets/hdris/
 assets/textures/
+assets/models/
+
+# Escritura deck v2 is a 123 MB layout proof that exceeds GitHub's 100 MB
+# per-file hard push limit. Kept on disk for stakeholder review; v1, v3-v5
+# (each <50 MB) are the versions tracked in history.
+docs/escritura_deck/escritura_deck_v2.pdf
 
 # Private legal contract scans (boleto de compraventa, escritura drafts) —
 # reproduced with permission of the parties under the carve-out in LICENSE;

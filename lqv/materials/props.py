@@ -5,7 +5,7 @@ prop group rather than the bottle-glass tinted-transmission family.
 """
 from __future__ import annotations
 
-from lqv.materials._palette import hex_to_rgb
+from lqv.materials._palette import COL, hex_to_rgb
 from lqv.materials._shaders import principled
 
 
@@ -31,4 +31,7 @@ def build(MAT: dict) -> None:
     MAT['firefly'] = principled(
         'Firefly', hex_to_rgb('#FFFF80'),
         emission_color=hex_to_rgb('#E6FF80'), emission_strength=80.0,
+    )
+    MAT['rope_natural'] = principled(
+        'RopeNatural', COL['rope_natural'], roughness=0.88,
     )

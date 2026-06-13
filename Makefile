@@ -7,7 +7,7 @@ VARIANT ?= A
 CAM ?= hero
 ASSET ?= cob_walls
 
-.PHONY: help smoke preview final finals sub audit lint test pdf
+.PHONY: help smoke preview final finals sub audit lint test pdf boq deck
 
 help:
 	@echo "La Quebrada Viva — make targets"
@@ -21,6 +21,8 @@ help:
 	@echo "  make lint                       ruff check ."
 	@echo "  make test                       pytest tests/"
 	@echo "  make pdf                        Build Wesley one-pager PDF -> docs/wesley_brief_onepager.pdf"
+	@echo "  make boq                        Bill-of-quantities rollup -> docs/boq/boq_rollup.{csv,md}"
+	@echo "  make deck                       Escritura signing deck PDF -> docs/escritura_deck/escritura_deck_v1.pdf"
 	@echo ""
 	@echo "Variables: VARIANT (A|B|C), CAM (hero|stream_up|terrace|cliff|dusk|petal_macro),"
 	@echo "           ASSET (any module under lqv/subscene/, minus .py)"
@@ -52,3 +54,9 @@ audit: lint test
 
 pdf:
 	python3 scripts/build_wesley_onepager_pdf.py
+
+boq:
+	python3 scripts/build_boq.py
+
+deck: boq
+	python3 scripts/build_escritura_deck.py

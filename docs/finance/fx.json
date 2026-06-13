@@ -1,0 +1,6 @@
+{
+  "USD_PYG": 7300.0,
+  "as_of": "2026-06-13",
+  "source": "BCP indicative — Banco Central del Paraguay daily reference rate (informe semanal de mercado cambiario, average ask-side)",
+  "notes": "Refresh quarterly or whenever the BCP weekly rate drifts more than 5% from this value. The number is also referenced by docs/escritura/_assumptions.md."
+}

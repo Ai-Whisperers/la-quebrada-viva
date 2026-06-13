@@ -1,9 +1,16 @@
 # STATUS — La Quebrada Viva + Escobar Housing Park
 
-> Canonical state document. Last updated 2026-06-10.
-> The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
+> Canonical state document. Last updated 2026-06-12.
+
+> **2026-06-12 update (escritura deck shipped):** Phase G (BoQ rollup) + Phase H (escritura deck PDF) complete. New deliverables:
+> - `docs/boq/boq_rollup.csv` + `docs/boq/boq_rollup.md` — 175 line items across 13 typologies + 4 amenities, grand total **$231,280.98 USD / Gs. 1,688,351,154** @ 7300 PYG/USD, 0 items in "Other" category.
+> - `docs/escritura_deck/escritura_deck_v1.pdf` (14 pages, A4, 2.1 MB) + `docs/escritura_deck/escritura_deck.md` source — covers parcel overview, master phase plan, 13 typologies + 4 amenities (one Variant-A thumbnail each from `renders/sub/latest/`), BoQ by-asset + by-category rollup, closing-day checklist + risk register.
+> - New code: `lqv/boq.py` (substring-keyword category inference, asset/category summaries, CSV + Markdown writers), `scripts/build_boq.py` (bpy-stub shim for outside-Blender execution), `scripts/build_escritura_deck.py` (Chrome-headless `--print-to-pdf` reusing the wesley onepager pipeline + per-asset `THUMB:<key>` placeholder substitution).
+> - New `make` targets: `make boq`, `make deck` (deck depends on boq).
+> - Renderer byte-identity at `85e86aa` preserved — `build_scene.py` untouched.
 
 > **2026-06-10 update (mid-session):** Real GIS data acquired (4 DEMs, ~1,100 ha analyzed, 80% buildable, 264 m relief). Research synthesis complete in `docs/research/README.md` (5 sub-reports, ~80 repos). **Cloud-pool EULA blocker discovered** — `s3://lp-prod-protected/` 403s on URS-central, LP-DAAC-Cumulus, and direct-S3 paths. The fix is a separate "Earthdata Cloud Data Pool" consent accepted via `search.earthdata.nasa.gov` → click "Download" on a cloud-hosted GEDI file → accept the modal. GEDI HTTPS run mid-flight (18/27 granules, ~10 min remaining).
+> The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
 
 > **2026-06-10 update (end-of-session):** GEDI HTTPS run finished. 475 quality-filtered raw shots saved to `docs/site_data/gedi_l2a_points.csv`. **Data quality issue: the `elev_lowestmode` field has a unit/scaling bug** — median raw value is 4654 m, range 144–9145 m, while our 4 DEMs say the site is 116–380 m. After filtering to `100 < elev < 500 m` and joining DEM elevations, we have 25 usable shots. Canopy heights (which are elevation-independent) look right: 0–74 m (median 7.5 m, 75th pct 29 m). The 25 shots validate the DEM and confirm the Atlantic Forest is mature (canopy up to 74 m, median 37 m on cleaned data). Need cloud-pool EULA acceptance to re-pull cleanly via S3 streaming (would give us hundreds of usable shots in 5–10 min instead of the current sparse 25).
 

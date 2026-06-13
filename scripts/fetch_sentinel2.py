@@ -19,7 +19,7 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-HERE = Path('/home/ai-whisperers/blender-projects/house-field')
+HERE = Path('/home/ai-whisperers/blender-projects/la-quebrada-viva')
 load_dotenv(dotenv_path=HERE / '.env.local')
 
 BBOX = {'south': -25.645, 'north': -25.615, 'west': -57.045, 'east': -57.015}

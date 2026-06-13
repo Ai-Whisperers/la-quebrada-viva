@@ -28,6 +28,14 @@ def build(MAT: dict) -> None:
     MAT['glass_bottle_brown'] = principled(
         'BottleBrown', COL['bottle_brown'], roughness=0.03, ior=1.52, transmission=1.0,
     )
+    MAT['lantern_paper_warm'] = principled(
+        'LanternPaperWarm', COL['lantern_paper_warm'], roughness=0.55,
+        emission_color=COL['lantern_paper_warm'], emission_strength=8.0,
+    )
+    MAT['water_reflective'] = principled(
+        'WaterReflective', COL['water_reflective'],
+        roughness=0.04, ior=1.333, transmission=0.85,
+    )
 
 
 def make_pool_water():

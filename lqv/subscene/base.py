@@ -29,11 +29,58 @@ SUBRENDER_DIR = os.path.join(config.RENDERS_DIR, 'sub')
 SUBRENDER_RUNS_DIR = os.path.join(SUBRENDER_DIR, 'runs')
 SUBRENDER_LATEST_DIR = os.path.join(SUBRENDER_DIR, 'latest')
 
-# Per-process run id — every sub-render driver invoked in the same Blender
-# process (e.g. via RENDER_RUN_ID=... blender ... ; blender ...) ends up in the
-# same folder so A/B/C variants of a single batch stay grouped. The caller can
-# pin the id via env to group multi-invocation batches.
-_RUN_ID = os.environ.get('RENDER_RUN_ID') or _dt.datetime.now().strftime('%Y%m%d_%H%M%S')
+# ---------------------------------------------------------------------------
+# Camera clipping
+# ---------------------------------------------------------------------------
+# Default house-scale ``clip_end`` is 1000 m. Parcel-scale sub-renders (digital
+# twin, drone fly-around, ridge composites at the 62-ha extent) need to see
+# >12 km of terrain past the camera or the back-half clips into HDRI sky. The
+# old fix was every driver hardcoding ``cam.data.clip_end = 20000`` after
+# bypassing ``base.run()``. Centralising the constant prevents one driver from
+# drifting to 5000 m and silently truncating the ridge line.
+# See: feedback_subscene_clip_end.
+PARCEL_CLIP_END_M: float = 20000.0
+HOUSE_CLIP_END_M: float = 1000.0
+
+# ---------------------------------------------------------------------------
+# RENDER_RUN_ID policy
+# ---------------------------------------------------------------------------
+# The runs/ folder gets one subdir per (run_id, asset) tuple. If every Blender
+# invocation generates a fresh timestamp, the batch ends up in 3 different
+# folders and the review/composite scripts can't group A/B/C variants. Default
+# now: require RENDER_RUN_ID. Escape hatch: LQV_ALLOW_TIMESTAMP_RUN_ID=1 for
+# one-off exploratory shots.
+_ENV_RUN_ID = os.environ.get('RENDER_RUN_ID')
+if _ENV_RUN_ID:
+    _RUN_ID = _ENV_RUN_ID
+elif os.environ.get('LQV_ALLOW_TIMESTAMP_RUN_ID') == '1':
+    _RUN_ID = _dt.datetime.now().strftime('%Y%m%d_%H%M%S')
+    print(
+        f'[lqv.subscene.base] WARN RENDER_RUN_ID unset, '
+        f'LQV_ALLOW_TIMESTAMP_RUN_ID=1 set — using timestamp {_RUN_ID}. '
+        f'A/B/C variants started in separate Blender processes will land '
+        f'in different folders. See docs/render-runs.md.',
+        file=sys.stderr,
+    )
+else:
+    raise RuntimeError(
+        'RENDER_RUN_ID env var is required to group sub-render variants. '
+        'Set RENDER_RUN_ID=<your_batch_id> blender ... (recommended) or '
+        'set LQV_ALLOW_TIMESTAMP_RUN_ID=1 for one-off exploratory shots. '
+        'See docs/render-runs.md.'
+    )
+
+# ---------------------------------------------------------------------------
+# Variant exposure / view-transform profiles
+# ---------------------------------------------------------------------------
+# A=interior/dawn, B=neutral/inspection, C=hero/dusk. Centralised so a tweak
+# to the punchy hero look doesn't require touching 18 driver files. Drivers
+# that want fully custom view settings can still override post-``save``.
+VARIANT_PROFILES: dict[str, dict] = {
+    'A': {'exposure': -0.2, 'gamma': 1.0, 'note': 'interior / dawn, slightly under'},
+    'B': {'exposure': 0.3,  'gamma': 1.0, 'note': 'neutral mid-day inspection'},
+    'C': {'exposure': 0.6,  'gamma': 1.0, 'note': 'hero / golden hour, punchy'},
+}
 
 
 def run_id() -> str:
@@ -79,8 +126,13 @@ def setup(asset: str, cfg=None):
     return scene, cfg
 
 
-def place_neutral_ground(material_key: str = 'laterite', size: float = 20.0):
-    """Flat ground plane so the asset isn't floating in the void."""
+def place_neutral_ground(material_key: str = 'laterite', size: float = 40.0):
+    """Flat ground plane so the asset isn't floating in the void.
+
+    Default 40 m square covers a typical house-scale composition (stilts +
+    spiral stair + scatter halo). Parcel-scale callers should bypass
+    ``run()`` and set their own ground/clip_end explicitly.
+    """
     bpy.ops.mesh.primitive_plane_add(size=size, location=(0.0, 0.0, 0.0))
     ground = bpy.context.active_object
     ground.name = 'SubrenderGround'
@@ -112,12 +164,9 @@ def save_subrender(scene, asset: str, cfg) -> str:
     out = os.path.join(run_folder, f"{cfg.variant}.png")
     scene.render.filepath = out
 
-    if cfg.variant == 'A':
-        scene.view_settings.exposure = -0.2
-    elif cfg.variant == 'B':
-        scene.view_settings.exposure = 0.3
-    else:
-        scene.view_settings.exposure = 0.6
+    profile = VARIANT_PROFILES.get(cfg.variant, VARIANT_PROFILES['C'])
+    scene.view_settings.exposure = profile['exposure']
+    scene.view_settings.gamma = profile.get('gamma', 1.0)
 
     if cfg.skip_render:
         print(f"[subscene:{asset}] skipped (RENDER_SKIP=1) — would write {out}")
@@ -138,12 +187,17 @@ def save_subrender(scene, asset: str, cfg) -> str:
 def run(asset: str, build_fn, camera_target=(0.0, 0.0, 1.0),
         camera_distance: float = 6.0, camera_height: float = 2.4,
         camera_lens: float = 35.0, with_ground: bool = True,
-        ground_material: str = 'laterite'):
+        ground_material: str = 'laterite',
+        clip_end: float = HOUSE_CLIP_END_M):
     """Standard sub-render entry point.
 
     `build_fn()` is called after setup + neutral ground placement, with the
     RNG already seeded for (asset, variant). It must add the asset to the
     live scene; return value is ignored.
+
+    ``clip_end`` is applied to the camera after creation. Default 1000 m
+    covers house-scale assets with breathing room; parcel-scale callers
+    should bypass ``run()`` entirely (see ``feedback_subscene_clip_end``).
     """
     scene, cfg = setup(asset)
     if with_ground:
@@ -156,5 +210,6 @@ def run(asset: str, build_fn, camera_target=(0.0, 0.0, 1.0),
         height=camera_height,
         lens=camera_lens,
     )
+    cam.data.clip_end = clip_end
     scene.camera = cam
     return save_subrender(scene, asset, cfg)

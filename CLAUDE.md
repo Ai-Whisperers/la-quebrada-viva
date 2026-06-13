@@ -1,4 +1,4 @@
-# house-field — project instructions
+# la-quebrada-viva — project instructions
 
 This project supports **Wesley van de Camp** in visualizing a real 62-ha property in **Escobar District, Paraguarí, Paraguay**, on which Wesley plans a **housing park + restaurant + amenities**. The current 3D work renders **La Quebrada Viva**, a cob/bottle earthen house that's the first example building typology on the site. Renders are concept art; the site model is the durable deliverable. See `docs/HOUSING_PARK_CONCEPT.md` for the full vision and `docs/CLIENT.md` for who Wesley is.
 

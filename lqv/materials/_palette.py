@@ -35,4 +35,10 @@ COL = {
     'bottle_green':   hex_to_rgb('#2D5A1B'),
     'bottle_brown':   hex_to_rgb('#4A2C16'),
     'agave':          hex_to_rgb('#7B8F6A'),
+    'palm_thatch':       hex_to_rgb('#8B6B3A'),
+    'terracotta_tile':   hex_to_rgb('#A0492A'),
+    'lantern_paper_warm': hex_to_rgb('#FFE0A0'),
+    'water_reflective':  hex_to_rgb('#3A5060'),
+    'rope_natural':      hex_to_rgb('#A88860'),
+    'concrete_slab_108': hex_to_rgb('#9A958F'),
 }

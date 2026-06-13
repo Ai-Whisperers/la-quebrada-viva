@@ -19,7 +19,7 @@ from pathlib import Path
 
 import cdsapi
 
-HERE = Path('/home/ai-whisperers/blender-projects/house-field')
+HERE = Path('/home/ai-whisperers/blender-projects/la-quebrada-viva')
 OUT_DIR = HERE / 'docs' / 'site_data' / 'climate_era5'
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

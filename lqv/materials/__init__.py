@@ -23,7 +23,7 @@ Public surface: ``MAT``, ``COL``, ``assign``, ``build_materials``,
 """
 from __future__ import annotations
 
-from lqv.materials import earth, foliage, glass, props, wood
+from lqv.materials import bricks, earth, foliage, glass, props, wood
 from lqv.materials._palette import COL
 from lqv.materials._shaders import assign, principled, textured_principled
 
@@ -44,6 +44,7 @@ def build_materials() -> None:
     foliage.build(MAT)
     glass.build(MAT)
     props.build(MAT)
+    bricks.build(MAT)
     MAT['pool_water'] = glass.make_pool_water()
 
 

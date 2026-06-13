@@ -19,7 +19,7 @@ These directly de-risk the 2026-06-27 closing. None of them require an MCP socke
 ### T0.1 — Push to GitHub remote (CRITIQUE §1)
 
 - **Defect**: no remote, single-disk SPOF. Hardware failure deletes the deliverable.
-- **Fix**: create private GitHub repo `ai-whisperers/house-field`, `git remote add origin git@github.com:ai-whisperers/house-field.git`, `git push -u origin master`.
+- **Fix**: create private GitHub repo `Ai-Whisperers/la-quebrada-viva`, `git remote add origin git@github.com:Ai-Whisperers/la-quebrada-viva.git`, `git push -u origin master`.
 - **Acceptance**: `git remote -v` shows `origin`; the latest commit is browsable on github.com.
 - **Effort**: 5 minutes.
 - **Dependency**: a GitHub account with `gh auth status` working, or an SSH key registered.

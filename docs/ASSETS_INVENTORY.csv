@@ -1,0 +1,420 @@
+id,type,source,license,size_mb,files,resolution_hint,integration_target,lqv_use_score,notes
+abandoned_pathway,hdri,polyhaven.com,CC0 1.0 Universal,21.2,abandoned_pathway_4k.exr,4k,unclassified,1,
+ahornsteig,hdri,polyhaven.com,CC0 1.0 Universal,28.5,ahornsteig_4k.exr,4k,unclassified,1,
+alps_field,hdri,polyhaven.com,CC0 1.0 Universal,81.7,alps_field_4k.exr,4k,lighting/exterior,4,exterior daytime
+autumn_field,hdri,polyhaven.com,CC0 1.0 Universal,20.1,autumn_field_4k.exr,4k,lighting/exterior,4,exterior daytime
+autumn_field_puresky,hdri,polyhaven.com,CC0 1.0,67.2,autumn_field_puresky_4k.exr,4k,lighting/midday,4,clear-sky default
+autumn_hilly_field,hdri,polyhaven.com,CC0 1.0 Universal,92.6,autumn_hilly_field_4k.exr,4k,lighting/exterior,4,exterior daytime
+autumn_meadow,hdri,polyhaven.com,CC0 1.0 Universal,22.9,autumn_meadow_4k.exr,4k,unclassified,1,
+bambanani_sunset,hdri,polyhaven.com,CC0 1.0,91.8,bambanani_sunset_4k.exr,4k,lighting/dusk,5,warm finals / brochure shots
+belfast_open_field,hdri,polyhaven.com,CC0 1.0 Universal,80.4,belfast_open_field_4k.exr,4k,lighting/exterior,4,exterior daytime
+belfast_sunset,hdri,polyhaven.com,CC0 1.0 Universal,79.2,belfast_sunset_4k.exr,4k,lighting/dusk,5,warm finals / brochure shots
+bell_park_dawn,hdri,polyhaven.com,CC0 1.0 Universal,21.9,bell_park_dawn_4k.exr,4k,lighting/dawn,5,subtropical morning shoot
+blaubeuren_hillside,hdri,polyhaven.com,CC0 1.0 Universal,30.3,blaubeuren_hillside_4k.exr,4k,unclassified,1,
+blouberg_sunrise_2,hdri,polyhaven.com,CC0 1.0 Universal,16.3,blouberg_sunrise_2_4k.exr,4k,lighting/dawn,5,subtropical morning shoot
+citrus_orchard,hdri,polyhaven.com,CC0 1.0 Universal,91.9,citrus_orchard_4k.exr,4k,unclassified,1,
+dikhololo_sunset,hdri,polyhaven.com,CC0 1.0 Universal,19.3,dikhololo_sunset_4k.exr,4k,lighting/dusk,5,warm finals / brochure shots
+drackenstein_quarry,hdri,polyhaven.com,CC0 1.0 Universal,80.7,drackenstein_quarry_4k.exr,4k,unclassified,1,
+evening_field,hdri,polyhaven.com,CC0 1.0 Universal,19.8,evening_field_4k.exr,4k,lighting/dusk,5,warm finals / brochure shots
+evening_road_01,hdri,polyhaven.com,CC0 1.0 Universal,20.0,evening_road_01_4k.exr,4k,lighting/dusk,5,warm finals / brochure shots
+forest_slope,hdri,polyhaven.com,CC0 1.0 Universal,29.5,forest_slope_4k.exr,4k,lighting/exterior,4,exterior daytime
+harvest,hdri,polyhaven.com,CC0 1.0 Universal,92.7,harvest_4k.exr,4k,unclassified,1,
+kiara_1_dawn,hdri,polyhaven.com,CC0 1.0,19.4,kiara_1_dawn_4k.exr,4k,lighting/dawn,5,subtropical morning shoot
+kloofendal_48d_partly_cloudy_puresky,hdri,polyhaven.com,CC0 1.0,72.1,kloofendal_48d_partly_cloudy_puresky_4k.exr,4k,lighting/overcast,4,diffuse lighting / post-storm
+kloppenheim_02_puresky,hdri,polyhaven.com,CC0 1.0,74.4,kloppenheim_02_puresky_4k.exr,4k,lighting/midday,4,clear-sky default
+misty_pines,hdri,polyhaven.com,CC0 1.0,26.6,misty_pines_4k.exr,4k,lighting/overcast,4,diffuse lighting / post-storm
+qwantani_dusk_2,hdri,polyhaven.com,CC0 1.0,91.9,qwantani_dusk_2_4k.exr,4k,lighting/dusk,5,warm finals / brochure shots
+qwantani_sunset_puresky,hdri,polyhaven.com,CC0 1.0,66.4,qwantani_sunset_puresky_4k.exr,4k,lighting/dusk,5,warm finals / brochure shots
+satara_night,hdri,polyhaven.com,CC0 1.0,30.5,satara_night_4k.exr,4k,lighting/night,4,night ambiance
+shanghai_bund,hdri,polyhaven.com,CC0 1.0,20.7,shanghai_bund_4k.exr,4k,lighting/urban,2,non-LQV default — last resort
+studio_small_03,hdri,polyhaven.com,CC0 1.0 Universal,20.9,studio_small_03_4k.exr,4k,lighting/interior,3,interior amenities
+studio_small_09,hdri,polyhaven.com,CC0 1.0 Universal,17.7,studio_small_09_4k.exr,4k,lighting/interior,3,interior amenities
+aerial_asphalt_01,texture,polyhaven.com,CC0 1.0,34.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/path,2,rural access roads
+aerial_beach_01,texture,polyhaven.com,CC0 1.0,12.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+aerial_grass_rock,texture,polyhaven.com,CC0 1.0,39.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,grass scatter ground
+aerial_ground_rock,texture,polyhaven.com,CC0 1.0 Universal,31.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+aerial_mud_1,texture,polyhaven.com,CC0 1.0,32.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+aerial_rocks_02,texture,polyhaven.com,CC0 1.0,35.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+aerial_sand,texture,polyhaven.com,CC0 1.0,28.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+Bricks003,texture,ambientcg.com,CC0 1.0 Universal,121.8,Color|Displacement|Roughness,?,unclassified,1,
+Bricks017,texture,ambientcg.com,CC0 1.0 Universal,152.2,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks019,texture,ambientcg.com,CC0 1.0 Universal,163.2,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks022,texture,ambientcg.com,CC0 1.0 Universal,221.2,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks023,texture,ambientcg.com,CC0 1.0 Universal,213.0,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks025,texture,ambientcg.com,CC0 1.0 Universal,129.1,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks030,texture,ambientcg.com,CC0 1.0 Universal,221.5,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks050,texture,ambientcg.com,CC0 1.0 Universal,276.7,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks051,texture,ambientcg.com,CC0 1.0 Universal,209.2,Color|Displacement|Roughness,?,unclassified,1,
+Bricks052,texture,ambientcg.com,CC0 1.0 Universal,232.1,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks066,texture,ambientcg.com,CC0 1.0 Universal,233.9,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Bricks077,texture,ambientcg.com,CC0 1.0 Universal,105.4,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Concrete002,texture,ambientcg.com,CC0 1.0 Universal,31.8,Color|Displacement|Roughness,?,unclassified,1,
+Concrete003,texture,ambientcg.com,CC0 1.0 Universal,165.3,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Concrete007,texture,ambientcg.com,CC0 1.0 Universal,157.1,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Concrete017,texture,ambientcg.com,CC0 1.0 Universal,195.3,Color|Displacement|Roughness,?,unclassified,1,
+Concrete023,texture,ambientcg.com,CC0 1.0 Universal,230.0,Color|Displacement|Roughness,?,unclassified,1,
+Ground003,texture,ambientcg.com,CC0 1.0 Universal,215.8,Color|Displacement|Roughness,?,unclassified,1,
+Ground023,texture,ambientcg.com,CC0 1.0 Universal,211.8,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground027,texture,ambientcg.com,CC0 1.0 Universal,182.9,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground029,texture,ambientcg.com,CC0 1.0 Universal,204.9,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground033,texture,ambientcg.com,CC0 1.0 Universal,229.5,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground036,texture,ambientcg.com,CC0 1.0 Universal,243.9,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground037,texture,ambientcg.com,CC0 1.0 Universal,266.4,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground039,texture,ambientcg.com,CC0 1.0 Universal,238.1,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground047,texture,ambientcg.com,CC0 1.0 Universal,268.2,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground048,texture,ambientcg.com,CC0 1.0 Universal,278.4,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground054,texture,ambientcg.com,CC0 1.0 Universal,256.1,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground055S,texture,ambientcg.com,CC0 1.0 Universal,219.8,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground061,texture,ambientcg.com,CC0 1.0 Universal,102.7,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground067,texture,ambientcg.com,CC0 1.0 Universal,262.0,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground068,texture,ambientcg.com,CC0 1.0 Universal,237.0,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Ground074,texture,ambientcg.com,CC0 1.0 Universal,242.4,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Metal003,texture,ambientcg.com,CC0 1.0 Universal,148.0,Color|Displacement|Roughness,?,unclassified,1,
+Metal007,texture,ambientcg.com,CC0 1.0 Universal,139.5,Color|Displacement|Roughness,?,unclassified,1,
+Metal009,texture,ambientcg.com,CC0 1.0 Universal,133.6,Color|Displacement|Roughness,?,unclassified,1,
+Metal027,texture,ambientcg.com,CC0 1.0 Universal,191.5,Color|Displacement|Roughness,?,unclassified,1,
+Metal028,texture,ambientcg.com,CC0 1.0 Universal,196.5,Color|Displacement|Roughness,?,unclassified,1,
+Metal029,texture,ambientcg.com,CC0 1.0 Universal,178.6,Color|Displacement|Roughness,?,unclassified,1,
+Metal030,texture,ambientcg.com,CC0 1.0 Universal,128.7,Color|Displacement|Roughness,?,unclassified,1,
+Metal031,texture,ambientcg.com,CC0 1.0 Universal,120.2,Color|Displacement|Roughness,?,unclassified,1,
+Metal032,texture,ambientcg.com,CC0 1.0 Universal,140.5,Color|Displacement|Roughness,?,unclassified,1,
+Metal033,texture,ambientcg.com,CC0 1.0 Universal,148.5,Color|Displacement|Roughness,?,unclassified,1,
+Metal034,texture,ambientcg.com,CC0 1.0 Universal,66.5,Color|Displacement|Roughness,?,unclassified,1,
+Metal035,texture,ambientcg.com,CC0 1.0 Universal,103.7,Color|Displacement|Roughness,?,unclassified,1,
+Metal036,texture,ambientcg.com,CC0 1.0 Universal,101.9,Color|Displacement|Roughness,?,unclassified,1,
+Metal038,texture,ambientcg.com,CC0 1.0 Universal,139.8,Color|Displacement|Roughness,?,unclassified,1,
+Plaster001,texture,ambientcg.com,CC0 1.0 Universal,191.7,Color|Displacement|Roughness,?,unclassified,1,
+Plaster002,texture,ambientcg.com,CC0 1.0 Universal,190.9,Color|Displacement|Roughness,?,unclassified,1,
+Plaster003,texture,ambientcg.com,CC0 1.0 Universal,205.9,Color|Displacement|Roughness,?,unclassified,1,
+Plaster004,texture,ambientcg.com,CC0 1.0 Universal,207.6,Color|Displacement|Roughness,?,unclassified,1,
+Plaster005,texture,ambientcg.com,CC0 1.0 Universal,202.6,Color|Displacement|Roughness,?,unclassified,1,
+Plaster006,texture,ambientcg.com,CC0 1.0 Universal,202.2,Color|Displacement|Roughness,?,unclassified,1,
+Plaster007,texture,ambientcg.com,CC0 1.0 Universal,194.7,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks001,texture,ambientcg.com,CC0 1.0 Universal,149.8,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks002,texture,ambientcg.com,CC0 1.0 Universal,165.9,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks004,texture,ambientcg.com,CC0 1.0 Universal,152.5,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks006,texture,ambientcg.com,CC0 1.0 Universal,227.0,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks007,texture,ambientcg.com,CC0 1.0 Universal,214.7,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks009,texture,ambientcg.com,CC0 1.0 Universal,233.0,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks010,texture,ambientcg.com,CC0 1.0 Universal,213.3,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Rocks011,texture,ambientcg.com,CC0 1.0 Universal,196.7,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+RoofingTiles001,texture,ambientcg.com,CC0 1.0 Universal,166.8,Color|Displacement|Roughness,?,unclassified,1,
+RoofingTiles002,texture,ambientcg.com,CC0 1.0 Universal,166.0,Color|Displacement|Roughness,?,unclassified,1,
+RoofingTiles003,texture,ambientcg.com,CC0 1.0 Universal,167.9,Color|Displacement|Roughness,?,unclassified,1,
+RoofingTiles005,texture,ambientcg.com,CC0 1.0 Universal,168.0,Color|Displacement|Roughness,?,unclassified,1,
+RoofingTiles006,texture,ambientcg.com,CC0 1.0 Universal,188.1,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+RoofingTiles008,texture,ambientcg.com,CC0 1.0 Universal,222.0,AmbientOcclusion|Color|Displacement|Roughness,?,unclassified,1,
+Wood005,texture,ambientcg.com,CC0 1.0 Universal,119.2,Color|Displacement|Roughness,?,unclassified,1,
+Wood006,texture,ambientcg.com,CC0 1.0 Universal,112.0,Color|Displacement|Roughness,?,unclassified,1,
+Wood013,texture,ambientcg.com,CC0 1.0 Universal,109.0,Color|Displacement|Roughness,?,unclassified,1,
+Wood017,texture,ambientcg.com,CC0 1.0 Universal,105.9,Color|Displacement|Roughness,?,unclassified,1,
+Wood019,texture,ambientcg.com,CC0 1.0 Universal,97.5,Color|Displacement|Roughness,?,unclassified,1,
+Wood021,texture,ambientcg.com,CC0 1.0 Universal,185.3,Color|Displacement|Roughness,?,unclassified,1,
+Wood022,texture,ambientcg.com,CC0 1.0 Universal,189.0,Color|Displacement|Roughness,?,unclassified,1,
+Wood023,texture,ambientcg.com,CC0 1.0 Universal,180.9,Color|Displacement|Roughness,?,unclassified,1,
+Wood025,texture,ambientcg.com,CC0 1.0 Universal,185.6,Color|Displacement|Roughness,?,unclassified,1,
+Wood026,texture,ambientcg.com,CC0 1.0 Universal,186.8,Color|Displacement|Roughness,?,unclassified,1,
+Wood027,texture,ambientcg.com,CC0 1.0 Universal,189.4,Color|Displacement|Roughness,?,unclassified,1,
+Wood028,texture,ambientcg.com,CC0 1.0 Universal,184.6,Color|Displacement|Roughness,?,unclassified,1,
+Wood036,texture,ambientcg.com,CC0 1.0 Universal,216.0,Color|Displacement|Roughness,?,unclassified,1,
+Wood048,texture,ambientcg.com,CC0 1.0 Universal,164.7,Color|Displacement|Roughness,?,unclassified,1,
+Wood049,texture,ambientcg.com,CC0 1.0 Universal,165.1,Color|Displacement|Roughness,?,unclassified,1,
+Wood050,texture,ambientcg.com,CC0 1.0 Universal,175.2,Color|Displacement|Roughness,?,unclassified,1,
+Wood051,texture,ambientcg.com,CC0 1.0 Universal,158.0,Color|Displacement|Roughness,?,unclassified,1,
+bark_brown_01,texture,polyhaven.com,CC0 1.0,37.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+bark_brown_02,texture,polyhaven.com,CC0 1.0 Universal,31.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+bark_platanus,texture,polyhaven.com,CC0 1.0,41.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+bark_willow,texture,polyhaven.com,CC0 1.0,53.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+bark_willow_02,texture,polyhaven.com,CC0 1.0 Universal,58.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+beam_wall_01,texture,polyhaven.com,CC0 1.0 Universal,8.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+beige_wall_001,texture,polyhaven.com,CC0 1.0,10.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+beige_wall_002,texture,polyhaven.com,CC0 1.0 Universal,3.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+bicolour_gravel,texture,polyhaven.com,CC0 1.0 Universal,70.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/path,4,gravel paths
+blue_plaster_weathered,texture,polyhaven.com,CC0 1.0,36.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+box_profile_metal_sheet,texture,polyhaven.com,CC0 1.0 Universal,33.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+brick_4,texture,polyhaven.com,CC0 1.0 Universal,18.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_floor,texture,polyhaven.com,CC0 1.0 Universal,22.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_pavement,texture,polyhaven.com,CC0 1.0 Universal,50.4,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_wall_001,texture,polyhaven.com,CC0 1.0,19.4,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_wall_003,texture,polyhaven.com,CC0 1.0 Universal,36.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_wall_006,texture,polyhaven.com,CC0 1.0 Universal,41.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_wall_08,texture,polyhaven.com,CC0 1.0 Universal,44.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_wall_11,texture,polyhaven.com,CC0 1.0 Universal,39.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brick_wall_13,texture,polyhaven.com,CC0 1.0 Universal,36.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+broken_brick_wall,texture,polyhaven.com,CC0 1.0,41.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brown_brick_02,texture,polyhaven.com,CC0 1.0 Universal,19.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+brown_mud,texture,polyhaven.com,CC0 1.0,30.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+brown_mud_02,texture,polyhaven.com,CC0 1.0 Universal,33.4,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+brown_mud_03,texture,polyhaven.com,CC0 1.0 Universal,28.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+brown_mud_dry,texture,polyhaven.com,CC0 1.0,39.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+brown_mud_leaves_01,texture,polyhaven.com,CC0 1.0,58.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+brown_mud_rocks_01,texture,polyhaven.com,CC0 1.0,36.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+brown_planks_03,texture,polyhaven.com,CC0 1.0 Universal,29.4,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+brown_planks_05,texture,polyhaven.com,CC0 1.0 Universal,30.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+brown_planks_09,texture,polyhaven.com,CC0 1.0 Universal,27.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+burned_ground_01,texture,polyhaven.com,CC0 1.0 Universal,32.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+castle_brick_01,texture,polyhaven.com,CC0 1.0 Universal,37.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+castle_brick_02_red,texture,polyhaven.com,CC0 1.0,37.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+castle_brick_02_white,texture,polyhaven.com,CC0 1.0 Universal,39.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+ceramic_roof_01,texture,polyhaven.com,CC0 1.0 Universal,21.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+church_bricks_02,texture,polyhaven.com,CC0 1.0 Universal,22.8,AO|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+clay_block_wall,texture,polyhaven.com,CC0 1.0,45.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+clay_floor_001,texture,polyhaven.com,CC0 1.0 Universal,8.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+clay_plaster,texture,polyhaven.com,CC0 1.0,32.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+clay_roof_tiles,texture,polyhaven.com,CC0 1.0 Universal,38.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+clay_roof_tiles_02,texture,polyhaven.com,CC0 1.0 Universal,38.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+clay_roof_tiles_03,texture,polyhaven.com,CC0 1.0 Universal,43.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+clean_pebbles,texture,polyhaven.com,CC0 1.0 Universal,50.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/path,4,gravel paths
+cliff_side,texture,polyhaven.com,CC0 1.0,36.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+cobblestone_color,texture,polyhaven.com,CC0 1.0 Universal,38.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/water,5,creek/river bed
+cobblestone_floor_01,texture,polyhaven.com,CC0 1.0 Universal,31.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/water,5,creek/river bed
+cobblestone_floor_02,texture,polyhaven.com,CC0 1.0 Universal,12.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/water,5,creek/river bed
+cobblestone_floor_03,texture,polyhaven.com,CC0 1.0 Universal,22.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/water,5,creek/river bed
+cobblestone_large_01,texture,polyhaven.com,CC0 1.0 Universal,38.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/water,5,creek/river bed
+corrugated_iron,texture,polyhaven.com,CC0 1.0 Universal,32.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,4,vernacular metal roofing
+corrugated_iron_02,texture,polyhaven.com,CC0 1.0 Universal,39.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,4,vernacular metal roofing
+corrugated_iron_03,texture,polyhaven.com,CC0 1.0 Universal,22.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,4,vernacular metal roofing
+cracked_red_ground,texture,polyhaven.com,CC0 1.0,98.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,5,Paraguayan red-earth ground
+damaged_plaster,texture,polyhaven.com,CC0 1.0 Universal,39.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,vernacular wall finishes
+dark_brick_wall,texture,polyhaven.com,CC0 1.0 Universal,51.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+dark_planks,texture,polyhaven.com,CC0 1.0 Universal,25.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+dark_wood,texture,polyhaven.com,CC0 1.0,40.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+dark_wooden_planks,texture,polyhaven.com,CC0 1.0 Universal,39.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+dirt_aerial_02,texture,polyhaven.com,CC0 1.0 Universal,31.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+dirt_aerial_03,texture,polyhaven.com,CC0 1.0 Universal,17.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+dirt_floor,texture,polyhaven.com,CC0 1.0 Universal,56.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+dry_decay_leaves,texture,polyhaven.com,CC0 1.0 Universal,42.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+dry_ground_01,texture,polyhaven.com,CC0 1.0 Universal,32.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+dry_ground_rocks,texture,polyhaven.com,CC0 1.0 Universal,52.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+dry_mud_field_001,texture,polyhaven.com,CC0 1.0 Universal,22.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+dry_riverbed_rock,texture,polyhaven.com,CC0 1.0,49.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/water,5,creek/river bed
+fine_grained_wood,texture,polyhaven.com,CC0 1.0 Universal,17.4,AO|Diffuse|Rough|nor_gl,4k,unclassified,1,
+forest_floor,texture,polyhaven.com,CC0 1.0,66.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,Atlantic-Forest litter
+forrest_ground_01,texture,polyhaven.com,CC0 1.0 Universal,41.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+forrest_ground_03,texture,polyhaven.com,CC0 1.0 Universal,56.4,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+grass_concrete_pavement,texture,polyhaven.com,CC0 1.0 Universal,69.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,grass scatter ground
+grass_path_2,texture,polyhaven.com,CC0 1.0 Universal,29.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,grass scatter ground
+grass_path_3,texture,polyhaven.com,CC0 1.0 Universal,28.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,grass scatter ground
+gravel_concrete,texture,polyhaven.com,CC0 1.0,59.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,3,bamboo+beton typologies
+gray_rocks,texture,polyhaven.com,CC0 1.0,56.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+green_metal_rust,texture,polyhaven.com,CC0 1.0 Universal,19.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+green_rough_planks,texture,polyhaven.com,CC0 1.0 Universal,27.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+grey_roof_tiles,texture,polyhaven.com,CC0 1.0 Universal,20.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+kitchen_wood,texture,polyhaven.com,CC0 1.0 Universal,50.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+leafy_grass,texture,polyhaven.com,CC0 1.0 Universal,70.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,grass scatter ground
+lichen_rock,texture,polyhaven.com,CC0 1.0,48.9,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+medieval_wood,texture,polyhaven.com,CC0 1.0 Universal,31.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+moss_wood,texture,polyhaven.com,CC0 1.0 Universal,33.4,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,3,moss tint for green-roof + boulders
+mud_cracked_dry_03,texture,polyhaven.com,CC0 1.0 Universal,56.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+muddy_tracks,texture,polyhaven.com,CC0 1.0,115.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,muddy tracks + creek surrounds
+oak_veneer_01,texture,polyhaven.com,CC0 1.0,48.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+old_planks_02,texture,polyhaven.com,CC0 1.0 Universal,24.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+palm_tree_bark,texture,polyhaven.com,CC0 1.0,97.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+pine_bark,texture,polyhaven.com,CC0 1.0,50.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+red_brick_03,texture,polyhaven.com,CC0 1.0,35.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/material,5,rural Paraguayan masonry
+red_slate_roof_tiles_01,texture,polyhaven.com,CC0 1.0 Universal,20.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+reed_roof_03,texture,polyhaven.com,CC0 1.0 Universal,40.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,5,bamboo/wigwam roofing
+reed_roof_04,texture,polyhaven.com,CC0 1.0 Universal,34.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,5,bamboo/wigwam roofing
+riet_01,texture,polyhaven.com,CC0 1.0 Universal,25.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+rock_face,texture,polyhaven.com,CC0 1.0,36.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+rock_wall_10,texture,polyhaven.com,CC0 1.0,53.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+rocky_terrain_02,texture,polyhaven.com,CC0 1.0,40.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/feature,4,hill outcrop / boulder
+roof_07,texture,polyhaven.com,CC0 1.0 Universal,19.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+rust_coarse_01,texture,polyhaven.com,CC0 1.0 Universal,54.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+rusty_corrugated_iron,texture,polyhaven.com,CC0 1.0 Universal,35.5,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,4,vernacular metal roofing
+rusty_metal_02,texture,polyhaven.com,CC0 1.0 Universal,23.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+rusty_metal_03,texture,polyhaven.com,CC0 1.0 Universal,39.0,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+rusty_metal_sheet,texture,polyhaven.com,CC0 1.0 Universal,36.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+sparse_grass,texture,polyhaven.com,CC0 1.0 Universal,59.7,AO|Diffuse|Displacement|Rough|nor_gl,4k,terrain/ground,4,grass scatter ground
+thatch_roof_angled,texture,polyhaven.com,CC0 1.0 Universal,49.2,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,5,bamboo/wigwam roofing
+tree_bark_03,texture,polyhaven.com,CC0 1.0,38.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,flora/material,4,tree-bark scatter material
+weathered_brown_planks,texture,polyhaven.com,CC0 1.0,14.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+weathered_planks,texture,polyhaven.com,CC0 1.0,39.4,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+wood_floor_deck,texture,polyhaven.com,CC0 1.0,51.6,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+wood_planks_grey,texture,polyhaven.com,CC0 1.0,10.1,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/floor,4,decking + floor finishes
+wood_table_001,texture,polyhaven.com,CC0 1.0,16.8,AO|Diffuse|Displacement|Rough|nor_gl,4k,unclassified,1,
+worn_corrugated_iron,texture,polyhaven.com,CC0 1.0 Universal,48.3,AO|Diffuse|Displacement|Rough|nor_gl,4k,house/roof,4,vernacular metal roofing
+Barrel_01,model,polyhaven.com,CC0 1.0 Universal,49.9,Barrel_01_4k.blend,4k,unclassified,1,
+Barrel_02,model,polyhaven.com,CC0 1.0 Universal,17.9,Barrel_02_4k.blend,4k,unclassified,1,
+CheeseBox_01,model,polyhaven.com,CC0 1.0 Universal,14.3,CheeseBox_01_4k.blend,4k,unclassified,1,
+CoffeeCart_01,model,polyhaven.com,CC0 1.0 Universal,35.2,CoffeeCart_01_4k.blend,4k,unclassified,1,
+Lantern_01,model,polyhaven.com,CC0 1.0 Universal,157.8,Lantern_01_4k.blend,4k,unclassified,1,
+anthurium_botany_01,model,polyhaven.com,CC0 1.0,39.6,anthurium_botany_01_4k.blend,4k,flora/photoreal,5,epiphyte / aroid placement
+antique_ceramic_vase_01,model,polyhaven.com,CC0 1.0 Universal,5.7,antique_ceramic_vase_01_4k.blend,4k,unclassified,1,
+bark_debris_01,model,polyhaven.com,CC0 1.0,63.3,bark_debris_01_4k.blend,4k,unclassified,1,
+barrel_03,model,polyhaven.com,CC0 1.0 Universal,21.0,barrel_03_4k.blend,4k,house/structure,3,container typologies
+barrel_stove,model,polyhaven.com,CC0 1.0 Universal,34.1,barrel_stove_4k.blend,4k,house/structure,3,container typologies
+bench_vice_01,model,polyhaven.com,CC0 1.0 Universal,69.9,bench_vice_01_4k.blend,4k,props/furniture,3,typology dressing
+bolt_cutters_01,model,polyhaven.com,CC0 1.0 Universal,59.6,bolt_cutters_01_4k.blend,4k,unclassified,1,
+boulder_01,model,polyhaven.com,CC0 1.0,60.3,boulder_01_4k.blend,4k,terrain/feature,5,boulder scatter — Labrisa Lounge seating
+brass_blowtorch,model,polyhaven.com,CC0 1.0 Universal,46.9,brass_blowtorch_4k.blend,4k,unclassified,1,
+brass_diya_lantern,model,polyhaven.com,CC0 1.0 Universal,24.5,brass_diya_lantern_4k.blend,4k,props/lighting,3,amenity lighting
+brass_pan_01,model,polyhaven.com,CC0 1.0 Universal,25.0,brass_pan_01_4k.blend,4k,unclassified,1,
+brass_pot_01,model,polyhaven.com,CC0 1.0 Universal,26.4,brass_pot_01_4k.blend,4k,unclassified,1,
+brass_pot_02,model,polyhaven.com,CC0 1.0 Universal,25.6,brass_pot_02_4k.blend,4k,unclassified,1,
+brass_vase_01,model,polyhaven.com,CC0 1.0 Universal,13.1,brass_vase_01_4k.blend,4k,unclassified,1,
+brass_vase_02,model,polyhaven.com,CC0 1.0 Universal,29.8,brass_vase_02_4k.blend,4k,unclassified,1,
+brass_vase_03,model,polyhaven.com,CC0 1.0 Universal,27.6,brass_vase_03_4k.blend,4k,unclassified,1,
+brass_vase_04,model,polyhaven.com,CC0 1.0 Universal,10.2,brass_vase_04_4k.blend,4k,unclassified,1,
+calathea_orbifolia_01,model,polyhaven.com,CC0 1.0,48.7,calathea_orbifolia_01_4k.blend,4k,unclassified,1,
+can_rusted,model,polyhaven.com,CC0 1.0 Universal,36.8,can_rusted_4k.blend,4k,unclassified,1,
+celandine_01,model,polyhaven.com,CC0 1.0,19.1,celandine_01_4k.blend,4k,unclassified,1,
+ceramic_vase_01,model,polyhaven.com,CC0 1.0,3.3,ceramic_vase_01_4k.blend,4k,unclassified,1,
+ceramic_vase_02,model,polyhaven.com,CC0 1.0,28.0,ceramic_vase_02_4k.blend,4k,unclassified,1,
+ceramic_vase_03,model,polyhaven.com,CC0 1.0 Universal,28.2,ceramic_vase_03_4k.blend,4k,unclassified,1,
+ceramic_vase_04,model,polyhaven.com,CC0 1.0 Universal,21.9,ceramic_vase_04_4k.blend,4k,unclassified,1,
+cheiridopsis_succulent,model,polyhaven.com,CC0 1.0,40.5,cheiridopsis_succulent_4k.blend,4k,flora/photoreal,3,drought-tolerant accent
+cleaner_tin_01,model,polyhaven.com,CC0 1.0 Universal,30.1,cleaner_tin_01_4k.blend,4k,unclassified,1,
+coast_land_rocks_02,model,polyhaven.com,CC0 1.0,144.6,coast_land_rocks_02_4k.blend,4k,unclassified,1,
+coast_land_rocks_03,model,polyhaven.com,CC0 1.0 Universal,130.9,coast_land_rocks_03_4k.blend,4k,unclassified,1,
+coast_land_rocks_04,model,polyhaven.com,CC0 1.0 Universal,127.8,coast_land_rocks_04_4k.blend,4k,unclassified,1,
+coast_line_01,model,polyhaven.com,CC0 1.0 Universal,81.5,coast_line_01_4k.blend,4k,unclassified,1,
+coast_line_02,model,polyhaven.com,CC0 1.0 Universal,98.7,coast_line_02_4k.blend,4k,unclassified,1,
+coast_rocks_01,model,polyhaven.com,CC0 1.0 Universal,93.7,coast_rocks_01_4k.blend,4k,unclassified,1,
+coast_rocks_02,model,polyhaven.com,CC0 1.0 Universal,134.5,coast_rocks_02_4k.blend,4k,unclassified,1,
+coast_rocks_03,model,polyhaven.com,CC0 1.0 Universal,100.3,coast_rocks_03_4k.blend,4k,unclassified,1,
+coast_rocks_05,model,polyhaven.com,CC0 1.0 Universal,104.7,coast_rocks_05_4k.blend,4k,unclassified,1,
+coastal_cliff_01,model,polyhaven.com,CC0 1.0 Universal,64.8,coastal_cliff_01_4k.blend,4k,unclassified,1,
+compost_bag_02,model,polyhaven.com,CC0 1.0 Universal,40.2,compost_bag_02_4k.blend,4k,unclassified,1,
+compost_bags,model,polyhaven.com,CC0 1.0 Universal,39.3,compost_bags_4k.blend,4k,unclassified,1,
+cross_pein_hammer,model,polyhaven.com,CC0 1.0 Universal,14.7,cross_pein_hammer_4k.blend,4k,props/tools,2,hand tools dressing
+crowbar_01,model,polyhaven.com,CC0 1.0 Universal,37.0,crowbar_01_4k.blend,4k,unclassified,1,
+crystalline_iceplant,model,polyhaven.com,CC0 1.0,37.4,crystalline_iceplant_4k.blend,4k,unclassified,1,
+dandelion_01,model,polyhaven.com,CC0 1.0,21.7,dandelion_01_4k.blend,4k,unclassified,1,
+dead_quiver_branch_01,model,polyhaven.com,CC0 1.0 Universal,42.6,dead_quiver_branch_01_4k.blend,4k,flora/tree,3,succulent feature
+dead_quiver_branch_02,model,polyhaven.com,CC0 1.0 Universal,23.7,dead_quiver_branch_02_4k.blend,4k,flora/tree,3,succulent feature
+dead_quiver_trunk,model,polyhaven.com,CC0 1.0 Universal,32.8,dead_quiver_trunk_4k.blend,4k,flora/tree,3,succulent feature
+dead_tree_trunk,model,polyhaven.com,CC0 1.0 Universal,49.1,dead_tree_trunk_4k.blend,4k,unclassified,1,
+dead_tree_trunk_02,model,polyhaven.com,CC0 1.0,61.3,dead_tree_trunk_02_4k.blend,4k,unclassified,1,
+didelta_spinosa,model,polyhaven.com,CC0 1.0 Universal,36.8,didelta_spinosa_4k.blend,4k,unclassified,1,
+dry_branches_medium_01,model,polyhaven.com,CC0 1.0,56.2,dry_branches_medium_01_4k.blend,4k,unclassified,1,
+dustpan,model,polyhaven.com,CC0 1.0 Universal,52.5,dustpan_4k.blend,4k,unclassified,1,
+electric_stove,model,polyhaven.com,CC0 1.0 Universal,38.3,electric_stove_4k.blend,4k,unclassified,1,
+fern_02,model,polyhaven.com,CC0 1.0,16.3,fern_02_4k.blend,4k,flora/photoreal,5,fern photoreal — green-roof + creek banks
+fir_sapling,model,polyhaven.com,CC0 1.0 Universal,240.7,fir_sapling_4k.blend,4k,unclassified,1,
+fir_sapling_medium,model,polyhaven.com,CC0 1.0 Universal,307.9,fir_sapling_medium_4k.blend,4k,unclassified,1,
+fir_tree_01,model,polyhaven.com,CC0 1.0,912.3,fir_tree_01_4k.blend,4k,unclassified,1,
+fire_hydrant,model,polyhaven.com,CC0 1.0 Universal,299.0,fire_hydrant_4k.blend,4k,unclassified,1,
+flathead_screwdriver,model,polyhaven.com,CC0 1.0 Universal,40.2,flathead_screwdriver_4k.blend,4k,unclassified,1,
+flower_empodium,model,polyhaven.com,CC0 1.0 Universal,8.9,flower_empodium_4k.blend,4k,unclassified,1,
+flower_gazania,model,polyhaven.com,CC0 1.0,42.5,flower_gazania_4k.blend,4k,unclassified,1,
+flower_heliophila,model,polyhaven.com,CC0 1.0 Universal,25.5,flower_heliophila_4k.blend,4k,unclassified,1,
+flower_stinkkruid,model,polyhaven.com,CC0 1.0 Universal,25.1,flower_stinkkruid_4k.blend,4k,unclassified,1,
+flower_ursinia,model,polyhaven.com,CC0 1.0 Universal,30.6,flower_ursinia_4k.blend,4k,unclassified,1,
+folding_wooden_stool,model,polyhaven.com,CC0 1.0,41.3,folding_wooden_stool_4k.blend,4k,props/tools,2,hand tools dressing
+garden_sprinkler_01,model,polyhaven.com,CC0 1.0,49.3,garden_sprinkler_01_4k.blend,4k,props/garden,2,garden props
+gate_latch_01,model,polyhaven.com,CC0 1.0 Universal,38.9,gate_latch_01_4k.blend,4k,unclassified,1,
+grass_bermuda_01,model,polyhaven.com,CC0 1.0 Universal,25.2,grass_bermuda_01_4k.blend,4k,unclassified,1,
+grass_medium_01,model,polyhaven.com,CC0 1.0,58.7,grass_medium_01_4k.blend,4k,unclassified,1,
+grass_medium_02,model,polyhaven.com,CC0 1.0,50.9,grass_medium_02_4k.blend,4k,unclassified,1,
+hand_plane_no4,model,polyhaven.com,CC0 1.0 Universal,63.9,hand_plane_no4_4k.blend,4k,unclassified,1,
+hand_truck,model,polyhaven.com,CC0 1.0 Universal,63.3,hand_truck_4k.blend,4k,unclassified,1,
+handsaw_wood,model,polyhaven.com,CC0 1.0,43.8,handsaw_wood_4k.blend,4k,props/tools,2,hand tools dressing
+hatchet,model,polyhaven.com,CC0 1.0,49.0,hatchet_4k.blend,4k,props/tools,2,hand tools dressing
+island_tree_01,model,polyhaven.com,CC0 1.0,322.8,island_tree_01_4k.blend,4k,unclassified,1,
+island_tree_02,model,polyhaven.com,CC0 1.0,300.2,island_tree_02_4k.blend,4k,unclassified,1,
+island_tree_03,model,polyhaven.com,CC0 1.0 Universal,331.6,island_tree_03_4k.blend,4k,unclassified,1,
+jacaranda_tree,model,polyhaven.com,CC0 1.0,557.4,jacaranda_tree_4k.blend,4k,flora/tree,5,native flowering tree
+jug_01,model,polyhaven.com,CC0 1.0 Universal,27.0,jug_01_4k.blend,4k,unclassified,1,
+ladder_sectioned_01,model,polyhaven.com,CC0 1.0 Universal,32.0,ladder_sectioned_01_4k.blend,4k,unclassified,1,
+lantern_chandelier_01,model,polyhaven.com,CC0 1.0 Universal,54.9,lantern_chandelier_01_4k.blend,4k,props/lighting,3,amenity lighting
+large_castle_door,model,polyhaven.com,CC0 1.0,62.4,large_castle_door_4k.blend,4k,house/feature,3,vernacular openings
+large_iron_gate,model,polyhaven.com,CC0 1.0,39.7,large_iron_gate_4k.blend,4k,unclassified,1,
+leipoldtia_schultzei,model,polyhaven.com,CC0 1.0 Universal,23.7,leipoldtia_schultzei_4k.blend,4k,unclassified,1,
+machete,model,polyhaven.com,CC0 1.0 Universal,56.5,machete_4k.blend,4k,unclassified,1,
+measuring_tape_01,model,polyhaven.com,CC0 1.0 Universal,19.1,measuring_tape_01_4k.blend,4k,unclassified,1,
+metal_jerrycan,model,polyhaven.com,CC0 1.0 Universal,58.9,metal_jerrycan_4k.blend,4k,unclassified,1,
+metal_jerrycan_green,model,polyhaven.com,CC0 1.0 Universal,58.5,metal_jerrycan_green_4k.blend,4k,unclassified,1,
+metal_jug,model,polyhaven.com,CC0 1.0 Universal,27.1,metal_jug_4k.blend,4k,unclassified,1,
+metal_tool_chest,model,polyhaven.com,CC0 1.0 Universal,46.6,metal_tool_chest_4k.blend,4k,props/tools,2,hand tools dressing
+metal_toolbox,model,polyhaven.com,CC0 1.0 Universal,50.9,metal_toolbox_4k.blend,4k,props/tools,2,hand tools dressing
+modular_chainlink_fence,model,polyhaven.com,CC0 1.0,155.8,modular_chainlink_fence_4k.blend,4k,unclassified,1,
+modular_electricity_poles,model,polyhaven.com,CC0 1.0,179.9,modular_electricity_poles_4k.blend,4k,unclassified,1,
+modular_street_seating,model,polyhaven.com,CC0 1.0,168.7,modular_street_seating_4k.blend,4k,props/furniture,3,typology dressing
+modular_wooden_pier,model,polyhaven.com,CC0 1.0,311.3,modular_wooden_pier_4k.blend,4k,unclassified,1,
+moss_01,model,polyhaven.com,CC0 1.0,20.3,moss_01_4k.blend,4k,unclassified,1,
+namaqualand_boulder_02,model,polyhaven.com,CC0 1.0,58.9,namaqualand_boulder_02_4k.blend,4k,terrain/feature,5,boulder scatter — Labrisa Lounge seating
+namaqualand_boulder_03,model,polyhaven.com,CC0 1.0,42.9,namaqualand_boulder_03_4k.blend,4k,terrain/feature,5,boulder scatter — Labrisa Lounge seating
+namaqualand_boulder_04,model,polyhaven.com,CC0 1.0,41.5,namaqualand_boulder_04_4k.blend,4k,terrain/feature,5,boulder scatter — Labrisa Lounge seating
+namaqualand_cliff_01,model,polyhaven.com,CC0 1.0,52.1,namaqualand_cliff_01_4k.blend,4k,unclassified,1,
+namaqualand_rocks_01,model,polyhaven.com,CC0 1.0 Universal,61.3,namaqualand_rocks_01_4k.blend,4k,unclassified,1,
+namaqualand_stones_01,model,polyhaven.com,CC0 1.0 Universal,52.6,namaqualand_stones_01_4k.blend,4k,unclassified,1,
+nettle_plant,model,polyhaven.com,CC0 1.0 Universal,59.4,nettle_plant_4k.blend,4k,unclassified,1,
+old_military_crate,model,polyhaven.com,CC0 1.0 Universal,48.4,old_military_crate_4k.blend,4k,house/structure,3,container typologies
+old_tyre,model,polyhaven.com,CC0 1.0 Universal,48.4,old_tyre_4k.blend,4k,unclassified,1,
+othonna_cerarioides,model,polyhaven.com,CC0 1.0 Universal,63.1,othonna_cerarioides_4k.blend,4k,unclassified,1,
+outdoor_table_chair_set_01,model,polyhaven.com,CC0 1.0,164.9,outdoor_table_chair_set_01_4k.blend,4k,props/furniture,3,typology dressing
+pachira_aquatica_01,model,polyhaven.com,CC0 1.0,148.3,pachira_aquatica_01_4k.blend,4k,flora/tree,4,subtropical tree
+painted_wooden_bench,model,polyhaven.com,CC0 1.0,39.1,painted_wooden_bench_4k.blend,4k,props/furniture,3,typology dressing
+painted_wooden_chair_01,model,polyhaven.com,CC0 1.0,16.7,painted_wooden_chair_01_4k.blend,4k,props/furniture,3,typology dressing
+painted_wooden_stool,model,polyhaven.com,CC0 1.0,28.1,painted_wooden_stool_4k.blend,4k,props/tools,2,hand tools dressing
+painted_wooden_table,model,polyhaven.com,CC0 1.0,40.7,painted_wooden_table_4k.blend,4k,props/furniture,3,typology dressing
+periwinkle_plant,model,polyhaven.com,CC0 1.0,75.9,periwinkle_plant_4k.blend,4k,unclassified,1,
+pine_roots,model,polyhaven.com,CC0 1.0,338.2,pine_roots_4k.blend,4k,unclassified,1,
+pine_sapling_medium,model,polyhaven.com,CC0 1.0 Universal,480.3,pine_sapling_medium_4k.blend,4k,unclassified,1,
+pine_sapling_small,model,polyhaven.com,CC0 1.0 Universal,276.6,pine_sapling_small_4k.blend,4k,unclassified,1,
+pine_tree_01,model,polyhaven.com,CC0 1.0,1248.8,pine_tree_01_4k.blend,4k,unclassified,1,
+planter_box_01,model,polyhaven.com,CC0 1.0,43.3,planter_box_01_4k.blend,4k,unclassified,1,
+planter_box_02,model,polyhaven.com,CC0 1.0 Universal,42.2,planter_box_02_4k.blend,4k,unclassified,1,
+planter_box_03,model,polyhaven.com,CC0 1.0 Universal,42.6,planter_box_03_4k.blend,4k,unclassified,1,
+planter_pot_clay,model,polyhaven.com,CC0 1.0,25.6,planter_pot_clay_4k.blend,4k,unclassified,1,
+pot_enamel_01,model,polyhaven.com,CC0 1.0 Universal,38.2,pot_enamel_01_4k.blend,4k,unclassified,1,
+potted_plant_01,model,polyhaven.com,CC0 1.0 Universal,252.1,potted_plant_01_4k.blend,4k,unclassified,1,
+potted_plant_02,model,polyhaven.com,CC0 1.0 Universal,272.6,potted_plant_02_4k.blend,4k,unclassified,1,
+potted_plant_04,model,polyhaven.com,CC0 1.0 Universal,26.4,potted_plant_04_4k.blend,4k,unclassified,1,
+propane_tank,model,polyhaven.com,CC0 1.0 Universal,48.5,propane_tank_4k.blend,4k,props/water,3,rural water infrastructure
+quiver_tree_01,model,polyhaven.com,CC0 1.0 Universal,298.4,quiver_tree_01_4k.blend,4k,flora/tree,3,succulent feature
+quiver_tree_02,model,polyhaven.com,CC0 1.0 Universal,49.2,quiver_tree_02_4k.blend,4k,flora/tree,3,succulent feature
+rock_07,model,polyhaven.com,CC0 1.0,32.6,rock_07_4k.blend,4k,unclassified,1,
+rock_09,model,polyhaven.com,CC0 1.0,26.8,rock_09_4k.blend,4k,unclassified,1,
+rock_face_01,model,polyhaven.com,CC0 1.0,45.7,rock_face_01_4k.blend,4k,unclassified,1,
+rock_moss_set_01,model,polyhaven.com,CC0 1.0,32.8,rock_moss_set_01_4k.blend,4k,terrain/feature,5,boulder scatter — Labrisa Lounge seating
+rock_moss_set_02,model,polyhaven.com,CC0 1.0,35.4,rock_moss_set_02_4k.blend,4k,terrain/feature,5,boulder scatter — Labrisa Lounge seating
+root_cluster_01,model,polyhaven.com,CC0 1.0,67.2,root_cluster_01_4k.blend,4k,unclassified,1,
+root_cluster_02,model,polyhaven.com,CC0 1.0 Universal,53.0,root_cluster_02_4k.blend,4k,unclassified,1,
+rusted_spade_01,model,polyhaven.com,CC0 1.0,50.3,rusted_spade_01_4k.blend,4k,unclassified,1,
+rusted_wheel_rim_01,model,polyhaven.com,CC0 1.0 Universal,41.7,rusted_wheel_rim_01_4k.blend,4k,unclassified,1,
+rusted_wheel_rim_02,model,polyhaven.com,CC0 1.0 Universal,42.6,rusted_wheel_rim_02_4k.blend,4k,unclassified,1,
+searsia_burchellii,model,polyhaven.com,CC0 1.0 Universal,65.2,searsia_burchellii_4k.blend,4k,unclassified,1,
+searsia_lucida,model,polyhaven.com,CC0 1.0 Universal,54.1,searsia_lucida_4k.blend,4k,unclassified,1,
+seeding_tray_01,model,polyhaven.com,CC0 1.0,34.9,seeding_tray_01_4k.blend,4k,unclassified,1,
+shrub_01,model,polyhaven.com,CC0 1.0,41.4,shrub_01_4k.blend,4k,unclassified,1,
+shrub_02,model,polyhaven.com,CC0 1.0,19.3,shrub_02_4k.blend,4k,unclassified,1,
+shrub_03,model,polyhaven.com,CC0 1.0,14.9,shrub_03_4k.blend,4k,unclassified,1,
+shrub_04,model,polyhaven.com,CC0 1.0,16.4,shrub_04_4k.blend,4k,unclassified,1,
+shrub_sorrel_01,model,polyhaven.com,CC0 1.0,19.7,shrub_sorrel_01_4k.blend,4k,unclassified,1,
+single_root,model,polyhaven.com,CC0 1.0,38.6,single_root_4k.blend,4k,unclassified,1,
+sledgehammer_01,model,polyhaven.com,CC0 1.0,35.6,sledgehammer_01_4k.blend,4k,props/tools,2,hand tools dressing
+small_lpg_tank,model,polyhaven.com,CC0 1.0 Universal,56.1,small_lpg_tank_4k.blend,4k,props/water,3,rural water infrastructure
+spinning_wheel_01,model,polyhaven.com,CC0 1.0 Universal,39.1,spinning_wheel_01_4k.blend,4k,unclassified,1,
+stone_fire_pit,model,polyhaven.com,CC0 1.0,54.3,stone_fire_pit_4k.blend,4k,unclassified,1,
+street_lamp_01,model,polyhaven.com,CC0 1.0 Universal,30.0,street_lamp_01_4k.blend,4k,props/lighting,3,amenity lighting
+street_lamp_02,model,polyhaven.com,CC0 1.0 Universal,25.4,street_lamp_02_4k.blend,4k,props/lighting,3,amenity lighting
+tea_set_01,model,polyhaven.com,CC0 1.0 Universal,21.1,tea_set_01_4k.blend,4k,unclassified,1,
+tire_pump,model,polyhaven.com,CC0 1.0 Universal,41.8,tire_pump_4k.blend,4k,unclassified,1,
+tree_small_02,model,polyhaven.com,CC0 1.0,250.8,tree_small_02_4k.blend,4k,unclassified,1,
+tree_stump_01,model,polyhaven.com,CC0 1.0,51.5,tree_stump_01_4k.blend,4k,flora/decoration,3,fallen wood detail
+tree_stump_02,model,polyhaven.com,CC0 1.0,63.8,tree_stump_02_4k.blend,4k,flora/decoration,3,fallen wood detail
+trowel_01,model,polyhaven.com,CC0 1.0,46.7,trowel_01_4k.blend,4k,props/tools,2,hand tools dressing
+utility_box_01,model,polyhaven.com,CC0 1.0,49.3,utility_box_01_4k.blend,4k,unclassified,1,
+vintage_oil_lamp,model,polyhaven.com,CC0 1.0 Universal,28.5,vintage_oil_lamp_4k.blend,4k,props/lighting,3,amenity lighting
+water_manhole_cover,model,polyhaven.com,CC0 1.0,54.8,water_manhole_cover_4k.blend,4k,unclassified,1,
+watering_can_metal_01,model,polyhaven.com,CC0 1.0,55.4,watering_can_metal_01_4k.blend,4k,props/garden,2,garden props
+wicker_basket_01,model,polyhaven.com,CC0 1.0,40.9,wicker_basket_01_4k.blend,4k,unclassified,1,
+wine_barrel_01,model,polyhaven.com,CC0 1.0 Universal,24.2,wine_barrel_01_4k.blend,4k,house/structure,3,container typologies
+wooden_axe_03,model,polyhaven.com,CC0 1.0,50.4,wooden_axe_03_4k.blend,4k,unclassified,1,
+wooden_barrels_01,model,polyhaven.com,CC0 1.0,374.7,wooden_barrels_01_4k.blend,4k,house/structure,3,container typologies
+wooden_bucket_01,model,polyhaven.com,CC0 1.0,48.4,wooden_bucket_01_4k.blend,4k,unclassified,1,
+wooden_bucket_02,model,polyhaven.com,CC0 1.0 Universal,48.1,wooden_bucket_02_4k.blend,4k,unclassified,1,
+wooden_crate_01,model,polyhaven.com,CC0 1.0,43.6,wooden_crate_01_4k.blend,4k,house/structure,3,container typologies
+wooden_crate_02,model,polyhaven.com,CC0 1.0 Universal,47.6,wooden_crate_02_4k.blend,4k,house/structure,3,container typologies
+wooden_cutting_board,model,polyhaven.com,CC0 1.0 Universal,50.0,wooden_cutting_board_4k.blend,4k,unclassified,1,
+wooden_hammer_01,model,polyhaven.com,CC0 1.0,39.8,wooden_hammer_01_4k.blend,4k,props/tools,2,hand tools dressing
+wooden_ladder,model,polyhaven.com,CC0 1.0,36.6,wooden_ladder_4k.blend,4k,unclassified,1,
+wooden_lantern_01,model,polyhaven.com,CC0 1.0 Universal,238.7,wooden_lantern_01_4k.blend,4k,props/lighting,3,amenity lighting
+wooden_picnic_table,model,polyhaven.com,CC0 1.0,287.2,wooden_picnic_table_4k.blend,4k,props/furniture,3,typology dressing
+wooden_spoon,model,polyhaven.com,CC0 1.0 Universal,43.5,wooden_spoon_4k.blend,4k,unclassified,1,
+wooden_stool_01,model,polyhaven.com,CC0 1.0,38.3,wooden_stool_01_4k.blend,4k,props/tools,2,hand tools dressing
+escobar_albedo,terrain,various,?,0.3,escobar_albedo.png,n/a,terrain/data,3,manual review
+escobar_height,terrain,various,?,0.0,escobar_height.json,n/a,terrain/data,3,manual review
+escobar_height,terrain,various,?,0.2,escobar_height.png,n/a,terrain/data,3,manual review

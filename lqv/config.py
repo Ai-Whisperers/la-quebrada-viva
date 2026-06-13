@@ -4,7 +4,7 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 
-PROJECT_DIR = '/home/ai-whisperers/blender-projects/house-field'
+PROJECT_DIR = '/home/ai-whisperers/blender-projects/la-quebrada-viva'
 RENDERS_DIR = os.path.join(PROJECT_DIR, 'renders')
 BLEND_PATH = os.path.join(PROJECT_DIR, 'scene.blend')
 

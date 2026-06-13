@@ -41,7 +41,7 @@ Everything else (Microsoft Planetary Computer, JAXA ALOS, CHIRPS, HydroSHEDS, Wo
 2. Go to **https://lpdaac.usgs.gov/terms/** — scroll to the GEDI section, check the box, click "Submit". This accepts the GEDI data use agreement.
 3. Open **https://search.earthdata.nasa.gov/search?sp=GEDI&pg=1&collectionId=C2142778263-LPCLOUD** — click "Download" on any GEDI L2A file. A popup will appear titled "Earthdata Cloud Data Pool" — click "Accept". This unlocks the cloud EULA.
 4. Go back to **https://urs.earthdata.nasa.gov/profile** → click "Generate Token" → copy the new token.
-5. Paste the new token into `/home/ai-whisperers/blender-projects/house-field/.env.local`, replacing the existing `NASA_EARTHDATA_TOKEN=...` line.
+5. Paste the new token into `/home/ai-whisperers/blender-projects/la-quebrada-viva/.env.local`, replacing the existing `NASA_EARTHDATA_TOKEN=...` line.
 6. Tell me you have done it — I will re-run `extract_gedi_https.py` (~30 min) and you will have a full vegetation map.
 
 **Cost:** $0  
@@ -101,7 +101,7 @@ key: <your-uid>:<your-api-key>
 2. Sign in with `weissvanderpol.ivan@gmail.com`
 3. Search for: `PROBAV_LC100_global_v3.1.2_2019_cog`
 4. Click the **discrete_classification_map** asset (single TIF, ~3 MB)
-5. Download it → save to `/home/ai-whisperers/blender-projects/house-field/docs/site_data/cgls_lcover/lcover.tif`
+5. Download it → save to `/home/ai-whisperers/blender-projects/la-quebrada-viva/docs/site_data/cgls_lcover/lcover.tif`
 6. Tell me when done — I will run my existing `fetch_copernicus_lcover.py` which will auto-detect the file and generate the preview + class summary.
 
 ### Option B: Create a stronger OAuth client (10 min)

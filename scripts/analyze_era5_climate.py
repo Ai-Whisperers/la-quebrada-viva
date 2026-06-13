@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import xarray as xr
 
-HERE = Path('/home/ai-whisperers/blender-projects/house-field')
+HERE = Path('/home/ai-whisperers/blender-projects/la-quebrada-viva')
 DATA_DIR = HERE / 'docs' / 'site_data' / 'climate_era5'
 
 # Property center for picking the nearest grid point

@@ -22,7 +22,7 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-HERE = Path('/home/ai-whisperers/blender-projects/house-field')
+HERE = Path('/home/ai-whisperers/blender-projects/la-quebrada-viva')
 load_dotenv(dotenv_path=HERE / '.env.local')
 
 PROP_CENTER = (-25.630, -57.030)  # centroid of the 3.3 km bbox

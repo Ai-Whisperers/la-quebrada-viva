@@ -1,0 +1,8 @@
+Asset: rusty_metal_sheet
+Source: Poly Haven (https://polyhaven.com/a/rusty_metal_sheet)
+License: CC0 1.0 Universal
+License text: ./CC0-1.0.txt
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Bundle source: Poly Haven blanket CC0 per https://polyhaven.com/license
+Source URL: polyhaven.com
+Downloaded: 2026-06-13

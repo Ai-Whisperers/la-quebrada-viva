@@ -24,7 +24,7 @@ import rasterio
 from dotenv import load_dotenv
 from rasterio.transform import rowcol
 
-HERE = Path('/home/ai-whisperers/blender-projects/house-field')
+HERE = Path('/home/ai-whisperers/blender-projects/la-quebrada-viva')
 load_dotenv(dotenv_path=HERE / '.env.local')
 
 IN_CSV = HERE / 'docs' / 'site_data' / 'gedi_l2a_points.csv'

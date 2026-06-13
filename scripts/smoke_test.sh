@@ -5,6 +5,13 @@ cd "$(dirname "$0")/.."
 
 [ -f scene.blend ] && cp scene.blend scene.blend.session-backup
 
+# build_scene.py does not invoke lqv.subscene.base directly today, but several
+# audit-tier modules (and any future smoke render) do. lqv.subscene.base now
+# requires RENDER_RUN_ID or LQV_ALLOW_TIMESTAMP_RUN_ID=1 (see docs/render-runs.md).
+# A smoke test isn't a real batch — give it a stable id so any sub-render
+# byproducts (if a future driver chains here) land in a predictable folder.
+export RENDER_RUN_ID="${RENDER_RUN_ID:-smoke_$(date +%Y%m%d_%H%M%S)}"
+
 log=$(mktemp)
 # Build + audit in one Blender session. --python-expr runs after --python so
 # ten_rules_check inspects the actually-built scene; sys.exit(1) on real

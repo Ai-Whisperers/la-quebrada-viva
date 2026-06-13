@@ -23,7 +23,7 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-HERE = Path('/home/ai-whisperers/blender-projects/house-field')
+HERE = Path('/home/ai-whisperers/blender-projects/la-quebrada-viva')
 load_dotenv(dotenv_path=HERE / '.env.local')
 
 OUT_DIR = HERE / 'docs' / 'site_data' / 'worldclim'

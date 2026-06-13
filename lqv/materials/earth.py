@@ -47,3 +47,11 @@ def build(MAT: dict) -> None:
         tint_color=hex_to_rgb('#5A4E3C'), tint_fac=0.40,
         displacement_strength=0.04,
     )
+    MAT['terracotta_tile'] = add_noise_displacement(
+        principled('TerracottaTile', COL['terracotta_tile'], roughness=0.62),
+        scale=24.0, strength=0.025,
+    )
+    MAT['concrete_slab_108'] = add_noise_displacement(
+        principled('ConcreteSlab108', COL['concrete_slab_108'], roughness=0.78),
+        scale=18.0, strength=0.015,
+    )
