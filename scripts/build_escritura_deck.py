@@ -64,7 +64,7 @@ SUB_LATEST = ROOT / "renders" / "sub" / "latest"
 SUB_RUNS = ROOT / "renders" / "sub" / "runs"
 BOQ_MD = ROOT / "docs" / "boq" / "boq_rollup.md"
 OUT_DIR = ROOT / "docs" / "escritura_deck"
-OUT_PDF = OUT_DIR / "escritura_deck_v5.pdf"
+OUT_PDF = OUT_DIR / "escritura_deck_v6.pdf"
 
 # FX rate read from canonical source docs/finance/fx.json via lqv.finance, so
 # the deck never drifts from the BoQ totals. Today is sourced from the
@@ -98,145 +98,214 @@ AMENITY_SLUGS = (
     "eco_retreat_modern_oasis",
 )
 
-# Human-readable Dutch titles + one-line descriptions per asset.
-# These are deliberately curated (not auto-generated) because the escribana
-# is a non-technical Spanish/Dutch reader and a labelled inventory carries
-# more meaning than a string of module names.
+# Human-readable titles + one-line descriptions per asset, in three languages.
+# Spanish (`_es`) is the primary surface — the escribana is a Paraguayan
+# notary and the deck is delivered to her. English (`_en`) is shown as an
+# italic caption under each Spanish title for Wesley's reference. Dutch
+# (`_nl`) is kept on file for the design archive but no longer rendered.
 ASSET_META: dict[str, dict] = {
     "hobbit_house": {
-        "title_nl": "Hobbithuis",
+        "title_es": "Casa hobbit",
         "title_en": "Hobbit House",
+        "title_nl": "Hobbithuis",
+        "blurb_es": "Casita semienterrada con techo de tepe y puerta redonda de lapacho.",
         "blurb_nl": "Aardgebed hutje met sod-dak en ronde lapacho-deur.",
+        "use_es": "1 plaza",
         "use": "1-pax",
         "floor_m2": 28,
+        "construction_es": "cob + lapacho + anillo de cimentación en piedra arenisca",
         "construction_nl": "cob + lapacho + zandsteen funderingsring",
     },
     "bamboo_wigwam_lodge": {
-        "title_nl": "Bamboe Wigwam Lodge",
+        "title_es": "Lodge wigwam de bambú",
         "title_en": "Bamboo Wigwam Lodge",
+        "title_nl": "Bamboe Wigwam Lodge",
+        "blurb_es": "Lodge cónico armado en haces de guadua, techo de paja de palma.",
         "blurb_nl": "Conische guadua-bundel-lodge, palmthatch-dak.",
+        "use_es": "1 plaza",
         "use": "1-pax",
         "floor_m2": 18,
+        "construction_es": "haces de guadua + paja de palma + anillo de lapacho",
         "construction_nl": "guadua-bundels + palmthatch + lapacho ring",
     },
     "bamboo_boomhut_treehouse": {
-        "title_nl": "Bamboe Boomhut (Treehouse)",
+        "title_es": "Casa del árbol en bambú",
         "title_en": "Bamboo Treehouse",
+        "title_nl": "Bamboe Boomhut (Treehouse)",
+        "blurb_es": "Casa del árbol sobre pilotes de lapacho con plataforma de guadua.",
         "blurb_nl": "Stilten-boomhut op lapacho-palen, guadua platform.",
+        "use_es": "1 plaza",
         "use": "1-pax",
         "floor_m2": 22,
+        "construction_es": "pilotes de lapacho + piso de guadua + paja de palma",
         "construction_nl": "lapacho-stilten + guadua-vloer + palmthatch",
     },
     "bamboo_beton_28": {
-        "title_nl": "Bamboe + Beton 28 m²",
+        "title_es": "Bambú + hormigón 28 m²",
         "title_en": "Bamboo + Concrete 28 m²",
+        "title_nl": "Bamboe + Beton 28 m²",
+        "blurb_es": "Cabaña individual: losa de hormigón, columnas de guadua y techo de palma.",
         "blurb_nl": "Solo-cabine, betonplaat + guadua-kolommen + palmthatch.",
+        "use_es": "1 plaza (cama individual)",
         "use": "1-pax (single bed)",
         "floor_m2": 28,
+        "construction_es": "losa de hormigón + guadua + paja de palma + lucernario",
         "construction_nl": "beton plaat + guadua + palmthatch + clerestory",
     },
     "bamboo_beton_30": {
-        "title_nl": "Bamboe + Beton 30 m²",
+        "title_es": "Bambú + hormigón 30 m²",
         "title_en": "Bamboo + Concrete 30 m²",
+        "title_nl": "Bamboe + Beton 30 m²",
+        "blurb_es": "Cabaña para pareja, cama queen, envolvente de guadua sobre losa de hormigón.",
         "blurb_nl": "Couples-cabine, queen-bed, guadua-skin op betonplaat.",
+        "use_es": "2 plazas (cama queen)",
         "use": "2-pax (queen bed)",
         "floor_m2": 30,
+        "construction_es": "losa de hormigón + guadua + paja de palma",
         "construction_nl": "beton plaat + guadua + palmthatch",
     },
     "bamboo_river_house": {
-        "title_nl": "Bamboe Rivierhuis",
+        "title_es": "Casa ribereña de bambú",
         "title_en": "Bamboo River House",
+        "title_nl": "Bamboe Rivierhuis",
+        "blurb_es": "Unidad ribereña de 2 plazas con frente vidriado al río y deck de lapacho.",
         "blurb_nl": "Riparische 2-bed unit met rivier-glaswand en lapacho-dek.",
+        "use_es": "2 plazas",
         "use": "2-pax",
         "floor_m2": 48,
+        "construction_es": "columnas de guadua + paño vidriado al río + deck de lapacho",
         "construction_nl": "guadua-kolommen + rivier-glas + lapacho-dek",
     },
     "italian_stone_small_v1": {
-        "title_nl": "Steenhuis (klein, v1)",
+        "title_es": "Casa de piedra (pequeña, v1)",
         "title_en": "Stone House (small, v1)",
+        "title_nl": "Steenhuis (klein, v1)",
+        "blurb_es": "Mampostería de piedra, 2 plazas, cubierta con apariencia de terracota.",
         "blurb_nl": "Steenmetselwerk, 2-pax, terracotta-look dak.",
+        "use_es": "2 plazas",
         "use": "2-pax",
         "floor_m2": 32,
+        "construction_es": "bloques CMU + revestimiento de arenisca + cubierta",
         "construction_nl": "CMU + zandsteen-bekleding + dak",
     },
     "italian_stone_small_v2": {
-        "title_nl": "Steenhuis (klein, v2)",
+        "title_es": "Casa de piedra (pequeña, v2)",
         "title_en": "Stone House (small, v2)",
+        "title_nl": "Steenhuis (klein, v2)",
+        "blurb_es": "Variante de la v1 con terraza extendida y sendero de losas de arenisca.",
         "blurb_nl": "v1-variant met verlengd terras + zandsteen-pad.",
+        "use_es": "2 plazas",
         "use": "2-pax",
         "floor_m2": 36,
+        "construction_es": "bloques CMU + arenisca + terraza en losa irregular",
         "construction_nl": "CMU + zandsteen + flagstone-terras",
     },
     "bamboo_beton_family_rectangular": {
-        "title_nl": "Bamboe + Beton Familie (rechthoekig)",
+        "title_es": "Bambú + hormigón familiar (rectangular)",
         "title_en": "Bamboo + Concrete Family (rectangular)",
+        "title_nl": "Bamboe + Beton Familie (rechthoekig)",
+        "blurb_es": "Unidad familiar de 70 m² con viga cumbrera de lapacho y techo de paja de palma.",
         "blurb_nl": "70 m² familie-unit, lapacho ridge-beam + palmthatch.",
+        "use_es": "4 plazas (1 queen + 2 individuales)",
         "use": "4-pax (1 queen + 2 twin)",
         "floor_m2": 70,
+        "construction_es": "espina de hormigón + guadua + paja de palma + cumbrera de lapacho",
         "construction_nl": "beton spine + guadua + palmthatch + lapacho ridge",
     },
     "bamboo_beton_family_curved": {
-        "title_nl": "Bamboe + Beton Familie (gebogen)",
+        "title_es": "Bambú + hormigón familiar (curva)",
         "title_en": "Bamboo + Concrete Family (curved)",
+        "title_nl": "Bamboe + Beton Familie (gebogen)",
+        "blurb_es": "Unidad familiar de 70 m² con techo curvo de palma y capa de hojas de banano.",
         "blurb_nl": "70 m² familie-unit met gebogen palmthatch + banaanblad.",
+        "use_es": "4 plazas (1 queen + 2 individuales)",
         "use": "4-pax (1 queen + 2 twin)",
         "floor_m2": 70,
+        "construction_es": "espina de hormigón + arcos de guadua + paja de palma + hojas de banano",
         "construction_nl": "beton spine + guadua-bogen + palmthatch + banaanblad",
     },
     "bamboo_container_4pax": {
-        "title_nl": "Bamboe + Container 4-pax",
+        "title_es": "Bambú + contenedor 4 plazas",
         "title_en": "Bamboo + Container 4-pax",
+        "title_nl": "Bamboe + Container 4-pax",
+        "blurb_es": "Contenedor 40HC como núcleo de servicios, envuelto en guadua y paja de palma.",
         "blurb_nl": "40HC container als servicekern, ingepakt in guadua + thatch.",
+        "use_es": "4 plazas",
         "use": "4-pax",
         "floor_m2": 56,
+        "construction_es": "contenedor marítimo + guadua + paja de palma + aislación",
         "construction_nl": "shipping container + guadua + palmthatch + isolatie",
     },
     "italian_river_house_4pax": {
-        "title_nl": "Stenen Rivierhuis (4-pax)",
+        "title_es": "Casa ribereña de piedra (4 plazas)",
         "title_en": "Stone River House (4-pax)",
+        "title_nl": "Stenen Rivierhuis (4-pax)",
+        "blurb_es": "Mampostería de piedra para 4 plazas con gran paño vidriado al río.",
         "blurb_nl": "4-pax steenmetselwerk met grote rivier-glaswand.",
+        "use_es": "4 plazas",
         "use": "4-pax",
         "floor_m2": 96,
+        "construction_es": "bloques CMU + arenisca + vidrio + cubierta apariencia terracota",
         "construction_nl": "CMU + zandsteen + glas + terracotta-look dak",
     },
     "container_river_house": {
-        "title_nl": "Container Rivierhuis",
+        "title_es": "Casa ribereña en contenedor",
         "title_en": "Container River House",
+        "title_nl": "Container Rivierhuis",
+        "blurb_es": "Doble contenedor con revestimiento de piedra seca hacia la colina y vidrio hacia el río.",
         "blurb_nl": "Dubbele container, dry-stone bekleding op heuvel-zijde, glas op rivier-zijde.",
+        "use_es": "4 plazas",
         "use": "4-pax",
         "floor_m2": 72,
+        "construction_es": "2× 40HC + revestimiento de arenisca + vidrio + deck de lapacho",
         "construction_nl": "2x 40HC + zandsteen-bekleding + glas + lapacho-dek",
     },
     "labrisa_lounge": {
-        "title_nl": "La Brisa Lounge",
+        "title_es": "La Brisa Lounge",
         "title_en": "La Brisa Lounge",
+        "title_nl": "La Brisa Lounge",
+        "blurb_es": "Lounge al aire libre, techo de palma a cuatro aguas, piso de hormigón, barra integrada.",
         "blurb_nl": "Open-air lounge, palmthatch-hipped dak, beton-vloer, geintegreerde bar.",
+        "use_es": "Núcleo social (junto al arroyo)",
         "use": "Social anchor (creek-side)",
         "floor_m2": 64,
+        "construction_es": "guadua + postes de lapacho + paja de palma + hormigón",
         "construction_nl": "guadua + lapacho posts + palmthatch + beton",
     },
     "floating_dining": {
-        "title_nl": "Drijvende Eetzaal",
+        "title_es": "Comedor flotante",
         "title_en": "Floating Dining Deck",
+        "title_nl": "Drijvende Eetzaal",
+        "blurb_es": "Deck flotante de lapacho sobre pontones de guadua, iluminación con farolas.",
         "blurb_nl": "Drijvend lapacho-dek op guadua-pontons, lantaarn-verlichting.",
+        "use_es": "Comedor sobre el remanso del arroyo",
         "use": "Dining over stream pool",
         "floor_m2": 36,
+        "construction_es": "deck de lapacho + pontones de guadua + farolas",
         "construction_nl": "lapacho-dek + guadua-pontons + lantaarns",
     },
     "eco_pool": {
-        "title_nl": "Eco-Zwembad",
+        "title_es": "Piscina ecológica",
         "title_en": "Natural Eco Pool",
+        "title_nl": "Eco-Zwembad",
+        "blurb_es": "Piscina natural con liner de bentonita, zona de plantas filtrantes, bomba fotovoltaica, sin cloro.",
         "blurb_nl": "Bentoniet-gevoerd natuurlijk zwembad met regen-plant-zone, PV-pomp, geen chloor.",
+        "use_es": "Baño ecológico + zona de fitodepuración",
         "use": "Eco-zwemmen + regenzone",
         "floor_m2": 140,
+        "construction_es": "liner de bentonita + coronamiento de arenisca + plantas filtrantes + bomba fotovoltaica",
         "construction_nl": "bentoniet liner + zandsteen coping + regen-planten + PV-pomp",
     },
     "eco_retreat_modern_oasis": {
-        "title_nl": "Eco-Retreat Modern Oasis",
+        "title_es": "Eco-Retiro «Modern Oasis»",
         "title_en": "Eco Retreat — Modern Oasis",
+        "title_nl": "Eco-Retreat Modern Oasis",
+        "blurb_es": "Bienestar multizona: deck de yoga, cápsula de sauna, ducha-jardín, marco fotovoltaico.",
         "blurb_nl": "Multi-zone wellness: yoga-dek, sauna-pod, outdoor douche-tuin, PV-frame.",
+        "use_es": "Núcleo de bienestar",
         "use": "Wellness-hart",
         "floor_m2": 120,
+        "construction_es": "lapacho + vidrio + paja de palma + climatización + fotovoltaicos",
         "construction_nl": "lapacho + glas + palmthatch + klimaattechniek + PV",
     },
 }
@@ -538,22 +607,22 @@ def _build() -> int:
     story.append(Spacer(1, 28 * mm))
     story.append(Paragraph("LA QUEBRADA VIVA", title_style))
     story.append(Spacer(1, 4 * mm))
-    story.append(Paragraph("62 hectaren — Escobar, Paraguarí, Paraguay", subtitle_style))
+    story.append(Paragraph("62 hectáreas — Escobar, Paraguarí, Paraguay", subtitle_style))
     story.append(Spacer(1, 18 * mm))
     cover_table = Table([
-        [Paragraph("<b>Eigenaar:</b>", body_style),
+        [Paragraph("<b>Propietarios:</b>", body_style),
          Paragraph("Wesley Manuel van de Camp (75%) · Thijs Adrianus Hendricus (25%)", body_style)],
-        [Paragraph("<b>Locatie:</b>", body_style),
-         Paragraph("Escobar district, Paraguarí departamento — ~78 km van Asunción", body_style)],
-        [Paragraph("<b>Oppervlakte:</b>", body_style),
-         Paragraph("62 ha — 6 percelen (5 Mbopicua + 1 Ybyraty)", body_style)],
+        [Paragraph("<b>Ubicación:</b>", body_style),
+         Paragraph("Distrito de Escobar, departamento de Paraguarí — ~78 km de Asunción", body_style)],
+        [Paragraph("<b>Superficie:</b>", body_style),
+         Paragraph("62 ha — 6 parcelas (5 Mbopicuá + 1 Ybyraty)", body_style)],
         [Paragraph("<b>Boleto:</b>", body_style),
-         Paragraph("2026-04-28 — 10% seña betaald (Gs. 250.300.000)", body_style)],
-        [Paragraph("<b>Contract totaal:</b>", body_style),
+         Paragraph("2026-04-28 — seña del 10% abonada (Gs. 250.300.000)", body_style)],
+        [Paragraph("<b>Total del contrato:</b>", body_style),
          Paragraph("Gs. 2.503.000.000 (~USD 320.000)", body_style)],
-        [Paragraph("<b>Notaris:</b>", body_style),
+        [Paragraph("<b>Escribana:</b>", body_style),
          Paragraph("Escribana Peña", body_style)],
-        [Paragraph("<b>Escritura datum:</b>", body_style),
+        [Paragraph("<b>Fecha de escritura:</b>", body_style),
          Paragraph(f"<b>{ESCRITURA_DATE}</b>", body_style)],
     ], colWidths=[55 * mm, 150 * mm], hAlign="CENTER")
     cover_table.setStyle(TableStyle([
@@ -564,67 +633,67 @@ def _build() -> int:
     story.append(cover_table)
     story.append(Spacer(1, 22 * mm))
     story.append(Paragraph(
-        "Escritura signing deck — opgesteld voor de escribana, "
-        f"gegenereerd {TODAY_ISO}",
+        "Carpeta de firma — preparada para la escribana, "
+        f"generada el {TODAY_ISO}",
         footer_style,
     ))
     story.append(Paragraph(
-        "Procedurele Cycles-renders — byte-identiek aan commit 85e86aa",
+        "Renders procedurales en Cycles — byte-idénticos al commit 85e86aa",
         footer_style,
     ))
     story.append(PageBreak())
 
     # ----- Page 2: 62-ha context -----
-    story.append(Paragraph("Het terrein — 62 hectaren in vogelvlucht", h1_style))
+    story.append(Paragraph("El terreno — 62 hectáreas a vista de pájaro", h1_style))
     ctx_render = _terrain_62ha_hero()
     if ctx_render:
         img = _scaled_image(ctx_render, max_w_mm=200, max_h_mm=120)
         img.hAlign = "CENTER"
         story.append(img)
         story.append(Paragraph(
-            f"Digitale tweeling van het 62-ha perceel "
-            f"(bron: <i>{ctx_render.name}</i>) — Sentinel-2 albedo + ALOS DEM",
+            f"Gemelo digital del predio de 62 ha "
+            f"(fuente: <i>{ctx_render.name}</i>) — albedo Sentinel-2 + DEM ALOS",
             caption_style,
         ))
     else:
-        story.append(Paragraph("[62-ha digital-twin render ontbreekt]", body_style))
+        story.append(Paragraph("[falta el render del gemelo digital de 62 ha]", body_style))
         missing_renders.append("terrain_62ha")
     story.append(Spacer(1, 4 * mm))
     ctx_bullets = [
-        "<b>Locatie:</b> Escobar district, Paraguarí — sandstone escarpment + jaar-rond bron-gevoede beek",
-        "<b>Vegetatie:</b> volwassen Atlantisch regenwoud, ~70% behouden onder masterplan",
-        "<b>Bestaande infrastructuur:</b> ANDE-elektriciteit aan de weg, twee bestaande gebouwen, koloniale steenterrassen",
-        "<b>Bestemming:</b> 12-16 vakantieverhuur-eenheden + evenement-ruimte + Europees-Nederlands restaurant + eco-paden",
-        "<b>10 ontwerp-regels:</b> geen rechte hoeken in cob · alleen kalkpleister · geen staand water (dengue) · "
-        "wanden nooit op de grond · 90 cm+ dakoverstek · passief ≤35 °C · uitval-bestendige systemen · "
-        "Paraguayaans eerst · zonnepanelen op apart staal-frame · muggenwerend gaas op cisternes",
+        "<b>Ubicación:</b> distrito de Escobar, Paraguarí — escarpa de arenisca + arroyo perenne alimentado por manantial",
+        "<b>Vegetación:</b> selva atlántica madura, ~70% conservada bajo el masterplan",
+        "<b>Infraestructura existente:</b> electricidad ANDE sobre el camino, dos edificaciones existentes, terrazas coloniales de piedra",
+        "<b>Destino:</b> 12-16 unidades de alquiler vacacional + salón de eventos + restaurante europeo-neerlandés + senderos ecológicos",
+        "<b>10 reglas de diseño:</b> sin ángulos rectos en cob · sólo revoque de cal · sin agua estancada (dengue) · "
+        "muros nunca al ras del suelo · alero de 90 cm o más · pasivo ≤35 °C · sistemas tolerantes a cortes · "
+        "primero lo paraguayo · paneles solares sobre estructura de acero independiente · malla mosquitera en cisternas",
     ]
     for b in ctx_bullets:
         story.append(Paragraph(f"• {b}", body_style))
     story.append(PageBreak())
 
     # ----- Page 3: Parcel scale -----
-    story.append(Paragraph("Perceel-schaal — huizenbouw resolutie", h1_style))
+    story.append(Paragraph("Escala de parcela — resolución para construcción de viviendas", h1_style))
     parcel_render = _parcel_scale_hero()
     if parcel_render:
         img = _scaled_image(parcel_render, max_w_mm=200, max_h_mm=125)
         img.hAlign = "CENTER"
         story.append(img)
         story.append(Paragraph(
-            f"Terrein-DSL op huizenbouw-schaal (bron: <i>{parcel_render.name}</i>) — "
-            "heuvel, beek, rivier, boom-clusters, huispad",
+            f"DSL de terreno a escala de construcción (fuente: <i>{parcel_render.name}</i>) — "
+            "colina, arroyo, río, clústeres arbóreos, sendero",
             caption_style,
         ))
     else:
-        story.append(Paragraph("[parcel-scale render ontbreekt]", body_style))
+        story.append(Paragraph("[falta el render de escala de parcela]", body_style))
         missing_renders.append("terrain_house_scale")
     story.append(Spacer(1, 4 * mm))
     parcel_bullets = [
-        "<b>Resolutie:</b> 0.5 m cel-grootte, 80×60 m smoke-domein",
-        "<b>Features:</b> heuvel · beek · rivier · boom-scatters · huispad — parameters, niet pixels",
-        "<b>Plaatsing-snap-modes:</b> pad (egaliseer) · stilts (geen egalisatie) · cut (uitgraven heuvel-zijde)",
-        "<b>Validatie:</b> Terrain.validate_geo() detecteert huizen onder water, beek/rivier-kruisingen, overlap",
-        "<b>Output:</b> Blender collection met camera clip_end=20000m (parcel-scale gotcha vermijden)",
+        "<b>Resolución:</b> celda de 0,5 m, dominio de humo 80×60 m",
+        "<b>Elementos:</b> colina · arroyo · río · scatters arbóreos · sendero — parámetros, no píxeles",
+        "<b>Modos de anclaje:</b> sendero (nivela) · pilotes (sin nivelación) · corte (excava lado de la colina)",
+        "<b>Validación:</b> Terrain.validate_geo() detecta casas bajo agua, cruces arroyo/río, solapamientos",
+        "<b>Salida:</b> colección de Blender configurada a escala de parcela (cámara y luces calibradas para 60+ ha)",
     ]
     for b in parcel_bullets:
         story.append(Paragraph(f"• {b}", body_style))
@@ -634,7 +703,7 @@ def _build() -> int:
     section_idx = 1
     for slug in TYPOLOGY_SLUGS:
         story.extend(_asset_card(
-            slug, kind="Typologie", index=section_idx,
+            slug, kind="Tipología", index=section_idx,
             total_assets=len(TYPOLOGY_SLUGS),
             styles_pack=(h1_style, h2_style, body_style, caption_style, elev_label_style),
             scaled_image=_scaled_image,
@@ -647,7 +716,7 @@ def _build() -> int:
     section_idx = 1
     for slug in AMENITY_SLUGS:
         story.extend(_asset_card(
-            slug, kind="Voorziening", index=section_idx,
+            slug, kind="Amenidad", index=section_idx,
             total_assets=len(AMENITY_SLUGS),
             styles_pack=(h1_style, h2_style, body_style, caption_style, elev_label_style),
             scaled_image=_scaled_image,
@@ -668,7 +737,12 @@ def _build() -> int:
         styles_pack=(h1_style, h2_style, body_style, caption_style),
     ))
 
-    # ----- Page 25: Back cover -----
+    # ----- Page 25: English appendix — brief for Wesley -----
+    story.extend(_english_appendix(
+        styles_pack=(h1_style, h2_style, body_style, caption_style),
+    ))
+
+    # ----- Page 26: Back cover -----
     story.append(Spacer(1, 70 * mm))
     story.append(Paragraph("LA QUEBRADA VIVA", title_style))
     story.append(Spacer(1, 6 * mm))
@@ -678,9 +752,9 @@ def _build() -> int:
     ))
     story.append(Spacer(1, 30 * mm))
     story.append(Paragraph(
-        "Generated by scripts/build_escritura_deck.py · "
-        "Render byte-identity at commit 85e86aa preserved · "
-        "License CC0 + CC-BY 4.0",
+        "Generado por scripts/build_escritura_deck.py · "
+        "Identidad byte-a-byte de los renders preservada en commit 85e86aa · "
+        "Licencia CC0 + CC-BY 4.0",
         footer_style,
     ))
 
@@ -718,11 +792,11 @@ def _asset_card(
 
     h1, h2, body, caption, elev = styles_pack
     meta = ASSET_META.get(slug, {})
-    title_nl = meta.get("title_nl", slug)
+    title_es = meta.get("title_es", slug)
     title_en = meta.get("title_en", slug)
 
     flow: list = []
-    header = f"{kind} {index}/{total_assets} — {title_nl}"
+    header = f"{kind} {index}/{total_assets} — {title_es}"
     flow.append(Paragraph(header, h1))
     flow.append(Paragraph(f"<i>{title_en}</i>", caption))
     flow.append(Spacer(1, 2 * mm))
@@ -738,24 +812,24 @@ def _asset_card(
         img = Paragraph(f"[hero render missing for {slug}]", body)
 
     # Dutch elevations — 4 real renders or "(pending)" placeholder if a
-    # tile is missing. Labels are bilingual NL primary / EN secondary.
+    # tile is missing. Labels are ES primary / EN secondary.
     elev_specs = (
-        ("front", "VOORGEVEL", "Front"),
-        ("back", "ACHTERGEVEL", "Back"),
-        ("left", "LINKER ZIJGEVEL", "Left"),
-        ("right", "RECHTER ZIJGEVEL", "Right"),
+        ("front", "FRENTE", "Front"),
+        ("back", "CONTRAFRENTE", "Back"),
+        ("left", "LATERAL IZQUIERDO", "Left"),
+        ("right", "LATERAL DERECHO", "Right"),
     )
     tile_w_mm = 62
     tile_h_mm = 38
     elev_image_row = []
     elev_label_row = []
-    for elev_key, nl_label, en_label in elev_specs:
+    for elev_key, es_label, en_label in elev_specs:
         ep = _elevation_for(slug, elev_key)
         if ep is not None:
             tile = scaled_image(ep, max_w_mm=tile_w_mm, max_h_mm=tile_h_mm)
             elev_image_row.append(tile)
             elev_label_row.append(
-                Paragraph(f"<b>{nl_label}</b><br/><font size='7'>{en_label}</font>", elev)
+                Paragraph(f"<b>{es_label}</b><br/><font size='7'>{en_label}</font>", elev)
             )
         else:
             missing_renders.append(f"elevation_dutch_{slug}_{elev_key}")
@@ -764,7 +838,7 @@ def _asset_card(
             )
             elev_label_row.append(
                 Paragraph(
-                    f"<b>{nl_label}</b><br/><font size='7'>{en_label} (pending)</font>",
+                    f"<b>{es_label}</b><br/><font size='7'>{en_label} (pending)</font>",
                     elev,
                 )
             )
@@ -790,21 +864,21 @@ def _asset_card(
     top_mats = _top_materials(takeoff, n=4) if takeoff else []
 
     spec_lines: list[str] = []
-    if meta.get("use"):
-        spec_lines.append(f"<b>Gebruik:</b> {meta['use']}")
+    if meta.get("use_es") or meta.get("use"):
+        spec_lines.append(f"<b>Uso:</b> {meta.get('use_es') or meta['use']}")
     if meta.get("floor_m2"):
-        spec_lines.append(f"<b>Vloeroppervlak:</b> ~{meta['floor_m2']} m²")
-    if meta.get("construction_nl"):
-        spec_lines.append(f"<b>Constructie:</b> {meta['construction_nl']}")
-    if meta.get("blurb_nl"):
-        spec_lines.append(f"<b>Beschrijving:</b> {meta['blurb_nl']}")
+        spec_lines.append(f"<b>Superficie cubierta:</b> ~{meta['floor_m2']} m²")
+    if meta.get("construction_es"):
+        spec_lines.append(f"<b>Construcción:</b> {meta['construction_es']}")
+    if meta.get("blurb_es"):
+        spec_lines.append(f"<b>Descripción:</b> {meta['blurb_es']}")
     if unit_cost:
         spec_lines.append(
-            f"<b>Eenheid-kosten:</b> {_fmt_usd(unit_cost)} · "
+            f"<b>Costo unitario:</b> {_fmt_usd(unit_cost)} · "
             f"{_fmt_pyg(unit_cost * USD_TO_PYG)}"
         )
     if top_mats:
-        spec_lines.append("<b>Top materialen (USD):</b>")
+        spec_lines.append("<b>Top materiales (USD):</b>")
         for mat, usd in top_mats:
             spec_lines.append(f"&nbsp;&nbsp;• {mat}: {_fmt_usd(usd)}")
 
@@ -812,7 +886,7 @@ def _asset_card(
 
     # Compose 2-col layout: hero on left, spec column on right.
     spec_cell = []
-    spec_cell.append(Paragraph("<b>Specificaties</b>", h2))
+    spec_cell.append(Paragraph("<b>Especificaciones</b>", h2))
     spec_cell.extend(spec_paragraphs)
 
     two_col = Table(
@@ -831,10 +905,10 @@ def _asset_card(
     flow.append(elev_labels)
     flow.append(Spacer(1, 2 * mm))
     flow.append(Paragraph(
-        f"Vier Nederlandse gevels gerenderd via <code>"
-        f"lqv/subscene/elevation_dutch.py</code>. Plattegrond, doorsnede A-A "
-        "en interieur-details zijn buiten scope voor het escritura-pakket en "
-        "vallen onder de bouwfase.",
+        "Cuatro elevaciones técnicas a escala uniforme — frente, "
+        "espalda, izquierda, derecha. La planta, el corte A-A "
+        "y los detalles interiores quedan fuera del alcance del paquete "
+        "de escritura y corresponden a la fase de obra.",
         caption,
     ))
     return flow
@@ -849,16 +923,16 @@ def _boq_page(*, styles_pack) -> list:
     boq = _parse_boq_rollup()
 
     flow: list = []
-    flow.append(Paragraph("Bill of Quantities — samenvatting", h1))
+    flow.append(Paragraph("Cómputo y presupuesto — resumen", h1))
     flow.append(Paragraph(
-        f"Bron: <code>docs/boq/boq_rollup.md</code> · gegenereerd door "
-        f"<code>lqv/boq.py</code> · wisselkoers {int(round(USD_TO_PYG)):,} PYG / USD",
+        f"Fuente: <code>docs/boq/boq_rollup.md</code> · generado por "
+        f"<code>lqv/boq.py</code> · tipo de cambio {int(round(USD_TO_PYG)):,} PYG / USD",
         caption,
     ))
     flow.append(Spacer(1, 4 * mm))
 
     # Grand total block
-    flow.append(Paragraph("<b>Totaal (per eenheid van elke asset)</b>", h2))
+    flow.append(Paragraph("<b>Suma del catálogo (17 assets en su configuración de referencia)</b>", h2))
     flow.append(Paragraph(
         f"<font size='14'><b>{_fmt_usd(boq['grand_total_usd'])} · "
         f"{_fmt_pyg(boq['grand_total_pyg'])}</b></font>",
@@ -866,15 +940,15 @@ def _boq_page(*, styles_pack) -> list:
     ))
     flow.append(Spacer(1, 2 * mm))
     flow.append(Paragraph(
-        f"Aantal assets: <b>{boq['asset_count']}</b> · "
-        f"Aantal regel-items: <b>{boq['line_count']}</b>",
+        f"Cantidad de assets: <b>{boq['asset_count']}</b> · "
+        f"Ítems del cómputo: <b>{boq['line_count']}</b>",
         body,
     ))
     flow.append(Spacer(1, 4 * mm))
 
     # Top-10 materials table
-    flow.append(Paragraph("<b>Top 10 materialen op USD-totaal</b>", h2))
-    header = ["#", "Materiaal", "Hoeveelheid", "Eenheid", "USD totaal", "PYG totaal"]
+    flow.append(Paragraph("<b>Top 10 materiales por total USD</b>", h2))
+    header = ["#", "Material", "Cantidad", "Unidad", "Total USD", "Total PYG"]
     rows = [header]
     for i, (name, qty, unit, usd, pyg) in enumerate(boq["top_materials"], start=1):
         rows.append([
@@ -905,11 +979,12 @@ def _boq_page(*, styles_pack) -> list:
     flow.append(Spacer(1, 6 * mm))
 
     flow.append(Paragraph(
-        "Hoeveelheden zijn <b>per eenheid</b> van elke asset; site-niveau "
-        "hoeveelheden vermenigvuldigen met het aantal eenheden vastgelegd "
-        "in het masterplan (Fase 1 = 3-6 huizen, Fase 2 = 3-6 extra, "
-        "Fase 3 = restaurant + amenities). Volledige CSV: "
-        "<code>docs/boq/boq_rollup.csv</code>.",
+        "El total agrega las cantidades de referencia de los 17 assets del "
+        "catálogo (una unidad por tipología/amenidad). Las cantidades a nivel "
+        "de sitio se obtienen multiplicando cada asset por el número de "
+        "unidades fijado en el masterplan (Fase 1 = 3-6 viviendas, "
+        "Fase 2 = 3-6 adicionales, Fase 3 = restaurante + amenidades). "
+        "CSV completo: <code>docs/boq/boq_rollup.csv</code>.",
         caption,
     ))
     return flow
@@ -937,35 +1012,41 @@ def _closing_day_pages(*, styles_pack) -> list:
     flow: list = []
 
     # ----- Page A: Bring-or-confirm checklist -----
-    flow.append(Paragraph("Deel 4 — Tekendag — praktische checklist", h1))
+    flow.append(Paragraph("Parte 4 — Día de la firma — checklist práctica", h1))
     flow.append(Spacer(1, 2 * mm))
     flow.append(Paragraph(
-        f"Escritura {ESCRITURA_DATE} bij Escribana Peña. Onderstaande items "
-        "moeten <b>5+ dagen voor tekendag</b> in handen of bevestigd zijn — "
-        "geen losse eindjes op 26 juni.",
+        f"Escritura {ESCRITURA_DATE} ante la Escribana Peña. Los ítems "
+        "siguientes deben estar <b>en mano o confirmados al menos 5 días "
+        "antes</b> — sin pendientes documentales el 26 de junio.",
         caption,
     ))
     flow.append(Spacer(1, 6 * mm))
-    flow.append(Paragraph("Vooraf in handen of bevestigd (T-5d)", h2))
+    flow.append(Paragraph("En mano o confirmado por adelantado (T-5d)", h2))
     flow.append(Spacer(1, 2 * mm))
     bring_items = [
-        "Paspoorten (Wesley NWF23H565 + Thijs NP19HPFP6) — originelen",
-        "Bewijs van fondsen voor het saldo: G. 2.190 M aan verkopers + "
-        "G. ~313 M aan Burgos (makelaarscommissie)",
-        "Volmacht (poder) als één van de kopers niet kan komen — apostille NL "
-        "+ <i>traductor público matriculado</i> in PY",
-        "Certificados catastrales-registrales per finca — Escribana Peña "
-        "haalt op; verifiëren 1 week vooraf",
-        "Comprobantes de impuesto inmobiliario al día "
-        "(verkopers-plicht per Cl. SÉPTIMA)",
-        "Anexo I — technische beschrijvingen (linderos, rumbos, medidas) "
-        "van alle 6 fincas",
-        "Comisión Burgos split bevestigd met Peña 48 u vooraf",
-        "Belastingverdeling bevestigd (impuesto a la renta = verkoper; "
-        "honorarios notariales meestal koper; IVA op commissie = verifiëren)",
-        "Formele <i>designación</i> van Peña als escribana voor de "
+        "Pasaportes (Wesley NWF23H565 + Thijs NP19HPFP6) — originales",
+        "Comprobante de fondos para el saldo (Cl. CUARTA, Gs. 2.252.700.000): "
+        "Gs. 2.190 M directos a los vendedores + Gs. 62,7 M a Burgos "
+        "(completando la comisión total de Gs. 313 M; el primer tramo de la "
+        "comisión se imputa al remanente de la seña ya depositada, neta de "
+        "los gastos notariales ya causados)",
+        "Poder otorgado si alguno de los compradores no puede asistir — "
+        "apostillado en NL + <i>traductor público matriculado</i> en PY",
+        "Certificados catastrales-registrales por finca — los recaba la "
+        "Escribana Peña; verificar 1 semana antes",
+        "Comprobantes de impuesto inmobiliario al día — los vendedores "
+        "garantizan tributos pagados conforme Cl. SÉPTIMA (iii) y deben "
+        "entregar los comprobantes dentro de 5 días hábiles conforme "
+        "Cl. OCTAVA (ii)",
+        "Anexo I — descripciones técnicas (linderos, rumbos, medidas) "
+        "de las 6 fincas",
+        "Comisión Burgos: distribución confirmada con Peña 48 h antes",
+        "Distribución impositiva confirmada (impuesto a la renta = vendedor; "
+        "honorarios notariales habitualmente comprador; IVA sobre comisión "
+        "a verificar)",
+        "<i>Designación</i> formal de Peña como escribana para la "
         "escritura (Cl. SEXTA)",
-        "Twee betrouwbare getuigen stand-by",
+        "Dos testigos confiables en stand-by",
     ]
     for itm in bring_items:
         flow.append(Paragraph(f"• {itm}", body))
@@ -973,46 +1054,48 @@ def _closing_day_pages(*, styles_pack) -> list:
     flow.append(PageBreak())
 
     # ----- Page B: Risk register -----
-    flow.append(Paragraph("Tekendag — risico-register", h1))
+    flow.append(Paragraph("Día de la firma — registro de riesgos", h1))
     flow.append(Spacer(1, 2 * mm))
     flow.append(Paragraph(
-        "Scenario's die de tekening kunnen blokkeren of vertragen, met de "
-        "contractuele afhandeling per Cláusulas SEXTA-NOVENA.",
+        "Escenarios que pueden bloquear o demorar la firma, con su "
+        "tratamiento contractual conforme Cláusulas TERCERA, SEXTA, OCTAVA y NOVENA.",
         caption,
     ))
     flow.append(Spacer(1, 6 * mm))
 
     risk_rows = [
         [
-            Paragraph("<b>Verkoper komt niet / weigert</b>", body),
+            Paragraph("<b>El vendedor no se presenta / se niega</b>", body),
             Paragraph(
-                "Boete verdubbelt de seña: G. 500.600.000 aan kopers "
-                "(Cl. NOVENA). Bij twijfel in de week vooraf direct met "
-                "advocaat opnemen.",
+                "La multa duplica la seña: Gs. 500.600.000 a favor de los "
+                "compradores (Cl. NOVENA), neta de gastos, tributos y "
+                "honorarios notariales efectivamente causados. Ante "
+                "cualquier duda en la semana previa, contactar al abogado "
+                "inmediatamente.",
                 body,
             ),
         ],
         [
-            Paragraph("<b>Koper komt niet / betaalt niet</b>", body),
+            Paragraph("<b>El comprador no se presenta / no paga</b>", body),
             Paragraph(
-                "Kopers verbeuren de seña (G. 250.300.000) netto van reeds "
-                "gemaakte notariskosten.",
+                "Los compradores pierden la seña (Gs. 250.300.000) neta de "
+                "los gastos notariales ya incurridos.",
                 body,
             ),
         ],
         [
-            Paragraph("<b>Embargo of gravamen duikt laat op</b>", body),
+            Paragraph("<b>Surge tarde un embargo o gravamen</b>", body),
             Paragraph(
-                "Escribana hoort dit te detecteren. Indien gevonden: <b>NIET "
-                "tekenen</b> — inroepen Cl. NOVENA prórroga.",
+                "La escribana debe detectarlo. Si aparece: <b>NO firmar</b> "
+                "— invocar la prórroga de la Cl. NOVENA.",
                 body,
             ),
         ],
         [
-            Paragraph("<b>Cl. OCTAVA (ii) documenten ontbreken</b>", body),
+            Paragraph("<b>Faltan documentos de la Cl. OCTAVA (ii)</b>", body),
             Paragraph(
-                "Hadden ~6 mei binnen moeten zijn. Indien nog niet: "
-                "<b>nu</b> najagen via Peña, niet pas op 27 juni.",
+                "Debieron entregarse ~6 de mayo. Si aún no están: "
+                "reclamarlos <b>ya</b> a través de Peña, no el 27 de junio.",
                 body,
             ),
         ],
@@ -1031,43 +1114,148 @@ def _closing_day_pages(*, styles_pack) -> list:
     flow.append(risk_tbl)
     flow.append(Spacer(1, 4 * mm))
     flow.append(Paragraph(
-        "Bron: <code>docs/escritura/contrato_compraventa.md</code> en "
-        "<code>docs/escritura_deck/escritura_deck.md</code> §Part 4.",
+        "Fuente: <code>docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf</code> "
+        "y <code>docs/escritura_deck/escritura_deck.md</code> §Parte 4.",
         caption,
     ))
     flow.append(PageBreak())
 
     # ----- Page C: Post-closing T+30 -----
-    flow.append(Paragraph("Na tekendag — T+30 (housing-park kickoff)", h1))
+    flow.append(Paragraph("Post-firma — T+30 (kickoff del housing-park)", h1))
     flow.append(Spacer(1, 2 * mm))
     flow.append(Paragraph(
-        "De eerste 30 dagen na escritura: operationele entiteit registreren, "
-        "vergunningen openen, kapitaal mobiliseren voor Fase 1.",
+        "Los primeros 30 días después de la escritura: registrar la entidad "
+        "operativa, abrir habilitaciones, movilizar capital para la Fase 1.",
         caption,
     ))
     flow.append(Spacer(1, 6 * mm))
     post_items = [
-        "Operationele entiteit registreren (S.A. / S.R.L. / E.A.S. — "
-        "beslissing nog door Wesley te tekenen)",
-        "SENATUR-registratie indienen voor vakantieverhuur-operatie",
-        "Municipalidad de Escobar benaderen voor land-use + bouwvergunningen",
-        "AHK Paraguay introducties activeren naar Duits-Paraguayaanse "
-        "toeleveringsketen (San Bernardino)",
-        "Fase-1 capex starten: 3-6 huizen (target USD 200-500 k window) — "
-        "typologie-mix per BoQ-prioriteit (zie p. BoQ-overzicht)",
+        "Registrar entidad operativa (S.A. / S.R.L. / E.A.S. — "
+        "decisión pendiente de firma por parte de Wesley)",
+        "Presentar inscripción ante SENATUR para la operación de "
+        "alquiler vacacional",
+        "Gestionar ante la Municipalidad de Escobar el uso de suelo + "
+        "permisos de construcción",
+        "Activar las presentaciones de AHK Paraguay hacia la cadena de "
+        "suministro germano-paraguaya (San Bernardino)",
+        "Iniciar capex de Fase 1: 3-6 viviendas (ventana objetivo USD 200-500 k) "
+        "— mix de tipologías según prioridad del cómputo (ver pág. resumen BoQ)",
     ]
     for itm in post_items:
         flow.append(Paragraph(f"• {itm}", body))
         flow.append(Spacer(1, 1.5 * mm))
     flow.append(Spacer(1, 6 * mm))
     flow.append(Paragraph(
-        "Volledige tekst en bronverwijzingen: "
-        "<code>docs/escritura_deck/escritura_deck.md</code> §Part 4 "
-        "(regels 259-288).",
+        "Texto completo y referencias: "
+        "<code>docs/escritura_deck/escritura_deck.md</code> §Parte 4 "
+        "(líneas 259-288).",
         caption,
     ))
     flow.append(PageBreak())
 
+    return flow
+
+
+def _english_appendix(*, styles_pack) -> list:
+    """One-page English brief for Wesley (75% owner, Dutch national).
+
+    The deck is Spanish-primary for the notary. This appendix gives the
+    English-speaking owner a single self-contained sheet covering: assets,
+    BoQ totals, parcel context, escritura value, and the Phase 1 capex window.
+    """
+    from reportlab.lib.units import mm
+    from reportlab.platypus import PageBreak, Paragraph, Spacer
+
+    h1, h2, body, caption = styles_pack
+    boq = _parse_boq_rollup()
+    flow: list = []
+
+    flow.append(Paragraph("Appendix — English brief for Wesley", h1))
+    flow.append(Spacer(1, 2 * mm))
+    flow.append(Paragraph(
+        "This deck is Spanish-primary for Escribana Pe&#241;a (Paraguayan "
+        "notary). This single page summarises the key facts for the 75% "
+        "owner. All figures match the Spanish pages verbatim.",
+        caption,
+    ))
+    flow.append(Spacer(1, 6 * mm))
+
+    flow.append(Paragraph("Transaction", h2))
+    flow.append(Spacer(1, 2 * mm))
+    tx_items = [
+        f"Signing date: <b>{ESCRITURA_DATE}</b> before Escribana Pe&#241;a, "
+        "Escobar, Paraguar&#237;",
+        "Contract value: <b>Gs. 2,503,000,000</b> (~USD 320,000 at "
+        f"{int(USD_TO_PYG):,} PYG/USD)",
+        "Down payment paid: Gs. 250,300,000 (10%, held in notarial "
+        "deposit). Closing balance (Cl. CUARTA, Gs. 2,252,700,000): "
+        "Gs. 2,190 M direct to sellers + Gs. 62.7 M direct to Burgos "
+        "(completing the Gs. 313 M brokerage; first tranche comes from "
+        "the down-payment remainder, net of notary fees already incurred)",
+        "Penalty if seller defaults: double the down payment "
+        "(Gs. 500,600,000) — Clause NOVENA",
+        "Buyers: Wesley van de Camp (75%, NWF23H565) + "
+        "Thijs (25%, NP19HPFP6) — both Dutch nationals",
+    ]
+    for itm in tx_items:
+        flow.append(Paragraph(f"&bull; {itm}", body))
+        flow.append(Spacer(1, 1.5 * mm))
+    flow.append(Spacer(1, 4 * mm))
+
+    flow.append(Paragraph("Land &amp; Programme", h2))
+    flow.append(Spacer(1, 2 * mm))
+    land_items = [
+        "6 fincas, total <b>~62 ha</b> (digital twin shipped at commit "
+        "4409dba — ALOS DEM + Sentinel-2 albedo)",
+        "Use: eco housing-park / vacation rental — registration pending "
+        "before SENATUR + Escobar municipality (T+30 actions)",
+        "Phasing: <b>Phase 1</b> = 3-6 dwellings (USD 200-500 k capex "
+        "window), <b>Phase 2</b> = 3-6 additional, <b>Phase 3</b> = "
+        "restaurant + amenities",
+    ]
+    for itm in land_items:
+        flow.append(Paragraph(f"&bull; {itm}", body))
+        flow.append(Spacer(1, 1.5 * mm))
+    flow.append(Spacer(1, 4 * mm))
+
+    flow.append(Paragraph("Asset library &amp; BoQ", h2))
+    flow.append(Spacer(1, 2 * mm))
+    usd = boq.get("grand_total_usd") or 0.0
+    pyg = boq.get("grand_total_pyg") or 0.0
+    rate = boq.get("rate_pyg_per_usd") or USD_TO_PYG
+    asset_items = [
+        "<b>17 assets</b> in the library: 13 dwelling typologies "
+        "(hobbit, bamboo wigwam, bamboo treehouse, two bamboo+concrete "
+        "1-pax, bamboo+concrete 2-pax, bamboo river house, two stone "
+        "small variants, two bamboo+concrete family, bamboo+container "
+        "4-pax, stone river house 4-pax, container river house) + "
+        "<b>4 amenities</b> (La Brisa lounge, floating dining, eco-pool, "
+        "Modern Oasis wellness retreat)",
+        "<b>68 Dutch elevations</b> rendered (17 assets &times; "
+        "front/back/left/right) — see preceding pages",
+        f"<b>BoQ catalogue sum (17 assets at reference configuration):</b> "
+        f"~USD {usd:,.2f} &middot; ~Gs. {pyg:,.0f} "
+        f"(rate {int(rate):,} PYG/USD)",
+        "Site-level totals scale by the number of units actually built per "
+        "phase (Phase 1 = 3-6 dwellings &rarr; multiply each asset&rsquo;s "
+        "reference quantity accordingly). Full CSV: "
+        "<code>docs/boq/boq_rollup.csv</code>",
+        "Reproducible from frozen renderer state (commit "
+        "<code>85e86aa</code>) &mdash; every elevation in this deck "
+        "regenerates byte-for-byte from that point",
+    ]
+    for itm in asset_items:
+        flow.append(Paragraph(f"&bull; {itm}", body))
+        flow.append(Spacer(1, 1.5 * mm))
+
+    flow.append(Spacer(1, 6 * mm))
+    flow.append(Paragraph(
+        "For any clause-level question on signing day, defer to the Spanish "
+        "body of this deck (Parte 4, pages 22-24) — that is what the "
+        "escribana will read.",
+        caption,
+    ))
+    flow.append(PageBreak())
     return flow
 
 
