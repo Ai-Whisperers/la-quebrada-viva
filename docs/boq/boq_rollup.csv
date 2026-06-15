@@ -47,7 +47,8 @@ bamboo_boomhut_treehouse,rope_hemp,60.0000,m,3.50,210.00,1533000
 bamboo_boomhut_treehouse,mosquito_mesh,8.0000,m2,12.00,96.00,700800
 bamboo_boomhut_treehouse,solar_pv_panels,2.0000,count,180.00,360.00,2628000
 bamboo_boomhut_treehouse,fasteners_hardware,350.0000,count,0.80,280.00,2044000
-bamboo_container_4pax,shipping_container_20ft,4.0000,count,3500.00,14000.00,102200000
+bamboo_container_4pax,shipping_container_20ft,1.0000,count,3500.00,3500.00,25550000
+bamboo_container_4pax,container_envelope_finish,3.0000,count,3500.00,10500.00,76650000
 bamboo_container_4pax,container_handling_set,1.0000,count,850.00,850.00,6205000
 bamboo_container_4pax,container_opening_cuts,4.0000,count,240.00,960.00,7008000
 bamboo_container_4pax,concrete_slab_plinth,5.7500,m3,180.00,1035.00,7555500
@@ -163,14 +164,15 @@ labrisa_lounge,lashings_hardware,22.0000,kg,18.00,396.00,2890800
 material,total_quantity,unit,total_usd,total_pyg
 lapacho_deck_planks,196.0000,m2,22860.00,166878000
 palm_thatch,529.5100,m2,18891.42,137907366
-shipping_container_20ft,5.0000,count,17500.00,127750000
 lapacho_deck,17.5730,m3,17389.15,126940795
 etfe_glass_dome_panels,56.5487,m2,16116.37,117649503
 stone_walls,58.5000,m3,12735.00,92965500
 concrete_service_spine,35.0900,m3,10907.80,79626940
+container_envelope_finish,3.0000,count,10500.00,76650000
 sandstone_foundation,30.5000,m3,10131.20,73957760
 bamboo_culm,1147.9000,m,10027.40,73200020
 reflection_pool_basin_concrete,48.0000,m2,7920.00,57816000
+shipping_container_20ft,2.0000,count,7000.00,51100000
 terracotta_tile_roof,184.0000,m2,6342.00,46296600
 lapacho_shutters_doors,39.0000,m2,5840.00,42632000
 lapacho_joinery,4.3460,m3,5649.80,41243540

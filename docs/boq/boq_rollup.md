@@ -1,6 +1,6 @@
 # La Quebrada Viva — Bill of Quantities
 
-Generated: **2026-06-13**
+Generated: **2026-06-15**
 
 USD -> PYG rate: **7,300 PYG / USD**
 
@@ -84,7 +84,8 @@ Auto-generated from `MATERIAL_TAKEOFF` dicts across every `lqv.typologies.*` and
 
 | material | quantity | unit | $/unit | subtotal USD | subtotal PYG |
 |---|---:|---|---:|---:|---:|
-| shipping_container_20ft | 4.000 | count | $3,500.00 | $14,000.00 | Gs. 102,200,000 |
+| shipping_container_20ft | 1.000 | count | $3,500.00 | $3,500.00 | Gs. 25,550,000 |
+| container_envelope_finish | 3.000 | count | $3,500.00 | $10,500.00 | Gs. 76,650,000 |
 | container_handling_set | 1.000 | count | $850.00 | $850.00 | Gs. 6,205,000 |
 | container_opening_cuts | 4.000 | count | $240.00 | $960.00 | Gs. 7,008,000 |
 | concrete_slab_plinth | 5.750 | m3 | $180.00 | $1,035.00 | Gs. 7,555,500 |
@@ -259,14 +260,15 @@ Sorted by total USD descending. Mixed-unit materials show `unit = mixed` and qua
 |---|---:|---|---:|---:|
 | lapacho_deck_planks | 196.000 | m2 | $22,860.00 | Gs. 166,878,000 |
 | palm_thatch | 529.510 | m2 | $18,891.42 | Gs. 137,907,366 |
-| shipping_container_20ft | 5.000 | count | $17,500.00 | Gs. 127,750,000 |
 | lapacho_deck | 17.573 | m3 | $17,389.15 | Gs. 126,940,795 |
 | etfe_glass_dome_panels | 56.549 | m2 | $16,116.37 | Gs. 117,649,503 |
 | stone_walls | 58.500 | m3 | $12,735.00 | Gs. 92,965,500 |
 | concrete_service_spine | 35.090 | m3 | $10,907.80 | Gs. 79,626,940 |
+| container_envelope_finish | 3.000 | count | $10,500.00 | Gs. 76,650,000 |
 | sandstone_foundation | 30.500 | m3 | $10,131.20 | Gs. 73,957,760 |
 | bamboo_culm | 1,147.900 | m | $10,027.40 | Gs. 73,200,020 |
 | reflection_pool_basin_concrete | 48.000 | m2 | $7,920.00 | Gs. 57,816,000 |
+| shipping_container_20ft | 2.000 | count | $7,000.00 | Gs. 51,100,000 |
 | terracotta_tile_roof | 184.000 | m2 | $6,342.00 | Gs. 46,296,600 |
 | lapacho_shutters_doors | 39.000 | m2 | $5,840.00 | Gs. 42,632,000 |
 | lapacho_joinery | 4.346 | m3 | $5,649.80 | Gs. 41,243,540 |
