@@ -39,6 +39,7 @@ if _PROJECT_ROOT not in sys.path:
 import bpy
 
 from lqv import cameras
+from lqv.flora import gedi_canopy, ndvi_density
 from lqv.subscene import base
 
 TERRAIN_DIR = os.path.join(_PROJECT_ROOT, "assets", "terrain")
@@ -46,8 +47,23 @@ HDRI_DIR = os.path.join(_PROJECT_ROOT, "assets", "hdris")
 TEX_DIR = os.path.join(_PROJECT_ROOT, "assets", "textures")
 MODEL_DIR = os.path.join(_PROJECT_ROOT, "assets", "models")
 
-HEIGHT_PNG = os.path.join(TERRAIN_DIR, "escobar_height.png")
-HEIGHT_JSON = os.path.join(TERRAIN_DIR, "escobar_height.json")
+# Env overrides for DEM A/B (ALOS AW3D30 vs COP30 etc) without code edits:
+#   LQV_DEM_OVERRIDE_PNG  : path to 16-bit heightmap PNG
+#   LQV_DEM_OVERRIDE_JSON : path to sidecar JSON (bbox + z range)
+# Both default to the ALOS-derived baseline.
+def _path_or_default(env: str, default: str) -> str:
+    val = os.environ.get(env, "").strip()
+    if not val:
+        return default
+    return val if os.path.isabs(val) else os.path.join(_PROJECT_ROOT, val)
+
+
+HEIGHT_PNG = _path_or_default(
+    "LQV_DEM_OVERRIDE_PNG", os.path.join(TERRAIN_DIR, "escobar_height.png")
+)
+HEIGHT_JSON = _path_or_default(
+    "LQV_DEM_OVERRIDE_JSON", os.path.join(TERRAIN_DIR, "escobar_height.json")
+)
 ALBEDO_PNG = os.path.join(TERRAIN_DIR, "escobar_albedo.png")
 
 HDRI_PATH = os.path.join(HDRI_DIR, "qwantani_sunset_puresky_4k.exr")
@@ -86,9 +102,10 @@ POOL_M = (0.15, -0.18)
 POOL_RADIUS_M = 18.0
 
 # Tree scatter — Poisson-jitter grid; trees avoid stream + pool + parcel edges.
+# Per-tree scale is now sampled from GEDI L2A canopy heights (see
+# lqv/flora/gedi_canopy.py), not a uniform range.
 TREE_COUNT_TARGET = 70
 TREE_MIN_SPACING_M = 22.0
-TREE_SCALE_RANGE = (0.6, 1.2)
 
 # Rock scatter — small mossy rocks along the stream; hero boulders at bends.
 ROCK_SMALL_COUNT = 36
@@ -467,8 +484,16 @@ def _scatter_trees(template: bpy.types.Object):
         if too_close:
             continue
 
+        # Sentinel-2 NDVI canopy gate — reject points that fall on laterite
+        # paths / built / water (low NDVI → low density). Aligns scatter with
+        # the real Escobar canopy distribution instead of uniform jitter.
+        if random.random() > ndvi_density.density_at(nx, ny):
+            continue
+
         z = _sample_terrain_z(nx, ny, -0.2)
-        s = random.uniform(*TREE_SCALE_RANGE)
+        # GEDI L2A canopy-height driver — empirically sampled scale ratio
+        # instead of uniform jitter. See lqv/flora/gedi_canopy.py.
+        s = gedi_canopy.sample_scale(random)
         rz = random.uniform(0.0, math.tau)
         _instance(template, location=(x, y, z), scale=s, rot_z=rz)
         placed.append((x, y))

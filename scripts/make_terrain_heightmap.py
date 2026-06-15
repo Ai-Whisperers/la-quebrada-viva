@@ -27,8 +27,23 @@ from rasterio.windows import from_bounds
 from PIL import Image
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(PROJECT_ROOT, "docs", "site_data", "alos_aw3d30_dem.tif")
+DEFAULT_SRC = os.path.join(PROJECT_ROOT, "docs", "site_data", "alos_aw3d30_dem.tif")
 DST_DIR = os.path.join(PROJECT_ROOT, "assets", "terrain")
+
+# Env overrides — swap DEM source without editing this file.
+#   LQV_DEM_SRC : absolute or PROJECT_ROOT-relative path to source GeoTIFF
+#                 (default: ALOS AW3D30). Use to swap in COP30 etc.
+#   LQV_DEM_TAG : output suffix; "" overwrites the default
+#                 escobar_height.png/.json, "cop30" writes
+#                 escobar_height_cop30.png/.json side-by-side so the
+#                 ALOS baseline stays on disk for A/B comparisons.
+_env_src = os.environ.get("LQV_DEM_SRC", "").strip()
+if _env_src:
+    SRC = _env_src if os.path.isabs(_env_src) else os.path.join(PROJECT_ROOT, _env_src)
+else:
+    SRC = DEFAULT_SRC
+_TAG = os.environ.get("LQV_DEM_TAG", "").strip()
+_SUFFIX = f"_{_TAG}" if _TAG else ""
 
 # Parcel-focused crop. WORLD_SIZE in the Blender scene is 900 m, so the PNG
 # must represent exactly that. Center = source DEM center (the .tif was fetched
@@ -64,7 +79,7 @@ def main() -> None:
     img_lo = Image.fromarray((z_norm * 65535.0).astype(np.uint16), mode="I;16")
     img_hi = img_lo.resize((TARGET_PX, TARGET_PX), resample=Image.Resampling.BILINEAR)
 
-    png_path = os.path.join(DST_DIR, "escobar_height.png")
+    png_path = os.path.join(DST_DIR, f"escobar_height{_SUFFIX}.png")
     img_hi.save(png_path)
 
     sha = hashlib.sha256(open(SRC, "rb").read()).hexdigest()
@@ -93,7 +108,7 @@ def main() -> None:
             "top": src_bounds.top,
         },
     }
-    json_path = os.path.join(DST_DIR, "escobar_height.json")
+    json_path = os.path.join(DST_DIR, f"escobar_height{_SUFFIX}.json")
     with open(json_path, "w") as f:
         json.dump(meta, f, indent=2)
 
