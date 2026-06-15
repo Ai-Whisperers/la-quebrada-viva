@@ -34,9 +34,36 @@ PACHIRA_BLEND = os.path.join(MODEL_DIR, "pachira_aquatica_01", "pachira_aquatica
 FERN_BLEND = os.path.join(MODEL_DIR, "fern_02", "fern_02_4k.blend")
 ANTHURIUM_BLEND = os.path.join(MODEL_DIR, "anthurium_botany_01", "anthurium_botany_01_4k.blend")
 
+# Bug 3 fix: re-appending the same .blend auto-suffixes objects (`.001`, `.002`,
+# …) and the suffixed orphans break later unlink-by-name lookups. We append
+# once per blend, cache the hero, and deep-copy on subsequent calls.
+_LOADED_HEROES: dict[str, bpy.types.Object] = {}
+
+
+def _safe_unlink_from_active(obj: bpy.types.Object) -> None:
+    coll = bpy.context.collection
+    if obj.name in coll.objects:
+        try:
+            coll.objects.unlink(obj)
+        except RuntimeError:
+            pass
+
 
 def _append_object_from_blend(blend_path: str) -> bpy.types.Object:
-    """Append every object from `blend_path`, link the largest mesh, return it."""
+    """Append every object from `blend_path`, link the largest mesh, return it.
+
+    Idempotent across repeat calls: first call appends + caches the hero;
+    subsequent calls deep-copy from the cache so the underlying Blender
+    library never re-loads (avoiding the `.001`/`.002` suffix collision).
+    """
+    cached = _LOADED_HEROES.get(blend_path)
+    if cached is not None and cached.name in bpy.data.objects:
+        dup = cached.copy()
+        if cached.data is not None:
+            dup.data = cached.data.copy()
+        bpy.context.collection.objects.link(dup)
+        return dup
+
     if not os.path.exists(blend_path):
         raise SystemExit(f"missing asset blend: {blend_path}")
     before = set(bpy.data.objects.keys())
@@ -49,11 +76,9 @@ def _append_object_from_blend(blend_path: str) -> bpy.types.Object:
     mesh_objs.sort(key=lambda o: len(o.data.polygons), reverse=True)
     hero = mesh_objs[0]
     for o in new_objs:
-        try:
-            bpy.context.collection.objects.unlink(o)
-        except RuntimeError:
-            pass
+        _safe_unlink_from_active(o)
     bpy.context.collection.objects.link(hero)
+    _LOADED_HEROES[blend_path] = hero
     return hero
 
 

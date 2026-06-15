@@ -32,9 +32,13 @@ def build(MAT: dict) -> None:
         'LanternPaperWarm', COL['lantern_paper_warm'], roughness=0.55,
         emission_color=COL['lantern_paper_warm'], emission_strength=8.0,
     )
+    # Bug 1 (DEFERRED_BUGS): retune to dielectric — full transmission, IOR
+    # 1.333, dark base for absorption tint. Used as glazing fallback in ~16
+    # typologies/amenities where the bottle-glass path isn't wired; the faint
+    # blue tint there is accepted (real glazing uses bottle materials).
     MAT['water_reflective'] = principled(
-        'WaterReflective', COL['water_reflective'],
-        roughness=0.04, ior=1.333, transmission=0.85,
+        'WaterReflective', (0.02, 0.06, 0.10, 1.0),
+        roughness=0.04, ior=1.333, transmission=1.0,
     )
 
 

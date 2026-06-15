@@ -63,11 +63,17 @@ if __name__ == '__main__':
     from lqv.typologies.hobbit_house import build_hobbit_house
 
     scene, cfg = base.setup(ASSET)
-    base.place_neutral_ground('laterite')  # grass not in MAT; laterite reads as earth
+    base.place_neutral_ground('moss', size=60.0)
     build_hobbit_house(origin=(0.0, 0.0, 0.0))
     _scatter_green_roof_planting()
+    base.add_context_flora(
+        center=(0.0, 0.0, 0.0),
+        inner_radius_m=6.5,
+        outer_radius_m=22.0,
+        count=22,
+        seed=base.derive_seed(ASSET, cfg.variant),
+    )
 
-    # Camera from SE, looking at the south-facing round door at 1.4 m crown.
     cam = cameras.subscene_camera(
         target=(0.0, 0.0, 1.4),
         distance=9.0,

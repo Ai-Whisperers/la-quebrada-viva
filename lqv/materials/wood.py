@@ -2,17 +2,36 @@
 from __future__ import annotations
 
 from lqv.materials._palette import COL, hex_to_rgb
-from lqv.materials._shaders import principled, textured_principled
+from lqv.materials._shaders import (
+    add_secondary_color_variation,
+    principled,
+    textured_principled,
+)
 
 
 def build(MAT: dict) -> None:
     """Populate MAT with wood-family entries.
 
-    Builder calls + parameters are byte-identical to the pre-split monolith;
-    do not retune without re-rendering the 18 finals at 85e86aa.
+    Beauty pass 2026-06-14: lapacho_timber upgraded from flat principled to
+    full PBR (old_planks_02) tinted toward the heartwood palette. Supersedes
+    the 85e86aa byte-freeze (user-authorized; escritura beauty sprint).
     """
-    MAT['lapacho_timber'] = principled(
-        'LapachoTimber', COL['lapacho_timber'], roughness=0.55,
+    MAT['lapacho_timber'] = textured_principled(
+        'LapachoTimber', 'old_planks_02',
+        uv_scale=1.0 / 2.4,
+        tint_color=COL['lapacho_timber'], tint_fac=0.40,
+        roughness_bias=-0.05,
+        displacement_strength=0.02,
+        normal_strength=1.2,
+    )
+    # Non-clobbering: preserves the textured_principled PBR diffuse via a
+    # MixRGB (Color blend), unlike the deprecated add_color_variegation.
+    add_secondary_color_variation(
+        MAT['lapacho_timber'],
+        scale=3.0,
+        color_a=hex_to_rgb('#7A3A1F'),
+        color_b=hex_to_rgb('#3A1A0A'),
+        mix_fac=0.18,
     )
     # Bark for the living trunk + limbs — tree_bark_03 PBR set tinted toward
     # the lapacho_bark palette. uv_scale ~1/0.6 gives one tile every ~60cm,

@@ -64,7 +64,12 @@ def add_noise_displacement(mat, scale=8.0, strength=0.02):
 
 def add_color_variegation(mat, scale, lit_color, dark_color, mix_fac=0.5):
     """Mix lit/dark base colors via a low-frequency noise so the surface reads
-    as variegated rock/cob rather than one flat tone."""
+    as variegated rock/cob rather than one flat tone.
+
+    NOTE: this helper *clobbers* any existing Base Color link, which destroys
+    textured materials built with `textured_principled`. Use
+    `add_secondary_color_variation` for textured materials.
+    """
     nt = mat.node_tree
     bsdf = nt.nodes.get('Principled BSDF')
     noise = nt.nodes.new('ShaderNodeTexNoise')
@@ -77,6 +82,35 @@ def add_color_variegation(mat, scale, lit_color, dark_color, mix_fac=0.5):
     mix.inputs['Fac'].default_value = mix_fac
     nt.links.new(noise.outputs['Fac'], mix.inputs['Fac'])
     nt.links.new(mix.outputs['Color'], bsdf.inputs['Base Color'])
+    return mat
+
+
+def add_secondary_color_variation(mat, scale, color_a, color_b, mix_fac=0.5):
+    """Non-clobbering variegation: preserves an existing Base Color link by
+    reinjecting it through a MixRGB (Color blend), with `color_b` tugged in
+    proportional to a low-frequency noise. Falls back to `color_a` as Color1
+    when Base Color is not already linked. Mirrors the `_tint_foliage_pink`
+    pattern in lqv/flora/photoreal.py."""
+    nt = mat.node_tree
+    bsdf = nt.nodes.get('Principled BSDF')
+    noise = nt.nodes.new('ShaderNodeTexNoise')
+    noise.inputs['Scale'].default_value = scale
+    noise.inputs['Detail'].default_value = 4.0
+    noise.inputs['Roughness'].default_value = 0.55
+    mix = nt.nodes.new('ShaderNodeMixRGB')
+    mix.blend_type = 'COLOR'
+    mix.inputs['Fac'].default_value = mix_fac
+    mix.inputs['Color2'].default_value = color_b
+    base = bsdf.inputs['Base Color']
+    if base.is_linked:
+        link = base.links[0]
+        src_socket = link.from_socket
+        nt.links.remove(link)
+        nt.links.new(src_socket, mix.inputs['Color1'])
+    else:
+        mix.inputs['Color1'].default_value = color_a
+    nt.links.new(noise.outputs['Fac'], mix.inputs['Fac'])
+    nt.links.new(mix.outputs['Color'], base)
     return mat
 
 

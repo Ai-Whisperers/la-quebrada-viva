@@ -178,13 +178,16 @@ _THATCH_AREA = round(
 
 MATERIAL_TAKEOFF: dict[str, dict] = {
     'shipping_container_20ft': {
-        # 40-ft HC ISO container, used/decommissioned, delivered to Paraguarí.
-        # Quantity bumped from 1 -> 4 so the rolled-up "container shell" line
-        # matches the deck narrative ($14,000 ≈ $14,400 cited) and the BoQ no
-        # longer understates the 4-pax unit. The 4× count represents the
-        # delivered-container shell + insulation lining + interior framing
-        # + envelope finish bundle (each ~one container-equivalent of work).
-        'count': 4,
+        # 20-ft HC ISO container, used/decommissioned, delivered to Paraguarí.
+        'count': 1,
+        'unit_cost_usd': 3500.0,
+    },
+    'container_envelope_finish': {
+        # Insulation lining + interior framing + envelope finish — broken out
+        # so the BoQ line-items the work that was previously fudged into a 4×
+        # container count. Rough order: 3 container-equivalents of work for a
+        # 4-pax unit (lining + framing + finish).
+        'count': 3,
         'unit_cost_usd': 3500.0,
     },
     'container_handling_set': {

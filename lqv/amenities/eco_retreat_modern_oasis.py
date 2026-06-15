@@ -59,6 +59,8 @@ CURTAIN_WALL_HEIGHT_M = 3.0
 CURTAIN_WALL_SPACING_M = 0.18
 CURTAIN_WALL_CULM_R_M = 0.04
 CURTAIN_WALL_COUNT = 30        # 30 culms × 0.18 m ≈ 5.4 m
+CURTAIN_WALL_DOOR_CENTER_I = 15
+CURTAIN_WALL_DOOR_HALF_WIDTH = 2  # skip 5 culms ≈ 0.9 m aperture
 
 YOGA_W_M = 4.0
 YOGA_L_M = 4.0
@@ -413,6 +415,8 @@ def _build_curtain_wall(col: bpy.types.Collection, center: tuple[float, float, f
 
     culms: list[bpy.types.Object] = []
     for i in range(CURTAIN_WALL_COUNT):
+        if abs(i - CURTAIN_WALL_DOOR_CENTER_I) <= CURTAIN_WALL_DOOR_HALF_WIDTH:
+            continue
         py = y0 + i * CURTAIN_WALL_SPACING_M
         culm = build_bamboo_culm(
             p_start_xyz=(wall_x, py, z_base),
@@ -425,6 +429,19 @@ def _build_curtain_wall(col: bpy.types.Collection, center: tuple[float, float, f
         )
         _link(culm, col)
         culms.append(culm)
+
+    # Lapacho lintel across the door aperture so the gap reads as a designed
+    # opening, not a missing-piece bug.
+    door_y_min = y0 + (CURTAIN_WALL_DOOR_CENTER_I - CURTAIN_WALL_DOOR_HALF_WIDTH) * CURTAIN_WALL_SPACING_M
+    door_y_max = y0 + (CURTAIN_WALL_DOOR_CENTER_I + CURTAIN_WALL_DOOR_HALF_WIDTH) * CURTAIN_WALL_SPACING_M
+    lintel = build_bamboo_beam(
+        p_start_xyz=(wall_x, door_y_min - 0.05, z_base + 2.1),
+        p_end_xyz=(wall_x, door_y_max + 0.05, z_base + 2.1),
+        diameter_m=0.08,
+        material='lapacho_timber',
+        name='EcoRetreat_CurtainDoorLintel',
+    )
+    _link(lintel, col)
 
     # Lapacho ring beam: horizontal lapacho rod along the top of the curtain.
     beam = build_bamboo_beam(

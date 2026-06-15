@@ -126,12 +126,16 @@ def setup(asset: str, cfg=None):
     return scene, cfg
 
 
-def place_neutral_ground(material_key: str = 'laterite', size: float = 40.0):
+def place_neutral_ground(material_key: str = 'moss', size: float = 60.0):
     """Flat ground plane so the asset isn't floating in the void.
 
-    Default 40 m square covers a typical house-scale composition (stilts +
-    spiral stair + scatter halo). Parcel-scale callers should bypass
-    ``run()`` and set their own ground/clip_end explicitly.
+    Default `moss` (aerial_grass_rock texture) reads as Paraguayan campo
+    instead of the prior `laterite` (which renders as a stripe-pattern
+    cardboard slab). Default 60 m square gives the camera 30 m of context
+    in every direction so the asset doesn't sit on a postage stamp.
+
+    Parcel-scale callers should bypass ``run()`` and set their own ground
+    plus clip_end explicitly (see ``feedback_subscene_clip_end``).
     """
     bpy.ops.mesh.primitive_plane_add(size=size, location=(0.0, 0.0, 0.0))
     ground = bpy.context.active_object
@@ -140,6 +144,54 @@ def place_neutral_ground(material_key: str = 'laterite', size: float = 40.0):
     if mat is not None:
         assign(ground, mat)
     return ground
+
+
+def add_context_flora(center=(0.0, 0.0, 0.0), inner_radius_m: float = 6.0,
+                      outer_radius_m: float = 22.0, count: int = 18,
+                      seed: int | None = None):
+    """Scatter a halo of small flora around the asset for visual context.
+
+    Inner radius keeps flora off the building footprint; outer radius
+    keeps them within the 60 m ground plane. Uses the project's flora
+    modules (agave, fern, anthurium) so the look matches the broader
+    scenes. Bamboo clumps are deliberately omitted — they're large and
+    occlude the hero subject at house-scale framing.
+    """
+    from lqv.flora import agave, fern, anthurium
+
+    rng = random.Random(seed)
+    cx, cy, _ = center
+    placed = 0
+    attempts = 0
+    while placed < count and attempts < count * 4:
+        attempts += 1
+        angle = rng.uniform(0.0, 6.283185)
+        r = rng.uniform(inner_radius_m, outer_radius_m)
+        x = cx + r * _cos(angle)
+        y = cy + r * _sin(angle)
+        choice = rng.random()
+        try:
+            if choice < 0.45:
+                fern.add_tree_fern(x, y, scale=rng.uniform(0.4, 0.7))
+            elif choice < 0.80:
+                agave.add_agave(x, y, scale=rng.uniform(0.5, 0.9))
+            else:
+                anthurium._add_rosette(x, y, 0.0, scale=rng.uniform(0.4, 0.7))
+        except Exception as exc:
+            print(f"[subscene] context flora skipped at ({x:.1f},{y:.1f}): {exc}")
+            continue
+        placed += 1
+    print(f"[subscene] context flora placed: {placed}/{count}")
+
+
+def _cos(a: float) -> float:
+    import math
+    return math.cos(a)
+
+
+def _sin(a: float) -> float:
+    import math
+    return math.sin(a)
 
 
 def setup_world(scene, variant: str):
@@ -187,7 +239,9 @@ def save_subrender(scene, asset: str, cfg) -> str:
 def run(asset: str, build_fn, camera_target=(0.0, 0.0, 1.0),
         camera_distance: float = 6.0, camera_height: float = 2.4,
         camera_lens: float = 35.0, with_ground: bool = True,
-        ground_material: str = 'laterite',
+        ground_material: str = 'moss',
+        with_context_flora: bool = True,
+        context_flora_count: int = 18,
         clip_end: float = HOUSE_CLIP_END_M):
     """Standard sub-render entry point.
 
@@ -203,6 +257,12 @@ def run(asset: str, build_fn, camera_target=(0.0, 0.0, 1.0),
     if with_ground:
         place_neutral_ground(material_key=ground_material)
     build_fn()
+    if with_ground and with_context_flora:
+        add_context_flora(
+            center=(camera_target[0], camera_target[1], 0.0),
+            seed=derive_seed(asset, cfg.variant),
+            count=context_flora_count,
+        )
     setup_world(scene, cfg.variant)
     cam = cameras.subscene_camera(
         target=camera_target,

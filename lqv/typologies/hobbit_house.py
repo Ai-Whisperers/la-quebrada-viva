@@ -312,7 +312,7 @@ def build_hobbit_house(origin=(0.0, 0.0, 0.0), parent=None):
     stone = _resolve('sandstone', 'laterite')
     lapacho = _resolve('lapacho_timber', 'lapacho_bark')
     sod = _resolve('sod_canopy', 'moss', 'canopy')
-    berm_mat = _resolve('laterite', 'moss')
+    berm_mat = _resolve('moss', 'sod_canopy', 'laterite')
     glass = _resolve('pv_glass', 'window_glow')
     bench_mat = _resolve('lapacho_timber', 'sandstone')
 
@@ -333,7 +333,7 @@ def build_hobbit_house(origin=(0.0, 0.0, 0.0), parent=None):
     # Thin overlay sphere reads as the planted sod over the cob.
     sod_obj = _half_dome(col, 'HH_GreenRoof',
                          ox, oy, oz + FOUNDATION_H + 0.04,
-                         RADIUS_M + 0.03, CROWN_HEIGHT_M + 0.04, sod)
+                         RADIUS_M + 0.08, CROWN_HEIGHT_M + 0.08, sod)
     sod_obj.hide_render = False
 
     # --- Earth berm wrapping the back / sides of the dome -----------------
