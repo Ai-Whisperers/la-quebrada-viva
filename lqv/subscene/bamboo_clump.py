@@ -1,4 +1,4 @@
-"""Sub-render: Guadua bamboo clump (n=8 culms)."""
+"""Sub-render: Guadua bamboo clump (n=20 culms)."""
 from __future__ import annotations
 
 import os
@@ -13,15 +13,15 @@ from lqv.subscene import base
 
 def _build():
     from lqv.flora import add_bamboo_clump
-    add_bamboo_clump(0.0, 0.0, n=8, scale=1.0)
+    add_bamboo_clump(0.0, 0.0, n=20, scale=1.0)
 
 
 if __name__ == '__main__':
     base.run(
         asset='bamboo_clump',
         build_fn=_build,
-        camera_target=(0.0, 0.0, 2.5),
-        camera_distance=5.5,
-        camera_height=2.5,
-        camera_lens=35.0,
+        camera_target=(0.0, 0.0, 5.5),
+        camera_distance=14.0,
+        camera_height=4.0,
+        camera_lens=50.0,
     )
