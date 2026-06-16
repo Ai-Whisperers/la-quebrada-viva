@@ -144,7 +144,10 @@ def _infer_qty(entry: dict) -> tuple[float, str]:
 
 def _iter_modules(package_name: str) -> Iterable[str]:
     pkg = importlib.import_module(package_name)
-    for info in pkgutil.iter_modules(pkg.__path__):
+    # Sort by module name so row order in boq_rollup.{csv,md} is deterministic
+    # across hosts (pkgutil.iter_modules returns filesystem order, which
+    # diverges between ext4 / xfs / macOS APFS and breaks diff-based review).
+    for info in sorted(pkgutil.iter_modules(pkg.__path__), key=lambda m: m.name):
         if info.name.startswith('_'):
             continue
         yield f'{package_name}.{info.name}'
@@ -345,8 +348,10 @@ def write_markdown(lines: list[BoQLine], out_path: str) -> None:
     # --- Per-material rollup ---
     parts.append('## Per-material rollup')
     parts.append('')
-    parts.append('Sorted by total USD descending. Mixed-unit materials show '
-                 '`unit = mixed` and quantity = 0 (USD total still correct).')
+    parts.append('Sorted by total USD descending. Materials used with more '
+                 'than one unit appear as one row per unit (e.g. adobe_brick '
+                 'in `count` and in `m3`) so every row remains summable and '
+                 'orderable; USD aggregates are unchanged.')
     parts.append('')
     parts.append('| material | total quantity | unit | total USD | total PYG |')
     parts.append('|---|---:|---|---:|---:|')

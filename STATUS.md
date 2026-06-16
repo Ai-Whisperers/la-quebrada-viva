@@ -1,6 +1,6 @@
 # STATUS — La Quebrada Viva + Escobar Housing Park
 
-> Canonical state document. Last updated 2026-06-12.
+> Canonical state document. Last updated 2026-06-15.
 
 > **2026-06-12 update (escritura deck shipped):** Phase G (BoQ rollup) + Phase H (escritura deck PDF) complete. New deliverables:
 > - `docs/boq/boq_rollup.csv` + `docs/boq/boq_rollup.md` — 175 line items across 13 typologies + 4 amenities, grand total **$231,280.98 USD / Gs. 1,688,351,154** @ 7300 PYG/USD, 0 items in "Other" category.
@@ -8,6 +8,13 @@
 > - New code: `lqv/boq.py` (substring-keyword category inference, asset/category summaries, CSV + Markdown writers), `scripts/build_boq.py` (bpy-stub shim for outside-Blender execution), `scripts/build_escritura_deck.py` (Chrome-headless `--print-to-pdf` reusing the wesley onepager pipeline + per-asset `THUMB:<key>` placeholder substitution).
 > - New `make` targets: `make boq`, `make deck` (deck depends on boq).
 > - Renderer byte-identity at `85e86aa` preserved — `build_scene.py` untouched.
+
+> **2026-06-15 update (T-12 to escritura):** Tier-0 infra closed and the 62-ha photoreal digital twin (T-DT) shipped on top of the 18 finals at `85e86aa`.
+> - T0.1 (GitHub remote) — done. Private repo at `https://github.com/Ai-Whisperers/la-quebrada-viva`, branch `master`. SPOF removed; `/commit-and-sync` is the fast-path push.
+> - T-DT — shipped at `4409dba` (driver) + `83f3283` (tooling). Real satellite ground truth across S1 ALOS (canonical DEM, 5 m RMSE), S2 COP30 (A/B cross-check, ±5 m agreement), S3 Sentinel-2 L2A (NDVI scatter gate + albedo overlay), S4 GEDI L2A (per-tree canopy scale `clamp(h/25, 0.6, 1.6)`). DEM swap via `LQV_DEM_OVERRIDE_PNG` env, no code edit.
+> - T-DT render batches — `tdt_satdata_v5` (3 views × A/B/C at 1920×1080 / 256 spp) + `tdt_satdata_v5_arrowfix` (birdseye+oblique re-render with shrunk north-arrow). Render-folder convention `renders/sub/runs/<RUN_ID>_<asset>[_<tag>]/<variant>.png` mirrored to `latest/`. Parallelism gate: one Blender process at a time (~4.3 GB RSS peak, OOMs at ×3 on 14 GB host).
+> - New docs — `PROVENANCE.md` (full license + URL + SHA-256 + bbox + retrieval-date manifest for ALOS / COP30 / Sentinel-2 / GEDI / OSM / SRTM / NASADEM); `docs/site_data/satdata_brief.md` (S1–S4 render-pipeline reader). License gate verified CC0 + CC-BY 4.0 only; OSM ODbL share-alike risk contained (positional reference only, no raw geojson bundling to Wesley).
+> - Renderer byte-identity at `85e86aa` preserved — `build_scene.py` still untouched. T-DT runs through `lqv/subscene/terrain_62ha.py` + `terrain_62ha_photoreal.py` drivers per the sub-render-first standing rule.
 
 > **2026-06-10 update (mid-session):** Real GIS data acquired (4 DEMs, ~1,100 ha analyzed, 80% buildable, 264 m relief). Research synthesis complete in `docs/research/README.md` (5 sub-reports, ~80 repos). **Cloud-pool EULA blocker discovered** — `s3://lp-prod-protected/` 403s on URS-central, LP-DAAC-Cumulus, and direct-S3 paths. The fix is a separate "Earthdata Cloud Data Pool" consent accepted via `search.earthdata.nasa.gov` → click "Download" on a cloud-hosted GEDI file → accept the modal. GEDI HTTPS run mid-flight (18/27 granules, ~10 min remaining).
 > The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
@@ -182,7 +189,7 @@ These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most deci
 | 2026-04-28 | Boleto privado signed | ✅ done |
 | 2026-04-28 | Seña G. 250.3M deposited with Escribana Peña | ✅ done |
 | ~2026-05-06 | Sellers' entrega of title docs (5 business days) | ⚠ verify — should be in hand by now |
-| **2026-06-27** | **Escritura pública signing — 17 days from today** | ⚠ pending |
+| **2026-06-27** | **Escritura pública signing — 12 days from today** | ⚠ pending |
 | 27-Jun onward | If sellers default: penalty G. 500.600.000 | conditional |
 | 27-Jun onward | If buyers default: forfeit seña to sellers | conditional |
 
@@ -244,4 +251,4 @@ Defects discovered or carried forward against the 18/18 finals shipped at commit
 
 ---
 
-*Maintained by Ivan / AI Whisperers. Last updated 2026-06-10 (end of session).*
+*Maintained by Ivan / AI Whisperers. Last updated 2026-06-15 (T-12 to escritura).*

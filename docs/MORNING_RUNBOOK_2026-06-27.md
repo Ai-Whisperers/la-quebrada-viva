@@ -14,8 +14,47 @@ Target: PDF v-final in Wesley's and Escribana Peña's inboxes by **08:00 -03**.
 - [ ] `ls renders/sub/latest/elevation_dutch_*.png | wc -l` == 68.
 - [ ] `ls docs/escritura_deck/escritura_deck_v6.pdf` exists, ≥ 10 MB, 27 pages.
 - [ ] Boleto PDF on disk at `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
+- [ ] Wesley deliverable bundle on disk (see "Notary hand-off bundle" below).
 
 If any of these fail, rebuild before going to sleep — don't fix in the morning.
+
+---
+
+## Notary hand-off bundle (built 2026-06-16, refresh on T-1 evening)
+
+Single self-verifying zip for the notary table — 35 files, 271 MB. Regenerable any time via `python3 scripts/build_wesley_bundle.py` (idempotent, deterministic from disk artefacts).
+
+- Path: `dist/wesley_bundle_20260616-1539.zip`
+- SHA-256: `f8a1cc930461ab509c9de3a78a2c834dd5fb5e5e01cdc838dfcca4f676eb15dd`
+- Manifest: `dist/wesley_bundle_20260616-1539.manifest.txt` (per-file sha256 + byte size)
+
+Contents (top-level prefixes inside the zip):
+
+| Prefix | Items |
+|---|---|
+| `01_brief/` | `wesley_brief_onepager.pdf` (321 KB) |
+| `02_escritura_deck/` | `escritura_deck_v6.pdf` (11.2 MB, 27 pp) |
+| `03_renders_finals/` | 18 finals (A/B/C × hero/cliff/dusk/petal_macro/stream_up/terrace) at `85e86aa` |
+| `04_terrain_digital_twin/` | 6 T-DT v5_arrowfix renders from `renders/sub/runs/20260611_dt_run_v5_arrowfix_terrain_62ha_{birdseye,oblique}/{A,B,C}.png` |
+| `05_dem_ab/` | `dem_ab_contact.png` — ALOS vs COP30 cross-check |
+| `06_pelton_feasibility/` | `pelton_head_map.png` (raw greyscale), `pelton_head_map.json` (stats + DEM sha), `pelton_head_map_contact.png` (viridis + 30 m/80 m contours + histogram) |
+| `07_boq/` | `boq_rollup.{csv,md,pdf}` |
+| `08_provenance/` | `PROVENANCE.md`, `satdata_brief.md` |
+
+**Pelton headline (Rule 7, critical-systems outage-proof)** — on the 62 ha parcel, with a 300 m horizontal penstock radius proxy:
+- `head_max = 182.6 m`, `head_mean = 33.4 m`, `head_p95 = 108.1 m`.
+- **31.2 %** of the footprint sits above the 30 m minimum head for Pelton micro-hydro; **10.7 %** sits above the 80 m "good" head.
+- Computed from COP30 DEM (sha256 `10e6459cd89319176ef8218c1f644e67dd38a38b7f603061b71f41c1604fed00`, 108×108 px, ~30 m/pixel).
+- Re-derivable via `python3 scripts/build_pelton_head_map.py` + `python3 scripts/contact_sheet_pelton.py`.
+
+**Notary hand-off checklist (10:00 -03 at the escribanía):**
+
+- [ ] USB stick or signed download link with `wesley_bundle_20260616-1539.zip` + `.sha256` (separate file).
+- [ ] Print of `02_escritura_deck/escritura_deck_v6.pdf` cover, BoQ page, and English appendix p22+ (3 copies: Peña, Wesley, file).
+- [ ] Pelton contact sheet `06_pelton_feasibility/pelton_head_map_contact.png` printed colour A4 — single-page evidence for Rule 7 if asked.
+- [ ] Boleto `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` — paper original or notarised copy per Cl. CUARTA.
+- [ ] Comprobante de fondos Gs. 2.252.700.000 ready to hand over (Cl. CUARTA).
+- [ ] Verbal reminder: Cl. OCTAVA (ii) seller comprobantes due within 5 hábiles.
 
 ---
 

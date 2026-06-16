@@ -1,0 +1,26 @@
+{
+  "source_dem": "docs/site_data/cop30_dem.tif",
+  "source_dem_sha256": "10e6459cd89319176ef8218c1f644e67dd38a38b7f603061b71f41c1604fed00",
+  "penstock_radius_m": 300.0,
+  "pelton_min_head_m": 30.0,
+  "pelton_good_head_m": 80.0,
+  "px_size_m_approx": 29.4,
+  "radius_px": 10,
+  "window_px": 21,
+  "head_max_m": 182.59,
+  "head_mean_m": 33.41,
+  "head_p95_m": 108.14,
+  "pct_pixels_above_min_head": 31.2,
+  "pct_pixels_above_good_head": 10.7,
+  "dem_shape": [
+    108,
+    108
+  ],
+  "dem_bounds_wgs84": {
+    "left": -57.0451389,
+    "right": -57.0151389,
+    "top": -25.6148611,
+    "bottom": -25.6448611
+  },
+  "method": "scipy.ndimage.maximum_filter on COP30 with square window of 21\u00d721 px (~588 m a side); head = max_in_window \u2212 own_z, clipped \u22650."
+}

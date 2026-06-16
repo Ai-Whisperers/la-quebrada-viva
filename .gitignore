@@ -13,6 +13,11 @@ renders/_preview_*.png
 # Each is a single-asset preview; not part of the 18-frame final matrix.
 renders/sub/
 
+# Wesley deliverable bundle — 271 MB timestamped zip + manifest + sha,
+# fully regenerable via `python3 scripts/build_wesley_bundle.py`.
+# MUST NOT enter git history (per-file >100 MB limit on the zip).
+dist/
+
 __pycache__/
 *.pyc
 *.bak

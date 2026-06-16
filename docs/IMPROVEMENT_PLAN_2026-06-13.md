@@ -2,6 +2,11 @@
 
 Numbered actions derived from `docs/CRITIQUE_2026-06-13.md`. Renderer at `85e86aa` is byte-frozen; no item below modifies `lqv/build_scene.py`. P0 items are escritura blockers (deadline 2026-06-27).
 
+> **Status @ 2026-06-15:** P0 sweep (#1–#8) **DONE in commit `78433a7`** (post-review polish wave) with foundation work at `de5d5d8` (terrain DSL + Wesley catalog). BoQ rollup last regenerated at `0f44cf5` after `bamboo_container_4pax` takeoff split.
+> **P1 partial sweep @ 2026-06-15 (T-12 to escritura):** items #14 (`per_material_rollup` per-(material,unit) split + regression tests), #15 (`_iter_modules` sorted for deterministic BoQ row order), #16 (pandoc PDF magic-byte guard), #17 (per-module rollup exceptions logged + re-raised) all ✅ DONE. Verified against current code at `lqv/boq.py:145-152, 168, 208-238, 354` and `tests/test_boq_rollup.py` (2 passed). `make boq` regenerated 2026-06-15 23:45 with deterministic ordering: 159 lines, 17 assets, $268,685.45 USD / Gs. 1,961,403,785 @ `docs/boq/boq_rollup.{csv,md,pdf}`.
+> **Day-2/3 deliverables @ 2026-06-15 (T-12):** DEM A/B cross-check `docs/site_data/dem_ab_contact.png` (34 KB) ✅, Pelton head feasibility map `docs/site_data/pelton_head_map.{png,json}` ✅ (300 m penstock radius on COP30: head_max=182.6 m, mean=33.4 m, 31.2% pixels ≥ 30 m Pelton-min, 10.7% ≥ 80 m good-Pelton), Wesley deliverable bundle `dist/wesley_bundle_20260615-2352.zip` ✅ (271 MB, 34 files, sha256=1b0b4d5a56fee9dc…, manifest sidecar). Bundle contents: brief PDF, escritura deck v6, 18 hero finals (A/B/C × 6 cams), 6 T-DT renders (birdseye+oblique × A/B/C), DEM contact sheet, Pelton head map, BoQ trio, PROVENANCE.md, satdata brief. No missing expected files.
+> Plan body below is left verbatim for audit trail — do not re-trigger P0 fixes; verify against current code first. Remaining P1 items (#9-#13, #18+) and P2 deferred post-escritura.
+
 ---
 
 ### #1 — Repair broken TYPOLOGIES contract
@@ -97,20 +102,23 @@ Numbered actions derived from `docs/CRITIQUE_2026-06-13.md`. Renderer at `85e86a
 
 ### #14 — Make `per_material_rollup` mixed-unit handling honest
 **Priority**: P1
-**File(s)**: `lqv/boq.py:197-207`
+**Status**: ✅ DONE @ 2026-06-15. Implementation now at `lqv/boq.py:208-238` (rollup keyed on `(material, unit)`, no more `'mixed'` bucket). Regression guard at `tests/test_boq_rollup.py::test_no_mixed_zero_qty_row` + USD-desc sort invariant at `tests/test_boq_rollup.py::test_rollup_deterministic_usd_desc`. Both PASS.
+**File(s)**: `lqv/boq.py:208-238`
 **Problem**: Mixed-unit groups are emitted as `unit='mixed', quantity=0.0`. Any reader sees quantity 0 on a real material; the notary will flag it.
 **Action**: Split mixed-unit groups into one row per unit (`bamboo (m)`, `bamboo (kg)`) instead of collapsing. Keep a single `material` column for grouping/sort, but emit per-unit quantity correctly. Add a unit test that asserts no rollup row has `quantity == 0.0 and unit == 'mixed'`.
 **Estimated effort**: S
 
 ### #15 — Sort `by_module` for reproducible BoQ
 **Priority**: P1
-**File(s)**: `lqv/boq.py:295-297`
+**Status**: ✅ DONE @ 2026-06-15. Actual fix site is `lqv/boq.py:145-152` (`_iter_modules` helper, not the `:295-297` line range originally cited — that pointer was stale). `pkgutil.iter_modules(...)` is now wrapped in `sorted(..., key=lambda m: m.name)`. `make boq` re-run 2026-06-15 23:45 produced deterministic `docs/boq/boq_rollup.{csv,md,pdf}` (159 lines, 17 assets, $268,685.45 USD).
+**File(s)**: `lqv/boq.py:145-152`
 **Problem**: `pkgutil.iter_modules` returns filesystem order; row order in the escritura BoQ drifts between machines.
 **Action**: Wrap the iteration in `sorted(..., key=lambda m: m.name)`. Add a test that runs `collect_all()` twice and asserts row order is stable. Re-render `docs/boq/boq_rollup.md` and commit the (now deterministic) output.
 **Estimated effort**: XS
 
 ### #16 — Verify pandoc PDF output by magic bytes
 **Priority**: P1
+**Status**: ✅ DONE @ 2026-06-15 (verified pre-existing in code at `lqv/boq.py:354`). After pandoc returns, output is opened binary-mode and the first 5 bytes are asserted `== b'%PDF-'`; on mismatch the actual first 32 bytes are logged and a `RuntimeError` is raised.
 **File(s)**: `lqv/boq.py:354`
 **Problem**: `rc == 0 and size > 0` accepts a non-PDF fallback file. A pandoc misconfig that emits HTML still "succeeds".
 **Action**: After pandoc returns, open the output binary and assert the first 5 bytes are `b'%PDF-'`. On mismatch, log the actual first 32 bytes and raise. Same check belongs in any other artefact-generating script before `subprocess.run` returns.
@@ -118,6 +126,7 @@ Numbered actions derived from `docs/CRITIQUE_2026-06-13.md`. Renderer at `85e86a
 
 ### #17 — Stop swallowing BoQ rollup exceptions
 **Priority**: P1
+**Status**: ✅ DONE @ 2026-06-15 (verified pre-existing in code at `lqv/boq.py:168`). Per-module rollup exceptions are now logged with `logger.error(..., exc_info=True)`, recorded in a failure-list, and re-raised after the loop completes with a summary listing every failed module. No silent module-row vanishing.
 **File(s)**: `lqv/boq.py:168`
 **Problem**: `except Exception as e:` with no log; a typo in any typology's `MATERIAL_TAKEOFF` literal vanishes the whole module's rows.
 **Action**: Replace with `except Exception as e: logger.error("BoQ rollup failed for %s: %s", module_name, e, exc_info=True); raise`. If the intent is to keep collecting from other modules after one fails, log + record the failure and re-raise after the loop with a summary of all failed modules.

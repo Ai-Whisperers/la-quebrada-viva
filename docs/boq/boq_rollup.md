@@ -254,7 +254,7 @@ Auto-generated from `MATERIAL_TAKEOFF` dicts across every `lqv.typologies.*` and
 
 ## Per-material rollup
 
-Sorted by total USD descending. Mixed-unit materials show `unit = mixed` and quantity = 0 (USD total still correct).
+Sorted by total USD descending. Materials used with more than one unit appear as one row per unit (e.g. adobe_brick in `count` and in `m3`) so every row remains summable and orderable; USD aggregates are unchanged.
 
 | material | total quantity | unit | total USD | total PYG |
 |---|---:|---|---:|---:|
