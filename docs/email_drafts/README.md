@@ -14,8 +14,8 @@ All bodies reference the v-final deck and the Wesley deliverable bundle.
 
 **Attachments per email:**
 
-- All four: `docs/escritura_deck/escritura_deck_v6.pdf` (10.9 MB)
-- Peña + Wesley additionally: link to `dist/wesley_bundle_20260616-1539.zip` (271 MB — share via Drive/WeTransfer, not attached inline)
+- All four: `docs/escritura_deck/escritura_deck_v6.pdf` (10.8 MB, 28 pages)
+- Peña + Wesley additionally: link to `dist/wesley_bundle_20260616-1715.zip` (266 MB — share via Drive/WeTransfer, not attached inline). Expected SHA-256: `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`
 
 **Send target time:** 07:30 -03 (per runbook).
 

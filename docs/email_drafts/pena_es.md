@@ -9,16 +9,17 @@ Adjunto el paquete técnico v-final correspondiente a la escritura de compravent
 
 **Contenido del paquete:**
 
-1. **`escritura_deck_v6.pdf`** (10,9 MB, 27 páginas, adjunto a este correo)
+1. **`escritura_deck_v6.pdf`** (10,8 MB, 28 páginas, adjunto a este correo)
    - Cubierta (p. 1): datos identificatorios y fecha de escritura.
    - Parte 1–3 (pp. 2–20): contexto técnico del inmueble, planos, infraestructura, cómputo y presupuesto.
    - **Computo BoQ (p. 21)**: 17 assets, 259 ítems, suma del catálogo ~USD 268.685 (TC 7.300 PYG/USD, fecha BCP).
    - **Parte 4 (pp. 22–24)**: checklist del día de la firma + registro de riesgos (su sección de consulta).
    - Apéndice en inglés (p. 25): resumen para el comprador Sr. van de Camp.
+   - **Apéndice Pelton (pp. 26–27)**: sitios candidatos P1/P2/P3 con coordenadas turbina/cresta y bandera honesta de penstock dentro de 300 m. P3 es el único candidato limpio (penstock 295,5 m, carga 166,5 m) — referencia Regla 7 sistemas críticos.
 
-2. **Bundle técnico completo** `wesley_bundle_20260616-1539.zip` (271 MB) — enviado por enlace separado dado el tamaño.
-   - SHA-256: `f8a1cc930461ab509c9de3a78a2c834dd5fb5e5e01cdc838dfcca4f676eb15dd`
-   - Manifiesto con hash por archivo en `wesley_bundle_20260616-1539.manifest.txt`.
+2. **Bundle técnico completo** `wesley_bundle_20260616-1715.zip` (266 MB) — enviado por enlace separado dado el tamaño.
+   - SHA-256: `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`
+   - Manifiesto con hash por archivo en `wesley_bundle_20260616-1715.manifest.txt`.
    - Contiene: brief ejecutivo, deck completo, 18 renders finales (A/B/C × 6 vistas), gemelo digital del terreno 62 ha, cross-check DEM ALOS vs COP30, estudio de prefactibilidad Pelton, cómputo BoQ (CSV/MD/PDF), y carpeta de procedencia.
 
 **Recordatorios contractuales para hoy:**
@@ -39,4 +40,4 @@ weissvanderpol.ivan@gmail.com
 
 ---
 **Adjunto:** `escritura_deck_v6.pdf`
-**Enlace separado:** bundle 271 MB + `.sha256` (Drive/WeTransfer — link a enviar 30 min antes)
+**Enlace separado:** bundle 266 MB + `.sha256` (Drive/WeTransfer — link a enviar 30 min antes)

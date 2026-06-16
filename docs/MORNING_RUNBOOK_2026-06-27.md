@@ -12,7 +12,7 @@ Target: PDF v-final in Wesley's and Escribana Peña's inboxes by **08:00 -03**.
 - [ ] `git fetch && git log @{u}..HEAD` returns nothing (master in sync with `origin`).
 - [ ] `git tag -l escritura-2026-06-27` exists and points at the v-final commit (`0081129` or successor).
 - [ ] `ls renders/sub/latest/elevation_dutch_*.png | wc -l` == 68.
-- [ ] `ls docs/escritura_deck/escritura_deck_v6.pdf` exists, ≥ 10 MB, 27 pages.
+- [ ] `ls docs/escritura_deck/escritura_deck_v6.pdf` exists, ≥ 10 MB, 28 pages.
 - [ ] Boleto PDF on disk at `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
 - [ ] Wesley deliverable bundle on disk (see "Notary hand-off bundle" below).
 
@@ -22,18 +22,18 @@ If any of these fail, rebuild before going to sleep — don't fix in the morning
 
 ## Notary hand-off bundle (built 2026-06-16, refresh on T-1 evening)
 
-Single self-verifying zip for the notary table — 35 files, 271 MB. Regenerable any time via `python3 scripts/build_wesley_bundle.py` (idempotent, deterministic from disk artefacts).
+Single self-verifying zip for the notary table — 37 files, 266 MB. Regenerable any time via `python3 scripts/build_wesley_bundle.py` (idempotent, deterministic from disk artefacts).
 
-- Path: `dist/wesley_bundle_20260616-1539.zip`
-- SHA-256: `f8a1cc930461ab509c9de3a78a2c834dd5fb5e5e01cdc838dfcca4f676eb15dd`
-- Manifest: `dist/wesley_bundle_20260616-1539.manifest.txt` (per-file sha256 + byte size)
+- Path: `dist/wesley_bundle_20260616-1715.zip`
+- SHA-256: `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`
+- Manifest: `dist/wesley_bundle_20260616-1715.manifest.txt` (per-file sha256 + byte size)
 
 Contents (top-level prefixes inside the zip):
 
 | Prefix | Items |
 |---|---|
 | `01_brief/` | `wesley_brief_onepager.pdf` (321 KB) |
-| `02_escritura_deck/` | `escritura_deck_v6.pdf` (11.2 MB, 27 pp) |
+| `02_escritura_deck/` | `escritura_deck_v6.pdf` (10.8 MB, 28 pp) |
 | `03_renders_finals/` | 18 finals (A/B/C × hero/cliff/dusk/petal_macro/stream_up/terrace) at `85e86aa` |
 | `04_terrain_digital_twin/` | 6 T-DT v5_arrowfix renders from `renders/sub/runs/20260611_dt_run_v5_arrowfix_terrain_62ha_{birdseye,oblique}/{A,B,C}.png` |
 | `05_dem_ab/` | `dem_ab_contact.png` — ALOS vs COP30 cross-check |
@@ -49,8 +49,8 @@ Contents (top-level prefixes inside the zip):
 
 **Notary hand-off checklist (10:00 -03 at the escribanía):**
 
-- [ ] USB stick or signed download link with `wesley_bundle_20260616-1539.zip` + `.sha256` (separate file).
-- [ ] Print of `02_escritura_deck/escritura_deck_v6.pdf` cover, BoQ page, and English appendix p22+ (3 copies: Peña, Wesley, file).
+- [ ] USB stick or signed download link with `wesley_bundle_20260616-1715.zip` + `.sha256` (separate file).
+- [ ] Print of `02_escritura_deck/escritura_deck_v6.pdf` cover, BoQ page (p21), English appendix (p25), and Pelton siting appendix (pp26-27) (3 copies: Peña, Wesley, file).
 - [ ] Pelton contact sheet `06_pelton_feasibility/pelton_head_map_contact.png` printed colour A4 — single-page evidence for Rule 7 if asked.
 - [ ] Boleto `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` — paper original or notarised copy per Cl. CUARTA.
 - [ ] Comprobante de fondos Gs. 2.252.700.000 ready to hand over (Cl. CUARTA).
@@ -78,7 +78,7 @@ cd /home/ai-whisperers/blender-projects/la-quebrada-viva
 python3 scripts/build_escritura_deck.py
 ```
 
-Acceptance: `scripts/build_escritura_deck.py` reports `27 page(s)`, file ≥ 10 MB at `docs/escritura_deck/escritura_deck_v6.pdf`.
+Acceptance: `scripts/build_escritura_deck.py` reports `28 page(s)`, file ≥ 10 MB at `docs/escritura_deck/escritura_deck_v6.pdf`.
 
 If the BoQ rollup changed (FX delta), the catalogue-sum row will update automatically — no manual edit needed.
 
