@@ -66,10 +66,13 @@ def _gather() -> list[tuple[Path, str]]:
         items.append((dem_ab, "05_dem_ab/dem_ab_contact.png"))
 
     # Pelton head feasibility map + sidecar + labeled contact sheet
+    # + named candidate siting (P1/P2/P3) with within-radius flags
     for fn in (
         "pelton_head_map.png",
         "pelton_head_map.json",
         "pelton_head_map_contact.png",
+        "pelton_siting.json",
+        "pelton_siting_contact.png",
     ):
         p = PROJECT_ROOT / "docs/site_data" / fn
         if p.exists():
@@ -112,6 +115,7 @@ def main() -> int:
     expected = {
         "wesley_brief_onepager.pdf", "escritura_deck_v6.pdf",
         "dem_ab_contact.png", "pelton_head_map.png", "pelton_head_map.json",
+        "pelton_siting.json", "pelton_siting_contact.png",
         "boq_rollup.csv", "boq_rollup.md", "boq_rollup.pdf",
         "PROVENANCE.md", "satdata_brief.md",
     }

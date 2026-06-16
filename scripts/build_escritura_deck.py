@@ -742,7 +742,13 @@ def _build() -> int:
         styles_pack=(h1_style, h2_style, body_style, caption_style),
     ))
 
-    # ----- Page 26: Back cover -----
+    # ----- Page 26: Pelton siting appendix (P1/P2/P3) -----
+    story.extend(_pelton_siting_appendix(
+        styles_pack=(h1_style, h2_style, body_style, caption_style),
+        scaled_image=_scaled_image,
+    ))
+
+    # ----- Page 27: Back cover -----
     story.append(Spacer(1, 70 * mm))
     story.append(Paragraph("LA QUEBRADA VIVA", title_style))
     story.append(Spacer(1, 6 * mm))
@@ -1255,6 +1261,118 @@ def _english_appendix(*, styles_pack) -> list:
         "escribana will read.",
         caption,
     ))
+    flow.append(PageBreak())
+    return flow
+
+
+def _pelton_siting_appendix(*, styles_pack, scaled_image) -> list:
+    """One-page Pelton siting appendix — P1/P2/P3 candidate cards.
+
+    Materialises ``docs/site_data/pelton_siting.json`` so Wesley can point
+    at named sites at the table instead of only quoting the head-map
+    headline stats (31.2% above 30 m, 10.7% above 80 m). P3 is the only
+    candidate whose penstock fits inside the 300 m radius (Chebyshev box
+    reaches ~415 m diagonal — the honest flag lives in the JSON sidecar).
+    """
+    import json as _json
+
+    from reportlab.lib import colors
+    from reportlab.lib.units import mm
+    from reportlab.platypus import PageBreak, Paragraph, Spacer, Table, TableStyle
+
+    h1, h2, body, caption = styles_pack
+    flow: list = []
+
+    flow.append(Paragraph(
+        "Apéndice Pelton — sitios candidatos / Pelton siting candidates", h1,
+    ))
+    flow.append(Spacer(1, 2 * mm))
+    flow.append(Paragraph(
+        "Tres sitios nombrados (P1, P2, P3) elegidos por algoritmo greedy "
+        "top-N sobre el campo de carga útil del DEM COP30. Cada sitio fija "
+        "una turbina (baja) y la cresta correspondiente (alta) dentro de una "
+        "ventana de búsqueda de 21×21 px (~315 m por lado en distancia de "
+        "Chebyshev; la diagonal alcanza ~415 m). La bandera <b>penstock "
+        "&le; 300 m</b> es honesta — sólo P3 cae dentro del radio.",
+        caption,
+    ))
+    flow.append(Spacer(1, 4 * mm))
+
+    contact = ROOT / "docs/site_data/pelton_siting_contact.png"
+    if contact.exists():
+        flow.append(scaled_image(contact, max_w_mm=170, max_h_mm=70))
+        flow.append(Spacer(1, 3 * mm))
+
+    siting_path = ROOT / "docs/site_data/pelton_siting.json"
+    if siting_path.exists():
+        data = _json.loads(siting_path.read_text())
+        cands = data.get("candidates", [])
+
+        header = [
+            Paragraph("<b>Sitio</b>", body),
+            Paragraph("<b>Turbina (lat, lon)</b>", body),
+            Paragraph("<b>Elev. turbina</b>", body),
+            Paragraph("<b>Cresta (lat, lon)</b>", body),
+            Paragraph("<b>Elev. cresta</b>", body),
+            Paragraph("<b>Carga útil (head)</b>", body),
+            Paragraph("<b>Penstock horiz.</b>", body),
+            Paragraph("<b>&le; 300 m</b>", body),
+        ]
+        rows = [header]
+        for c in cands:
+            within = "Sí" if c.get("penstock_within_radius") else "No"
+            rows.append([
+                Paragraph(f"<b>{c['id']}</b>", body),
+                Paragraph(f"{c['turbine_lat']:.6f}, {c['turbine_lon']:.6f}", body),
+                Paragraph(f"{c['turbine_elev_m']:.1f} m", body),
+                Paragraph(f"{c['ridge_lat']:.6f}, {c['ridge_lon']:.6f}", body),
+                Paragraph(f"{c['ridge_elev_m']:.1f} m", body),
+                Paragraph(f"<b>{c['head_m']:.1f} m</b>", body),
+                Paragraph(f"{c['penstock_horizontal_m']:.1f} m", body),
+                Paragraph(within, body),
+            ])
+        table = Table(
+            rows,
+            colWidths=[14*mm, 38*mm, 18*mm, 38*mm, 18*mm, 22*mm, 24*mm, 12*mm],
+            hAlign="CENTER",
+        )
+        table.setStyle(TableStyle([
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+            ("TOPPADDING", (0, 0), (-1, -1), 2),
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e8e8e8")),
+            ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#bbbbbb")),
+        ]))
+        flow.append(table)
+        flow.append(Spacer(1, 4 * mm))
+
+        head_max = data.get("head_max_m", 0.0)
+        flow.append(Paragraph(
+            f"Carga máxima del campo: <b>{head_max:.1f} m</b>. Fuente DEM: "
+            "COP30 (sha256 <code>10e6459c…04fed00</code>). Método y campo de "
+            "carga heredados de <code>docs/site_data/pelton_head_map.json</code> "
+            "para consistencia con las estadísticas titulares "
+            "(31.2 % &ge; 30 m, 10.7 % &ge; 80 m). Radio de exclusión "
+            "200 m entre candidatos.",
+            caption,
+        ))
+        flow.append(Spacer(1, 2 * mm))
+        flow.append(Paragraph(
+            "<b>Lectura honesta:</b> P1 y P2 reportan penstock "
+            "&gt; 300 m (415,8 m y 358,9 m respectivamente) porque la ventana "
+            "de búsqueda es un cuadrado de Chebyshev, no un círculo "
+            "euclidiano. <b>P3</b> es el único sitio dentro del radio "
+            "objetivo (295,5 m, carga 166,5 m) y por lo tanto la mejor "
+            "primera apuesta para un piloto Pelton.",
+            caption,
+        ))
+    else:
+        flow.append(Paragraph(
+            "<i>pelton_siting.json no encontrado — regenerar con "
+            "<code>python3 scripts/build_pelton_siting.py</code>.</i>",
+            caption,
+        ))
+
     flow.append(PageBreak())
     return flow
 
