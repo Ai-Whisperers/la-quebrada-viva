@@ -91,10 +91,11 @@ If the BoQ rollup changed (FX delta), the catalogue-sum row will update automati
 xdg-open docs/escritura_deck/escritura_deck_v6.pdf
 ```
 
-Spot-check:
-- Cover page date reads **27 de junio de 2026**.
-- BoQ catalogue-sum row uses today's FX (not the stale 7300).
-- English appendix begins around page 22 (Wesley's section).
+Spot-check (page numbers verified against v6 on 2026-06-16):
+- **Cover (p1)** reads escritura date **2026-06-27** and "generated YYYY-MM-DD" of today.
+- **BoQ catalogue-sum (p21)** uses today's FX (not the stale 7300). Catalogue sum should be ~USD 268,685 at 7300 (recompute if FX moved).
+- **English appendix (p25)** — single page summarising key facts for Wesley.
+- **Parte 4 (pp22-24)** = Spanish day-of checklist + risk register; what the escribana reads from.
 - No raw `lqv/subscene/*` module names anywhere in body copy.
 
 ---
