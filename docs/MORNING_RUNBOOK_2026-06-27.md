@@ -50,7 +50,7 @@ Contents (top-level prefixes inside the zip):
 **Notary hand-off checklist (10:00 -03 at the escribanía):**
 
 - [ ] USB stick or signed download link with `wesley_bundle_20260616-1715.zip` + `.sha256` (separate file).
-- [ ] Print of `02_escritura_deck/escritura_deck_v6.pdf` cover, BoQ page (p21), English appendix (p25), and Pelton siting appendix (pp26-27) (3 copies: Peña, Wesley, file).
+- [ ] Print of `02_escritura_deck/escritura_deck_v6.pdf` cover, BoQ page (p21), English appendix (pp25-26), and Pelton siting appendix (p27) (3 copies: Peña, Wesley, file).
 - [ ] Pelton contact sheet `06_pelton_feasibility/pelton_head_map_contact.png` printed colour A4 — single-page evidence for Rule 7 if asked.
 - [ ] Boleto `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` — paper original or notarised copy per Cl. CUARTA.
 - [ ] Comprobante de fondos Gs. 2.252.700.000 ready to hand over (Cl. CUARTA).
@@ -94,7 +94,7 @@ xdg-open docs/escritura_deck/escritura_deck_v6.pdf
 Spot-check (page numbers verified against v6 on 2026-06-16):
 - **Cover (p1)** reads escritura date **2026-06-27** and "generated YYYY-MM-DD" of today.
 - **BoQ catalogue-sum (p21)** uses today's FX (not the stale 7300). Catalogue sum should be ~USD 268,685 at 7300 (recompute if FX moved).
-- **English appendix (p25)** — single page summarising key facts for Wesley.
+- **English appendix (pp25-26)** — two-page summary of key facts for Wesley.
 - **Parte 4 (pp22-24)** = Spanish day-of checklist + risk register; what the escribana reads from.
 - No raw `lqv/subscene/*` module names anywhere in body copy.
 

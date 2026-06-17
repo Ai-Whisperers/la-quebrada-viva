@@ -13,8 +13,8 @@ Today is the day. Attached is the final technical pack for the escritura signing
 - **Pages 2–20** — Spanish body: site context, plans, infrastructure, bill of quantities.
 - **Page 21** — Bill of Quantities (BoQ) catalogue sum: ~USD 268,685 at 7,300 PYG/USD (BCP rate). 17 assets, 259 line items, deterministic and reproducible.
 - **Pages 22–24** — Parte 4: Spanish day-of checklist + risk register (what the notary reads from).
-- **Page 25 — English appendix (this is your page).** Single-page summary of: parcel identification, total consideration **Gs. 2,503,000,000 (~USD 320,000 at 7,300 PYG/USD)**, contract clauses you need to be aware of at the table, and the file layout of the deck.
-- **Pages 26–27 — Pelton siting appendix.** Three named candidate sites (P1, P2, P3) with turbine/ridge coordinates, head, penstock horizontal run, and an honest within-300 m flag — P3 is the only candidate fully inside the radius (head 166.5 m, penstock 295.5 m). For when someone at the table asks "where exactly would the turbine sit?".
+- **Pages 25–26 — English appendix (this is your section).** Two-page summary of: parcel identification, total consideration **Gs. 2,503,000,000 (~USD 320,000 at 7,300 PYG/USD)**, contract clauses you need to be aware of at the table, and the file layout of the deck.
+- **Page 27 — Pelton siting appendix.** Three named candidate sites (P1, P2, P3) with turbine/ridge coordinates, head, penstock horizontal run, and an honest within-300 m flag — P3 is the only candidate fully inside the radius (head 166.5 m, penstock 295.5 m). For when someone at the table asks "where exactly would the turbine sit?".
 - **Page 28** — Back cover + signoff.
 
 **Full evidence bundle** (`wesley_bundle_20260616-1715.zip`, 266 MB) — sent via Drive/WeTransfer in a separate email because of file size.
@@ -36,7 +36,7 @@ Today is the day. Attached is the final technical pack for the escritura signing
 - I'll be there with the printed deliverables and the USB carrying the bundle if anything needs to be verified on the spot.
 
 **Pelton micro-hydro headline** (if asked about the autonomy/Rule 7 critical-systems story):
-On the 62 ha parcel, **31.2 %** of the footprint sits above the 30 m head minimum for Pelton turbines; **10.7 %** sits above the 80 m "good" head threshold. Max head 182.6 m. **Named candidate sites P1/P2/P3** with coordinates are on pages 26–27 of the deck (P3 is the recommended first pilot — penstock 295.5 m, fully within the 300 m radius). All from COP30 DEM data, derivable independently — full evidence in `06_pelton_feasibility/` inside the bundle.
+On the 62 ha parcel, **31.2 %** of the footprint sits above the 30 m head minimum for Pelton turbines; **10.7 %** sits above the 80 m "good" head threshold. Max head 182.6 m. **Named candidate sites P1/P2/P3** with coordinates are on page 27 of the deck (P3 is the recommended first pilot — penstock 295.5 m, fully within the 300 m radius). All from COP30 DEM data, derivable independently — full evidence in `06_pelton_feasibility/` inside the bundle.
 
 Any last questions before tomorrow morning, ping me on WhatsApp.
 

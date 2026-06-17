@@ -12,8 +12,8 @@ Te paso el paquete técnico v-final para la escritura de hoy **27 de junio de 20
 - **Página 1** — Cubierta con fecha de escritura.
 - **Página 21** — Cómputo BoQ: ~USD 268.685 al TC 7.300 PYG/USD.
 - **Páginas 22–24** — Parte 4: checklist y registro de riesgos del día (lo que la escribana lee en voz alta).
-- **Página 25** — Apéndice en inglés (resumen para Wesley, también útil como referencia rápida).
-- **Páginas 26–27** — Apéndice Pelton: sitios candidatos P1/P2/P3 con coordenadas turbina/cresta, carga útil y bandera honesta de penstock dentro de 300 m (P3 es el único candidato limpio — 295,5 m, carga 166,5 m).
+- **Páginas 25–26** — Apéndice en inglés (resumen para Wesley, también útil como referencia rápida).
+- **Página 27** — Apéndice Pelton: sitios candidatos P1/P2/P3 con coordenadas turbina/cresta, carga útil y bandera honesta de penstock dentro de 300 m (P3 es el único candidato limpio — 295,5 m, carga 166,5 m).
 
 **Para hoy:**
 
