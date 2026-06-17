@@ -463,4 +463,20 @@ Carry-forward open lines (durably persisted on STATUS §11 "Open lines to close"
 
 ---
 
-*Session ended 2026-06-10. Maintained by Ivan / AI Whisperers.*
+## 2026-06-17 T-10 commit + tag (4653ef2)
+
+T-10 closing-prep sweep landed on origin/master.
+
+- Commit: `4653ef2` — 27 files, +1204/-12 (12 mod + 14 new + .gitkeep)
+- Tag: `escritura-t10-verified-2026-06-17` (annotated, pushed)
+- Daily VERIFY at commit time: 3/3 OK, bundle SHA `9ce96b…724a53c`, deck SHA `2e4c26…0701137`
+- Pytest invariants: 11/11 passed (`python3 -m pytest`)
+- `build_scene.py` untouched (byte-frozen at `85e86aa`)
+
+**Ruff drift deferred.** `ruff check .` reports 318 errors on clean HEAD (pre-existing tech debt, not introduced by this sweep). Bulk lives in `docs/site_data_monday/*.py` (78), `lqv/typologies/bamboo_container_4pax.py` (14), `lqv/subscene/elevation_dutch.py` (11), `lqv/amenities/*.py` (19). T-10 is not the window for a 318-error cleanup pass — full sweep deferred to T+30 per `ARCHIVE_RUNBOOK.md`. No files authored this arc (bash + markdown) affect ruff scope.
+
+**Engineering residual (1)**: F-bucket #58 mirror remote — still blocked on URL + auth from user. Everything else from the 100-item plan is shipped or user-side.
+
+---
+
+*Maintained by Ivan / AI Whisperers.*
