@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "name": "la_quebrada_viva_aoi_62ha",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "metadata": {
+    "title": "La Quebrada Viva — canonical AOI bbox (1,100 ha enclosing the 62-ha parcel)",
+    "site_name": "La Quebrada Viva",
+    "location": "Escobar, Departamento de Paraguarí, Paraguay",
+    "padrones": ["838", "1827", "840", "1096", "629", "454"],
+    "parcel_hectares": 62,
+    "bbox_hectares": 1100,
+    "bbox": {"west": -57.045, "south": -25.645, "east": -57.015, "north": -25.615},
+    "centroid": {"lon": -57.030, "lat": -25.630},
+    "side_length_km": 3.3,
+    "license": "CC0-1.0 (this AOI file). Datasets pulled against this AOI carry their own licenses (see DATA_INVENTORY.md §9).",
+    "notes": "This bbox is the acquisition footprint used by every DEM (ALOS/COP30/SRTM/NASADEM), Sentinel-2 fetch, and GEDI granule search. It encloses the 62-ha parcel with ~5x safety margin so neighboring drainage + ridgeline context comes in too. The real 62-ha boundary is somewhere inside; precise polygon arrives with Anexo I post-escritura (2026-06-27).",
+    "created": "2026-06-17",
+    "created_by": "AI Whisperers / Ivan Weiss Van Der Pol",
+    "schema_version": "1.0"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aoi_62ha_bbox",
+        "role": "acquisition_bbox"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-57.045, -25.645],
+          [-57.015, -25.645],
+          [-57.015, -25.615],
+          [-57.045, -25.615],
+          [-57.045, -25.645]
+        ]]
+      }
+    }
+  ]
+}

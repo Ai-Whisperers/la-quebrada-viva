@@ -319,4 +319,76 @@ For reproducibility, every data product above has a script that can re-fetch it.
 
 ---
 
-*Compiled by AI Whisperers on 2026-06-10. All data in `docs/site_data/`. All scripts in `scripts/`. See `docs/research/README.md` for the broader research synthesis. Re-runs are cheap; call the scripts whenever you want fresh data.*
+## 11. Satellite data roadmap (T1–T4)
+
+Ranked list of satellite / GIS data sources to add to the LQV digital twin,
+prioritised by impact-per-effort. T1 = high impact + low effort (do first).
+The canonical AOI for every fetcher is `docs/site_data/aoi_62ha.geojson`
+(loaded via `scripts/satellite/_aoi.py`).
+
+### T1 — high impact, low effort (ship now)
+
+| Source                         | Resolution | Why we want it                                            | Fetcher                                                 | License        |
+| ------------------------------ | ---------- | --------------------------------------------------------- | ------------------------------------------------------- | -------------- |
+| Sentinel-2 L2A multi-temporal  | 10 / 20 m  | NDVI / NDWI time series, dry-vs-wet season comparison     | `scripts/satellite/fetch_sentinel2.py`                  | Copernicus     |
+| Sentinel-1 RTC (SAR)           | 10 m       | Cloud-free, day+night backscatter — wetness + structure   | `scripts/satellite/pc_stac_quickstart.py --collection sentinel-1-rtc` | Copernicus     |
+| ESA WorldCover 10 m            | 10 m       | 11-class landcover snapshot (forest / grass / built / …)  | `scripts/satellite/fetch_landcover.py --only worldcover` | CC-BY 4.0      |
+| JRC Global Surface Water       | 30 m       | Where water historically pools (gullies, low spots)       | `scripts/satellite/fetch_landcover.py --only jrc-gsw`   | EC / open      |
+| Google Earth Engine (NDVI)     | 10 m       | Server-side reductions over years of S2 in one call       | `scripts/satellite/gee_quickstart.py`                   | Copernicus     |
+| Planet NICFI basemap           | ~5 m       | Closer to "drone photo" texture for canopy outlines       | `scripts/satellite/fetch_nicfi.py`                      | Planet NICFI (NC) |
+
+### T2 — medium impact (do next)
+
+| Source                         | Resolution | Why we want it                                            | Fetcher                                                 | License        |
+| ------------------------------ | ---------- | --------------------------------------------------------- | ------------------------------------------------------- | -------------- |
+| Copernicus DEM GLO-30          | 30 m       | Modern global DEM — sanity-check vs ALOS                  | `scripts/satellite/pc_stac_quickstart.py --collection cop-dem-glo-30` | CC-BY 4.0      |
+| CHIRPS daily rainfall          | ~5 km      | Defensible dry-season numbers for the site mgmt plan      | `scripts/satellite/fetch_climate.py --only chirps`      | Public domain  |
+| TerraClimate monthly           | ~4 km      | Long-term water balance (PET, soil moisture, tmin/tmax)   | `scripts/satellite/fetch_climate.py --only terraclimate` | Open           |
+| Hansen Global Forest Change    | 30 m       | Year of tree-cover loss 2000–present                      | `scripts/satellite/fetch_landcover.py --only hansen`    | UMD / GLAD     |
+| HLS (Harmonized L/S)           | 30 m       | Harmonized Landsat + Sentinel-2 — denser time series      | `scripts/satellite/pc_stac_quickstart.py --collection hls2-s30` | NASA, open     |
+
+### T3 — high effort or paid (defer)
+
+- Drone orthomosaic (DJI Mini 4 Pro + ODM): cm-scale truth, but needs a site visit.
+- Airborne lidar: defensible canopy heights, but no public coverage of Escobar.
+- SkySat / WorldView / Pléiades (commercial sub-meter): only if a buyer asks for it.
+
+### T4 — niche / specialty (consider later)
+
+- GEDI L4A above-ground biomass: ~25 m footprints, sparse over a 62-ha parcel.
+- MODIS LST: thermal time series, 1 km is too coarse for parcel-level decisions.
+- VIIRS night-lights: useful for the regional context slide, not for the parcel.
+- OpenStreetMap (Overpass): roads, place names, admin polygons — already pulled separately.
+- Sentinel-5P (atmospheric): NO₂ / CH₄ trends at country scale, not parcel scale.
+
+### How to actually run any of this
+
+```bash
+# 1. Activate the project venv (or any Python 3.11+ env).
+# 2. Install the optional GIS stack ONCE:
+pip install planetary-computer pystac-client stackstac rioxarray rasterio xarray earthengine-api requests
+
+# 3. Probe Planetary Computer for what's available:
+PYTHONPATH=. python -m scripts.satellite.pc_stac_quickstart --list-collections
+
+# 4. Pull a Sentinel-2 search index (no download):
+PYTHONPATH=. python -m scripts.satellite.pc_stac_quickstart --collection sentinel-2-l2a --days 90
+
+# 5. Pull WorldCover landcover, clipped to our AOI:
+PYTHONPATH=. python -m scripts.satellite.fetch_landcover --only worldcover
+
+# 6. Pull CHIRPS monthly rainfall over the last 18 months:
+PYTHONPATH=. python -m scripts.satellite.fetch_climate --only chirps --start 2025-01-01 --end 2026-06-01
+```
+
+Every fetcher writes under `docs/site_data/<source>/` with deterministic names
+so re-runs are idempotent. None of the fetchers touches `build_scene.py`.
+
+License gate (enforced at intake): **CC0 and CC-BY 4.0 only** for anything
+that ships in the bundle. CHIRPS, WorldCover, JRC GSW, Copernicus,
+Hansen are all compatible. Planet NICFI is non-commercial — fine for the
+escritura deck and the site management plan, **not** for resale.
+
+---
+
+*Compiled by AI Whisperers on 2026-06-10; §11 satellite roadmap added 2026-06-17. All data in `docs/site_data/`. All scripts in `scripts/`. See `docs/research/README.md` for the broader research synthesis. Re-runs are cheap; call the scripts whenever you want fresh data.*

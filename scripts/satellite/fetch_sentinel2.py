@@ -19,10 +19,14 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-HERE = Path('/home/ai-whisperers/blender-projects/la-quebrada-viva')
+from scripts.satellite._aoi import aoi_bbox
+
+# Repo root = three levels up from this file (scripts/satellite/fetch_sentinel2.py).
+HERE = Path(__file__).resolve().parents[2]
 load_dotenv(dotenv_path=HERE / '.env.local')
 
-BBOX = {'south': -25.645, 'north': -25.615, 'west': -57.045, 'east': -57.015}
+_w, _s, _e, _n = aoi_bbox()
+BBOX = {'south': _s, 'north': _n, 'west': _w, 'east': _e}
 OUT_DIR = HERE / 'docs' / 'site_data' / 'sentinel2'
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
