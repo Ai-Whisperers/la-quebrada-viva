@@ -54,7 +54,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Iterable
+from collections.abc import Iterable
 
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:

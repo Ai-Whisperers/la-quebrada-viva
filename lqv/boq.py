@@ -443,7 +443,11 @@ def _write_pdf_reportlab(pdf_path: str, lines: list[BoQLine]) -> None:
     from reportlab.lib.pagesizes import letter
     from reportlab.lib.styles import getSampleStyleSheet
     from reportlab.platypus import (
-        SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
+        Paragraph,
+        SimpleDocTemplate,
+        Spacer,
+        Table,
+        TableStyle,
     )
 
     today = _dt.date.today().isoformat()

@@ -13,7 +13,6 @@ _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
-import bpy
 
 from lqv import cameras, config
 from lqv.subscene import base
@@ -25,10 +24,9 @@ def _place_jacarandas():
     if os.environ.get('RENDER_FLORA_PHOTOREAL', '0') != '1':
         return
     from lqv.flora.photoreal import (
+        JACARANDA_BLEND,
         _append_object_from_blend,
         _scale_to_height,
-        JACARANDA_BLEND,
-        TARGET_HEIGHTS,
     )
 
     # Hero tree centered, scaled to ~12 m (mid jacaranda height).

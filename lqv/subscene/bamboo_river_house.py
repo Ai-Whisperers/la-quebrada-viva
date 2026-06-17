@@ -20,7 +20,6 @@ from lqv import cameras
 from lqv.materials import MAT, assign
 from lqv.subscene import base
 
-
 ASSET = 'bamboo_river_house'
 
 # River surface dimensions (m). Long axis along Y matches the house orientation.

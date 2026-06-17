@@ -16,7 +16,6 @@ _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
-import bpy
 
 from lqv import cameras
 from lqv.subscene import base
@@ -41,7 +40,7 @@ def _scatter_green_roof_planting():
     for i in range(n_anth):
         # Distribute around a ~3.6 m radius arc on the +Y (back) side.
         t = (i + 0.5) / n_anth
-        angle = 0.2 + t * 2.7  # radians, mostly behind the dome
+        0.2 + t * 2.7  # radians, mostly behind the dome
         rx = 3.4 + random.uniform(-0.3, 0.3)
         x = rx * (1.0 - 2.0 * t) * 0.5 + random.uniform(-0.4, 0.4)
         y = 2.4 + random.uniform(-0.6, 0.6)

@@ -20,7 +20,6 @@ from __future__ import annotations
 
 import csv
 import os
-from typing import List
 
 _PROJECT_ROOT = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,14 +34,14 @@ GEDI_SCALE_REF_M = 25.0
 SCALE_MIN = 0.6
 SCALE_MAX = 1.6
 
-_HEIGHTS_CACHE: List[float] | None = None
+_HEIGHTS_CACHE: list[float] | None = None
 
 
-def _load_heights() -> List[float]:
+def _load_heights() -> list[float]:
     global _HEIGHTS_CACHE
     if _HEIGHTS_CACHE is not None:
         return _HEIGHTS_CACHE
-    heights: List[float] = []
+    heights: list[float] = []
     with open(GEDI_CSV, newline="") as f:
         for row in csv.DictReader(f):
             try:

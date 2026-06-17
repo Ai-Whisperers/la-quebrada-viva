@@ -52,7 +52,7 @@ def _apply_cmap(arr, cmap_name):
     return (rgb[:,:,:3]*255).astype(np.uint8)
 
 def save_png(arr, out_path, cmap):
-    rgb = colormap(arr, cmap)
+    rgb = _apply_cmap(arr, cmap)
     from PIL import Image
     Image.fromarray(rgb).save(out_path)
     print(f"  Wrote {out_path}")

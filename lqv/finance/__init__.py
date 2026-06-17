@@ -16,7 +16,6 @@ from __future__ import annotations
 
 import json
 import os
-from typing import Optional
 
 # Repo root = three levels up from this file (lqv/finance/__init__.py).
 _PROJECT_ROOT = os.path.dirname(
@@ -29,7 +28,7 @@ FX_JSON_PATH = os.path.join(_PROJECT_ROOT, 'docs', 'finance', 'fx.json')
 # numerically stable even on a botched checkout.
 FALLBACK_USD_PYG = 7300.0
 
-_cache: Optional[dict] = None
+_cache: dict | None = None
 
 
 def _load() -> dict:

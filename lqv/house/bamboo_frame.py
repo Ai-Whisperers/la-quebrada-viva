@@ -43,7 +43,6 @@ import bpy
 
 from lqv.materials import MAT, assign
 
-
 # ---------------------------------------------------------------------------
 # Material fallback resolver — shared by every primitive in this module.
 # ---------------------------------------------------------------------------

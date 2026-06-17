@@ -257,7 +257,7 @@ def _windows_and_glazing(col, ox, oy):
     bay_offsets = (-1.2, 1.2)  # 2 bays per long face, symmetric around centre
 
     for face_sign, tag in ((-1, 'S'), (1, 'N')):
-        wall_y = oy + face_sign * (PLATFORM_L / 2 - _WALL_THICKNESS / 2)
+        oy + face_sign * (PLATFORM_L / 2 - _WALL_THICKNESS / 2)
         glass_y = oy + face_sign * (PLATFORM_L / 2 - _WALL_THICKNESS - 0.04)
         shutter_y = oy + face_sign * (PLATFORM_L / 2 + 0.02)
         for bay_i, sx in enumerate(bay_offsets):

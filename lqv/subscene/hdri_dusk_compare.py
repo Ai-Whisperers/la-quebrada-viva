@@ -16,7 +16,6 @@ because the puresky variant otherwise gets a clipped horizon.
 """
 from __future__ import annotations
 
-import math
 import os
 import sys
 
@@ -27,7 +26,7 @@ if _PROJECT_ROOT not in sys.path:
 import bpy
 
 from lqv import cameras
-from lqv.materials import MAT, assign, principled
+from lqv.materials import assign, principled
 from lqv.subscene import base
 
 ASSET = 'hdri_dusk_compare'

@@ -161,7 +161,7 @@ def _dist_to_stream_xy(x: float, y: float) -> float:
     """Minimum 2D distance from (x,y) to any stream segment, in metres."""
     best = float("inf")
     pts = [_local_xy(*p) for p in STREAM_WAYPOINTS]
-    for (x1, y1), (x2, y2) in zip(pts[:-1], pts[1:]):
+    for (x1, y1), (x2, y2) in zip(pts[:-1], pts[1:], strict=False):
         dx, dy = x2 - x1, y2 - y1
         seg_len2 = dx * dx + dy * dy
         if seg_len2 == 0.0:
@@ -382,7 +382,7 @@ def _build_stream():
     curve_data.dimensions = "3D"
     spline = curve_data.splines.new("BEZIER")
     spline.bezier_points.add(len(STREAM_WAYPOINTS) - 1)
-    for bp, (nx, ny) in zip(spline.bezier_points, STREAM_WAYPOINTS):
+    for bp, (nx, ny) in zip(spline.bezier_points, STREAM_WAYPOINTS, strict=False):
         x, y = _local_xy(nx, ny)
         bp.co = (x, y, _sample_terrain_z(nx, ny, 0.3))
         bp.handle_left_type = "AUTO"

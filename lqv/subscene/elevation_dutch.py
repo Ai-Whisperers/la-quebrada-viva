@@ -36,7 +36,6 @@ from mathutils import Vector
 from lqv import cameras, render
 from lqv.subscene import base
 
-
 ELEVATIONS = ('front', 'back', 'left', 'right')
 
 # Fallback box if a typology builds nothing (which would mean a NotImplementedError
@@ -58,9 +57,9 @@ def _resolve_build(typology: str):
     if typology in _AMENITIES:
         mod = importlib.import_module(f'lqv.amenities.{typology}')
         if typology == 'eco_retreat_modern_oasis':
-            fn = getattr(mod, 'build_eco_retreat_modern_oasis')
+            fn = mod.build_eco_retreat_modern_oasis
             return lambda: fn()
-        fn = getattr(mod, 'build')
+        fn = mod.build
         return lambda: fn(variant='A')
 
     mod = importlib.import_module(f'lqv.typologies.{typology}')

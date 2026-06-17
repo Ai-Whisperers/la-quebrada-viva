@@ -1,8 +1,6 @@
 """Wood-family materials: lapacho timber/bark, pindo and mango trunks, bamboo."""
 from __future__ import annotations
 
-import bpy
-
 from lqv.materials._palette import COL, hex_to_rgb
 from lqv.materials._shaders import (
     add_secondary_color_variation,

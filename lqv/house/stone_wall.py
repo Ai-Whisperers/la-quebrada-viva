@@ -22,12 +22,11 @@ scene collection via Blender defaults.
 from __future__ import annotations
 
 import math
-from typing import Sequence
+from collections.abc import Sequence
 
 import bpy
 
 from lqv.materials import MAT, assign
-
 
 # ---------------------------------------------------------------------------
 # Material fallback chains — single source of truth for stone-cottage

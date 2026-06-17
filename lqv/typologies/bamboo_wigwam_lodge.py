@@ -34,7 +34,6 @@ import bpy
 from lqv.house import bamboo_frame as _bf
 from lqv.materials import MAT, assign
 
-
 # ---------------------------------------------------------------------------
 # Geometry constants (2 PAX glamping, ~5 m diameter, ~4.5 m apex)
 # ---------------------------------------------------------------------------
@@ -237,7 +236,7 @@ def _stone_foundation(col, ox, oy):
     expected camera angles).
     """
     mat = _mat('sandstone', 'laterite')
-    outer = _add_cylinder(
+    _add_cylinder(
         col, 'BWL_Foundation_Outer',
         location=(ox, oy, _FOUND_HEIGHT / 2.0),
         radius=_FOUND_OUTER_R, depth=_FOUND_HEIGHT,
@@ -337,7 +336,7 @@ def _thatch_cone(col, ox, oy):
         # still provides background mass — reads as door deeper than skin).
         for a_i in range(arch_segs):
             t_lo = a_i / arch_segs
-            t_hi = (a_i + 1) / arch_segs
+            (a_i + 1) / arch_segs
             z_lo = base_z * (1 - t_lo) + apex_z_shell * t_lo
             for l_i in range(long_segs):
                 # Azimuthal centre of this quad

@@ -51,7 +51,6 @@ import bpy
 from lqv.house import bamboo_frame as _bf
 from lqv.materials import MAT, assign
 
-
 # ---------------------------------------------------------------------------
 # Geometry constants
 # ---------------------------------------------------------------------------

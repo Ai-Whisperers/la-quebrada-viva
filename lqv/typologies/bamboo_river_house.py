@@ -24,12 +24,10 @@ Material registry mapping (see ``lqv/materials/`` for the canonical keys):
 from __future__ import annotations
 
 import math
-from typing import Iterable
 
 import bpy
 
 from lqv.materials import MAT, assign
-
 
 # ---------------------------------------------------------------------------
 # Geometry constants (4 PAX layout, ~7.0 m × 8.4 m envelope)

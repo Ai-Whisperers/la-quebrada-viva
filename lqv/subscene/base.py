@@ -157,7 +157,7 @@ def add_context_flora(center=(0.0, 0.0, 0.0), inner_radius_m: float = 6.0,
     scenes. Bamboo clumps are deliberately omitted — they're large and
     occlude the hero subject at house-scale framing.
     """
-    from lqv.flora import agave, fern, anthurium
+    from lqv.flora import agave, anthurium, fern
 
     rng = random.Random(seed)
     cx, cy, _ = center

@@ -80,7 +80,6 @@ from lqv.house.bamboo_frame import (
 from lqv.house.stone_wall import build_stone_foundation_course
 from lqv.materials import MAT, assign
 
-
 # ---------------------------------------------------------------------------
 # Geometry constants (rectangular plan, ~110 m², 4 BR / 6 PAX)
 # ---------------------------------------------------------------------------

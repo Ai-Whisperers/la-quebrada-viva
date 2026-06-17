@@ -325,7 +325,7 @@ def _suspended_bridge(col, ox, oy, deck_top_z, tower_x, tower_y):
             best = (vx, vy)
     px, py = best
     # Tower-side anchor: top of stair where it meets platform-deck level
-    tx, ty, tz = tower_x, tower_y, deck_top_z
+    tx, ty, _tz = tower_x, tower_y, deck_top_z
     span = math.hypot(tx - px, ty - py) or _BRIDGE_LENGTH
 
     # Two ropes — offset perpendicular to bridge axis by ±0.4 m

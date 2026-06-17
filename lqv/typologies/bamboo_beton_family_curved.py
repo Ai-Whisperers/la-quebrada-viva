@@ -62,7 +62,6 @@ import bpy
 
 from lqv.materials import MAT, assign
 
-
 # ---------------------------------------------------------------------------
 # Geometry constants (crescent plan, ~110 m², 4 PAX, 4 bedrooms)
 # ---------------------------------------------------------------------------

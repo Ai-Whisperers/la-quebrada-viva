@@ -33,8 +33,9 @@ the caller MUST set ``cam.data.clip_end`` to >= ``self.z_clip_end`` (default
 from __future__ import annotations
 
 import math
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
-from typing import Iterable, Literal, Sequence
+from typing import Literal
 
 import numpy as np
 
@@ -99,7 +100,7 @@ def _xy_to_ij(x: float, y: float, origin: Vec2, cell_m: float) -> tuple[float, f
 
 def _polyline_length(polyline: Polyline) -> float:
     out = 0.0
-    for (x0, y0), (x1, y1) in zip(polyline, polyline[1:]):
+    for (x0, y0), (x1, y1) in zip(polyline, polyline[1:], strict=False):
         out += math.hypot(x1 - x0, y1 - y0)
     return out
 
@@ -360,7 +361,7 @@ class Terrain:
             self._pre_carve_heights = self.height.copy()
         XX, YY = self._grid_xy()
         dist = np.full_like(XX, np.inf, dtype=np.float32)
-        for (x0, y0), (x1, y1) in zip(polyline, polyline[1:]):
+        for (x0, y0), (x1, y1) in zip(polyline, polyline[1:], strict=False):
             dx, dy = x1 - x0, y1 - y0
             seg_len_sq = dx * dx + dy * dy
             if seg_len_sq < 1e-6:
@@ -715,7 +716,8 @@ class Terrain:
 
         # ----- assign surface material if available -----
         try:
-            from lqv.materials import MAT, assign as _assign
+            from lqv.materials import MAT
+            from lqv.materials import assign as _assign
             mat = MAT.get(surface_material)
             if mat is not None:
                 _assign(obj, mat)

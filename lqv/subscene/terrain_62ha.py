@@ -309,7 +309,7 @@ def _build_stream():
     curve_data.dimensions = "3D"
     spline = curve_data.splines.new("BEZIER")
     spline.bezier_points.add(len(STREAM_WAYPOINTS_M) - 1)
-    for bp, (nx, ny, _z_unused) in zip(spline.bezier_points, STREAM_WAYPOINTS_M):
+    for bp, (nx, ny, _z_unused) in zip(spline.bezier_points, STREAM_WAYPOINTS_M, strict=False):
         x, y = _local_xy(nx, ny)
         bp.co = (x, y, _sample_terrain_z(nx, ny, 1.5))
         bp.handle_left_type = "AUTO"

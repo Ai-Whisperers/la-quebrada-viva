@@ -13,7 +13,6 @@ _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
-import bpy
 
 from lqv import cameras, config
 from lqv.subscene import base
@@ -25,9 +24,9 @@ def _place_pachira():
     if os.environ.get('RENDER_FLORA_PHOTOREAL', '0') != '1':
         return
     from lqv.flora.photoreal import (
+        PACHIRA_BLEND,
         _append_object_from_blend,
         _scale_to_height,
-        PACHIRA_BLEND,
     )
 
     hero = _append_object_from_blend(PACHIRA_BLEND)
