@@ -97,4 +97,45 @@ G. 2.503.000.000  TOTAL PRICE
 4. Designación formal de la escribana para la escritura (Cl. SEXTA — buyers designan, presumably Peña given the seña deposit).
 5. Verificación de **certificados catastrales-registrales** de cada finca (libre de gravamen, inhibiciones, embargos).
 
-For the actionable T-7 / T-5 / T-2 / signing-day / T+30 sequence with risk register, see [`CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md).
+For the actionable T-7 / T-5 / T-2 / signing-day / T+30 sequence with risk register, see [`CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md). For the signing-day laptop runbook see [`MORNING_RUNBOOK_2026-06-27.md`](./MORNING_RUNBOOK_2026-06-27.md). For the C1–C10 pre-decided playbook see [`CONTINGENCIES.md`](./CONTINGENCIES.md).
+
+## Glossary — Paraguayan notarial / civil terms
+
+For non-PY readers (Wesley + Thijs primarily). Bilingual ES / EN where useful.
+
+| Term | Meaning |
+|---|---|
+| **Boleto privado de compraventa** | Private purchase agreement signed before the escritura pública. Binding contract; does NOT transfer title — only the escritura pública does. The boleto sets price, deposit, deadlines, and penalties. |
+| **Escritura pública** | Notarial public deed. The legal instrument that transfers real-estate title in Paraguay. Must be signed before a `escribano/a público/a` (notary public). Without escritura inscription in the Dirección General de los Registros Públicos, the buyer holds no enforceable title. |
+| **Escribana / escribano** | Notary public. In Paraguay, the notary is a licensed public official (not just a private witness) — they verify identity, check the registry, retain the seña, draft the escritura, and submit it for inscription. |
+| **Seña** | Earnest-money deposit (Cl. TERCERA: Gs. 250,300,000 = 10 % of total). Held by the notary, applied to taxes/fees/commission at signing per Cl. CUARTA, remainder routed to Burgos's commission. |
+| **Comprador / vendedor** | Buyer / seller. |
+| **Saldo** | Remaining balance after the seña. Apparent saldo = Gs. 2,252,700,000 (price − seña); real saldo at signing = Gs. 2,190,000,000 net to sellers + Gs. ~313,000,000 to Burgos. |
+| **Comprobante de fondos** | Proof-of-funds document. The notary requires this at the table per Cl. CUARTA (bank transfer screenshot + signed bank letter, or cheque de gerencia, depending on notary's preference). |
+| **Cheque de gerencia** | Cashier's check issued by the bank. Common Paraguayan instrument for high-value real-estate closings (> Gs. 1.000.000.000). |
+| **Hábiles / días hábiles** | Business days (excludes weekends + Paraguayan public holidays). Cl. OCTAVA (ii) seller comprobantes are due "5 hábiles" post-signing. |
+| **Corridos / días corridos** | Calendar days (includes weekends + holidays). Cl. NOVENA's 60 corridos = 60 calendar days from boleto (2026-04-28) → 2026-06-27 escritura deadline. |
+| **Padrón** | Cadastral parcel ID. Each of the 6 fincas has its own padrón (838 / 1827 / 840 / 1096 / 629 / 454). The padrón is the authoritative ID for tax + registry purposes (vs the finca number, which is the title-registry-internal ID). |
+| **Finca** | Title-registry parcel number. Cross-references the padrón 1:1 in this deal. |
+| **Bienes gananciales** | Community property (assets acquired during marriage). Justiniano Torrasca holds the fincas as bienes gananciales — María Teresa Medina's consent (Cl. PRIMERA) is required for sale. |
+| **Linderos / rumbos / medidas** | Boundary descriptions / bearings / measurements. Make up the technical description of each finca; collectively form **Anexo I** (referenced in Cl. PRIMERA, due from sellers per Cl. OCTAVA ii). |
+| **Anexo I** | Annex I — the technical descriptions for the 6 fincas. Sellers' deliverable under Cl. OCTAVA (ii); must be in the notary's hands before the escritura is drafted. |
+| **Certificado catastral-registral** | Cadastral-registry certificate. Confirms each finca is libre de gravamen / inhibiciones / embargos at signing time. Notary pulls one per padrón pre-signing. |
+| **Libre de gravamen** | Free of liens / encumbrances. |
+| **Inhibición** | Injunction against the seller's ability to dispose of the property. |
+| **Embargo** | Lien / attachment by a creditor. |
+| **Impuesto a la renta** | Income tax (capital gains in this context). Cl. SÉPTIMA assigns to seller; standard PY practice. |
+| **Impuesto inmobiliario** | Real-estate tax. Cl. SÉPTIMA: sellers' responsibility through signing; current comprobantes required at the table. |
+| **Honorarios notariales** | Notary fees. Typically buyer's responsibility in Paraguay; verify with Peña pre-signing. |
+| **Tasas judiciales** | Court / registry fees for inscription. |
+| **Intermediario / comisión** | Intermediary / commission. Burgos's Gs. 313,000,000 per Cl. QUINTA. |
+| **Gestor de negocios ajenos** | Agent acting for another's business (Art. 1.808 CC PY). Thijs is acting as gestor for Wesley's 75 % under the boleto. |
+| **Poder** | Power of attorney. Required if either buyer cannot attend the signing in person (drafted in NL with notarial seal, then apostilled). |
+| **Apostilla** | Apostille (Hague Convention). NL-issued notarial documents need apostille to be valid in Paraguay. |
+| **Prórroga** | Extension. Cl. NOVENA grants automatic prórroga for administrative delays (e.g. registry backlog). |
+| **Desistimiento** | Withdrawal / repudiation of the contract. Cl. NOVENA penalties trigger on desistimiento by either side. |
+| **Penalty wording — Cl. NOVENA** | Buyer-side default → forfeits seña (Gs. 250.300.000); seller-side default → pays double the seña (Gs. 500.600.000) minus already-incurred costs. |
+| **Dirección General de los Registros Públicos (DGRP)** | National public-registry authority. Inscribes the escritura; until inscription, the escritura is signed but not opposable to third parties. |
+| **Catastro** | Cadastral authority (Servicio Nacional de Catastro). Maintains the padrón system. |
+| **Mensura** | Land survey. Not legally required for this closing (the existing escrituras have it), but is a Tier-3 future task if subdivision is planned. |
+| **TC / Tipo de cambio** | Exchange rate. Project default: TC = 7300 PYG/USD (BCP ref, refreshed on T-0 morning per [`finance/fx.json`](./finance/fx.json)). |

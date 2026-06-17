@@ -1,6 +1,6 @@
 # Research Gaps — La Quebrada Viva / Escobar Housing Park
 
-> Living tracker of what we still need to find out to plan well. Compiled 2026-06-10 by AI Whisperers.
+> Living tracker of what we still need to find out to plan well. Compiled 2026-06-10, T-10 refresh 2026-06-17 by AI Whisperers.
 >
 > Use this doc to chase, tick, and record findings. The earlier items block the most decisions; later items sharpen choices that can wait.
 
@@ -151,4 +151,12 @@ This file has always been *referenced forward* by adjacent docs but the reverse 
 4. Each item gets a `Findings` entry when closed. If a finding changes the plan, it gets cross-referenced into `HOUSING_PARK_CONCEPT.md` or `EUROPEAN_TOURISM_SPEC.md`.
 5. New gaps found during research get new R## entries. The doc is the source of truth for "what we still don't know."
 
-*Maintained by Ivan / AI Whisperers. Last updated 2026-06-10.*
+*Maintained by Ivan / AI Whisperers. Last updated 2026-06-17 (T-10 sweep).*
+
+---
+
+## T-10 status note (2026-06-17)
+
+At T-10 to escritura signing, the Tier-1 ledger is intentionally **frozen during the closing window**: Tier-1 closure is **not** a pre-condition for the 2026-06-27 escritura (which is land-acquisition only). All R01–R08 chase work resumes post-closing (T+1+). The escritura-blocking research lives in [`CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md) (T-7/T-5/T-2 chase items) and is tracked separately in [`docs/CONTINGENCIES.md`](./CONTINGENCIES.md) (C1–C10).
+
+Tier-1.5 R35 (drone LiDAR) status remains 🔴 open and is **deliberately deferred** to T+30 — re-flying with a 1 m DEM before we have a confirmed Phase-1 design intent would burn the $1,500 quote on speculative geometry. Re-prioritise after the [`POSTMORTEM_TEMPLATE.md`](./POSTMORTEM_TEMPLATE.md) T+1 debrief.

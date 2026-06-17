@@ -408,6 +408,49 @@ Commit chain at tick close: `<batch-14-sha-pending>` ← `52a0fce` (Batch 12) �
 
 Cumulative on-master inventory at tick close: 18 final renders + **15-node doc mesh** (unchanged from tick 20 — mesh closure already complete) + **3 new on-master plan docs** (CRITIQUE / UPGRADE_PLAN / sub_render_strategy) + **CLAUDE.md self-upgrade** with 4 critique-derived standing rules + **STATUS.md §10 Known defects** with 7 carry-forwards + 41-file `lqv/` + 16-file `scripts/` + 5-file research corpus + 35-file site_data spike + MIT LICENSE + LICENSES/ + LICENSE_BUNDLE + CREDITS. The escritura deliverable (2026-06-27, 17 days out) remains content-complete at the render axis; the new plan layer + self-upgrade + known-defects log convert the implicit-in-conversation critique into durable on-master artefacts so a cold-start session can pick up the plan + sub-render programme without re-deriving them.
 
+### Continuation arc tick 22 — T-10 sweep + print-pack hardening landed (additive 2026-06-17)
+
+T-10 readiness pass. Twelve task slots closed (#5 / #11 / #21 / #23 / #27 / #29 / #71 / #74 / #76 / #78 / #80 / #87). HEAD pre-batch `0b93af8` (master, in sync with `origin/master`). Render byte-identity preserved this tick — zero `lqv/` / `assets/` / `scripts/` / `renders/` touch.
+
+Six new files landed on master this tick:
+
+- **`dist/print_pack_2026-06-27/INTEGRITY.md`** (NEW) — canonical artefact pin sheet. Deck v6 SHA `2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137`, 28 pp, 10.8 MB. Bundle `wesley_bundle_20260616-1715.zip` SHA `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`, 266 MB. Source commit `0b93af8`. Tags `escritura-2026-06-27` + `escritura-v-final-candidate-aecb1af`. VERIFY.sh 3/3 passing as of `0b93af8`.
+- **`dist/print_pack_2026-06-27/audit_log.txt`** (NEW) — stale-token sweep log: pdftotext → grep over `escritura_deck_v6.pdf` for raw `lqv/subscene/*` module names + `TODO` + `FIXME` + `XXX` + `placeholder` + `TBD` + obsolete revision strings; RC=1 zero-match confirmation captured per token. Source commit + run date pinned. Rationale block per token explaining the sweep's purpose to the notary.
+- **`docs/CONTINGENCIES.md`** (NEW) — C1–C10 pre-decided risk register. C1 deck-SHA mismatch at table → re-derive from `0b93af8`. C2 USB failure → 4G hotspot to Drive primary, WeTransfer fallback. C3 BCP FX 503 → use yesterday's rate, note T-1 in email body. C4 deck v-final-2 errata path (single-line note, branch from `escritura-sent-2026-06-27`). C5 Pelton question → contact sheet print on hand. C6 Cl. CUARTA cheque holdup → comprobante de fondos pre-staged. C7 Cl. OCTAVA (ii) sellers miss 5-hábiles → diarise + escribana notifies. C8 power/internet outage at escribanía → laptop battery + 4G fallback. C9 Wesley/Thijs delayed → poder pre-checked in Cl. SEXTA. C10 Anexo I missing → no-sign rule (CLOSING_DAY_PREP §T-7 escalation). Standing principles block at footer (don't sign without certificados libre-de-gravamen; confirm fondos before handing over comprobante; everything time-stamped to source commit).
+- **`docs/email_drafts/SHARE_LINKS.md`** (NEW) — distribution mechanics matrix. Drive primary (folder + per-recipient view-only links), WeTransfer fallback (7-day expiry), USB stick fallback (`wesley_bundle_20260616-1715.zip` + sidecar `.sha256`), wallet-card SHA print-out. Recipient table: Peña (primary), Wesley (CC, EN), Thijs (CC, ES), Burgos (CC, ES). Pinned bundle SHA + deck SHA at top.
+- **`docs/email_drafts/errata_template_es.md`** (NEW) — last-minute v-final-2 errata draft. Spanish body with placeholders for: page #, line #, corrected text, branch base `escritura-sent-2026-06-27`, new SHA, new bundle SHA. One-paragraph cover note for Peña + Wesley + Thijs + Burgos.
+- **`docs/email_drafts/sent_archive/.gitkeep`** (NEW) — placeholder directory + naming convention (`<YYYY-MM-DD>_<HH-MM>_<recipient>_<subject-slug>.eml`) for actually-delivered emails archived after 07:30 -03 distribution.
+
+Three existing files extended this tick:
+
+- **`STATUS.md`** — appended new §11 "T-10 sweep (additive 2026-06-17)" between previous §10 and trailer. Body pins HEAD `0b93af8`, escritura artefact table (deck / bundle / VERIFY.sh / tags), T-10 additive landings list (the 6 new files above + the 3 extensions in this list), open lines to close before T-1 (USB burn-test, GPG sidecar, BUNDLE_README.txt, wallet-card SHA, BoQ cross-check, Cl. CUARTA/OCTAVA verify, Pelton ↔ JSON, CC0/CC-BY credits, hunspell, cover date string, subscene leakage grep, T-7/T-1 freeze tags, orphan bundle cleanup needing user re-confirm). Rollback target `0081129`. Trailer updated to "Last updated 2026-06-17 (T-10 to escritura)".
+- **`docs/email_drafts/burgos_es.md`** — page-count fix + appendix bullets (deck reference now 28 pp not stale page count; appendix bullets cite Pelton siting page + English appendix range).
+- **`docs/MORNING_RUNBOOK_2026-06-27.md`** + **`docs/contract_summary.md`** + **`docs/CLOSING_DAY_PREP.md`** — bidirectional cross-link reciprocation. RUNBOOK line 3 forward-references CLOSING_DAY_PREP + contract_summary + CONTINGENCIES + SHARE_LINKS + INTEGRITY.md. contract_summary trailer back-references MORNING_RUNBOOK + CONTINGENCIES + adds a new "Glossary — Paraguayan notarial / civil terms" section with 30+ entries (Boleto privado, Escritura pública, Escribana, Seña, Comprador/vendedor, Saldo, Comprobante de fondos, Cheque de gerencia, Hábiles/corridos, Padrón, Finca, Bienes gananciales, Linderos/rumbos/medidas, Anexo I, Certificado catastral-registral, Libre de gravamen, Inhibición, Embargo, Impuesto a la renta, Impuesto inmobiliario, Honorarios notariales, Tasas judiciales, Intermediario/comisión, Gestor de negocios ajenos Art. 1.808 CC PY, Poder, Apostilla, Prórroga, Desistimiento, Cl. NOVENA penalty wording, DGRP, Catastro, Mensura, TC). CLOSING_DAY_PREP line 3 reciprocates with MORNING_RUNBOOK + CONTINGENCIES back-pointers.
+
+One new file landed on master prior tick but referenced from §11 for completeness:
+
+- **`docs/INDEX.md`** (NEW) — 6-tier doc-mesh navigation entrypoint. Tier 0 escritura-critical: MASTER_BRIEF, CLIENT, contract_summary, CLOSING_DAY_PREP, MORNING_RUNBOOK, CONTINGENCIES, INTEGRITY.md, audit_log.txt. Tier 1 supporting deliverables: wesley_brief_onepager, wesley_deliverable_bundle, escritura_deck, boq_rollup, fx.json. Tier 2 email drafts. Tier 3 engineering + research provenance. Tier 4 license + credits. Tier 5 session + status. Tier 6 house + landscape spec. Cold-start reading order at footer: MASTER_BRIEF → CLIENT → contract_summary → CLOSING_DAY_PREP → MORNING_RUNBOOK → CONTINGENCIES → INTEGRITY → audit_log → SHARE_LINKS → 4 email drafts.
+
+Commit chain at tick close: `<batch-22-sha-pending>` ← `0b93af8` (Batch 21 / T-12 sweep) ← `4409dba` (Batch 20 / T-DT 62-ha digital twin) ← `85e86aa` (Batch 7 / 18/18 finals). Render state unchanged: **18/18 finals on disk + on master at `85e86aa`**. T-DT sub-render still on disk + on master at `4409dba`.
+
+Task ledger transitions this tick: **#5 INTEGRITY.md → completed**. **#11 audit_log.txt → completed**. **#21 CONTINGENCIES.md → completed**. **#23 SHARE_LINKS.md → completed**. **#27 errata_template_es.md → completed**. **#29 sent_archive/.gitkeep → completed**. **#71 STATUS.md §11 T-10 sweep → completed**. **#74 runbook ↔ closing-prep bidirectional cross-link → completed** (both sides landed). **#76 contract_summary glossary → completed**. **#78 INDEX.md → completed**. **#80 SESSION_LOG.md tick 22 → completed** (this entry). **#87 burgos_es page-count fix → completed**.
+
+Carry-forward open lines (durably persisted on STATUS §11 "Open lines to close"):
+- USB burn-test (physical, T-1 evening user action)
+- GPG-sign sidecar for bundle SHA
+- BUNDLE_README.txt inside zip (re-bundle on T-1 evening)
+- Wallet-card SHA print-out
+- BoQ catalogue-sum cross-check (USD 268,685.45 / Gs. 1,961,403,785 @ TC 7300)
+- Cl. CUARTA cifra verify (Gs. 2,252,700,000 saldo) + Cl. OCTAVA (ii) 5-hábiles wording
+- Pelton stats ↔ JSON cross-check (head_max=182.6 / mean=33.4 / p95=108.1, 31.2 % > 30 m, 10.7 % > 80 m)
+- CC0 / CC-BY 4.0 credits cross-check vs CREDITS.md
+- hunspell es_PY + en_US deck sweep
+- Cover date string verify (2026-06-27)
+- Subscene leakage grep across deck body (raw `lqv/subscene/*` module names)
+- T-7 freeze tag `escritura-frozen-T-7` on 2026-06-20
+- T-1 freeze tag `escritura-frozen-T-1` on 2026-06-26
+- Orphan bundle cleanup (`wesley_bundle_20260615-2352`, `wesley_bundle_20260616-1539`) — needs user re-confirm per CLAUDE.md rule #6 (destructive `rm`)
+
 ### Still pending (carried)
 
 - **Render delivery batch (Task #24)** — once C_petal_macro lands (18/18), stage `renders/C_*.png` + `STATUS.md` (with §9 Cross-references from tick 13) + `LICENSE_BUNDLE.md` + `LICENSES/README.md` (with tick-14 extended back-pointers) + `CLAUDE.md` (with tick-15 Supplementary docs sub-section) + `docs/wesley_deliverable_bundle.md` (with tick-16 Extended back-pointers) + `docs/asset_plan.md` (with tick-16 §G second-pass extension) + tick 12's three back-pointer extensions (`ARCHITECTURE.md`, `CREDITS.md`, `LICENSE_BUNDLE.md`) explicitly, commit `deliver(renders): C variant — 6 cameras`, update STATUS.md manifest to 18/18 ☑, run `/verify-render`.

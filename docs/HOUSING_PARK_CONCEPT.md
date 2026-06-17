@@ -3,6 +3,8 @@
 > Working document for Wesley. Compiled by AI Whisperers (Ivan) on 2026-06-10.
 > Purpose: gather all the considerations, options, and questions we want to bring to Wesley when he's ready to share more context. Not a final plan — a structured menu of possibilities for the 62-ha site he just bought.
 
+> **T-10 status (2026-06-17 — 10 days pre-escritura).** This doc is **frozen during the T-10 → T-0 sweep**. The cob-house renderer (`build_scene.py` byte-frozen at `85e86aa`) and 18 finals A/B/C × 6 cams are the closing-day deliverable. Housing-park planning beyond what's captured here is **deferred to T+1 (2026-06-28)**, when the land is closed and Wesley's five priority questions (§11) can be re-opened. Closing prep lives in `dist/print_pack_2026-06-27/` + `docs/T+1_DEBRIEF.md` + `docs/OCTAVA_VENDOR_TRACKER.md` + `docs/ARCHIVE_RUNBOOK.md`. After the 2026-07-27 archive freeze, this doc flips from "concept" to "active project" framing per `ARCHIVE_RUNBOOK.md` §6.3.
+
 ---
 
 ## 0. Context — what changed

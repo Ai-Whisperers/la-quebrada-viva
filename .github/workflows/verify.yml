@@ -1,0 +1,42 @@
+name: verify-print-pack
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'dist/print_pack_2026-06-27/**'
+      - '.github/workflows/verify.yml'
+  pull_request:
+    branches: [master]
+    paths:
+      - 'dist/print_pack_2026-06-27/**'
+      - '.github/workflows/verify.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Install poppler-utils (provides pdfinfo)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+
+      - name: Run VERIFY.sh (3-check protocol)
+        working-directory: dist/print_pack_2026-06-27
+        run: bash VERIFY.sh
+
+      - name: Confirm pinned SHAs
+        run: |
+          BUNDLE_SHA="9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c"
+          DECK_SHA="2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137"
+          ACTUAL_BUNDLE=$(sha256sum dist/print_pack_2026-06-27/wesley_bundle_20260616-1715.zip | awk '{print $1}')
+          ACTUAL_DECK=$(sha256sum dist/print_pack_2026-06-27/escritura_deck_v6.pdf | awk '{print $1}')
+          test "$ACTUAL_BUNDLE" = "$BUNDLE_SHA" || { echo "FAIL: bundle SHA drifted from pinned value"; exit 4; }
+          test "$ACTUAL_DECK" = "$DECK_SHA" || { echo "FAIL: deck SHA drifted from pinned value"; exit 5; }
+          echo "OK: bundle + deck SHAs match pinned values"

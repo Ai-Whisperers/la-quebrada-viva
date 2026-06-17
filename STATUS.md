@@ -251,4 +251,34 @@ Defects discovered or carried forward against the 18/18 finals shipped at commit
 
 ---
 
-*Maintained by Ivan / AI Whisperers. Last updated 2026-06-15 (T-12 to escritura).*
+## 11. T-10 sweep (additive 2026-06-17)
+
+T-10 to escritura. Master HEAD at `0b93af8` (page-ref fix superseding the v-final candidate at `aecb1af`). Origin in sync. The render axis is frozen: 18/18 finals at `85e86aa` + 62-ha T-DT at `4409dba` are the on-disk truth — no edits since.
+
+**Escritura artefacts pinned:**
+
+- `docs/escritura_deck/escritura_deck_v6.pdf` — 28 pp, 10.8 MB, SHA-256 `2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137`.
+- `dist/wesley_bundle_20260616-1715.zip` — 266 MB, SHA-256 `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`. Sidecar `.sha256` + `.manifest.txt` alongside.
+- `dist/print_pack_2026-06-27/VERIFY.sh` — 3/3 checks passing (bundle SHA, deck pages = 28, deck SHA).
+- Tags on origin: `escritura-2026-06-27`, `escritura-v-final-candidate-aecb1af`.
+
+**T-10 artefacts landed this tick (additive):**
+
+- `dist/print_pack_2026-06-27/INTEGRITY.md` — canonical artefact pins + cross-check + rollback note (rollback target: `0081129`).
+- `dist/print_pack_2026-06-27/audit_log.txt` — pdftotext + grep stale-token sweep, NO STALE TOKENS confirmed against patterns: superseded page-count/size strings, orphan bundle stems, superseded commit `aecb1af`, rollback-target commit `0081129`.
+- `docs/CONTINGENCIES.md` — 10-scenario risk register C1–C10 (SHA fail, FX drift, Wesley/seller delay, Burgos dispute, notary closure, funds blocked, print-pack loss, email failure, at-table amendment) + 4 standing principles.
+- `docs/email_drafts/SHARE_LINKS.md` — Drive primary + WeTransfer fallback + USB hand-off fallback + pinned hashes + send timing.
+- `docs/email_drafts/errata_template_es.md` — last-minute v-final-2 errata draft for Peña + Wesley + Thijs (placeholders for foja / size / new SHA).
+- `docs/email_drafts/sent_archive/.gitkeep` (placeholder + naming convention) — anchors actually-delivered emails for the T+30 Cl. OCTAVA (ii) compliance review.
+- `docs/email_drafts/burgos_es.md` — updated to 28 pp / 10,8 MB + added bullets for English appendix (pp 25–26) and Pelton appendix (p 27).
+
+**Open lines to close before T-1 evening:**
+
+- USB burn-test, GPG sidecar signature on bundle, BUNDLE_README.txt inside the zip, wallet-card SHA print (mechanical / physical actions).
+- BoQ cross-check, Cl. CUARTA cifra triple-verify, Cl. OCTAVA wording cross-check, Pelton ↔ JSON consistency, CC0 / CC-BY 4.0 credits cross-check, hunspell es_PY + en_US pass over deck body, cover date string drift check, subscene leakage grep on the deck (`lqv/subscene/*` module names must not appear in body copy).
+- Tags `escritura-frozen-T-7` (2026-06-20) and `escritura-frozen-T-1` (2026-06-26) — scheduled, not yet placed.
+- Orphan bundle cleanup (`wesley_bundle_20260615-2352`, `wesley_bundle_20260616-1539`) — destructive, requires user re-confirm before `rm`.
+
+---
+
+*Maintained by Ivan / AI Whisperers. Last updated 2026-06-17 (T-10 to escritura).*

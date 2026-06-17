@@ -1,6 +1,6 @@
 # Closing-day prep — escritura pública 27 Jun 2026
 
-> Printable / actionable checklist for the escritura signing. Companion to [`contract_summary.md`](./contract_summary.md) (the legal facts) and [`wesley_brief_onepager.md`](./wesley_brief_onepager.md) (the one-page brief). All references are to the boleto privado of 2026-04-28.
+> Printable / actionable checklist for the escritura signing. Companion to [`contract_summary.md`](./contract_summary.md) (the legal facts), [`wesley_brief_onepager.md`](./wesley_brief_onepager.md) (the one-page brief), [`MORNING_RUNBOOK_2026-06-27.md`](./MORNING_RUNBOOK_2026-06-27.md) (signing-day laptop runbook), [`CONTINGENCIES.md`](./CONTINGENCIES.md) (pre-decided risk playbook), [`ROLLBACK_RUNBOOK.md`](./ROLLBACK_RUNBOOK.md) (errata / postponement protocol), and [`POSTMORTEM_TEMPLATE.md`](./POSTMORTEM_TEMPLATE.md) (T+1 debrief skeleton). All references are to the boleto privado of 2026-04-28.
 >
 > **Owner**: Wesley van de Camp (75%) + Thijs van de Camp (25%) — buyers.
 > **Signing notary**: presumably Escribana Cynthia Andrea Peña Ros (Cl. SEXTA — buyers designate; she already holds the seña).

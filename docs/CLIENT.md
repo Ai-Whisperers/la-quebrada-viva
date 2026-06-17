@@ -1,6 +1,6 @@
 # Client — La Quebrada Viva
 
-> Source of truth for *who* the project is for. Last updated: 2026-06-10.
+> Source of truth for *who* the project is for. Last updated: 2026-06-17.
 
 ## Client (legal owner of the land and the buyer we work for)
 
@@ -53,7 +53,7 @@ Bienes gananciales — both signatures required. Esposa consintió en el acto.
 
 **Lead on this project: Ivan Weiss Van Der Pol** (per `MASTER_BRIEF.md:4`). The "Owner" line there is misleading — Ivan is **not** the legal owner of the land. Wesley is. The line should be read as "project lead / architect of the digital deliverables", not "landowner."
 
-## What we're doing right now (per Ivan, 2026-06-10)
+## What we're doing right now (per Ivan, 2026-06-10 — still in force at T-10)
 
 > "for now we are modeling the place in 3d so we can build example houses in blender so the client can use as concept art etc"
 
@@ -91,7 +91,7 @@ See [`docs/contract_summary.md`](./contract_summary.md) for the parcel-level bre
 |---|---|---|
 | 2026-04-28 | Boleto privado signed | ✅ done |
 | 2026-04-28 | Seña G. 250.3M deposited with Escribana Peña | ✅ done |
-| 2026-06-27 | **Escritura pública deadline** (60 días corridos) | ⚠ **17 days from today (2026-06-10)** |
+| 2026-06-27 | **Escritura pública deadline** (60 días corridos) | ⚠ **T-10 from today (2026-06-17)** |
 | 27-Jun onward | If sellers default: penalty G. 500.600.000 to buyers | conditional |
 | 27-Jun onward | If buyers default: forfeit seña to sellers (less notary costs) | conditional |
 

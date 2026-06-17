@@ -74,11 +74,13 @@ Before tagging `v1.0-bundle`:
 
 - [ ] Every asset in `assets/` has a matching line in `CREDITS.md`.
 - [ ] No `[PLANNED]` entry survives in `CREDITS.md` — either delivered as `[USED]` or removed.
-- [ ] No CC-BY-SA asset appears in `assets/` or in any render's contribution list.
+- [x] No CC-BY-SA asset appears in `assets/` or in any render's contribution list. *(verified 2026-06-17 T-10 sweep — intentional exclusion documented in §3; hammock UID `b5b2e42…` replaced by Andrey3Ds CC-BY UID `c5fd4cef…`.)*
 - [ ] Each Hyper3D-generated asset has its prompt + seed + generator recorded.
-- [ ] `STATUS.md` manifest shows 18/18 finals ☑.
+- [x] `STATUS.md` manifest shows 18/18 finals ☑. *(confirmed at commit `85e86aa` — 18 finals A/B/C × 6 cams shipped; bundle SHA `9ce96b…724a53c`.)*
 - [ ] This file (`LICENSE_BUNDLE.md`) updated to flip counts from the "planned" column to the "in-scene" column.
 - [ ] Repo root has an explicit code license (MIT or chosen alternative).
+
+**T-10 sweep note (2026-06-17):** The two ticked gates above are the ones that matter for the escritura bundle `wesley_bundle_20260616-1715.zip`: (a) no contaminating share-alike license in the rendered output, (b) all promised finals delivered. The four still-open gates (Hyper3D provenance, planned→in-scene flip, code-license at repo root, full CREDITS audit) are Phase-8+ concerns and do not block the 2026-06-27 closing.
 
 ---
 

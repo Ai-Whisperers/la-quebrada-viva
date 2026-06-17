@@ -1,6 +1,6 @@
 # Morning runbook — escritura signing day, 27 June 2026
 
-One-page mechanical checklist for the AI-side deliverables on signing day. Legal / contractual side is in `docs/CLOSING_DAY_PREP.md`; this file covers only what needs to happen on the laptop the morning of.
+One-page mechanical checklist for the AI-side deliverables on signing day. Legal / contractual side is in [`CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md); legal facts in [`contract_summary.md`](./contract_summary.md); pre-decided risk playbook in [`CONTINGENCIES.md`](./CONTINGENCIES.md); distribution mechanics in [`email_drafts/SHARE_LINKS.md`](./email_drafts/SHARE_LINKS.md); canonical artefact pins in [`../dist/print_pack_2026-06-27/INTEGRITY.md`](../dist/print_pack_2026-06-27/INTEGRITY.md). This file covers only what needs to happen on the laptop the morning of.
 
 Target: PDF v-final in Wesley's and Escribana Peña's inboxes by **08:00 -03**.
 
