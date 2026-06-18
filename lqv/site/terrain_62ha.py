@@ -17,7 +17,6 @@ from __future__ import annotations
 import os
 from typing import Any
 
-
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 TERRAIN_DIR = os.path.join(_REPO_ROOT, "assets", "terrain")
