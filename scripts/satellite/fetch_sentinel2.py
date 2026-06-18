@@ -20,6 +20,10 @@ import requests
 from dotenv import load_dotenv
 
 from scripts.satellite._aoi import aoi_bbox
+from scripts.satellite._crs import to_canonical_inplace_path
+from scripts.satellite._license import assert_compatible
+from scripts.satellite._meta import write_sidecar
+from scripts.satellite._retry import skip_if_exists, with_retry
 
 # Repo root = three levels up from this file (scripts/satellite/fetch_sentinel2.py).
 HERE = Path(__file__).resolve().parents[2]
@@ -35,12 +39,74 @@ STAC_URL = 'https://earth-search.aws.element84.com/v1/search'
 # Sentinel-2 L2A (surface reflectance, ~ 5-day revisit, 10 m RGB/NIR, 20 m SWIR)
 COLLECTION = 'sentinel-2-l2a'
 
+# Copernicus Sentinel-2 L2A is released under the ESA Legal Notice on the use of
+# Copernicus Sentinel data — bundle-eligible, equivalent to CC-BY-4.0 attribution
+# requirements. See LICENSE_BUNDLE.md §3.
+LICENSE_ID = 'CC-BY-4.0'
+CITATION = (
+    'Contains modified Copernicus Sentinel data, processed by ESA / element84 '
+    'Earth-Search (sentinel-2-l2a).'
+)
+
 # Bands we want (element84 STAC uses human-readable keys, not Sentinel-2 band numbers):
 #   red=B04, green=B03, blue=B02 (10m), nir=B08 (10m), swir16=B11 (20m), scl=scene-class (20m)
 BANDS = ['red', 'green', 'blue', 'nir', 'swir16', 'scl']
 
 MAX_CLOUD_PCT = 20.0  # tightest cloud filter
 DAYS_BACK = 730       # last 2 years
+
+
+@with_retry()
+def _download_band(url: str, out: Path) -> None:
+    """Stream a single Sentinel-2 band tile to ``out`` atomically via .tmp."""
+    tmp = out.with_suffix(out.suffix + '.tmp')
+    with requests.get(url, stream=True, timeout=180) as r:
+        r.raise_for_status()
+        with open(tmp, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=1024 * 64):
+                f.write(chunk)
+    tmp.replace(out)
+
+
+def _process_band(
+    band: str,
+    url: str,
+    out: Path,
+    *,
+    item_id: str,
+    cloud_cover: float | None,
+) -> None:
+    """Download (with retry) + CRS normalize + write sidecar for one band."""
+    # License gate runs first — raises LicenseBlocked if the constant is wrong.
+    assert_compatible(LICENSE_ID)
+
+    if skip_if_exists(out):
+        print(f"  {band}: cached ({out.stat().st_size // 1024} KB)")
+    else:
+        print(f"  {band}: downloading from {url[:80]}…", end=' ', flush=True)
+        t0 = time.time()
+        _download_band(url, out)
+        print(f"{out.stat().st_size // 1024} KB  ({time.time() - t0:.1f}s)")
+
+    # Normalize CRS to EPSG:32721 — no-op if the L2A scene is already UTM 21S.
+    try:
+        to_canonical_inplace_path(out)
+    except Exception as e:
+        print(f"  {band}: WARN CRS normalize skipped: {type(e).__name__}: {e}")
+
+    write_sidecar(
+        out,
+        source=url,
+        collection=COLLECTION,
+        license_id=LICENSE_ID,
+        citation=CITATION,
+        fetcher='scripts.satellite.fetch_sentinel2',
+        extra={
+            'item_id': item_id,
+            'band': band,
+            'cloud_cover': cloud_cover,
+        },
+    )
 
 
 def find_best_scene():
@@ -96,28 +162,19 @@ def main():
     print(f"\n[2/4] Downloading {len(BANDS)} bands (red green blue nir swir16 scl)…")
     assets = best['assets']
     downloaded = {}
+    item_id = best['id']
+    cloud_cover = best['properties'].get('eo:cloud_cover')
     for band in BANDS:
         if band not in assets:
             print(f"  {band}: not in scene assets, skipping")
             continue
         url = assets[band]['href']
-        out = OUT_DIR / f"{best['id']}_{band}.tif"
-        if out.exists() and out.stat().st_size > 100_000:
-            print(f"  {band}: cached ({out.stat().st_size//1024} KB)")
-            downloaded[band] = out
-            continue
-        print(f"  {band}: downloading from {url[:80]}…", end=' ', flush=True)
-        t0 = time.time()
+        out = OUT_DIR / f"{item_id}_{band}.tif"
         try:
-            with requests.get(url, stream=True, timeout=180) as r:
-                r.raise_for_status()
-                with open(out, 'wb') as f:
-                    for chunk in r.iter_content(chunk_size=1024 * 64):
-                        f.write(chunk)
-            print(f"{out.stat().st_size//1024} KB  ({time.time()-t0:.1f}s)")
+            _process_band(band, url, out, item_id=item_id, cloud_cover=cloud_cover)
             downloaded[band] = out
         except Exception as e:
-            print(f"FAILED: {type(e).__name__}: {str(e)[:80]}")
+            print(f"  {band}: FAILED after retries: {type(e).__name__}: {str(e)[:120]}")
 
     if not downloaded:
         print("  no bands downloaded — aborting")

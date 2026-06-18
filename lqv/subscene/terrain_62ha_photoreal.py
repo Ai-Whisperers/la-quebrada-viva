@@ -48,9 +48,13 @@ TEX_DIR = os.path.join(_PROJECT_ROOT, "assets", "textures")
 MODEL_DIR = os.path.join(_PROJECT_ROOT, "assets", "models")
 
 # Env overrides for DEM A/B (ALOS AW3D30 vs COP30 etc) without code edits:
-#   LQV_DEM_OVERRIDE_PNG  : path to 16-bit heightmap PNG
-#   LQV_DEM_OVERRIDE_JSON : path to sidecar JSON (bbox + z range)
-# Both default to the ALOS-derived baseline.
+#   LQV_DEM_OVERRIDE_PNG     : path to 16-bit heightmap PNG
+#   LQV_DEM_OVERRIDE_JSON    : path to sidecar JSON (bbox + z range)
+# Env overrides for satellite-overlay A/B (S2 RGB vs NDVI vs bare):
+#   LQV_ALBEDO_OVERRIDE_PNG  : path to 8-bit albedo PNG (sRGB, UV-stretched)
+#   LQV_ALBEDO_DISABLE=1     : skip the satellite overlay entirely (bare PBR)
+#   LQV_ALBEDO_FAC=<float>   : override the MULTIPLY mix factor (default 0.55)
+# All default to the ALOS + Sentinel-2 baseline.
 def _path_or_default(env: str, default: str) -> str:
     val = os.environ.get(env, "").strip()
     if not val:
@@ -64,7 +68,14 @@ HEIGHT_PNG = _path_or_default(
 HEIGHT_JSON = _path_or_default(
     "LQV_DEM_OVERRIDE_JSON", os.path.join(TERRAIN_DIR, "escobar_height.json")
 )
-ALBEDO_PNG = os.path.join(TERRAIN_DIR, "escobar_albedo.png")
+ALBEDO_PNG = _path_or_default(
+    "LQV_ALBEDO_OVERRIDE_PNG", os.path.join(TERRAIN_DIR, "escobar_albedo.png")
+)
+ALBEDO_DISABLED = os.environ.get("LQV_ALBEDO_DISABLE", "").strip() == "1"
+try:
+    ALBEDO_FAC = float(os.environ.get("LQV_ALBEDO_FAC", "0.55"))
+except ValueError:
+    ALBEDO_FAC = 0.55
 
 HDRI_PATH = os.path.join(HDRI_DIR, "qwantani_sunset_puresky_4k.exr")
 HDRI_STRENGTH = 1.0
@@ -318,8 +329,11 @@ def _build_terrain_material(plane):
     nt.links.new(low_nor, nor_mix.inputs["Color2"])
 
     # Sentinel-2 albedo overlay — multiplied at low strength so satellite
-    # color signature still tints the PBR base.
-    if os.path.exists(ALBEDO_PNG):
+    # color signature still tints the PBR base. Disabled via
+    # LQV_ALBEDO_DISABLE=1 (bare PBR), or repointed via LQV_ALBEDO_OVERRIDE_PNG
+    # (e.g. NDVI false-color for vegetation A/B), with mix strength tunable
+    # via LQV_ALBEDO_FAC.
+    if not ALBEDO_DISABLED and os.path.exists(ALBEDO_PNG):
         albedo_tex = nt.nodes.new("ShaderNodeTexImage")
         albedo_tex.image = _pbr_image(ALBEDO_PNG, colorspace="sRGB")
         # UV mapping = stretched to the parcel — same as the displacement.
@@ -328,7 +342,7 @@ def _build_terrain_material(plane):
 
         sat_mix = nt.nodes.new("ShaderNodeMixRGB")
         sat_mix.blend_type = "MULTIPLY"
-        sat_mix.inputs["Fac"].default_value = 0.55
+        sat_mix.inputs["Fac"].default_value = ALBEDO_FAC
         nt.links.new(color_mix.outputs["Color"], sat_mix.inputs["Color1"])
         nt.links.new(albedo_tex.outputs["Color"], sat_mix.inputs["Color2"])
         final_color = sat_mix.outputs["Color"]

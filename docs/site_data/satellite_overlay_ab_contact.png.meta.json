@@ -1,0 +1,35 @@
+{
+  "aoi_geojson": "docs/site_data/aoi_62ha.geojson",
+  "citation": "Contains modified Copernicus Sentinel data 2026 (S2B 21JVM 2026-05-12)",
+  "collection": "sentinel-2-l2a",
+  "dem_source": "docs/site_data/alos_aw3d30_dem.tif",
+  "dem_source_sha256": "56fdae2daa4a5f10b9040a7bd3b07647c177de058bdca8a27ca8e23799d06b3d",
+  "fetcher": "scripts.contact_sheet_satellite_overlay_ab",
+  "git_sha": "78f7e06d983359eb05e1e5d593281bf5b4f7ae8d",
+  "license": "CC-BY-4.0",
+  "license_classification": "bundle",
+  "output": "satellite_overlay_ab_contact.png",
+  "overlay_modes": [
+    "bare",
+    "s2rgb",
+    "ndvi"
+  ],
+  "parcel_polygon_pending": true,
+  "render_config": {
+    "albedo_fac": 0.55,
+    "camera_view": "oblique",
+    "engine": "cycles_cpu",
+    "resolution": [
+      1280,
+      720
+    ],
+    "samples": 32
+  },
+  "render_run_id": "satellite_overlay_ab_20260618",
+  "schema_version": 1,
+  "sentinel2_tile": "S2B_21JVM_20260512_0_L2A",
+  "sha256": "3c70b8f19998463225c00ce3ad65b9887b265ef15e87ec575576ce96a341cfc2",
+  "size_bytes": 377097,
+  "source": "docs/site_data/sentinel2/S2B_21JVM_20260512_0_L2A",
+  "timestamp_utc": "2026-06-18T15:04:29+00:00"
+}

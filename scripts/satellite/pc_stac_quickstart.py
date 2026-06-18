@@ -88,6 +88,34 @@ def list_collections():
     return 0
 
 
+def _print_cached_items(path: Path) -> int:
+    """Print the same summary `search()` would, from a cached index.json.
+
+    Lets you re-inspect a previously-fetched STAC search without burning
+    the round-trip — handy when the network's flaky or you want a diff
+    against an earlier run. Reads the file `search()` writes; format is
+    fixed by the literal dict assembled below.
+    """
+    if not path.exists():
+        print(f"items-file not found: {path}", file=sys.stderr)
+        return 1
+    try:
+        index = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"failed to read {path}: {type(exc).__name__}: {exc}", file=sys.stderr)
+        return 1
+    items = index.get("items", [])
+    print(f"  {len(items)} items ← {path} (cached)")
+    print(f"  collection: {index.get('collection')}")
+    print(f"  bbox: {index.get('bbox')}")
+    print(f"  datetime_range: {index.get('datetime_range')}")
+    if items:
+        first = items[0]
+        print(f"  example: {first.get('id')}")
+        print(f"           assets: {first.get('assets', [])[:8]}")
+    return 0
+
+
 def search(collection: str, days: int, max_items: int, cloud_pct: float):
     try:
         import planetary_computer as pc
@@ -156,10 +184,14 @@ def main():
     ap.add_argument("--max", type=int, default=20)
     ap.add_argument("--cloud", type=float, default=20.0,
                     help="Max cloud cover %% (optical collections only).")
+    ap.add_argument("--items-file", type=Path, default=None,
+                    help="Load a pre-fetched index.json instead of hitting the network.")
     args = ap.parse_args()
 
     if args.list_collections:
         return list_collections()
+    if args.items_file is not None:
+        return _print_cached_items(args.items_file)
     return search(args.collection, args.days, args.max, args.cloud)
 
 

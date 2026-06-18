@@ -1,6 +1,8 @@
 """Scene reset and Cycles engine setup."""
 from __future__ import annotations
 
+import os
+
 import bpy
 
 from .config import Config
@@ -37,7 +39,15 @@ def setup_cycles(scene, config: Config):
             selected_backend = backend
             break
     if selected_backend is None:
+        if os.environ.get('LQV_ALLOW_CPU_FALLBACK') != '1':
+            raise RuntimeError(
+                "No GPU compute backend available (tried OPTIX/CUDA/HIP/METAL/ONEAPI). "
+                "Re-export LQV_ALLOW_CPU_FALLBACK=1 to render on CPU. Refusing to "
+                "silently downgrade — a CPU render at parcel scale takes ~40× longer "
+                "and has burned past schedules."
+            )
         scene.cycles.device = 'CPU'
+        print("[cycles] WARN no GPU backend; LQV_ALLOW_CPU_FALLBACK=1 → CPU render")
 
     print(f"[cycles] device={scene.cycles.device} backend={selected_backend}")
 

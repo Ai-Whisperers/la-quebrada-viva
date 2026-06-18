@@ -1,34 +1,66 @@
-"""62-ha terrain model.
+"""62-ha terrain model — availability gate + dispatcher to the active heightmap builder.
 
-Imports a DEM (digital elevation model) for the Escobar / Paraguarí parcel
-and rebuilds it as a meshed plane with vertex colours per soil-type zone.
-Inputs (when available, all under ``assets/site_data/``):
+The original stub here gated on a 5 m DEM TIFF that was never sourced; the
+project pivoted to a 30 m DEM (ALOS AW3D30 canonical, with COP30 / SRTM /
+NASADEM cross-checks) baked into a normalized 16-bit PNG + JSON sidecar pair
+under ``assets/terrain/``. The active builder lives in
+``lqv.subscene.terrain_62ha_photoreal`` (renderable as a sub-render with
+albedo overlay and Displace + SUBSURF stack).
 
-* ``escobar_dem_5m.tif`` — SRTM-derived 5m DEM (USGS Earth Explorer; CC0).
-* ``escobar_soil_zones.geojson`` — surveyor's soil-type polygons.
-* ``escobar_streams.geojson`` — hydrology layer.
-
-Until those land, the module is dormant. See ``docs/site_data_spike.md`` for
-the acquisition checklist.
+This module stays so that the rest of the codebase has a stable
+``lqv.site.terrain_62ha`` entry point (``is_available`` + ``build_terrain``).
+It now gates on the heightmap pair, and delegates building to the photoreal
+subscene module rather than reimplementing.
 """
 from __future__ import annotations
 
 import os
+from typing import Any
 
-ASSETS = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    'assets',
-    'site_data',
-)
+
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+TERRAIN_DIR = os.path.join(_REPO_ROOT, "assets", "terrain")
+HEIGHTMAP_PNG = os.path.join(TERRAIN_DIR, "escobar_height.png")
+HEIGHTMAP_JSON = os.path.join(TERRAIN_DIR, "escobar_height.json")
 
 
 def is_available() -> bool:
-    """True iff the DEM is on disk."""
-    return os.path.exists(os.path.join(ASSETS, 'escobar_dem_5m.tif'))
+    """True iff the canonical heightmap pair (PNG + JSON) is on disk."""
+    return os.path.exists(HEIGHTMAP_PNG) and os.path.exists(HEIGHTMAP_JSON)
 
 
-def build_terrain(parent=None, exaggeration: float = 1.0):
-    """Mesh the DEM into a Blender plane with subdivision matching the DEM grid."""
-    raise NotImplementedError(
-        'Pending: DEM not on disk yet. See docs/site_data_spike.md for the acquisition checklist.'
-    )
+def build_terrain(parent: Any = None, exaggeration: float = 1.5) -> Any:
+    """Build the 62-ha parcel terrain by delegating to the photoreal subscene.
+
+    Returns the terrain Blender object so callers can re-parent or annotate.
+    The ``exaggeration`` arg overrides ``Z_EXAGGERATION`` for this build only;
+    pass 1.0 for true scale, 1.5 for the project default.
+    """
+    if not is_available():
+        raise FileNotFoundError(
+            f"heightmap pair missing — expected {HEIGHTMAP_PNG} and {HEIGHTMAP_JSON}. "
+            "Run `python3 scripts/make_terrain_heightmap.py` to bake from "
+            "docs/site_data/alos_aw3d30_dem.tif."
+        )
+
+    from lqv.subscene import terrain_62ha_photoreal as photoreal
+
+    builder = getattr(photoreal, "_build_terrain_mesh", None)
+    if builder is None:
+        raise RuntimeError(
+            "lqv.subscene.terrain_62ha_photoreal._build_terrain_mesh is missing — "
+            "the photoreal subscene module has been refactored; update this facade."
+        )
+
+    prev = getattr(photoreal, "Z_EXAGGERATION", None)
+    photoreal.Z_EXAGGERATION = float(exaggeration)
+    try:
+        obj = builder()
+    finally:
+        if prev is not None:
+            photoreal.Z_EXAGGERATION = prev
+
+    if parent is not None and obj is not None:
+        obj.parent = parent
+    return obj

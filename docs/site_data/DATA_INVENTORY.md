@@ -39,7 +39,7 @@ We pulled **4 independent DEMs** of the same 3.3 km × 3.3 km box. Pulling four 
   - Mean: 162 m, Median: 149 m, Std: 42 m
   - The **lowest elevations (~116 m)** correspond to the stream channel
   - The **highest elevations (~380 m)** are at the top of the sandstone escarpment spur (matches the research doc's "40-60 m escarpment" — the 264 m total relief is the full hillside, of which the escarpment face is the upper ~60 m of slope)
-  - All 4 DEMs agree within 5 m on the elevation stats — high confidence
+  - All 4 DEMs agree on mean elevation within ~3 m, on min elevation within ~3 m, and on peak elevation within ~14 m (the spread is the well-known canopy-vs-ground sensor split — see §2.5.1 for the rendered cross-check)
 - **File:** `docs/site_data/alos_aw3d30_dem.tif` (Int16, EPSG:4326, 108 × 108 pixels)
 
 ### 2.2 Copernicus DEM 30 m (GLO-30, COP30) — *best optical-stereo DEM*
@@ -77,6 +77,24 @@ For each DEM, we generated a hillshade — a visualization of the same elevation
 - The CopDEM and NASADEM hillshades show slightly sharper detail than SRTM (cleaner radar speckle, less smoothing)
 - Used as the base for `analysis/site_diagnostic.png` (the master overlay)
 - Files: `docs/site_data/*_hillshade.png` (~85-90 KB each)
+
+### 2.5.1 Cross-validation result — rendered receipt (2026-06-18)
+
+The hillshades and stats prove the 4 DEMs *encode* the same terrain. To also prove that the choice of DEM is **visually invisible** under the displacement + SUBSURF stack used by the 62-ha photoreal renderer, we baked all four to normalized 16-bit heightmaps and rendered each through `lqv/subscene/terrain_62ha_photoreal.py` via the `LQV_DEM_OVERRIDE_PNG` / `LQV_DEM_OVERRIDE_JSON` env hooks (orchestrator: `scripts/render_dem_ab.py`, run_id `dem_ab_20260618`).
+
+Two contact sheets ship the result:
+
+- **`docs/site_data/dem_ab_contact.png`** — 4-panel heightmap PNG sheet (encoding agreement)
+- **`docs/site_data/dem_ab_oblique_contact.png`** — 4-panel oblique-render sheet (1088×900, ~537 KB), the visual proof that the four sources render identically under our oblique camera framing (`scripts/contact_sheet_dem_ab_oblique.py`)
+
+Cropped to the actual 62-ha parcel window the four sensors agree on **mean elevation within 2.9 m** (138.1 – 141.0 m AMSL), on **min elevation within 3.0 m** (125.0 – 128.0 m), and disagree by **14.0 m on peak elevation** (ALOS 171.0 m vs NASADEM 157.0 m) — entirely consistent with each sensor's published RMSE and the well-known canopy-vs-ground sensor split (ALOS optical-stereo reads canopy tops; modern void-filled SRTM/NASADEM reads ground). AW3D30 (canonical) sits at the high end of the cluster on peak but in the middle on mean.
+
+| DEM     | min (m) | max (m) | mean (m) |
+|---------|---------|---------|----------|
+| ALOS    | 128.0   | 171.0   | 139.6    |
+| COP30   | 125.1   | 163.0   | 138.1    |
+| SRTM    | 127.0   | 160.0   | 141.0    |
+| NASADEM | 125.0   | 157.0   | 138.4    |
 
 ### 2.6 Derived analysis (from AW3D30 specifically)
 

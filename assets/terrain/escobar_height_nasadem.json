@@ -1,0 +1,31 @@
+{
+  "source": "docs/site_data/nasadem_dem.tif",
+  "source_sha256": "96daebbe1bce032fb8a7c01d03291226f59bb909554b71d2dc09b91ac4f8b412",
+  "z_min_m": 125.0,
+  "z_max_m": 157.0,
+  "z_observed_min_m": 125.0,
+  "z_observed_max_m": 157.0,
+  "z_observed_mean_m": 138.36314392089844,
+  "shape": [
+    512,
+    512
+  ],
+  "source_shape": [
+    29,
+    32
+  ],
+  "crs": "EPSG:4326",
+  "crop_half_extent_m": 450.0,
+  "bbox": {
+    "left": -57.0346353636137,
+    "bottom": -25.63391516517667,
+    "right": -57.02564241413167,
+    "top": -25.62580705706856
+  },
+  "source_bbox": {
+    "left": -57.045138888872685,
+    "bottom": -25.64486111112262,
+    "right": -57.015138888872684,
+    "top": -25.614861111122615
+  }
+}
