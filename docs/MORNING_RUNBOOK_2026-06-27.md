@@ -50,6 +50,7 @@ Contents (top-level prefixes inside the zip):
 **Notary hand-off checklist (10:00 -03 at the escribanía):**
 
 - [ ] USB stick or signed download link with `wesley_bundle_20260616-1715.zip` + `.sha256` (separate file).
+- [ ] GPG signature `wesley_bundle_20260616-1715.zip.asc` (T-1 manual step — Ivan types passphrase): `gpg --armor --detach-sign --local-user weissvanderpol.ivan@gmail.com --output wesley_bundle_20260616-1715.zip.asc wesley_bundle_20260616-1715.zip`. Verify with `gpg --verify wesley_bundle_20260616-1715.zip.asc wesley_bundle_20260616-1715.zip`. Carry the `.asc` on the USB stick alongside the `.sha256` sidecar. (SHA-256 is the primary integrity check; the GPG sig only adds non-repudiation.)
 - [ ] Print of `02_escritura_deck/escritura_deck_v6.pdf` cover, BoQ page (p21), English appendix (pp25-26), and Pelton siting appendix (p27) (3 copies: Peña, Wesley, file).
 - [ ] Pelton contact sheet `06_pelton_feasibility/pelton_head_map_contact.png` printed colour A4 — single-page evidence for Rule 7 if asked.
 - [ ] Boleto `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` — paper original or notarised copy per Cl. CUARTA.
