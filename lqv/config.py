@@ -4,7 +4,10 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 
-PROJECT_DIR = '/home/ai-whisperers/blender-projects/la-quebrada-viva'
+PROJECT_DIR = os.environ.get(
+    'LQV_PROJECT_DIR',
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+)
 RENDERS_DIR = os.path.join(PROJECT_DIR, 'renders')
 BLEND_PATH = os.path.join(PROJECT_DIR, 'scene.blend')
 
