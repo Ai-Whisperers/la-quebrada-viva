@@ -18,6 +18,7 @@ log=$(mktemp)
 # violations propagates back as a non-zero exit from Blender.
 audit='from lqv.util import ten_rules_check; import sys; v = ten_rules_check.run(); sys.exit(2 if v else 0)'
 if ! RENDER_SKIP=1 RENDER_RES=preview RENDER_VARIANT="${RENDER_VARIANT:-A}" \
+     LQV_ALLOW_CPU_FALLBACK="${LQV_ALLOW_CPU_FALLBACK:-1}" \
      blender --background --python build_scene.py --python-expr "$audit" 2>&1 | tee "$log"; then
   rc=${PIPESTATUS[0]}
   if [ "$rc" = "2" ]; then
