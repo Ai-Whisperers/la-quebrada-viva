@@ -630,7 +630,7 @@ def _build_flora(col: bpy.types.Collection, center: tuple[float, float, float]):
             obj = add_lapacho(sx, sy, scale=0.5)
         if obj is not None:
             # add_lapacho returns list[Object]; photoreal returns single Object.
-            if isinstance(obj, (list, tuple)):
+            if isinstance(obj, list | tuple):
                 for o in obj:
                     if o is not None:
                         _link(o, col)
@@ -662,7 +662,7 @@ def _build_flora(col: bpy.types.Collection, center: tuple[float, float, float]):
             from lqv.flora.fern import add_tree_fern
             obj = add_tree_fern(fx, fy, scale=1.0)
         if obj is not None:
-            if isinstance(obj, (list, tuple)):
+            if isinstance(obj, list | tuple):
                 for o in obj:
                     if o is not None:
                         _link(o, col)
@@ -692,7 +692,7 @@ def _build_flora(col: bpy.types.Collection, center: tuple[float, float, float]):
             # build_bamboo_culm may return a single Object or a list/tuple
             # of segment Objects; mirror the guard pattern used for lapachos
             # and tree ferns above so a list return doesn't blow up _link.
-            if isinstance(culm, (list, tuple)):
+            if isinstance(culm, list | tuple):
                 for o in culm:
                     if o is not None:
                         _link(o, col)
