@@ -77,3 +77,11 @@ docs/2026-*_*.pdf
 # from the Element84 / AWS Earth Search STAC. preview_rgb.png + metadata.json
 # stay tracked so the AOI/timestamp is reproducible without a re-fetch.
 docs/site_data/sentinel2/*.tif
+
+# Regenerable CHIRPS v2.0 monthly rainfall rasters. _cache/ is the global
+# 0.05° GeoTIFFs straight from UCSB (~14 GB, 2005-2025). tiles/ is the
+# parcel-AOI clip per month (~4 KB x 252 = 1 MB, but still binary churn).
+# Both re-fetch via `python3 -m tools.site_data.chirps`. brochure +
+# summary stay tracked so the analytic record is preserved.
+docs/site_data/chirps/_cache/
+docs/site_data/chirps/tiles/

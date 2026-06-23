@@ -1,0 +1,5 @@
+NASA POWER daily 19900101-20251231, n_days=13149
+T2M mean: 22.625 °C
+PRECTOTCORR mean: 4.12 mm/day
+ALLSKY_SFC_SW_DWN mean: 4.899 kWh/m²/day
+WS50M mean: 3.346 m/s

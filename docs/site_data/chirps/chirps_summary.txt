@@ -1,0 +1,5 @@
+CHIRPS monthly 2005-2025
+n_months_with_data: 252
+annual mean: 1532.4 mm/yr
+annual min:  1146.3 mm/yr
+annual max:  2095.7 mm/yr

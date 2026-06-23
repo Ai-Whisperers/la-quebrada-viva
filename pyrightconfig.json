@@ -1,0 +1,6 @@
+{
+  "include": ["lqv", "tools", "scripts"],
+  "extraPaths": ["."],
+  "pythonVersion": "3.11",
+  "reportMissingImports": "warning"
+}
