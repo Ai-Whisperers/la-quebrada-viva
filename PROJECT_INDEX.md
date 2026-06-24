@@ -13,7 +13,7 @@ A Blender-driven photoreal model of a 62-ha parcel in Escobar/Paraguarí, Paragu
 1. **18 finals** (A/B/C × hero/cliff/dusk/petal_macro/stream_up/terrace) — shipped at commit `85e86aa` (renderer byte-frozen).
 2. **62-ha digital twin (T-DT)** — ALOS AW3D30 DEM + Sentinel-2 albedo + GEDI canopy, with COP30/SRTM/NASADEM cross-checks (shipped `4409dba`).
 3. **Escritura technical pack** — 28-page PDF deck v6, Bill of Quantities (175 items), Pelton micro-hydro feasibility, signing 2026-06-27.
-4. **Housing-park master plan** — 8 typologies + 4 amenities for European/1st-world ecotourism.
+4. **Housing-park master plan** — 15 housing typologies + 4 amenities + 3 typology-package amenity stubs for European/1st-world ecotourism.
 
 The project is "dual-scope": the original La Quebrada Viva cob house, plus Wesley's expanded housing-park concept.
 
@@ -36,7 +36,7 @@ The project is "dual-scope": the original La Quebrada Viva cob house, plus Wesle
 | `LICENSES/` | 1.2 M | Per-asset license bundles (CC0 / CC-BY 4.0 only — CC-BY-SA blocked, CC-BY-NC deck-only). |
 | `tests/` | 60 K | 3 test files (boq rollup, RNG invariants, typology contract). |
 | `__pycache__/` | 12 K | Bytecode cache. |
-| `wes example ideas images/` | 15 M | Client-supplied reference imagery. |
+| `docs/references/wesley_2026-06-11/` | 15 M | Client-supplied reference imagery (41 jpegs). |
 
 ### Top-level files
 
@@ -145,7 +145,7 @@ Total: **1,204 LOC** at the package root plus **~25,500 LOC** across 12 subpacka
 | `lighting.py` | 190 | Sun + HDRI + variant-specific lighting (A/B/C). |
 | `render.py` | 15 | Render dispatch. |
 
-### `lqv/subscene/` — 48 files, 4,120 LOC
+### `lqv/subscene/` — 53 files, ~4,300 LOC
 
 The sub-render-first workflow. Each new asset/typology/amenity gets a thin driver here **before** any composite scene touch. Top 15:
 
@@ -168,9 +168,9 @@ The sub-render-first workflow. Each new asset/typology/amenity gets a thin drive
 
 The remaining ~33 files are thin (<70 LOC) per-asset drivers — one for each typology, amenity, and inspectable detail. **Sub-renders land in** `renders/sub/runs/<RENDER_RUN_ID>_<asset>[_<tag>]/<variant>.png` (mirrored to `renders/sub/latest/`).
 
-### `lqv/typologies/` — 14 files, 7,100 LOC (heaviest subpackage)
+### `lqv/typologies/` — 19 files, ~8,260 LOC (heaviest subpackage)
 
-The eight typology builders (bamboo + Italian + hobbit families) for the housing-park concept. Largest are 500–800 LOC each — substantial parametric geometry per typology.
+15 buildable housing typologies (bamboo + Italian + hobbit + Wesley phase-2 villa + clay-terracotta estate) plus 3 typology-package amenity stubs (`TYPOLOGY_AMENITIES`: bamboo_portal, bamboo_outdoor_shower, candle_path). Housing builders are 444–775 LOC each (substantial parametric geometry); phase-2 additions are 176–265 LOC (simpler signature shapes).
 
 | File | LOC |
 |---|---:|
@@ -186,8 +186,12 @@ The eight typology builders (bamboo + Italian + hobbit families) for the housing
 | `bamboo_boomhut_treehouse.py` | 455 |
 | `italian_stone_small_v1.py` | 446 |
 | `hobbit_house.py` | 444 |
-| `bamboo_treehouse.py` (or similar) | — |
-| `__init__.py` | — |
+| `clay_terracotta_estate.py` *(phase-2, §3.15)* | 265 |
+| `bamboo_outdoor_shower.py` *(phase-2, TYPOLOGY_AMENITIES)* | 256 |
+| `bamboo_curved_roof_villa.py` *(phase-2, §3.14)* | 243 |
+| `bamboo_portal.py` *(phase-2, TYPOLOGY_AMENITIES)* | 220 |
+| `candle_path.py` *(phase-2, TYPOLOGY_AMENITIES)* | 176 |
+| `__init__.py` | 63 |
 
 ### `lqv/amenities/` — 6 files, 2,626 LOC
 
@@ -448,7 +452,7 @@ License gate: CC0 + CC-BY 4.0 only in the shipped bundle. CC-BY-SA blocked. CC-B
 
 - **`scripts/mushroom_cob_house.py` at 1,788 LOC** is the single biggest source file in the repo — bigger than `build_scene.py` (4.2 KB) and bigger than any `lqv/` module. It's a standalone variant builder that never moved into `lqv/`. Candidate for refactor into `lqv/typologies/mushroom_cob_house.py` (if/when scope permits — **NOT** before the escritura).
 - **`scripts/build_escritura_deck.py` at 1,398 LOC** does template subst + Chrome PDF generation + per-asset thumbnail injection. Heavy because it owns the whole deck pipeline; reasonable cohesion given it's the single deliverable build path.
-- **`lqv/typologies/` averages 500–800 LOC per typology** (10 files in the 444–775 LOC band). Each is a parametric geometry builder for one house typology. This is correct distribution — no further normalization needed.
+- **`lqv/typologies/` averages 500–800 LOC per typology for the original 13** (12 files in the 444–775 LOC band). Wesley phase-2 added 2 signature villas + 3 amenity stubs at 176–265 LOC each — these are simpler shapes so the lighter LOC is intentional. Each is a parametric geometry builder. This is correct distribution — no further normalization needed.
 - **`lqv/subscene/` has 48 files averaging 86 LOC** (4,120 LOC / 48). Two outliers (`terrain_62ha_photoreal.py` 653, `terrain_62ha.py` 634 — the digital twin) dominate. The other 46 are thin drivers, as the sub-render-first workflow intends. Good shape.
 
 ### Test coverage gap

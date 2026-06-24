@@ -1,4 +1,4 @@
-"""Concept-model stubs for the 13 housing-park typologies.
+"""Concept-model stubs for the housing-park typologies and amenities.
 
 Per ``docs/TERRAIN_PIVOT.md`` §3 the 62-ha site holds thirteen distinct
 example buildings — Wesley's revised vocabulary supersedes the earlier
@@ -8,8 +8,18 @@ reference) is rendered as a sub-render driver under
 predates the typologies package and ships from ``build_scene.py``
 directly, so it is intentionally absent from ``TYPOLOGIES``.
 
-The other 13 are creek-/river-/hill-side units in three material families:
-italian stone, container, bamboo (with two hybrid bamboo+beton lines).
+The first 13 housing units are creek-/river-/hill-side dwellings in three
+material families: italian stone, container, bamboo (with two hybrid
+bamboo+beton lines). Wesley phase-2 (2026-06-23) added a signature villa
+(§3.14 bamboo_curved_roof_villa) and a clay-terracotta estate
+(§3.15 clay_terracotta_estate) to bring the catalog to 15.
+
+Three house-scale amenities (bamboo_portal, bamboo_outdoor_shower,
+candle_path) live as typology-shaped stubs under a separate
+:data:`TYPOLOGY_AMENITIES` tuple — they're built with the same
+``build(parent, location, variant)`` signature so renderers and the BoQ
+rollup can iterate them uniformly, but they don't count toward the
+housing-unit count in TERRAIN_PIVOT §3.
 
 Each builder follows the same shape::
 
@@ -37,4 +47,17 @@ TYPOLOGIES = (
     'bamboo_beton_28',                      # §3.11 hybrid 28 m² solo + porch
     'bamboo_beton_family_curved',           # §3.12 ~70 m² family, curved roof
     'bamboo_beton_family_rectangular',      # §3.13 ~70 m² family, gabled roof
+    # Wesley phase-2 (2026-06-23) — signature additions to the housing catalog
+    'bamboo_curved_roof_villa',             # §3.14 6×9 m signature villa, arched lapacho ribs
+    'clay_terracotta_estate',               # §3.15 2-storey clay-plaster + terracotta roof
+)
+
+# Typology-package amenities — built as typology stubs (own .py here) because
+# they're house-scale ground-clutter, not full amenity modules under
+# ``lqv.amenities``. They share the typology ``build(parent, location, variant)``
+# contract so subscene drivers and the BoQ rollup can iterate them uniformly.
+TYPOLOGY_AMENITIES = (
+    'bamboo_portal',                        # entry gateway with bamboo pergola
+    'bamboo_outdoor_shower',                # outdoor shower booth, 1.6×1.6 m
+    'candle_path',                          # lantern-lit stepping-stone walkway
 )

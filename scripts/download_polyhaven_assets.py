@@ -348,13 +348,6 @@ EXTRA_MODELS: list[str] = [
     "pine_sapling_medium",
     "pine_sapling_small",
     "dead_tree_trunk",
-    "dead_quiver_trunk",
-    "dead_quiver_branch_01",
-    "dead_quiver_branch_02",
-    "quiver_tree_01",
-    "quiver_tree_02",
-    "searsia_burchellii",
-    "searsia_lucida",
     "root_cluster_02",
     # Botany / flowers / scrubs (dry-season scatter)
     "didelta_spinosa",

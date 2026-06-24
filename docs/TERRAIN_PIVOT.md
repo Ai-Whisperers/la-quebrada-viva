@@ -22,7 +22,7 @@ The satellite digital twin remains the context layer (the 62-ha bowl, the river 
 
 ## 2. Wesley vocabulary — verbatim phrases mapped to DSL primitives
 
-From the 41 reference images (`wes example ideas images /`) and the email of 2026-06-10:
+From the 41 reference images (`docs/references/wesley_2026-06-11/`) and the email of 2026-06-10:
 
 | Wesley phrase                                | DSL primitive                                       | Default values                              |
 | -------------------------------------------- | --------------------------------------------------- | ------------------------------------------- |
@@ -40,7 +40,13 @@ The reference photos sorted into thirteen typologies and four amenities. Each on
 
 ---
 
-## 3. Thirteen typologies — Wesley catalog with build briefs
+## 3. Fifteen typologies — Wesley catalog with build briefs
+
+> Originally a 13-typology catalog (§3.1 – §3.13). Wesley phase-2 (2026-06-23)
+> added §3.14 and §3.15. Three house-scale amenity stubs (bamboo_portal,
+> bamboo_outdoor_shower, candle_path) live in `lqv.typologies.TYPOLOGY_AMENITIES`
+> and are documented in §4-bis below.
+
 
 Each entry below is what gets built under `lqv/typologies/<name>.py` plus a matching subscene driver under `lqv/subscene/<name>.py`. All entries carry a `MATERIAL_TAKEOFF` dict whose keys are materials and values are `{quantity_field, unit_cost_usd}` for the BoQ rollup.
 
@@ -83,6 +89,12 @@ Family unit, ~70 m², concrete base + curved-roof bamboo structure (banana-leaf 
 ### 3.13 Bamboo + Beton Family Rectangular (`bamboo_beton_family_rectangular`)
 Family unit, ~70 m², rectangular footprint, gabled bamboo roof. Same internal program as 3.12 with the simpler roof.
 
+### 3.14 Bamboo Curved-Roof Villa (`bamboo_curved_roof_villa`) — Wesley phase-2
+Signature single-room pavilion, 6.0 × 9.0 m footprint, raised lapacho deck, 11 arched lapacho ribs sweeping front-to-back (eave 2.40 m, crown 4.20 m), palm-thatch skin between ribs, three solid clay-plaster walls (N/W/E), fully glazed south facade with 4 lapacho mullions. Pads onto a flat lawn. Reference: Wesley phase-2 villa elevation, 2026-06-23.
+
+### 3.15 Clay Terracotta Estate (`clay_terracotta_estate`) — Wesley phase-2
+Two-storey African-modern villa, ~10 × 8 m footprint, clay-plaster walls, terracotta pitched roof with 1.2 m eaves on all sides, raised stone foundation, deep latticed lapacho upper veranda, one gable end exposing clay-block masonry. Total height ~7 m. House-scale; sub-renders use HOUSE_CLIP_END_M.
+
 ---
 
 ## 4. Four amenities — Wesley catalog with build briefs
@@ -98,6 +110,21 @@ Floating timber platform 6 m × 6 m on the river (or, more practically, on a sti
 
 ### 4.4 Eco Retreat / Modern Oasis (`eco_retreat_modern_oasis`)
 Wellness-retreat focal building: yoga deck, open-air sauna, plunge tub. Bamboo + glass. ~9 m × 12 m. Sits uphill of the river bend, faces sunrise.
+
+---
+
+## 4-bis. Typology-package amenity stubs (Wesley phase-2, 2026-06-23)
+
+> Three house-scale amenity stubs live under `lqv/typologies/` rather than `lqv/amenities/` because they're ground-clutter scaled to a single dwelling (entry gate, shower booth, lantern walkway) rather than full social-space modules. They share the typology `build(parent, location, variant)` contract so subscene drivers and the BoQ rollup iterate them uniformly with the housing units. They are registered in `lqv.typologies.TYPOLOGY_AMENITIES` and intentionally do **not** count toward the §3 housing total of 15.
+
+### 4-bis.1 Bamboo Portal (`bamboo_portal`)
+Entry gateway: 3.2 m wide × 2.8 m tall bamboo pergola with two lapacho posts, woven lattice header, optional climbing-plant scaffold. House-scale.
+
+### 4-bis.2 Bamboo Outdoor Shower (`bamboo_outdoor_shower`)
+1.6 m × 1.6 m × 2.2 m three-sided shower booth, woven bamboo screens on E/S/W, open N, lapacho slat floor over a gravel sump, single rain-shower head. Pairs with any bamboo typology.
+
+### 4-bis.3 Candle Path (`candle_path`)
+Lantern-lit stepping-stone walkway: 12-stone procedural line, 0.6 m spacing, glass-bowl lanterns alternating on lapacho stakes, low-emission night-pass variant. Connects entry to corredor.
 
 ---
 

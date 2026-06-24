@@ -2,7 +2,7 @@
 
 **Author:** critic agent · **Date:** 2026-06-12 · **Scope:** 13 typologies + 4 amenities + 7 Poly Haven CC0 assets · **Render source:** `renders/sub/latest/<asset>_A.png` (Variant A golden hour, 1280x720 sub-render).
 
-This document is not gentle. The renders, builders and asset library were all reviewed against `docs/MASTER_BRIEF.md` §14 (the 10 rules), `docs/EUROPEAN_TOURISM_SPEC.md` (vacation-rental aesthetic bar), and Wesley's reference images in `wes example ideas images /`. If a finding is wrong, file a counter — but cite the line number.
+This document is not gentle. The renders, builders and asset library were all reviewed against `docs/MASTER_BRIEF.md` §14 (the 10 rules), `docs/EUROPEAN_TOURISM_SPEC.md` (vacation-rental aesthetic bar), and Wesley's reference images in `docs/references/wesley_2026-06-11/`. If a finding is wrong, file a counter — but cite the line number.
 
 ---
 

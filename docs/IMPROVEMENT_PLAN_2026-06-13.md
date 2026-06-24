@@ -237,8 +237,8 @@ Run in CI on every commit.
 ### #32 — Repo hygiene pass
 **Priority**: P2
 **File(s)**: repo root
-**Problem**: `wes example ideas images ` folder has a trailing space (breaks shell tab-completion); `STATUS.md` + `AUTONOMOUS_PLAN.md` parallel at root; `_archive/build_scene.py.pre-refactor.bak` next to the byte-frozen renderer is a foot-gun.
-**Action**: Rename the folder to `wes_example_ideas_images/` (or move under `docs/inspiration/`). Move `AUTONOMOUS_PLAN.md` to `docs/plans/AUTONOMOUS_PLAN_2026-06-13.md` and link from `STATUS.md`. Move `_archive/build_scene.py.pre-refactor.bak` to `_archive/build_scene.py.pre-refactor.85e86aa.bak` and add a `_archive/README.md` warning that nothing under `_archive/` should ever be diffed-into-place.
+**Problem**: ~~`wes example ideas images ` folder has a trailing space (breaks shell tab-completion);~~ `STATUS.md` + `AUTONOMOUS_PLAN.md` parallel at root; `_archive/build_scene.py.pre-refactor.bak` next to the byte-frozen renderer is a foot-gun.
+**Action**: ~~Rename the folder to `wes_example_ideas_images/` (or move under `docs/inspiration/`).~~ **Done 2026-06-23: relocated to `docs/references/wesley_2026-06-11/`.** Move `AUTONOMOUS_PLAN.md` to `docs/plans/AUTONOMOUS_PLAN_2026-06-13.md` and link from `STATUS.md`. Move `_archive/build_scene.py.pre-refactor.bak` to `_archive/build_scene.py.pre-refactor.85e86aa.bak` and add a `_archive/README.md` warning that nothing under `_archive/` should ever be diffed-into-place.
 **Estimated effort**: XS
 
 ### #33 — Replace `bpy.ops`-heavy primitives with `bpy.data` constructors

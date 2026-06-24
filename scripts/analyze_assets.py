@@ -71,7 +71,7 @@ MODEL_CLASSIFIERS: list[tuple[re.Pattern[str], str, int, str]] = [
     (re.compile(r"jacaranda|lapacho|tabebuia"), "flora/tree", 5, "native flowering tree"),
     (re.compile(r"palm|pindo|butia|acrocomia|coconut|date_palm"), "flora/tree", 5, "palm species"),
     (re.compile(r"pachira|aguacate|avocado"), "flora/tree", 4, "subtropical tree"),
-    (re.compile(r"quiver|euphorbia|cycad"), "flora/tree", 3, "succulent feature"),
+    (re.compile(r"euphorbia|cycad"), "flora/tree", 3, "succulent feature"),
     (re.compile(r"banana|musa|heliconia"), "flora/photoreal", 4, "banana / heliconia clump"),
     (re.compile(r"bamboo|guadua"), "flora/photoreal", 5, "bamboo grove backdrop"),
     (re.compile(r"agave|aloe|yucca|succulent"), "flora/photoreal", 3, "drought-tolerant accent"),

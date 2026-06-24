@@ -31,32 +31,32 @@ def _ensure_stubs() -> None:
 
 def test_every_typology_has_a_module():
     _ensure_stubs()
-    from lqv.typologies import TYPOLOGIES
+    from lqv.typologies import TYPOLOGIES, TYPOLOGY_AMENITIES
 
     missing: list[str] = []
-    for name in TYPOLOGIES:
+    for name in tuple(TYPOLOGIES) + tuple(TYPOLOGY_AMENITIES):
         spec = importlib.util.find_spec(f"lqv.typologies.{name}")
         if spec is None:
             missing.append(name)
     assert not missing, (
-        f"TYPOLOGIES entries with no matching module under "
-        f"lqv/typologies/: {missing}. Either remove the entry or add the "
-        f"module."
+        f"TYPOLOGIES/TYPOLOGY_AMENITIES entries with no matching module "
+        f"under lqv/typologies/: {missing}. Either remove the entry or add "
+        f"the module."
     )
 
 
 def test_every_typology_imports_cleanly():
     _ensure_stubs()
-    from lqv.typologies import TYPOLOGIES
+    from lqv.typologies import TYPOLOGIES, TYPOLOGY_AMENITIES
 
     failures: list[tuple[str, str]] = []
-    for name in TYPOLOGIES:
+    for name in tuple(TYPOLOGIES) + tuple(TYPOLOGY_AMENITIES):
         try:
             importlib.import_module(f"lqv.typologies.{name}")
         except Exception as e:  # noqa: BLE001 — report-and-aggregate
             failures.append((name, f"{type(e).__name__}: {e}"))
     assert not failures, (
-        "TYPOLOGIES entries that fail to import: "
+        "TYPOLOGIES/TYPOLOGY_AMENITIES entries that fail to import: "
         + ", ".join(f"{n} ({err})" for n, err in failures)
     )
 
@@ -77,10 +77,16 @@ def test_cob_bottle_lqv_intentionally_absent():
 
 
 def test_typologies_count_matches_doc_pivot():
-    """TERRAIN_PIVOT.md §3 enumerates exactly 13 buildable typologies."""
+    """TERRAIN_PIVOT.md §3 enumerates 15 buildable housing typologies.
+
+    Wesley phase-2 (2026-06-23) added §3.14 bamboo_curved_roof_villa and
+    §3.15 clay_terracotta_estate to the original 13. Amenity-stub
+    typologies (bamboo_portal, bamboo_outdoor_shower, candle_path) live in
+    :data:`lqv.typologies.TYPOLOGY_AMENITIES` and are not counted here.
+    """
     from lqv.typologies import TYPOLOGIES
-    assert len(TYPOLOGIES) == 13, (
-        f"TYPOLOGIES length drifted from doc TERRAIN_PIVOT.md §3 (13). "
+    assert len(TYPOLOGIES) == 15, (
+        f"TYPOLOGIES length drifted from doc TERRAIN_PIVOT.md §3 (15). "
         f"Current: {len(TYPOLOGIES)}. If this is intentional, update the "
         f"doc + this test together."
     )

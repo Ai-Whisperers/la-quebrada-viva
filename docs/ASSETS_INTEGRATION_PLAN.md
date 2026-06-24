@@ -108,17 +108,12 @@ adoption is a downstream step. CC-BY-SA and `?`-license rows are intentionally e
 | `fern_02` | model | 5 | CC0 1.0 | 16.3 | fern_02_4k.blend | fern photoreal — green-roof + creek banks |
 | `cheiridopsis_succulent` | model | 3 | CC0 1.0 | 40.5 | cheiridopsis_succulent_4k.blend | drought-tolerant accent |
 
-### flora/tree — 7 asset(s)
+### flora/tree — 2 asset(s)
 
 | ID | Type | Score | License | Size MB | Files | Notes |
 |---|---|---:|---|---:|---|---|
 | `jacaranda_tree` | model | 5 | CC0 1.0 | 557.4 | jacaranda_tree_4k.blend | native flowering tree |
 | `pachira_aquatica_01` | model | 4 | CC0 1.0 | 148.3 | pachira_aquatica_01_4k.blend | subtropical tree |
-| `dead_quiver_branch_01` | model | 3 | CC0 1.0 Universal | 42.6 | dead_quiver_branch_01_4k.blend | succulent feature |
-| `dead_quiver_branch_02` | model | 3 | CC0 1.0 Universal | 23.7 | dead_quiver_branch_02_4k.blend | succulent feature |
-| `dead_quiver_trunk` | model | 3 | CC0 1.0 Universal | 32.8 | dead_quiver_trunk_4k.blend | succulent feature |
-| `quiver_tree_01` | model | 3 | CC0 1.0 Universal | 298.4 | quiver_tree_01_4k.blend | succulent feature |
-| `quiver_tree_02` | model | 3 | CC0 1.0 Universal | 49.2 | quiver_tree_02_4k.blend | succulent feature |
 
 ### house/feature — 1 asset(s)
 
@@ -613,8 +608,6 @@ adoption is a downstream step. CC-BY-SA and `?`-license rows are intentionally e
 | `rusty_metal_02` | texture | 1 | CC0 1.0 Universal | 23.0 | AO|Diffuse|Displacement|Rough|nor_gl |  |
 | `rusty_metal_03` | texture | 1 | CC0 1.0 Universal | 39.0 | AO|Diffuse|Displacement|Rough|nor_gl |  |
 | `rusty_metal_sheet` | texture | 1 | CC0 1.0 Universal | 36.1 | AO|Diffuse|Displacement|Rough|nor_gl |  |
-| `searsia_burchellii` | model | 1 | CC0 1.0 Universal | 65.2 | searsia_burchellii_4k.blend |  |
-| `searsia_lucida` | model | 1 | CC0 1.0 Universal | 54.1 | searsia_lucida_4k.blend |  |
 | `seeding_tray_01` | model | 1 | CC0 1.0 | 34.9 | seeding_tray_01_4k.blend |  |
 | `shrub_01` | model | 1 | CC0 1.0 | 41.4 | shrub_01_4k.blend |  |
 | `shrub_02` | model | 1 | CC0 1.0 | 19.3 | shrub_02_4k.blend |  |

@@ -1,6 +1,6 @@
 # La Quebrada Viva — Bill of Quantities
 
-Generated: **2026-06-15**
+Generated: **2026-06-23**
 
 USD -> PYG rate: **7,300 PYG / USD**
 
@@ -98,6 +98,36 @@ Auto-generated from `MATERIAL_TAKEOFF` dicts across every `lqv.typologies.*` and
 | mosquito_mesh_screen | 4.100 | m2 | $38.00 | $155.80 | Gs. 1,137,340 |
 | fasteners_lashings | 78.000 | count | $2.20 | $171.60 | Gs. 1,252,680 |
 
+### `bamboo_curved_roof_villa` — $6,786.00
+
+| material | quantity | unit | $/unit | subtotal USD | subtotal PYG |
+|---|---:|---|---:|---:|---:|
+| lapacho_timber | 2.200 | m3 | $1,800.00 | $3,960.00 | Gs. 28,908,000 |
+| palm_thatch | 95.000 | m2 | $14.00 | $1,330.00 | Gs. 9,709,000 |
+| clay_plaster | 60.000 | m2 | $8.00 | $480.00 | Gs. 3,504,000 |
+| glass_panes | 14.000 | m2 | $60.00 | $840.00 | Gs. 6,132,000 |
+| sandstone_footing | 0.800 | m3 | $220.00 | $176.00 | Gs. 1,284,800 |
+
+### `bamboo_outdoor_shower` — $274.10
+
+| material | quantity | unit | $/unit | subtotal USD | subtotal PYG |
+|---|---:|---|---:|---:|---:|
+| bamboo_culm | 23.600 | m | $6.00 | $141.60 | Gs. 1,033,680 |
+| lapacho_timber | 0.040 | m3 | $1,800.00 | $72.00 | Gs. 525,600 |
+| sandstone_drain | 0.150 | m3 | $100.00 | $15.00 | Gs. 109,500 |
+| steel_arm | 1.000 | count | $28.00 | $28.00 | Gs. 204,400 |
+| rope_hemp | 5.000 | m | $3.50 | $17.50 | Gs. 127,750 |
+
+### `bamboo_portal` — $871.20
+
+| material | quantity | unit | $/unit | subtotal USD | subtotal PYG |
+|---|---:|---|---:|---:|---:|
+| lapacho_timber | 0.360 | m3 | $1,800.00 | $648.00 | Gs. 4,730,400 |
+| bamboo_culm | 28.000 | m | $6.00 | $168.00 | Gs. 1,226,400 |
+| sandstone_plinth | 0.100 | m3 | $220.00 | $22.00 | Gs. 160,600 |
+| rope_hemp | 4.000 | m | $3.50 | $14.00 | Gs. 102,200 |
+| fasteners_hardware | 24.000 | count | $0.80 | $19.20 | Gs. 140,160 |
+
 ### `bamboo_river_house` — $5,394.00
 
 | material | quantity | unit | $/unit | subtotal USD | subtotal PYG |
@@ -123,6 +153,26 @@ Auto-generated from `MATERIAL_TAKEOFF` dicts across every `lqv.typologies.*` and
 | fasteners_lashings | 150.000 | count | $1.40 | $210.00 | Gs. 1,533,000 |
 | mosquito_mesh | 3.000 | m2 | $22.00 | $66.00 | Gs. 481,800 |
 | borax_boric_treatment | 28.800 | kg | $9.00 | $259.20 | Gs. 1,892,160 |
+
+### `candle_path` — $242.00
+
+| material | quantity | unit | $/unit | subtotal USD | subtotal PYG |
+|---|---:|---|---:|---:|---:|
+| sandstone | 14.000 | count | $8.00 | $112.00 | Gs. 817,600 |
+| lapacho_timber | 0.050 | m3 | $1,800.00 | $90.00 | Gs. 657,000 |
+| lantern_glow_panels | 8.000 | count | $5.00 | $40.00 | Gs. 292,000 |
+
+### `clay_terracotta_estate` — $11,198.00
+
+| material | quantity | unit | $/unit | subtotal USD | subtotal PYG |
+|---|---:|---|---:|---:|---:|
+| clay_plaster | 220.000 | m2 | $8.00 | $1,760.00 | Gs. 12,848,000 |
+| clay_block | 480.000 | count | $1.10 | $528.00 | Gs. 3,854,400 |
+| terracotta_tile | 130.000 | m2 | $28.00 | $3,640.00 | Gs. 26,572,000 |
+| lapacho_timber | 1.400 | m3 | $1,800.00 | $2,520.00 | Gs. 18,396,000 |
+| sandstone | 6.500 | m3 | $220.00 | $1,430.00 | Gs. 10,439,000 |
+| glass_panes | 18.000 | m2 | $60.00 | $1,080.00 | Gs. 7,884,000 |
+| rebar_anchors | 120.000 | count | $2.00 | $240.00 | Gs. 1,752,000 |
 
 ### `container_river_house` — $11,317.00
 
@@ -259,40 +309,43 @@ Sorted by total USD descending. Materials used with more than one unit appear as
 | material | total quantity | unit | total USD | total PYG |
 |---|---:|---|---:|---:|
 | lapacho_deck_planks | 196.000 | m2 | $22,860.00 | Gs. 166,878,000 |
-| palm_thatch | 529.510 | m2 | $18,891.42 | Gs. 137,907,366 |
+| palm_thatch | 624.510 | m2 | $20,221.42 | Gs. 147,616,366 |
 | lapacho_deck | 17.573 | m3 | $17,389.15 | Gs. 126,940,795 |
 | etfe_glass_dome_panels | 56.549 | m2 | $16,116.37 | Gs. 117,649,503 |
+| lapacho_timber | 8.745 | m3 | $12,867.15 | Gs. 93,930,195 |
 | stone_walls | 58.500 | m3 | $12,735.00 | Gs. 92,965,500 |
 | concrete_service_spine | 35.090 | m3 | $10,907.80 | Gs. 79,626,940 |
 | container_envelope_finish | 3.000 | count | $10,500.00 | Gs. 76,650,000 |
+| bamboo_culm | 1,199.500 | m | $10,337.00 | Gs. 75,460,100 |
 | sandstone_foundation | 30.500 | m3 | $10,131.20 | Gs. 73,957,760 |
-| bamboo_culm | 1,147.900 | m | $10,027.40 | Gs. 73,200,020 |
 | reflection_pool_basin_concrete | 48.000 | m2 | $7,920.00 | Gs. 57,816,000 |
 | shipping_container_20ft | 2.000 | count | $7,000.00 | Gs. 51,100,000 |
 | terracotta_tile_roof | 184.000 | m2 | $6,342.00 | Gs. 46,296,600 |
 | lapacho_shutters_doors | 39.000 | m2 | $5,840.00 | Gs. 42,632,000 |
 | lapacho_joinery | 4.346 | m3 | $5,649.80 | Gs. 41,243,540 |
-| lapacho_timber | 4.695 | m3 | $5,577.15 | Gs. 40,713,195 |
 | glass_glazing | 26.916 | m2 | $5,499.84 | Gs. 40,148,832 |
 | reinforced_concrete_shell | 14.080 | m3 | $4,505.60 | Gs. 32,890,880 |
+| terracotta_tile | 130.000 | m2 | $3,640.00 | Gs. 26,572,000 |
 | guadua_deck_culms | 600.000 | m | $3,600.00 | Gs. 26,280,000 |
 | glass_river_wall | 13.500 | m2 | $3,240.00 | Gs. 23,652,000 |
+| sandstone | 12.020 | m3 | $3,196.40 | Gs. 23,333,720 |
 | sandstone_coping_slabs | 32.000 | m | $3,040.00 | Gs. 22,192,000 |
 | stone_foundation | 13.820 | m3 | $2,876.80 | Gs. 21,000,640 |
 | reflective_water_basin_liner | 140.000 | m2 | $2,520.00 | Gs. 18,396,000 |
 | sandstone_pool_coping | 32.000 | m | $2,496.00 | Gs. 18,220,800 |
 | lapacho_dome_struts | 65.000 | m | $2,470.00 | Gs. 18,031,000 |
 | fasteners_lashings | 2,033.000 | count | $2,433.50 | Gs. 17,764,550 |
+| clay_plaster | 280.000 | m2 | $2,240.00 | Gs. 16,352,000 |
 | lapacho_communal_slab_table | 1.000 | count | $2,200.00 | Gs. 16,060,000 |
 | concrete_service_wall | 6.894 | m3 | $2,068.20 | Gs. 15,097,860 |
 | concrete | 6.844 | m3 | $2,053.20 | Gs. 14,988,360 |
 | sandstone_boulder_seating | 14.000 | count | $1,960.00 | Gs. 14,308,000 |
 | sliding_door_assembly | 1.000 | count | $1,950.00 | Gs. 14,235,000 |
+| glass_panes | 32.000 | m2 | $1,920.00 | Gs. 14,016,000 |
 | plywood_lapacho_gable | 39.000 | m2 | $1,872.00 | Gs. 13,665,600 |
 | cob_walls | 19.480 | m3 | $1,850.60 | Gs. 13,509,380 |
 | pool_circulation_pump_filter | 1.000 | count | $1,850.00 | Gs. 13,505,000 |
 | rebar_steel | 1,219.800 | kg | $1,768.71 | Gs. 12,911,583 |
-| sandstone | 5.520 | m3 | $1,766.40 | Gs. 12,894,720 |
 | sod_roof_grass | 89.800 | m2 | $1,616.40 | Gs. 11,799,720 |
 | lapacho_deck_posts | 48.000 | count | $1,616.00 | Gs. 11,796,800 |
 | palm_thatch_roof | 73.440 | m2 | $1,615.68 | Gs. 11,794,464 |
@@ -335,6 +388,7 @@ Sorted by total USD descending. Materials used with more than one unit appear as
 | fasteners | 680.000 | count | $578.00 | Gs. 4,219,400 |
 | insulated_glazing_units | 1.710 | m2 | $547.20 | Gs. 3,994,560 |
 | boulder_seat_stones | 3.000 | count | $540.00 | Gs. 3,942,000 |
+| clay_block | 480.000 | count | $528.00 | Gs. 3,854,400 |
 | lapacho_round_door | 1.000 | count | $520.00 | Gs. 3,796,000 |
 | outdoor_shower_assembly | 1.000 | count | $480.00 | Gs. 3,504,000 |
 | lapacho_floor_mat | 18.100 | m2 | $470.60 | Gs. 3,435,380 |
@@ -348,17 +402,24 @@ Sorted by total USD descending. Materials used with more than one unit appear as
 | palm_thatch_yoga_roof | 16.157 | m2 | $355.46 | Gs. 2,594,853 |
 | sisal_rope_lashings | 90.000 | m | $315.00 | Gs. 2,299,500 |
 | surround_flora_clumps_saplings | 4.000 | count | $300.00 | Gs. 2,190,000 |
+| fasteners_hardware | 374.000 | count | $299.20 | Gs. 2,184,160 |
 | pergola_palm_thatch_roof | 10.350 | m2 | $289.80 | Gs. 2,115,540 |
-| fasteners_hardware | 350.000 | count | $280.00 | Gs. 2,044,000 |
 | sandstone_cascade_weir | 0.640 | m3 | $243.20 | Gs. 1,775,360 |
+| rope_hemp | 69.000 | m | $241.50 | Gs. 1,762,950 |
+| rebar_anchors | 120.000 | count | $240.00 | Gs. 1,752,000 |
 | bamboo_accent | 24.000 | m | $216.00 | Gs. 1,576,800 |
-| rope_hemp | 60.000 | m | $210.00 | Gs. 1,533,000 |
 | lapacho_stair_treads | 5.000 | count | $190.00 | Gs. 1,387,000 |
+| sandstone_footing | 0.800 | m3 | $176.00 | Gs. 1,284,800 |
 | mosquito_mesh_screen | 4.100 | m2 | $155.80 | Gs. 1,137,340 |
 | suspended_walkway_cable | 14.000 | m | $126.00 | Gs. 919,800 |
 | guadua_columns | 12.800 | m | $115.20 | Gs. 840,960 |
+| sandstone | 14.000 | count | $112.00 | Gs. 817,600 |
+| lantern_glow_panels | 8.000 | count | $40.00 | Gs. 292,000 |
 | stainless_mosquito_mesh | 1.400 | m2 | $30.80 | Gs. 224,840 |
+| steel_arm | 1.000 | count | $28.00 | Gs. 204,400 |
+| sandstone_plinth | 0.100 | m3 | $22.00 | Gs. 160,600 |
+| sandstone_drain | 0.150 | m3 | $15.00 | Gs. 109,500 |
 
 ## Grand total
 
-**$268,685.45**  ·  **Gs. 1,961,403,785**  @ 7,300 PYG/USD
+**$288,056.75**  ·  **Gs. 2,102,814,275**  @ 7,300 PYG/USD
