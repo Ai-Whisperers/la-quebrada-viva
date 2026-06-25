@@ -2,12 +2,12 @@
   "generated_at": "2026-06-25T15:37:02.193718Z",
   "total_renders": 901,
   "by_source": {
-    "sub_flat": 100,
     "canonical_final": 18,
-    "sub_run": 501,
     "monday": 5,
+    "preview": 5,
+    "sub_flat": 100,
     "sub_latest": 272,
-    "preview": 5
+    "sub_run": 501
   },
   "assets": {
     "ESCRITURA_FINALS": [
@@ -263,6 +263,463 @@
         "size_bytes": 5152637,
         "mtime": "2026-06-15",
         "source": "preview"
+      }
+    ],
+    "MONDAY_DELIVERABLE": [
+      {
+        "path": "docs/site_data_monday/renders_monday/monday_cam_a_italian.png",
+        "asset": "MONDAY_DELIVERABLE",
+        "variant": "monday_cam_a_italian",
+        "date": "",
+        "run_tag": "monday_pack",
+        "sub_variant": "",
+        "size_bytes": 1977812,
+        "mtime": "2026-06-13",
+        "source": "monday"
+      },
+      {
+        "path": "docs/site_data_monday/renders_monday/monday_cam_b_bamboo.png",
+        "asset": "MONDAY_DELIVERABLE",
+        "variant": "monday_cam_b_bamboo",
+        "date": "",
+        "run_tag": "monday_pack",
+        "sub_variant": "",
+        "size_bytes": 1974398,
+        "mtime": "2026-06-13",
+        "source": "monday"
+      },
+      {
+        "path": "docs/site_data_monday/renders_monday/monday_cam_c_creek.png",
+        "asset": "MONDAY_DELIVERABLE",
+        "variant": "monday_cam_c_creek",
+        "date": "",
+        "run_tag": "monday_pack",
+        "sub_variant": "",
+        "size_bytes": 1927411,
+        "mtime": "2026-06-13",
+        "source": "monday"
+      },
+      {
+        "path": "docs/site_data_monday/renders_monday/monday_cam_d_earthtree.png",
+        "asset": "MONDAY_DELIVERABLE",
+        "variant": "monday_cam_d_earthtree",
+        "date": "",
+        "run_tag": "monday_pack",
+        "sub_variant": "",
+        "size_bytes": 1918935,
+        "mtime": "2026-06-13",
+        "source": "monday"
+      },
+      {
+        "path": "docs/site_data_monday/renders_monday/monday_overview.png",
+        "asset": "MONDAY_DELIVERABLE",
+        "variant": "monday_overview",
+        "date": "",
+        "run_tag": "monday_pack",
+        "sub_variant": "",
+        "size_bytes": 2003445,
+        "mtime": "2026-06-13",
+        "source": "monday"
+      }
+    ],
+    "agave": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_agave_front/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4721018,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_agave_side/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4817118,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_agave_top/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4849331,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_agave_front/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4721289,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_agave_side/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4806562,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_agave_top/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4885342,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_agave_front/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4700906,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_agave_side/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4802399,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_agave_top/B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4838479,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_agave_front/A.png",
+        "asset": "agave",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 5305389,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_agave_side/A.png",
+        "asset": "agave",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 5349573,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_agave_top/A.png",
+        "asset": "agave",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 5287884,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/agave_front_A.png",
+        "asset": "agave",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5305389,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/agave_front_B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4721289,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/agave_side_A.png",
+        "asset": "agave",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5349573,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/agave_side_B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4806562,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/agave_top_A.png",
+        "asset": "agave",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5287884,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/agave_top_B.png",
+        "asset": "agave",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 4885342,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
+    "anthurium": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_anthurium_front/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4709555,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_anthurium_side/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4740781,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_anthurium_top/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4836220,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_anthurium_front/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4767964,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_anthurium_side/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4823185,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_anthurium_top/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4965523,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_anthurium_front/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4727109,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_anthurium_side/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4754411,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_anthurium_top/B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4838317,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_anthurium_front/A.png",
+        "asset": "anthurium",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 5376188,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_anthurium_side/A.png",
+        "asset": "anthurium",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 5435261,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_anthurium_top/A.png",
+        "asset": "anthurium",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 5352395,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/anthurium_front_A.png",
+        "asset": "anthurium",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5376188,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/anthurium_front_B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4767964,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/anthurium_side_A.png",
+        "asset": "anthurium",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5435261,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/anthurium_side_B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4823185,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/anthurium_top_A.png",
+        "asset": "anthurium",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5352395,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/anthurium_top_B.png",
+        "asset": "anthurium",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 4965523,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
       }
     ],
     "bamboo_beton_28": [
@@ -2962,6 +3419,140 @@
         "source": "sub_latest"
       }
     ],
+    "bottle_wall": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_bottle_wall_front/B.png",
+        "asset": "bottle_wall",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4796942,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_bottle_wall_side/B.png",
+        "asset": "bottle_wall",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4650757,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_bottle_wall_top/B.png",
+        "asset": "bottle_wall",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 3753753,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_bottle_wall_front/A.png",
+        "asset": "bottle_wall",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4692639,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_bottle_wall_side/A.png",
+        "asset": "bottle_wall",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 4486918,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_bottle_wall_top/A.png",
+        "asset": "bottle_wall",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 4990138,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/bottle_wall_front_A.png",
+        "asset": "bottle_wall",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4692639,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/bottle_wall_front_B.png",
+        "asset": "bottle_wall",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4796942,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/bottle_wall_side_A.png",
+        "asset": "bottle_wall",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4486918,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/bottle_wall_side_B.png",
+        "asset": "bottle_wall",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4650757,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/bottle_wall_top_A.png",
+        "asset": "bottle_wall",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 4990138,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/bottle_wall_top_B.png",
+        "asset": "bottle_wall",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3753753,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
     "boulder_cluster": [
       {
         "path": "renders/sub/boulder_cluster_A.png",
@@ -3164,6 +3755,140 @@
         "source": "sub_latest"
       }
     ],
+    "canopy_volume": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_canopy_volume_front/B.png",
+        "asset": "canopy_volume",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4329479,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_canopy_volume_side/B.png",
+        "asset": "canopy_volume",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4281824,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_canopy_volume_top/B.png",
+        "asset": "canopy_volume",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 2762935,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_canopy_volume_front/A.png",
+        "asset": "canopy_volume",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4102321,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_canopy_volume_side/A.png",
+        "asset": "canopy_volume",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 4188383,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_canopy_volume_top/A.png",
+        "asset": "canopy_volume",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 3358297,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/canopy_volume_front_A.png",
+        "asset": "canopy_volume",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4102321,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/canopy_volume_front_B.png",
+        "asset": "canopy_volume",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4329479,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/canopy_volume_side_A.png",
+        "asset": "canopy_volume",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4188383,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/canopy_volume_side_B.png",
+        "asset": "canopy_volume",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4281824,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/canopy_volume_top_A.png",
+        "asset": "canopy_volume",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3358297,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/canopy_volume_top_B.png",
+        "asset": "canopy_volume",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 2762935,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
     "clay_terracotta_estate": [
       {
         "path": "renders/sub/clay_terracotta_estate_A.png",
@@ -3262,6 +3987,140 @@
         "sub_variant": "",
         "size_bytes": 4991508,
         "mtime": "2026-06-23",
+        "source": "sub_latest"
+      }
+    ],
+    "cob_walls": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_cob_walls_front/B.png",
+        "asset": "cob_walls",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 5021022,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_cob_walls_side/B.png",
+        "asset": "cob_walls",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4708283,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_cob_walls_top/B.png",
+        "asset": "cob_walls",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 3834459,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_cob_walls_front/A.png",
+        "asset": "cob_walls",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4955477,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_cob_walls_side/A.png",
+        "asset": "cob_walls",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 4793725,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_cob_walls_top/A.png",
+        "asset": "cob_walls",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 4960110,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/cob_walls_front_A.png",
+        "asset": "cob_walls",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4955477,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/cob_walls_front_B.png",
+        "asset": "cob_walls",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5021022,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/cob_walls_side_A.png",
+        "asset": "cob_walls",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4793725,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/cob_walls_side_B.png",
+        "asset": "cob_walls",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4708283,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/cob_walls_top_A.png",
+        "asset": "cob_walls",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 4960110,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/cob_walls_top_B.png",
+        "asset": "cob_walls",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3834459,
+        "mtime": "2026-06-11",
         "source": "sub_latest"
       }
     ],
@@ -4071,6 +4930,274 @@
         "sub_variant": "right",
         "size_bytes": 5132652,
         "mtime": "2026-06-15",
+        "source": "sub_latest"
+      }
+    ],
+    "escarpment": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_escarpment_front/B.png",
+        "asset": "escarpment",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4902338,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_escarpment_side/B.png",
+        "asset": "escarpment",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 5059153,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_escarpment_top/B.png",
+        "asset": "escarpment",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 5516753,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_escarpment_front/A.png",
+        "asset": "escarpment",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4981763,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_escarpment_side/A.png",
+        "asset": "escarpment",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 5127793,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_escarpment_top/A.png",
+        "asset": "escarpment",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 5461627,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/escarpment_front_A.png",
+        "asset": "escarpment",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4981763,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/escarpment_front_B.png",
+        "asset": "escarpment",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4902338,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/escarpment_side_A.png",
+        "asset": "escarpment",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5127793,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/escarpment_side_B.png",
+        "asset": "escarpment",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5059153,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/escarpment_top_A.png",
+        "asset": "escarpment",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5461627,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/escarpment_top_B.png",
+        "asset": "escarpment",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5516753,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
+    "fireflies": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_fireflies_front/B.png",
+        "asset": "fireflies",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 3853202,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_fireflies_side/B.png",
+        "asset": "fireflies",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 3826392,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_fireflies_top/B.png",
+        "asset": "fireflies",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 2395219,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_fireflies_front/A.png",
+        "asset": "fireflies",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 3779943,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_fireflies_side/A.png",
+        "asset": "fireflies",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 3863245,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_fireflies_top/A.png",
+        "asset": "fireflies",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 2774106,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/fireflies_front_A.png",
+        "asset": "fireflies",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 3779943,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/fireflies_front_B.png",
+        "asset": "fireflies",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 3853202,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/fireflies_side_A.png",
+        "asset": "fireflies",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 3863245,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/fireflies_side_B.png",
+        "asset": "fireflies",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 3826392,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/fireflies_top_A.png",
+        "asset": "fireflies",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 2774106,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/fireflies_top_B.png",
+        "asset": "fireflies",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 2395219,
+        "mtime": "2026-06-11",
         "source": "sub_latest"
       }
     ],
@@ -6140,6 +7267,406 @@
         "source": "sub_latest"
       }
     ],
+    "lapacho_tree": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_lapacho_tree_front/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4830184,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_lapacho_tree_side/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4743694,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_lapacho_tree_top/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4856036,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_lapacho_tree_front/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 5011358,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_lapacho_tree_side/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 5158266,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_lapacho_tree_top/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 5623852,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_lapacho_tree_front/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4423974,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_lapacho_tree_side/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4414209,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_lapacho_tree_top/B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 2852009,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_lapacho_tree_front/A.png",
+        "asset": "lapacho_tree",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4915050,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_lapacho_tree_side/A.png",
+        "asset": "lapacho_tree",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 5051739,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_lapacho_tree_top/A.png",
+        "asset": "lapacho_tree",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 5616559,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/lapacho_tree_front_A.png",
+        "asset": "lapacho_tree",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4915050,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/lapacho_tree_front_B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5011358,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/lapacho_tree_side_A.png",
+        "asset": "lapacho_tree",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5051739,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/lapacho_tree_side_B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5158266,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/lapacho_tree_top_A.png",
+        "asset": "lapacho_tree",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5616559,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/lapacho_tree_top_B.png",
+        "asset": "lapacho_tree",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5623852,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
+    "mango": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_mango_front/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4398784,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_mango_side/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4409900,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_mango_top/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 2496300,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_mango_front/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4592515,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_mango_side/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4616491,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_mango_top/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 3125804,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_mango_front/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4474595,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_mango_side/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4498633,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_mango_top/B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 35310,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_mango_front/A.png",
+        "asset": "mango",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4377395,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_mango_side/A.png",
+        "asset": "mango",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 4502355,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_mango_top/A.png",
+        "asset": "mango",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 3576388,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/mango_front_A.png",
+        "asset": "mango",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4377395,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/mango_front_B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4592515,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/mango_side_A.png",
+        "asset": "mango",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4502355,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/mango_side_B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4616491,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/mango_top_A.png",
+        "asset": "mango",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3576388,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/mango_top_B.png",
+        "asset": "mango",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3125804,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
     "material_wall_compare": [
       {
         "path": "renders/sub/material_wall_compare_A.png",
@@ -6291,6 +7818,676 @@
         "size_bytes": 2276340,
         "mtime": "2026-06-17",
         "source": "sub_flat"
+      }
+    ],
+    "pindo_palm": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_pindo_palm_front/B.png",
+        "asset": "pindo_palm",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4758103,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_pindo_palm_side/B.png",
+        "asset": "pindo_palm",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4759414,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_pindo_palm_top/B.png",
+        "asset": "pindo_palm",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 3056614,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_pindo_palm_front/A.png",
+        "asset": "pindo_palm",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4273706,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_pindo_palm_side/A.png",
+        "asset": "pindo_palm",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 4369825,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_pindo_palm_top/A.png",
+        "asset": "pindo_palm",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 3482947,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/pindo_palm_front_A.png",
+        "asset": "pindo_palm",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4273706,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/pindo_palm_front_B.png",
+        "asset": "pindo_palm",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4758103,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/pindo_palm_side_A.png",
+        "asset": "pindo_palm",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4369825,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/pindo_palm_side_B.png",
+        "asset": "pindo_palm",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4759414,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/pindo_palm_top_A.png",
+        "asset": "pindo_palm",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3482947,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/pindo_palm_top_B.png",
+        "asset": "pindo_palm",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3056614,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
+    "services": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_services_front/B.png",
+        "asset": "services",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4927428,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_services_side/B.png",
+        "asset": "services",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 4554353,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_services_top/B.png",
+        "asset": "services",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 3873664,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_services_front/A.png",
+        "asset": "services",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 4923740,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_services_side/A.png",
+        "asset": "services",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 4640154,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_services_top/A.png",
+        "asset": "services",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 4830929,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/services_front_A.png",
+        "asset": "services",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4923740,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/services_front_B.png",
+        "asset": "services",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4927428,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/services_side_A.png",
+        "asset": "services",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4640154,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/services_side_B.png",
+        "asset": "services",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 4554353,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/services_top_A.png",
+        "asset": "services",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 4830929,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/services_top_B.png",
+        "asset": "services",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 3873664,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
+    "stream": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_stream_front/B.png",
+        "asset": "stream",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 5261208,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_stream_side/B.png",
+        "asset": "stream",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 5439200,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_stream_top/B.png",
+        "asset": "stream",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 5573006,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_stream_front/A.png",
+        "asset": "stream",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 5166145,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_stream_side/A.png",
+        "asset": "stream",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 5266285,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_stream_top/A.png",
+        "asset": "stream",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 5438521,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/stream_front_A.png",
+        "asset": "stream",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5166145,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/stream_front_B.png",
+        "asset": "stream",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5261208,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/stream_side_A.png",
+        "asset": "stream",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5266285,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/stream_side_B.png",
+        "asset": "stream",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5439200,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/stream_top_A.png",
+        "asset": "stream",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5438521,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/stream_top_B.png",
+        "asset": "stream",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5573006,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
+    "tatakua": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_tatakua_front/B.png",
+        "asset": "tatakua",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 4951042,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_tatakua_side/B.png",
+        "asset": "tatakua",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 5077585,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_tatakua_top/B.png",
+        "asset": "tatakua",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4926764,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_tatakua_front/A.png",
+        "asset": "tatakua",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 5320253,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_tatakua_side/A.png",
+        "asset": "tatakua",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 5380079,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_tatakua_top/A.png",
+        "asset": "tatakua",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 5332891,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/tatakua_front_A.png",
+        "asset": "tatakua",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5320253,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/tatakua_front_B.png",
+        "asset": "tatakua",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 4951042,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/tatakua_side_A.png",
+        "asset": "tatakua",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5380079,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/tatakua_side_B.png",
+        "asset": "tatakua",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5077585,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/tatakua_top_A.png",
+        "asset": "tatakua",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5332891,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/tatakua_top_B.png",
+        "asset": "tatakua",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 4926764,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      }
+    ],
+    "terraces": [
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_terraces_front/B.png",
+        "asset": "terraces",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "front",
+        "size_bytes": 5169675,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_terraces_side/B.png",
+        "asset": "terraces",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "side",
+        "size_bytes": 5176910,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/20260611_gallery_real_terraces_top/B.png",
+        "asset": "terraces",
+        "variant": "B",
+        "date": "2026-06-11",
+        "run_tag": "gallery",
+        "sub_variant": "top",
+        "size_bytes": 4992302,
+        "mtime": "2026-06-11",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_terraces_front/A.png",
+        "asset": "terraces",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "front",
+        "size_bytes": 5506055,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_terraces_side/A.png",
+        "asset": "terraces",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "side",
+        "size_bytes": 5569926,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/runs/p0_rerender_20260612_terraces_top/A.png",
+        "asset": "terraces",
+        "variant": "A",
+        "date": "2026-06-12",
+        "run_tag": "p0_rerender",
+        "sub_variant": "top",
+        "size_bytes": 5644258,
+        "mtime": "2026-06-12",
+        "source": "sub_run"
+      },
+      {
+        "path": "renders/sub/latest/terraces_front_A.png",
+        "asset": "terraces",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5506055,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/terraces_front_B.png",
+        "asset": "terraces",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "front",
+        "size_bytes": 5169675,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/terraces_side_A.png",
+        "asset": "terraces",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5569926,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/terraces_side_B.png",
+        "asset": "terraces",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "side",
+        "size_bytes": 5176910,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/terraces_top_A.png",
+        "asset": "terraces",
+        "variant": "A",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 5644258,
+        "mtime": "2026-06-12",
+        "source": "sub_latest"
+      },
+      {
+        "path": "renders/sub/latest/terraces_top_B.png",
+        "asset": "terraces",
+        "variant": "B",
+        "date": "",
+        "run_tag": "sub_latest_mirror",
+        "sub_variant": "top",
+        "size_bytes": 4992302,
+        "mtime": "2026-06-11",
+        "source": "sub_latest"
       }
     ],
     "terrain_62ha": [
@@ -7366,806 +9563,6 @@
         "source": "sub_latest"
       }
     ],
-    "agave": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_agave_front/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4721018,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_agave_side/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4817118,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_agave_top/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4849331,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_agave_front/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4721289,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_agave_side/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4806562,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_agave_top/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4885342,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_agave_front/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4700906,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_agave_side/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4802399,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_agave_top/B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4838479,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_agave_front/A.png",
-        "asset": "agave",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 5305389,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_agave_side/A.png",
-        "asset": "agave",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 5349573,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_agave_top/A.png",
-        "asset": "agave",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 5287884,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/agave_front_A.png",
-        "asset": "agave",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5305389,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/agave_front_B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4721289,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/agave_side_A.png",
-        "asset": "agave",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5349573,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/agave_side_B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4806562,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/agave_top_A.png",
-        "asset": "agave",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5287884,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/agave_top_B.png",
-        "asset": "agave",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 4885342,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "anthurium": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_anthurium_front/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4709555,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_anthurium_side/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4740781,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_anthurium_top/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4836220,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_anthurium_front/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4767964,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_anthurium_side/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4823185,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_anthurium_top/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4965523,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_anthurium_front/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4727109,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_anthurium_side/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4754411,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_anthurium_top/B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4838317,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_anthurium_front/A.png",
-        "asset": "anthurium",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 5376188,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_anthurium_side/A.png",
-        "asset": "anthurium",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 5435261,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_anthurium_top/A.png",
-        "asset": "anthurium",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 5352395,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/anthurium_front_A.png",
-        "asset": "anthurium",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5376188,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/anthurium_front_B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4767964,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/anthurium_side_A.png",
-        "asset": "anthurium",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5435261,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/anthurium_side_B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4823185,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/anthurium_top_A.png",
-        "asset": "anthurium",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5352395,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/anthurium_top_B.png",
-        "asset": "anthurium",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 4965523,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "lapacho_tree": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_lapacho_tree_front/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4830184,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_lapacho_tree_side/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4743694,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_lapacho_tree_top/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4856036,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_lapacho_tree_front/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 5011358,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_lapacho_tree_side/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 5158266,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_lapacho_tree_top/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 5623852,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_lapacho_tree_front/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4423974,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_lapacho_tree_side/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4414209,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_lapacho_tree_top/B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 2852009,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_lapacho_tree_front/A.png",
-        "asset": "lapacho_tree",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4915050,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_lapacho_tree_side/A.png",
-        "asset": "lapacho_tree",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 5051739,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_lapacho_tree_top/A.png",
-        "asset": "lapacho_tree",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 5616559,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/lapacho_tree_front_A.png",
-        "asset": "lapacho_tree",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4915050,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/lapacho_tree_front_B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5011358,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/lapacho_tree_side_A.png",
-        "asset": "lapacho_tree",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5051739,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/lapacho_tree_side_B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5158266,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/lapacho_tree_top_A.png",
-        "asset": "lapacho_tree",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5616559,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/lapacho_tree_top_B.png",
-        "asset": "lapacho_tree",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5623852,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "mango": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_mango_front/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4398784,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_mango_side/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4409900,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_mango_top/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 2496300,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_mango_front/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4592515,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_mango_side/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4616491,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_flora_photoreal_v2_mango_top/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 3125804,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_mango_front/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4474595,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_mango_side/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4498633,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_mango_top/B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 35310,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_mango_front/A.png",
-        "asset": "mango",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4377395,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_mango_side/A.png",
-        "asset": "mango",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 4502355,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_mango_top/A.png",
-        "asset": "mango",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 3576388,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/mango_front_A.png",
-        "asset": "mango",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4377395,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/mango_front_B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4592515,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/mango_side_A.png",
-        "asset": "mango",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4502355,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/mango_side_B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4616491,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/mango_top_A.png",
-        "asset": "mango",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3576388,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/mango_top_B.png",
-        "asset": "mango",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3125804,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
     "tree_fern": [
       {
         "path": "renders/sub/runs/20260611_gallery_flora_photoreal_tree_fern_front/B.png",
@@ -8362,1346 +9759,6 @@
         "run_tag": "sub_latest_mirror",
         "sub_variant": "top",
         "size_bytes": 4467620,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "bottle_wall": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_bottle_wall_front/B.png",
-        "asset": "bottle_wall",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4796942,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_bottle_wall_side/B.png",
-        "asset": "bottle_wall",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4650757,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_bottle_wall_top/B.png",
-        "asset": "bottle_wall",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 3753753,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_bottle_wall_front/A.png",
-        "asset": "bottle_wall",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4692639,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_bottle_wall_side/A.png",
-        "asset": "bottle_wall",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 4486918,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_bottle_wall_top/A.png",
-        "asset": "bottle_wall",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 4990138,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/bottle_wall_front_A.png",
-        "asset": "bottle_wall",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4692639,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/bottle_wall_front_B.png",
-        "asset": "bottle_wall",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4796942,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/bottle_wall_side_A.png",
-        "asset": "bottle_wall",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4486918,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/bottle_wall_side_B.png",
-        "asset": "bottle_wall",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4650757,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/bottle_wall_top_A.png",
-        "asset": "bottle_wall",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 4990138,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/bottle_wall_top_B.png",
-        "asset": "bottle_wall",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3753753,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "canopy_volume": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_canopy_volume_front/B.png",
-        "asset": "canopy_volume",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4329479,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_canopy_volume_side/B.png",
-        "asset": "canopy_volume",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4281824,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_canopy_volume_top/B.png",
-        "asset": "canopy_volume",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 2762935,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_canopy_volume_front/A.png",
-        "asset": "canopy_volume",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4102321,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_canopy_volume_side/A.png",
-        "asset": "canopy_volume",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 4188383,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_canopy_volume_top/A.png",
-        "asset": "canopy_volume",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 3358297,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/canopy_volume_front_A.png",
-        "asset": "canopy_volume",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4102321,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/canopy_volume_front_B.png",
-        "asset": "canopy_volume",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4329479,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/canopy_volume_side_A.png",
-        "asset": "canopy_volume",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4188383,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/canopy_volume_side_B.png",
-        "asset": "canopy_volume",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4281824,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/canopy_volume_top_A.png",
-        "asset": "canopy_volume",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3358297,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/canopy_volume_top_B.png",
-        "asset": "canopy_volume",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 2762935,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "cob_walls": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_cob_walls_front/B.png",
-        "asset": "cob_walls",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 5021022,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_cob_walls_side/B.png",
-        "asset": "cob_walls",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4708283,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_cob_walls_top/B.png",
-        "asset": "cob_walls",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 3834459,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_cob_walls_front/A.png",
-        "asset": "cob_walls",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4955477,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_cob_walls_side/A.png",
-        "asset": "cob_walls",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 4793725,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_cob_walls_top/A.png",
-        "asset": "cob_walls",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 4960110,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/cob_walls_front_A.png",
-        "asset": "cob_walls",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4955477,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/cob_walls_front_B.png",
-        "asset": "cob_walls",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5021022,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/cob_walls_side_A.png",
-        "asset": "cob_walls",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4793725,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/cob_walls_side_B.png",
-        "asset": "cob_walls",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4708283,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/cob_walls_top_A.png",
-        "asset": "cob_walls",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 4960110,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/cob_walls_top_B.png",
-        "asset": "cob_walls",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3834459,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "escarpment": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_escarpment_front/B.png",
-        "asset": "escarpment",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4902338,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_escarpment_side/B.png",
-        "asset": "escarpment",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 5059153,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_escarpment_top/B.png",
-        "asset": "escarpment",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 5516753,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_escarpment_front/A.png",
-        "asset": "escarpment",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4981763,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_escarpment_side/A.png",
-        "asset": "escarpment",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 5127793,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_escarpment_top/A.png",
-        "asset": "escarpment",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 5461627,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/escarpment_front_A.png",
-        "asset": "escarpment",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4981763,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/escarpment_front_B.png",
-        "asset": "escarpment",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4902338,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/escarpment_side_A.png",
-        "asset": "escarpment",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5127793,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/escarpment_side_B.png",
-        "asset": "escarpment",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5059153,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/escarpment_top_A.png",
-        "asset": "escarpment",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5461627,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/escarpment_top_B.png",
-        "asset": "escarpment",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5516753,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "fireflies": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_fireflies_front/B.png",
-        "asset": "fireflies",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 3853202,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_fireflies_side/B.png",
-        "asset": "fireflies",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 3826392,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_fireflies_top/B.png",
-        "asset": "fireflies",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 2395219,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_fireflies_front/A.png",
-        "asset": "fireflies",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 3779943,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_fireflies_side/A.png",
-        "asset": "fireflies",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 3863245,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_fireflies_top/A.png",
-        "asset": "fireflies",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 2774106,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/fireflies_front_A.png",
-        "asset": "fireflies",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 3779943,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/fireflies_front_B.png",
-        "asset": "fireflies",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 3853202,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/fireflies_side_A.png",
-        "asset": "fireflies",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 3863245,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/fireflies_side_B.png",
-        "asset": "fireflies",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 3826392,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/fireflies_top_A.png",
-        "asset": "fireflies",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 2774106,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/fireflies_top_B.png",
-        "asset": "fireflies",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 2395219,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "pindo_palm": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_pindo_palm_front/B.png",
-        "asset": "pindo_palm",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4758103,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_pindo_palm_side/B.png",
-        "asset": "pindo_palm",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4759414,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_pindo_palm_top/B.png",
-        "asset": "pindo_palm",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 3056614,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_pindo_palm_front/A.png",
-        "asset": "pindo_palm",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4273706,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_pindo_palm_side/A.png",
-        "asset": "pindo_palm",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 4369825,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_pindo_palm_top/A.png",
-        "asset": "pindo_palm",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 3482947,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/pindo_palm_front_A.png",
-        "asset": "pindo_palm",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4273706,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/pindo_palm_front_B.png",
-        "asset": "pindo_palm",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4758103,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/pindo_palm_side_A.png",
-        "asset": "pindo_palm",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4369825,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/pindo_palm_side_B.png",
-        "asset": "pindo_palm",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4759414,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/pindo_palm_top_A.png",
-        "asset": "pindo_palm",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3482947,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/pindo_palm_top_B.png",
-        "asset": "pindo_palm",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3056614,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "services": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_services_front/B.png",
-        "asset": "services",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4927428,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_services_side/B.png",
-        "asset": "services",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 4554353,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_services_top/B.png",
-        "asset": "services",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 3873664,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_services_front/A.png",
-        "asset": "services",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 4923740,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_services_side/A.png",
-        "asset": "services",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 4640154,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_services_top/A.png",
-        "asset": "services",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 4830929,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/services_front_A.png",
-        "asset": "services",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4923740,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/services_front_B.png",
-        "asset": "services",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4927428,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/services_side_A.png",
-        "asset": "services",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4640154,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/services_side_B.png",
-        "asset": "services",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 4554353,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/services_top_A.png",
-        "asset": "services",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 4830929,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/services_top_B.png",
-        "asset": "services",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 3873664,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "stream": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_stream_front/B.png",
-        "asset": "stream",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 5261208,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_stream_side/B.png",
-        "asset": "stream",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 5439200,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_stream_top/B.png",
-        "asset": "stream",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 5573006,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_stream_front/A.png",
-        "asset": "stream",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 5166145,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_stream_side/A.png",
-        "asset": "stream",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 5266285,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_stream_top/A.png",
-        "asset": "stream",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 5438521,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/stream_front_A.png",
-        "asset": "stream",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5166145,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/stream_front_B.png",
-        "asset": "stream",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5261208,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/stream_side_A.png",
-        "asset": "stream",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5266285,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/stream_side_B.png",
-        "asset": "stream",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5439200,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/stream_top_A.png",
-        "asset": "stream",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5438521,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/stream_top_B.png",
-        "asset": "stream",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5573006,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "tatakua": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_tatakua_front/B.png",
-        "asset": "tatakua",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 4951042,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_tatakua_side/B.png",
-        "asset": "tatakua",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 5077585,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_tatakua_top/B.png",
-        "asset": "tatakua",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4926764,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_tatakua_front/A.png",
-        "asset": "tatakua",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 5320253,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_tatakua_side/A.png",
-        "asset": "tatakua",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 5380079,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_tatakua_top/A.png",
-        "asset": "tatakua",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 5332891,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/tatakua_front_A.png",
-        "asset": "tatakua",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5320253,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/tatakua_front_B.png",
-        "asset": "tatakua",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 4951042,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/tatakua_side_A.png",
-        "asset": "tatakua",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5380079,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/tatakua_side_B.png",
-        "asset": "tatakua",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5077585,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/tatakua_top_A.png",
-        "asset": "tatakua",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5332891,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/tatakua_top_B.png",
-        "asset": "tatakua",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 4926764,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      }
-    ],
-    "terraces": [
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_terraces_front/B.png",
-        "asset": "terraces",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "front",
-        "size_bytes": 5169675,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_terraces_side/B.png",
-        "asset": "terraces",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "side",
-        "size_bytes": 5176910,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/20260611_gallery_real_terraces_top/B.png",
-        "asset": "terraces",
-        "variant": "B",
-        "date": "2026-06-11",
-        "run_tag": "gallery",
-        "sub_variant": "top",
-        "size_bytes": 4992302,
-        "mtime": "2026-06-11",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_terraces_front/A.png",
-        "asset": "terraces",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "front",
-        "size_bytes": 5506055,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_terraces_side/A.png",
-        "asset": "terraces",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "side",
-        "size_bytes": 5569926,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/runs/p0_rerender_20260612_terraces_top/A.png",
-        "asset": "terraces",
-        "variant": "A",
-        "date": "2026-06-12",
-        "run_tag": "p0_rerender",
-        "sub_variant": "top",
-        "size_bytes": 5644258,
-        "mtime": "2026-06-12",
-        "source": "sub_run"
-      },
-      {
-        "path": "renders/sub/latest/terraces_front_A.png",
-        "asset": "terraces",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5506055,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/terraces_front_B.png",
-        "asset": "terraces",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "front",
-        "size_bytes": 5169675,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/terraces_side_A.png",
-        "asset": "terraces",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5569926,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/terraces_side_B.png",
-        "asset": "terraces",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "side",
-        "size_bytes": 5176910,
-        "mtime": "2026-06-11",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/terraces_top_A.png",
-        "asset": "terraces",
-        "variant": "A",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 5644258,
-        "mtime": "2026-06-12",
-        "source": "sub_latest"
-      },
-      {
-        "path": "renders/sub/latest/terraces_top_B.png",
-        "asset": "terraces",
-        "variant": "B",
-        "date": "",
-        "run_tag": "sub_latest_mirror",
-        "sub_variant": "top",
-        "size_bytes": 4992302,
         "mtime": "2026-06-11",
         "source": "sub_latest"
       }
@@ -9972,63 +10029,6 @@
         "size_bytes": 3895804,
         "mtime": "2026-06-11",
         "source": "sub_latest"
-      }
-    ],
-    "MONDAY_DELIVERABLE": [
-      {
-        "path": "docs/site_data_monday/renders_monday/monday_cam_a_italian.png",
-        "asset": "MONDAY_DELIVERABLE",
-        "variant": "monday_cam_a_italian",
-        "date": "",
-        "run_tag": "monday_pack",
-        "sub_variant": "",
-        "size_bytes": 1977812,
-        "mtime": "2026-06-13",
-        "source": "monday"
-      },
-      {
-        "path": "docs/site_data_monday/renders_monday/monday_cam_b_bamboo.png",
-        "asset": "MONDAY_DELIVERABLE",
-        "variant": "monday_cam_b_bamboo",
-        "date": "",
-        "run_tag": "monday_pack",
-        "sub_variant": "",
-        "size_bytes": 1974398,
-        "mtime": "2026-06-13",
-        "source": "monday"
-      },
-      {
-        "path": "docs/site_data_monday/renders_monday/monday_cam_c_creek.png",
-        "asset": "MONDAY_DELIVERABLE",
-        "variant": "monday_cam_c_creek",
-        "date": "",
-        "run_tag": "monday_pack",
-        "sub_variant": "",
-        "size_bytes": 1927411,
-        "mtime": "2026-06-13",
-        "source": "monday"
-      },
-      {
-        "path": "docs/site_data_monday/renders_monday/monday_cam_d_earthtree.png",
-        "asset": "MONDAY_DELIVERABLE",
-        "variant": "monday_cam_d_earthtree",
-        "date": "",
-        "run_tag": "monday_pack",
-        "sub_variant": "",
-        "size_bytes": 1918935,
-        "mtime": "2026-06-13",
-        "source": "monday"
-      },
-      {
-        "path": "docs/site_data_monday/renders_monday/monday_overview.png",
-        "asset": "MONDAY_DELIVERABLE",
-        "variant": "monday_overview",
-        "date": "",
-        "run_tag": "monday_pack",
-        "sub_variant": "",
-        "size_bytes": 2003445,
-        "mtime": "2026-06-13",
-        "source": "monday"
       }
     ]
   }

@@ -7,7 +7,7 @@ VARIANT ?= A
 CAM ?= hero
 ASSET ?= cob_walls
 
-.PHONY: help smoke preview final finals sub audit lint test pdf boq deck
+.PHONY: help smoke preview final finals sub audit lint test pdf boq deck catalogue sheets
 
 help:
 	@echo "La Quebrada Viva — make targets"
@@ -23,6 +23,8 @@ help:
 	@echo "  make pdf                        Build Wesley one-pager PDF -> docs/wesley_brief_onepager.pdf"
 	@echo "  make boq                        Bill-of-quantities rollup -> docs/boq/boq_rollup.{csv,md}"
 	@echo "  make deck                       Escritura signing deck PDF -> docs/escritura_deck/escritura_deck_v1.pdf"
+	@echo "  make catalogue                  Rebuild render catalogue -> docs/render_catalogue/{INDEX.md,by_asset/,catalogue.json}"
+	@echo "  make sheets                     Rebuild per-asset contact-sheet thumbnails (requires ImageMagick)"
 	@echo ""
 	@echo "Variables: VARIANT (A|B|C), CAM (hero|stream_up|terrace|cliff|dusk|petal_macro),"
 	@echo "           ASSET (any module under lqv/subscene/, minus .py)"
@@ -60,3 +62,9 @@ boq:
 
 deck: boq
 	python3 scripts/build_escritura_deck.py
+
+sheets:
+	python3 scripts/build_contact_sheets.py
+
+catalogue: sheets
+	python3 scripts/build_render_catalogue.py

@@ -596,18 +596,27 @@ def main() -> int:
 
     index = write_index(by_asset, all_records, OUT)
 
-    # JSON sidecar
+    # JSON sidecar — keep `generated_at` stable if content is unchanged so
+    # `make catalogue` is idempotent and re-runs don't churn git history.
     json_path = OUT / "catalogue.json"
-    json_path.write_text(json.dumps(
-        {
-            "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-            "total_renders": len(all_records),
-            "by_source": {src: sum(1 for r in all_records if r.source == src)
-                          for src in {r.source for r in all_records}},
-            "assets": {a: [asdict(r) for r in recs] for a, recs in by_asset.items()},
-        },
-        indent=2,
-    ))
+    payload = {
+        "total_renders": len(all_records),
+        "by_source": {src: sum(1 for r in all_records if r.source == src)
+                      for src in sorted({r.source for r in all_records})},
+        "assets": {a: [asdict(r) for r in recs] for a, recs in sorted(by_asset.items())},
+    }
+    prev_ts = None
+    prev_payload = None
+    if json_path.exists():
+        try:
+            prev = json.loads(json_path.read_text())
+            prev_ts = prev.get("generated_at")
+            prev_payload = {k: v for k, v in prev.items() if k != "generated_at"}
+        except json.JSONDecodeError:
+            pass
+    ts = prev_ts if prev_payload == payload and prev_ts else \
+        datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    json_path.write_text(json.dumps({"generated_at": ts, **payload}, indent=2))
 
     print(f"Wrote {index}")
     print(f"Wrote {json_path}")
