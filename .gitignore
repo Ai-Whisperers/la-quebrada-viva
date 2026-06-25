@@ -47,8 +47,12 @@ scripts/mcp_daemon.py
 *.crdownload
 *.part
 
-# Stale artifacts kept out of history (reference-only monolith, old renders)
+# Stale artifacts kept out of history (reference-only monolith, old renders).
+# Curated doc archive under docs/_archive/ is intentionally tracked (see
+# docs/_archive/MANIFEST.md for the index).
 _archive/
+!docs/_archive/
+!docs/_archive/**
 
 # Regenerable assets — re-fetched by scripts/download_assets.sh (HDRIs + PBR
 # textures from Poly Haven CC0). assets/models/ is now 16 GB of fetched
