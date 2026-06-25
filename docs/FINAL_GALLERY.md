@@ -4,7 +4,7 @@
 Three lighting variants (**A** dawn / interior · **B** neutral mid-day · **C** golden hero) × six cameras (**cliff · dusk · hero · petal_macro · stream_up · terrace**).
 Frozen at commit `85e86aa` (renderer byte-identity preserved this sprint).
 
-Companion to [HOUSES_REVIEW_2026-06-14.md](HOUSES_REVIEW_2026-06-14.md) — that doc covers per-asset sub-renders; this one covers full-scene composites.
+Companion to the per-asset gallery at `docs/render_catalogue/INDEX.md`; the per-house critique that originally lived alongside this doc is archived at [`_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md`](_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md).
 
 ---
 

@@ -6,7 +6,7 @@ site/climate/hydrology (where the building sits and what the weather does), mark
 **index doc**: it points to the canonical section in the source doc and gives a one-paragraph
 orientation, so readers find what they need in one hop without re-reading either source in full.
 
-Created **2026-06-11** as part of `docs/UPGRADE_PLAN.md` T1.5 (doc consolidation). The two
+Created **2026-06-11** as part of the T1.5 doc-consolidation slice of the (now archived) upgrade plan at `docs/_archive/2026-06-1X/UPGRADE_PLAN.md`. The two
 source docs are not deleted or excerpted — they remain authoritative for their own scope.
 Cross-references in those docs point back here so navigation is bidirectional.
 

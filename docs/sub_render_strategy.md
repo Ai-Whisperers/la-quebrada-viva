@@ -2,7 +2,7 @@
 
 Architectural shift proposed by Wesley/Ivan during the 2026-06-10 session: instead of building, iterating on, and re-rendering the whole `build_scene.py` monolith every time we touch any single asset, we build many **sub-renders** first — each one renders a single asset/typology/amenity/component in isolation — and only at the end do we composite the whole scene with all approved assets in place.
 
-This file is the design doc for that shift. Implementation tasks land in `UPGRADE_PLAN.md` Tier 1 (T1.1) and Tier 2 (T2.1). Critique context in `CRITIQUE_2026-06-10.md` §§2, 4. The status quo (monolithic `build_scene.py`) is not deleted — it remains the final composite path. Sub-renders are an additive iteration layer beneath it.
+This file is the design doc for that shift. Implementation tasks originally landed in the Tier-1 (T1.1) and Tier-2 (T2.1) slices of the archived upgrade plan at `docs/_archive/2026-06-1X/UPGRADE_PLAN.md`; critique context lives at `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` §§2, 4. The status quo (monolithic `build_scene.py`) is not deleted — it remains the final composite path. Sub-renders are an additive iteration layer beneath it.
 
 ---
 
@@ -206,7 +206,7 @@ This approach already exists in art tooling (Blender's "asset preview"). Why a n
 
 ## 10. Sequencing
 
-Recommended execution order, dovetailing with `UPGRADE_PLAN.md`:
+Recommended execution order (originally dovetailed with the archived plan at `docs/_archive/2026-06-1X/UPGRADE_PLAN.md`):
 
 1. T1.1 — build `lqv/subscene/base.py` + first 3 drivers (`cob_walls`, `bottle_wall`, `tatakuá`).
 2. Validate isolation works; iterate on the template if seam issues appear.
@@ -223,8 +223,8 @@ This sequence keeps the renderer byte-identity preserved through step 7. Only st
 
 ## Cross-references
 
-- `docs/CRITIQUE_2026-06-10.md` §2, §4 — the fragility this fixes.
-- `docs/UPGRADE_PLAN.md` Tier 1 T1.1, Tier 2 T2.1 — execution scheduling.
+- `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` §2, §4 — the fragility this fixes (archived).
+- `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` Tier 1 T1.1, Tier 2 T2.1 — original execution scheduling (archived; sub-render framework now landed).
 - `CLAUDE.md` "Critique-derived standing rules" #4 — sub-render-first as default workflow.
 - `lqv/engine.py` — the setup primitives `base.py` will re-use.
 - `lqv/materials.py` — `MAT` registry, mandatory for every sub-render.

@@ -48,7 +48,6 @@ The project is "dual-scope": the original La Quebrada Viva cob house, plus Wesle
 | `CLAUDE.md` | 19 K | Project-local agent instructions — 10 design rules, invariants, plant species, sub-render workflow. |
 | `STATUS.md` | 30 K | Canonical state document. Render manifest, milestone log, dual-scope summary. |
 | `ARCHITECTURE.md` | — | (in `docs/` — module layout, RNG invariant). |
-| `AUTONOMOUS_PLAN.md` | — | Long-running autonomy plan. |
 | `LICENSE_BUNDLE.md` | 9.4 K | License gate for everything Wesley receives. |
 | `PROVENANCE.md` | 11 K | DEM + sat data licenses, SHA-256, bbox, retrieval dates. |
 | `Makefile` | 2 K | `make boq`, `make deck`, etc. |
@@ -114,7 +113,7 @@ Python is the load-bearing surface; markdown is heavy because the escritura deck
  968  docs/DEM_TOOLING_RESEARCH.md
  743  docs/TOOLING_AUDIT_AND_OPPORTUNITIES.md
  640  docs/paraguay_clay_house_research.md
- 640  docs/MODELS_ROAST.md
+ 640  docs/_archive/2026-06-1X/MODELS_ROAST.md
  639  docs/ASSETS_INTEGRATION_PLAN.md
  588  docs/prompt_location_scene.md
  564  docs/EUROPEAN_TOURISM_SPEC.md
@@ -368,8 +367,9 @@ Authoritative navigation entry: [`docs/INDEX.md`](docs/INDEX.md) (tiered escritu
 - `docs/site_data/satdata_brief.md` — S1–S4 satellite pipeline reader.
 - `docs/research/README.md` — research synthesis.
 - `docs/RESEARCH_GAPS.md` — open gaps + close plan.
-- `docs/CRITIQUE_2026-06-10.md` — honest-roast critique snapshot.
-- `docs/UPGRADE_PLAN.md` — Tier 0/1/2/3 derived from CRITIQUE.
+- `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` — honest-roast critique snapshot (archived; Tier-0 carry-forward landed).
+- `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` — Tier 0/1/2/3 derived from CRITIQUE (archived; carry-forward items live in `docs/DEFERRED_BUGS.md` + TaskList #34–#50).
+- `docs/_archive/MANIFEST.md` — archive index + provenance table.
 
 ---
 
@@ -516,7 +516,7 @@ As of the latest sweep:
 | How do I add a new asset/typology? | [`docs/sub_render_strategy.md`](docs/sub_render_strategy.md), `lqv/subscene/base.py` |
 | What are the design rules? | [`CLAUDE.md`](CLAUDE.md) (10 rules), `lqv/util/ten_rules_check.py` |
 | What sat-data licenses apply? | [`PROVENANCE.md`](PROVENANCE.md), [`LICENSE_BUNDLE.md`](LICENSE_BUNDLE.md) |
-| What was critiqued? | [`docs/CRITIQUE_2026-06-10.md`](docs/CRITIQUE_2026-06-10.md), [`docs/MODELS_ROAST.md`](docs/MODELS_ROAST.md) |
+| What was critiqued? | [`docs/_archive/MANIFEST.md`](docs/_archive/MANIFEST.md) — index over archived critiques (`CRITIQUE_2026-06-10.md`, `MODELS_ROAST.md`, `HOUSES_REVIEW_2026-06-14.md`, etc.) |
 | What's the deliverable bundle SHA/page-count? | [`dist/print_pack_2026-06-27/INTEGRITY.md`](dist/print_pack_2026-06-27/INTEGRITY.md), [`dist/print_pack_2026-06-27/WALLET_CARD.txt`](dist/print_pack_2026-06-27/WALLET_CARD.txt) |
 | What are the BoQ totals? | [`docs/boq/boq_rollup.md`](docs/boq/boq_rollup.md) |
 | What's the Pelton head map? | `dist/wesley_bundle_…/06_pelton_feasibility/`, `scripts/build_pelton_siting.py` |

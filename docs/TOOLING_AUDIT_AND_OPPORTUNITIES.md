@@ -740,4 +740,4 @@ If we land Waves 1-3 above:
 
 ---
 
-*End of audit. This document supersedes ad-hoc improvement plans `docs/IMPROVEMENT_PLAN_2026-06-13.md` and `docs/UPGRADE_PLAN.md` for the tooling/features dimension; those remain authoritative for project-mgmt scheduling.*
+*End of audit. This document supersedes ad-hoc improvement plans (now archived at `docs/_archive/2026-06-1X/IMPROVEMENT_PLAN_2026-06-13.md` and `docs/_archive/2026-06-1X/UPGRADE_PLAN.md`) for the tooling/features dimension; project-mgmt scheduling now lives in the in-conversation TaskList and `STATUS.md`.*

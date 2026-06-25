@@ -41,7 +41,7 @@ A-variant pool render shows sky reflection. C-variant pool render shows tinted b
 ## Bug 2 — `lapacho_timber` plastic-laminate
 
 ### Symptom
-Decks, planks, coping, handrails, and column sleeves across all 17 typologies render as flat orange-salmon plastic. No wood grain, no plank seams, no UV scale — reads as injection-molded polypropylene "garden furniture." Combined with the orange-placeholder doors/shutters/columns from meta-pattern 2 of `HOUSES_REVIEW_2026-06-14.md`, the entire palette skews 1990s patio set.
+Decks, planks, coping, handrails, and column sleeves across all 17 typologies render as flat orange-salmon plastic. No wood grain, no plank seams, no UV scale — reads as injection-molded polypropylene "garden furniture." Combined with the orange-placeholder doors/shutters/columns from meta-pattern 2 of `docs/_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md`, the entire palette skews 1990s patio set.
 
 ### Diagnosis
 `lapacho_timber` is registered as a flat base_color (~hex `#D67A4A`) Principled BSDF with no texture inputs. The asset library has a usable wood albedo + roughness + normal trio under `assets/textures/lapacho/` (verify path), but the registry never wires them in.
@@ -107,4 +107,4 @@ These were flagged in the critic pass but are below the leverage cut for sprint-
 1. Verify renderer is no longer frozen (escritura deck shipped, `git log` shows post-`85e86aa` work landed).
 2. Branch from current `master`. Conventional commit prefix: `fix(materials):` for Bug 1+2, `fix(flora):` for Bug 3.
 3. Tackle in order: Bug 1 → smoke-render the 6 worst water assets → Bug 2 → re-render 3 wood assets → Bug 3 → full 51-job batch with `RENDER_FLORA_PHOTOREAL=1`.
-4. After all three land: re-run the critic pass against `docs/HOUSES_REVIEW_2026-06-14.md` meta-patterns 9/10/11 and confirm they can be struck.
+4. After all three land: re-run the critic pass against `docs/_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md` meta-patterns 9/10/11 and confirm they can be struck.

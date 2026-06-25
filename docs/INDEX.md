@@ -39,8 +39,7 @@ Single navigation entrypoint into the doc-mesh. Maintained additively; section o
 - [`ARCHITECTURE.md`](./ARCHITECTURE.md) — `lqv/` module layout + RNG order invariant + sub-render-first standing rule.
 - [`asset_plan.md`](./asset_plan.md) — per-asset / per-typology / per-amenity plan.
 - [`sub_render_strategy.md`](./sub_render_strategy.md) — 31-target sub-render queue + driver template + RNG derivation.
-- [`UPGRADE_PLAN.md`](./UPGRADE_PLAN.md) — Tier 0 / 1 / 2 / 3 fix plan derived from CRITIQUE.
-- [`CRITIQUE_2026-06-10.md`](./CRITIQUE_2026-06-10.md) — honest-roast critique of the repo as of 2026-06-10.
+- [`_archive/MANIFEST.md`](./_archive/MANIFEST.md) — index of archived critiques + tiered fix-plans (Tier-0 landed; carry-forward items live in `DEFERRED_BUGS.md` + TaskList #34–#50).
 - [`PROVENANCE.md`](./PROVENANCE.md) — license + URL + SHA-256 + bbox + retrieval date for ALOS / COP30 / Sentinel-2 / GEDI / OSM / SRTM / NASADEM.
 - [`site_data/satdata_brief.md`](./site_data/satdata_brief.md) — S1–S4 satellite render-pipeline reader.
 - [`research/README.md`](./research/README.md) — research synthesis (5 sub-reports, ~80 repos).

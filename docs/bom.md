@@ -2,7 +2,7 @@
 
 **Status:** living document. Authoritative real-world quantity take-off for the cob/bottle house. Quantities are budgetary (±15%) until verified by a quantity surveyor.
 
-This is for **Wesley's procurement planning**, not for render. Currency in USD 2026 (Paraguay sourcing where noted, FOB Asunción otherwise). PYG column added 2026-06-10 at indicative FX **7.300 PYG/USD** — see §FX assumption at the bottom for source and refresh procedure (UPGRADE_PLAN T0.5).
+This is for **Wesley's procurement planning**, not for render. Currency in USD 2026 (Paraguay sourcing where noted, FOB Asunción otherwise). PYG column added 2026-06-10 at indicative FX **7.300 PYG/USD** — see §FX assumption at the bottom for source and refresh procedure.
 
 ## Section 1 — Earthwork & foundation
 
@@ -154,7 +154,7 @@ This is for **Wesley's procurement planning**, not for render. Currency in USD 2
 | 9. Soft costs | 15593 | 113.828.900 |
 | **Total** | **56027** | **408.997.100** |
 
-## FX assumption (added 2026-06-10, UPGRADE_PLAN T0.5)
+## FX assumption (added 2026-06-10)
 
 - **Indicative rate used in PYG columns above: 7.300 PYG / 1 USD.** This is a planning rate for budgetary take-off, not a transaction rate.
 - **Refresh on the day of purchase commitment.** The Paraguayan guaraní vs USD rate has historically tracked the BCP (Banco Central del Paraguay) tipo de cambio referencial published daily at `www.bcp.gov.py` → "Cotizaciones del día". Cross-check against `melizeche/dolarPy` (open-source aggregator of casas de cambio rates published in Asunción) and the local casa de cambio rates published on `cambioschaco.com.py` and `maxicambios.com.py`.
@@ -175,4 +175,4 @@ This is for **Wesley's procurement planning**, not for render. Currency in USD 2
 - `docs/floor_plan.md` — what gets built (areas drive quantities).
 - `docs/energy_budget.md` (planned) — sizes the section-6 PV + battery.
 - `docs/license_obligations.md` (planned) — soft-cost compliance.
-- `docs/UPGRADE_PLAN.md` §Tier 0 T0.5 — origin of the PYG column + FX-assumption footer.
+- `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` §Tier 0 T0.5 — historical origin of the PYG column + FX-assumption footer (archived; FX section above is self-contained).
