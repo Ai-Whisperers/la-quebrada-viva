@@ -63,9 +63,9 @@ def write_brochure(out: Path, flat: dict, lon: float, lat: float) -> None:
     lines = [
         "# SoilGrids 250 m — La Quebrada Viva parcel",
         "",
-        f"Source: ISRIC SoilGrids v2.0 (https://soilgrids.org), CC-BY 4.0  ",
+        "Source: ISRIC SoilGrids v2.0 (https://soilgrids.org), CC-BY 4.0  ",
         f"Point: lon={lon:.5f}, lat={lat:.5f} (parcel centroid)  ",
-        f"Pulled: {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}",
+        f"Pulled: {dt.datetime.now(dt.UTC).strftime('%Y-%m-%dT%H:%M:%SZ')}",
         "",
         "## Construction-relevant slices (0-30 cm)",
         "",
@@ -110,9 +110,11 @@ def write_brochure(out: Path, flat: dict, lon: float, lat: float) -> None:
         "## Interpretation hooks",
         "",
         "- Clay > 350 g/kg in any 0-30 cm slice → cob mix viable without sand bulking.",
-        "- Clay > 400 g/kg at 30-100 cm → expansive-soil risk: design strip footings below the active zone.",
+        "- Clay > 400 g/kg at 30-100 cm → expansive-soil risk: design strip footings"
+        " below the active zone.",
         "- pH < 5.5 → cement-stabilised earth blocks need extra lime; check before specifying.",
-        "- Bulk density < 1.2 g/cm³ at 0-5 cm → topsoil to strip and stockpile before any compaction.",
+        "- Bulk density < 1.2 g/cm³ at 0-5 cm → topsoil to strip and stockpile before"
+        " any compaction.",
         "",
         "Raw layered JSON: `soilgrids_point.json`.",
     ]

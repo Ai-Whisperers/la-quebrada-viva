@@ -29,7 +29,11 @@ import rasterio
 from rasterio.windows import from_bounds
 
 from .common import (
-    http_get, out_dir, parcel_center, search_bbox, write_json,
+    http_get,
+    out_dir,
+    parcel_center,
+    search_bbox,
+    write_json,
 )
 
 BASE = "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_monthly/tifs"
@@ -150,11 +154,11 @@ def main() -> None:
     brochure = [
         "# CHIRPS monthly precipitation — La Quebrada Viva parcel",
         "",
-        f"Source: CHIRPS v2.0 (Climate Hazards Group, UCSB), public domain  ",
-        f"Resolution: 0.05° (~5.5 km)  ",
+        "Source: CHIRPS v2.0 (Climate Hazards Group, UCSB), public domain  ",
+        "Resolution: 0.05° (~5.5 km)  ",
         f"Window: {start_y}-{end_y}  ",
         f"Point: lon={lon:.5f}, lat={lat:.5f}  ",
-        f"Pulled: {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}",
+        f"Pulled: {dt.datetime.now(dt.UTC).strftime('%Y-%m-%dT%H:%M:%SZ')}",
         "",
         "## Annual totals",
         "",
@@ -175,9 +179,13 @@ def main() -> None:
         "",
         "## Interpretation hooks",
         "",
-        "- Tank sizing: design against the *driest-year* total, not the mean — see `chirps_summary.json` → `annual_total_min_mm`.",
-        "- The driest 3-month run drives cistern volume; pick the lowest three consecutive months in the table above.",
-        "- Compare against `docs/site_data/climate_era5/` precip series — if CHIRPS is meaningfully drier, trust CHIRPS at parcel scale (5 km beats 28 km).",
+        "- Tank sizing: design against the *driest-year* total, not the mean —"
+        " see `chirps_summary.json` → `annual_total_min_mm`.",
+        "- The driest 3-month run drives cistern volume; pick the lowest three"
+        " consecutive months in the table above.",
+        "- Compare against `docs/site_data/climate_era5/` precip series —"
+        " if CHIRPS is meaningfully drier, trust CHIRPS at parcel scale"
+        " (5 km beats 28 km).",
         "- Clipped per-month TIFFs: `tiles/chirps_YYYY_MM.tif` (small).",
     ]
     (out / "chirps_brochure.md").write_text("\n".join(brochure))

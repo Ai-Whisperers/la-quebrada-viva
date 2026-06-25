@@ -97,7 +97,7 @@ def http_get(url: str, *, params: dict[str, Any] | None = None,
                 raise requests.HTTPError(f"transient {r.status_code}: {url}")
             r.raise_for_status()
             return r
-        except (requests.RequestException,) as e:
+        except requests.RequestException as e:
             last = e
             if attempt == max_attempts:
                 break

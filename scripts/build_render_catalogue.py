@@ -29,7 +29,7 @@ import re
 import sys
 from collections import defaultdict
 from dataclasses import dataclass, asdict
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -615,7 +615,7 @@ def main() -> int:
         except json.JSONDecodeError:
             pass
     ts = prev_ts if prev_payload == payload and prev_ts else \
-        datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+        datetime.now(UTC).isoformat().replace("+00:00", "Z")
     json_path.write_text(json.dumps({"generated_at": ts, **payload}, indent=2))
 
     print(f"Wrote {index}")

@@ -25,7 +25,12 @@ import sys
 import requests
 
 from .common import (
-    env_required, http_get, out_dir, parcel_bbox, search_bbox, write_json,
+    env_required,
+    http_get,
+    out_dir,
+    parcel_bbox,
+    search_bbox,
+    write_json,
 )
 
 ASF_SEARCH = "https://api.daac.asf.alaska.edu/services/search/param"
@@ -99,7 +104,7 @@ def cli() -> int:
     ap.add_argument("--start", default="2024-01-01",
                     help="ASF search start (YYYY-MM-DD).")
     ap.add_argument("--end",
-                    default=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"),
+                    default=dt.datetime.now(dt.UTC).strftime("%Y-%m-%d"),
                     help="ASF search end (YYYY-MM-DD).")
     args = ap.parse_args()
 
@@ -121,11 +126,11 @@ def cli() -> int:
         write_json(out / "asf_scenes.json", scenes)
         buckets = organise(scenes)
         lines = [
-            f"# Sentinel-1 SLC scenes — La Quebrada Viva parcel",
+            "# Sentinel-1 SLC scenes — La Quebrada Viva parcel",
             "",
-            f"Source: ASF DAAC (https://search.asf.alaska.edu), Sentinel: CC0  ",
+            "Source: ASF DAAC (https://search.asf.alaska.edu), Sentinel: CC0  ",
             f"Window: {args.start} → {args.end}  ",
-            f"Pulled: {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}",
+            f"Pulled: {dt.datetime.now(dt.UTC).strftime('%Y-%m-%dT%H:%M:%SZ')}",
             "",
             f"Total scenes returned: **{len(scenes)}**",
             "",
@@ -190,7 +195,10 @@ def cli() -> int:
         job_name = "LQV-parcel-insar"
         existing = client.find_jobs(name=job_name)
         if existing.jobs:
-            print(f"[sentinel1] {len(existing.jobs)} existing job(s) named {job_name}; skipping submit")
+            print(
+                f"[sentinel1] {len(existing.jobs)} existing job(s) named {job_name};"
+                " skipping submit"
+            )
             result = {
                 "submitted_jobs": [j.to_dict() for j in existing.jobs],
                 "count": len(existing.jobs),
