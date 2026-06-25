@@ -56,7 +56,7 @@ SHORTLIST: dict[str, dict] = {
         "author": "Lassi Kaukonen",
         "species": "Anthurium plowmanii",
     },
-    # ── lapacho gap: uncomment + fill once UID is picked ──
+    # ── lapacho gap: uncomment + fill once UID is picked (tracked: TaskList #41) ──
     # "lapacho": {
     #     "uid": "<TODO>",
     #     "author": "<TODO>",

@@ -55,7 +55,8 @@ first family-scale member to consume the factored surface.
 
 Concrete spine is **inlined** here as a 17 m × 0.18 m × 3.3 m cuboid plus a
 30 cm plinth strip; a future ``lqv/house/concrete_spine.py`` factor would
-collapse the same logic with the curved cousin's spine — TODO for wave 4.
+collapse the same logic with the curved cousin's spine — TODO for wave 4
+(tracked: TaskList #39).
 
 Orientation invariant (consumed by
 ``lqv/subscene/bamboo_beton_family_rectangular.py``): the building straddles
@@ -152,7 +153,8 @@ NOTES = (
     'Imports build_bamboo_culm / build_bamboo_post_stack / build_bamboo_beam '
     '/ build_palm_thatch_panel / build_bamboo_lashing from '
     'lqv.house.bamboo_frame; build_stone_foundation_course from '
-    'lqv.house.stone_wall. Concrete spine inlined — TODO factor in wave 4.',
+    'lqv.house.stone_wall. Concrete spine inlined — TODO factor in wave 4 '
+    '(tracked: TaskList #40).',
 )
 
 
