@@ -7,7 +7,7 @@
 **Buyer:** Wesley Manuel van de Camp (75%) · Thijs Adrianus Hendricus (25%)
 **Site:** 62 ha, Escobar, Paraguarí, Paraguay — 6 parcels (5 Mbopicua + 1 Ybyraty)
 **Notary:** Escribana Peña · **Boleto signed:** 2026-04-28
-**Total contract:** G. 2.503.000.000 (~USD 320.000) — 10% seña paid
+**Total contract:** G. 2.503.000.000 (~USD 343.000 @ 7.300 PYG/USD, BCP) — 10% seña paid
 
 > This deck accompanies the escritura pública on 27 Jun 2026. It records the master concept that the parcels are being purchased to host: a 12-16 key houses-first vacation-rental property with an event venue and a European-Dutch restaurant phased over Years 1-3, plus eco-amenities. Every asset shown below is procedurally modelled in Cycles at byte-identity render `85e86aa` (composite) and is backed by a per-asset `MATERIAL_TAKEOFF` rolled into the bill of quantities on the back pages.
 

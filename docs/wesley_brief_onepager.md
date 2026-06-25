@@ -8,7 +8,7 @@
 
 ## What you bought
 
-62 hectares (153 acres) in Escobar, Paraguarí, ~78 km / 1.5–2 h from Asunción. Six parcels: 5 in Mbopicua, 1 in Ybyraty. Total price G. 2.503.000.000 (~USD 320k). 10% seña (G. 250.3M) paid to Escribana Peña. Closing on 27 Jun.
+62 hectares (153 acres) in Escobar, Paraguarí, ~78 km / 1.5–2 h from Asunción. Six parcels: 5 in Mbopicua, 1 in Ybyraty. Total price G. 2.503.000.000 (~USD 343k @ 7,300 PYG/USD, BCP). 10% seña (G. 250.3M) paid to Escribana Peña. Closing on 27 Jun.
 
 The site has: 40–60m sandstone escarpment, year-round spring-fed stream, mature Atlantic Forest, 50–100-year-old colonial stone terraces, existing farm track, ANDE power, two standing structures. Full site analysis: `docs/paraguay_clay_house_research.md` (628 lines).
 

@@ -13,7 +13,7 @@ Adjunto el paquete técnico v-final correspondiente a la escritura de compravent
 1. **`escritura_deck_v6.pdf`** (10,8 MB, 28 páginas, adjunto a este correo)
    - Cubierta (p. 1): datos identificatorios y fecha de escritura.
    - Parte 1–3 (pp. 2–20): contexto técnico del inmueble, planos, infraestructura, cómputo y presupuesto.
-   - **Computo BoQ (p. 21)**: 17 assets, 259 ítems, suma del catálogo ~USD 268.685 (TC 7.300 PYG/USD, fecha BCP).
+   - **Computo BoQ (p. 21)**: 17 assets, 159 ítems, suma del catálogo ~USD 268.685 (TC 7.300 PYG/USD, fecha BCP).
    - **Parte 4 (pp. 22–24)**: checklist del día de la firma + registro de riesgos (su sección de consulta).
    - Apéndice en inglés (pp. 25–26): resumen para el comprador Sr. van de Camp.
    - **Apéndice Pelton (p. 27)**: sitios candidatos P1/P2/P3 con coordenadas turbina/cresta y bandera honesta de penstock dentro de 300 m. P3 es el único candidato limpio (penstock 295,5 m, carga 166,5 m) — referencia Regla 7 sistemas críticos.

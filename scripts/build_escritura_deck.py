@@ -75,6 +75,13 @@ USD_TO_PYG = _get_usd_to_pyg()
 TODAY_ISO = datetime.date.today().isoformat()
 ESCRITURA_DATE = "2026-06-27"
 
+# Total contract value in PYG, sourced from the 2026-04-28 boleto (Cl. CUARTA).
+# USD equivalent is computed from USD_TO_PYG so the cover, appendix, and BoQ
+# rollup never drift from each other — earlier hardcoded "~USD 320,000" was
+# stale (came from a 2025 FX of ~7,822 PYG/USD).
+CONTRACT_PYG = 2_503_000_000
+CONTRACT_USD = int(CONTRACT_PYG / USD_TO_PYG)
+
 # Asset catalog — ordered by phase intent (smaller / cheaper first, then heavy).
 TYPOLOGY_SLUGS = (
     "hobbit_house",
@@ -619,7 +626,9 @@ def _build() -> int:
         [Paragraph("<b>Boleto:</b>", body_style),
          Paragraph("2026-04-28 — seña del 10% abonada (Gs. 250.300.000)", body_style)],
         [Paragraph("<b>Total del contrato:</b>", body_style),
-         Paragraph("Gs. 2.503.000.000 (~USD 320.000)", body_style)],
+         Paragraph(
+             f"Gs. 2.503.000.000 (~USD {CONTRACT_USD:,.0f}".replace(",", ".") + ")",
+             body_style)],
         [Paragraph("<b>Escribana:</b>", body_style),
          Paragraph("Escribana Peña", body_style)],
         [Paragraph("<b>Fecha de escritura:</b>", body_style),
@@ -1191,7 +1200,7 @@ def _english_appendix(*, styles_pack) -> list:
     tx_items = [
         f"Signing date: <b>{ESCRITURA_DATE}</b> before Escribana Pe&#241;a, "
         "Escobar, Paraguar&#237;",
-        "Contract value: <b>Gs. 2,503,000,000</b> (~USD 320,000 at "
+        f"Contract value: <b>Gs. 2,503,000,000</b> (~USD {CONTRACT_USD:,} at "
         f"{int(USD_TO_PYG):,} PYG/USD)",
         "Down payment paid: Gs. 250,300,000 (10%, held in notarial "
         "deposit). Closing balance (Cl. CUARTA, Gs. 2,252,700,000): "

@@ -56,6 +56,20 @@ _QTY_UNIT = {
     'weight_kg': 'kg',
 }
 
+# Modules added AFTER the 2026-06-17 deck-v6 freeze. Excluded from the
+# "escritura" scope so re-running `make boq` at T-0 reproduces the
+# $268,685.45 / Gs. 1,961,403,749 figure cited in the signed deck. Without
+# this filter, phase-2 auto-discovery in _iter_modules silently inflated the
+# rollup by $19,371 (5 new modules), which would have surfaced at the
+# notary's desk as a deck-vs-CSV mismatch. Lift via LQV_BOQ_SCOPE=full.
+_POST_FREEZE_MODULES = frozenset({
+    'bamboo_curved_roof_villa',
+    'clay_terracotta_estate',
+    'candle_path',
+    'bamboo_portal',
+    'bamboo_outdoor_shower',
+})
+
 
 # ---------------------------------------------------------------------------
 # bpy/materials stub installation — only when run directly (not from
@@ -189,9 +203,18 @@ def collect_all(*, skip_broken: bool = True) -> list[BoQLine]:
     someone noticed the totals didn't match the deck.
     """
     import traceback
+    scope = os.environ.get('LQV_BOQ_SCOPE', 'escritura').strip().lower()
     lines: list[BoQLine] = []
     for pkg in ('lqv.typologies', 'lqv.amenities'):
         for modname in _iter_modules(pkg):
+            short = modname.rsplit('.', 1)[-1]
+            if scope == 'escritura' and short in _POST_FREEZE_MODULES:
+                print(
+                    f'[boq] skip post-freeze module {short} '
+                    f'(LQV_BOQ_SCOPE=escritura; set LQV_BOQ_SCOPE=full to include)',
+                    file=sys.stderr,
+                )
+                continue
             try:
                 lines.extend(_collect_from_module(modname))
             except Exception as e:  # noqa: BLE001 — aggregate + log per spec
