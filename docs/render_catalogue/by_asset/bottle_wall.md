@@ -2,6 +2,10 @@
 
 Total renders: **12**.
 
+![bottle_wall contact sheet](../contact_sheets/bottle_wall.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · sub_latest_mirror · front

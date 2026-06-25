@@ -2,6 +2,10 @@
 
 Total renders: **24**.
 
+![eco_pool contact sheet](../contact_sheets/eco_pool.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

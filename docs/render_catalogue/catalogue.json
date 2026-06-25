@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-25T15:29:40.540256Z",
+  "generated_at": "2026-06-25T15:37:02.193718Z",
   "total_renders": 901,
   "by_source": {
-    "monday": 5,
-    "sub_run": 501,
-    "canonical_final": 18,
     "sub_flat": 100,
-    "preview": 5,
-    "sub_latest": 272
+    "canonical_final": 18,
+    "sub_run": 501,
+    "monday": 5,
+    "sub_latest": 272,
+    "preview": 5
   },
   "assets": {
     "ESCRITURA_FINALS": [

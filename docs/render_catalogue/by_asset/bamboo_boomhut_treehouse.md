@@ -2,6 +2,10 @@
 
 Total renders: **24**.
 
+![bamboo_boomhut_treehouse contact sheet](../contact_sheets/bamboo_boomhut_treehouse.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

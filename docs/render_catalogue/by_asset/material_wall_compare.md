@@ -2,6 +2,10 @@
 
 Total renders: **9**.
 
+![material_wall_compare contact sheet](../contact_sheets/material_wall_compare.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

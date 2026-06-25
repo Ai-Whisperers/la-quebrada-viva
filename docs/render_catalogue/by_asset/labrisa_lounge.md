@@ -2,6 +2,10 @@
 
 Total renders: **27**.
 
+![labrisa_lounge contact sheet](../contact_sheets/labrisa_lounge.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

@@ -2,6 +2,10 @@
 
 Total renders: **24**.
 
+![italian_river_house_4pax contact sheet](../contact_sheets/italian_river_house_4pax.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

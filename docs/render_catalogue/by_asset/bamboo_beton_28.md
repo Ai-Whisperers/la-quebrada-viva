@@ -2,6 +2,10 @@
 
 Total renders: **24**.
 
+![bamboo_beton_28 contact sheet](../contact_sheets/bamboo_beton_28.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

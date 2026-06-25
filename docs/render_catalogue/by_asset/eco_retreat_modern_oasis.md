@@ -2,6 +2,10 @@
 
 Total renders: **25**.
 
+![eco_retreat_modern_oasis contact sheet](../contact_sheets/eco_retreat_modern_oasis.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · bug3_repro · bug3_repro

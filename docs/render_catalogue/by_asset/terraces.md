@@ -2,6 +2,10 @@
 
 Total renders: **12**.
 
+![terraces contact sheet](../contact_sheets/terraces.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · sub_latest_mirror · front

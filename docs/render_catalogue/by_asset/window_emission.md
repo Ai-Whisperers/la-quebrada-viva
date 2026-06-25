@@ -2,6 +2,10 @@
 
 Total renders: **12**.
 
+![window_emission contact sheet](../contact_sheets/window_emission.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · sub_latest_mirror · front

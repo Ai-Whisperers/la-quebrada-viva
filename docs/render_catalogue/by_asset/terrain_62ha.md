@@ -2,6 +2,10 @@
 
 Total renders: **56**.
 
+![terrain_62ha contact sheet](../contact_sheets/terrain_62ha.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

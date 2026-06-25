@@ -2,6 +2,10 @@
 
 Total renders: **18**.
 
+![tree_fern contact sheet](../contact_sheets/tree_fern.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · sub_latest_mirror · front

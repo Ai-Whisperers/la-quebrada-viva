@@ -406,11 +406,21 @@ def write_asset_page(asset: str, records: list[Render], out_dir: Path) -> Path:
 
     records = sorted(records, key=key)
     page = out_dir / f"{asset}.md"
+    sheet = out_dir.parent / "contact_sheets" / f"{asset}.jpg"
     lines = [
         f"# {asset}",
         "",
         f"Total renders: **{len(records)}**.",
         "",
+    ]
+    if sheet.exists():
+        lines += [
+            f"![{asset} contact sheet](../contact_sheets/{asset}.jpg)",
+            "",
+            "_Contact sheet above shows up to 9 latest renders, deduped by variant._",
+            "",
+        ]
+    lines += [
         "Grouped by run (date + tag), then variant.",
         "",
     ]
@@ -514,6 +524,7 @@ def write_index(by_asset: dict[str, list[Render]], all_records: list[Render], ou
         "| Asset | Renders | Latest date |",
         "|---|---:|---|",
     ]
+    sub_assets: list[str] = []
     for asset in sorted(by_asset):
         if asset in ("ESCRITURA_FINALS", "MONDAY_DELIVERABLE"):
             continue
@@ -521,7 +532,25 @@ def write_index(by_asset: dict[str, list[Render]], all_records: list[Render], ou
         latest_dates = [r.date for r in recs if r.date]
         latest = max(latest_dates) if latest_dates else "(undated)"
         lines.append(f"| [{asset}](by_asset/{asset}.md) | {len(recs)} | {latest} |")
+        sub_assets.append(asset)
     lines.append("")
+
+    # contact-sheet gallery: per-asset thumbnail JPGs built by build_contact_sheets.py
+    sheets_dir = out_dir / "contact_sheets"
+    sheets = [a for a in sub_assets if (sheets_dir / f"{a}.jpg").exists()]
+    if sheets:
+        lines += [
+            "## Contact sheets",
+            "",
+            f"Per-asset thumbnail grids (≤9 latest renders each), built by",
+            f"`scripts/build_contact_sheets.py`. {len(sheets)} sheets total.",
+            "",
+            "| Asset | Sheet |",
+            "|---|---|",
+        ]
+        for a in sheets:
+            lines.append(f"| [{a}](by_asset/{a}.md) | [![{a}](contact_sheets/{a}.jpg)](contact_sheets/{a}.jpg) |")
+        lines.append("")
     lines += [
         "## Notes",
         "",

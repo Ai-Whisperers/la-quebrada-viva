@@ -2,6 +2,10 @@
 
 Total renders: **9**.
 
+![flora_anthurium contact sheet](../contact_sheets/flora_anthurium.jpg)
+
+_Contact sheet above shows up to 9 latest renders, deduped by variant._
+
 Grouped by run (date + tag), then variant.
 
 ## (undated) · flat_latest

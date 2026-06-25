@@ -132,6 +132,67 @@ canonical finals and the Monday pack appear above.
 | [valley_mist](by_asset/valley_mist.md) | 12 | 2026-06-12 |
 | [window_emission](by_asset/window_emission.md) | 12 | 2026-06-12 |
 
+## Contact sheets
+
+Per-asset thumbnail grids (≤9 latest renders each), built by
+`scripts/build_contact_sheets.py`. 53 sheets total.
+
+| Asset | Sheet |
+|---|---|
+| [agave](by_asset/agave.md) | [![agave](contact_sheets/agave.jpg)](contact_sheets/agave.jpg) |
+| [anthurium](by_asset/anthurium.md) | [![anthurium](contact_sheets/anthurium.jpg)](contact_sheets/anthurium.jpg) |
+| [bamboo_beton_28](by_asset/bamboo_beton_28.md) | [![bamboo_beton_28](contact_sheets/bamboo_beton_28.jpg)](contact_sheets/bamboo_beton_28.jpg) |
+| [bamboo_beton_30](by_asset/bamboo_beton_30.md) | [![bamboo_beton_30](contact_sheets/bamboo_beton_30.jpg)](contact_sheets/bamboo_beton_30.jpg) |
+| [bamboo_beton_family_curved](by_asset/bamboo_beton_family_curved.md) | [![bamboo_beton_family_curved](contact_sheets/bamboo_beton_family_curved.jpg)](contact_sheets/bamboo_beton_family_curved.jpg) |
+| [bamboo_beton_family_rectangular](by_asset/bamboo_beton_family_rectangular.md) | [![bamboo_beton_family_rectangular](contact_sheets/bamboo_beton_family_rectangular.jpg)](contact_sheets/bamboo_beton_family_rectangular.jpg) |
+| [bamboo_boomhut_treehouse](by_asset/bamboo_boomhut_treehouse.md) | [![bamboo_boomhut_treehouse](contact_sheets/bamboo_boomhut_treehouse.jpg)](contact_sheets/bamboo_boomhut_treehouse.jpg) |
+| [bamboo_clump](by_asset/bamboo_clump.md) | [![bamboo_clump](contact_sheets/bamboo_clump.jpg)](contact_sheets/bamboo_clump.jpg) |
+| [bamboo_container_4pax](by_asset/bamboo_container_4pax.md) | [![bamboo_container_4pax](contact_sheets/bamboo_container_4pax.jpg)](contact_sheets/bamboo_container_4pax.jpg) |
+| [bamboo_curved_roof_villa](by_asset/bamboo_curved_roof_villa.md) | [![bamboo_curved_roof_villa](contact_sheets/bamboo_curved_roof_villa.jpg)](contact_sheets/bamboo_curved_roof_villa.jpg) |
+| [bamboo_outdoor_shower](by_asset/bamboo_outdoor_shower.md) | [![bamboo_outdoor_shower](contact_sheets/bamboo_outdoor_shower.jpg)](contact_sheets/bamboo_outdoor_shower.jpg) |
+| [bamboo_portal](by_asset/bamboo_portal.md) | [![bamboo_portal](contact_sheets/bamboo_portal.jpg)](contact_sheets/bamboo_portal.jpg) |
+| [bamboo_river_house](by_asset/bamboo_river_house.md) | [![bamboo_river_house](contact_sheets/bamboo_river_house.jpg)](contact_sheets/bamboo_river_house.jpg) |
+| [bamboo_wigwam_lodge](by_asset/bamboo_wigwam_lodge.md) | [![bamboo_wigwam_lodge](contact_sheets/bamboo_wigwam_lodge.jpg)](contact_sheets/bamboo_wigwam_lodge.jpg) |
+| [bottle_wall](by_asset/bottle_wall.md) | [![bottle_wall](contact_sheets/bottle_wall.jpg)](contact_sheets/bottle_wall.jpg) |
+| [boulder_cluster](by_asset/boulder_cluster.md) | [![boulder_cluster](contact_sheets/boulder_cluster.jpg)](contact_sheets/boulder_cluster.jpg) |
+| [candle_path](by_asset/candle_path.md) | [![candle_path](contact_sheets/candle_path.jpg)](contact_sheets/candle_path.jpg) |
+| [canopy_volume](by_asset/canopy_volume.md) | [![canopy_volume](contact_sheets/canopy_volume.jpg)](contact_sheets/canopy_volume.jpg) |
+| [clay_terracotta_estate](by_asset/clay_terracotta_estate.md) | [![clay_terracotta_estate](contact_sheets/clay_terracotta_estate.jpg)](contact_sheets/clay_terracotta_estate.jpg) |
+| [cob_walls](by_asset/cob_walls.md) | [![cob_walls](contact_sheets/cob_walls.jpg)](contact_sheets/cob_walls.jpg) |
+| [container_river_house](by_asset/container_river_house.md) | [![container_river_house](contact_sheets/container_river_house.jpg)](contact_sheets/container_river_house.jpg) |
+| [eco_pool](by_asset/eco_pool.md) | [![eco_pool](contact_sheets/eco_pool.jpg)](contact_sheets/eco_pool.jpg) |
+| [eco_retreat_modern_oasis](by_asset/eco_retreat_modern_oasis.md) | [![eco_retreat_modern_oasis](contact_sheets/eco_retreat_modern_oasis.jpg)](contact_sheets/eco_retreat_modern_oasis.jpg) |
+| [escarpment](by_asset/escarpment.md) | [![escarpment](contact_sheets/escarpment.jpg)](contact_sheets/escarpment.jpg) |
+| [fireflies](by_asset/fireflies.md) | [![fireflies](contact_sheets/fireflies.jpg)](contact_sheets/fireflies.jpg) |
+| [floating_dining](by_asset/floating_dining.md) | [![floating_dining](contact_sheets/floating_dining.jpg)](contact_sheets/floating_dining.jpg) |
+| [flora_anthurium](by_asset/flora_anthurium.md) | [![flora_anthurium](contact_sheets/flora_anthurium.jpg)](contact_sheets/flora_anthurium.jpg) |
+| [flora_jacaranda](by_asset/flora_jacaranda.md) | [![flora_jacaranda](contact_sheets/flora_jacaranda.jpg)](contact_sheets/flora_jacaranda.jpg) |
+| [flora_pachira](by_asset/flora_pachira.md) | [![flora_pachira](contact_sheets/flora_pachira.jpg)](contact_sheets/flora_pachira.jpg) |
+| [hdri_dusk_compare](by_asset/hdri_dusk_compare.md) | [![hdri_dusk_compare](contact_sheets/hdri_dusk_compare.jpg)](contact_sheets/hdri_dusk_compare.jpg) |
+| [hobbit_house](by_asset/hobbit_house.md) | [![hobbit_house](contact_sheets/hobbit_house.jpg)](contact_sheets/hobbit_house.jpg) |
+| [italian_river_house_4pax](by_asset/italian_river_house_4pax.md) | [![italian_river_house_4pax](contact_sheets/italian_river_house_4pax.jpg)](contact_sheets/italian_river_house_4pax.jpg) |
+| [italian_stone_small_v1](by_asset/italian_stone_small_v1.md) | [![italian_stone_small_v1](contact_sheets/italian_stone_small_v1.jpg)](contact_sheets/italian_stone_small_v1.jpg) |
+| [italian_stone_small_v2](by_asset/italian_stone_small_v2.md) | [![italian_stone_small_v2](contact_sheets/italian_stone_small_v2.jpg)](contact_sheets/italian_stone_small_v2.jpg) |
+| [labrisa_lounge](by_asset/labrisa_lounge.md) | [![labrisa_lounge](contact_sheets/labrisa_lounge.jpg)](contact_sheets/labrisa_lounge.jpg) |
+| [lapacho_tree](by_asset/lapacho_tree.md) | [![lapacho_tree](contact_sheets/lapacho_tree.jpg)](contact_sheets/lapacho_tree.jpg) |
+| [mango](by_asset/mango.md) | [![mango](contact_sheets/mango.jpg)](contact_sheets/mango.jpg) |
+| [material_wall_compare](by_asset/material_wall_compare.md) | [![material_wall_compare](contact_sheets/material_wall_compare.jpg)](contact_sheets/material_wall_compare.jpg) |
+| [mushroom_cob_house](by_asset/mushroom_cob_house.md) | [![mushroom_cob_house](contact_sheets/mushroom_cob_house.jpg)](contact_sheets/mushroom_cob_house.jpg) |
+| [mushroom_cob_house_aerial](by_asset/mushroom_cob_house_aerial.md) | [![mushroom_cob_house_aerial](contact_sheets/mushroom_cob_house_aerial.jpg)](contact_sheets/mushroom_cob_house_aerial.jpg) |
+| [mushroom_cob_house_elev](by_asset/mushroom_cob_house_elev.md) | [![mushroom_cob_house_elev](contact_sheets/mushroom_cob_house_elev.jpg)](contact_sheets/mushroom_cob_house_elev.jpg) |
+| [mushroom_cob_house_hero](by_asset/mushroom_cob_house_hero.md) | [![mushroom_cob_house_hero](contact_sheets/mushroom_cob_house_hero.jpg)](contact_sheets/mushroom_cob_house_hero.jpg) |
+| [pindo_palm](by_asset/pindo_palm.md) | [![pindo_palm](contact_sheets/pindo_palm.jpg)](contact_sheets/pindo_palm.jpg) |
+| [services](by_asset/services.md) | [![services](contact_sheets/services.jpg)](contact_sheets/services.jpg) |
+| [stream](by_asset/stream.md) | [![stream](contact_sheets/stream.jpg)](contact_sheets/stream.jpg) |
+| [tatakua](by_asset/tatakua.md) | [![tatakua](contact_sheets/tatakua.jpg)](contact_sheets/tatakua.jpg) |
+| [terraces](by_asset/terraces.md) | [![terraces](contact_sheets/terraces.jpg)](contact_sheets/terraces.jpg) |
+| [terrain_62ha](by_asset/terrain_62ha.md) | [![terrain_62ha](contact_sheets/terrain_62ha.jpg)](contact_sheets/terrain_62ha.jpg) |
+| [terrain_62ha_photoreal](by_asset/terrain_62ha_photoreal.md) | [![terrain_62ha_photoreal](contact_sheets/terrain_62ha_photoreal.jpg)](contact_sheets/terrain_62ha_photoreal.jpg) |
+| [terrain_house_scale](by_asset/terrain_house_scale.md) | [![terrain_house_scale](contact_sheets/terrain_house_scale.jpg)](contact_sheets/terrain_house_scale.jpg) |
+| [tree_fern](by_asset/tree_fern.md) | [![tree_fern](contact_sheets/tree_fern.jpg)](contact_sheets/tree_fern.jpg) |
+| [valley_mist](by_asset/valley_mist.md) | [![valley_mist](contact_sheets/valley_mist.jpg)](contact_sheets/valley_mist.jpg) |
+| [window_emission](by_asset/window_emission.md) | [![window_emission](contact_sheets/window_emission.jpg)](contact_sheets/window_emission.jpg) |
+
 ## Notes
 
 - Run-folder convention: `<YYYYMMDD>_<run_tag>_<asset>[_<sub_variant>]/{A,B,C}.png`.
