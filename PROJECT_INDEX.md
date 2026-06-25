@@ -398,6 +398,14 @@ Plus 5 preview cache files (`_preview_A_hero.png` etc).
 - Parallelism = **1** (one Blender process at a time; ~4.3 GB RSS, OOMs at ×3 on 14 GB host).
 - Folder convention is enforced by `lqv/subscene/base.py`.
 
+### Render catalogue (browse the 901 PNGs)
+
+- [`docs/render_catalogue/INDEX.md`](docs/render_catalogue/INDEX.md) — roster of 53 asset buckets with totals, latest date, and a contact-sheet gallery.
+- [`docs/render_catalogue/by_asset/`](docs/render_catalogue/by_asset/) — per-asset markdown with embedded contact sheet + chronological tile list.
+- [`docs/render_catalogue/contact_sheets/`](docs/render_catalogue/contact_sheets/) — ≤9-tile 3-column thumbnail JPGs, one per asset.
+- `docs/render_catalogue/catalogue.json` — machine-readable sidecar (totals, by_source, per-asset records). Stable across re-runs.
+- Rebuild via `make catalogue` (runs `make sheets` first; requires ImageMagick `montage`).
+
 ---
 
 ## 9. `dist/` — 543 M
