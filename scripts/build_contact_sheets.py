@@ -69,13 +69,20 @@ def build_sheet(asset: str, renders: list[dict]) -> Path | None:
     out_path = OUT_DIR / f"{asset}.jpg"
 
     cmd: list[str] = ["montage"]
+    sources: list[Path] = []
     for r in tiles:
         src = REPO / r["path"]
         if not src.exists():
             continue
+        sources.append(src)
         cmd += ["-label", label_for(r), str(src)]
-    if "-label" not in cmd:
+    if not sources:
         return None
+
+    if out_path.exists():
+        sheet_mtime = out_path.stat().st_mtime
+        if all(s.stat().st_mtime <= sheet_mtime for s in sources):
+            return None  # signals "up-to-date, skipped"
 
     cmd += [
         "-tile", "3x",
@@ -106,6 +113,7 @@ def main() -> int:
     assets: dict[str, list[dict]] = data.get("assets", {})
 
     built: list[str] = []
+    skipped: list[str] = []
     for asset, renders in sorted(assets.items()):
         if asset in SKIP_ASSETS:
             continue
@@ -114,8 +122,13 @@ def main() -> int:
         out = build_sheet(asset, renders)
         if out is not None:
             built.append(asset)
+        elif (OUT_DIR / f"{asset}.jpg").exists():
+            skipped.append(asset)
 
-    print(f"built {len(built)} contact sheets in {OUT_DIR.relative_to(REPO)}")
+    print(
+        f"built {len(built)} / skipped {len(skipped)} contact sheets "
+        f"in {OUT_DIR.relative_to(REPO)}"
+    )
     return 0
 
 
