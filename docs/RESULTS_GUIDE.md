@@ -113,14 +113,77 @@ Each frame uses an isolated RNG (per-asset SHA-256[:4] derive on `SEED`), so see
 
 ---
 
-## 5. How to read everything together
+## 5. Multi-view shotlist (`RENDER_VIEW` protocol v2)
+
+The 3-view gallery in §4 (`front | side | top`) was the protocol v1 axis used for the 2026-06-11 builder gallery. Starting 2026-06-26, sub-renders use the **protocol v2** view axis — `RENDER_VIEW` — defined in `docs/sub_render_strategy.md` §3.5. There are now two orthogonal axes per asset: **variant** (`RENDER_VARIANT=A|B|C` — lighting / season) and **view** (`RENDER_VIEW=…` — camera framing).
+
+### 5.1 The six core views
+
+Set on the command line as `RENDER_VIEW=<value>`. Default is `hero3q` (`lqv/config.py:59`).
+
+| `RENDER_VIEW` | Projection | What it shows |
+|---|---|---|
+| `hero3q` | perspective ¾ | The default sales / catalogue shot — what you want when you don't think about it. Asset framed 3⁄4 from above. |
+| `elevation` | ortho | Flat facade study. Read this for height, openings, ratios, BoQ measurement. |
+| `plan` | ortho top-down | Site or floor plan. Read this for footprint, terrace layout, fenestration positions. |
+| `section` | ortho cutaway | Structural / fit-out reads. Walls cut so you can see floor build-up, roof structure, and interior fit. |
+| `interior` | perspective wide | Furnished interior (driven by `lqv/furniture.furnish_interior(...)`). Lantern emission keyed `{A: 0.0, B: 0.6, C: 1.0}` so variants C/B give dusk-to-night interior reads. |
+| `xray` | perspective + override | Wireframe / transparency reveal (driven by `apply_xray_override` in `lqv/subscene/base.py`). Cob walls, terrain, foundation plinth stay opaque; skin / cladding / fenestration go transparent so you can see structure behind. |
+
+The composite-camera names (`hero`, `dusk`, `cliff`, `stream_up`, `terrace`, `petal_macro` from §1) are a different layer — those are the **scene-level** cameras for the 18 composite finals. `RENDER_VIEW` is the **asset-level** axis for sub-renders.
+
+### 5.2 How to read `<asset>_<variant>_<view>.png` filenames
+
+Every sub-render filename encodes three things in fixed order: which asset, which lighting variant, which view.
+
+```
+cob_walls_B_elevation.png
+│         │ │
+│         │ └─ RENDER_VIEW   — camera framing (hero3q | elevation | plan | section | interior | xray)
+│         └─── RENDER_VARIANT — lighting mood (A=cool / B=neutral / C=warm)
+└───────────── asset slug     — driver module name (lqv/subscene/<asset>.py)
+```
+
+### 5.3 Where view-specific outputs land
+
+Canonical pattern (run-folder, all views):
+```
+renders/sub/runs/<RENDER_RUN_ID>_<asset>[_<tag>]/<variant>_<view>.png
+```
+
+Latest-mirror (overwrites each run, all views):
+```
+renders/sub/latest/<asset>_<variant>_<view>.png
+```
+
+Flat back-compat path (default view only — preserves the 2026-06-11 invariant):
+```
+renders/sub/<asset>_<variant>.png      # only written when RENDER_VIEW=hero3q
+```
+
+Non-default views are **never** written to the flat path — they only appear under the run-folder and the latest-mirror. This is deliberate: the flat path is the durable name for the catalogue's hero-3q shot, and downstream tooling (`scripts/build_render_catalogue.py`, `scripts/build_contact_sheets.py`) reads it as the canonical single-image-per-asset address.
+
+### 5.4 Parcel-scale drivers (clip-end bypass)
+
+Parcel-scale drivers (62-ha terrain, escarpment, panoramic flora plates — 22 drivers total) bypass `subscene.base.run()` because they need `cam.data.clip_end >> 100 m` (memory `feedback_subscene_clip_end`: `PARCEL_CLIP_END_M = 20000.0`, `HOUSE_CLIP_END_M = 1000.0`). All 22 were migrated 2026-06-26 to call `cameras.make_view_camera(cfg, …)` so they honour `RENDER_VIEW` consistently with the asset-scale drivers — the run-folder and filename patterns above apply uniformly.
+
+### 5.5 Cross-references
+
+- `docs/sub_render_strategy.md` §3.5 — protocol v2 source of truth (dispatcher, bypass pattern, interior furnishing, xray override, output pattern).
+- `docs/HOUSE_IMAGERY_SHOTLIST.md` §5.1 — wider catalogue-export view set (`hero | elev_n | elev_e | elev_s | elev_w | plan | section_long | section_cross | xray | interior_main | interior_sleep | detail`) that collapses to the six core views above for the sub-render driver layer.
+- `lqv/cameras.py` — `make_view_camera(cfg, target, distance, height, lens)` dispatcher.
+- `lqv/furniture.py` — `furnish_interior(...)` for `view=interior`.
+
+---
+
+## 6. How to read everything together
 
 - **For the housing concept presentation**: open `renders/{A,B,C}_hero.png` for the master shot, then `…_dusk.png` for the same composition at golden hour, then `…_terrace.png`, `…_stream_up.png`, `…_cliff.png` as supporting angles. `…_petal_macro.png` is the texture macro.
 - **For the parcel land-survey presentation**: open `renders/sub/latest/terrain_62ha_photoreal_{A,B,C}.png` for the most recent oblique hero, then `renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_birdseye/{A,B,C}.png` for top-down, and `…_plan/{A,B,C}.png` for the ortho-plan style.
 - **For module verification** (sanity-checking that geometry exists): open `renders/sub/runs/20260611_gallery_real_<asset>_<view>/B.png`.
 - **For "how did we get here"**: the v1 → v5 terrain folders in §3 show every iteration; the cartoon-look v5 is what triggered the photoreal asset pivot.
 
-## 6. Known gaps
+## 7. Known gaps
 
 - **14 typology + amenity modules are stubs.** `adobe_courtyard`, `bamboo_pavilion`, `cob_bottle_lqv`, `rammed_earth_loft`, `shipping_container_eco`, `straw_bale_cottage`, `timber_tree_cabin`, `underground_dome`, `parking_arrival`, `equestrian_zone`, `pool_wellness`, `reception_shop`, `event_lawn`, `microhydro_centre` all `raise NotImplementedError`. Geometry needs extraction from `_archive/build_scene.py.pre-refactor.bak`. They are not in the gallery because there is nothing to render.
 - **Composite re-render with per-variant lighting** (Step 8 of `docs/sub_render_strategy.md` §10) is deferred until after the escritura.

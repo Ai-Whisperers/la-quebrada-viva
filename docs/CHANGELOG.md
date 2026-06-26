@@ -18,6 +18,12 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — CC-DOC.3 RESULTS_GUIDE multi-view shotlist
+
+- **docs** `docs/RESULTS_GUIDE.md` — new §5 "Multi-view shotlist (`RENDER_VIEW` protocol v2)" inserted between the gallery (§4) and the legacy "How to read everything together" (renumbered to §6); old "Known gaps" renumbered §6 → §7. Subsections: §5.1 six core views table (`hero3q | elevation | plan | section | interior | xray`) with projection + what-it-shows columns and explicit asset-vs-scene scope note; §5.2 filename-grammar diagram parsing `cob_walls_B_elevation.png` into asset-slug × variant × view; §5.3 output landing patterns (canonical `renders/sub/runs/<RENDER_RUN_ID>_<asset>[_<tag>]/<variant>_<view>.png`, latest-mirror `renders/sub/latest/<asset>_<variant>_<view>.png`, flat back-compat `renders/sub/<asset>_<variant>.png` for `RENDER_VIEW=hero3q` only); §5.4 parcel-scale-driver migration note (22 drivers honour `RENDER_VIEW` via `make_view_camera` post-2026-06-26); §5.5 cross-references to `docs/sub_render_strategy.md` §3.5, `docs/HOUSE_IMAGERY_SHOTLIST.md` §5.1, `lqv/cameras.py`, `lqv/furniture.py`. Closes MASTER_TODO CC-DOC.3.
+
+---
+
 ## [2026-06-26] — CC-DOC.1 top-level README
 
 - **docs** `README.md` — created (was missing at repo root; only `LICENSES/README.md` + `.pytest_cache/README.md` existed). Cold-start entry: parcel location + ownership, 4-deliverable priority table (18 finals shipped at `85e86aa`, 62-ha digital twin at `4409dba`, escritura pack frozen at tag `escritura-2026-06-27` / `0081129`, housing-park master plan in progress), doc-pointer order (PROJECT_INDEX → STATUS → CLAUDE → ARCHITECTURE → docs/INDEX → MASTER_TODO → DEFERRED_BUGS), quick-run examples for `scripts/render_*.sh` + `make sub|boq|deck`, variant + HDRI map, 14 GB host serialization + AMD CPU-fallback constraints, MIT vs per-asset license split, GitHub remote pointer. Closes MASTER_TODO CC-DOC.1.
