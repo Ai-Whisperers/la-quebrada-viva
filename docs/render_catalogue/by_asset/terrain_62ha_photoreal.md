@@ -2,13 +2,24 @@
 
 Total renders: **31**.
 
+## Coverage by view
+
+| View | Renders |
+|---|---:|
+| `hero3q` | 31 |
+| `elevation` | 0 |
+| `plan` | 0 |
+| `section` | 0 |
+| `interior` | 0 |
+| `xray` | 0 |
+
 ![terrain_62ha_photoreal contact sheet](../contact_sheets/terrain_62ha_photoreal.jpg)
 
 _Contact sheet above shows up to 9 latest renders, deduped by variant._
 
-Grouped by run (date + tag), then variant.
+Grouped by run (date + tag), then view, then variant.
 
-## (undated) · flat_latest
+## (undated) · flat_latest · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -16,7 +27,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/terrain_62ha_photoreal_B.png`](../../../renders/sub/terrain_62ha_photoreal_B.png) | 4.4MB | 2026-06-15 | sub_flat |
 | `C` | [`renders/sub/terrain_62ha_photoreal_C.png`](../../../renders/sub/terrain_62ha_photoreal_C.png) | 4.4MB | 2026-06-15 | sub_flat |
 
-## (undated) · sub_latest_mirror
+## (undated) · sub_latest_mirror · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -24,7 +35,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/latest/terrain_62ha_photoreal_B.png`](../../../renders/sub/latest/terrain_62ha_photoreal_B.png) | 4.4MB | 2026-06-15 | sub_latest |
 | `C` | [`renders/sub/latest/terrain_62ha_photoreal_C.png`](../../../renders/sub/latest/terrain_62ha_photoreal_C.png) | 4.4MB | 2026-06-15 | sub_latest |
 
-## (undated) · tdt_satdata_v5 · birdseye
+## (undated) · tdt_satdata_v5 · view=hero3q · birdseye
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -32,7 +43,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_birdseye/B.png`](../../../renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_birdseye/B.png) | 4.3MB | 2026-06-15 | sub_run |
 | `C` | [`renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_birdseye/C.png`](../../../renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_birdseye/C.png) | 4.3MB | 2026-06-15 | sub_run |
 
-## (undated) · tdt_satdata_v5 · oblique
+## (undated) · tdt_satdata_v5 · view=hero3q · oblique
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -40,7 +51,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_oblique/B.png`](../../../renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_oblique/B.png) | 4.2MB | 2026-06-15 | sub_run |
 | `C` | [`renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_oblique/C.png`](../../../renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_oblique/C.png) | 4.2MB | 2026-06-15 | sub_run |
 
-## (undated) · tdt_satdata_v5 · plan
+## (undated) · tdt_satdata_v5 · view=hero3q · plan
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -48,7 +59,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_plan/B.png`](../../../renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_plan/B.png) | 4.4MB | 2026-06-15 | sub_run |
 | `C` | [`renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_plan/C.png`](../../../renders/sub/runs/tdt_satdata_v5_terrain_62ha_photoreal_plan/C.png) | 4.4MB | 2026-06-15 | sub_run |
 
-## 2026-06-11 · dt · birdseye
+## 2026-06-11 · dt · view=hero3q · birdseye
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -56,7 +67,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_birdseye/B.png`](../../../renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_birdseye/B.png) | 9.4MB | 2026-06-11 | sub_run |
 | `C` | [`renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_birdseye/C.png`](../../../renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_birdseye/C.png) | 9.4MB | 2026-06-11 | sub_run |
 
-## 2026-06-11 · dt · oblique
+## 2026-06-11 · dt · view=hero3q · oblique
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -64,7 +75,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_oblique/B.png`](../../../renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_oblique/B.png) | 9.1MB | 2026-06-11 | sub_run |
 | `C` | [`renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_oblique/C.png`](../../../renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_oblique/C.png) | 9.1MB | 2026-06-11 | sub_run |
 
-## 2026-06-11 · dt · plan
+## 2026-06-11 · dt · view=hero3q · plan
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -72,43 +83,43 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_plan/B.png`](../../../renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_plan/B.png) | 10.0MB | 2026-06-11 | sub_run |
 | `C` | [`renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_plan/C.png`](../../../renders/sub/runs/20260611_dt_run_photoreal_terrain_62ha_photoreal_plan/C.png) | 10.1MB | 2026-06-11 | sub_run |
 
-## 2026-06-18 · dem_ab · oblique_alos
+## 2026-06-18 · dem_ab · view=hero3q · oblique_alos
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
 | `A` | [`renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_alos/A.png`](../../../renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_alos/A.png) | 4.1MB | 2026-06-18 | sub_run |
 
-## 2026-06-18 · dem_ab · oblique_cop30
+## 2026-06-18 · dem_ab · view=hero3q · oblique_cop30
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
 | `A` | [`renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_cop30/A.png`](../../../renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_cop30/A.png) | 4.1MB | 2026-06-18 | sub_run |
 
-## 2026-06-18 · dem_ab · oblique_nasadem
+## 2026-06-18 · dem_ab · view=hero3q · oblique_nasadem
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
 | `A` | [`renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_nasadem/A.png`](../../../renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_nasadem/A.png) | 4.1MB | 2026-06-18 | sub_run |
 
-## 2026-06-18 · dem_ab · oblique_srtm
+## 2026-06-18 · dem_ab · view=hero3q · oblique_srtm
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
 | `A` | [`renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_srtm/A.png`](../../../renders/sub/runs/dem_ab_20260618_terrain_62ha_photoreal_oblique_srtm/A.png) | 4.1MB | 2026-06-18 | sub_run |
 
-## 2026-06-18 · satellite_overlay_ab · oblique_bare
+## 2026-06-18 · satellite_overlay_ab · view=hero3q · oblique_bare
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
 | `A` | [`renders/sub/runs/satellite_overlay_ab_20260618_terrain_62ha_photoreal_oblique_bare/A.png`](../../../renders/sub/runs/satellite_overlay_ab_20260618_terrain_62ha_photoreal_oblique_bare/A.png) | 4.2MB | 2026-06-18 | sub_run |
 
-## 2026-06-18 · satellite_overlay_ab · oblique_ndvi
+## 2026-06-18 · satellite_overlay_ab · view=hero3q · oblique_ndvi
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
 | `A` | [`renders/sub/runs/satellite_overlay_ab_20260618_terrain_62ha_photoreal_oblique_ndvi/A.png`](../../../renders/sub/runs/satellite_overlay_ab_20260618_terrain_62ha_photoreal_oblique_ndvi/A.png) | 4.2MB | 2026-06-18 | sub_run |
 
-## 2026-06-18 · satellite_overlay_ab · oblique_s2rgb
+## 2026-06-18 · satellite_overlay_ab · view=hero3q · oblique_s2rgb
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|

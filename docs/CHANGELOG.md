@@ -18,6 +18,15 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — CC-DOC.6 render catalogue (asset, view, variant) restructure
+
+- **docs** `scripts/build_render_catalogue.py` — new protocol-v2 `view` axis added end-to-end. `PROTOCOL_V2_VIEWS = ("hero3q", "elevation", "plan", "section", "interior", "xray")` constant + `DEFAULT_VIEW = "hero3q"` for legacy back-compat. New regexes `VARIANT_VIEW_RE = ^(A|B|C)_(<view>)\.png$` and `STEM_V2_RE = ^(.+?)_(A|B|C)_(<view>)$` parse the new filename grammar. `Render` dataclass gains `view: str` field between `variant` and `date`; flows through `asdict(r)` into `catalogue.json`. All 5 collectors (`collect_canonical_finals`, `collect_sub_flat`, `collect_sub_runs`, `collect_sub_latest`, `collect_monday`) populate `view` from protocol-v2 stems where present, default `hero3q` otherwise.
+- **docs** `docs/render_catalogue/INDEX.md` — regenerated (926 renders / 53 assets). New "## View distribution (protocol-v2 axis)" table at top (`hero3q`=908, `elevation`=3, `plan`=3, `section`=3, `interior`=6, `xray`=3). Per-asset roster gains a `Views covered` column listing protocol-v2 views in canonical order. New "## Per-asset × view matrix" section emits a 6-column count grid per asset with `—` for uncovered cells; `bamboo_river_house` shows the full 6-view coverage backbone (26/3/3/3/3/3) from CC-TOOL.8 deterministic harness, `bamboo_beton_28` shows `hero3q`=24/`interior`=3.
+- **docs** `docs/render_catalogue/by_asset/*.md` — 53 per-asset pages regenerated. New "Coverage by view" table at top. Section headers tagged `view=<view>`. Sort and group keys extended to `(date, run_tag, view, sub_variant, variant)`; intro line updated to "Grouped by run (date + tag), then view, then variant."
+- **docs** `docs/render_catalogue/catalogue.json` — re-emitted with `view` field on every render entry. Closes MASTER_TODO CC-DOC.6.
+
+---
+
 ## [2026-06-26] — CC-DOC.3 RESULTS_GUIDE multi-view shotlist
 
 - **docs** `docs/RESULTS_GUIDE.md` — new §5 "Multi-view shotlist (`RENDER_VIEW` protocol v2)" inserted between the gallery (§4) and the legacy "How to read everything together" (renumbered to §6); old "Known gaps" renumbered §6 → §7. Subsections: §5.1 six core views table (`hero3q | elevation | plan | section | interior | xray`) with projection + what-it-shows columns and explicit asset-vs-scene scope note; §5.2 filename-grammar diagram parsing `cob_walls_B_elevation.png` into asset-slug × variant × view; §5.3 output landing patterns (canonical `renders/sub/runs/<RENDER_RUN_ID>_<asset>[_<tag>]/<variant>_<view>.png`, latest-mirror `renders/sub/latest/<asset>_<variant>_<view>.png`, flat back-compat `renders/sub/<asset>_<variant>.png` for `RENDER_VIEW=hero3q` only); §5.4 parcel-scale-driver migration note (22 drivers honour `RENDER_VIEW` via `make_view_camera` post-2026-06-26); §5.5 cross-references to `docs/sub_render_strategy.md` §3.5, `docs/HOUSE_IMAGERY_SHOTLIST.md` §5.1, `lqv/cameras.py`, `lqv/furniture.py`. Closes MASTER_TODO CC-DOC.3.

@@ -2,13 +2,24 @@
 
 Total renders: **9**.
 
+## Coverage by view
+
+| View | Renders |
+|---|---:|
+| `hero3q` | 9 |
+| `elevation` | 0 |
+| `plan` | 0 |
+| `section` | 0 |
+| `interior` | 0 |
+| `xray` | 0 |
+
 ![bamboo_outdoor_shower contact sheet](../contact_sheets/bamboo_outdoor_shower.jpg)
 
 _Contact sheet above shows up to 9 latest renders, deduped by variant._
 
-Grouped by run (date + tag), then variant.
+Grouped by run (date + tag), then view, then variant.
 
-## (undated) · flat_latest
+## (undated) · flat_latest · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -16,7 +27,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/bamboo_outdoor_shower_B.png`](../../../renders/sub/bamboo_outdoor_shower_B.png) | 4.6MB | 2026-06-23 | sub_flat |
 | `C` | [`renders/sub/bamboo_outdoor_shower_C.png`](../../../renders/sub/bamboo_outdoor_shower_C.png) | 4.6MB | 2026-06-23 | sub_flat |
 
-## (undated) · sub_latest_mirror
+## (undated) · sub_latest_mirror · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -24,7 +35,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/latest/bamboo_outdoor_shower_B.png`](../../../renders/sub/latest/bamboo_outdoor_shower_B.png) | 4.6MB | 2026-06-23 | sub_latest |
 | `C` | [`renders/sub/latest/bamboo_outdoor_shower_C.png`](../../../renders/sub/latest/bamboo_outdoor_shower_C.png) | 4.6MB | 2026-06-23 | sub_latest |
 
-## (undated) · wesley_phase2_2026-06-23 · wesley_phase2_2026-06-23
+## (undated) · wesley_phase2_2026-06-23 · view=hero3q · wesley_phase2_2026-06-23
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|

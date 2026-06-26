@@ -114,6 +114,14 @@ VIEW_SUFFIXES: set[str] = {
     "oblique", "oblique_alos", "oblique_cop30",
 }
 
+# Protocol-v2 view axis (RENDER_VIEW) — see docs/RESULTS_GUIDE.md §5.
+# Untagged renders default to `hero3q` per the back-compat invariant
+# (`renders/sub/<asset>_<variant>.png` flat path == hero3q).
+PROTOCOL_V2_VIEWS: tuple[str, ...] = (
+    "hero3q", "elevation", "plan", "section", "interior", "xray",
+)
+DEFAULT_VIEW = "hero3q"
+
 # Prefixes to strip before canonical match (longest first).
 STRIP_PREFIXES: tuple[str, ...] = (
     "gallery_flora_photoreal_v2_",
@@ -123,9 +131,16 @@ STRIP_PREFIXES: tuple[str, ...] = (
 )
 
 VARIANT_RE = re.compile(r"^(A|B|C)\.png$")
+VARIANT_VIEW_RE = re.compile(
+    r"^(A|B|C)_(" + "|".join(PROTOCOL_V2_VIEWS) + r")\.png$"
+)
 DATE_RE = re.compile(r"^(20\d{6})$")
 PREVIEW_RE = re.compile(r"^_preview_([ABC])_([a-z_]+)\.png$")
 CANONICAL_FINAL_RE = re.compile(r"^([ABC])_([a-z_]+)\.png$")
+# `<asset_stem>_<A|B|C>_<view>` — protocol-v2 flat / latest-mirror grammar.
+STEM_V2_RE = re.compile(
+    r"^(.+?)_(A|B|C)_(" + "|".join(PROTOCOL_V2_VIEWS) + r")$"
+)
 
 
 @dataclass
@@ -133,6 +148,7 @@ class Render:
     path: str                 # repo-relative
     asset: str                # canonical asset
     variant: str              # A / B / C / preview / other
+    view: str                 # protocol-v2 view (hero3q | elevation | plan | section | interior | xray)
     date: str                 # YYYY-MM-DD (or "" if unknown)
     run_tag: str              # short identifier from run folder name
     sub_variant: str          # extra suffix after asset (dusk, oblique_alos, etc.)
@@ -268,6 +284,7 @@ def collect_canonical_finals() -> list[Render]:
                 path=repo_rel(p),
                 asset="ESCRITURA_FINALS",
                 variant=variant,
+                view=DEFAULT_VIEW,
                 date="2026-06-10",
                 run_tag="canonical_85e86aa",
                 sub_variant=cam,
@@ -283,6 +300,7 @@ def collect_canonical_finals() -> list[Render]:
                 path=repo_rel(p),
                 asset="ESCRITURA_FINALS",
                 variant=f"{variant}_preview",
+                view=DEFAULT_VIEW,
                 date="",
                 run_tag="preview",
                 sub_variant=cam,
@@ -299,10 +317,15 @@ def collect_sub_flat() -> list[Render]:
         return out
     for p in sorted(SUB.glob("*.png")):
         stem = p.stem
-        # files end in _A / _B / _C or just <asset>_<variant>.png
+        # Protocol v2 flat grammar: `<asset_stem>_<A|B|C>_<view>`.
+        # Legacy back-compat: `<asset_stem>_<A|B|C>` → view = hero3q.
         variant = ""
+        view = DEFAULT_VIEW
         asset_stem = stem
-        if stem.endswith(("_A", "_B", "_C")):
+        m = STEM_V2_RE.match(stem)
+        if m:
+            asset_stem, variant, view = m.group(1), m.group(2), m.group(3)
+        elif stem.endswith(("_A", "_B", "_C")):
             variant = stem[-1]
             asset_stem = stem[:-2]
         asset, sub = canonicalize_asset(asset_stem)
@@ -310,6 +333,7 @@ def collect_sub_flat() -> list[Render]:
             path=repo_rel(p),
             asset=asset,
             variant=variant or "(none)",
+            view=view,
             date="",
             run_tag="flat_latest",
             sub_variant=sub,
@@ -329,12 +353,19 @@ def collect_sub_runs() -> list[Render]:
             continue
         date, run_tag, asset, sub = parse_run_folder(d.name)
         for p in sorted(d.glob("*.png")):
-            m = VARIANT_RE.match(p.name)
-            variant = m.group(1) if m else p.stem
+            # Protocol v2: `<A|B|C>_<view>.png` — fall back to legacy `<A|B|C>.png`.
+            view = DEFAULT_VIEW
+            mv = VARIANT_VIEW_RE.match(p.name)
+            if mv:
+                variant, view = mv.group(1), mv.group(2)
+            else:
+                m = VARIANT_RE.match(p.name)
+                variant = m.group(1) if m else p.stem
             out.append(Render(
                 path=repo_rel(p),
                 asset=asset,
                 variant=variant,
+                view=view,
                 date=date,
                 run_tag=run_tag,
                 sub_variant=sub,
@@ -351,15 +382,25 @@ def collect_sub_latest() -> list[Render]:
         return out
     for p in sorted(SUB_LATEST.rglob("*.png")):
         rel = p.relative_to(SUB_LATEST)
-        # latest/<asset>/<variant>.png OR latest/<asset>_<variant>.png
+        view = DEFAULT_VIEW
+        # latest/<asset>/<variant>.png OR latest/<asset>_<variant>[_<view>].png
         parts = rel.parts
         if len(parts) == 2:
             asset_stem, fname = parts
-            variant = Path(fname).stem
+            file_stem = Path(fname).stem
+            # nested: try `<A|B|C>_<view>` then bare `<variant>`.
+            mv = VARIANT_VIEW_RE.match(fname)
+            if mv:
+                variant, view = mv.group(1), mv.group(2)
+            else:
+                variant = file_stem
             asset, sub = canonicalize_asset(asset_stem)
         else:
             stem = p.stem
-            if stem.endswith(("_A", "_B", "_C")):
+            m = STEM_V2_RE.match(stem)
+            if m:
+                asset_stem, variant, view = m.group(1), m.group(2), m.group(3)
+            elif stem.endswith(("_A", "_B", "_C")):
                 variant, asset_stem = stem[-1], stem[:-2]
             else:
                 variant, asset_stem = "(none)", stem
@@ -368,6 +409,7 @@ def collect_sub_latest() -> list[Render]:
             path=repo_rel(p),
             asset=asset,
             variant=variant,
+            view=view,
             date="",
             run_tag="sub_latest_mirror",
             sub_variant=sub,
@@ -388,6 +430,7 @@ def collect_monday() -> list[Render]:
             path=repo_rel(p),
             asset="MONDAY_DELIVERABLE",
             variant=stem,
+            view=DEFAULT_VIEW,
             date="",
             run_tag="monday_pack",
             sub_variant="",
@@ -399,10 +442,10 @@ def collect_monday() -> list[Render]:
 
 
 def write_asset_page(asset: str, records: list[Render], out_dir: Path) -> Path:
-    # sort: date asc (blanks last), then run_tag, then variant
+    # sort: date asc (blanks last), then run_tag, view, sub_variant, variant
     def key(r: Render):
         d = r.date or "9999-99-99"
-        return (d, r.run_tag, r.sub_variant, r.variant)
+        return (d, r.run_tag, r.view, r.sub_variant, r.variant)
 
     records = sorted(records, key=key)
     page = out_dir / f"{asset}.md"
@@ -413,6 +456,23 @@ def write_asset_page(asset: str, records: list[Render], out_dir: Path) -> Path:
         f"Total renders: **{len(records)}**.",
         "",
     ]
+    # per-view coverage block — protocol v2 axis at a glance
+    by_view: dict[str, int] = defaultdict(int)
+    for r in records:
+        by_view[r.view] += 1
+    if by_view:
+        lines += [
+            "## Coverage by view",
+            "",
+            "| View | Renders |",
+            "|---|---:|",
+        ]
+        for view in PROTOCOL_V2_VIEWS:
+            lines.append(f"| `{view}` | {by_view.get(view, 0)} |")
+        other = sorted(v for v in by_view if v not in PROTOCOL_V2_VIEWS)
+        for view in other:
+            lines.append(f"| `{view}` | {by_view[view]} |")
+        lines.append("")
     if sheet.exists():
         lines += [
             f"![{asset} contact sheet](../contact_sheets/{asset}.jpg)",
@@ -421,18 +481,19 @@ def write_asset_page(asset: str, records: list[Render], out_dir: Path) -> Path:
             "",
         ]
     lines += [
-        "Grouped by run (date + tag), then variant.",
+        "Grouped by run (date + tag), then view, then variant.",
         "",
     ]
-    # group by (date, run_tag, sub_variant)
-    groups: dict[tuple[str, str, str], list[Render]] = defaultdict(list)
+    # group by (date, run_tag, view, sub_variant)
+    groups: dict[tuple[str, str, str, str], list[Render]] = defaultdict(list)
     for r in records:
-        groups[(r.date, r.run_tag, r.sub_variant)].append(r)
+        groups[(r.date, r.run_tag, r.view, r.sub_variant)].append(r)
 
-    for (date, run_tag, sub), recs in sorted(groups.items()):
+    for (date, run_tag, view, sub), recs in sorted(groups.items()):
         header_bits = [date or "(undated)"]
         if run_tag:
             header_bits.append(run_tag)
+        header_bits.append(f"view={view}")
         if sub:
             header_bits.append(sub)
         lines.append(f"## {' · '.join(header_bits)}")
@@ -453,18 +514,21 @@ def write_index(by_asset: dict[str, list[Render]], all_records: list[Render], ou
     page = out_dir / "INDEX.md"
     by_source = defaultdict(int)
     by_date = defaultdict(int)
+    by_view = defaultdict(int)
     for r in all_records:
         by_source[r.source] += 1
         by_date[r.date or "(undated)"] += 1
+        by_view[r.view] += 1
 
     lines = [
         "# Render catalogue — La Quebrada Viva",
         "",
         f"_Generated by `scripts/build_render_catalogue.py`. PNG count: **{len(all_records)}**._",
         "",
-        "Index of every render artefact in the repo, organised by asset/model and",
-        "chronologically by run-date within each asset page. No physical file copies",
-        "(catalogue links to existing paths under `renders/`).",
+        "Index of every render artefact in the repo, organised by",
+        "`(asset, view, variant)`. Per-asset pages chronologically by run-date,",
+        "then by view (protocol-v2 axis), then variant (lighting A/B/C). No",
+        "physical file copies (catalogue links to existing paths under `renders/`).",
         "",
         "## Summary",
         "",
@@ -473,6 +537,22 @@ def write_index(by_asset: dict[str, list[Render]], all_records: list[Render], ou
     ]
     for src in sorted(by_source):
         lines.append(f"| `{src}` | {by_source[src]} |")
+    lines.append("")
+
+    lines += [
+        "## View distribution (protocol-v2 axis)",
+        "",
+        "Renders predating `RENDER_VIEW` default to `hero3q` per the back-compat",
+        "invariant. See `docs/RESULTS_GUIDE.md` §5 for the multi-view shotlist.",
+        "",
+        "| View | Renders |",
+        "|---|---:|",
+    ]
+    for view in PROTOCOL_V2_VIEWS:
+        lines.append(f"| `{view}` | {by_view.get(view, 0)} |")
+    extra_views = sorted(v for v in by_view if v not in PROTOCOL_V2_VIEWS)
+    for view in extra_views:
+        lines.append(f"| `{view}` | {by_view[view]} |")
     lines.append("")
 
     lines += [
@@ -519,20 +599,48 @@ def write_index(by_asset: dict[str, list[Render]], all_records: list[Render], ou
         "## Per-asset roster",
         "",
         "Each link points to the asset's chronological page. Sub-renders only —",
-        "canonical finals and the Monday pack appear above.",
+        "canonical finals and the Monday pack appear above. `Views covered`",
+        "lists protocol-v2 views present (legacy renders count as `hero3q`).",
         "",
-        "| Asset | Renders | Latest date |",
-        "|---|---:|---|",
+        "| Asset | Renders | Latest date | Views covered |",
+        "|---|---:|---|---|",
     ]
     sub_assets: list[str] = []
+    view_counts_per_asset: dict[str, dict[str, int]] = {}
     for asset in sorted(by_asset):
         if asset in ("ESCRITURA_FINALS", "MONDAY_DELIVERABLE"):
             continue
         recs = by_asset[asset]
         latest_dates = [r.date for r in recs if r.date]
         latest = max(latest_dates) if latest_dates else "(undated)"
-        lines.append(f"| [{asset}](by_asset/{asset}.md) | {len(recs)} | {latest} |")
+        view_counts: dict[str, int] = defaultdict(int)
+        for r in recs:
+            view_counts[r.view] += 1
+        view_counts_per_asset[asset] = dict(view_counts)
+        covered = [v for v in PROTOCOL_V2_VIEWS if view_counts.get(v, 0) > 0]
+        covered += sorted(v for v in view_counts if v not in PROTOCOL_V2_VIEWS)
+        covered_str = ", ".join(f"`{v}`" for v in covered) or "—"
+        lines.append(
+            f"| [{asset}](by_asset/{asset}.md) | {len(recs)} | {latest} | {covered_str} |"
+        )
         sub_assets.append(asset)
+    lines.append("")
+
+    # per-asset × view matrix (protocol-v2 axis)
+    lines += [
+        "## Per-asset × view matrix",
+        "",
+        "Counts per protocol-v2 view per asset. Empty cells = no renders for that",
+        "view yet; gaps here are the shotlist backlog. Legacy renders without an",
+        "explicit `_<view>` suffix are bucketed into `hero3q`.",
+        "",
+        "| Asset | " + " | ".join(f"`{v}`" for v in PROTOCOL_V2_VIEWS) + " |",
+        "|---|" + "|".join(["---:"] * len(PROTOCOL_V2_VIEWS)) + "|",
+    ]
+    for asset in sub_assets:
+        counts = view_counts_per_asset.get(asset, {})
+        cells = [str(counts.get(v, 0)) if counts.get(v, 0) else "—" for v in PROTOCOL_V2_VIEWS]
+        lines.append(f"| [{asset}](by_asset/{asset}.md) | " + " | ".join(cells) + " |")
     lines.append("")
 
     # contact-sheet gallery: per-asset thumbnail JPGs built by build_contact_sheets.py

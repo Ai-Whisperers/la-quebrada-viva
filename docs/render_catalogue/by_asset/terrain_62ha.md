@@ -2,13 +2,24 @@
 
 Total renders: **56**.
 
+## Coverage by view
+
+| View | Renders |
+|---|---:|
+| `hero3q` | 56 |
+| `elevation` | 0 |
+| `plan` | 0 |
+| `section` | 0 |
+| `interior` | 0 |
+| `xray` | 0 |
+
 ![terrain_62ha contact sheet](../contact_sheets/terrain_62ha.jpg)
 
 _Contact sheet above shows up to 9 latest renders, deduped by variant._
 
-Grouped by run (date + tag), then variant.
+Grouped by run (date + tag), then view, then variant.
 
-## (undated) · flat_latest
+## (undated) · flat_latest · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -16,7 +27,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/terrain_62ha_B.png`](../../../renders/sub/terrain_62ha_B.png) | 6.6MB | 2026-06-15 | sub_flat |
 | `C` | [`renders/sub/terrain_62ha_C.png`](../../../renders/sub/terrain_62ha_C.png) | 6.8MB | 2026-06-15 | sub_flat |
 
-## (undated) · sub_latest_mirror
+## (undated) · sub_latest_mirror · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -24,7 +35,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/latest/terrain_62ha_B.png`](../../../renders/sub/latest/terrain_62ha_B.png) | 6.6MB | 2026-06-15 | sub_latest |
 | `C` | [`renders/sub/latest/terrain_62ha_C.png`](../../../renders/sub/latest/terrain_62ha_C.png) | 6.8MB | 2026-06-15 | sub_latest |
 
-## 2026-06-11 · 030400 · birdseye__legacy
+## 2026-06-11 · 030400 · view=hero3q · birdseye__legacy
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -32,7 +43,7 @@ Grouped by run (date + tag), then variant.
 | `terrain_62ha_B` | [`renders/sub/runs/20260611_030400_terrain_62ha_birdseye__legacy/terrain_62ha_B.png`](../../../renders/sub/runs/20260611_030400_terrain_62ha_birdseye__legacy/terrain_62ha_B.png) | 5.2MB | 2026-06-11 | sub_run |
 | `terrain_62ha_C` | [`renders/sub/runs/20260611_030400_terrain_62ha_birdseye__legacy/terrain_62ha_C.png`](../../../renders/sub/runs/20260611_030400_terrain_62ha_birdseye__legacy/terrain_62ha_C.png) | 5.0MB | 2026-06-11 | sub_run |
 
-## 2026-06-11 · dt · birdseye
+## 2026-06-11 · dt · view=hero3q · birdseye
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -55,7 +66,7 @@ Grouped by run (date + tag), then variant.
 | `C` | [`renders/sub/runs/20260611_dt_run_v5_arrowfix_terrain_62ha_birdseye/C.png`](../../../renders/sub/runs/20260611_dt_run_v5_arrowfix_terrain_62ha_birdseye/C.png) | 7.2MB | 2026-06-15 | sub_run |
 | `C` | [`renders/sub/runs/20260611_dt_run_v5_terrain_62ha_birdseye/C.png`](../../../renders/sub/runs/20260611_dt_run_v5_terrain_62ha_birdseye/C.png) | 7.2MB | 2026-06-11 | sub_run |
 
-## 2026-06-11 · dt · oblique
+## 2026-06-11 · dt · view=hero3q · oblique
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -76,7 +87,7 @@ Grouped by run (date + tag), then variant.
 | `C` | [`renders/sub/runs/20260611_dt_run_v5_arrowfix_terrain_62ha_oblique/C.png`](../../../renders/sub/runs/20260611_dt_run_v5_arrowfix_terrain_62ha_oblique/C.png) | 6.8MB | 2026-06-15 | sub_run |
 | `C` | [`renders/sub/runs/20260611_dt_run_v5_terrain_62ha_oblique/C.png`](../../../renders/sub/runs/20260611_dt_run_v5_terrain_62ha_oblique/C.png) | 6.7MB | 2026-06-11 | sub_run |
 
-## 2026-06-11 · dt · plan
+## 2026-06-11 · dt · view=hero3q · plan
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|

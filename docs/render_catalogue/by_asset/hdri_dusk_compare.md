@@ -2,13 +2,24 @@
 
 Total renders: **9**.
 
+## Coverage by view
+
+| View | Renders |
+|---|---:|
+| `hero3q` | 9 |
+| `elevation` | 0 |
+| `plan` | 0 |
+| `section` | 0 |
+| `interior` | 0 |
+| `xray` | 0 |
+
 ![hdri_dusk_compare contact sheet](../contact_sheets/hdri_dusk_compare.jpg)
 
 _Contact sheet above shows up to 9 latest renders, deduped by variant._
 
-Grouped by run (date + tag), then variant.
+Grouped by run (date + tag), then view, then variant.
 
-## (undated) · flat_latest
+## (undated) · flat_latest · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -16,7 +27,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/hdri_dusk_compare_B.png`](../../../renders/sub/hdri_dusk_compare_B.png) | 4.7MB | 2026-06-13 | sub_flat |
 | `C` | [`renders/sub/hdri_dusk_compare_C.png`](../../../renders/sub/hdri_dusk_compare_C.png) | 4.4MB | 2026-06-13 | sub_flat |
 
-## (undated) · sub_latest_mirror
+## (undated) · sub_latest_mirror · view=hero3q
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
@@ -24,7 +35,7 @@ Grouped by run (date + tag), then variant.
 | `B` | [`renders/sub/latest/hdri_dusk_compare_B.png`](../../../renders/sub/latest/hdri_dusk_compare_B.png) | 4.7MB | 2026-06-13 | sub_latest |
 | `C` | [`renders/sub/latest/hdri_dusk_compare_C.png`](../../../renders/sub/latest/hdri_dusk_compare_C.png) | 4.4MB | 2026-06-13 | sub_latest |
 
-## 2026-06-13 · subrender · subrender_taskbundle
+## 2026-06-13 · subrender · view=hero3q · subrender_taskbundle
 
 | Variant | Path | Size | mtime | Source |
 |---|---|---:|---|---|
