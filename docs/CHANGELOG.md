@@ -18,6 +18,12 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — CC-TOOL.1 MCP socket retire decision
+
+- **docs** `docs/MCP_STATUS.md` (new) — diagnostic + retire decision for the BlenderMCP `localhost:9876` socket. Confirmed dead (`Connection refused`, no `:9876` listener, no Blender daemon process). Decision: **retire for escritura phase** rather than revive — sub-render workflow does not need it and the ~4 GB daemon RSS contends with the 4.3 GB per-render peak on a 14 GB host. Revival recipe (`blender --background --python scripts/mcp_daemon.py`) preserved for post-escritura selective use. `scripts/mcp_daemon.py` stays gitignored. Closes CC-TOOL.1 as resolved-by-retire.
+
+---
+
 ## [2026-06-26] — P1.A.5 HDRI swap to cerrado / Atlantic-Forest-edge biome
 
 - **feat** `lqv/lighting.py:16-23` — `_HDRI_BY_VARIANT` rotated from African-savanna / boreal stock to Paraguarí ~26.6°S Atlantic-Forest-edge / cerrado transition reads. New picks: A=`bryanston_park_sunrise_4k.exr` @ 0.8 (dry-season warm sunrise), B=`xanderklinge_4k.exr` @ 1.4 (overcast wet-season midday gallery forest), C=`kloppenheim_07_4k.exr` @ 0.5 (civil-twilight blue hour with residual sky tone for firefly read). Variant-strength multipliers preserved — only the EXR filenames changed, so the existing Sun-lamp / sky-fallback paths are unmoved.

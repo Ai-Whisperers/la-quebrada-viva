@@ -154,7 +154,7 @@ Per `docs/wesley_phase3_inventory.md` Phase 4.
 
 ## CC-TOOL — Cross-cutting tooling + infra
 
-- [ ] **CC-TOOL.1 MCP socket revival** — `scripts/mcp_daemon.py` dead per `project_state_2026_06_10`. Either revive or formally retire + remove the always-excluded constraint from memory. Owner: AI. Effort: 1 day diagnostic.
+- [x] **CC-TOOL.1 MCP socket revival** — closed 2026-06-26 as **resolved-by-retire** per `docs/MCP_STATUS.md`. Socket stays down for escritura phase; revival recipe documented for post-escritura selective use. `scripts/mcp_daemon.py` exclude rule preserved.
 - [ ] **CC-TOOL.2 `scripts/organize_sub_renders.py`** — currently untracked. Decide: ship + add tests, or delete. Gate: review what it does post-escritura.
 - [ ] **CC-TOOL.3 `scripts/download_polyhaven_assets.py [M]`** — uncommitted modification. Diff + decide. Pre-escritura: leave alone.
 - [ ] **CC-TOOL.4 Smoke test broadening** — `scripts/smoke_test.sh` currently covers the 6 composite cameras; extend to a randomized 4-asset subscene sample to catch regressions in the 51+ drivers.
