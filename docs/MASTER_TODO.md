@@ -59,15 +59,15 @@ Starts 2026-06-29. Pre-condition: P0a + P0b complete and signed.
 - [x] **P1.A.2 Bug 2: lapacho_timber plastic** — shipped at `78433a7` (2026-06-15). `textured_principled('old_planks_02')` + secondary Voronoi at `lqv/materials/wood.py:77-93`. ✓
 - [x] **P1.A.3 Bug 3: photoreal-flora `.003` LOD collision** — shipped at `78433a7` (2026-06-15). `_LOADED_HEROES` + `cached.copy()` at `lqv/flora/photoreal.py:37-82`. ✓
 - [ ] **P1.A.4 Stone-foundation plinth (Rule 4)** — per-typology builder edit pass, 60 cm sandstone plinth on the 13 typologies missing it. Owner: AI. Effort: 1.5 days.
-- [ ] **P1.A.5 HDRI swap** — replace dome with cerrado/Atlantic-Forest-edge CC0 or CC-BY 4.0. Delegate discovery to `asset-researcher` agent. Owner: AI. Effort: 0.5 day search + 0.5 day wire-up.
+- [x] **P1.A.5 HDRI swap** — closed 2026-06-26. Cerrado/Atlantic-Forest-edge biome-correct dispatcher landed at `lqv/lighting.py:19-23`: A=`bryanston_park_sunrise_4k.exr` 0.8, B=`xanderklinge_4k.exr` 1.4, C=`kloppenheim_07_4k.exr` 0.5. Legacy `qwantani_dusk_2_4k.exr` quarantined to `assets/hdris/_quarantine/`. All three CC0 per `LICENSE_BUNDLE.md`.
 
 ### P1.B — House imagery shotlist execution (week 2)
 
 Per `docs/HOUSE_IMAGERY_SHOTLIST.md`. 16 houses × ~24 PNGs = **384 finals + 384 previews**.
 
-- [ ] **P1.B.1 Furniture stubs** — bed/table/bench/stove/cistern primitives across 16 typologies. Required for interior shots. Owner: AI. Effort: 6 h.
-- [ ] **P1.B.2 `RENDER_VIEW` env var + camera helpers** — `subscene_ortho_elevation`, `subscene_ortho_plan`, `subscene_section_camera`, `subscene_interior_camera` in `lqv/cameras.py`. Owner: AI. Effort: 1 day.
-- [ ] **P1.B.3 `apply_xray_override`** — transparent-BSDF material swap in `lqv/subscene/base.py` with `except_materials` allowlist. Owner: AI. Effort: 0.5 day.
+- [x] **P1.B.1 Furniture stubs** — closed 2026-06-26. `lqv/furniture.py` ships `furnish_interior(col, *, footprint_w, footprint_l, origin_xy, floor_z, pax, style, variant, name_prefix)` with style families bamboo|lapacho|stone|cob|container. Variant-keyed lantern emission `{A: 0.0, B: 0.6, C: 1.0}`. CHANGELOG 2026-06-26.
+- [x] **P1.B.2 `RENDER_VIEW` env var + camera helpers** — closed 2026-06-26. Public dispatcher `cameras.make_view_camera(cfg, target, distance, height, lens)` covers `{hero3q, elevation, plan, section, interior, xray}`. Default `RENDER_VIEW=hero3q` at `lqv/config.py:59`. 22 bypass-pattern drivers migrated. CHANGELOG 2026-06-26.
+- [x] **P1.B.3 `apply_xray_override`** — closed 2026-06-26. `apply_xray_override` + `XRAY_OPAQUE_MATERIALS` frozenset allowlist landed in `lqv/subscene/base.py`. CHANGELOG 2026-06-26.
 - [ ] **P1.B.4 Driver wire-up** — per material family, one PR each: italian, bamboo-shell, beton+villa, hobbit+cob, container, river. Owner: AI. Effort: 2 days.
 - [ ] **P1.B.5 Preview batch overnight** — 768 PNGs at 64 samples, `RENDER_RUN_ID=multiview_preview_2026-07-0X`. Owner: AI. Effort: 5.3 h render + 1 h review.
 - [ ] **P1.B.6 Framing fix pass** — per-asset camera tuning from contact-sheet review. Owner: AI. Effort: 1 day.
@@ -171,12 +171,12 @@ Per `docs/wesley_phase3_inventory.md` Phase 4.
 - [x] **CC-DOC.1 README.md refresh** — current state post-escritura. Owner: AI. Effort: 1 h. *Closed 2026-06-26 — top-level `README.md` did not exist (only `LICENSES/README.md` + `.pytest_cache/README.md`); created from scratch as cold-start entry covering parcel/ownership/escritura date, 4-deliverable priority table, doc-pointer order, quick-run examples, variant+HDRI map, host constraints, license split, GitHub remote. See CHANGELOG.md [2026-06-26] CC-DOC.1.*
 - [ ] **CC-DOC.2 `docs/FINAL_GALLERY.md`** — regenerate post-P1.B and P1.C with new SHAs.
 - [ ] **CC-DOC.3 `docs/RESULTS_GUIDE.md`** — section on multi-view shotlist + how to read `<asset>_<variant>_<view>.png` filenames.
-- [ ] **CC-DOC.4 `docs/sub_render_strategy.md`** — fold in `RENDER_VIEW` axis next to the variants.
-- [ ] **CC-DOC.5 `docs/master_plan.md`** — refresh dates + phase status post-escritura.
+- [x] **CC-DOC.4 `docs/sub_render_strategy.md`** — closed 2026-06-26. New §3.5 "Camera-view axis (`RENDER_VIEW`)" inserted between §3 and §4 with 6 subsections: default+dispatcher, value set, bypass-pattern drivers (22 migrated), interior furnishing (P1.B.1), xray override v2 (P1.B.3), output filename pattern (run-folder + flat back-compat). Template line 90 swapped to `cameras.make_view_camera(...)`. Cross-references updated.
+- [x] **CC-DOC.5 `docs/master_plan.md`** — closed 2026-06-26. Date refresh 2026-06-10→2026-06-26; 12/12→18/18 finals at `85e86aa`; HDRI/CPU/14 GB blocks refreshed; new §1.1 cross-deliverable manifest; hard-gap status flipped (Variant C SHIPPED 2026-06-10, CREDITS.md SHIPPED, MCP RETIRED, CC-BY-SA hammock EXCLUDED). Phase 7 STARTING NOW → DELIVERED 2026-06-10.
 - [ ] **CC-DOC.6 `docs/render_catalogue/INDEX.md`** — restructure by `(asset, view, variant)` not just `(asset, variant)`.
 - [ ] **CC-DOC.7 `docs/photographic_references.md`** — add multi-view reference photos from comparable Paraguayan + Atlantic-Forest projects.
 - [ ] **CC-DOC.8 Internal changelog** — `docs/CHANGELOG.md` tracking material-shader version (Bug 1/2 fix), camera-helper version, build_scene.py freeze status.
-- [ ] **CC-DOC.9 `docs/CLAUDE.md` reconciliation** — promote the sub-render-first rule from memory into the in-repo CLAUDE.md (per `feedback_sub_render_first`).
+- [x] **CC-DOC.9 `docs/CLAUDE.md` reconciliation** — closed 2026-06-26. Task description's `docs/CLAUDE.md` is a phantom file — the in-repo CLAUDE.md lives at the repo root. The sub-render-first rule already lives there at §"Critique-derived standing rules" #1; no further promotion needed.
 
 ---
 

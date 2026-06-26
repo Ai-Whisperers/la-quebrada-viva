@@ -87,7 +87,7 @@ def build():
     setup_isolated_scene(cfg)                 # reset + cycles + output + color
     materials.build_materials()               # full MAT registry — required for any asset
     place_neutral_ground(material="dirt_neutral")
-    cameras.subscene_camera(target=(0, 0, 1.5))
+    cameras.make_view_camera(cfg, target=(0, 0, 1.5), distance=8.0, height=2.5, lens=50.0)
     from lqv.house.cob import build_cob_walls
     build_cob_walls(parent=None)              # build only this asset
     save_subrender(ASSET_NAME, cfg.variant)
@@ -105,6 +105,59 @@ Default render settings for sub-renders:
 - **Variant**: A/B/C selectable via `RENDER_VARIANT` so atmospheric reads can be previewed per asset.
 
 A complete sub-render should finish in **2-5 minutes on CPU** per asset per variant. The full 28-asset × 3-variant matrix is ~28 × 3 × 3 min = 4.2 hours of CPU time, runnable overnight.
+
+---
+
+## 3.5 Camera-view axis (`RENDER_VIEW`)
+
+The sub-render protocol has two orthogonal axes: **variant** (`RENDER_VARIANT=A|B|C` — lighting / season) and **view** (`RENDER_VIEW=…` — camera framing). The variant axis is documented in §3 above; this section defines the view axis introduced in the 2026-06-26 "Camera helpers v0 → v1" / "Sub-render protocol v1 → v2" CHANGELOG entries.
+
+### 3.5.1 Default and dispatcher
+
+Default `RENDER_VIEW=hero3q` (`lqv/config.py:59`). The single public entry point is:
+
+```python
+cameras.make_view_camera(cfg, target=(x, y, z), distance=D, height=H, lens=F)
+```
+
+`make_view_camera` is defined in `lqv/cameras.py` and replaces the older `cameras.subscene_camera(target=…)` private helper. The dispatcher reads `cfg.view` and constructs an appropriate `bpy.types.Camera` (perspective, ortho elevation, ortho plan, ortho section, interior wide, or xray cutaway) — callers pass their own framing intent (`target`, `distance`, `height`, `lens`) and the dispatcher decides projection / clipping / placement per view.
+
+### 3.5.2 Value set
+
+The protocol v2 core set (enforced by `cfg.view`'s `VALID_VIEWS`):
+
+| `RENDER_VIEW` | Projection | Use |
+|---|---|---|
+| `hero3q` | perspective ¾ | default sales / catalogue shot |
+| `elevation` | ortho | facade study, BoQ measurement |
+| `plan` | ortho top-down | site / floor plan |
+| `section` | ortho cutaway | structural / fit-out reads |
+| `interior` | perspective wide | furnished interior (uses `lqv/furniture.furnish_interior(...)`) |
+| `xray` | perspective + override | wireframe / transparency reveal (uses `apply_xray_override`) |
+
+`docs/HOUSE_IMAGERY_SHOTLIST.md §5.1` lists a wider catalogue-export set for downstream tooling — `hero | elev_n | elev_e | elev_s | elev_w | plan | section_long | section_cross | xray | interior_main | interior_sleep | detail` — which collapses to the core set above for the sub-render driver layer.
+
+### 3.5.3 Bypass-pattern drivers
+
+Parcel-scale drivers (62-ha terrain, escarpment, panoramic flora plates, etc.) bypass `subscene.base.run()` because they require `cam.data.clip_end >> 100 m` (see memory `feedback_subscene_clip_end`: `PARCEL_CLIP_END_M = 20000.0`, `HOUSE_CLIP_END_M = 1000.0`). 22 such drivers were migrated from the old `cameras.subscene_camera(...)` direct call to `cameras.make_view_camera(cfg, …)` so they honour `RENDER_VIEW` consistently with the asset-scale drivers.
+
+### 3.5.4 Interior furnishing (`view=interior`)
+
+`lqv/furniture.py` provides `furnish_interior(col, *, footprint_w, footprint_l, origin_xy, floor_z, pax, style, variant, name_prefix)`. 15 typology drivers (P1.B.1) call this when `cfg.view == 'interior'`. Styles `bamboo | lapacho | stone | cob | container` map to per-typology furniture kits; lantern emission is variant-keyed `{A: 0.0, B: 0.6, C: 1.0}` so interior reads pick up the dusk-to-night gradient of the lighting axis.
+
+### 3.5.5 Xray override (`view=xray`)
+
+`lqv/subscene/base.py` defines `apply_xray_override(scene)` plus the `XRAY_OPAQUE_MATERIALS` frozenset allowlist. When `cfg.view == 'xray'`, every material slot not in the allowlist is swapped to a transparent-BSDF override so structural elements (cob walls, terrain, foundation plinth) stay opaque while skin / cladding / fenestration goes transparent for cutaway reads.
+
+### 3.5.6 Output filename pattern
+
+Sub-renders extend the run-folder pattern from `feedback_render_run_folders`:
+
+```
+renders/sub/runs/<RENDER_RUN_ID>_<asset>[_<tag>]/<variant>_<view>.png
+```
+
+with the standard mirror to `latest/` and the legacy flat back-compat path `renders/sub/<asset>_<variant>.png` preserved for `RENDER_VIEW=hero3q` (the default). Non-default views always go through the run-folder pattern only; the flat path is reserved for the default-view invariant.
 
 ---
 
@@ -225,12 +278,16 @@ This sequence keeps the renderer byte-identity preserved through step 7. Only st
 
 - `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` §2, §4 — the fragility this fixes (archived).
 - `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` Tier 1 T1.1, Tier 2 T2.1 — original execution scheduling (archived; sub-render framework now landed).
-- `CLAUDE.md` "Critique-derived standing rules" #4 — sub-render-first as default workflow.
+- `CLAUDE.md` "Critique-derived standing rules" #1 — sub-render-first as default workflow.
 - `lqv/engine.py` — the setup primitives `base.py` will re-use.
 - `lqv/materials.py` — `MAT` registry, mandatory for every sub-render.
+- `lqv/cameras.py` — `make_view_camera(cfg, target, distance, height, lens)` dispatcher (§3.5).
+- `lqv/furniture.py` — `furnish_interior(...)` for `view=interior` drivers (§3.5.4).
+- `lqv/subscene/base.py` — `apply_xray_override` + `XRAY_OPAQUE_MATERIALS` allowlist (§3.5.5).
 - `lqv/util/ten_rules_check.py` — per-asset rule audit.
 - `lqv/util/random_audit.py` — per-asset RNG audit.
 - `build_scene.py` — composite path, unchanged by this strategy.
 - `STATUS.md` §4 — Tasks #36-#39 cover the sub-render queue.
+- `docs/HOUSE_IMAGERY_SHOTLIST.md` §5.1 — wider catalogue-export view set (§3.5.2).
 - `docs/SESSION_LOG.md` tick 21 — landing audit.
 - `docs/MASTER_BRIEF.md` §13-14 — variants + design rules each sub-render must respect.

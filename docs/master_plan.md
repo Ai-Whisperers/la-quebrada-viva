@@ -2,13 +2,15 @@
 
 > Single source of truth for what the scene should ultimately contain, what is already shipped, what is missing, and how the remaining work is sequenced. Supersedes the scattered roadmap notes in `STATUS.md` and `docs/asset_plan.md` for high-level planning; those remain authoritative for fine-grained task tracking.
 
-Last updated: 2026-06-10.
+Last updated: 2026-06-26.
+
+> **Scope evolution since first draft.** This document was originally written to cover only Deliverable 1 (the cob-house finals). Since the 2026-06-10 milestone the project has expanded to four deliverables — see §1.1 below — and the housing-park scope (Deliverable 4) is now driven through `docs/MASTER_TODO.md` (P1.A/P1.B/P1.C tracks) rather than the §4 roadmap here. The §4 roadmap is preserved as historical record of how the cob-house finals were sequenced; do not treat it as the live plan.
 
 ---
 
 ## 1. Current state — what is already in the scene
 
-12/12 finals delivered for Variants A (winter golden hour, lapacho bloom) and B (morning overcast, full leaf) across all six cameras (`hero`, `stream_up`, `terrace`, `cliff`, `dusk`, `petal_macro`). Hero finals at 512 samples / 2560×1440; others at 256 / 1920×1080.
+18/18 cob-house finals shipped at byte-frozen commit `85e86aa` covering Variants A (dry-season warm sunrise, lapacho bloom), B (overcast wet-season midday with valley mist), and C (civil-twilight blue hour with fireflies + moonlight stand-in) across all six cameras (`hero`, `stream_up`, `terrace`, `cliff`, `dusk`, `petal_macro`). Hero finals at 512 samples / 2560×1440; others at 256 / 1920×1080.
 
 Scene contents — verified by spot-check against the 10 design rules:
 
@@ -19,10 +21,25 @@ Scene contents — verified by spot-check against the 10 design rules:
 - **Tatakuá** (`build_tatakua`): clay oven + chimney + lip + ash door + firewood pile.
 - **Rule 7/9/10 props** (`build_services`): anodized-steel solar PV frame (~21.8° tilt), cob cistern with 0.5mm stainless mesh cap + anodized rim + downspout, LiFePO4 battery cabinet.
 - **Flora** (`flora.populate` + scatterers): 5 pindo palms with retained leaf-base scars, 3 lapachos (bare + pink bloom in A), 4 mango canopies, 4 tree ferns, 5 bamboo clumps, 5 agave clumps, 80 grass tufts, 4 anthurium epiphyte rosettes on trunks, 100 lapacho petals on the ground in A.
-- **Lighting/atmosphere**: A uses `kiara_1_dawn_4k.exr` HDRI + warm sun NNW @ 13° elevation; B uses `misty_pines_4k.exr` HDRI + soft diffuse sun. Bounded canopy Volume Scatter cube (god rays) + B-only ground-hugging valley mist cube. World is never volumed (would black out).
-- **Cameras**: 6 named cameras built from `lqv/cameras.py` for the six fixed shots.
+- **Lighting/atmosphere**: A uses `bryanston_park_sunrise_4k.exr` HDRI (strength 0.8) + warm sun NNW; B uses `xanderklinge_4k.exr` HDRI (strength 1.4) + soft diffuse sun; C uses `kloppenheim_07_4k.exr` HDRI (strength 0.5) + cool low-angle moonlight stand-in. Dispatcher at `lqv/lighting.py:19-23` `_HDRI_BY_VARIANT`. Bounded canopy Volume Scatter cube (god rays) + B-only ground-hugging valley mist cube + C-only ~80 firefly emission spheres. World is never volumed (would black out). HDRI biome swap landed 2026-06-26 (P1.A.5); legacy `kiara_1_dawn` / `misty_pines` / `qwantani_dusk_2` quarantined to `assets/hdris/_unused_wrong_biome/`.
+- **Cameras**: 6 named cameras built from `lqv/cameras.py` for the six fixed shots; per-asset sub-render drivers go through the public `cameras.make_view_camera(cfg, target, distance, height, lens)` dispatcher (camera helpers v0 → v1, 2026-06-26).
 
-Code invariants documented in `CLAUDE.md` (RNG-seed ordering, MAT registry, positional coupling, `WindowCut_*` Boolean cutters, preview-skipped volumes). Pipeline runs Cycles CPU (AMD RX 6400 + Vega iGPU, no ROCm).
+Code invariants documented in `CLAUDE.md` (RNG-seed ordering, MAT registry, positional coupling, `WindowCut_*` Boolean cutters, preview-skipped volumes). Pipeline runs Cycles on AMD-only host; HIP failing → CPU via `LQV_ALLOW_CPU_FALLBACK=1`. Sub-renders **must serialize** on the 14 GB host (~4.3 GB RSS peak per Blender process; ×3 OOMs).
+
+---
+
+## 1.1 Cross-deliverable manifest
+
+Per `README.md`, the project now spans four deliverables:
+
+| # | Deliverable | State |
+|---|---|---|
+| 1 | 18 cob-house finals (A/B/C × hero / stream_up / terrace / cliff / dusk / petal_macro) | **shipped** — byte-frozen at `85e86aa` |
+| 2 | 62-ha photoreal digital twin (ALOS DEM + Sentinel-2 albedo + GEDI canopy features) | **shipped** — `4409dba` (2026-06-11) |
+| 3 | Escritura technical pack (deck v6 PDF + Wesley bundle ZIP, BoQ rollup, T-10 sweep) | **frozen** — tag `escritura-2026-06-27` @ `0081129` |
+| 4 | Escobar Housing Park (15 typologies + 4 amenities, sub-render matrix) | **in progress** — driven by `docs/MASTER_TODO.md` P1.A / P1.B / P1.C |
+
+This master plan continues to be the canonical roadmap for Deliverable 1 (and the historical record for Deliverables 2-3). Deliverable 4 is governed by `docs/MASTER_TODO.md`; sub-render protocol details live in `docs/sub_render_strategy.md` (variant + view axes, RNG invariant, run-folder pattern).
 
 ---
 
@@ -30,8 +47,8 @@ Code invariants documented in `CLAUDE.md` (RNG-seed ordering, MAT registry, posi
 
 ### Hard gaps (blocking the spec)
 
-1. **Variant C — night/blue hour with fireflies.** Spec'd in `docs/prompt_house_render.md`. Currently crashes after the full scene build at `lqv/lighting.py:61` because the variant guard rejects C. Required: blue-hour HDRI (we have `qwantani_dusk_2_4k.exr` on disk), cool low-angle moonlight sun, warm window emission planes, scattered firefly emission spheres over corredor + lower terrace. Extends the deliverable from 12 to 18 finals.
-2. **`CREDITS.md`** — Poly Haven HDRIs/PBR textures are CC0 (no obligation) but any downstream Sketchfab CC-BY models we incorporate will need attribution. File doesn't exist yet.
+1. ~~**Variant C — night/blue hour with fireflies.**~~ **SHIPPED 2026-06-10** as part of the 18-final byte-freeze at `85e86aa`. Final HDRI swapped to `kloppenheim_07_4k.exr` (strength 0.5) on 2026-06-26 per P1.A.5 biome correction; legacy `qwantani_dusk_2_4k.exr` quarantined.
+2. ~~**`CREDITS.md`**~~ **SHIPPED.** `CREDITS.md`, `LICENSE_BUNDLE.md`, `PROVENANCE.md`, and `LICENSES/*.txt` (verbatim per-asset legal text, filename mirrors AmbientCG slug) all landed pre-escritura. CC-BY-SA assets are explicitly excluded from the bundle.
 
 ### Soft gaps (would raise polish bar but not in spec)
 
@@ -92,7 +109,7 @@ Compiled from the asset-research subagents (Poly Haven + Sketchfab) plus the exi
 
 ## 4. Roadmap — phases 7 through 11
 
-### Phase 7 — Variant C (night/blue hour + fireflies) — **STARTING NOW**
+### Phase 7 — Variant C (night/blue hour + fireflies) — **DELIVERED 2026-06-10**
 
 No MCP dependency; everything procedural. Code touches:
 
@@ -131,7 +148,7 @@ Polish on existing placeholders, targeted at the macro cams:
 - Lapacho distinctive bark material (item 3) — only if Phase 10 Hyper3D path is abandoned.
 - Anthurium leaf shape — current strap planes work at hero distance; macro cam would benefit from a slight curl + glossier specular.
 
-### Phase 10 — External asset integration (BLOCKED on MCP socket)
+### Phase 10 — External asset integration (RETIRED per docs/MCP_STATUS.md 2026-06-26 — revive recipe preserved for post-escritura)
 
 When the MCP addon comes back:
 
@@ -139,7 +156,7 @@ When the MCP addon comes back:
 2. Pull Poly Haven `WoodenTable_03` + `painted_wooden_bench` for the corredor.
 3. Pull Sketchfab mango CC0 `62e297e1f36f448a8618192185e818fe` — replace procedural mango at four spots in `flora.populate`.
 4. Pull Sketchfab agave CC-BY `efe126efa459471c81cfc3132357b1b6` — replace procedural agave at five spots.
-5. **Decision required from user before pulling** the CC-BY-SA hammock — share-alike propagates if we redistribute the bundle. If user opts out, fall back to procedural hammock in Phase 8.
+5. **EXCLUDED per LICENSE_BUNDLE.md bundle policy** — CC-BY-SA hammock not pulled (share-alike propagates if we redistribute the bundle). Procedural hammock used in Phase 8 instead.
 6. Hyper3D-generate the lapacho tree + cántaro from text prompts; import via `import_generated_asset`.
 7. After every external asset lands: append a line to `CREDITS.md` with asset name + UID + license + author.
 
