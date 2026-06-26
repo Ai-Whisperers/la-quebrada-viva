@@ -247,6 +247,17 @@ EXTRA_HDRIS: list[str] = [
     # Forest / harvest rural ambience
     "forest_slope",
     "harvest",
+    # P1.A.5 cerrado / Atlantic-Forest-edge biome swap (variant dispatcher)
+    # A=warm dry-season morning, B=overcast wet-season midday, C=civil-twilight blue hour
+    "bryanston_park_sunrise",
+    "xanderklinge",
+    "kloppenheim_07",
+    # Backups in case primary picks fail QA
+    "magalies_field_sunset",
+    "near_the_river_02",
+    "niederwihl_forest",
+    "belfast_open_field",
+    "kloppenheim_04",
 ]
 
 EXTRA_TEXTURES: list[str] = [

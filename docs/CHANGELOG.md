@@ -12,9 +12,20 @@ Conventions: ISO dates, present-tense bullets, file-level granularity only when 
 
 Planned (P1.A residue + P1.B):
 - ~~`lqv/typologies/*` — Rule 4 stone-foundation plinth pass~~ — audit 2026-06-26 confirmed all 18 typologies satisfy Rule 4 in code (explicit foundation builders in 11; villa footings/pier blocks/PIER_LIFT/explicit sandstone course in 4; 3 exempt — boomhut treehouse, outdoor shower, candle_path). Pre-78433a7 "~13 missing" figure was stale.
-- HDRI swap to cerrado / Atlantic-Forest-edge — asset-researcher pass, CC0 / CC-BY 4.0 (P1.A.5)
+- ~~HDRI swap to cerrado / Atlantic-Forest-edge — asset-researcher pass, CC0 / CC-BY 4.0 (P1.A.5)~~ — landed 2026-06-26 (see below).
 - ~~`apply_xray_override` material swap (HOUSE_IMAGERY_SHOTLIST §3)~~ — landed 2026-06-26 (P1.B.3, see below).
 - Per-variant lighting differentiation T1.6 + background-tree replacement (P1.C)
+
+---
+
+## [2026-06-26] — P1.A.5 HDRI swap to cerrado / Atlantic-Forest-edge biome
+
+- **feat** `lqv/lighting.py:16-23` — `_HDRI_BY_VARIANT` rotated from African-savanna / boreal stock to Paraguarí ~26.6°S Atlantic-Forest-edge / cerrado transition reads. New picks: A=`bryanston_park_sunrise_4k.exr` @ 0.8 (dry-season warm sunrise), B=`xanderklinge_4k.exr` @ 1.4 (overcast wet-season midday gallery forest), C=`kloppenheim_07_4k.exr` @ 0.5 (civil-twilight blue hour with residual sky tone for firefly read). Variant-strength multipliers preserved — only the EXR filenames changed, so the existing Sun-lamp / sky-fallback paths are unmoved.
+- **chore** `scripts/download_polyhaven_assets.py` — `EXTRA_HDRIS` appended with the 3 new primaries + 5 CC0 backups (`magalies_field_sunset`, `near_the_river_02`, `niederwihl_forest`, `belfast_open_field`, `kloppenheim_04`) for QA fallbacks. Single `python3 scripts/download_polyhaven_assets.py --only hdris` invocation lands all 8 EXRs into `assets/hdris/` (21 ok / 17 skip / 0 fail / 1812.9 MiB total).
+- **chore** `assets/hdris/_unused_wrong_biome/` — quarantined the 3 displaced HDRIs (`kiara_1_dawn_4k.exr`, `misty_pines_4k.exr`, `qwantani_dusk_2_4k.exr`) — African savanna / boreal pines read against Paraguarí parcel was the dominant wrong-biome complaint. Files kept on disk per attribution-traceability (CC0 still credited even when retired).
+- Smoke `italian_river_house_4pax` A/B/C serial @ preview / 64 spp / CPU fallback → `renders/sub/runs/hdri_cerrado_smoke_20260626_italian_river_house_4pax/{A,B,C}.png` at 5,150,432 / 5,066,946 / 4,759,927 bytes (non-black, biome-correct read confirmed).
+
+Subsystem bump: Lighting dispatcher v2 → v3 (biome-correct HDRI rotation).
 
 ---
 

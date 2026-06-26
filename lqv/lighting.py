@@ -13,10 +13,13 @@ _HDRI_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     'assets', 'hdris',
 )
+# Picks read against Paraguarí ~26.6°S Atlantic-Forest-edge / cerrado transition.
+# A=dry-season warm sunrise, B=overcast wet-season midday gallery forest,
+# C=civil-twilight blue hour with residual sky tone for firefly read.
 _HDRI_BY_VARIANT = {
-    'A': ('kiara_1_dawn_4k.exr', 0.8),
-    'B': ('misty_pines_4k.exr', 1.4),
-    'C': ('qwantani_dusk_2_4k.exr', 0.5),
+    'A': ('bryanston_park_sunrise_4k.exr', 0.8),
+    'B': ('xanderklinge_4k.exr', 1.4),
+    'C': ('kloppenheim_07_4k.exr', 0.5),
 }
 
 
