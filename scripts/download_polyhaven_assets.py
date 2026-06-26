@@ -391,14 +391,14 @@ EXTRA_MODELS: list[str] = [
     # Buckets / barrels / crates (restaurant amenity dressing)
     "wooden_bucket_02",
     "barrel_03",
-    "Barrel_02",
-    "Barrel_01",
+    "barrel_02",
+    "barrel_01",
     "wooden_crate_02",
-    "CheeseBox_01",
+    "cheesebox_01",
     "wine_barrel_01",
     "barrel_stove",
     # Lanterns / oil lamps (Variant C blue-hour warm sources)
-    "Lantern_01",
+    "lantern_01",
     "vintage_oil_lamp",
     "brass_diya_lantern",
     "wooden_lantern_01",
@@ -426,7 +426,7 @@ EXTRA_MODELS: list[str] = [
     "spinning_wheel_01",
     "old_tyre",
     "tire_pump",
-    "CoffeeCart_01",
+    "coffeecart_01",
     # Gates / latches
     "gate_latch_01",
     # Kitchen / hearth (tatakuá amenity)
