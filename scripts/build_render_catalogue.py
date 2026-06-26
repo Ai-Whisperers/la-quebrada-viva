@@ -10,7 +10,7 @@ Coverage:
     renders/sub/*.png                             (~100 flat "latest" sub-renders)
     renders/sub/runs/<run_id>_<asset>[_tag]/*.png (~302 versioned run folders)
     renders/sub/latest/*.png                      (mirrored latest variants)
-    docs/site_data_monday/renders_monday/*.png    (5 Monday-deliverable renders)
+    docs/site_data_2026-06-13_snapshot/renders_monday/*.png    (5 Monday-deliverable renders)
 
 Output:
     docs/render_catalogue/INDEX.md                (top-level)
@@ -37,7 +37,7 @@ RENDERS = REPO / "renders"
 SUB = RENDERS / "sub"
 SUB_RUNS = SUB / "runs"
 SUB_LATEST = SUB / "latest"
-MONDAY = REPO / "docs" / "site_data_monday" / "renders_monday"
+MONDAY = REPO / "docs" / "site_data_2026-06-13_snapshot" / "renders_monday"
 OUT = REPO / "docs" / "render_catalogue"
 
 # Canonical asset names (from lqv/typologies + lqv/amenities + sub-render drivers).

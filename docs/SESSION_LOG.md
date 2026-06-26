@@ -473,7 +473,7 @@ T-10 closing-prep sweep landed on origin/master.
 - Pytest invariants: 11/11 passed (`python3 -m pytest`)
 - `build_scene.py` untouched (byte-frozen at `85e86aa`)
 
-**Ruff drift deferred.** `ruff check .` reports 318 errors on clean HEAD (pre-existing tech debt, not introduced by this sweep). Bulk lives in `docs/site_data_monday/*.py` (78), `lqv/typologies/bamboo_container_4pax.py` (14), `lqv/subscene/elevation_dutch.py` (11), `lqv/amenities/*.py` (19). T-10 is not the window for a 318-error cleanup pass — full sweep deferred to T+30 per `ARCHIVE_RUNBOOK.md`. No files authored this arc (bash + markdown) affect ruff scope.
+**Ruff drift deferred.** `ruff check .` reports 318 errors on clean HEAD (pre-existing tech debt, not introduced by this sweep). Bulk lives in `docs/site_data_2026-06-13_snapshot/*.py` (78), `lqv/typologies/bamboo_container_4pax.py` (14), `lqv/subscene/elevation_dutch.py` (11), `lqv/amenities/*.py` (19). T-10 is not the window for a 318-error cleanup pass — full sweep deferred to T+30 per `ARCHIVE_RUNBOOK.md`. No files authored this arc (bash + markdown) affect ruff scope.
 
 **Engineering residual (1)**: F-bucket #58 mirror remote — still blocked on URL + auth from user. Everything else from the 100-item plan is shipped or user-side.
 

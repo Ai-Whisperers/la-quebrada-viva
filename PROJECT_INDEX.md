@@ -344,7 +344,7 @@ Authoritative navigation entry: [`docs/INDEX.md`](docs/INDEX.md) (tiered escritu
 | `docs/research/` | 6 | 5 sub-reports (~80 repos surveyed) + README. |
 | `docs/satellite/` | 1 | Satellite tooling notes. |
 | `docs/site_data/` | 31 | DEM TIFFs, contact sheets, GEDI CSV, satdata_brief, sentinel2/ (**deck-only license — do not stage to git**). |
-| `docs/site_data_monday/` | 18 | Monday-only working set. |
+| `docs/site_data_2026-06-13_snapshot/` | 18 | Monday-only working set (2026-06-13/14 snapshot). |
 
 ### Escritura-day quick reference
 

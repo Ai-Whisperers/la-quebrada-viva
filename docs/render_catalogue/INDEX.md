@@ -65,11 +65,11 @@ byte-freeze parent of the print pack.
 
 | Variant | Path | Size |
 |---|---|---:|
-| `monday_cam_a_italian` | [`docs/site_data_monday/renders_monday/monday_cam_a_italian.png`](../../docs/site_data_monday/renders_monday/monday_cam_a_italian.png) | 1.9MB |
-| `monday_cam_b_bamboo` | [`docs/site_data_monday/renders_monday/monday_cam_b_bamboo.png`](../../docs/site_data_monday/renders_monday/monday_cam_b_bamboo.png) | 1.9MB |
-| `monday_cam_c_creek` | [`docs/site_data_monday/renders_monday/monday_cam_c_creek.png`](../../docs/site_data_monday/renders_monday/monday_cam_c_creek.png) | 1.8MB |
-| `monday_cam_d_earthtree` | [`docs/site_data_monday/renders_monday/monday_cam_d_earthtree.png`](../../docs/site_data_monday/renders_monday/monday_cam_d_earthtree.png) | 1.8MB |
-| `monday_overview` | [`docs/site_data_monday/renders_monday/monday_overview.png`](../../docs/site_data_monday/renders_monday/monday_overview.png) | 1.9MB |
+| `monday_cam_a_italian` | [`docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_a_italian.png`](../../docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_a_italian.png) | 1.9MB |
+| `monday_cam_b_bamboo` | [`docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_b_bamboo.png`](../../docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_b_bamboo.png) | 1.9MB |
+| `monday_cam_c_creek` | [`docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_c_creek.png`](../../docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_c_creek.png) | 1.8MB |
+| `monday_cam_d_earthtree` | [`docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_d_earthtree.png`](../../docs/site_data_2026-06-13_snapshot/renders_monday/monday_cam_d_earthtree.png) | 1.8MB |
+| `monday_overview` | [`docs/site_data_2026-06-13_snapshot/renders_monday/monday_overview.png`](../../docs/site_data_2026-06-13_snapshot/renders_monday/monday_overview.png) | 1.9MB |
 
 ## Per-asset roster
 

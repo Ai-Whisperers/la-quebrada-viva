@@ -91,5 +91,5 @@ If after the 5-hábiles window items are still missing:
 - `docs/contract_summary.md` — boleto §OCTAVA cited text
 - `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` — full boleto (gitignored, on USB)
 - `docs/CLOSING_DAY_PREP.md` — pre-signing prep that includes OCTAVA verification at the table
-- `docs/T+1_DEBRIEF.md` §5 — handoff trigger from the morning-after debrief
+- `docs/T_PLUS_1_DEBRIEF.md` §5 — handoff trigger from the morning-after debrief
 - `docs/ARCHIVE_RUNBOOK.md` — when this file's status closes, archive it with the T+30 freeze

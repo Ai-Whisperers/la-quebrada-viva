@@ -20,7 +20,7 @@ These are the audit trail of the 2026-06-27 closing. Never edit, never regenerat
 | PRINT_MANIFEST | `dist/print_pack_2026-06-27/PRINT_MANIFEST.txt` | What was physically carried |
 | Commit `85e86aa` | git history | Byte-frozen `build_scene.py` for the 18 finals |
 | 18 final renders | `renders/*.png` (A/B/C × 6 cams) | Concept-art deliverable referenced in the deck |
-| T+1 debrief | `docs/T+1_DEBRIEF.md` | Filled-in version of the post-signing record |
+| T+1 debrief | `docs/T_PLUS_1_DEBRIEF.md` | Filled-in version of the post-signing record |
 | Signed escritura PDF | `docs/2026-06-27_escritura_torrasca-vandecamp.pdf` | gitignored per scope rules; lives on USB + Drive |
 
 **Action at T+30:** tag `escritura-archive-2026-07-27` on the commit that finalizes the T+1 debrief. Do not amend tagged history.
@@ -122,7 +122,7 @@ git push mirror --tags
 
 ## 8. Cross-references
 
-- `docs/T+1_DEBRIEF.md` — feeds the freeze decision (what worked / what to keep)
+- `docs/T_PLUS_1_DEBRIEF.md` — feeds the freeze decision (what worked / what to keep)
 - `docs/OCTAVA_VENDOR_TRACKER.md` — closes before this runbook fires (2026-07-04 deadline; this runbook 2026-07-27)
 - `docs/HOUSING_PARK_CONCEPT.md` — next durable scope after the closing
 - `STATUS.md` — gets the post-escritura section appended

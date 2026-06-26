@@ -33,7 +33,7 @@ This PR lands the closing-prep arc for the 2026-06-27 La Quebrada Viva escritura
 - `docs/RESEARCH_GAPS.md` — T-10 freeze note + R35 deferral to T+30
 
 ### Post-signing scaffolding (templates, fill at T+1)
-- `docs/T+1_DEBRIEF.md`
+- `docs/T_PLUS_1_DEBRIEF.md`
 - `docs/OCTAVA_VENDOR_TRACKER.md` — 5-hábiles vendor-comprobante chase (Cl. OCTAVA ii)
 - `docs/ARCHIVE_RUNBOOK.md` — T+30 freeze/archive plan
 - `docs/PR_BACK_TO_BASE.md` — this draft
@@ -79,7 +79,7 @@ This PR lands the closing-prep arc for the 2026-06-27 La Quebrada Viva escritura
 
 ## Post-merge follow-ups
 
-1. T+1 — fill `docs/T+1_DEBRIEF.md`
+1. T+1 — fill `docs/T_PLUS_1_DEBRIEF.md`
 2. T+1 through T+5 — work `docs/OCTAVA_VENDOR_TRACKER.md`
 3. T+30 — execute `docs/ARCHIVE_RUNBOOK.md`
 4. T+30+ — pivot to Phase 8+ housing-park work per `HOUSING_PARK_CONCEPT.md`

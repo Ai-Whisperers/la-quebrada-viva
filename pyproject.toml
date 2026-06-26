@@ -19,7 +19,7 @@ line-length = 100
 extend-exclude = [
     "_archive",
     "docs/site_data",
-    "docs/site_data_monday",
+    "docs/site_data_2026-06-13_snapshot",
     "renders",
     "subrenders",
 ]
