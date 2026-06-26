@@ -7,7 +7,7 @@ VARIANT ?= A
 CAM ?= hero
 ASSET ?= cob_walls
 
-.PHONY: help smoke preview final finals sub audit lint test pdf boq deck catalogue sheets organize gc provenance clean
+.PHONY: help smoke preview final finals sub audit lint test pdf boq deck catalogue sheets organize gc provenance licenses clean
 
 help:
 	@echo "La Quebrada Viva — make targets"
@@ -28,6 +28,7 @@ help:
 	@echo "  make organize                   Build browse-friendly symlink tree -> renders/sub_by_category/"
 	@echo "  make gc                         Dry-run GC report for renders/sub/runs/ (--apply to delete)"
 	@echo "  make provenance PNG=path/to.png Dump embedded lqv: tEXt provenance from a PNG"
+	@echo "  make licenses                   Cross-check LICENSES/<slug>.txt against assets/ (exit 1 on drift)"
 	@echo "  make clean                      Remove __pycache__/ and .pytest_cache/ (safe: leaves renders + caches intact)"
 	@echo ""
 	@echo "Variables: VARIANT (A|B|C), CAM (hero|stream_up|terrace|cliff|dusk|petal_macro),"
@@ -81,6 +82,9 @@ gc:
 
 provenance:
 	python3 -m lqv.provenance $(PNG)
+
+licenses:
+	python3 tools/check_licenses.py
 
 clean:
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +

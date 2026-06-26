@@ -1,5 +1,5 @@
-Asset: CheeseBox_01
-Source: Poly Haven (https://polyhaven.com/a/CheeseBox_01)
+Asset: cheesebox_01
+Source: Poly Haven (https://polyhaven.com/a/cheesebox_01)
 License: CC0 1.0 Universal
 License text: ./CC0-1.0.txt
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
