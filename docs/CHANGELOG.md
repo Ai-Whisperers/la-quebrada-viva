@@ -18,6 +18,18 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — P0a.1 T-1 verifier sweep (5 of 5 AI-owned checks green)
+
+- **ops** five AI-owned T-1 escritura-readiness checks (P0a.1 §1, §2, §4, §9, §10) all returned green on the evening of 2026-06-26:
+  1. `bash dist/print_pack_2026-06-27/VERIFY.sh` → exit 0; all 3 internal checks pass; final line `All checks passed. Safe to walk in.`
+  2. `sha256sum dist/wesley_bundle_20260616-1715.zip` → `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c` — exact match against pinned hash.
+  3. `git tag -l escritura-2026-06-27` resolves; `git rev-list -n1 escritura-2026-06-27` → `00811297c5ec2dbfa77cdd2e5a04fea34a8fb702` (= pinned `0081129`).
+  4. `git status --short` clean (pre-this-edit).
+  5. `git fetch origin master` succeeded; `git log @{u}..HEAD --oneline` empty — master at parity with `origin/master` (post-CC-DOC.7 head `d2560a1`).
+- **deliverable status** print-pack bundle integrity end-to-end verified. The five remaining P0a.1 boxes (GPG sig, paper print pack, USB sticks, boleto PDF, funds comprobante) are all Ivan-owned and not driveable by the AI side; the 4 P0a.2 + 4 P0a.3 in-room rows are similarly Ivan/Peña-owned. No remaining AI-side blocker between repo state and the 10:00 -03 escritura.
+
+---
+
 ## [2026-06-26] — CC-DOC.7 photographic_references multi-view coverage
 
 - **docs** `docs/photographic_references.md` — new **Category 9 — Comparable precedent multi-view references** inserted above the *Acquisition strategy* section, axis-aligned to the protocol-v2 sub-render axis `RENDER_VIEW={hero3q,elevation,plan,section,interior,xray}` (mirrors `RESULTS_GUIDE.md` §5 and `HOUSE_IMAGERY_SHOTLIST.md` §5.1). 9-row precedent matrix: 9.1 Chaa Creek (Belize jungle eco-lodge), 9.2 Inkaterra Machu Picchu (Peruvian cloud-forest lodge), 9.3 Awasi Iguazú (Atlantic-Forest stilted villa — closest market comparable), 9.4 San Bernardino German-Paraguayan villa (closest supply-chain comparable), 9.5 Mennonite-colony adobe Filadelfia/Loma Plata, 9.6 Paraguarí ranchito with corredor+tatakuá (closest cultural-vernacular comparable, Rule 8 anchor), 9.7 cob-and-bottle bench/wall, 9.8 Iguazú-side sod-roof eco-lodge, 9.9 Atlantic-Forest canopy-edge clearing. Per-axis acquisition notes split the workable sources: iNaturalist + Flickr CC for `hero3q`, brand/realtor pages (RM `ref`) for `elevation`/`interior`, Google Earth Pro historical imagery + Sentinel-2 for `plan`, Houben & Guillaud + Cobworks handbooks (RM `ref`) for `section`/`xray`. Status legend reuses ✅/⏳/🔍/❌ from earlier categories; every Category-9 cell starts at 🔍 (acquisition is post-escritura P-DOC / P-SALES tier). Per-precedent priority ranks 9.3 Awasi (market) → 9.4 San Bernardino (supply chain) → 9.6 Paraguarí ranchito (cultural anchor) as the three sales-narrative spine references that drive CC-SALES.1-6 downstream. Closes MASTER_TODO CC-DOC.7.

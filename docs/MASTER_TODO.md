@@ -11,16 +11,16 @@ Each item: ID, owner (Ivan/AI/Wesley/Peña), gate, ETA. `[CRIT]` blocks somethin
 This is the only work that matters right now. Everything else waits.
 
 ### P0a.1 — T-1 evening (2026-06-26 PM)
-- [ ] **VERIFY.sh dry-run** — `bash dist/print_pack_2026-06-27/VERIFY.sh` returns clean (3 checks). Owner: AI. Gate: P0a.2.
-- [ ] **Bundle SHA re-confirm** — `sha256sum dist/wesley_bundle_20260616-1715.zip` matches `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`. Owner: AI.
+- [x] **VERIFY.sh dry-run** — closed 2026-06-26 19:xx -03. `bash dist/print_pack_2026-06-27/VERIFY.sh` → exit 0, all 3 checks pass: `[1/3] bundle sha256: OK`, `[2/3] deck page count: OK: 28 pages`, `[3/3] deck sha256 matches source tree: OK`. Final line: `All checks passed. Safe to walk in.`
+- [x] **Bundle SHA re-confirm** — closed 2026-06-26. `sha256sum dist/wesley_bundle_20260616-1715.zip` returns `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c` — exact match against pinned hash in [[FINAL_GALLERY]] / [[BUNDLE_README]].
 - [ ] **GPG detached sig** — `gpg --armor --detach-sign --local-user weissvanderpol.ivan@gmail.com --output wesley_bundle_20260616-1715.zip.asc wesley_bundle_20260616-1715.zip`. Owner: **Ivan** (passphrase).
-- [ ] **Tag check** — `git tag -l escritura-2026-06-27` resolves to `0081129` (or successor). Owner: AI.
+- [x] **Tag check** — closed 2026-06-26. `git tag -l escritura-2026-06-27` → `escritura-2026-06-27`; `git rev-list -n1 escritura-2026-06-27` → `00811297c5ec2dbfa77cdd2e5a04fea34a8fb702` (= the pinned `0081129` print-pack commit).
 - [ ] **Print pack** — 3× of (deck cover, BoQ p21, English appendix pp25-26, Pelton appendix p27); 1× Pelton contact sheet A4. Owner: Ivan.
 - [ ] **USB stick #1 + #2** — zip + `.sha256` + `.asc` on two sticks (redundancy). Owner: Ivan.
 - [ ] **Boleto PDF** — confirm `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` opens; paper original or notarised copy in folder.
 - [ ] **Funds comprobante** — Gs. 2.252.700.000 ready (Cl. CUARTA). Owner: Ivan.
-- [ ] **`git status` clean on master** — no uncommitted, no untracked beyond known excludes (`scripts/mcp_daemon.py`, satellite tifs, boleto/escritura PDFs).
-- [ ] **`git fetch && git log @{u}..HEAD`** returns empty (master synced).
+- [x] **`git status` clean on master** — closed 2026-06-26 (pre-MASTER_TODO-edit). `git status --short` returned empty; the only post-check dirt is *this* edit + the CHANGELOG entry that records it (will be staged + committed in the same Nyx push that closes this row).
+- [x] **`git fetch && git log @{u}..HEAD`** — closed 2026-06-26. `git fetch origin master` succeeded; `git log @{u}..HEAD --oneline` returned empty. Master is at parity with `origin/master` (`d2560a1` post the CC-DOC.7 push earlier this T-1 cycle).
 
 ### P0a.2 — T-0 morning (2026-06-27, ≤08:00 -03)
 - [ ] **Send PDF v-final** — `docs/escritura_deck/escritura_deck_v6.pdf` to Wesley + Peña inboxes. Owner: Ivan. Reply-To: Ivan.
