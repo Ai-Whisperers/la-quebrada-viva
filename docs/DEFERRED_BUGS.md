@@ -89,7 +89,7 @@ grep "not in collection" /tmp/bug3.log
 4. Run the workaround disabled (`RENDER_FLORA_PHOTOREAL=1`) on all 17 assets; verify no `.003`-name errors in any log.
 
 ### Acceptance
-`bash scripts/render_review_2026_06_14.sh` runs end-to-end with `RENDER_FLORA_PHOTOREAL=1` and zero `not in collection` lines across all 51 logs in `renders/sub/runs/review_2026-06-14_logs/`.
+`bash scripts/render_review_2026-06-14.sh` runs end-to-end with `RENDER_FLORA_PHOTOREAL=1` and zero `not in collection` lines across all 51 logs in `renders/sub/runs/review_2026-06-14_logs/`.
 
 ---
 
