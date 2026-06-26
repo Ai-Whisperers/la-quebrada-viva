@@ -18,6 +18,12 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — CC-DOC.1 top-level README
+
+- **docs** `README.md` — created (was missing at repo root; only `LICENSES/README.md` + `.pytest_cache/README.md` existed). Cold-start entry: parcel location + ownership, 4-deliverable priority table (18 finals shipped at `85e86aa`, 62-ha digital twin at `4409dba`, escritura pack frozen at tag `escritura-2026-06-27` / `0081129`, housing-park master plan in progress), doc-pointer order (PROJECT_INDEX → STATUS → CLAUDE → ARCHITECTURE → docs/INDEX → MASTER_TODO → DEFERRED_BUGS), quick-run examples for `scripts/render_*.sh` + `make sub|boq|deck`, variant + HDRI map, 14 GB host serialization + AMD CPU-fallback constraints, MIT vs per-asset license split, GitHub remote pointer. Closes MASTER_TODO CC-DOC.1.
+
+---
+
 ## [2026-06-26] — CC-TOOL.5 pyright actionable-diagnostic pass
 
 - **fix** `lqv/amenities/eco_retreat_modern_oasis.py`, `lqv/subscene/hobbit_house.py`, `lqv/typologies/bamboo_wigwam_lodge.py`, `lqv/typologies/italian_stone_small_v1.py` — removed 5 dead-expression diagnostics (4 statement-expressions discarded by pyright as unused; no runtime semantics change).

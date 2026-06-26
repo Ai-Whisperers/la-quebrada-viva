@@ -168,7 +168,7 @@ Per `docs/wesley_phase3_inventory.md` Phase 4.
 
 ## CC-DOC — Cross-cutting documentation
 
-- [ ] **CC-DOC.1 README.md refresh** — current state post-escritura. Owner: AI. Effort: 1 h.
+- [x] **CC-DOC.1 README.md refresh** — current state post-escritura. Owner: AI. Effort: 1 h. *Closed 2026-06-26 — top-level `README.md` did not exist (only `LICENSES/README.md` + `.pytest_cache/README.md`); created from scratch as cold-start entry covering parcel/ownership/escritura date, 4-deliverable priority table, doc-pointer order, quick-run examples, variant+HDRI map, host constraints, license split, GitHub remote. See CHANGELOG.md [2026-06-26] CC-DOC.1.*
 - [ ] **CC-DOC.2 `docs/FINAL_GALLERY.md`** — regenerate post-P1.B and P1.C with new SHAs.
 - [ ] **CC-DOC.3 `docs/RESULTS_GUIDE.md`** — section on multi-view shotlist + how to read `<asset>_<variant>_<view>.png` filenames.
 - [ ] **CC-DOC.4 `docs/sub_render_strategy.md`** — fold in `RENDER_VIEW` axis next to the variants.
