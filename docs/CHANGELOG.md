@@ -18,6 +18,12 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — CC-DOC.2 FINAL_GALLERY canonical lineage refresh
+
+- **docs** `docs/FINAL_GALLERY.md` — header rewritten with a **Canonical lineage** table that pins the byte-frozen renderer (`85e86aa`), the SHA-pinned print-pack at `dist/print_pack_2026-06-27/` (source commit `0081129`, tag `escritura-2026-06-27`), the bundle ZIP (`wesley_bundle_20260616-1715.zip`, 266 MB / 37 files, SHA-256 `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`), the escritura deck v6 (`02_deck/escritura_deck_v6.pdf`, 28 pp / 10.8 MB, SHA-256 `2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137`), and the 18 finals on disk. The post-`85e86aa` polish wave (material registry v2 / HDRI swap / xray override at `78433a7` + subsequent CC-* commits) is explicitly marked OFF print-pack so future readers don't mistake it for retroactive byte changes. Notes section adds a provenance reference (every PNG post-`4be4ac4` / CC-TOOL.8 embeds git SHA + RNG seed + env vars in PNG metadata; the 18 finals predate that harness and are pinned by the `85e86aa` byte-freeze) and a re-render trigger naming task #23 (deferred T1.6 per-variant lighting differentiation) as the supersede gate. Companions list cross-links `docs/render_catalogue/INDEX.md` (post-CC-DOC.6 protocol-v2), the multi-view shotlist in `RESULTS_GUIDE.md` §5 / `HOUSE_IMAGERY_SHOTLIST.md` §5.1, and the archived per-house critique. Closes MASTER_TODO CC-DOC.2.
+
+---
+
 ## [2026-06-26] — CC-DOC.8 changelog scope audit closure
 
 - **docs** `docs/CHANGELOG.md` — audited against CC-DOC.8 spec (material-shader version with Bug 1/2 fix, camera-helper version, `build_scene.py` freeze status). All three are explicitly pinned in the **Subsystems tracked** table below: `build_scene.py | frozen | 2026-06-10 (85e86aa) | composite path byte-identity preserved through 2026-06-27`; `Material registry (lqv/materials.py) | v2 | 2026-06-15 (78433a7) | water dielectric + lapacho_timber PBR + bamboo split landed; DEFERRED_BUGS 1+2 closed`; `Camera helpers | v1 | 2026-06-26 | cameras.make_view_camera(cfg, ...) public dispatcher`. Per-day entries at the relevant dates also document the water-shader dielectric fix (closes Bug 1), lapacho PBR + bamboo split (closes Bug 2), `cameras.py` public dispatcher landing, and the renderer byte-freeze at `85e86aa`. No additional version row required. Closes MASTER_TODO CC-DOC.8.

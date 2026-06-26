@@ -1,10 +1,25 @@
-# Final Gallery — La Quebrada Viva (production composites @ 85e86aa)
+# Final Gallery — La Quebrada Viva (production composites @ `85e86aa`)
 
 **18 hero composites** at full Cycles render (parcel-scale, 62 ha digital twin + flora photoreal + Wesley typologies placed).
 Three lighting variants (**A** dawn / interior · **B** neutral mid-day · **C** golden hero) × six cameras (**cliff · dusk · hero · petal_macro · stream_up · terrace**).
 Frozen at commit `85e86aa` (renderer byte-identity preserved this sprint).
 
-Companion to the per-asset gallery at `docs/render_catalogue/INDEX.md`; the per-house critique that originally lived alongside this doc is archived at [`_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md`](_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md).
+## Canonical lineage
+
+| Asset | SHA / tag | Status | Notes |
+|---|---|---|---|
+| Renderer composite path | `85e86aa` | byte-frozen | composite path byte-identity preserved through 2026-06-27 |
+| Print-pack bundle (`dist/print_pack_2026-06-27/`) | `0081129` (tag `escritura-2026-06-27`) | SHA-pinned | rebuild target; see `BUNDLE_README.txt` |
+| Bundle ZIP | `wesley_bundle_20260616-1715.zip` | 266 MB / 37 files | SHA-256 `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c` |
+| Escritura deck v6 | `02_deck/escritura_deck_v6.pdf` | 28 pp / 10.8 MB | SHA-256 `2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137` |
+| 18 finals on disk | `renders/A‖B‖C_{cliff,dusk,hero,petal_macro,stream_up,terrace}.png` | shipped at `85e86aa` | mirrored into bundle `03_renders/` |
+| Post-`85e86aa` polish wave (material registry v2 / HDRI swap / xray override) | `78433a7` (+ subsequent CC-* commits) | OFF print-pack | did NOT retroactively change shipped bytes — see `docs/CHANGELOG.md` `[Unreleased]` freeze note |
+
+Companions:
+
+- per-asset gallery — `docs/render_catalogue/INDEX.md` (926 renders / 53 assets, regenerated with the protocol-v2 `view` axis per CC-DOC.6)
+- multi-view shotlist (`RENDER_VIEW={hero3q,elevation,plan,section,interior,xray}`) — `docs/RESULTS_GUIDE.md` §5 and `docs/HOUSE_IMAGERY_SHOTLIST.md` §5.1
+- archived per-house critique — [`_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md`](_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md)
 
 ---
 
@@ -51,4 +66,5 @@ Companion to the per-asset gallery at `docs/render_catalogue/INDEX.md`; the per-
 - File sizes ~10–21 MB (full-res 4K composites — healthy PNGs, no HDRI-only silent-failure fallbacks).
 - Variant profiles are the same A/B/C the sub-renders use: see `lqv/subscene/base.py:VARIANT_PROFILES`.
 - For deck use: **A_hero** is the current escritura-deck cover; **C_hero** and **C_terrace** are the cinematic alternates.
-- Re-render trigger: the deferred T1.6 (per-variant lighting differentiation) + Step 8 (final composite re-render of all 18) supersede this set when shipped; until then, `85e86aa` is canonical.
+- Provenance: every PNG written after CC-TOOL.8 (commit `4be4ac4`, 2026-06-15) embeds the git SHA + RNG seed + relevant env vars (`LQV_HDRI_BIOME`, `LQV_BOQ_SCOPE`, `RENDER_VIEW`) into the PNG metadata. The 18 shipped finals here predate that harness — provenance for them is fixed by the `85e86aa` byte-freeze.
+- Re-render trigger: the deferred T1.6 (per-variant lighting differentiation, MASTER_TODO task #23) supersedes this set when shipped; until then, `85e86aa` is canonical and the print-pack bundle at `dist/print_pack_2026-06-27/` is the authoritative delivery artefact.
