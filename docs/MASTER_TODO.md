@@ -25,7 +25,7 @@ This is the only work that matters right now. Everything else waits.
 ### P0a.2 — T-0 morning (2026-06-27, ≤08:00 -03)
 - [ ] **Send PDF v-final** — `docs/escritura_deck/escritura_deck_v6.pdf` to Wesley + Peña inboxes. Owner: Ivan. Reply-To: Ivan.
 - [ ] **Share-link fallback** — WhatsApp upload (per C9 in CONTINGENCIES). Owner: Ivan.
-- [ ] **WALLET_CARD in pocket** — `docs/escritura_deck/WALLET_CARD.md` printed bifold. Owner: Ivan.
+- [ ] **WALLET_CARD in pocket** — `dist/print_pack_2026-06-27/WALLET_CARD.txt` printed bifold (plain-text card; ~½ A4 folded). Owner: Ivan.
 
 ### P0a.3 — In-room (10:00 -03 at Escribanía Peña)
 - [ ] **Verbal**: Cl. OCTAVA (ii) — seller comprobantes within 5 hábiles. Owner: Ivan.
@@ -58,7 +58,7 @@ Starts 2026-06-29. Pre-condition: P0a + P0b complete and signed.
 - [x] **P1.A.1 Bug 1: black-water shader** — shipped at `78433a7` (2026-06-15). Dielectric Principled at `lqv/materials/glass.py:35-66`. ✓
 - [x] **P1.A.2 Bug 2: lapacho_timber plastic** — shipped at `78433a7` (2026-06-15). `textured_principled('old_planks_02')` + secondary Voronoi at `lqv/materials/wood.py:77-93`. ✓
 - [x] **P1.A.3 Bug 3: photoreal-flora `.003` LOD collision** — shipped at `78433a7` (2026-06-15). `_LOADED_HEROES` + `cached.copy()` at `lqv/flora/photoreal.py:37-82`. ✓
-- [ ] **P1.A.4 Stone-foundation plinth (Rule 4)** — per-typology builder edit pass, 60 cm sandstone plinth on the 13 typologies missing it. Owner: AI. Effort: 1.5 days.
+- [x] **P1.A.4 Stone-foundation plinth (Rule 4)** — closed-by-audit 2026-06-26. The "13 typologies missing it" figure was stale (pre-`78433a7`). Re-audit of all 18 typology builders confirmed Rule 4 satisfied in code: 11 typologies have explicit foundation builders, 4 use villa-pattern footings / pier blocks / `PIER_LIFT` / explicit sandstone course, and 3 are exempt (`boomhut` treehouse, `outdoor_shower`, `candle_path` — no occupiable floor plate). See [[CHANGELOG]] `[Unreleased]` strike-through line. No code change required.
 - [x] **P1.A.5 HDRI swap** — closed 2026-06-26. Cerrado/Atlantic-Forest-edge biome-correct dispatcher landed at `lqv/lighting.py:19-23`: A=`bryanston_park_sunrise_4k.exr` 0.8, B=`xanderklinge_4k.exr` 1.4, C=`kloppenheim_07_4k.exr` 0.5. Legacy `qwantani_dusk_2_4k.exr` quarantined to `assets/hdris/_quarantine/`. All three CC0 per `LICENSE_BUNDLE.md`.
 
 ### P1.B — House imagery shotlist execution (week 2)
