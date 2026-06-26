@@ -7,7 +7,7 @@ VARIANT ?= A
 CAM ?= hero
 ASSET ?= cob_walls
 
-.PHONY: help smoke preview final finals sub audit lint test pdf boq deck catalogue sheets organize clean
+.PHONY: help smoke preview final finals sub audit lint test pdf boq deck catalogue sheets organize gc clean
 
 help:
 	@echo "La Quebrada Viva — make targets"
@@ -26,6 +26,7 @@ help:
 	@echo "  make catalogue                  Rebuild render catalogue -> docs/render_catalogue/{INDEX.md,by_asset/,catalogue.json}"
 	@echo "  make sheets                     Rebuild per-asset contact-sheet thumbnails (requires ImageMagick)"
 	@echo "  make organize                   Build browse-friendly symlink tree -> renders/sub_by_category/"
+	@echo "  make gc                         Dry-run GC report for renders/sub/runs/ (--apply to delete)"
 	@echo "  make clean                      Remove __pycache__/ and .pytest_cache/ (safe: leaves renders + caches intact)"
 	@echo ""
 	@echo "Variables: VARIANT (A|B|C), CAM (hero|stream_up|terrace|cliff|dusk|petal_macro),"
@@ -73,6 +74,9 @@ catalogue: sheets
 
 organize:
 	python3 scripts/organize_sub_renders.py
+
+gc:
+	python3 scripts/gc_render_runs.py
 
 clean:
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +
