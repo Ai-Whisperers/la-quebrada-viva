@@ -44,7 +44,8 @@ if __name__ == '__main__':
     _place_river()
     build_container_river_house(origin=(0.0, 0.0, 0.0))
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.8),
         distance=12.0,
         height=4.0,

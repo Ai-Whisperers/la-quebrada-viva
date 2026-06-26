@@ -39,7 +39,8 @@ if __name__ == '__main__':
     base.place_neutral_ground('laterite')
     build_bamboo_beton_30(origin=(0.0, 0.0, 0.0), variant=cfg.variant)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.6),
         distance=12.0,
         height=4.5,

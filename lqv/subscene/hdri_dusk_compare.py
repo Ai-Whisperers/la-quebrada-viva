@@ -99,7 +99,8 @@ if __name__ == '__main__':
     hdri_name, strength = _HDRI_BY_VARIANT.get(cfg.variant, _HDRI_BY_VARIANT['A'])
     _load_hdri(scene, os.path.join(_HDRI_DIR, hdri_name), strength=strength)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 0.5),
         distance=6.0,
         height=2.0,

@@ -49,7 +49,8 @@ if __name__ == '__main__':
     base.place_neutral_ground('laterite', size=60.0)
     build_bamboo_beton_family_curved(origin=(0.0, 0.0, 0.0), variant=cfg.variant)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, -2.0, 1.5),
         distance=18.0,
         height=6.0,

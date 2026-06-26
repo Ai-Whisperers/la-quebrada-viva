@@ -85,7 +85,8 @@ if __name__ == '__main__':
     _place_wall_row()
     base.setup_world(scene, cfg.variant)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.2),
         distance=10.0,
         height=1.5,

@@ -52,7 +52,8 @@ def _render_variant(variant: str):
     base.place_neutral_ground('laterite')
     _place_anthurium_cluster()
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 0.4),
         distance=2.5,
         height=1.2,

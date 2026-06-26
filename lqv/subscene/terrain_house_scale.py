@@ -79,7 +79,8 @@ def main():
     print(f"[subscene:{ASSET}] validate_geo() OK")
 
     # Camera FIRST so to_blender() can lift clip_end on it.
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.5),
         distance=70.0,
         height=22.0,

@@ -50,7 +50,8 @@ if __name__ == '__main__':
 
     base.setup_world(scene, cfg.variant)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.5),
         distance=16.0,
         height=7.0,

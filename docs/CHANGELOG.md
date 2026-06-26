@@ -13,10 +13,19 @@ Conventions: ISO dates, present-tense bullets, file-level granularity only when 
 Planned (P1.A residue + P1.B):
 - ~~`lqv/typologies/*` — Rule 4 stone-foundation plinth pass~~ — audit 2026-06-26 confirmed all 18 typologies satisfy Rule 4 in code (explicit foundation builders in 11; villa footings/pier blocks/PIER_LIFT/explicit sandstone course in 4; 3 exempt — boomhut treehouse, outdoor shower, candle_path). Pre-78433a7 "~13 missing" figure was stale.
 - HDRI swap to cerrado / Atlantic-Forest-edge — asset-researcher pass, CC0 / CC-BY 4.0 (P1.A.5)
-- `lqv/subscene/_cameras.py` — new `subscene_ortho_elevation/plan/section_camera/interior_camera` helpers (HOUSE_IMAGERY_SHOTLIST P1.B)
-- `RENDER_VIEW` env var parallel to `RENDER_VARIANT` (HOUSE_IMAGERY_SHOTLIST §2)
 - `apply_xray_override` material swap (HOUSE_IMAGERY_SHOTLIST §3)
 - Per-variant lighting differentiation T1.6 + background-tree replacement (P1.C)
+
+---
+
+## [2026-06-26] — P1.B.2 camera-view dispatcher promoted to public API
+
+- **feat** `lqv/cameras.py` — `make_view_camera(cfg, target, distance, height, lens)` public dispatcher honouring `cfg.view ∈ {hero3q, elevation, plan, section, interior}`. Replaces the private `_make_view_camera` previously living in `lqv/subscene/base.py`.
+- **fix** `lqv/subscene/bamboo_river_house.py` + 22 other bypass-pattern drivers — migrated from `cameras.subscene_camera(...)` to `cameras.make_view_camera(cfg, ...)` so parcel-scale drivers that bypass `base.run()` honour `RENDER_VIEW`. Pre-fix all four "views" produced identical 5,070,274-byte renders because the dispatcher never fired on the bypass path.
+- **chore** `lqv/subscene/base.py` — `run()` now calls the public dispatcher; `save_subrender()` retains `_<view>` filename suffix (default `hero3q` omits the suffix → legacy flat `renders/sub/<asset>_<variant>.png` invariant preserved).
+- Smoke batch (`bamboo_river_house`, variant B, 4 views) → 4 distinct PNG sizes (2,912,071 / 4,634,966 / 2,744,759 / 3,795,393). Hero3q regression render preserved exact 5,070,274-byte baseline. pytest 16/16 green.
+
+Subsystem bump: Camera helpers v0 → v1.
 
 ---
 
@@ -83,7 +92,7 @@ When a subsystem version bumps, increment its tag and add a one-line entry above
 | Material registry (`lqv/materials.py`) | v2 | 2026-06-15 (`78433a7`) | water dielectric + lapacho_timber PBR + bamboo split landed; DEFERRED_BUGS 1+2 closed |
 | Flora loader (`lqv/flora/photoreal.py`) | v2 | 2026-06-15 (`78433a7`) | `_LOADED_HEROES` deep-copy cache; DEFERRED_BUGS 3 closed |
 | Sub-render protocol (`lqv/subscene/`) | v1 | 2026-06-14 | `RENDER_RUN_ID` + runs/latest mirror; `RENDER_VIEW` planned post-freeze |
-| Camera helpers | v0 | n/a | elevation/plan/section/interior helpers spec-only (HOUSE_IMAGERY_SHOTLIST) |
+| Camera helpers | v1 | 2026-06-26 | `cameras.make_view_camera(cfg, ...)` public dispatcher; `RENDER_VIEW={hero3q,elevation,plan,section,interior}`; 22 bypass-pattern drivers migrated |
 | BoQ scope filter | v1 | 2026-06-15 | `LQV_BOQ_SCOPE=escritura` ($268,685.45) vs `=full` ($288,056) |
 | Wesley bundle | `20260616-1715` | 2026-06-16 | SHA-pinned, do not rebuild pre-escritura |
 | Escritura deck | v6 | 2026-06-16 | 28pp, SHA-pinned in print-pack |

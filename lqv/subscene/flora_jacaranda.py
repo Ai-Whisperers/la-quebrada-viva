@@ -51,7 +51,8 @@ def _render_variant(variant: str):
     base.place_neutral_ground('laterite')
     _place_jacarandas()
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 4.0),
         distance=22.0,
         height=8.0,

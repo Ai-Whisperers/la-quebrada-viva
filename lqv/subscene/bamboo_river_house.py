@@ -65,7 +65,8 @@ def main():
     from lqv.typologies.bamboo_river_house import build_bamboo_river_house
     build_bamboo_river_house(origin=(0.0, 0.0, 0.0))
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.8),
         distance=14.0,
         height=4.5,

@@ -22,6 +22,8 @@ RES_PRESETS = {
 
 SEED = 20260609
 
+VALID_VIEWS = ('hero3q', 'elevation', 'plan', 'section', 'interior')
+
 
 @dataclass
 class Config:
@@ -33,10 +35,12 @@ class Config:
     res_y: int
     is_preview: bool
     skip_render: bool
+    view: str
 
     @property
     def output_filename(self) -> str:
-        return f"{'_preview_' if self.is_preview else ''}{self.variant}_{self.cam_name}.png"
+        view_tag = '' if self.view == 'hero3q' else f"_{self.view}"
+        return f"{'_preview_' if self.is_preview else ''}{self.variant}_{self.cam_name}{view_tag}.png"
 
     @property
     def output_path(self) -> str:
@@ -52,6 +56,11 @@ def parse() -> Config:
     samples = int(os.environ.get('RENDER_SAMPLES', '128'))
     res_mode = os.environ.get('RENDER_RES', 'preview').lower()
     skip_render = os.environ.get('RENDER_SKIP', '0') == '1'
+    view = os.environ.get('RENDER_VIEW', 'hero3q').lower()
+    if view not in VALID_VIEWS:
+        print(f"[config] WARNING: unknown RENDER_VIEW={view!r}, falling back to "
+              f"hero3q (valid: {'|'.join(VALID_VIEWS)})")
+        view = 'hero3q'
     if res_mode not in RES_PRESETS:
         print(f"[config] WARNING: unknown RENDER_RES={res_mode!r}, falling back to "
               f"preview 1280x720 (valid: {'|'.join(sorted(set(RES_PRESETS)))})")
@@ -62,5 +71,5 @@ def parse() -> Config:
     return Config(
         variant=variant, cam_name=cam_name, samples=samples,
         res_mode=res_mode, res_x=res_x, res_y=res_y,
-        is_preview=is_preview, skip_render=skip_render,
+        is_preview=is_preview, skip_render=skip_render, view=view,
     )

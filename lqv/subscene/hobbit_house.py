@@ -73,7 +73,8 @@ if __name__ == '__main__':
         seed=base.derive_seed(ASSET, cfg.variant),
     )
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.4),
         distance=9.0,
         height=4.0,

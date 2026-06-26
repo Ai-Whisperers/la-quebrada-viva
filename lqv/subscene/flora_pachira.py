@@ -42,7 +42,8 @@ def _render_variant(variant: str):
     base.place_neutral_ground('laterite')
     _place_pachira()
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.8),
         distance=10.0,
         height=3.5,

@@ -106,7 +106,8 @@ if __name__ == '__main__':
     build_bamboo_beton_family_rectangular(origin=(0.0, 0.0, 0.0), variant=cfg.variant)
     _companion_guadua_clumps(seed_salt=ord(cfg.variant[0]) if cfg.variant else 0)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, -1.5, 1.5),
         distance=14.0,
         height=6.0,

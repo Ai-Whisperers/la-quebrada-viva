@@ -43,7 +43,8 @@ if __name__ == '__main__':
     base.place_neutral_ground('laterite')
     build_italian_stone_small_v2(origin=(0.0, 0.0, 0.0))
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(1.5, 0.0, 1.6),  # bias east so loggia stays in frame
         distance=12.0,
         height=4.5,

@@ -134,7 +134,8 @@ if __name__ == '__main__':
     _place_boulder_cluster(center=(0.0, 0.0, 0.0), radius=3.0, count=boulder_count)
 
     base.setup_world(scene, cfg.variant)
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 0.8),
         distance=8.0,
         height=2.5,

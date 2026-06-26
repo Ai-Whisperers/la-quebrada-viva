@@ -80,7 +80,8 @@ if __name__ == '__main__':
 
     # Camera: SE corner-ish view so we see the south face (door + windows)
     # AND the east face / veranda + sliding door in one frame.
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.6),
         distance=14.0,
         height=5.0,

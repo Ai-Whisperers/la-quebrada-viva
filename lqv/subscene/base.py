@@ -213,7 +213,9 @@ def save_subrender(scene, asset: str, cfg) -> str:
     smoke tests (build the scene, don't burn samples).
     """
     run_folder = run_dir(asset)
-    out = os.path.join(run_folder, f"{cfg.variant}.png")
+    view = getattr(cfg, 'view', 'hero3q')
+    view_tag = '' if view == 'hero3q' else f"_{view}"
+    out = os.path.join(run_folder, f"{cfg.variant}{view_tag}.png")
     scene.render.filepath = out
 
     profile = VARIANT_PROFILES.get(cfg.variant, VARIANT_PROFILES['C'])
@@ -228,9 +230,9 @@ def save_subrender(scene, asset: str, cfg) -> str:
     print(f"[subscene:{asset}] wrote {out}")
 
     os.makedirs(SUBRENDER_LATEST_DIR, exist_ok=True)
-    latest = os.path.join(SUBRENDER_LATEST_DIR, f"{asset}_{cfg.variant}.png")
+    latest = os.path.join(SUBRENDER_LATEST_DIR, f"{asset}_{cfg.variant}{view_tag}.png")
     shutil.copy2(out, latest)
-    legacy = os.path.join(SUBRENDER_DIR, f"{asset}_{cfg.variant}.png")
+    legacy = os.path.join(SUBRENDER_DIR, f"{asset}_{cfg.variant}{view_tag}.png")
     shutil.copy2(out, legacy)
     print(f"[subscene:{asset}] mirrored → {latest}")
     return out
@@ -264,11 +266,9 @@ def run(asset: str, build_fn, camera_target=(0.0, 0.0, 1.0),
             count=context_flora_count,
         )
     setup_world(scene, cfg.variant)
-    cam = cameras.subscene_camera(
-        target=camera_target,
-        distance=camera_distance,
-        height=camera_height,
-        lens=camera_lens,
+    cam = cameras.make_view_camera(
+        cfg, target=camera_target, distance=camera_distance,
+        height=camera_height, lens=camera_lens,
     )
     cam.data.clip_end = clip_end
     scene.camera = cam

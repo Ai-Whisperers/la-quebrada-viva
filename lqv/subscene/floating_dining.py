@@ -38,7 +38,8 @@ if __name__ == '__main__':
     # Camera: brief calls for location (+12, -12, 4.5) target (0, 0, 1.6).
     # subscene_camera places at (tx+distance, ty-distance, height) so the
     # (distance=12, height=4.5) pair satisfies that exactly.
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.6),
         distance=12.0,
         height=4.5,

@@ -26,7 +26,8 @@ if __name__ == '__main__':
     base.place_neutral_ground('laterite')
     build_italian_stone_small_v1(origin=(0.0, 0.0, 0.0))
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.4),
         distance=10.0,
         height=4.0,

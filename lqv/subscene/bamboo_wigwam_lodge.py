@@ -62,7 +62,8 @@ if __name__ == '__main__':
     build_bamboo_wigwam_lodge(origin=(0.0, 0.0, 0.0), variant=cfg.variant)
     _scatter_companion_bamboo(asset_seed)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 2.0),
         distance=11.0,
         height=4.5,

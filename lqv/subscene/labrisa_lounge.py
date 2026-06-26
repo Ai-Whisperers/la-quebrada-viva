@@ -50,7 +50,8 @@ if __name__ == '__main__':
     _place_creek_water()
     build_labrisa_lounge(location=(0.0, 0.0, 0.0), variant=cfg.variant)
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 1.6),
         distance=14.0,
         height=5.0,

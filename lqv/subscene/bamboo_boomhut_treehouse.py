@@ -26,7 +26,8 @@ def main():
     from lqv.typologies.bamboo_boomhut_treehouse import build_bamboo_boomhut_treehouse
     build_bamboo_boomhut_treehouse(origin=(0.0, 0.0, 0.0))
 
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 0.0, 4.0),
         distance=14.0,
         height=6.0,

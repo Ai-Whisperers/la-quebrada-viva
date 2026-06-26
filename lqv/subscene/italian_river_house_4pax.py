@@ -55,7 +55,8 @@ def main():
     _build()
 
     # Hero camera: 3/4 view of loggia + river + arched base
-    cam = cameras.subscene_camera(
+    cam = cameras.make_view_camera(
+        cfg,
         target=(0.0, 1.5, 2.8),
         distance=14.0,
         height=6.0,
