@@ -102,15 +102,23 @@
 
 ## 8. Tag the git state
 
+**Signed-case canonical path:** `scripts/post_signing_finalize.sh` handles tag create + push + memory-stub emit with full SHA re-verification. Always dry-run first.
+
 ```bash
-# If signed on time:
-git tag -a escritura-signed-2026-06-27 -m "Escritura signed at Peña Ros, 6 padrones, 62 Ha 5737 m² 4704 cm², total Gs. 2.503.000.000"
+# Dry-run (mandatory first pass):
+bash scripts/post_signing_finalize.sh --time 10:18 --notes "Cl. OCTAVA ratificada verbal"
 
-# If postponed:
-git tag -a escritura-postponed-YYYY-MM-DD -m "Postponed reason: ____"
+# Apply once dry-run is clean:
+bash scripts/post_signing_finalize.sh --apply --time 10:18 --notes "Cl. OCTAVA ratificada verbal"
+```
 
-# Push the tag:
-git push origin escritura-signed-2026-06-27
+The script tags `escritura-signed-2026-06-27` on pinned commit `00811297c5ec2dbfa77cdd2e5a04fea34a8fb702` (= 0081129), pushes it, and emits a memory stub at `/tmp/lqv_project_state_2026_06_27_signed.md` for human review before promotion to `~/.claude/projects/.../memory/`.
+
+**Postponed-case path** (no script — single tag is enough):
+
+```bash
+git tag -a escritura-postponed-YYYY-MM-DD 00811297c5ec2dbfa77cdd2e5a04fea34a8fb702 -m "Postponed reason: ____"
+git push origin escritura-postponed-YYYY-MM-DD
 ```
 
 ---
