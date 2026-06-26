@@ -29,9 +29,11 @@ LICENSES_DIR = os.path.join(PROJECT_ROOT, "LICENSES")
 
 def _load_module(path: str, name: str):
     spec = importlib.util.spec_from_file_location(name, path)
+    assert spec is not None, f'spec_from_file_location returned None for {path}'
+    loader = spec.loader
+    assert loader is not None, f'module spec for {name} has no loader'
     mod = importlib.util.module_from_spec(spec)
-    assert spec.loader is not None
-    spec.loader.exec_module(mod)
+    loader.exec_module(mod)
     return mod
 
 

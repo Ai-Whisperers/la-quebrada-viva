@@ -188,7 +188,9 @@ def main():
 
 
     # Try direct JRC API first
+    assert YEARS, 'YEARS constant must list at least one year'
     response = None
+    year = YEARS[0]
     for year in YEARS:
         response = try_download_year(year)
         if response is not None:

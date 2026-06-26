@@ -291,9 +291,7 @@ def _build_reflection_pool(col: bpy.types.Collection, center: tuple[float, float
 
     # Coping: 4 sandstone slabs forming the rectangular frame.
     coping_z = cz + POOL_DEPTH_M + POOL_COPING_T_M / 2.0
-    # Two long (E-W) slabs and two short (N-S) slabs
-    POOL_LENGTH_M / 2.0 + POOL_COPING_W_M / 2.0
-    POOL_WIDTH_M / 2.0 + POOL_COPING_W_M / 2.0
+    # Two long (E-W) slabs and two short (N-S) slabs — geometry inlined below.
     coping_specs = [
         ('N', (cx, cy + POOL_WIDTH_M / 2.0 + POOL_COPING_W_M / 2.0, coping_z),
          (POOL_LENGTH_M + 2 * POOL_COPING_W_M, POOL_COPING_W_M, POOL_COPING_T_M)),
@@ -369,7 +367,6 @@ def _build_deck(col: bpy.types.Collection, center: tuple[float, float, float]):
         _link(obj, col)
 
     # 16 deck posts spaced around the outer + inner perimeter.
-    cz + DECK_POST_H_M / 2.0
     # 4 outer corners, 4 outer mid-edges, 4 inner corners, 4 inner mid-edges
     post_positions: list[tuple[float, float]] = []
     # Outer corners

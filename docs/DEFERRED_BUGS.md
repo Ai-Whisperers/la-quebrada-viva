@@ -109,3 +109,24 @@ Recorded for the post-mortem record:
 2. Tackled in order on `master`: Bug 1 → smoke-render the worst water assets → Bug 2 → re-render wood assets → Bug 3 → full batch with `RENDER_FLORA_PHOTOREAL=1`.
 3. Commits: `78433a7` (omnibus polish wave) — see `lqv/materials/glass.py`, `lqv/materials/wood.py`, `lqv/flora/photoreal.py` for the in-code fix landmarks.
 4. Meta-patterns 9/10/11 from `docs/_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md` are now struck.
+
+---
+
+## Pyright cascade follow-ups (low-priority, post-escritura) — opened 2026-06-26 (CC-TOOL.5)
+
+The 101 residual pyright errors after CC-TOOL.5 close-out are almost entirely cascade hits from `bpy/mathutils/bmesh` missing upstream stubs (`reportAttributeAccessIssue/Index/Operator/Call`). The cascade rules stay enabled because they legitimately catch real bugs in numpy/matplotlib/rasterio/h5py code paths. The four legit non-bpy hits below are queued for post-escritura cleanup — none gate any render or escritura deliverable.
+
+| # | Location | Rule | Bug |
+|---|---|---|---|
+| P1 | `lqv/typologies/bamboo_boomhut_treehouse.py:327:14` | reportGeneralTypeIssues | `"None" is not iterable` — `_build_*` helper returning Optional unpacked without None-guard. |
+| P2 | `scripts/fetch_opentopo_dem.py:60:16, 63:16` | reportReturnType | Function annotated `-> bytes` returns `None` on early-exit paths. Tighten signature to `-> bytes \| None` or assert before return. |
+| P3 | `scripts/fetch_opentopo_dem.py:102:16`, `scripts/analyze_dem.py:155:39, 156:57`, `scripts/satellite/fetch_sentinel2.py:205:35` | reportArgumentType | `matplotlib.pyplot.imshow(extent=...)` expects `tuple[float, float, float, float]` but the call sites pass a `list[float]`. Wrap in `tuple(...)` at each call site. |
+
+Effort: ~30 min total (mechanical). Pure type-correctness — no runtime semantics change.
+
+Reproducer:
+```bash
+/home/ai-whisperers/.local/bin/pyright | grep -vE "(reportAttributeAccessIssue|reportIndexIssue|reportOperatorIssue|reportCallIssue)"
+```
+
+Acceptance: pyright reports 0 non-cascade errors. Remaining cascade noise is fully attributable to bpy stub-gap (won't be cleared until upstream ships type stubs).
