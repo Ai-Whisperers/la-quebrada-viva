@@ -18,6 +18,13 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — T-1 single-command preflight
+
+- **ops** `scripts/preflight_t_minus_1.sh` (new, executable, read-only) — single-command GO/NO-GO sweep consolidating the eight T-1 verifications previously run by hand. Steps: (1) on master + clean + origin parity, (2) pre-event tag `escritura-2026-06-27` dereferences to pinned commit `00811297…4a53c`, (3) bundle SHA matches pinned, (4) deck v6 SHA matches pinned, (5) `dist/print_pack_2026-06-27/VERIFY.sh` exits 0, (6) twelve required ops docs present at expected paths (CONTINGENCIES, ROLLBACK_RUNBOOK, POSTMORTEM_TEMPLATE, DECISIONS, MASTER_TODO, AUTONOMOUS_PLAN, deck v6, MORNING_RUNBOOK, WALLET_CARD, INTEGRITY, BUNDLE_README, post_signing_finalize.sh), (7) pytest invariants 16/16 green, (8) finalize script syntax valid. Exit 0 prints `GO`; exit non-zero prints `NO-GO` with the count of failed checks. Idempotent and never mutates the repo, so it can be run repeatedly across the evening with no side effects.
+- **rationale** before this, the T-1 audit was a hand-rolled chain of `git rev-parse`, `sha256sum`, `bash VERIFY.sh`, file-existence checks and `pytest` — each easy to forget in a stressful pre-event window. One command, one verdict.
+
+---
+
 ## [2026-06-26] — P0b.2 pre-staging: tag-name reconcile + post-signing finalize script
 
 - **ops** `scripts/post_signing_finalize.sh` (new, +156 lines, executable) — pre-stages the AI-side P0b.2 work so that when the escritura signs 2026-06-27 the tag-promote + memory-write collapses to a single command. Dry-run by default; gated behind `--apply`. Verifies (1) master at parity with `origin/master`, (2) pre-event tag `escritura-2026-06-27` resolves to pinned commit `00811297c5ec2dbfa77cdd2e5a04fea34a8fb702`, (3) `dist/wesley_bundle_20260616-1715.zip` SHA-256 matches pinned `9ce96b8...4a53c`, (4) `docs/escritura_deck/escritura_deck_v6.pdf` SHA-256 matches pinned `2e4c265...01137`. On `--apply` creates annotated tag `escritura-signed-2026-06-27` on the pinned commit, pushes to origin, and emits a memory-stub at `/tmp/lqv_project_state_2026_06_27_signed.md` for human review before promotion. Flags: `--time HH:MM` (default `10:00`) and `--notes TEXT` template into the tag annotation.
