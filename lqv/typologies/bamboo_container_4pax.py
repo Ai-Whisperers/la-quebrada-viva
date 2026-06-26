@@ -48,6 +48,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.house import bamboo_frame as _bf
 from lqv.materials import MAT, assign
 
@@ -765,6 +766,21 @@ def build_bamboo_container_4pax(origin: tuple[float, float, float] = (0.0, 0.0, 
     _veranda_floor_detail(col, ox, oy)
     _veranda_frame(col, ox, oy)
     _veranda_roof(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    # Container interior: long & narrow (6.06 × 2.44 m). Floor sits at top of
+    # 15 cm concrete plinth.
+    furnish_interior(
+        col,
+        footprint_w=CONTAINER_L - 0.4,
+        footprint_l=CONTAINER_W - 0.4,
+        origin_xy=(ox, oy),
+        floor_z=PLINTH_THK,
+        pax=SLEEPS,
+        style='container',
+        variant=variant,
+        name_prefix='BC4_Furn',
+    )
     return col
 
 

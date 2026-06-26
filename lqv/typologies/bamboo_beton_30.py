@@ -33,6 +33,7 @@ import math
 import bpy
 
 from lqv.materials import MAT, assign
+from lqv.furniture import furnish_interior
 
 # ---------------------------------------------------------------------------
 # Geometry constants (6 m × 5 m footprint, 30 m²; 2 PAX)
@@ -454,6 +455,16 @@ def build_bamboo_beton_30(origin: tuple[float, float, float] = (0.0, 0.0, 0.0),
     _roof(col, ox, oy)
     _door_and_louvers(col, ox, oy)
     _porch_deck(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    furn_origin = (ox, oy - (_SERVICE_WALL_T / 2.0 + 0.20))
+    furn_w = PLATFORM_W - 1.20
+    furn_l = PLATFORM_L - _SERVICE_WALL_T - 0.60
+    furnish_interior(
+        col, footprint_w=furn_w, footprint_l=furn_l,
+        origin_xy=furn_origin, floor_z=STONE_COURSE_H,
+        pax=SLEEPS, style='bamboo', variant=variant, name_prefix='BB30_Furn',
+    )
 
     return col
 

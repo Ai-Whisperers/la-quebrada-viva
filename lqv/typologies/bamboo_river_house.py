@@ -27,6 +27,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # ---------------------------------------------------------------------------
@@ -595,6 +596,16 @@ def build_bamboo_river_house(origin: tuple[float, float, float] = (0.0, 0.0, 0.0
     _dining_deck(col, ox, oy)
     _railing(col, ox, oy)
     _suspended_walkway(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    furn_floor_z = PLATFORM_ELEVATION_M + _DECK_THICKNESS
+    furn_w = PLATFORM_W - 1.4
+    furn_l = PLATFORM_L - 1.8
+    furnish_interior(
+        col, footprint_w=furn_w, footprint_l=furn_l,
+        origin_xy=(ox, oy), floor_z=furn_floor_z,
+        pax=SLEEPS, style='bamboo', variant=variant, name_prefix='BRH_Furn',
+    )
 
     return col
 

@@ -18,6 +18,23 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — P1.B.1 interior furniture stubs wired across the 15 typology registry
+
+- **feat** `lqv/furniture.py` — `furnish_interior(col, *, footprint_w, footprint_l, origin_xy, floor_z, pax, style, variant, name_prefix)` builds bed (1 or pair depending on `pax`) + bedside + dining table + 2 stools + shelf + variant-emissive lantern from procedural primitives. Style chains: `bamboo` / `lapacho` / `stone` / `cob` / `container`. Variant-keyed emission `{A: 0.0, B: 0.6, C: 1.0}` carries the dawn/inspection/dusk read into the interior view without forking the registry. Early-returns on footprints < 1.5 m to skip un-furnishable amenity stubs.
+- **feat** all 15 entries of `lqv.typologies.TYPOLOGIES` now invoke `furnish_interior(...)` before `return col`, with floor-z anchored to each typology's habitable storey (foundation top / plinth top / pier lift / arched-base course / dome foundation) and footprint derived per-typology with wall-thickness margin:
+  - `bamboo_beton_28`, `bamboo_beton_30`, `bamboo_river_house`, `bamboo_curved_roof_villa`, `bamboo_wigwam_lodge`, `bamboo_beton_family_curved`, `bamboo_beton_family_rectangular`, `bamboo_boomhut_treehouse`, `bamboo_container_4pax` → `style='bamboo'` / `'container'` as appropriate.
+  - `container_river_house` → `style='container'`, floor on `PIER_LIFT`.
+  - `clay_terracotta_estate` → `style='stone'`, floor on plinth + 10 cm GF slab.
+  - `hobbit_house` → `style='cob'`, 3 × 3 m inscribed in the 3 m dome, floor on `FOUNDATION_H`.
+  - `italian_river_house_4pax` → `style='stone'`, floor on `_BASE_HEIGHT` (atop arched foundation course).
+  - `italian_stone_small_v1` / `italian_stone_small_v2` → `style='stone'`, floor on `_FOUNDATION_HEIGHT`.
+- **fix** signature drift — `build_<typology>(origin, ...)` builders that previously dropped the `variant` kwarg from the wrapper's call now accept and forward `variant: str = 'A'`. Wrappers `build(parent, location, variant)` route variant through correctly so the interior lantern can read dawn/inspection/dusk emission.
+- pytest 16/16 green; typology-contract + smoke tests unchanged. No render-byte regressions expected outside `RENDER_VIEW=interior` (default hero3q / elevation / plan / section / xray paths render the furniture but at parcel scale it falls below the resolution floor).
+
+Subsystem bump: Typology registry v3 → v4 (variant-aware interior furniture).
+
+---
+
 ## [2026-06-26] — P1.B.3 `apply_xray_override` shipped
 
 - **feat** `lqv/subscene/base.py` — `apply_xray_override(scene, asset_collection=None, except_materials=None, alpha=0.15)` swaps non-opaque material slots to a shared Transparent BSDF + low-weight Principled mix shader. Paired `clear_xray_override()` restores originals from per-object `_lqv_xray_orig_<slot>` stash for symmetric teardown.

@@ -60,6 +60,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # ---------------------------------------------------------------------------
@@ -666,6 +667,21 @@ def build_bamboo_beton_family_curved(
     _spine_doors(col, ox, oy)
     _curtain_bays(col, ox, oy)
     _courtyard_step(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    # Crescent footprint: drop a generous bedroom box on the chord centreline,
+    # set into the habitable bar between R_INNER and R_OUTER.
+    furnish_interior(
+        col,
+        footprint_w=4.0,
+        footprint_l=6.0,
+        origin_xy=(ox, oy + (R_INNER + 1.5)),
+        floor_z=STONE_COURSE_H + DECK_THK,
+        pax=SLEEPS,
+        style='bamboo',
+        variant=variant,
+        name_prefix='BBFCv_Furn',
+    )
 
     return col
 

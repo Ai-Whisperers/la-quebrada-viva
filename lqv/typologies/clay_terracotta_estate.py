@@ -14,6 +14,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # ----- public sizing -----
@@ -212,7 +213,7 @@ def _add_balcony(col, ox, oy, base_z, name):
                 name=f'{name}_Screen')
 
 
-def build_clay_terracotta_estate(origin=(0.0, 0.0, 0.0)):
+def build_clay_terracotta_estate(origin=(0.0, 0.0, 0.0), variant: str = 'A'):
     """Build the two-storey clay-terracotta estate at ``origin``.
 
     Entry-facing axis: -Y (south). Returns the holding collection.
@@ -257,9 +258,22 @@ def build_clay_terracotta_estate(origin=(0.0, 0.0, 0.0)):
     # 5. Upper balcony + latticed privacy screen across the south facade.
     _add_balcony(col, ox, oy, f2_base + 0.10, 'Estate_BalconyS')
 
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    furnish_interior(
+        col,
+        footprint_w=FOOTPRINT_W - 2.0,
+        footprint_l=FOOTPRINT_D - 2.0,
+        origin_xy=(ox, oy),
+        floor_z=plinth_top + 0.10,
+        pax=4,
+        style='stone',
+        variant=variant,
+        name_prefix='CTE_Furn',
+    )
+
     return col
 
 
 # Back-compat: standard typology signature.
 def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
-    return build_clay_terracotta_estate(origin=location)
+    return build_clay_terracotta_estate(origin=location, variant=variant)

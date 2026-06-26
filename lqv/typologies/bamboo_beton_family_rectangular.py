@@ -78,6 +78,7 @@ from lqv.house.bamboo_frame import (
     build_bamboo_post_stack,
     build_palm_thatch_panel,
 )
+from lqv.furniture import furnish_interior
 from lqv.house.stone_wall import build_stone_foundation_course
 from lqv.materials import MAT, assign
 
@@ -685,6 +686,19 @@ def build_bamboo_beton_family_rectangular(
     _french_doors(col, ox, oy)
     _east_louver(col, ox, oy)
     _kitchen_tile_strip(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    furnish_interior(
+        col,
+        footprint_w=INTERIOR_W - 0.4,
+        footprint_l=PLAN_L - 1.0,
+        origin_xy=(ox, oy),
+        floor_z=STONE_COURSE_H + DECK_THK,
+        pax=SLEEPS,
+        style='bamboo',
+        variant=variant,
+        name_prefix='BBFRect_Furn',
+    )
 
     return col
 

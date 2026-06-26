@@ -15,6 +15,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # ----- public sizing constants used by SCATTERED CONSUMERS -----
@@ -400,7 +401,7 @@ def _solar_panel(col, ox, oy, deck_top_z):
     _link(pv, col)
 
 
-def build_bamboo_boomhut_treehouse(origin=(0.0, 0.0, 0.0)):
+def build_bamboo_boomhut_treehouse(origin=(0.0, 0.0, 0.0), variant: str = 'A'):
     """Build the full Bamboo Boomhut Treehouse at ``origin``.
 
     Returns the collection holding every part.
@@ -446,10 +447,24 @@ def build_bamboo_boomhut_treehouse(origin=(0.0, 0.0, 0.0)):
     # 11. Solar PV box on south railing.
     _solar_panel(col, ox, oy, deck_top_z)
 
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    # Hex platform 3.2 m flat-to-flat: inscribed square ~2.26 m → use 2.2 × 2.2.
+    furnish_interior(
+        col,
+        footprint_w=2.2,
+        footprint_l=2.2,
+        origin_xy=(ox, oy),
+        floor_z=deck_top_z,
+        pax=2,
+        style='bamboo',
+        variant=variant,
+        name_prefix='BHT_Furn',
+    )
+
     return col
 
 
 # Back-compat: keep the old `build()` signature alive so callers that imported
 # the stub keep working.
 def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
-    return build_bamboo_boomhut_treehouse(origin=location)
+    return build_bamboo_boomhut_treehouse(origin=location, variant=variant)

@@ -31,6 +31,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.house import bamboo_frame as _bf
 from lqv.materials import MAT, assign
 
@@ -527,6 +528,17 @@ def build_bamboo_wigwam_lodge(origin: tuple[float, float, float] = (0.0, 0.0, 0.
     _smoke_vent(col, ox, oy)
     _door_frame(col, ox, oy)
     _fire_pit(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    # Circular plan: inscribed square = _BASE_RADIUS * sqrt(2) ≈ 3.54 m.
+    inscribed = _BASE_RADIUS * math.sqrt(2.0) - 0.4
+    furn_floor_z = _FOUND_HEIGHT + _FLOOR_THICKNESS
+    furnish_interior(
+        col, footprint_w=inscribed, footprint_l=inscribed,
+        origin_xy=(ox, oy), floor_z=furn_floor_z,
+        pax=SLEEPS, style='bamboo', variant=variant, name_prefix='Wigwam_Furn',
+    )
+
     return col
 
 

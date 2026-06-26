@@ -19,6 +19,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 FOOTPRINT_M2 = 35.0           # 7 m × 5 m per floor
@@ -477,7 +478,7 @@ def _dock_and_stairs(col, ox, oy):
     )
 
 
-def build_italian_river_house_4pax(origin=(0.0, 0.0, 0.0)):
+def build_italian_river_house_4pax(origin=(0.0, 0.0, 0.0), variant: str = 'A'):
     """Build the Italian River House at ``origin``.
 
     Returns the parent collection. Idempotent across re-invocation.
@@ -491,12 +492,28 @@ def build_italian_river_house_4pax(origin=(0.0, 0.0, 0.0)):
     _loggia(col, ox, oy)
     _shutters_and_doors(col, ox, oy)
     _dock_and_stairs(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    # Habitable storey sits on top of _BASE_HEIGHT arched foundation course;
+    # 7 × 5 m plan, leave ~0.5 m margin to interior wall face.
+    furnish_interior(
+        col,
+        footprint_w=PLATFORM_W - 1.2,
+        footprint_l=PLATFORM_L - 1.0,
+        origin_xy=(ox, oy),
+        floor_z=_BASE_HEIGHT,
+        pax=SLEEPS,
+        style='stone',
+        variant=variant,
+        name_prefix='IRH4_Furn',
+    )
+
     return col
 
 
 # Backward-compat shim: older drivers + composite call ``build(...)``.
 def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
-    col = build_italian_river_house_4pax(origin=location)
+    col = build_italian_river_house_4pax(origin=location, variant=variant)
     if parent is not None and col.name not in [c.name for c in parent.children]:
         # rewire the collection under the requested parent
         bpy.context.scene.collection.children.unlink(col)

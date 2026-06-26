@@ -55,6 +55,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # ---------------------------------------------------------------------------
@@ -512,6 +513,25 @@ def build_bamboo_beton_28(origin: tuple[float, float, float] = (0.0, 0.0, 0.0),
     _door_and_louvers(col, ox, oy)
     _porch_deck(col, ox, oy)
     _sleep_nook_divider(col, ox, oy)
+
+    # P1.B.1 — minimal interior furniture stubs (RENDER_VIEW=interior readable).
+    # Living strip lives south of the service wall (+Y); shift origin south by
+    # half the service-wall depth + a small clearance so the bed doesn't push
+    # into the concrete service wall on +Y.
+    furn_origin = (ox, oy - (_SERVICE_WALL_T / 2.0 + 0.20))
+    furn_w = PLATFORM_W - 1.20         # leave 60 cm clearance to E/W bamboo
+    furn_l = PLATFORM_L - _SERVICE_WALL_T - 0.60
+    furnish_interior(
+        col,
+        footprint_w=furn_w,
+        footprint_l=furn_l,
+        origin_xy=furn_origin,
+        floor_z=STONE_COURSE_H,
+        pax=SLEEPS,
+        style='bamboo',
+        variant=variant,
+        name_prefix='BB28_Furn',
+    )
 
     return col
 

@@ -14,6 +14,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # ----- public sizing -----
@@ -160,7 +161,7 @@ def _add_thatch_panel(col, y_pos, panel_depth, deck_top, name):
         _link(obj, col)
 
 
-def build_bamboo_curved_roof_villa(origin=(0.0, 0.0, 0.0)):
+def build_bamboo_curved_roof_villa(origin=(0.0, 0.0, 0.0), variant: str = 'A'):
     """Build the curved-roof villa at ``origin``. Open facade is -Y."""
     ox, oy, oz = origin
     col = _ensure_collection('BambooCurvedRoofVilla', None)
@@ -235,9 +236,19 @@ def build_bamboo_curved_roof_villa(origin=(0.0, 0.0, 0.0)):
         depth = (y1 - y0) - 2 * _RIB_RADIUS
         _add_thatch_panel(col, cy, depth, deck_top, f'Villa_Thatch_{i:02d}')
 
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    furn_floor_z = oz + DECK_HEIGHT + _DECK_THK
+    furn_w = FOOTPRINT_W - 0.6
+    furn_l = FOOTPRINT_D - 0.6
+    furnish_interior(
+        col, footprint_w=furn_w, footprint_l=furn_l,
+        origin_xy=(ox, oy), floor_z=furn_floor_z,
+        pax=2, style='bamboo', variant=variant, name_prefix='Villa_Furn',
+    )
+
     return col
 
 
 # Back-compat: standard typology signature.
 def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
-    return build_bamboo_curved_roof_villa(origin=location)
+    return build_bamboo_curved_roof_villa(origin=location, variant=variant)

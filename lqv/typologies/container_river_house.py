@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # --- Container shell -------------------------------------------------------
@@ -149,7 +150,7 @@ def _cyl(col, name, location, radius, depth, mat, vertices=12):
     return obj
 
 
-def build_container_river_house(origin=(0.0, 0.0, 0.0)):
+def build_container_river_house(origin=(0.0, 0.0, 0.0), variant: str = 'A'):
     """Build the Container River House at ``origin``."""
     ox, oy, oz = origin
     col = _ensure_collection('ContainerRiverHouse', None)
@@ -292,9 +293,22 @@ def build_container_river_house(origin=(0.0, 0.0, 0.0)):
              (0.9, 0.55, 0.04),
              glass)
 
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    furnish_interior(
+        col,
+        footprint_w=CONTAINER_L - 0.4,
+        footprint_l=CONTAINER_W - 0.4,
+        origin_xy=(ox, oy),
+        floor_z=oz + PIER_LIFT,
+        pax=SLEEPS,
+        style='container',
+        variant=variant,
+        name_prefix='CRH_Furn',
+    )
+
     return col
 
 
 # Legacy alias kept so the old subscene driver `_build()` path still works.
 def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
-    return build_container_river_house(origin=location)
+    return build_container_river_house(origin=location, variant=variant)

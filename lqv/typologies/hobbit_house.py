@@ -23,6 +23,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.materials import MAT, assign
 
 # --- Geometry constants ----------------------------------------------------
@@ -303,7 +304,7 @@ def _box(col, name, location, scale, mat):
     return obj
 
 
-def build_hobbit_house(origin=(0.0, 0.0, 0.0), parent=None):
+def build_hobbit_house(origin=(0.0, 0.0, 0.0), parent=None, variant: str = 'A'):
     """Build the Hobbit House typology at ``origin``. Returns the collection."""
     ox, oy, oz = origin
     col = _ensure_collection('HobbitHouse', parent)
@@ -435,10 +436,25 @@ def build_hobbit_house(origin=(0.0, 0.0, 0.0), parent=None):
          (1.4, 0.18, 0.06),
          stone)
 
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    # Dome interior: inscribed square inside RADIUS_M (3.0 m) circle ≈ 4.24 m
+    # diagonal → use 3.0 × 3.0 with margin from curved walls.
+    furnish_interior(
+        col,
+        footprint_w=3.0,
+        footprint_l=3.0,
+        origin_xy=(ox, oy),
+        floor_z=oz + FOUNDATION_H,
+        pax=SLEEPS,
+        style='cob',
+        variant=variant,
+        name_prefix='HH_Furn',
+    )
+
     return col
 
 
 # Legacy alias — preserved so the existing subscene driver `_build()` path
 # (and TYPOLOGIES discovery) keeps working without changes.
 def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
-    return build_hobbit_house(origin=location, parent=parent)
+    return build_hobbit_house(origin=location, parent=parent, variant=variant)

@@ -26,6 +26,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.house import stone_wall
 from lqv.materials import MAT, assign
 
@@ -419,7 +420,7 @@ def _chimney(col, ox, oy):
     )
 
 
-def build_italian_stone_small_v1(origin=(0.0, 0.0, 0.0)):
+def build_italian_stone_small_v1(origin=(0.0, 0.0, 0.0), variant: str = 'A'):
     """Build the Italian Stone Small v1 cottage at ``origin``.
 
     Returns the parent collection. Idempotent across re-invocation.
@@ -434,12 +435,28 @@ def build_italian_stone_small_v1(origin=(0.0, 0.0, 0.0)):
     _door_and_paving(col, ox, oy)
     _porch(col, ox, oy)
     _chimney(col, ox, oy)
+
+    # P1.B.1 — interior furniture stubs (RENDER_VIEW=interior readable).
+    # Single-room cottage; floor sits atop foundation course; margin from
+    # wall face = ~0.4 m so the bed clears the shutters.
+    furnish_interior(
+        col,
+        footprint_w=PLATFORM_W - 0.8,
+        footprint_l=PLATFORM_L - 0.8,
+        origin_xy=(ox, oy),
+        floor_z=_FOUNDATION_HEIGHT,
+        pax=SLEEPS,
+        style='stone',
+        variant=variant,
+        name_prefix='ISSv1_Furn',
+    )
+
     return col
 
 
 # Backward-compat shim: older drivers (subscene + composite) call ``build(...)``.
 def build(parent=None, location=(0.0, 0.0, 0.0), variant: str = 'A'):
-    col = build_italian_stone_small_v1(origin=location)
+    col = build_italian_stone_small_v1(origin=location, variant=variant)
     if parent is not None and col.name not in [c.name for c in parent.children]:
         bpy.context.scene.collection.children.unlink(col)
         parent.children.link(col)
