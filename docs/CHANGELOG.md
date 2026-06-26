@@ -18,6 +18,12 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — CC-DOC.8 changelog scope audit closure
+
+- **docs** `docs/CHANGELOG.md` — audited against CC-DOC.8 spec (material-shader version with Bug 1/2 fix, camera-helper version, `build_scene.py` freeze status). All three are explicitly pinned in the **Subsystems tracked** table below: `build_scene.py | frozen | 2026-06-10 (85e86aa) | composite path byte-identity preserved through 2026-06-27`; `Material registry (lqv/materials.py) | v2 | 2026-06-15 (78433a7) | water dielectric + lapacho_timber PBR + bamboo split landed; DEFERRED_BUGS 1+2 closed`; `Camera helpers | v1 | 2026-06-26 | cameras.make_view_camera(cfg, ...) public dispatcher`. Per-day entries at the relevant dates also document the water-shader dielectric fix (closes Bug 1), lapacho PBR + bamboo split (closes Bug 2), `cameras.py` public dispatcher landing, and the renderer byte-freeze at `85e86aa`. No additional version row required. Closes MASTER_TODO CC-DOC.8.
+
+---
+
 ## [2026-06-26] — CC-DOC.10 LICENSES coverage closure
 
 - **tools** `scripts/stamp_license_stubs.py` — rewritten with two-pass strategy (manifest + on-disk) to close the 130-stub gap that `tools/check_licenses.py` was flagging since the AmbientCG/Poly Haven re-bundle landed. Manifest pass now iterates the **full** PH slug set (`HDRIS + EXTRA_HDRIS + TEXTURES + EXTRA_TEXTURES + MODELS + EXTRA_MODELS`) plus the ACG manifest, gated on disk presence so slugs listed in download scripts but never actually pulled stay un-stubbed (avoids orphan flags). Disk pass enumerates `assets/{hdris,models,textures}` with the **same** slug derivation as `tools/check_licenses.py:_collect_asset_slugs` — `_unused*` HDRI recursion adds slugs (still need attribution even when quarantined); `_`-prefixed model/texture dirs are skipped; vendor-wrapper dirs (all-immediate-children-are-subdirs) auto-recurse one level. New `POLYHAVEN_SLUG_ALIASES = {"forest_ground_01": "forrest_ground_01", "forest_ground_03": "forrest_ground_03"}` resolves the project-internal vs PH-canonical slug split — `_write()` gained a `url_slug` kwarg that embeds the canonical URL in the PH template's `Source:` / `License URL:` lines while preserving the project-internal slug in the `Asset:` header (so `check_licenses.py` filename matching still passes). `_hdri_slug()` strips `_(N)k` / `_(N)K` suffix via `HDRI_SUFFIX_RE`.
