@@ -70,6 +70,20 @@ _POST_FREEZE_MODULES = frozenset({
     'bamboo_outdoor_shower',
 })
 
+# Per-phase module tags. Drives LQV_BOQ_SCOPE=phase1|phase2|phase3|phase4
+# (additive filters: keep ONLY the named phase). phase1 is the pre-freeze
+# baseline (everything shipped at 78433a7 — i.e. NOT in _POST_FREEZE_MODULES).
+# phase2 is the post-freeze drop already accounted for in _POST_FREEZE_MODULES.
+# phase3 / phase4 are placeholders for the next typology + amenity waves.
+# Add new modules to the matching phase as they ship, so procurement can
+# diff "what changed in this drop" without rerunning the full rollup.
+_PHASE_MODULES: dict[str, frozenset[str]] = {
+    'phase2': _POST_FREEZE_MODULES,
+    'phase3': frozenset(),
+    'phase4': frozenset(),
+}
+_PHASE_KEYS = frozenset(_PHASE_MODULES.keys()) | {'phase1'}
+
 
 # ---------------------------------------------------------------------------
 # bpy/materials stub installation — only when run directly (not from
@@ -204,6 +218,11 @@ def collect_all(*, skip_broken: bool = True) -> list[BoQLine]:
     """
     import traceback
     scope = os.environ.get('LQV_BOQ_SCOPE', 'escritura').strip().lower()
+    if scope not in {'escritura', 'full'} | _PHASE_KEYS:
+        raise ValueError(
+            f'LQV_BOQ_SCOPE={scope!r} not recognised; expected one of '
+            f"'escritura', 'full', {sorted(_PHASE_KEYS)}"
+        )
     lines: list[BoQLine] = []
     for pkg in ('lqv.typologies', 'lqv.amenities'):
         for modname in _iter_modules(pkg):
@@ -214,6 +233,12 @@ def collect_all(*, skip_broken: bool = True) -> list[BoQLine]:
                     f'(LQV_BOQ_SCOPE=escritura; set LQV_BOQ_SCOPE=full to include)',
                     file=sys.stderr,
                 )
+                continue
+            if scope == 'phase1' and short in _POST_FREEZE_MODULES:
+                # phase1 == pre-freeze baseline; share the escritura exclude
+                # set so the procurement diff matches the deck-v6 totals.
+                continue
+            if scope in _PHASE_MODULES and short not in _PHASE_MODULES[scope]:
                 continue
             try:
                 lines.extend(_collect_from_module(modname))
