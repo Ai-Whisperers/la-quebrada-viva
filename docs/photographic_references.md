@@ -88,6 +88,42 @@ Already curated by `asset-researcher` in `docs/asset_plan.md` §HDRIs. No new ac
 | 8.4 | LiFePO4 battery cabinet | Battery box reference | Manufacturer product page | RM | 🔍 |
 | 8.5 | Greywater wetland with cattails | Wetland reference | Wikimedia | CC-BY-SA | 🔍 |
 
+## Category 9 — Comparable precedent multi-view references (CC-DOC.7, 2026-06-26)
+
+Mirrors the protocol-v2 sub-render axis `RENDER_VIEW={hero3q,elevation,plan,section,interior,xray}` (see `docs/RESULTS_GUIDE.md` §5 and `docs/HOUSE_IMAGERY_SHOTLIST.md` §5.1). For each comparable real-world precedent — drawn from the 5 case studies in `docs/research/README.md` plus the Atlantic-Forest / Paraguay typologies in `docs/EUROPEAN_TOURISM_SPEC.md` — we want one photo per axis so the sub-render `<asset>.py` driver outputs can be benchmarked against built precedent rather than imagination.
+
+Coverage matrix below. Each cell is the reference photo we want acquired; "—" means the precedent does not naturally have that view (e.g. an eco-lodge rarely publishes structural sections).
+
+| # | Precedent | Region | hero3q (3/4 exterior) | elevation (facade) | plan (aerial / site) | section (cutaway / construction) | interior | xray (construction detail) |
+|---|---|---|---|---|---|---|---|---|
+| 9.1 | Chaa Creek Lodge | Belize jungle eco-lodge | iNaturalist + Flickr CC | Lodge brand page (RM ref) | Google Earth | — | brand page (RM ref) | — |
+| 9.2 | Inkaterra Machu Picchu | Peruvian cloud-forest lodge | Flickr CC | Inkaterra brand (RM ref) | Google Earth | — | brand page (RM ref) | — |
+| 9.3 | Awasi Iguazú | Atlantic-Forest stilted villa | Flickr CC | Awasi brand (RM ref) | Google Earth | — | brand page (RM ref) | stilt-foundation detail (Awasi engineering PDFs, RM) |
+| 9.4 | San Bernardino German-Paraguayan villa | Paraguay lake-district resort | iNaturalist + Flickr CC | local realtor listings (RM) | Google Earth | — | local realtor listings (RM) | — |
+| 9.5 | Mennonite-colony adobe house, Filadelfia / Loma Plata | Chaco, Paraguay | Wikimedia CC-BY-SA (ref only) | Wikimedia CC-BY-SA (ref only) | colony cadastral map (RM) | adobe construction handbook (textbook) | — | adobe wall-construction diagram (textbook) |
+| 9.6 | Estancia / ranchito with corredor + tatakuá | Paraguarí / Cordillera campo | Susnik archive (Museo Andrés Barbero, RM) | Susnik archive (RM) | aerial via Google Earth historical | — | Susnik archive (RM) | rammed-earth / cob handbook (textbook) |
+| 9.7 | Cob-and-bottle bench / wall precedent | Earthship.com + cob.org galleries | Pinterest CC search | gallery photos (mixed) | — | Cobworks workshop photos (mixed) | gallery photos (mixed) | bottle-embed cross-section (textbook) |
+| 9.8 | Iguazú-side eco-lodge w/ sod roof + corredor | Misiones, AR / Alto Paraná, PY | Flickr CC | brand page (RM ref) | Google Earth | — | brand page (RM ref) | — |
+| 9.9 | Atlantic-Forest forest-edge clearing (canopy edge transition) | Alto Paraná / Itapúa | iNaturalist Paraguay | — | Sentinel-2 + GEDI overlay | GEDI canopy-height transect | — | — |
+
+Per-axis acquisition notes:
+
+- **hero3q** — establishes overall massing + landscape integration. Most precedents have this; iNaturalist + Flickr CC are the workable sources. Bank ≥1 per precedent.
+- **elevation** — flat facade reads from one cardinal direction. Brand / realtor pages have these as RM (reference-only); cannot ship, but can drive lapacho-timber + cob proportion choices in `lqv/typologies/*`.
+- **plan** — site / aerial. Google Earth Pro historical imagery covers all built precedents at no cost (RM for screenshots; usable as reference). Sentinel-2 covers the wilder Atlantic-Forest sites.
+- **section** — almost always missing for built lodges; textbook handbook scans (Houben & Guillaud *Earth Construction*, Cobworks workshop manuals) are the realistic source. Mark `ref` license.
+- **interior** — brand pages cover the lodge precedents at RM; for the rural-vernacular precedents (9.5, 9.6) Wikimedia + Susnik archive are the only sources and several are RM.
+- **xray** — construction-detail equivalent. Adobe + cob handbooks have wall-build cross-sections; Awasi has stilt-foundation engineering PDFs. All `ref` license; never embed.
+
+Status legend matches the existing categories: ✅ acquired / ⏳ identified / 🔍 still searching / ❌ commission needed. Every cell in 9.1-9.9 currently starts at 🔍 — acquisition is post-escritura sprint work (P-DOC / P-SALES tier).
+
+Per-precedent acquisition priority for the sales narrative (CC-SALES.1-6 downstream):
+
+1. **9.3 Awasi Iguazú** — closest market comparable (Atlantic-Forest stilted eco-villa with European clientele). Highest acquisition priority once escritura closes.
+2. **9.4 San Bernardino German-Paraguayan** — closest supply-chain comparable (same labour pool, same artisan network).
+3. **9.6 Paraguarí ranchito** — closest cultural-vernacular comparable; Rule 8 anchor (corredor + tatakuá).
+4. The rest are cross-pollination references — useful but lower priority.
+
 ## Acquisition strategy
 
 1. **Field trip (essential)** — Wesley or AI Whisperers traveller visits the property + Paraguarí town + Asunción artisan shops with a DSLR. Target categories: 1.5, 1.6, 4.2, 5.1, 5.4. Estimated 2-day trip, USD 400 in travel.
