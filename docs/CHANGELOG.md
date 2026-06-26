@@ -11,7 +11,7 @@ Conventions: ISO dates, present-tense bullets, file-level granularity only when 
 **Freeze status:** Renderer byte-freeze at `85e86aa` was scoped to the print-pack contents. Print-pack at `dist/print_pack_2026-06-27/` is SHA-pinned independently on disk, so the post-`85e86aa` polish work cannot retroactively change shipped bytes. Material-registry work is OPEN since 2026-06-15 (commit `78433a7`, Ivan-authorized escritura beauty sprint). `build_scene.py` composite path remains untouched pending escritura close (2026-06-27).
 
 Planned (P1.A residue + P1.B):
-- `lqv/typologies/*` — Rule 4 stone-foundation plinth pass across ~13 typologies (P1.A.4)
+- ~~`lqv/typologies/*` — Rule 4 stone-foundation plinth pass~~ — audit 2026-06-26 confirmed all 18 typologies satisfy Rule 4 in code (explicit foundation builders in 11; villa footings/pier blocks/PIER_LIFT/explicit sandstone course in 4; 3 exempt — boomhut treehouse, outdoor shower, candle_path). Pre-78433a7 "~13 missing" figure was stale.
 - HDRI swap to cerrado / Atlantic-Forest-edge — asset-researcher pass, CC0 / CC-BY 4.0 (P1.A.5)
 - `lqv/subscene/_cameras.py` — new `subscene_ortho_elevation/plan/section_camera/interior_camera` helpers (HOUSE_IMAGERY_SHOTLIST P1.B)
 - `RENDER_VIEW` env var parallel to `RENDER_VARIANT` (HOUSE_IMAGERY_SHOTLIST §2)

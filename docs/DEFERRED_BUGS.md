@@ -97,7 +97,7 @@ grep "not in collection" /tmp/bug3.log
 
 These were flagged in the critic pass alongside Bug 1/2/3 but were *not* part of the 78433a7 polish wave. Active sprint queue post-escritura:
 
-- **Rule 4 stone-foundation plinth enforcement** (P1.A.4) — endemic violation across ~13 typologies. Per-typology builder edits, not a registry fix. ~1.5 days.
+- ~~**Rule 4 stone-foundation plinth enforcement** (P1.A.4)~~ — **CLOSED 2026-06-26.** Audit confirmed all 18 typologies satisfy Rule 4 in code: 11 with explicit `_*_foundation/plinth` builders (`bamboo_beton_*`, `bamboo_container_4pax`, `bamboo_portal`, `bamboo_wigwam_lodge`, `clay_terracotta_estate`, `italian_river_house_4pax`, `italian_stone_small_v1/v2`); `bamboo_curved_roof_villa.py:168-178` `Villa_Footing_*` sandstone perimeter + DECK_HEIGHT 0.60; `hobbit_house.py:319-323` explicit foundation course landed in 78433a7; `bamboo_river_house.py:205-220` `_pier_blocks()` sandstone piers; `container_river_house.py:162` `_resolve('stone_foundation','sandstone')` + PIER_LIFT; exempt — `bamboo_boomhut_treehouse` (elevated 4m), `bamboo_outdoor_shower` (no earthen walls), `candle_path` (not a building). Pre-78433a7 "~13 missing" figure was stale planning estimate.
 - **HDRI swap to cerrado / Atlantic-Forest-edge** (P1.A.5) — needs asset-researcher pass, CC0 / CC-BY 4.0 only. ~0.5 + 0.5 day.
 - **Per-variant lighting differentiation (T1.6)** (P1.C) — A=lapacho-bare-pink golden hour, B=overcast neutral, C=blue-hour + fireflies. Queue after the 384-PNG framing batch.
 - **Background-tree asset replacement** (P1.C) — popcorn-blob foliage on stick legs. Photoreal-flora pipeline is now safe (Bug 3 fixed), so the swap is unblocked.
