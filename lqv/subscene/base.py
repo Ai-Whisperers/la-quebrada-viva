@@ -43,6 +43,38 @@ PARCEL_CLIP_END_M: float = 20000.0
 HOUSE_CLIP_END_M: float = 1000.0
 
 # ---------------------------------------------------------------------------
+# X-ray render override
+# ---------------------------------------------------------------------------
+# Default opaque set for ``apply_xray_override``: structure + services + glass
+# stay solid so the bones of the house read; cob/earthen infill and roof
+# materials go translucent so the viewer can see through the exterior shell.
+# Names listed but not yet in the MAT registry (micro_hydro_turbine, lifepo4_rack,
+# cistern_shell, mosquito_mesh, plumbing, fireplace_stack) are kept here as a
+# forward-compatible superset — slot lookup short-circuits on missing names.
+# See HOUSE_IMAGERY_SHOTLIST §5.4.
+XRAY_OPAQUE_MATERIALS: frozenset[str] = frozenset({
+    # structural timber + bamboo
+    'bamboo', 'bamboo_culm', 'bamboo_leaf',
+    'lapacho_timber', 'lapacho_bark',
+    'mango_trunk', 'pindo_trunk',
+    # metal + mesh + services
+    'steel_anodized', 'steel_mesh',
+    'metal_black', 'concrete_grey',
+    'micro_hydro_turbine', 'lifepo4_rack',
+    'cistern_shell', 'mosquito_mesh', 'plumbing', 'fireplace_stack',
+    # water (pool/river surfaces must keep their shader to read as liquid)
+    'pool_water', 'water_reflective', 'stream_bed',
+    # glass (bottles + PV) — already translucent shaders; second swap muddies them
+    'pv_glass',
+    'glass_bottle_amber', 'glass_bottle_brown',
+    'glass_bottle_cobalt', 'glass_bottle_green',
+    # emissive accents that carry the dusk read
+    'window_glow', 'firefly', 'lantern_paper_warm',
+})
+
+_XRAY_MAT_NAME = 'MAT_xray_override'
+
+# ---------------------------------------------------------------------------
 # RENDER_RUN_ID policy
 # ---------------------------------------------------------------------------
 # The runs/ folder gets one subdir per (run_id, asset) tuple. If every Blender
@@ -194,6 +226,90 @@ def _sin(a: float) -> float:
     return math.sin(a)
 
 
+def _build_xray_material(alpha: float = 0.15):
+    mat = bpy.data.materials.get(_XRAY_MAT_NAME)
+    if mat is None:
+        mat = bpy.data.materials.new(_XRAY_MAT_NAME)
+    mat.use_nodes = True
+    mat.blend_method = 'BLEND'
+    tree = mat.node_tree
+    tree.nodes.clear()
+    out = tree.nodes.new('ShaderNodeOutputMaterial')
+    transp = tree.nodes.new('ShaderNodeBsdfTransparent')
+    transp.inputs['Color'].default_value = (0.92, 0.90, 0.86, 1.0)
+    principled = tree.nodes.new('ShaderNodeBsdfPrincipled')
+    principled.inputs['Base Color'].default_value = (0.78, 0.74, 0.66, 1.0)
+    principled.inputs['Roughness'].default_value = 0.7
+    mix = tree.nodes.new('ShaderNodeMixShader')
+    # Fac=0 → Principled (opaque), Fac=1 → Transparent. alpha=0.15 means
+    # 15% of the original surface remains; 85% transparent.
+    mix.inputs['Fac'].default_value = 1.0 - alpha
+    tree.links.new(principled.outputs['BSDF'], mix.inputs[1])
+    tree.links.new(transp.outputs['BSDF'], mix.inputs[2])
+    tree.links.new(mix.outputs['Shader'], out.inputs['Surface'])
+    return mat
+
+
+def apply_xray_override(scene, asset_collection=None,
+                        except_materials: set[str] | None = None,
+                        alpha: float = 0.15):
+    """Swap exterior-wall materials for a Transparent BSDF (alpha=0.15).
+
+    Preserves Boolean cutters and lighting. Excludes materials in
+    ``except_materials`` (defaults to :data:`XRAY_OPAQUE_MATERIALS`) so
+    structure + services stay opaque. Operates on every mesh in
+    ``asset_collection`` (default: every mesh in ``scene``). Stashes the
+    original material reference on ``obj['_lqv_xray_orig_<slot>']`` so a
+    paired :func:`clear_xray_override` can restore symmetry if the scene
+    is reused. See HOUSE_IMAGERY_SHOTLIST §5.4.
+    """
+    if except_materials is None:
+        except_materials = set(XRAY_OPAQUE_MATERIALS)
+    xray_mat = _build_xray_material(alpha=alpha)
+
+    if asset_collection is None:
+        objects = [o for o in scene.objects if o.type == 'MESH']
+    else:
+        objects = [o for o in asset_collection.all_objects if o.type == 'MESH']
+
+    swapped = 0
+    for obj in objects:
+        for i, slot in enumerate(obj.material_slots):
+            mat = slot.material
+            if mat is None or mat.name == _XRAY_MAT_NAME:
+                continue
+            if mat.name in except_materials:
+                continue
+            obj[f'_lqv_xray_orig_{i}'] = mat.name
+            slot.material = xray_mat
+            swapped += 1
+    print(f"[xray] swapped {swapped} material slots → transparent (alpha={alpha})")
+    return swapped
+
+
+def clear_xray_override(scene, asset_collection=None):
+    """Restore materials swapped by :func:`apply_xray_override`. Safe no-op
+    if the override was never applied."""
+    if asset_collection is None:
+        objects = [o for o in scene.objects if o.type == 'MESH']
+    else:
+        objects = [o for o in asset_collection.all_objects if o.type == 'MESH']
+    restored = 0
+    for obj in objects:
+        for i, slot in enumerate(obj.material_slots):
+            key = f'_lqv_xray_orig_{i}'
+            if key not in obj.keys():
+                continue
+            orig_name = obj[key]
+            orig = bpy.data.materials.get(orig_name)
+            if orig is not None:
+                slot.material = orig
+                restored += 1
+            del obj[key]
+    print(f"[xray] restored {restored} material slots")
+    return restored
+
+
 def setup_world(scene, variant: str):
     """Reuse the project sun + HDRI so each sub-render reads under the same
     light the composite uses. Volumes skipped — sub-renders are 128 samples
@@ -225,6 +341,9 @@ def save_subrender(scene, asset: str, cfg) -> str:
     if cfg.skip_render:
         print(f"[subscene:{asset}] skipped (RENDER_SKIP=1) — would write {out}")
         return out
+
+    if view == 'xray':
+        apply_xray_override(scene)
 
     render.run(scene)
     print(f"[subscene:{asset}] wrote {out}")

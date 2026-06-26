@@ -13,8 +13,18 @@ Conventions: ISO dates, present-tense bullets, file-level granularity only when 
 Planned (P1.A residue + P1.B):
 - ~~`lqv/typologies/*` — Rule 4 stone-foundation plinth pass~~ — audit 2026-06-26 confirmed all 18 typologies satisfy Rule 4 in code (explicit foundation builders in 11; villa footings/pier blocks/PIER_LIFT/explicit sandstone course in 4; 3 exempt — boomhut treehouse, outdoor shower, candle_path). Pre-78433a7 "~13 missing" figure was stale.
 - HDRI swap to cerrado / Atlantic-Forest-edge — asset-researcher pass, CC0 / CC-BY 4.0 (P1.A.5)
-- `apply_xray_override` material swap (HOUSE_IMAGERY_SHOTLIST §3)
+- ~~`apply_xray_override` material swap (HOUSE_IMAGERY_SHOTLIST §3)~~ — landed 2026-06-26 (P1.B.3, see below).
 - Per-variant lighting differentiation T1.6 + background-tree replacement (P1.C)
+
+---
+
+## [2026-06-26] — P1.B.3 `apply_xray_override` shipped
+
+- **feat** `lqv/subscene/base.py` — `apply_xray_override(scene, asset_collection=None, except_materials=None, alpha=0.15)` swaps non-opaque material slots to a shared Transparent BSDF + low-weight Principled mix shader. Paired `clear_xray_override()` restores originals from per-object `_lqv_xray_orig_<slot>` stash for symmetric teardown.
+- **feat** `XRAY_OPAQUE_MATERIALS` frozenset — default opaque allowlist covers structural bamboo/lapacho, steel/mesh, services (micro_hydro_turbine, lifepo4_rack, cistern_shell, plumbing, fireplace_stack, mosquito_mesh — aspirational keys forward-compatible), water shaders (pool_water/water_reflective/stream_bed), glass (PV + bottles), and emissive accents (window_glow/firefly/lantern_paper_warm).
+- **feat** `lqv/config.py` — `VALID_VIEWS` adds `'xray'`. `cfg.output_filename` already honours arbitrary non-`hero3q` views as `_<view>` suffix; legacy flat path stays back-compat.
+- **chore** `save_subrender()` — fires `apply_xray_override(scene)` immediately before `render.run(scene)` when `cfg.view == 'xray'`. No effect on hero3q/elevation/plan/section/interior paths.
+- Smoke `bamboo_river_house` variant B → 169 material slots swapped, `B_xray.png` = 4,933,755 bytes (distinct from B hero3q 5,070,274). pytest 16/16 green.
 
 ---
 
@@ -91,8 +101,8 @@ When a subsystem version bumps, increment its tag and add a one-line entry above
 | `build_scene.py` | frozen | 2026-06-10 (`85e86aa`) | composite path byte-identity preserved through 2026-06-27 |
 | Material registry (`lqv/materials.py`) | v2 | 2026-06-15 (`78433a7`) | water dielectric + lapacho_timber PBR + bamboo split landed; DEFERRED_BUGS 1+2 closed |
 | Flora loader (`lqv/flora/photoreal.py`) | v2 | 2026-06-15 (`78433a7`) | `_LOADED_HEROES` deep-copy cache; DEFERRED_BUGS 3 closed |
-| Sub-render protocol (`lqv/subscene/`) | v1 | 2026-06-14 | `RENDER_RUN_ID` + runs/latest mirror; `RENDER_VIEW` planned post-freeze |
-| Camera helpers | v1 | 2026-06-26 | `cameras.make_view_camera(cfg, ...)` public dispatcher; `RENDER_VIEW={hero3q,elevation,plan,section,interior}`; 22 bypass-pattern drivers migrated |
+| Sub-render protocol (`lqv/subscene/`) | v2 | 2026-06-26 | v1 `RENDER_RUN_ID` + runs/latest mirror; v2 adds `apply_xray_override` + `XRAY_OPAQUE_MATERIALS` (P1.B.3) — `RENDER_VIEW=xray` now legal |
+| Camera helpers | v1 | 2026-06-26 | `cameras.make_view_camera(cfg, ...)` public dispatcher; `RENDER_VIEW={hero3q,elevation,plan,section,interior,xray}`; 22 bypass-pattern drivers migrated |
 | BoQ scope filter | v1 | 2026-06-15 | `LQV_BOQ_SCOPE=escritura` ($268,685.45) vs `=full` ($288,056) |
 | Wesley bundle | `20260616-1715` | 2026-06-16 | SHA-pinned, do not rebuild pre-escritura |
 | Escritura deck | v6 | 2026-06-16 | 28pp, SHA-pinned in print-pack |

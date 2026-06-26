@@ -22,7 +22,7 @@ RES_PRESETS = {
 
 SEED = 20260609
 
-VALID_VIEWS = ('hero3q', 'elevation', 'plan', 'section', 'interior')
+VALID_VIEWS = ('hero3q', 'elevation', 'plan', 'section', 'interior', 'xray')
 
 
 @dataclass
