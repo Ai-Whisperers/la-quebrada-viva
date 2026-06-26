@@ -22,7 +22,7 @@ if _PROJECT_ROOT not in sys.path:
 
 import bpy
 
-from lqv import cameras, config, engine, lighting, materials, render
+from lqv import cameras, config, engine, lighting, materials, provenance, render
 from lqv.materials import MAT, assign
 
 SUBRENDER_DIR = os.path.join(config.RENDERS_DIR, 'sub')
@@ -347,6 +347,23 @@ def save_subrender(scene, asset: str, cfg) -> str:
 
     render.run(scene)
     print(f"[subscene:{asset}] wrote {out}")
+
+    # CC-TOOL.8: embed git SHA + RNG seed + tracked LQV_* env vars into the
+    # PNG itself, then drop a JSON sidecar for catalogue scripts. Mirrors
+    # below run AFTER injection so the latest/ + legacy copies carry the
+    # provenance too. Injection failures must not block the render save.
+    try:
+        meta = provenance.collect(
+            asset=asset, variant=cfg.variant, view=view,
+            seed=derive_seed(asset, cfg.variant),
+            extra={'run_id': _RUN_ID, 'samples': cfg.samples,
+                   'res': f'{cfg.res_x}x{cfg.res_y}'},
+        )
+        provenance.inject_into_png(out, meta)
+        provenance.write_sidecar(out, meta)
+    except Exception as exc:  # noqa: BLE001 — provenance must never fail a render
+        print(f"[subscene:{asset}] provenance injection failed: {exc}",
+              file=sys.stderr)
 
     os.makedirs(SUBRENDER_LATEST_DIR, exist_ok=True)
     latest = os.path.join(SUBRENDER_LATEST_DIR, f"{asset}_{cfg.variant}{view_tag}.png")
