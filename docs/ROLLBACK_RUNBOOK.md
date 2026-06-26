@@ -47,8 +47,11 @@ Discretionary errata default to "do not rollback unless ≥3 are stacked"; one i
    - Update wallet-card with new SHAs.
    - Re-send emails using `docs/email_drafts/errata_template_es.md`, attaching corrected deck.
    - Re-upload bundle to Drive/WeTransfer, replace SHARE_LINKS.
-   - Tag the corrected commit: `git tag escritura-sent-2026-06-27-errata-1`
-   - Push tag.
+   - Tag the corrected commit (annotated, with new SHAs in the message):
+     ```bash
+     git tag -a escritura-sent-2026-06-27-errata-1 -m "Errata v1 — replaces sent v6. New bundle SHA: <sha>. New deck SHA: <sha>. Reason: <one line>."
+     git push origin escritura-sent-2026-06-27-errata-1
+     ```
 
 4. **Print pack on the day:**
    - Reprint affected pages only (deck reprint is one-shot — replace whole booklet).
@@ -63,7 +66,11 @@ Same as mandatory, but skip step 1 WhatsApp. Send corrected version with subject
 If escritura is postponed > 7 days:
 1. WhatsApp all parties: postponement confirmed, new date TBC.
 2. Revoke share links (Drive: remove public access; WeTransfer: expire).
-3. Tag current state: `escritura-postponed-2026-06-27`.
+3. Tag the pinned print-pack commit as postponed (annotated; same anchor as the pre-event tag):
+   ```bash
+   git tag -a escritura-postponed-2026-06-27 00811297c5ec2dbfa77cdd2e5a04fea34a8fb702 -m "Postponed reason: <one line>. New date TBC."
+   git push origin escritura-postponed-2026-06-27
+   ```
 4. Move `print_pack_2026-06-27/` to `print_pack_2026-06-27.archived/`.
 5. Pause; do NOT delete bundles. Resume timeline from T-10 against new date.
 
