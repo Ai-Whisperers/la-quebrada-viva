@@ -8,15 +8,26 @@ Conventions: ISO dates, present-tense bullets, file-level granularity only when 
 
 ## [Unreleased] — post-escritura sprint backlog
 
-**Freeze status:** RENDERER BYTE-FROZEN until escritura signs 2026-06-27. No `build_scene.py`, material-registry, or shader-graph edits land in this window. Carry-forward queue in `docs/DEFERRED_BUGS.md` + `docs/MASTER_TODO.md` P1.A/P1.B/P1.C.
+**Freeze status:** Renderer byte-freeze at `85e86aa` was scoped to the print-pack contents. Print-pack at `dist/print_pack_2026-06-27/` is SHA-pinned independently on disk, so the post-`85e86aa` polish work cannot retroactively change shipped bytes. Material-registry work is OPEN since 2026-06-15 (commit `78433a7`, Ivan-authorized escritura beauty sprint). `build_scene.py` composite path remains untouched pending escritura close (2026-06-27).
 
-Planned (gated on freeze lift):
-- `materials/water` — fix `pool_water` + `river_water` to dielectric BSDF (DEFERRED_BUGS Bug 1)
-- `materials/lapacho_timber` — wire albedo/roughness/normal trio + plank-seam Voronoi (DEFERRED_BUGS Bug 2)
-- `lqv/flora/photoreal.py:_append_object_from_blend` — idempotent LOD load (DEFERRED_BUGS Bug 3)
+Planned (P1.A residue + P1.B):
+- `lqv/typologies/*` — Rule 4 stone-foundation plinth pass across ~13 typologies (P1.A.4)
+- HDRI swap to cerrado / Atlantic-Forest-edge — asset-researcher pass, CC0 / CC-BY 4.0 (P1.A.5)
 - `lqv/subscene/_cameras.py` — new `subscene_ortho_elevation/plan/section_camera/interior_camera` helpers (HOUSE_IMAGERY_SHOTLIST P1.B)
 - `RENDER_VIEW` env var parallel to `RENDER_VARIANT` (HOUSE_IMAGERY_SHOTLIST §2)
 - `apply_xray_override` material swap (HOUSE_IMAGERY_SHOTLIST §3)
+- Per-variant lighting differentiation T1.6 + background-tree replacement (P1.C)
+
+---
+
+## [2026-06-15] — post-review polish wave at `78433a7`
+
+Three high-leverage shader/loader bugs from the critic pass shipped under Ivan-authorized escritura beauty sprint carve-out. Print-pack SHA pinning unaffected (independent on-disk artefacts).
+
+- **fix** `lqv/materials/glass.py` — `water_reflective` dielectric Principled (base 0.02/0.06/0.10, IOR 1.333, transmission 1.0, roughness 0.04); `make_pool_water()` Principled + Volume Absorption stack. Closes DEFERRED_BUGS Bug 1.
+- **fix** `lqv/materials/wood.py` — `lapacho_timber` upgraded from flat principled to `textured_principled('old_planks_02')` PBR trio tinted toward heartwood palette + secondary Voronoi color variation; bamboo split into culm/leaf/grass with node-ring shader helper. Closes DEFERRED_BUGS Bug 2.
+- **fix** `lqv/flora/photoreal.py` — `_LOADED_HEROES` cache + `cached.copy()` deep-copy pattern replaces re-append-and-suffix path. Closes DEFERRED_BUGS Bug 3 (no more `.003` LOD-name collisions; `RENDER_FLORA_PHOTOREAL=1` clean across 51 subscene jobs).
+- **feat** subscene drivers / typologies / amenities polish wave landed in the same omnibus commit (see `git show 78433a7 --stat`).
 
 ---
 
@@ -68,8 +79,9 @@ When a subsystem version bumps, increment its tag and add a one-line entry above
 
 | Subsystem | Version | Last touched | Notes |
 |---|---|---|---|
-| `build_scene.py` | frozen | 2026-06-10 (`85e86aa`) | byte-identity required through 2026-06-27 |
-| Material registry (`lqv/materials.py`) | frozen | 2026-06-10 | three open shader bugs deferred (DEFERRED_BUGS) |
+| `build_scene.py` | frozen | 2026-06-10 (`85e86aa`) | composite path byte-identity preserved through 2026-06-27 |
+| Material registry (`lqv/materials.py`) | v2 | 2026-06-15 (`78433a7`) | water dielectric + lapacho_timber PBR + bamboo split landed; DEFERRED_BUGS 1+2 closed |
+| Flora loader (`lqv/flora/photoreal.py`) | v2 | 2026-06-15 (`78433a7`) | `_LOADED_HEROES` deep-copy cache; DEFERRED_BUGS 3 closed |
 | Sub-render protocol (`lqv/subscene/`) | v1 | 2026-06-14 | `RENDER_RUN_ID` + runs/latest mirror; `RENDER_VIEW` planned post-freeze |
 | Camera helpers | v0 | n/a | elevation/plan/section/interior helpers spec-only (HOUSE_IMAGERY_SHOTLIST) |
 | BoQ scope filter | v1 | 2026-06-15 | `LQV_BOQ_SCOPE=escritura` ($268,685.45) vs `=full` ($288,056) |

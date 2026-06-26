@@ -1,18 +1,18 @@
 # Deferred renderer bugs — post-escritura sprint queue
 
-**Status as of 2026-06-14.** Renderer is byte-frozen at commit `85e86aa` until the escritura deck ships (2026-06-27). No `build_scene.py`, material-registry, or shader-graph edits land in this sprint. This doc is the entry point for the *next* sprint — three high-leverage material/shader bugs the critic pass surfaced, each captured with reproducer + fix sketch so work can start cold.
+**Status as of 2026-06-26.** All three bugs RESOLVED at commit `78433a7` ("feat(materials,subscene,typologies,amenities,flora): post-review polish wave", 2026-06-15). The 85e86aa byte-freeze was superseded under explicit Ivan authorization for the escritura beauty sprint — print-pack at `dist/print_pack_2026-06-27/` remains SHA-pinned independently, so the post-`85e86aa` material work cannot retroactively alter shipped bytes. This doc is retained as the historical reproducer / acceptance record.
 
 Ranked by leverage (assets unblocked per fix):
 
-| # | Bug | Assets gated | Effort | Risk to renderer determinism |
+| # | Bug | Assets gated | Effort | Status |
 |---|---|---|---|---|
-| 1 | Black-water shader (`pool_water` + river chain) | ~12 | ½ day | low (single material reg) |
-| 2 | `lapacho_timber` plastic-laminate read | 17/17 | 1 day | medium (UV + grain + roughness) |
-| 3 | Photoreal-flora `.003`-LOD name-collision | ~3 | ½ day | low (loader-side only) |
+| 1 | Black-water shader (`pool_water` + river chain) | ~12 | ½ day | ✓ resolved 78433a7 — see `lqv/materials/glass.py:35-66` |
+| 2 | `lapacho_timber` plastic-laminate read | 17/17 | 1 day | ✓ resolved 78433a7 — see `lqv/materials/wood.py:77-93` |
+| 3 | Photoreal-flora `.003`-LOD name-collision | ~3 | ½ day | ✓ resolved 78433a7 — see `lqv/flora/photoreal.py:37-82` |
 
 ---
 
-## Bug 1 — Black-water shader (highest leverage)
+## Bug 1 — Black-water shader (highest leverage) ✓ RESOLVED at 78433a7
 
 ### Symptom
 Every water surface — pool, jacuzzi, reflection pond, river, creek — renders as an opaque pure-black slab in variants A (golden hour) and C (blue hour). Variant B (overcast diffuse fill) shows weak reflection because hemispherical light masks the broken specular response. See `renders/sub/latest/eco_pool_{A,B,C}.png`, `floating_dining_{A,B,C}.png`, `bamboo_river_house_{A,B,C}.png`, `italian_river_house_4pax_{A,B,C}.png`, `container_river_house_{A,B,C}.png`, `labrisa_lounge_{A,B,C}.png` for the full pattern.
@@ -38,7 +38,7 @@ A-variant pool render shows sky reflection. C-variant pool render shows tinted b
 
 ---
 
-## Bug 2 — `lapacho_timber` plastic-laminate
+## Bug 2 — `lapacho_timber` plastic-laminate ✓ RESOLVED at 78433a7
 
 ### Symptom
 Decks, planks, coping, handrails, and column sleeves across all 17 typologies render as flat orange-salmon plastic. No wood grain, no plank seams, no UV scale — reads as injection-molded polypropylene "garden furniture." Combined with the orange-placeholder doors/shutters/columns from meta-pattern 2 of `docs/_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md`, the entire palette skews 1990s patio set.
@@ -65,7 +65,7 @@ Side-by-side: pre/post on the same deck plank shows visible grain, plank seam, a
 
 ---
 
-## Bug 3 — Photoreal-flora `.003`-LOD name collision
+## Bug 3 — Photoreal-flora `.003`-LOD name collision ✓ RESOLVED at 78433a7
 
 ### Symptom
 `eco_retreat_modern_oasis` (and likely other dense-jacaranda assets) renders fail with `bpy.context.scene.collection.objects.unlink(obj)` errors of the form `Object '*_LOD0.003' not in collection 'Scene Collection'`. Current workaround is `RENDER_FLORA_PHOTOREAL=0`, which falls back to procedural cones-and-spheres flora that itself reads as Fisher-Price toys.
@@ -93,18 +93,19 @@ grep "not in collection" /tmp/bug3.log
 
 ---
 
-## Out of scope (for now)
+## Still open (carry-forward to P1.A residue + P1.B)
 
-These were flagged in the critic pass but are below the leverage cut for sprint-1 post-freeze:
+These were flagged in the critic pass alongside Bug 1/2/3 but were *not* part of the 78433a7 polish wave. Active sprint queue post-escritura:
 
-- **HDRI swap to cerrado / Atlantic-Forest-edge** — needs asset-researcher pass, CC0 / CC-BY 4.0 only. Tracked separately under typology lighting work.
-- **Per-variant lighting differentiation (T1.6)** — A=lapacho-bare-pink, B=neutral, C=blue-hour + fireflies. Bigger lift than registry rewire; queue after Bug 1+2.
-- **Background-tree asset replacement** — popcorn-blob foliage on stick legs. Replace with photoreal flora once Bug 3 is fixed (otherwise the new asset triggers the same `.003` collision).
-- **Rule 4 stone-foundation plinth enforcement** — endemic violation across typologies. Material-registry fix won't help; needs per-typology builder edits.
+- **Rule 4 stone-foundation plinth enforcement** (P1.A.4) — endemic violation across ~13 typologies. Per-typology builder edits, not a registry fix. ~1.5 days.
+- **HDRI swap to cerrado / Atlantic-Forest-edge** (P1.A.5) — needs asset-researcher pass, CC0 / CC-BY 4.0 only. ~0.5 + 0.5 day.
+- **Per-variant lighting differentiation (T1.6)** (P1.C) — A=lapacho-bare-pink golden hour, B=overcast neutral, C=blue-hour + fireflies. Queue after the 384-PNG framing batch.
+- **Background-tree asset replacement** (P1.C) — popcorn-blob foliage on stick legs. Photoreal-flora pipeline is now safe (Bug 3 fixed), so the swap is unblocked.
 
-## How to start the post-escritura material sprint
+## How the resolved sprint (78433a7) was executed
 
-1. Verify renderer is no longer frozen (escritura deck shipped, `git log` shows post-`85e86aa` work landed).
-2. Branch from current `master`. Conventional commit prefix: `fix(materials):` for Bug 1+2, `fix(flora):` for Bug 3.
-3. Tackle in order: Bug 1 → smoke-render the 6 worst water assets → Bug 2 → re-render 3 wood assets → Bug 3 → full 51-job batch with `RENDER_FLORA_PHOTOREAL=1`.
-4. After all three land: re-run the critic pass against `docs/_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md` meta-patterns 9/10/11 and confirm they can be struck.
+Recorded for the post-mortem record:
+1. Renderer byte-freeze was superseded under Ivan-authorized "escritura beauty sprint" carve-out (2026-06-15). Print-pack SHA pinning held independently on disk, so no shipped bytes were altered.
+2. Tackled in order on `master`: Bug 1 → smoke-render the worst water assets → Bug 2 → re-render wood assets → Bug 3 → full batch with `RENDER_FLORA_PHOTOREAL=1`.
+3. Commits: `78433a7` (omnibus polish wave) — see `lqv/materials/glass.py`, `lqv/materials/wood.py`, `lqv/flora/photoreal.py` for the in-code fix landmarks.
+4. Meta-patterns 9/10/11 from `docs/_archive/2026-06-1X/HOUSES_REVIEW_2026-06-14.md` are now struck.
