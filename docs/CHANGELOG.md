@@ -18,6 +18,14 @@ Planned (P1.A residue + P1.B):
 
 ---
 
+## [2026-06-26] — P0b.2 pre-staging: tag-name reconcile + post-signing finalize script
+
+- **ops** `scripts/post_signing_finalize.sh` (new, +156 lines, executable) — pre-stages the AI-side P0b.2 work so that when the escritura signs 2026-06-27 the tag-promote + memory-write collapses to a single command. Dry-run by default; gated behind `--apply`. Verifies (1) master at parity with `origin/master`, (2) pre-event tag `escritura-2026-06-27` resolves to pinned commit `00811297c5ec2dbfa77cdd2e5a04fea34a8fb702`, (3) `dist/wesley_bundle_20260616-1715.zip` SHA-256 matches pinned `9ce96b8...4a53c`, (4) `docs/escritura_deck/escritura_deck_v6.pdf` SHA-256 matches pinned `2e4c265...01137`. On `--apply` creates annotated tag `escritura-signed-2026-06-27` on the pinned commit, pushes to origin, and emits a memory-stub at `/tmp/lqv_project_state_2026_06_27_signed.md` for human review before promotion. Flags: `--time HH:MM` (default `10:00`) and `--notes TEXT` template into the tag annotation.
+- **docs** `docs/MASTER_TODO.md` P0b.2 rows + `docs/AUTONOMOUS_PLAN.md` lines 15, 32 — tag-name reconciled to canonical `escritura-signed-2026-06-27` (was `escritura-2026-06-27-signed` in MASTER_TODO + AUTONOMOUS_PLAN, minority of 2 vs 4). Canonical form aligns with the CONTINGENCIES `escritura-<state>-<date>` family at `docs/CONTINGENCIES.md:150` (sibling states: `sent` / `errata-v2` / `signed` / `postponed`). Both docs now reference `scripts/post_signing_finalize.sh` as the one-command path.
+- **rationale** the alternative was leaving two tag forms drifting across six docs + a manual-only post-event flow. With the script in place, the human-facing checklist for the morning of 2026-06-28 reduces to: (1) `bash scripts/post_signing_finalize.sh --time HH:MM --notes "..."` to preview, (2) re-run with `--apply`, (3) move the emitted memory stub into `~/.claude/.../memory/` + index pointer, (4) tick MASTER_TODO P0b.2 boxes in a follow-up commit.
+
+---
+
 ## [2026-06-26] — P0a.1 T-1 verifier sweep (5 of 5 AI-owned checks green)
 
 - **ops** five AI-owned T-1 escritura-readiness checks (P0a.1 §1, §2, §4, §9, §10) all returned green on the evening of 2026-06-26:

@@ -43,8 +43,8 @@ This is the only work that matters right now. Everything else waits.
 
 ### P0b.2 — 2026-06-28 (T+1)
 - [ ] **Full debrief** — sections 2–6 of `docs/T_PLUS_1_DEBRIEF.md`. Owner: Ivan + AI.
-- [ ] **Tag promote** — `git tag escritura-2026-06-27-signed` on the same commit as `escritura-2026-06-27`. Owner: AI.
-- [ ] **Memory update** — `project_state_2026_06_27_signed.md` capturing outcome + new constraints. Owner: AI.
+- [ ] **Tag promote** — `git tag escritura-signed-2026-06-27` (annotated) on the same commit as `escritura-2026-06-27`, then `git push origin escritura-signed-2026-06-27`. One-command path: `bash scripts/post_signing_finalize.sh`. Owner: AI. Naming follows the CONTINGENCIES `escritura-<state>-<date>` family (`sent` / `errata-v2` / `signed` / `postponed`).
+- [ ] **Memory update** — `project_state_2026_06_27_signed.md` capturing outcome + new constraints. Stub template emitted by `scripts/post_signing_finalize.sh` (writes to `/tmp/...` for review before promotion). Owner: AI.
 - [ ] **Wesley followup** — confirm phase-2 timeline expectations + any deck feedback. Owner: Ivan.
 - [ ] **Lift the freeze** — `build_scene.py` no longer byte-frozen; release flag in memory `feedback_render_run_folders` if any constraint relaxes.
 

@@ -12,7 +12,7 @@ Land the post-polish backlog so that the morning after escritura signs we ship:
 3. **P1.B.1/2/3** — furniture stubs, `RENDER_VIEW` env + camera helpers, `apply_xray_override`.
 4. **P1.C.1** — per-variant lighting differentiation (T1.6) + background-tree replacement.
 5. **Cross-cutting** — CC-TOOL.1 (MCP retire/diag), CC-TOOL.5 (pyright), CC-DOC.1 (README), CC-DOC.9 (sub-render-first rule into in-repo CLAUDE.md).
-6. **P0b.2 (deferred)** — promote annotated tag `escritura-2026-06-27-signed` AFTER actual signing event; write `project_state_2026_06_27_signed.md` + index pointer.
+6. **P0b.2 (deferred)** — promote annotated tag `escritura-signed-2026-06-27` AFTER actual signing event (matches CONTINGENCIES `escritura-<state>-<date>` family); write `project_state_2026_06_27_signed.md` + index pointer. One-command path: `bash scripts/post_signing_finalize.sh`.
 
 ## Items (priority order)
 
@@ -29,7 +29,7 @@ Land the post-polish backlog so that the morning after escritura signs we ship:
 | 9 | CC-TOOL.5 — pyright pass | `pyproject.toml` + fixes | 2h | pending |
 | 10 | CC-DOC.1 — README refresh | `README.md` | 1h | pending |
 | 11 | CC-DOC.9 — promote sub-render-first into CLAUDE.md | `CLAUDE.md` | 30m | pending |
-| 12 | P0b.2 — tag `escritura-2026-06-27-signed` after signing event | git | 10m | deferred |
+| 12 | P0b.2 — tag `escritura-signed-2026-06-27` after signing event (via `scripts/post_signing_finalize.sh`) | git | 10m | deferred |
 
 Lower-priority continuation queue (P2/P3/P4 + CC-TOOL.2-4/6-9, CC-DOC.2-8, CC-SALES.1-6, CC-BUILD.1-8) is tracked in `docs/MASTER_TODO.md`; this plan only commits to the items above.
 
