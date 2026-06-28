@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# pre-commit: refuse to commit paths on the banned list.
+#
+# Defense-in-depth: .gitignore already excludes these from accidental
+# `git add .`, but `git add -f`, renames into ignored patterns, or stray
+# absolute paths can still land them in the index. This hook is the last
+# line of defense before they reach a public remote.
+#
+# Banned list (mirrors the project-local CLAUDE.md "Never stage" rules):
+#   - scripts/mcp_daemon.py            local MCP socket bridge, not for the repo
+#   - docs/site_data/sentinel2/*.tif   raw S-2 rasters; too big for the repo
+#   - docs/*_boleto_*.pdf              private boleto de compraventa scans
+#   - docs/*_escritura_*.pdf           private escritura drafts
+#   - docs/2026-*_*.pdf                dated personal/legal PDFs
+#
+# Enable per-clone:    git config core.hooksPath .githooks
+# Bypass once (don't): git commit --no-verify   # only in emergencies, please
+set -euo pipefail
+
+banned_patterns=(
+    'scripts/mcp_daemon\.py'
+    'docs/site_data/sentinel2/.*\.tif'
+    'docs/[^/]*_boleto_[^/]*\.pdf'
+    'docs/[^/]*_escritura_[^/]*\.pdf'
+    'docs/2026-[^/]*_[^/]*\.pdf'
+)
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$staged" ] && exit 0
+
+violations=()
+while IFS= read -r path; do
+    for pat in "${banned_patterns[@]}"; do
+        if [[ "$path" =~ ^${pat}$ ]]; then
+            violations+=("$path  (matches: $pat)")
+        fi
+    done
+done <<< "$staged"
+
+if [ ${#violations[@]} -gt 0 ]; then
+    echo "✗ pre-commit: refusing to commit banned paths:" >&2
+    for v in "${violations[@]}"; do
+        echo "    $v" >&2
+    done
+    echo >&2
+    echo "  Unstage with:  git restore --staged <path>" >&2
+    echo "  If you really need to bypass: git commit --no-verify" >&2
+    echo "  (the 'Never stage' list is in CLAUDE.md — re-read before bypassing)" >&2
+    exit 1
+fi
+
+exit 0

@@ -1,0 +1,31 @@
+{
+  "source": "docs/site_data/srtm_gl1_dem.tif",
+  "source_sha256": "a1560be58498b610c21b31b48d6caea400a5e2b628922f1b28b84849ffa1380c",
+  "z_min_m": 127.0,
+  "z_max_m": 160.0,
+  "z_observed_min_m": 127.0,
+  "z_observed_max_m": 160.0,
+  "z_observed_mean_m": 141.01185607910156,
+  "shape": [
+    512,
+    512
+  ],
+  "source_shape": [
+    29,
+    32
+  ],
+  "crs": "EPSG:4326",
+  "crop_half_extent_m": 450.0,
+  "bbox": {
+    "left": -57.03463536361362,
+    "bottom": -25.633915165176514,
+    "right": -57.02564241413158,
+    "top": -25.625807057068403
+  },
+  "source_bbox": {
+    "left": -57.0451388888726,
+    "bottom": -25.644861111122463,
+    "right": -57.0151388888726,
+    "top": -25.61486111112246
+  }
+}

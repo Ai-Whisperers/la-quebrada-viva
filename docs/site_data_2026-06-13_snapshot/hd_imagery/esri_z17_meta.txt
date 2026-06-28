@@ -1,0 +1,5 @@
+stitched 7x7 tiles at z=17
+center tile: 45645,75167
+bounds WGS84: W=-54.640503 S=-25.569698 E=-54.621277 N=-25.552354
+canvas size: (1792, 1792) px
+approx ground res: 1.19 m/pixel at lat -25.561944

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Escobar property — Wesley (LQV) parcel polygon</name>
+  <description>Polygon shared by Wesley van de Camp via Google Earth 2026-06-28 (post-escritura). 8 vertices (closed). Centroid ~(-57.0355, -25.6073). Projected area 30.9 ha. Subset of the 62.57 ha LQV total (6 fincas) — represents the buildable northern Mbopicua cluster.</description>
+  <Placemark>
+    <name>escobar property</name>
+    <Polygon>
+      <outerBoundaryIs>
+        <LinearRing>
+          <coordinates>
+            -57.03637021853214,-25.60575193424224,0
+            -57.03766177687186,-25.60507992566541,0
+            -57.03844134250570,-25.60542966650984,0
+            -57.03781259498610,-25.60748932019079,0
+            -57.03562604243069,-25.60874729114579,0
+            -57.03356778815589,-25.61172442024565,0
+            -57.02928817334298,-25.60940767642553,0
+            -57.03524517073321,-25.60505513824413,0
+            -57.03637021853214,-25.60575193424224,0
+          </coordinates>
+        </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+  </Placemark>
+  <Placemark>
+    <name>escobar wes</name>
+    <description>Pin dropped by Wesley — interior reference point, elevation 166.3 m AMSL</description>
+    <Point>
+      <coordinates>-57.03365675409436,-25.61138883666841,166.3359794125154</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

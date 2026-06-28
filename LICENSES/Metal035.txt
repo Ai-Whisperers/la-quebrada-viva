@@ -1,0 +1,8 @@
+Asset: Metal035
+Source: ambientCG (https://ambientcg.com/view?id=Metal035)
+License: CC0 1.0 Universal
+License text: ./CC0-1.0.txt
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Bundle source: ambientCG blanket CC0 per https://docs.ambientcg.com/license
+Source URL: ambientcg.com
+Downloaded: 2026-06-13

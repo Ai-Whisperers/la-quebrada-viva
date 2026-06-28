@@ -1,0 +1,20 @@
+DEM analysis — 2026-06-10T19:48:18.408811Z
+Source: alos_aw3d30_dem.tif
+Bounds: W=-57.0450  E=-57.0150  S=-25.6450  N=-25.6150
+Pixel: 28 × 31 m  (108 × 108 px)
+Total valid pixels: 11664
+
+Elevation: 116.0 – 380.0 m AMSL  (range 264.0 m)
+Mean: 162.0 m  Median: 149.0 m  Std: 42.0 m
+
+Buildability (by slope class):
+  flat (0-8%):     574.5 ha
+  buildable (8-15%): 230.8 ha
+  challenging (15-30%): 123.4 ha
+  steep (>30%):    70.3 ha
+
+Per-class elevation:
+  flat (0-8%): elev 116–357 m (mean 146 m, p10 127, p90 169)
+  buildable (8-15%): elev 117–380 m (mean 162 m, p10 132, p90 203)
+  challenging (15-30%): elev 125–378 m (mean 187 m, p10 142, p90 250)
+  steep (>30%): elev 136–375 m (mean 251 m, p10 188, p90 325)

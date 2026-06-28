@@ -1,0 +1,520 @@
+                      LA QUEBRADA VIVA
+                   62 hectaren — Escobar, Paraguarí, Paraguay
+
+
+
+Eigenaar:             Wesley van de Camp (75%) — Thijs (25%)
+Locatie:              Escobar district, Paraguarí departamento — ~78 km van Asunción
+Oppervlakte:          62 ha — 6 percelen (5 Mbopicua + 1 Ybyraty)
+Boleto:               2026-04-28 — 10% seña betaald (Gs. 250.300.000)
+Contract totaal:      Gs. 2.503.000.000 (~USD 320.000)
+Notaris:              Escribana Peña
+Escritura datum:      2026-06-27
+
+
+
+
+                     Escritura signing deck — opgesteld voor de escribana, gegenereerd 2026-06-13
+
+                           Procedurele Cycles-renders — byte-identiek aan commit 85e86aa
+Het terrein — 62 hectaren in vogelvlucht
+
+
+
+
+                                     Digitale tweeling van het 62-ha perceel (bron: terrain_62ha_photoreal_A.png) — Sentinel-2 albedo + ALOS DEM
+
+
+• Locatie: Escobar district, Paraguarí — sandstone escarpment + jaar-rond bron-gevoede beek
+• Vegetatie: volwassen Atlantisch regenwoud, ~70% behouden onder masterplan
+• Bestaande infrastructuur: ANDE-elektriciteit aan de weg, twee bestaande gebouwen, koloniale steenterrassen
+• Bestemming: 12-16 vakantieverhuur-eenheden + evenement-ruimte + Europees-Nederlands restaurant + eco-paden
+• 10 ontwerp-regels: geen rechte hoeken in cob · alleen kalkpleister · geen staand water (dengue) · wanden nooit op de grond · 90 cm+ dakoverstek · passief ≤35 °C ·
+uitval-bestendige systemen · Paraguayaans eerst · zonnepanelen op apart staal-frame · muggenwerend gaas op cisternes
+Perceel-schaal — huizenbouw resolutie
+
+
+
+
+                                    Terrein-DSL op huizenbouw-schaal (bron: terrain_house_scale_A.png) — heuvel, beek, rivier, boom-clusters, huispad
+
+
+• Resolutie: 0.5 m cel-grootte, 80×60 m smoke-domein
+• Features: heuvel · beek · rivier · boom-scatters · huispad — parameters, niet pixels
+• Plaatsing-snap-modes: pad (egaliseer) · stilts (geen egalisatie) · cut (uitgraven heuvel-zijde)
+• Validatie: Terrain.validate_geo() detecteert huizen onder water, beek/rivier-kruisingen, overlap
+• Output: Blender collection met camera clip_end=20000m (parcel-scale gotcha vermijden)
+Typologie 1/13 — Hobbithuis
+                                                                                         Hobbit House
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 1-pax
+
+                                                                                                                                Vloeroppervlak: ~28 m²
+
+                                                                                                                                Constructie: cob + lapacho + zandsteen funderingsring
+
+                                                                                                                                Beschrijving: Aardgebed hutje met sod-dak en ronde
+                                                                                                                                lapacho-deur.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 2/13 — Bamboe Wigwam Lodge
+                                                                                    Bamboo Wigwam Lodge
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 1-pax
+
+                                                                                                                                Vloeroppervlak: ~18 m²
+
+                                                                                                                                Constructie: guadua-bundels + palmthatch + lapacho
+                                                                                                                                ring
+
+                                                                                                                                Beschrijving: Conische guadua-bundel-lodge,
+                                                                                                                                palmthatch-dak.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 3/13 — Bamboe Boomhut (Treehouse)
+                                                                                      Bamboo Treehouse
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 1-pax
+
+                                                                                                                                Vloeroppervlak: ~22 m²
+
+                                                                                                                                Constructie: lapacho-stilten + guadua-vloer +
+                                                                                                                                palmthatch
+
+                                                                                                                                Beschrijving: Stilten-boomhut op lapacho-palen,
+                                                                                                                                guadua platform.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 4/13 — Bamboe + Beton 28 m²
+                                                                                   Bamboo + Concrete 28 m²
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 1-pax (single bed)
+
+                                                                                                                                Vloeroppervlak: ~28 m²
+
+                                                                                                                                Constructie: beton plaat + guadua + palmthatch +
+                                                                                                                                clerestory
+
+                                                                                                                                Beschrijving: Solo-cabine, betonplaat +
+                                                                                                                                guadua-kolommen + palmthatch.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 5/13 — Bamboe + Beton 30 m²
+                                                                                   Bamboo + Concrete 30 m²
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 2-pax (queen bed)
+
+                                                                                                                                Vloeroppervlak: ~30 m²
+
+                                                                                                                                Constructie: beton plaat + guadua + palmthatch
+
+                                                                                                                                Beschrijving: Couples-cabine, queen-bed, guadua-skin
+                                                                                                                                op betonplaat.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 6/13 — Bamboe Rivierhuis
+                                                                                     Bamboo River House
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 2-pax
+
+                                                                                                                                Vloeroppervlak: ~48 m²
+
+                                                                                                                                Constructie: guadua-kolommen + rivier-glas +
+                                                                                                                                lapacho-dek
+
+                                                                                                                                Beschrijving: Riparische 2-bed unit met rivier-glaswand
+                                                                                                                                en lapacho-dek.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 7/13 — Steenhuis (klein, v1)
+                                                                                    Stone House (small, v1)
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 2-pax
+
+                                                                                                                                Vloeroppervlak: ~32 m²
+
+                                                                                                                                Constructie: CMU + zandsteen-bekleding + dak
+
+                                                                                                                                Beschrijving: Steenmetselwerk, 2-pax, terracotta-look
+                                                                                                                                dak.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 8/13 — Steenhuis (klein, v2)
+                                                                                    Stone House (small, v2)
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 2-pax
+
+                                                                                                                                Vloeroppervlak: ~36 m²
+
+                                                                                                                                Constructie: CMU + zandsteen + flagstone-terras
+
+                                                                                                                                Beschrijving: v1-variant met verlengd terras +
+                                                                                                                                zandsteen-pad.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 9/13 — Bamboe + Beton Familie (rechthoekig)
+                                                                             Bamboo + Concrete Family (rectangular)
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 4-pax (1 queen + 2 twin)
+
+                                                                                                                                Vloeroppervlak: ~70 m²
+
+                                                                                                                                Constructie: beton spine + guadua + palmthatch +
+                                                                                                                                lapacho ridge
+
+                                                                                                                                Beschrijving: 70 m² familie-unit, lapacho ridge-beam +
+                                                                                                                                palmthatch.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 10/13 — Bamboe + Beton Familie (gebogen)
+                                                                              Bamboo + Concrete Family (curved)
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 4-pax (1 queen + 2 twin)
+
+                                                                                                                                Vloeroppervlak: ~70 m²
+
+                                                                                                                                Constructie: beton spine + guadua-bogen + palmthatch
+                                                                                                                                + banaanblad
+
+                                                                                                                                Beschrijving: 70 m² familie-unit met gebogen
+                                                                                                                                palmthatch + banaanblad.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 11/13 — Bamboe + Container 4-pax
+                                                                                   Bamboo + Container 4-pax
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 4-pax
+
+                                                                                                                                Vloeroppervlak: ~56 m²
+
+                                                                                                                                Constructie: shipping container + guadua + palmthatch
+                                                                                                                                + isolatie
+
+                                                                                                                                Beschrijving: 40HC container als servicekern, ingepakt
+                                                                                                                                in guadua + thatch.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 12/13 — Stenen Rivierhuis (4-pax)
+                                                                                   Stone River House (4-pax)
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 4-pax
+
+                                                                                                                                Vloeroppervlak: ~96 m²
+
+                                                                                                                                Constructie: CMU + zandsteen + glas + terracotta-look
+                                                                                                                                dak
+
+                                                                                                                                Beschrijving: 4-pax steenmetselwerk met grote
+                                                                                                                                rivier-glaswand.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Typologie 13/13 — Container Rivierhuis
+                                                                                     Container River House
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: 4-pax
+
+                                                                                                                                Vloeroppervlak: ~72 m²
+
+                                                                                                                                Constructie: 2x 40HC + zandsteen-bekleding + glas +
+                                                                                                                                lapacho-dek
+
+                                                                                                                                Beschrijving: Dubbele container, dry-stone bekleding
+                                                                                                                                op heuvel-zijde, glas op rivier-zijde.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Voorziening 1/4 — La Brisa Lounge
+                                                                                        La Brisa Lounge
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: Social anchor (creek-side)
+
+                                                                                                                                Vloeroppervlak: ~64 m²
+
+                                                                                                                                Constructie: guadua + lapacho posts + palmthatch +
+                                                                                                                                beton
+
+                                                                                                                                Beschrijving: Open-air lounge, palmthatch-hipped dak,
+                                                                                                                                beton-vloer, geintegreerde bar.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Voorziening 2/4 — Drijvende Eetzaal
+                                                                                      Floating Dining Deck
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: Dining over stream pool
+
+                                                                                                                                Vloeroppervlak: ~36 m²
+
+                                                                                                                                Constructie: lapacho-dek + guadua-pontons +
+                                                                                                                                lantaarns
+
+                                                                                                                                Beschrijving: Drijvend lapacho-dek op
+                                                                                                                                guadua-pontons, lantaarn-verlichting.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Voorziening 3/4 — Eco-Zwembad
+                                                                                        Natural Eco Pool
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: Eco swim + regen zone
+
+                                                                                                                                Vloeroppervlak: ~140 m²
+
+                                                                                                                                Constructie: bentoniet liner + zandsteen coping +
+                                                                                                                                regen-planten + PV-pomp
+
+                                                                                                                                Beschrijving: Bentoniet-gevoerd natuurlijk zwembad
+                                                                                                                                met regen-plant-zone, PV-pomp, geen chloor.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Voorziening 4/4 — Eco-Retreat Modern Oasis
+                                                                                 Eco Retreat — Modern Oasis
+
+                                                                                                                                Specificaties
+                                                                                                                                Gebruik: Wellness centerpiece
+
+                                                                                                                                Vloeroppervlak: ~120 m²
+
+                                                                                                                                Constructie: lapacho + glas + palmthatch + mechanical
+                                                                                                                                + PV
+
+                                                                                                                                Beschrijving: Multi-zone wellness: yoga-dek,
+                                                                                                                                sauna-pod, outdoor douche-tuin, PV-frame.
+
+
+
+
+                  VOORGEVEL                                     ACHTERGEVEL                                    LINKER ZIJGEVEL                               RECHTER ZIJGEVEL
+                      Front                                           Back                                            Left                                           Right
+
+
+ Vier Nederlandse gevels gerenderd via lqv/subscene/elevation_dutch.py. Plattegrond, doorsnede A-A en interieur-details zijn buiten scope voor het escritura-pakket en vallen onder de bouwfase.
+Bill of Quantities — samenvatting
+                                                   Bron: docs/boq/boq_rollup.md · gegenereerd door lqv/boq.py · wisselkoers 7,300 PYG / USD
+
+
+Totaal (per eenheid van elke asset)
+$268,685.45 · Gs. 1,961,403,785
+Aantal assets: 17 · Aantal regel-items: 257
+
+
+Top 10 materialen op USD-totaal
+                #        Materiaal                                               Hoeveelheid          Eenheid        USD totaal                PYG totaal
+
+                    1    lapacho_deck_planks                                     196.000              m2                          $22,860.00                   Gs. 166,878,000
+
+                    2    palm_thatch                                             529.510              m2                          $18,891.42                   Gs. 137,907,366
+
+                    3    shipping_container_20ft                                 5.000                count                       $17,500.00                   Gs. 127,750,000
+
+                    4    lapacho_deck                                            17.573               m3                          $17,389.15                   Gs. 126,940,795
+
+                    5    etfe_glass_dome_panels                                  56.549               m2                          $16,116.37                   Gs. 117,649,503
+
+                    6    stone_walls                                             58.500               m3                          $12,735.00                     Gs. 92,965,500
+
+                    7    concrete_service_spine                                  35.090               m3                          $10,907.80                     Gs. 79,626,940
+
+                    8    sandstone_foundation                                    30.500               m3                          $10,131.20                     Gs. 73,957,760
+
+                    9    bamboo_culm                                             1,147.900            m                           $10,027.40                     Gs. 73,200,020
+
+                    10   reflection_pool_basin_concrete                          48.000               m2                           $7,920.00                     Gs. 57,816,000
+
+
+
+ Hoeveelheden zijn per eenheid van elke asset; site-niveau hoeveelheden vermenigvuldigen met het aantal eenheden vastgelegd in het masterplan (Fase 1 = 3-6 huizen, Fase 2 = 3-6 extra, Fase 3 =
+                                                                 restaurant + amenities). Volledige CSV: docs/boq/boq_rollup.csv.
+Deel 4 — Tekendag — praktische checklist
+                   Escritura 2026-06-27 bij Escribana Peña. Onderstaande items moeten 5+ dagen voor tekendag in handen of bevestigd zijn — geen losse eindjes op 26 juni.
+
+
+
+Vooraf in handen of bevestigd (T-5d)
+
+• Paspoorten (Wesley NWF23H565 + Thijs NP19HPFP6) — originelen
+
+• Bewijs van fondsen voor het saldo: G. 2.190 M aan verkopers + G. ~313 M aan Burgos (makelaarscommissie)
+
+• Volmacht (poder) als één van de kopers niet kan komen — apostille NL + traductor público matriculado in PY
+
+• Certificados catastrales-registrales per finca — Escribana Peña haalt op; verifiëren 1 week vooraf
+
+• Comprobantes de impuesto inmobiliario al día (verkopers-plicht per Cl. SÉPTIMA)
+
+• Anexo I — technische beschrijvingen (linderos, rumbos, medidas) van alle 6 fincas
+
+• Comisión Burgos split bevestigd met Peña 48 u vooraf
+
+• Belastingverdeling bevestigd (impuesto a la renta = verkoper; honorarios notariales meestal koper; IVA op commissie = verifiëren)
+
+• Formele designación van Peña als escribana voor de escritura (Cl. SEXTA)
+
+• Twee betrouwbare getuigen stand-by
+Tekendag — risico-register
+                                  Scenario's die de tekening kunnen blokkeren of vertragen, met de contractuele afhandeling per Cláusulas SEXTA-NOVENA.
+
+
+
+ Verkoper komt niet / weigert                           Boete verdubbelt de seña: G. 500.600.000 aan kopers (Cl. NOVENA). Bij twijfel in de week vooraf direct met
+                                                        advocaat opnemen.
+
+ Koper komt niet / betaalt niet                         Kopers verbeuren de seña (G. 250.300.000) netto van reeds gemaakte notariskosten.
+
+ Embargo of gravamen duikt laat op                      Escribana hoort dit te detecteren. Indien gevonden: NIET tekenen — inroepen Cl. NOVENA prórroga.
+
+ Cl. OCTAVA (ii) documenten ontbreken                   Hadden ~6 mei binnen moeten zijn. Indien nog niet: nu najagen via Peña, niet pas op 27 juni.
+
+
+                                              Bron: docs/escritura/contrato_compraventa.md en docs/escritura_deck/escritura_deck.md §Part 4.
+Na tekendag — T+30 (housing-park kickoff)
+                                  De eerste 30 dagen na escritura: operationele entiteit registreren, vergunningen openen, kapitaal mobiliseren voor Fase 1.
+
+
+
+• Operationele entiteit registreren (S.A. / S.R.L. / E.A.S. — beslissing nog door Wesley te tekenen)
+
+• SENATUR-registratie indienen voor vakantieverhuur-operatie
+
+• Municipalidad de Escobar benaderen voor land-use + bouwvergunningen
+
+• AHK Paraguay introducties activeren naar Duits-Paraguayaanse toeleveringsketen (San Bernardino)
+
+• Fase-1 capex starten: 3-6 huizen (target USD 200-500 k window) — typologie-mix per BoQ-prioriteit (zie p. BoQ-overzicht)
+
+
+
+                                            Volledige tekst en bronverwijzingen: docs/escritura_deck/escritura_deck.md §Part 4 (regels 259-288).
+                      LA QUEBRADA VIVA
+                  Escobar, Paraguarí — Escritura 2026-06-27
+
+
+
+
+Generated by scripts/build_escritura_deck.py · Render byte-identity at commit 85e86aa preserved · License CC0 + CC-BY 4.0
+

@@ -1,0 +1,55 @@
+{
+  "aoi_geojson": "docs/site_data/aoi_62ha.geojson",
+  "citation": "La Quebrada Viva \u2014 DEM cross-check oblique-render contact sheet. \u00a9 AI Whisperers 2026, derived from JAXA AW3D30 (CC-BY 4.0), ESA Copernicus DEM (CC-BY 4.0), NASA SRTM v3 GL1 (public domain), NASADEM (public domain) via OpenTopography.",
+  "collection": "lqv-derived-cross-check",
+  "companion_sheet": "docs/site_data/dem_ab_contact.png",
+  "composer": "scripts/contact_sheet_dem_ab_oblique.py",
+  "fetcher": "scripts.contact_sheet_dem_ab_oblique",
+  "git_sha": "78f7e06d983359eb05e1e5d593281bf5b4f7ae8d",
+  "license": "CC-BY-4.0",
+  "license_classification": "bundle",
+  "mean_elevation_spread_m": 2.9,
+  "min_elevation_spread_m": 3.0,
+  "observed_min_max_mean_m_alos": [
+    128.0,
+    171.0,
+    139.6
+  ],
+  "observed_min_max_mean_m_cop30": [
+    125.1,
+    163.0,
+    138.1
+  ],
+  "observed_min_max_mean_m_nasadem": [
+    125.0,
+    157.0,
+    138.4
+  ],
+  "observed_min_max_mean_m_srtm": [
+    127.0,
+    160.0,
+    141.0
+  ],
+  "orchestrator": "scripts/render_dem_ab.py",
+  "output": "dem_ab_oblique_contact.png",
+  "panel_layout": "2x2",
+  "panels": [
+    "alos",
+    "cop30",
+    "srtm",
+    "nasadem"
+  ],
+  "parcel_polygon_pending": true,
+  "peak_elevation_spread_m": 14.0,
+  "render_camera_view": "oblique",
+  "render_engine": "cycles_cpu",
+  "render_resolution": "1280x720_preview",
+  "render_run_id": "dem_ab_20260618",
+  "render_samples": 32,
+  "render_variant": "A",
+  "schema_version": 1,
+  "sha256": "a9803f383c84202a85c46d635df3ffdd7895ef517b162f93a9f0eaa0478f15b8",
+  "size_bytes": 549399,
+  "source": "derived from assets/terrain/escobar_height{,_cop30,_srtm,_nasadem}.{png,json} (baked from docs/site_data/{alos_aw3d30,cop30,srtm_gl1,nasadem}_dem.tif) rendered via scripts/render_dem_ab.py run_id=dem_ab_20260618",
+  "timestamp_utc": "2026-06-18T14:42:54+00:00"
+}

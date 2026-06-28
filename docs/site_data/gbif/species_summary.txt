@@ -1,0 +1,12 @@
+GBIF Species Summary
+========================================
+Total unique species: 54
+Bbox: -25.645°S to -25.615°S, -57.045°W to -57.015°W
+
+By class:
+  Aves: 50
+  Magnoliopsida: 2
+  Squamata: 1
+  Insecta: 1
+
+Source: GBIF.org, accessed 2026-06-10

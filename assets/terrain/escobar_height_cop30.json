@@ -1,0 +1,31 @@
+{
+  "source": "docs/site_data/cop30_dem.tif",
+  "source_sha256": "10e6459cd89319176ef8218c1f644e67dd38a38b7f603061b71f41c1604fed00",
+  "z_min_m": 125.14606475830078,
+  "z_max_m": 163.03456115722656,
+  "z_observed_min_m": 125.14606475830078,
+  "z_observed_max_m": 163.03456115722656,
+  "z_observed_mean_m": 138.10003662109375,
+  "shape": [
+    512,
+    512
+  ],
+  "source_shape": [
+    29,
+    32
+  ],
+  "crs": "EPSG:4326",
+  "crop_half_extent_m": 450.0,
+  "bbox": {
+    "left": -57.034635374740596,
+    "bottom": -25.633915154054055,
+    "right": -57.0256424252594,
+    "top": -25.625807045945944
+  },
+  "source_bbox": {
+    "left": -57.0451389,
+    "bottom": -25.6448611,
+    "right": -57.0151389,
+    "top": -25.6148611
+  }
+}

@@ -1,0 +1,226 @@
+# CHANGELOG — La Quebrada Viva
+
+Internal version log. Tracks renderer + material registry + camera helpers + delivery bundle status. **Not** a full git log — `git log --oneline` is canonical for that. This is the at-a-glance "what state are we in".
+
+Conventions: ISO dates, present-tense bullets, file-level granularity only when a change affects external consumers (renderer determinism, sub-render protocol, bundle integrity).
+
+---
+
+## [Unreleased] — post-escritura sprint backlog
+
+**Freeze status:** Renderer byte-freeze at `85e86aa` was scoped to the print-pack contents. Print-pack at `dist/print_pack_2026-06-27/` is SHA-pinned independently on disk, so the post-`85e86aa` polish work cannot retroactively change shipped bytes. Material-registry work is OPEN since 2026-06-15 (commit `78433a7`, Ivan-authorized escritura beauty sprint). `build_scene.py` composite path remains untouched pending escritura close (2026-06-27).
+
+Planned (P1.A residue + P1.B):
+- ~~`lqv/typologies/*` — Rule 4 stone-foundation plinth pass~~ — audit 2026-06-26 confirmed all 18 typologies satisfy Rule 4 in code (explicit foundation builders in 11; villa footings/pier blocks/PIER_LIFT/explicit sandstone course in 4; 3 exempt — boomhut treehouse, outdoor shower, candle_path). Pre-78433a7 "~13 missing" figure was stale.
+- ~~HDRI swap to cerrado / Atlantic-Forest-edge — asset-researcher pass, CC0 / CC-BY 4.0 (P1.A.5)~~ — landed 2026-06-26 (see below).
+- ~~`apply_xray_override` material swap (HOUSE_IMAGERY_SHOTLIST §3)~~ — landed 2026-06-26 (P1.B.3, see below).
+- Per-variant lighting differentiation T1.6 + background-tree replacement (P1.C)
+
+---
+
+## [2026-06-26] — T-1 single-command preflight
+
+- **ops** `scripts/preflight_t_minus_1.sh` (new, executable, read-only) — single-command GO/NO-GO sweep consolidating the eight T-1 verifications previously run by hand. Steps: (1) on master + clean + origin parity, (2) pre-event tag `escritura-2026-06-27` dereferences to pinned commit `00811297…4a53c`, (3) bundle SHA matches pinned, (4) deck v6 SHA matches pinned, (5) `dist/print_pack_2026-06-27/VERIFY.sh` exits 0, (6) twelve required ops docs present at expected paths (CONTINGENCIES, ROLLBACK_RUNBOOK, POSTMORTEM_TEMPLATE, DECISIONS, MASTER_TODO, AUTONOMOUS_PLAN, deck v6, MORNING_RUNBOOK, WALLET_CARD, INTEGRITY, BUNDLE_README, post_signing_finalize.sh), (7) pytest invariants 16/16 green, (8) finalize script syntax valid. Exit 0 prints `GO`; exit non-zero prints `NO-GO` with the count of failed checks. Idempotent and never mutates the repo, so it can be run repeatedly across the evening with no side effects.
+- **rationale** before this, the T-1 audit was a hand-rolled chain of `git rev-parse`, `sha256sum`, `bash VERIFY.sh`, file-existence checks and `pytest` — each easy to forget in a stressful pre-event window. One command, one verdict.
+
+---
+
+## [2026-06-26] — P0b.2 pre-staging: tag-name reconcile + post-signing finalize script
+
+- **ops** `scripts/post_signing_finalize.sh` (new, +156 lines, executable) — pre-stages the AI-side P0b.2 work so that when the escritura signs 2026-06-27 the tag-promote + memory-write collapses to a single command. Dry-run by default; gated behind `--apply`. Verifies (1) master at parity with `origin/master`, (2) pre-event tag `escritura-2026-06-27` resolves to pinned commit `00811297c5ec2dbfa77cdd2e5a04fea34a8fb702`, (3) `dist/wesley_bundle_20260616-1715.zip` SHA-256 matches pinned `9ce96b8...4a53c`, (4) `docs/escritura_deck/escritura_deck_v6.pdf` SHA-256 matches pinned `2e4c265...01137`. On `--apply` creates annotated tag `escritura-signed-2026-06-27` on the pinned commit, pushes to origin, and emits a memory-stub at `/tmp/lqv_project_state_2026_06_27_signed.md` for human review before promotion. Flags: `--time HH:MM` (default `10:00`) and `--notes TEXT` template into the tag annotation.
+- **docs** `docs/MASTER_TODO.md` P0b.2 rows + `docs/AUTONOMOUS_PLAN.md` lines 15, 32 — tag-name reconciled to canonical `escritura-signed-2026-06-27` (was `escritura-2026-06-27-signed` in MASTER_TODO + AUTONOMOUS_PLAN, minority of 2 vs 4). Canonical form aligns with the CONTINGENCIES `escritura-<state>-<date>` family at `docs/CONTINGENCIES.md:150` (sibling states: `sent` / `errata-v2` / `signed` / `postponed`). Both docs now reference `scripts/post_signing_finalize.sh` as the one-command path.
+- **rationale** the alternative was leaving two tag forms drifting across six docs + a manual-only post-event flow. With the script in place, the human-facing checklist for the morning of 2026-06-28 reduces to: (1) `bash scripts/post_signing_finalize.sh --time HH:MM --notes "..."` to preview, (2) re-run with `--apply`, (3) move the emitted memory stub into `~/.claude/.../memory/` + index pointer, (4) tick MASTER_TODO P0b.2 boxes in a follow-up commit.
+
+---
+
+## [2026-06-26] — P0a.1 T-1 verifier sweep (5 of 5 AI-owned checks green)
+
+- **ops** five AI-owned T-1 escritura-readiness checks (P0a.1 §1, §2, §4, §9, §10) all returned green on the evening of 2026-06-26:
+  1. `bash dist/print_pack_2026-06-27/VERIFY.sh` → exit 0; all 3 internal checks pass; final line `All checks passed. Safe to walk in.`
+  2. `sha256sum dist/wesley_bundle_20260616-1715.zip` → `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c` — exact match against pinned hash.
+  3. `git tag -l escritura-2026-06-27` resolves; `git rev-list -n1 escritura-2026-06-27` → `00811297c5ec2dbfa77cdd2e5a04fea34a8fb702` (= pinned `0081129`).
+  4. `git status --short` clean (pre-this-edit).
+  5. `git fetch origin master` succeeded; `git log @{u}..HEAD --oneline` empty — master at parity with `origin/master` (post-CC-DOC.7 head `d2560a1`).
+- **deliverable status** print-pack bundle integrity end-to-end verified. The five remaining P0a.1 boxes (GPG sig, paper print pack, USB sticks, boleto PDF, funds comprobante) are all Ivan-owned and not driveable by the AI side; the 4 P0a.2 + 4 P0a.3 in-room rows are similarly Ivan/Peña-owned. No remaining AI-side blocker between repo state and the 10:00 -03 escritura.
+
+---
+
+## [2026-06-26] — CC-DOC.7 photographic_references multi-view coverage
+
+- **docs** `docs/photographic_references.md` — new **Category 9 — Comparable precedent multi-view references** inserted above the *Acquisition strategy* section, axis-aligned to the protocol-v2 sub-render axis `RENDER_VIEW={hero3q,elevation,plan,section,interior,xray}` (mirrors `RESULTS_GUIDE.md` §5 and `HOUSE_IMAGERY_SHOTLIST.md` §5.1). 9-row precedent matrix: 9.1 Chaa Creek (Belize jungle eco-lodge), 9.2 Inkaterra Machu Picchu (Peruvian cloud-forest lodge), 9.3 Awasi Iguazú (Atlantic-Forest stilted villa — closest market comparable), 9.4 San Bernardino German-Paraguayan villa (closest supply-chain comparable), 9.5 Mennonite-colony adobe Filadelfia/Loma Plata, 9.6 Paraguarí ranchito with corredor+tatakuá (closest cultural-vernacular comparable, Rule 8 anchor), 9.7 cob-and-bottle bench/wall, 9.8 Iguazú-side sod-roof eco-lodge, 9.9 Atlantic-Forest canopy-edge clearing. Per-axis acquisition notes split the workable sources: iNaturalist + Flickr CC for `hero3q`, brand/realtor pages (RM `ref`) for `elevation`/`interior`, Google Earth Pro historical imagery + Sentinel-2 for `plan`, Houben & Guillaud + Cobworks handbooks (RM `ref`) for `section`/`xray`. Status legend reuses ✅/⏳/🔍/❌ from earlier categories; every Category-9 cell starts at 🔍 (acquisition is post-escritura P-DOC / P-SALES tier). Per-precedent priority ranks 9.3 Awasi (market) → 9.4 San Bernardino (supply chain) → 9.6 Paraguarí ranchito (cultural anchor) as the three sales-narrative spine references that drive CC-SALES.1-6 downstream. Closes MASTER_TODO CC-DOC.7.
+
+---
+
+## [2026-06-26] — CC-DOC.2 FINAL_GALLERY canonical lineage refresh
+
+- **docs** `docs/FINAL_GALLERY.md` — header rewritten with a **Canonical lineage** table that pins the byte-frozen renderer (`85e86aa`), the SHA-pinned print-pack at `dist/print_pack_2026-06-27/` (source commit `0081129`, tag `escritura-2026-06-27`), the bundle ZIP (`wesley_bundle_20260616-1715.zip`, 266 MB / 37 files, SHA-256 `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`), the escritura deck v6 (`02_deck/escritura_deck_v6.pdf`, 28 pp / 10.8 MB, SHA-256 `2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137`), and the 18 finals on disk. The post-`85e86aa` polish wave (material registry v2 / HDRI swap / xray override at `78433a7` + subsequent CC-* commits) is explicitly marked OFF print-pack so future readers don't mistake it for retroactive byte changes. Notes section adds a provenance reference (every PNG post-`4be4ac4` / CC-TOOL.8 embeds git SHA + RNG seed + env vars in PNG metadata; the 18 finals predate that harness and are pinned by the `85e86aa` byte-freeze) and a re-render trigger naming task #23 (deferred T1.6 per-variant lighting differentiation) as the supersede gate. Companions list cross-links `docs/render_catalogue/INDEX.md` (post-CC-DOC.6 protocol-v2), the multi-view shotlist in `RESULTS_GUIDE.md` §5 / `HOUSE_IMAGERY_SHOTLIST.md` §5.1, and the archived per-house critique. Closes MASTER_TODO CC-DOC.2.
+
+---
+
+## [2026-06-26] — CC-DOC.8 changelog scope audit closure
+
+- **docs** `docs/CHANGELOG.md` — audited against CC-DOC.8 spec (material-shader version with Bug 1/2 fix, camera-helper version, `build_scene.py` freeze status). All three are explicitly pinned in the **Subsystems tracked** table below: `build_scene.py | frozen | 2026-06-10 (85e86aa) | composite path byte-identity preserved through 2026-06-27`; `Material registry (lqv/materials.py) | v2 | 2026-06-15 (78433a7) | water dielectric + lapacho_timber PBR + bamboo split landed; DEFERRED_BUGS 1+2 closed`; `Camera helpers | v1 | 2026-06-26 | cameras.make_view_camera(cfg, ...) public dispatcher`. Per-day entries at the relevant dates also document the water-shader dielectric fix (closes Bug 1), lapacho PBR + bamboo split (closes Bug 2), `cameras.py` public dispatcher landing, and the renderer byte-freeze at `85e86aa`. No additional version row required. Closes MASTER_TODO CC-DOC.8.
+
+---
+
+## [2026-06-26] — CC-DOC.10 LICENSES coverage closure
+
+- **tools** `scripts/stamp_license_stubs.py` — rewritten with two-pass strategy (manifest + on-disk) to close the 130-stub gap that `tools/check_licenses.py` was flagging since the AmbientCG/Poly Haven re-bundle landed. Manifest pass now iterates the **full** PH slug set (`HDRIS + EXTRA_HDRIS + TEXTURES + EXTRA_TEXTURES + MODELS + EXTRA_MODELS`) plus the ACG manifest, gated on disk presence so slugs listed in download scripts but never actually pulled stay un-stubbed (avoids orphan flags). Disk pass enumerates `assets/{hdris,models,textures}` with the **same** slug derivation as `tools/check_licenses.py:_collect_asset_slugs` — `_unused*` HDRI recursion adds slugs (still need attribution even when quarantined); `_`-prefixed model/texture dirs are skipped; vendor-wrapper dirs (all-immediate-children-are-subdirs) auto-recurse one level. New `POLYHAVEN_SLUG_ALIASES = {"forest_ground_01": "forrest_ground_01", "forest_ground_03": "forrest_ground_03"}` resolves the project-internal vs PH-canonical slug split — `_write()` gained a `url_slug` kwarg that embeds the canonical URL in the PH template's `Source:` / `License URL:` lines while preserving the project-internal slug in the `Asset:` header (so `check_licenses.py` filename matching still passes). `_hdri_slug()` strips `_(N)k` / `_(N)K` suffix via `HDRI_SUFFIX_RE`.
+- **licenses** `LICENSES/<slug>.txt` — 161 new CC0 attribution stubs written across 158 PH + 3 disk-PH slugs; 31 orphans removed by hand for slugs that exist in PH download manifests but were never bundled (`celandine_01`, `cheiridopsis_succulent`, `coast_land_rocks_02..04`, `coast_line_01..02`, `coast_rocks_01..03`, `coast_rocks_05`, `coastal_cliff_01`, `crystalline_iceplant`, `dandelion_01`, `didelta_spinosa`, `fir_sapling`, `fir_sapling_medium`, `fir_tree_01`, `flower_empodium`, `flower_gazania`, `flower_heliophila`, `flower_stinkkruid`, `flower_ursinia`, `namaqualand_cliff_01`, `namaqualand_rocks_01`, `namaqualand_stones_01`, `pine_roots`, `pine_sapling_medium`, `pine_sapling_small`, `pine_tree_01`, `_unused_wrong_biome`). Final state: 393 files = 390 per-asset stubs + 3 umbrella (`CC0-1.0.txt`, `CC-BY-4.0.txt`, `README.md`). `python3 tools/check_licenses.py` reports `390 asset slugs, 390 per-asset stubs, 0 missing, 0 orphan, 0 mismatched`, **exit 0**. Idempotent across consecutive re-runs (`new=0, already-present=387`). Closes MASTER_TODO CC-DOC.10.
+
+---
+
+## [2026-06-26] — CC-DOC.6 render catalogue (asset, view, variant) restructure
+
+- **docs** `scripts/build_render_catalogue.py` — new protocol-v2 `view` axis added end-to-end. `PROTOCOL_V2_VIEWS = ("hero3q", "elevation", "plan", "section", "interior", "xray")` constant + `DEFAULT_VIEW = "hero3q"` for legacy back-compat. New regexes `VARIANT_VIEW_RE = ^(A|B|C)_(<view>)\.png$` and `STEM_V2_RE = ^(.+?)_(A|B|C)_(<view>)$` parse the new filename grammar. `Render` dataclass gains `view: str` field between `variant` and `date`; flows through `asdict(r)` into `catalogue.json`. All 5 collectors (`collect_canonical_finals`, `collect_sub_flat`, `collect_sub_runs`, `collect_sub_latest`, `collect_monday`) populate `view` from protocol-v2 stems where present, default `hero3q` otherwise.
+- **docs** `docs/render_catalogue/INDEX.md` — regenerated (926 renders / 53 assets). New "## View distribution (protocol-v2 axis)" table at top (`hero3q`=908, `elevation`=3, `plan`=3, `section`=3, `interior`=6, `xray`=3). Per-asset roster gains a `Views covered` column listing protocol-v2 views in canonical order. New "## Per-asset × view matrix" section emits a 6-column count grid per asset with `—` for uncovered cells; `bamboo_river_house` shows the full 6-view coverage backbone (26/3/3/3/3/3) from CC-TOOL.8 deterministic harness, `bamboo_beton_28` shows `hero3q`=24/`interior`=3.
+- **docs** `docs/render_catalogue/by_asset/*.md` — 53 per-asset pages regenerated. New "Coverage by view" table at top. Section headers tagged `view=<view>`. Sort and group keys extended to `(date, run_tag, view, sub_variant, variant)`; intro line updated to "Grouped by run (date + tag), then view, then variant."
+- **docs** `docs/render_catalogue/catalogue.json` — re-emitted with `view` field on every render entry. Closes MASTER_TODO CC-DOC.6.
+
+---
+
+## [2026-06-26] — CC-DOC.3 RESULTS_GUIDE multi-view shotlist
+
+- **docs** `docs/RESULTS_GUIDE.md` — new §5 "Multi-view shotlist (`RENDER_VIEW` protocol v2)" inserted between the gallery (§4) and the legacy "How to read everything together" (renumbered to §6); old "Known gaps" renumbered §6 → §7. Subsections: §5.1 six core views table (`hero3q | elevation | plan | section | interior | xray`) with projection + what-it-shows columns and explicit asset-vs-scene scope note; §5.2 filename-grammar diagram parsing `cob_walls_B_elevation.png` into asset-slug × variant × view; §5.3 output landing patterns (canonical `renders/sub/runs/<RENDER_RUN_ID>_<asset>[_<tag>]/<variant>_<view>.png`, latest-mirror `renders/sub/latest/<asset>_<variant>_<view>.png`, flat back-compat `renders/sub/<asset>_<variant>.png` for `RENDER_VIEW=hero3q` only); §5.4 parcel-scale-driver migration note (22 drivers honour `RENDER_VIEW` via `make_view_camera` post-2026-06-26); §5.5 cross-references to `docs/sub_render_strategy.md` §3.5, `docs/HOUSE_IMAGERY_SHOTLIST.md` §5.1, `lqv/cameras.py`, `lqv/furniture.py`. Closes MASTER_TODO CC-DOC.3.
+
+---
+
+## [2026-06-26] — CC-DOC.1 top-level README
+
+- **docs** `README.md` — created (was missing at repo root; only `LICENSES/README.md` + `.pytest_cache/README.md` existed). Cold-start entry: parcel location + ownership, 4-deliverable priority table (18 finals shipped at `85e86aa`, 62-ha digital twin at `4409dba`, escritura pack frozen at tag `escritura-2026-06-27` / `0081129`, housing-park master plan in progress), doc-pointer order (PROJECT_INDEX → STATUS → CLAUDE → ARCHITECTURE → docs/INDEX → MASTER_TODO → DEFERRED_BUGS), quick-run examples for `scripts/render_*.sh` + `make sub|boq|deck`, variant + HDRI map, 14 GB host serialization + AMD CPU-fallback constraints, MIT vs per-asset license split, GitHub remote pointer. Closes MASTER_TODO CC-DOC.1.
+
+---
+
+## [2026-06-26] — CC-TOOL.5 pyright actionable-diagnostic pass
+
+- **fix** `lqv/amenities/eco_retreat_modern_oasis.py`, `lqv/subscene/hobbit_house.py`, `lqv/typologies/bamboo_wigwam_lodge.py`, `lqv/typologies/italian_stone_small_v1.py` — removed 5 dead-expression diagnostics (4 statement-expressions discarded by pyright as unused; no runtime semantics change).
+- **fix** `scripts/fetch_copernicus_lcover.py:191-193` — `assert YEARS` + explicit `year = YEARS[0]` defensive init before the year-search loop, so the post-loop `year` reference cannot be `Unbound` on an empty input list.
+- **fix** `scripts/stamp_license_stubs.py:30-37` — local `loader` binding + assert chain to narrow `spec.loader` from `Optional[Loader]` before `exec_module` call.
+- **chore** `pyrightconfig.json` — added `"reportMissingImports": "none"`. Rationale: `bpy`, `mathutils`, `bmesh`, and `bl_math` ship no upstream type stubs, which would otherwise flood the diagnostic stream with ~100 false positives that mask real bugs. Cascade rules (`reportAttributeAccessIssue`, `reportIndexIssue`, `reportOperatorIssue`, `reportCallIssue`) stay at default since they legitimately catch real bugs in numpy/matplotlib/rasterio/h5py call paths.
+- **docs** `docs/DEFERRED_BUGS.md` — appended low-priority post-escritura section logging the 4 legit non-cascade residuals (`bamboo_boomhut_treehouse.py:327` None-iter, `fetch_opentopo_dem.py:60/63` Optional-return, `analyze_dem.py:155/156` + `fetch_opentopo_dem.py:102` + `satellite/fetch_sentinel2.py:205` matplotlib `imshow(extent=…)` list-vs-tuple). Total cleanup effort ~30 min, none gate any render or escritura deliverable.
+- Final pyright state: **101 errors, 0 warnings, 0 informations**. All 101 are cascade hits from the bpy stub-gap; no actionable in-tree work remains under CC-TOOL.5.
+
+---
+
+## [2026-06-26] — CC-TOOL.1 MCP socket retire decision
+
+- **docs** `docs/MCP_STATUS.md` (new) — diagnostic + retire decision for the BlenderMCP `localhost:9876` socket. Confirmed dead (`Connection refused`, no `:9876` listener, no Blender daemon process). Decision: **retire for escritura phase** rather than revive — sub-render workflow does not need it and the ~4 GB daemon RSS contends with the 4.3 GB per-render peak on a 14 GB host. Revival recipe (`blender --background --python scripts/mcp_daemon.py`) preserved for post-escritura selective use. `scripts/mcp_daemon.py` stays gitignored. Closes CC-TOOL.1 as resolved-by-retire.
+
+---
+
+## [2026-06-26] — P1.A.5 HDRI swap to cerrado / Atlantic-Forest-edge biome
+
+- **feat** `lqv/lighting.py:16-23` — `_HDRI_BY_VARIANT` rotated from African-savanna / boreal stock to Paraguarí ~26.6°S Atlantic-Forest-edge / cerrado transition reads. New picks: A=`bryanston_park_sunrise_4k.exr` @ 0.8 (dry-season warm sunrise), B=`xanderklinge_4k.exr` @ 1.4 (overcast wet-season midday gallery forest), C=`kloppenheim_07_4k.exr` @ 0.5 (civil-twilight blue hour with residual sky tone for firefly read). Variant-strength multipliers preserved — only the EXR filenames changed, so the existing Sun-lamp / sky-fallback paths are unmoved.
+- **chore** `scripts/download_polyhaven_assets.py` — `EXTRA_HDRIS` appended with the 3 new primaries + 5 CC0 backups (`magalies_field_sunset`, `near_the_river_02`, `niederwihl_forest`, `belfast_open_field`, `kloppenheim_04`) for QA fallbacks. Single `python3 scripts/download_polyhaven_assets.py --only hdris` invocation lands all 8 EXRs into `assets/hdris/` (21 ok / 17 skip / 0 fail / 1812.9 MiB total).
+- **chore** `assets/hdris/_unused_wrong_biome/` — quarantined the 3 displaced HDRIs (`kiara_1_dawn_4k.exr`, `misty_pines_4k.exr`, `qwantani_dusk_2_4k.exr`) — African savanna / boreal pines read against Paraguarí parcel was the dominant wrong-biome complaint. Files kept on disk per attribution-traceability (CC0 still credited even when retired).
+- Smoke `italian_river_house_4pax` A/B/C serial @ preview / 64 spp / CPU fallback → `renders/sub/runs/hdri_cerrado_smoke_20260626_italian_river_house_4pax/{A,B,C}.png` at 5,150,432 / 5,066,946 / 4,759,927 bytes (non-black, biome-correct read confirmed).
+
+Subsystem bump: Lighting dispatcher v2 → v3 (biome-correct HDRI rotation).
+
+---
+
+## [2026-06-26] — P1.B.1 interior furniture stubs wired across the 15 typology registry
+
+- **feat** `lqv/furniture.py` — `furnish_interior(col, *, footprint_w, footprint_l, origin_xy, floor_z, pax, style, variant, name_prefix)` builds bed (1 or pair depending on `pax`) + bedside + dining table + 2 stools + shelf + variant-emissive lantern from procedural primitives. Style chains: `bamboo` / `lapacho` / `stone` / `cob` / `container`. Variant-keyed emission `{A: 0.0, B: 0.6, C: 1.0}` carries the dawn/inspection/dusk read into the interior view without forking the registry. Early-returns on footprints < 1.5 m to skip un-furnishable amenity stubs.
+- **feat** all 15 entries of `lqv.typologies.TYPOLOGIES` now invoke `furnish_interior(...)` before `return col`, with floor-z anchored to each typology's habitable storey (foundation top / plinth top / pier lift / arched-base course / dome foundation) and footprint derived per-typology with wall-thickness margin:
+  - `bamboo_beton_28`, `bamboo_beton_30`, `bamboo_river_house`, `bamboo_curved_roof_villa`, `bamboo_wigwam_lodge`, `bamboo_beton_family_curved`, `bamboo_beton_family_rectangular`, `bamboo_boomhut_treehouse`, `bamboo_container_4pax` → `style='bamboo'` / `'container'` as appropriate.
+  - `container_river_house` → `style='container'`, floor on `PIER_LIFT`.
+  - `clay_terracotta_estate` → `style='stone'`, floor on plinth + 10 cm GF slab.
+  - `hobbit_house` → `style='cob'`, 3 × 3 m inscribed in the 3 m dome, floor on `FOUNDATION_H`.
+  - `italian_river_house_4pax` → `style='stone'`, floor on `_BASE_HEIGHT` (atop arched foundation course).
+  - `italian_stone_small_v1` / `italian_stone_small_v2` → `style='stone'`, floor on `_FOUNDATION_HEIGHT`.
+- **fix** signature drift — `build_<typology>(origin, ...)` builders that previously dropped the `variant` kwarg from the wrapper's call now accept and forward `variant: str = 'A'`. Wrappers `build(parent, location, variant)` route variant through correctly so the interior lantern can read dawn/inspection/dusk emission.
+- pytest 16/16 green; typology-contract + smoke tests unchanged. No render-byte regressions expected outside `RENDER_VIEW=interior` (default hero3q / elevation / plan / section / xray paths render the furniture but at parcel scale it falls below the resolution floor).
+
+Subsystem bump: Typology registry v3 → v4 (variant-aware interior furniture).
+
+---
+
+## [2026-06-26] — P1.B.3 `apply_xray_override` shipped
+
+- **feat** `lqv/subscene/base.py` — `apply_xray_override(scene, asset_collection=None, except_materials=None, alpha=0.15)` swaps non-opaque material slots to a shared Transparent BSDF + low-weight Principled mix shader. Paired `clear_xray_override()` restores originals from per-object `_lqv_xray_orig_<slot>` stash for symmetric teardown.
+- **feat** `XRAY_OPAQUE_MATERIALS` frozenset — default opaque allowlist covers structural bamboo/lapacho, steel/mesh, services (micro_hydro_turbine, lifepo4_rack, cistern_shell, plumbing, fireplace_stack, mosquito_mesh — aspirational keys forward-compatible), water shaders (pool_water/water_reflective/stream_bed), glass (PV + bottles), and emissive accents (window_glow/firefly/lantern_paper_warm).
+- **feat** `lqv/config.py` — `VALID_VIEWS` adds `'xray'`. `cfg.output_filename` already honours arbitrary non-`hero3q` views as `_<view>` suffix; legacy flat path stays back-compat.
+- **chore** `save_subrender()` — fires `apply_xray_override(scene)` immediately before `render.run(scene)` when `cfg.view == 'xray'`. No effect on hero3q/elevation/plan/section/interior paths.
+- Smoke `bamboo_river_house` variant B → 169 material slots swapped, `B_xray.png` = 4,933,755 bytes (distinct from B hero3q 5,070,274). pytest 16/16 green.
+
+---
+
+## [2026-06-26] — P1.B.2 camera-view dispatcher promoted to public API
+
+- **feat** `lqv/cameras.py` — `make_view_camera(cfg, target, distance, height, lens)` public dispatcher honouring `cfg.view ∈ {hero3q, elevation, plan, section, interior}`. Replaces the private `_make_view_camera` previously living in `lqv/subscene/base.py`.
+- **fix** `lqv/subscene/bamboo_river_house.py` + 22 other bypass-pattern drivers — migrated from `cameras.subscene_camera(...)` to `cameras.make_view_camera(cfg, ...)` so parcel-scale drivers that bypass `base.run()` honour `RENDER_VIEW`. Pre-fix all four "views" produced identical 5,070,274-byte renders because the dispatcher never fired on the bypass path.
+- **chore** `lqv/subscene/base.py` — `run()` now calls the public dispatcher; `save_subrender()` retains `_<view>` filename suffix (default `hero3q` omits the suffix → legacy flat `renders/sub/<asset>_<variant>.png` invariant preserved).
+- Smoke batch (`bamboo_river_house`, variant B, 4 views) → 4 distinct PNG sizes (2,912,071 / 4,634,966 / 2,744,759 / 3,795,393). Hero3q regression render preserved exact 5,070,274-byte baseline. pytest 16/16 green.
+
+Subsystem bump: Camera helpers v0 → v1.
+
+---
+
+## [2026-06-15] — post-review polish wave at `78433a7`
+
+Three high-leverage shader/loader bugs from the critic pass shipped under Ivan-authorized escritura beauty sprint carve-out. Print-pack SHA pinning unaffected (independent on-disk artefacts).
+
+- **fix** `lqv/materials/glass.py` — `water_reflective` dielectric Principled (base 0.02/0.06/0.10, IOR 1.333, transmission 1.0, roughness 0.04); `make_pool_water()` Principled + Volume Absorption stack. Closes DEFERRED_BUGS Bug 1.
+- **fix** `lqv/materials/wood.py` — `lapacho_timber` upgraded from flat principled to `textured_principled('old_planks_02')` PBR trio tinted toward heartwood palette + secondary Voronoi color variation; bamboo split into culm/leaf/grass with node-ring shader helper. Closes DEFERRED_BUGS Bug 2.
+- **fix** `lqv/flora/photoreal.py` — `_LOADED_HEROES` cache + `cached.copy()` deep-copy pattern replaces re-append-and-suffix path. Closes DEFERRED_BUGS Bug 3 (no more `.003` LOD-name collisions; `RENDER_FLORA_PHOTOREAL=1` clean across 51 subscene jobs).
+- **feat** subscene drivers / typologies / amenities polish wave landed in the same omnibus commit (see `git show 78433a7 --stat`).
+
+---
+
+## [2026-06-25] — T-2 freeze-safe maintenance
+
+- **add** `docs/MASTER_TODO.md` — single consolidated multi-phase TODO covering P0a through P5 + cross-cutting tracks
+- **add** `docs/HOUSE_IMAGERY_SHOTLIST.md` — 24-shot matrix × 16 typologies, exterior + plan + section + interior + x-ray spec, gated on freeze lift
+- **add** `scripts/gc_render_runs.py` — dry-run-default GC for `renders/sub/runs/` with protected-tag retention. Do NOT run with `--apply` pre-escritura.
+- **add** `scripts/organize_sub_renders.py` — browse-friendly symlink tree at `renders/sub_by_category/` over the flat `renders/sub/` path
+- **fix** `scripts/download_polyhaven_assets.py` — lowercase Poly Haven slug IDs (case-sensitive on the API)
+- **chore** `.gitignore` — exclude regenerable `renders/sub_by_category/` symlink tree
+
+No renderer code touched. Pytest invariants: 16/16 green at `85e86aa`.
+
+---
+
+## [2026-06-17] — escritura print-pack T-10 verified — tag `escritura-t10-verified-2026-06-17`
+
+- print-pack frozen at `dist/print_pack_2026-06-27/`
+- Wesley bundle `wesley_bundle_20260616-1715.zip` SHA `9ce96b85…85724a53c` pinned across 15+ docs
+- escritura deck v6 SHA `2e4c265c…1eba5c0860701137` (28 pages)
+- VERIFY.sh: 3/3 green
+- POSTMORTEM, DECISIONS, ROLLBACK, WALLET_CARD, BUNDLE_README, Reply-To landed
+
+## [2026-06-16] — GitHub remote landed
+
+- remote pushed to `Ai-Whisperers/la-quebrada-viva` (private)
+- closes archived UPGRADE_PLAN T0.1 (single-disk SPOF mitigation pre-escritura)
+
+## [2026-06-14] — escritura v-final candidate frozen — tag `escritura-v-final-candidate-aecb1af`
+
+- 18/18 finals at `85e86aa`; pytest 16/16 invariants green
+- DEFERRED_BUGS.md captures Bug 1 (water shader), Bug 2 (lapacho timber), Bug 3 (flora LOD collision) for post-freeze sprint
+
+## [2026-06-11] — 62-ha digital twin shipped at `4409dba`
+
+- ALOS-AW3D30 DEM + Sentinel-2 albedo + features sub-render
+- terrain variants A/B/C rendered
+
+## [2026-06-10] — 18/18 finals shipped at `85e86aa`
+
+- byte-freeze established here; renderer locked until escritura signs
+
+---
+
+## Subsystems tracked
+
+When a subsystem version bumps, increment its tag and add a one-line entry above.
+
+| Subsystem | Version | Last touched | Notes |
+|---|---|---|---|
+| `build_scene.py` | frozen | 2026-06-10 (`85e86aa`) | composite path byte-identity preserved through 2026-06-27 |
+| Material registry (`lqv/materials.py`) | v2 | 2026-06-15 (`78433a7`) | water dielectric + lapacho_timber PBR + bamboo split landed; DEFERRED_BUGS 1+2 closed |
+| Flora loader (`lqv/flora/photoreal.py`) | v2 | 2026-06-15 (`78433a7`) | `_LOADED_HEROES` deep-copy cache; DEFERRED_BUGS 3 closed |
+| Sub-render protocol (`lqv/subscene/`) | v2 | 2026-06-26 | v1 `RENDER_RUN_ID` + runs/latest mirror; v2 adds `apply_xray_override` + `XRAY_OPAQUE_MATERIALS` (P1.B.3) — `RENDER_VIEW=xray` now legal |
+| Camera helpers | v1 | 2026-06-26 | `cameras.make_view_camera(cfg, ...)` public dispatcher; `RENDER_VIEW={hero3q,elevation,plan,section,interior,xray}`; 22 bypass-pattern drivers migrated |
+| BoQ scope filter | v1 | 2026-06-15 | `LQV_BOQ_SCOPE=escritura` ($268,685.45) vs `=full` ($288,056) |
+| Wesley bundle | `20260616-1715` | 2026-06-16 | SHA-pinned, do not rebuild pre-escritura |
+| Escritura deck | v6 | 2026-06-16 | 28pp, SHA-pinned in print-pack |

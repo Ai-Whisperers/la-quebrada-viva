@@ -1,0 +1,24 @@
+# Binary / regenerable Blender state
+*.blend
+*.blend1
+*.blend@
+*.blend.lock
+scene.blend.session-backup
+
+# Backups and stale artifacts — never read these (the .bak monolith in _archive/
+# is reference-only)
+*.bak
+*.pre-refactor.bak*
+_archive/
+
+# NOTE: renders/ is deliberately NOT ignored — verification requires Reading the
+# preview/final PNGs. Only raw EXR passes are excluded.
+*.exr
+
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.idea/
+.vscode/
+.git/

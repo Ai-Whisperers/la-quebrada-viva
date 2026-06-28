@@ -1,0 +1,4 @@
+center tile: 91289,150336
+bbox WGS84: W=-54.639130 S=-25.568459 E=-54.626770 N=-25.557309
+canvas: (2304, 2304)  (9x9 tiles)
+ground res: 0.54 m/pixel at lat -25.5627515

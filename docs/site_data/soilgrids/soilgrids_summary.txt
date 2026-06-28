@@ -1,0 +1,2 @@
+SoilGrids 250 m point query — lon=-57.03000, lat=-25.63000
+60 property×depth values written

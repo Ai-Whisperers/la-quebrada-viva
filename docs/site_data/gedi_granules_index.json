@@ -1,0 +1,578 @@
+{
+  "bbox": {
+    "south": -25.645,
+    "north": -25.615,
+    "west": -57.045,
+    "east": -57.015
+  },
+  "n_granules": 27,
+  "granules": [
+    {
+      "id": "G2704178349-LPCLOUD",
+      "title": "GEDI02_A_2019189235027_O03232_01_T02231_02_003_01_V002",
+      "time_start": "2019-07-08T23:50:27.000Z",
+      "time_end": "2019-07-09T01:23:14.000Z",
+      "granule_size_mb": 1198.01,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2019189235027_O03232_01_T02231_02_003_01_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2019189235027_O03232_01_T02231_02_003_01_V002/GEDI02_A_2019189235027_O03232_01_T02231_02_003_01_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2019189235027_O03232_01_T02231_02_003_01_V002/GEDI02_A_2019189235027_O03232_01_T02231_02_003_01_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2164304093-LPCLOUD",
+      "title": "GEDI02_A_2019246151628_O04111_04_T04229_02_003_02_V002",
+      "time_start": "2019-09-03T15:16:28.000Z",
+      "time_end": "2019-09-03T16:49:17.000Z",
+      "granule_size_mb": 1335.26,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2019246151628_O04111_04_T04229_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2019246151628_O04111_04_T04229_02_003_02_V002/GEDI02_A_2019246151628_O04111_04_T04229_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2019246151628_O04111_04_T04229_02_003_02_V002/GEDI02_A_2019246151628_O04111_04_T04229_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2701412260-LPCLOUD",
+      "title": "GEDI02_A_2020079185724_O07184_01_T05077_02_003_01_V002",
+      "time_start": "2020-03-19T18:57:24.000Z",
+      "time_end": "2020-03-19T20:30:19.000Z",
+      "granule_size_mb": 1743.22,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2020079185724_O07184_01_T05077_02_003_01_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2020079185724_O07184_01_T05077_02_003_01_V002/GEDI02_A_2020079185724_O07184_01_T05077_02_003_01_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2020079185724_O07184_01_T05077_02_003_01_V002/GEDI02_A_2020079185724_O07184_01_T05077_02_003_01_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2701610081-LPCLOUD",
+      "title": "GEDI02_A_2020124150548_O07879_04_T04229_02_003_01_V002",
+      "time_start": "2020-05-03T15:05:48.000Z",
+      "time_end": "2020-05-03T16:38:41.000Z",
+      "granule_size_mb": 1207.47,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2020124150548_O07879_04_T04229_02_003_01_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2020124150548_O07879_04_T04229_02_003_01_V002/GEDI02_A_2020124150548_O07879_04_T04229_02_003_01_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2020124150548_O07879_04_T04229_02_003_01_V002/GEDI02_A_2020124150548_O07879_04_T04229_02_003_01_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2701821507-LPCLOUD",
+      "title": "GEDI02_A_2020210051357_O09206_04_T01536_02_003_01_V002",
+      "time_start": "2020-07-28T05:13:57.000Z",
+      "time_end": "2020-07-28T06:46:49.000Z",
+      "granule_size_mb": 1776.05,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2020210051357_O09206_04_T01536_02_003_01_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2020210051357_O09206_04_T01536_02_003_01_V002/GEDI02_A_2020210051357_O09206_04_T01536_02_003_01_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2020210051357_O09206_04_T01536_02_003_01_V002/GEDI02_A_2020210051357_O09206_04_T01536_02_003_01_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2702129340-LPCLOUD",
+      "title": "GEDI02_A_2020296185923_O10548_04_T09921_02_003_02_V002",
+      "time_start": "2020-10-22T18:59:23.000Z",
+      "time_end": "2020-10-22T20:32:16.000Z",
+      "granule_size_mb": 1281.36,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2020296185923_O10548_04_T09921_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2020296185923_O10548_04_T09921_02_003_02_V002/GEDI02_A_2020296185923_O10548_04_T09921_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2020296185923_O10548_04_T09921_02_003_02_V002/GEDI02_A_2020296185923_O10548_04_T09921_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2702259827-LPCLOUD",
+      "title": "GEDI02_A_2020362031625_O11561_01_T09193_02_003_02_V002",
+      "time_start": "2020-12-27T03:16:25.000Z",
+      "time_end": "2020-12-27T04:49:18.000Z",
+      "granule_size_mb": 2124.87,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2020362031625_O11561_01_T09193_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2020362031625_O11561_01_T09193_02_003_02_V002/GEDI02_A_2020362031625_O11561_01_T09193_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2020362031625_O11561_01_T09193_02_003_02_V002/GEDI02_A_2020362031625_O11561_01_T09193_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2702256842-LPCLOUD",
+      "title": "GEDI02_A_2020366014236_O11622_01_T10769_02_003_02_V002",
+      "time_start": "2020-12-31T01:42:36.000Z",
+      "time_end": "2020-12-31T03:15:29.000Z",
+      "granule_size_mb": 1931.78,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2020366014236_O11622_01_T10769_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2020366014236_O11622_01_T10769_02_003_02_V002/GEDI02_A_2020366014236_O11622_01_T10769_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2020366014236_O11622_01_T10769_02_003_02_V002/GEDI02_A_2020366014236_O11622_01_T10769_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2702412714-LPCLOUD",
+      "title": "GEDI02_A_2021084061619_O12927_04_T10074_02_003_02_V002",
+      "time_start": "2021-03-25T06:16:19.000Z",
+      "time_end": "2021-03-25T07:49:13.000Z",
+      "granule_size_mb": 1261.48,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2021084061619_O12927_04_T10074_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2021084061619_O12927_04_T10074_02_003_02_V002/GEDI02_A_2021084061619_O12927_04_T10074_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2021084061619_O12927_04_T10074_02_003_02_V002/GEDI02_A_2021084061619_O12927_04_T10074_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2702410488-LPCLOUD",
+      "title": "GEDI02_A_2021088044333_O12988_04_T07075_02_003_02_V002",
+      "time_start": "2021-03-29T04:43:33.000Z",
+      "time_end": "2021-03-29T06:16:27.000Z",
+      "granule_size_mb": 1036.98,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2021088044333_O12988_04_T07075_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2021088044333_O12988_04_T07075_02_003_02_V002/GEDI02_A_2021088044333_O12988_04_T07075_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2021088044333_O12988_04_T07075_02_003_02_V002/GEDI02_A_2021088044333_O12988_04_T07075_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2704767564-LPCLOUD",
+      "title": "GEDI02_A_2021257194626_O15617_01_T05077_02_003_02_V002",
+      "time_start": "2021-09-14T19:46:26.000Z",
+      "time_end": "2021-09-14T21:19:23.000Z",
+      "granule_size_mb": 2028.98,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2021257194626_O15617_01_T05077_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2021257194626_O15617_01_T05077_02_003_02_V002/GEDI02_A_2021257194626_O15617_01_T05077_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2021257194626_O15617_01_T05077_02_003_02_V002/GEDI02_A_2021257194626_O15617_01_T05077_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2723976813-LPCLOUD",
+      "title": "GEDI02_A_2021350205103_O17059_04_T10074_02_003_02_V002",
+      "time_start": "2021-12-16T20:51:03.000Z",
+      "time_end": "2021-12-16T22:23:57.000Z",
+      "granule_size_mb": 1272.96,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2021350205103_O17059_04_T10074_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2021350205103_O17059_04_T10074_02_003_02_V002/GEDI02_A_2021350205103_O17059_04_T10074_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2021350205103_O17059_04_T10074_02_003_02_V002/GEDI02_A_2021350205103_O17059_04_T10074_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2723985886-LPCLOUD",
+      "title": "GEDI02_A_2021354191807_O17120_04_T07075_02_003_02_V002",
+      "time_start": "2021-12-20T19:18:07.000Z",
+      "time_end": "2021-12-20T20:51:01.000Z",
+      "granule_size_mb": 1172.31,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2021354191807_O17120_04_T07075_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2021354191807_O17120_04_T07075_02_003_02_V002/GEDI02_A_2021354191807_O17120_04_T07075_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2021354191807_O17120_04_T07075_02_003_02_V002/GEDI02_A_2021354191807_O17120_04_T07075_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2725319974-LPCLOUD",
+      "title": "GEDI02_A_2022082064254_O18554_04_T01383_02_003_03_V002",
+      "time_start": "2022-03-23T06:42:54.000Z",
+      "time_end": "2022-03-23T08:15:46.000Z",
+      "granule_size_mb": 1297.58,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2022082064254_O18554_04_T01383_02_003_03_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2022082064254_O18554_04_T01383_02_003_03_V002/GEDI02_A_2022082064254_O18554_04_T01383_02_003_03_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2022082064254_O18554_04_T01383_02_003_03_V002/GEDI02_A_2022082064254_O18554_04_T01383_02_003_03_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2725300587-LPCLOUD",
+      "title": "GEDI02_A_2022216014510_O20629_04_T01383_02_003_02_V002",
+      "time_start": "2022-08-04T01:45:10.000Z",
+      "time_end": "2022-08-04T03:17:59.000Z",
+      "granule_size_mb": 1528.2,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2022216014510_O20629_04_T01383_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2022216014510_O20629_04_T01383_02_003_02_V002/GEDI02_A_2022216014510_O20629_04_T01383_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2022216014510_O20629_04_T01383_02_003_02_V002/GEDI02_A_2022216014510_O20629_04_T01383_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2725305824-LPCLOUD",
+      "title": "GEDI02_A_2022222092210_O20727_01_T09193_02_003_02_V002",
+      "time_start": "2022-08-10T09:22:10.000Z",
+      "time_end": "2022-08-10T10:55:00.000Z",
+      "granule_size_mb": 2077.49,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2022222092210_O20727_01_T09193_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2022222092210_O20727_01_T09193_02_003_02_V002/GEDI02_A_2022222092210_O20727_01_T09193_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2022222092210_O20727_01_T09193_02_003_02_V002/GEDI02_A_2022222092210_O20727_01_T09193_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2725328073-LPCLOUD",
+      "title": "GEDI02_A_2022248225019_O21139_01_T07923_02_003_02_V002",
+      "time_start": "2022-09-05T22:50:19.000Z",
+      "time_end": "2022-09-06T00:23:07.000Z",
+      "granule_size_mb": 2146.38,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2022248225019_O21139_01_T07923_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2022248225019_O21139_01_T07923_02_003_02_V002/GEDI02_A_2022248225019_O21139_01_T07923_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2022248225019_O21139_01_T07923_02_003_02_V002/GEDI02_A_2022248225019_O21139_01_T07923_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2725461861-LPCLOUD",
+      "title": "GEDI02_A_2022340103703_O22558_01_T02231_02_003_02_V002",
+      "time_start": "2022-12-06T10:37:03.000Z",
+      "time_end": "2022-12-06T12:09:54.000Z",
+      "granule_size_mb": 1877.17,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2022340103703_O22558_01_T02231_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2022340103703_O22558_01_T02231_02_003_02_V002/GEDI02_A_2022340103703_O22558_01_T02231_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2022340103703_O22558_01_T02231_02_003_02_V002/GEDI02_A_2022340103703_O22558_01_T02231_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G2754675815-LPCLOUD",
+      "title": "GEDI02_A_2023036102732_O23504_01_T07923_02_003_02_V002",
+      "time_start": "2023-02-05T10:27:32.000Z",
+      "time_end": "2023-02-05T12:00:24.000Z",
+      "granule_size_mb": 2074.92,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2023036102732_O23504_01_T07923_02_003_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2023036102732_O23504_01_T07923_02_003_02_V002/GEDI02_A_2023036102732_O23504_01_T07923_02_003_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2023036102732_O23504_01_T07923_02_003_02_V002/GEDI02_A_2023036102732_O23504_01_T07923_02_003_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3381499461-LPCLOUD",
+      "title": "GEDI02_A_2024179150714_O31386_04_T09921_02_004_03_V002",
+      "time_start": "2024-06-27T15:07:14.000Z",
+      "time_end": "2024-06-27T16:40:05.000Z",
+      "granule_size_mb": 1377.67,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2024179150714_O31386_04_T09921_02_004_03_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2024179150714_O31386_04_T09921_02_004_03_V002/GEDI02_A_2024179150714_O31386_04_T09921_02_004_03_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2024179150714_O31386_04_T09921_02_004_03_V002/GEDI02_A_2024179150714_O31386_04_T09921_02_004_03_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3382789974-LPCLOUD",
+      "title": "GEDI02_A_2024193193707_O31606_01_T10769_02_004_03_V002",
+      "time_start": "2024-07-11T19:37:07.000Z",
+      "time_end": "2024-07-11T21:09:58.000Z",
+      "granule_size_mb": 2207.27,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2024193193707_O31606_01_T10769_02_004_03_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2024193193707_O31606_01_T10769_02_004_03_V002/GEDI02_A_2024193193707_O31606_01_T10769_02_004_03_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2024193193707_O31606_01_T10769_02_004_03_V002/GEDI02_A_2024193193707_O31606_01_T10769_02_004_03_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3384743796-LPCLOUD",
+      "title": "GEDI02_A_2024224073223_O32079_01_T05077_02_004_03_V002",
+      "time_start": "2024-08-11T07:32:23.000Z",
+      "time_end": "2024-08-11T09:05:14.000Z",
+      "granule_size_mb": 2201.62,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2024224073223_O32079_01_T05077_02_004_03_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2024224073223_O32079_01_T05077_02_004_03_V002/GEDI02_A_2024224073223_O32079_01_T05077_02_004_03_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2024224073223_O32079_01_T05077_02_004_03_V002/GEDI02_A_2024224073223_O32079_01_T05077_02_004_03_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3385036336-LPCLOUD",
+      "title": "GEDI02_A_2024244132446_O32393_04_T04229_02_004_04_V002",
+      "time_start": "2024-08-31T13:24:46.000Z",
+      "time_end": "2024-08-31T14:57:39.000Z",
+      "granule_size_mb": 1106.01,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2024244132446_O32393_04_T04229_02_004_04_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2024244132446_O32393_04_T04229_02_004_04_V002/GEDI02_A_2024244132446_O32393_04_T04229_02_004_04_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2024244132446_O32393_04_T04229_02_004_04_V002/GEDI02_A_2024244132446_O32393_04_T04229_02_004_04_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3386227471-LPCLOUD",
+      "title": "GEDI02_A_2024252101809_O32515_04_T07075_02_004_02_V002",
+      "time_start": "2024-09-08T10:18:09.000Z",
+      "time_end": "2024-09-08T11:51:04.000Z",
+      "granule_size_mb": 1251.41,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2024252101809_O32515_04_T07075_02_004_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2024252101809_O32515_04_T07075_02_004_02_V002/GEDI02_A_2024252101809_O32515_04_T07075_02_004_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2024252101809_O32515_04_T07075_02_004_02_V002/GEDI02_A_2024252101809_O32515_04_T07075_02_004_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3545071729-LPCLOUD",
+      "title": "GEDI02_A_2024339233650_O33873_04_T01536_02_004_02_V002",
+      "time_start": "2024-12-04T23:36:50.000Z",
+      "time_end": "2024-12-05T01:09:39.000Z",
+      "granule_size_mb": 1193.56,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2024339233650_O33873_04_T01536_02_004_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2024339233650_O33873_04_T01536_02_004_02_V002/GEDI02_A_2024339233650_O33873_04_T01536_02_004_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2024339233650_O33873_04_T01536_02_004_02_V002/GEDI02_A_2024339233650_O33873_04_T01536_02_004_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3920081705-LPCLOUD",
+      "title": "GEDI02_A_2025120233143_O36153_01_T09193_02_004_02_V002",
+      "time_start": "2025-04-30T23:31:43.000Z",
+      "time_end": "2025-05-01T01:04:35.000Z",
+      "granule_size_mb": 2052.74,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2025120233143_O36153_01_T09193_02_004_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2025120233143_O36153_01_T09193_02_004_02_V002/GEDI02_A_2025120233143_O36153_01_T09193_02_004_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2025120233143_O36153_01_T09193_02_004_02_V002/GEDI02_A_2025120233143_O36153_01_T09193_02_004_02_V002.h5"
+        }
+      ]
+    },
+    {
+      "id": "G3951072368-LPCLOUD",
+      "title": "GEDI02_A_2025156231012_O36711_04_T07075_02_004_02_V002",
+      "time_start": "2025-06-05T23:10:12.000Z",
+      "time_end": "2025-06-06T00:43:02.000Z",
+      "granule_size_mb": 1563.93,
+      "links": [
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+          "title": "Download GEDI02_A_2025156231012_O36711_04_T07075_02_004_02_V002.h5",
+          "hreflang": "en-US",
+          "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/GEDI02_A.002/GEDI02_A_2025156231012_O36711_04_T07075_02_004_02_V002/GEDI02_A_2025156231012_O36711_04_T07075_02_004_02_V002.h5"
+        },
+        {
+          "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+          "title": "This link provides direct download access via S3 to the granule",
+          "hreflang": "en-US",
+          "href": "s3://lp-prod-protected/GEDI02_A.002/GEDI02_A_2025156231012_O36711_04_T07075_02_004_02_V002/GEDI02_A_2025156231012_O36711_04_T07075_02_004_02_V002.h5"
+        }
+      ]
+    }
+  ]
+}

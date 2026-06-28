@@ -1,0 +1,47 @@
+GEDI L2A cleaned — 2026-06-10T17:49:42.376145
+Source CSV: /home/ai-whisperers/blender-projects/house-field/docs/site_data/gedi_l2a_points.csv (475 rows)
+After elev outlier filter (100.0-500.0 m): 25 rows
+DEM source for elevation join: alos_aw3d30_dem.tif
+
+Clean ground_elevation_m (GEDI):
+count     25.000000
+mean     195.900569
+std       36.458111
+min      144.512660
+25%      159.025770
+50%      207.285110
+75%      217.832950
+max      272.913270
+
+dem_elev_m (ALOS AW3D30):
+count     25.000000
+mean     155.720000
+std       36.389696
+min      131.000000
+25%      135.000000
+50%      141.000000
+75%      154.000000
+max      268.000000
+
+canopy_height_m_final:
+count    25.000000
+mean     48.485674
+std      25.906518
+min      18.930948
+25%      24.921495
+50%      37.003222
+75%      80.000000
+max      80.000000
+
+Beam distribution:
+beam
+BEAM0000    9
+BEAM0010    7
+BEAM0011    3
+BEAM1000    2
+BEAM0110    2
+BEAM0101    1
+BEAM0001    1
+
+Lat range: -25.64454 to -25.61599
+Lon range: -57.04213 to -57.01577

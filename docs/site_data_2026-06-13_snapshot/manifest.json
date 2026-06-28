@@ -1,0 +1,98 @@
+{
+  "aoi_center_wgs84": [
+    -54.66134848144677,
+    -25.58897102702703,
+    -54.601429518553225,
+    -25.534916972972972
+  ],
+  "aoi_center_utm21j": [
+    734896.4183345417,
+    7167762.422862581,
+    741025.1758469958,
+    7173643.963074173
+  ],
+  "dem": {
+    "10m_utm21j": "dem/terrarium_monday_10m_utm21j.tif",
+    "30m_utm21j_sources": [
+      "dem/nasadem_elevation.tif",
+      "dem/alos-dem_data.tif",
+      "dem/cop-dem-glo-30_data.tif"
+    ],
+    "elev_range_m": [
+      0.0,
+      246.0
+    ],
+    "elev_mean_m": 192.8953094482422
+  },
+  "sentinel2": {
+    "scene": "S2B_MSIL2A_20251120T133829_R124_T21JYM",
+    "date": "2025-11-20",
+    "cloud_cover_pct": 0.002,
+    "bands_10m": [
+      "B02.tif",
+      "B03.tif",
+      "B04.tif",
+      "B08.tif"
+    ],
+    "rgb_composite": "analysis/rgb_truecolor_utm21j.tif",
+    "ndvi_composite": "analysis/ndvi_10m.png"
+  },
+  "osm": {
+    "file": "osm/overpass_monday.json",
+    "elements": 43779,
+    "waterways": 59,
+    "buildings": 29979,
+    "highways": 2048,
+    "natural": 12598
+  },
+  "blender_inputs": {
+    "heightmap": "dem/terrarium_monday_10m_utm21j.tif",
+    "albedo": "analysis/rgb_truecolor_utm21j.tif",
+    "hillshades": [
+      "analysis/hillshade_10m_az315_sunNW.png",
+      "analysis/hillshade_10m_az045_sunNE.png",
+      "analysis/hillshade_10m_az180_sunS.png",
+      "analysis/hillshade_10m_az225_sunSW.png",
+      "analysis/hillshade_10m_az090_sunE_low45.png"
+    ],
+    "slope": "analysis/slope_10m.png",
+    "ndvi": "analysis/ndvi_10m.png"
+  },
+  "resolution": {
+    "10m_utm21j": {
+      "shape": [
+        610,
+        613
+      ],
+      "size_mb": 1.09
+    },
+    "2_5m_utm21j": {
+      "shape": [
+        2440,
+        2452
+      ],
+      "size_mb": 20.63
+    },
+    "rgb_4x": {
+      "path": "analysis/rgb_truecolor_2_5m.png",
+      "size_mb": 7.16
+    }
+  },
+  "cascade_center": {
+    "wgs84": [
+      -25.561944,
+      -54.631389
+    ],
+    "utm21j": [
+      737960.125437041,
+      7170703.497265677
+    ],
+    "elev_terrarium_10m": 119.82777404785156,
+    "ndvi": "see analysis/ndvi_10m.png",
+    "cliff_rows": [
+      0,
+      609
+    ],
+    "max_slope_in_aoi_deg": 87.54691314697266
+  }
+}
