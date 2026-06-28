@@ -1,6 +1,6 @@
 # Client — La Quebrada Viva
 
-> Source of truth for *who* the project is for. Last updated: 2026-06-17.
+> Source of truth for *who* the project is for. Last updated: 2026-06-28 (T+1, post-escritura).
 
 ## Client (legal owner of the land and the buyer we work for)
 
@@ -53,7 +53,7 @@ Bienes gananciales — both signatures required. Esposa consintió en el acto.
 
 **Lead on this project: Ivan Weiss Van Der Pol** (per `MASTER_BRIEF.md:4`). The "Owner" line there is misleading — Ivan is **not** the legal owner of the land. Wesley is. The line should be read as "project lead / architect of the digital deliverables", not "landowner."
 
-## What we're doing right now (per Ivan, 2026-06-10 — still in force at T-10)
+## What we're doing right now (per Ivan, 2026-06-10 — still in force at T+1, scope re-anchored)
 
 > "for now we are modeling the place in 3d so we can build example houses in blender so the client can use as concept art etc"
 
@@ -91,11 +91,12 @@ See [`docs/contract_summary.md`](./contract_summary.md) for the parcel-level bre
 |---|---|---|
 | 2026-04-28 | Boleto privado signed | ✅ done |
 | 2026-04-28 | Seña G. 250.3M deposited with Escribana Peña | ✅ done |
-| 2026-06-27 | **Escritura pública deadline** (60 días corridos) | ⚠ **T-10 from today (2026-06-17)** |
-| 27-Jun onward | If sellers default: penalty G. 500.600.000 to buyers | conditional |
-| 27-Jun onward | If buyers default: forfeit seña to sellers (less notary costs) | conditional |
+| 2026-06-27 | **Escritura pública signed** (60 días corridos cumplidos) | ✅ **signed at Peña Ros, T0** — today is T+1 (2026-06-28) |
+| 27-Jun onward | Cl. NOVENA penalty windows closed (neither side invoked) | ✅ moot |
+| 2026-07-27 | Anexo I (technical descriptions per finca) — Escribana Peña follow-up | ⏳ T+30 chase |
+| 2026-07-27 → 2026-08-27 | Wesley's on-site photo intake window — gates external outreach | ⏳ pending |
 
-The closing deadline is the binding date for everything else. If the land doesn't close, the concept art is for a project that may not happen.
+The closing has executed. Forward gating now sits on (a) Anexo I arrival from Escribana Peña, (b) Wesley's on-site photos which will re-anchor satellite-derived claims before any vendor / Awasi / San Bernardino contact.
 
 ## Documents for client work
 
@@ -105,12 +106,19 @@ The closing deadline is the binding date for everything else. If the land doesn'
 - **Design brief**: [`docs/MASTER_BRIEF.md`](./MASTER_BRIEF.md) (zones, climate, flora, 10 rules)
 - **Render manifest**: [`STATUS.md`](../STATUS.md) (what's delivered, what's pending)
 
-## Open items before 27 June (chase items, not open questions for the client)
+## Open items at T+1 (post-signing chase items)
 
-1. Sellers' entrega of: títulos de propiedad, planos, informes periciales, comprobantes de pago de impuestos inmobiliarios (Cl. OCTAVA ii) — **due within 5 business days of 2026-04-28 ≈ 2026-05-06**; should already be in hand.
-2. Anexo I — the technical descriptions of each finca.
-3. Confirmación con Escribana Peña de que retendrá y distribuirá los fondos conforme a Cl. CUARTA.
-4. Designación formal de la escribana para la escritura (Cl. SEXTA — buyers designan, presumably Peña given the seña deposit).
-5. Verificación de **certificados catastrales-registrales** de cada finca (libre de gravamen, inhibiciones, embargos).
+Pre-signing chase items 1, 3, 4, and 5 closed cleanly by signing (sellers entregaron, Peña distribuyó fondos per Cl. CUARTA, designación formal cumplida, certificados catastrales-registrales verificados). One item carries over:
 
-For the T-7 / T-5 / T-2 / signing-day / T+30 day-by-day action sequence with a risk register, see [`CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md).
+1. ✅ Sellers' entrega of títulos / planos / informes / impuestos (Cl. OCTAVA ii) — entregado.
+2. ⏳ **Anexo I — technical descriptions of each finca** — still pending from Escribana Peña Ros. T+30 chase. Blocks padrón triple resolution (currently 30.35 ha ≈ candidate A or B, deferred in `docs/post_escritura_site_knowledge.md`).
+3. ✅ Peña retención / distribución de fondos (Cl. CUARTA) — ejecutado.
+4. ✅ Designación formal de escribana (Cl. SEXTA) — Peña confirmada.
+5. ✅ Certificados catastrales-registrales — verificados libre de gravamen previos al acto.
+
+Active T+1 chase items (added 2026-06-28):
+
+6. ⏳ **Wesley's on-site photos** — gates all external outreach (vendors, Awasi, San Bernardino, architects, drone). Per intake checklist at `docs/site_data/client_photos/2026-06_post_escritura/index.md`.
+7. ⏳ **MCP socket revival** — dead since pre-escritura (see project memory). Required before any in-Blender Phase-1 cabin siting work resumes.
+
+For the T-7 / T-5 / T-2 / signing-day / T+30 day-by-day action sequence with a risk register, see [`CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md). For T+1 forward roadmap and Awasi / San Bernardino partnership posture, see [`DECISIONS.md`](./DECISIONS.md) entries dated 2026-06-28.
