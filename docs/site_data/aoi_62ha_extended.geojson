@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "name": "la_quebrada_viva_aoi_62ha_extended",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "metadata": {
+    "title": "La Quebrada Viva — extended AOI bbox (covers Wesley's polygon, post-escritura correction)",
+    "site_name": "La Quebrada Viva",
+    "location": "Escobar, Departamento de Paraguarí, Paraguay",
+    "padrones": ["838", "1827", "840", "1096", "629", "454"],
+    "parcel_hectares_legal_total": 62.57,
+    "parcel_hectares_wesley_polygon": 30.9,
+    "bbox": {"west": -57.045, "south": -25.645, "east": -57.015, "north": -25.595},
+    "side_length_km_ew": 3.3,
+    "side_length_km_ns": 5.5,
+    "bbox_hectares": 1820,
+    "license": "CC0-1.0 (this AOI file).",
+    "notes": "Extends original aoi_62ha.geojson (north edge -25.615) by 2.2 km northward to -25.595, so the bbox actually CONTAINS Wesley's hand-drawn polygon (polygon north edge -25.60506). The original AOI bbox cut off ~364 m of the actual parcel — every DEM, Sentinel-2 fetch, and GEDI search done against the old bbox needs to be re-run if the buildable northern cluster is in scope. East/west/south edges unchanged.",
+    "supersedes": "aoi_62ha.geojson (kept for byte-identity of frozen escritura deliverables at commit 85e86aa)",
+    "polygon_source": "escobar_property_polygon.geojson",
+    "created": "2026-06-28",
+    "created_by": "Claude Code session 588baf01 (post-escritura day +1)",
+    "schema_version": "1.1"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aoi_62ha_extended_bbox",
+        "role": "acquisition_bbox_v2",
+        "covers_polygon": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-57.045, -25.645],
+          [-57.015, -25.645],
+          [-57.015, -25.595],
+          [-57.045, -25.595],
+          [-57.045, -25.645]
+        ]]
+      }
+    }
+  ]
+}

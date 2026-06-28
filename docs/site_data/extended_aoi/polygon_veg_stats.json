@@ -1,0 +1,68 @@
+{
+  "source_tile": "S2B_21JVM_20260512_0_L2A",
+  "polygon_path": "docs/site_data/escobar_property_polygon.geojson",
+  "polygon_area_ha_metadata": 30.915,
+  "src_crs": "EPSG:32721",
+  "pixel_size_m": [
+    10.0,
+    10.0
+  ],
+  "window_shape": [
+    86,
+    104
+  ],
+  "n_pixels_inside": 3098,
+  "n_pixels_inside_nan": 0,
+  "approx_area_ha_from_pixels": 30.98,
+  "reflectance_transform": {
+    "scale": 0.0001,
+    "offset_applied": 0.0,
+    "note": "Scale-only DN\u2192reflectance to stay consistent with make_ndvi_mask.py and the headline numbers in post_escritura_site_knowledge.md. The S2 metadata declares offset=-0.1 but applying it saturates dense-canopy NDVI at 1.0; the offset is a harmonization transform, not an analytical correction."
+  },
+  "ndvi": {
+    "mean": 0.8880262970924377,
+    "median": 0.9176191687583923,
+    "p05": 0.721845269203186,
+    "p25": 0.8832831978797913,
+    "p75": 0.9315738081932068,
+    "p95": 0.9454020261764526,
+    "frac_gt_0p6": 0.9790187217559716,
+    "frac_gt_0p8": 0.8963847643641059,
+    "frac_lt_0p2": 0.0
+  },
+  "ndwi": {
+    "mean": -0.8113505244255066,
+    "median": -0.8283449411392212,
+    "p05": -0.8684126138687134,
+    "p95": -0.6917416453361511,
+    "frac_gt_0": 0.0,
+    "frac_gt_0p2": 0.0
+  },
+  "published_reconciliation": {
+    "ndvi_median": {
+      "published": 0.917,
+      "derived": 0.9176191687583923,
+      "delta": 0.0006191687583922967
+    },
+    "ndvi_p25": {
+      "published": 0.89,
+      "derived": 0.8832831978797913,
+      "delta": -0.0067168021202087536
+    },
+    "ndvi_p75": {
+      "published": 0.937,
+      "derived": 0.9315738081932068,
+      "delta": -0.005426191806793268
+    },
+    "ndvi_frac_gt_0p6": {
+      "published": 0.974,
+      "derived": 0.9790187217559716,
+      "delta": 0.005018721755971622
+    },
+    "ndwi_frac_gt_0": {
+      "published": 0.0,
+      "derived": 0.0,
+      "delta": 0.0
+    }
+  }
+}
