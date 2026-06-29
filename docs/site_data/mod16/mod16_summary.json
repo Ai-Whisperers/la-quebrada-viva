@@ -1,0 +1,226 @@
+{
+  "source": "MOD16A2.061 (MODIS Terra/Aqua Combined ET/PET 8-day 500 m)",
+  "provider": "NASA LP DAAC via Earthdata Cloud",
+  "collection_id": "C2565788905-LPCLOUD (LP DAAC v6.1)",
+  "tile": "h12v11 (MODIS sinusoidal)",
+  "year_from": 2015,
+  "year_to": 2024,
+  "granules_total": 184,
+  "granules_used": 184,
+  "aoi_bbox_lonlat": [
+    -57.085499999999996,
+    -25.6573,
+    -56.9855,
+    -25.557299999999998
+  ],
+  "aoi_window_pixels": [
+    1332,
+    2039,
+    27,
+    34
+  ],
+  "points": [
+    {
+      "name": "centroid",
+      "lon": -57.0355,
+      "lat": -25.6073,
+      "row": 1346,
+      "col": 2056
+    },
+    {
+      "name": "corner_NE",
+      "lon": -57.0151,
+      "lat": -25.6149,
+      "row": 1348,
+      "col": 2061
+    },
+    {
+      "name": "corner_NW",
+      "lon": -57.0451,
+      "lat": -25.6149,
+      "row": 1348,
+      "col": 2055
+    },
+    {
+      "name": "corner_SE",
+      "lon": -57.0151,
+      "lat": -25.6449,
+      "row": 1355,
+      "col": 2064
+    },
+    {
+      "name": "corner_SW",
+      "lon": -57.0451,
+      "lat": -25.6449,
+      "row": 1355,
+      "col": 2058
+    },
+    {
+      "name": "wesley_pin",
+      "lon": -57.03365675409436,
+      "lat": -25.61138883666841,
+      "row": 1347,
+      "col": 2057
+    }
+  ],
+  "bands": {
+    "ET": {
+      "sds": "ET_500m",
+      "scale": 0.1,
+      "unit": "mm/8day",
+      "fill_value": 32767,
+      "valid_max_raw": 32700
+    },
+    "PET": {
+      "sds": "PET_500m",
+      "scale": 0.1,
+      "unit": "mm/8day",
+      "fill_value": 32767,
+      "valid_max_raw": 32700
+    },
+    "LE": {
+      "sds": "LE_500m",
+      "scale": 10000,
+      "unit": "J/m2/day",
+      "fill_value": 32767,
+      "valid_max_raw": 32700
+    },
+    "PLE": {
+      "sds": "PLE_500m",
+      "scale": 10000,
+      "unit": "J/m2/day",
+      "fill_value": 32767,
+      "valid_max_raw": 32700
+    }
+  },
+  "annual_aoi": [
+    {
+      "year": 2021,
+      "AOI_ET_mean_mm/8day": 24.1958,
+      "AOI_ET_annual_mm": 1107.71,
+      "AOI_PET_mean_mm/8day": 43.5663,
+      "AOI_PET_annual_mm": 1994.51,
+      "AOI_LE_mean_J/m2/day": 7390630.7881,
+      "AOI_PLE_mean_J/m2/day": 13460643.2817,
+      "AOI_ET_over_PET": 0.5554
+    },
+    {
+      "year": 2022,
+      "AOI_ET_mean_mm/8day": 19.5225,
+      "AOI_ET_annual_mm": 893.76,
+      "AOI_PET_mean_mm/8day": 43.0326,
+      "AOI_PET_annual_mm": 1970.07,
+      "AOI_LE_mean_J/m2/day": 6012853.9287,
+      "AOI_PLE_mean_J/m2/day": 13285587.2059,
+      "AOI_ET_over_PET": 0.4537
+    },
+    {
+      "year": 2023,
+      "AOI_ET_mean_mm/8day": 25.3977,
+      "AOI_ET_annual_mm": 1162.73,
+      "AOI_PET_mean_mm/8day": 42.3311,
+      "AOI_PET_annual_mm": 1937.96,
+      "AOI_LE_mean_J/m2/day": 7859336.5138,
+      "AOI_PLE_mean_J/m2/day": 13053070.956,
+      "AOI_ET_over_PET": 0.6
+    },
+    {
+      "year": 2024,
+      "AOI_ET_mean_mm/8day": 26.22,
+      "AOI_ET_annual_mm": 1200.38,
+      "AOI_PET_mean_mm/8day": 43.5728,
+      "AOI_PET_annual_mm": 1994.8,
+      "AOI_LE_mean_J/m2/day": 8061908.5988,
+      "AOI_PLE_mean_J/m2/day": 13388803.1709,
+      "AOI_ET_over_PET": 0.6018
+    }
+  ],
+  "annual_per_point": [
+    {
+      "year": 2021,
+      "centroid_ET_mm": 1298.4,
+      "centroid_PET_mm": 2060.2,
+      "centroid_ET_over_PET": 0.6302,
+      "corner_NE_ET_mm": 1369.3,
+      "corner_NE_PET_mm": 1934.5,
+      "corner_NE_ET_over_PET": 0.7078,
+      "corner_NW_ET_mm": 1287.0,
+      "corner_NW_PET_mm": 2052.6,
+      "corner_NW_ET_over_PET": 0.627,
+      "corner_SE_ET_mm": 980.2,
+      "corner_SE_PET_mm": 1976.5,
+      "corner_SE_ET_over_PET": 0.4959,
+      "corner_SW_ET_mm": 910.9,
+      "corner_SW_PET_mm": 1980.2,
+      "corner_SW_ET_over_PET": 0.46,
+      "wesley_pin_ET_mm": 1363.8,
+      "wesley_pin_PET_mm": 1915.5,
+      "wesley_pin_ET_over_PET": 0.712
+    },
+    {
+      "year": 2022,
+      "centroid_ET_mm": 1143.3,
+      "centroid_PET_mm": 2030.5,
+      "centroid_ET_over_PET": 0.5631,
+      "corner_NE_ET_mm": 1202.5,
+      "corner_NE_PET_mm": 1915.2,
+      "corner_NE_ET_over_PET": 0.6279,
+      "corner_NW_ET_mm": 1010.0,
+      "corner_NW_PET_mm": 2010.0,
+      "corner_NW_ET_over_PET": 0.5025,
+      "corner_SE_ET_mm": 812.9,
+      "corner_SE_PET_mm": 1978.2,
+      "corner_SE_ET_over_PET": 0.4109,
+      "corner_SW_ET_mm": 697.4,
+      "corner_SW_PET_mm": 1981.4,
+      "corner_SW_ET_over_PET": 0.352,
+      "wesley_pin_ET_mm": 1215.3,
+      "wesley_pin_PET_mm": 1900.3,
+      "wesley_pin_ET_over_PET": 0.6395
+    },
+    {
+      "year": 2023,
+      "centroid_ET_mm": 1346.3,
+      "centroid_PET_mm": 2050.8,
+      "centroid_ET_over_PET": 0.6565,
+      "corner_NE_ET_mm": 1369.2,
+      "corner_NE_PET_mm": 1875.9,
+      "corner_NE_ET_over_PET": 0.7299,
+      "corner_NW_ET_mm": 1262.9,
+      "corner_NW_PET_mm": 2022.6,
+      "corner_NW_ET_over_PET": 0.6244,
+      "corner_SE_ET_mm": 1160.3,
+      "corner_SE_PET_mm": 1931.4,
+      "corner_SE_ET_over_PET": 0.6008,
+      "corner_SW_ET_mm": 981.0,
+      "corner_SW_PET_mm": 1883.0,
+      "corner_SW_ET_over_PET": 0.521,
+      "wesley_pin_ET_mm": 1358.9,
+      "wesley_pin_PET_mm": 1861.3,
+      "wesley_pin_ET_over_PET": 0.7301
+    },
+    {
+      "year": 2024,
+      "centroid_ET_mm": 1472.5,
+      "centroid_PET_mm": 2101.3,
+      "centroid_ET_over_PET": 0.7008,
+      "corner_NE_ET_mm": 1452.3,
+      "corner_NE_PET_mm": 1943.9,
+      "corner_NE_ET_over_PET": 0.7471,
+      "corner_NW_ET_mm": 1309.8,
+      "corner_NW_PET_mm": 2051.8,
+      "corner_NW_ET_over_PET": 0.6384,
+      "corner_SE_ET_mm": 1174.3,
+      "corner_SE_PET_mm": 1988.0,
+      "corner_SE_ET_over_PET": 0.5907,
+      "corner_SW_ET_mm": 982.3,
+      "corner_SW_PET_mm": 1964.1,
+      "corner_SW_ET_over_PET": 0.5001,
+      "wesley_pin_ET_mm": 1437.8,
+      "wesley_pin_PET_mm": 1924.7,
+      "wesley_pin_ET_over_PET": 0.747
+    }
+  ],
+  "citation": "Running S., Mu Q., Zhao M. (2021). MOD16A2 v6.1 \u2014 MODIS/Terra Net Evapotranspiration 8-Day L4 Global 500m SIN Grid. NASA LP DAAC. https://doi.org/10.5067/MODIS/MOD16A2.061",
+  "license": "Public domain (NASA)"
+}
