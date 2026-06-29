@@ -86,6 +86,13 @@ docs/2026-*_*.pdf
 docs/site_data/sentinel2/*.tif
 docs/site_data/sentinel2/**/*.tif
 
+# Regenerable Sentinel-1 RTC gamma0 GeoTIFFs (per-scene VV/VH, ~10-30 MB each
+# at 302x334 px). Re-fetch via `python3 scripts/phase0_sentinel1_sar_batch.py`
+# against Microsoft Planetary Computer's `sentinel-1-rtc`. Quicklook + CSV +
+# summary + per-file .meta.json stay tracked.
+docs/site_data/sentinel1/*.tif
+docs/site_data/sentinel1/**/*.tif
+
 # Regenerable CHIRPS v2.0 monthly rainfall rasters. _cache/ is the global
 # 0.05° GeoTIFFs straight from UCSB (~14 GB, 2005-2025). tiles/ is the
 # parcel-AOI clip per month (~4 KB x 252 = 1 MB, but still binary churn).
