@@ -1,0 +1,160 @@
+{
+  "source": "Tolan et al. 2024 \u2014 Meta High-Resolution Canopy Height 1 m (EPSG:4326 10\u00b0 resampled)",
+  "bucket": "dataforgood-fb-data/forests/v1/alsgedi_global_v6_float_epsg4326_v3_10deg",
+  "tile": "meta_chm_lat=-20.0_lon=-60.0",
+  "aoi_bounds": [
+    -57.085499999999996,
+    -25.6573,
+    -56.9855,
+    -25.557299999999998
+  ],
+  "buffer_deg": 0.05,
+  "stats": [
+    "avg",
+    "median",
+    "p95",
+    "cover",
+    "cover5m",
+    "stdev",
+    "count"
+  ],
+  "aoi_summary": {
+    "avg": {
+      "unit": "m",
+      "mean": 3.459,
+      "median": 1.22,
+      "p95": 13.01,
+      "max": 24.52,
+      "min": 0.0,
+      "pixels": 160000
+    },
+    "median": {
+      "unit": "m",
+      "mean": 3.297,
+      "median": 0.0,
+      "p95": 13.0,
+      "max": 25.0,
+      "min": 0.0,
+      "pixels": 160000
+    },
+    "p95": {
+      "unit": "m",
+      "mean": 5.69,
+      "median": 5.0,
+      "p95": 16.0,
+      "max": 31.0,
+      "min": 0.0,
+      "pixels": 160000
+    },
+    "cover": {
+      "unit": "%",
+      "mean": 42.356,
+      "median": 27.9,
+      "p95": 100.0,
+      "max": 100.0,
+      "min": 0.0,
+      "pixels": 160000
+    },
+    "cover5m": {
+      "unit": "%",
+      "mean": 28.911,
+      "median": 2.7,
+      "p95": 100.0,
+      "max": 100.0,
+      "min": 0.0,
+      "pixels": 160000
+    },
+    "stdev": {
+      "unit": "m",
+      "mean": 1.331,
+      "median": 1.09,
+      "p95": 3.78,
+      "max": 11.47,
+      "min": 0.0,
+      "pixels": 160000
+    },
+    "count": {
+      "unit": "n",
+      "mean": 0.982,
+      "median": 1.0,
+      "p95": 3.0,
+      "max": 9.0,
+      "min": 0.0,
+      "pixels": 160000
+    }
+  },
+  "points": [
+    {
+      "point": "centroid",
+      "lon": -57.0355,
+      "lat": -25.6073,
+      "avg": 10.909,
+      "median": 11.222,
+      "p95": 13.556,
+      "cover": 97.689,
+      "cover5m": 95.544,
+      "stdev": 1.851,
+      "count": 1.0
+    },
+    {
+      "point": "corner_NE",
+      "lon": -57.0151,
+      "lat": -25.6149,
+      "avg": 12.682,
+      "median": 12.556,
+      "p95": 15.0,
+      "cover": 100.0,
+      "cover5m": 100.0,
+      "stdev": 1.493,
+      "count": 1.0
+    },
+    {
+      "point": "corner_NW",
+      "lon": -57.0451,
+      "lat": -25.6149,
+      "avg": 3.724,
+      "median": 3.889,
+      "p95": 5.667,
+      "cover": 51.444,
+      "cover5m": 41.267,
+      "stdev": 1.357,
+      "count": 1.222
+    },
+    {
+      "point": "corner_SE",
+      "lon": -57.0151,
+      "lat": -25.6449,
+      "avg": 3.411,
+      "median": 2.5,
+      "p95": 8.889,
+      "cover": 41.667,
+      "cover5m": 27.256,
+      "stdev": 3.236,
+      "count": 2.333
+    },
+    {
+      "point": "corner_SW",
+      "lon": -57.0451,
+      "lat": -25.6449,
+      "avg": 0.268,
+      "median": 0.0,
+      "p95": 1.222,
+      "cover": 5.211,
+      "cover5m": 1.822,
+      "stdev": 0.432,
+      "count": 0.333
+    },
+    {
+      "point": "wesley_pin",
+      "lon": -57.03365675409436,
+      "lat": -25.61138883666841,
+      "avg": 2.358,
+      "median": 2.278,
+      "p95": 6.444,
+      "cover": 35.211,
+      "cover5m": 20.289,
+      "stdev": 2.201,
+      "count": 1.556
+    }
+  ]
+}
