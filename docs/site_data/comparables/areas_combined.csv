@@ -1,0 +1,6 @@
+source,name,iso3,designation,iucn_category,governance,distance_km,reported_area_km2,wdpa_id,osm_id,lon,lat
+osm_overpass,Monumento Natural Cerro Chororî,,nature_reserve,,,49.261,,,way/605280651,-57.4030501,-25.3138051
+osm_overpass,Monumento Natural Cerro Koi,,nature_reserve,,,48.133,,,way/605280682,-57.398585,-25.3245968
+osm_overpass,Noche Con. Bosques Embrujados,,,,,3.727,,,way/1100731296,-57.0721784,-25.6018883
+osm_overpass,Distrito de Escobar,,,,,4.027,,,relation/14696825,-57.0358175,-25.6435188
+osm_overpass,Noche Con. Bosques Embrujados,,,,,3.727,,,relation/14763277,-57.0721784,-25.6018883
