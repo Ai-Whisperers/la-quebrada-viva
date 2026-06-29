@@ -136,3 +136,21 @@ docs/site_data/hansen_gfc/_cache/
 # https://github.com/LimaRAF/THREAT. Derived analytic outputs (master
 # checklist + ranked candidates + PY-threatened slice + summary) stay tracked.
 docs/site_data/atlantic_forest_trees/_cache/
+
+# Regenerable NEX-GDDP-CMIP6 daily NetCDFs (~244 MB each). One per
+# (model, scenario, variable, year); the puller streams each, extracts
+# the centroid pixel time series, and deletes the file. Re-fetch via
+# `python3 scripts/phase0_cmip6_nexgddp_v1.py`. Derived per-point JSON
+# + monthly climatology CSV + deltas CSV + brief stay tracked.
+docs/site_data/cmip6/_cache/
+
+# Regenerable MOD16A2.061 actual ET HDF granules (~30 MB each, ~14 GB for
+# the 10-year × 46-granule stack). Streamed-and-deleted by the puller in
+# `scripts/phase0_mod16_et_v1.py`; AOI clips + per-point CSV + JSON + brief
+# stay tracked.
+docs/site_data/mod16/_cache/
+
+# Regenerable MOD11A2.061 LST 1 km HDF granules (~5 MB each). Streamed-
+# and-deleted by the puller in `scripts/phase0_mod11_lst_v1.py`; AOI
+# clips + per-point CSV + JSON + brief stay tracked.
+docs/site_data/mod11/_cache/
