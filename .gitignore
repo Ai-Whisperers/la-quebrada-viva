@@ -104,3 +104,10 @@ docs/site_data/jrc_gsw/_cache/
 # Re-fetch via `python3 scripts/phase0_hansen_gfc_batch.py`. AOI/polygon clips
 # + quicklooks + summary stay tracked.
 docs/site_data/hansen_gfc/_cache/
+
+# Regenerable Lima et al. 2024 THREAT data tables (Appendices C/D/F + PY/AR
+# threat & endemism lists + uses + timber + hotspots, ~5.3 MB total).
+# Re-fetch via `python3 scripts/phase0_atlantic_tree_db_batch.py` from
+# https://github.com/LimaRAF/THREAT. Derived analytic outputs (master
+# checklist + ranked candidates + PY-threatened slice + summary) stay tracked.
+docs/site_data/atlantic_forest_trees/_cache/
