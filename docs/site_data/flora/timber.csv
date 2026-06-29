@@ -1,0 +1,235 @@
+binomial,family,life_form,lqv_vernacular,lqv_25km_occurrences,seen_within_5km,n_obs_5km,months_seen,py_threat_category,ar_threat_category,endemism_group,uses,is_timber,lqv_priority_score
+Copaifera langsdorffii,Fabaceae,tree,Brazilian diesel tree,39,,0,,,Endangered,widespread,fuel | medicinal | poison | resins_gums | timber,yes,6
+Parapiptadenia rigida,Fabaceae,tree,Anchico,34,,0,,,,widespread,timber,yes,6
+Luehea divaricata,Malvaceae,tree,Azota caballos,31,y,1,Feb,,,widespread,timber,yes,5
+Nectandra megapotamica,Lauraceae,tree,canela,28,,0,,,,widespread,timber,yes,6
+Protium heptaphyllum,Burseraceae,tree,Caraño,28,,0,,,,widespread,timber,yes,5
+Casearia gossypiosperma,Salicaceae,tree,Cambroé,27,,0,,,,widespread,timber,yes,5
+Cordia americana,Boraginaceae,tree,guayaibí,27,,0,,,,widespread,timber,yes,5
+Peltophorum dubium,Fabaceae,tree,caña fístola,26,,0,,,,widespread,timber,yes,6
+Alchornea triplinervia,Euphorbiaceae,tree,Gakamenewe,21,,0,,,,widespread,timber,yes,5
+Myrcianthes pungens,Myrtaceae,tree,guaviyú,20,,0,,,,widespread,timber,yes,6
+Ocotea puberula,Lauraceae,tree,Laurel Guaica,18,,0,,,,widespread,timber,yes,6
+Anadenanthera colubrina,Fabaceae,tree,Red Angico,2,,0,,,,widespread,timber,yes,6
+Pterogyne nitens,Fabaceae,tree,,2,,0,,,,widespread,fuel | ornamental | timber,yes,6
+Balfourodendron riedelianum,Rutaceae,tree,marfim,1,,0,,en_peligro,,widespread,timber,yes,7
+Cordia trichotoma,Boraginaceae,tree,,1,,0,,en_peligro,Indeterminada (maybe LC),widespread,timber,yes,7
+Handroanthus impetiginosus,Bignoniaceae,tree,pink ipê,1,,0,,,,widespread,medicinal | ornamental | timber,yes,6
+Ceiba speciosa,Malvaceae,tree,Silk floss tree,1,,0,,,,widespread,essential_oils | fibres | medicinal | ornamental | timber,yes,5
+Sapium haematospermum,Euphorbiaceae,tree,,1,,0,,,,widespread,timber,yes,5
+Zanthoxylum rhoifolium,Rutaceae,tree,Tambataru,1,,0,,,,widespread,timber,yes,5
+Ateleia glazioveana,Fabaceae,tree,,,,0,,en_peligro,,near_endemic,timber,yes,7
+Araucaria angustifolia,Araucariaceae,tree,,,,0,,en_peligro,Endangered,pure_endemic,food | medicinal | ornamental | timber,yes,6
+Amburana cearensis,Fabaceae,tree,,,,0,,en_peligro,,widespread,timber,yes,5
+Apuleia leiocarpa,Fabaceae,tree,,,,0,,amenazada,,widespread,timber,yes,5
+Arapatiella psilophylla,Fabaceae,tree,,,,0,,,,pure_endemic,timber,yes,5
+Cedrela angustifolia,Meliaceae,tree,,,,0,,en_peligro,Indeterminada,widespread,timber,yes,5
+Cedrela fissilis,Meliaceae,tree,,,,0,,en_peligro,,widespread,timber,yes,5
+Centrolobium robustum,Fabaceae,tree,,,,0,,,,near_endemic,timber,yes,5
+Dalbergia nigra,Fabaceae,tree,,,,0,,,,near_endemic,timber,yes,5
+Euterpe edulis,Arecaceae,tree,,,,0,,en_peligro,Endangered,widespread,food,yes,5
+Melanoxylon brauna,Fabaceae,tree,,,,0,,,,near_endemic,timber,yes,5
+Mezilaurus navalium,Lauraceae,tree,,,,0,,,,pure_endemic,timber,yes,5
+Mimosa scabrella,Fabaceae,tree,,,,0,,,,near_endemic,fences | fibres | fuel | medicinal | ornamental | timber,yes,5
+Myrocarpus fastigiatus,Fabaceae,tree,,,,0,,,,near_endemic,timber,yes,5
+Myrocarpus frondosus,Fabaceae,tree,,,,0,,,Endangered (maybe Vulnerable),near_endemic,timber,yes,5
+Myroxylon peruiferum,Fabaceae,tree,,,,0,,en_peligro,Vulnerable,widespread,timber,yes,5
+Ocotea porosa,Lauraceae,tree,,,,0,,,,near_endemic,timber,yes,5
+Paratecoma peroba,Bignoniaceae,tree,,,,0,,,,pure_endemic,timber,yes,5
+Paubrasilia echinata,Fabaceae,tree,,,,0,,,,near_endemic,timber,yes,5
+Piptadenia paniculata,Fabaceae,tree,,,,0,,,,near_endemic,timber,yes,5
+Tachigali pilgeriana,Fabaceae,tree,,,,0,,,,pure_endemic,timber,yes,5
+Vataireopsis araroba,Fabaceae,tree,,,,0,,,,pure_endemic,timber,yes,5
+Zeyheria tuberculosa,Bignoniaceae,tree,,,,0,,en_peligro,,widespread,timber,yes,5
+Aspidosperma polyneuron,Apocynaceae,tree,,,,0,,en_peligro,Endangered,widespread,timber,yes,4
+Calophyllum brasiliense,Calophyllaceae,tree,,,,0,,en_peligro,,widespread,fodder | lipids | medicinal | ornamental | timber,yes,4
+Cariniana estrellensis,Lecythidaceae,tree,,,,0,,en_peligro,,widespread,timber,yes,4
+Cariniana legalis,Lecythidaceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Gallesia integrifolia,Phytolaccaceae,tree,,,,0,,,,pure_endemic,timber,yes,4
+Joannesia princeps,Euphorbiaceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Miconia cinnamomifolia,Melastomataceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Piptocarpha angustifolia,Asteraceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Terminalia januariensis,Combretaceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Vernonanthura discolor,Asteraceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Virola bicuhyba,Myristicaceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Virola gardneri,Myristicaceae,tree,,,,0,,,,near_endemic,timber,yes,4
+Vochysia bifalcata,Vochysiaceae,tree,,,,0,,,,pure_endemic,timber,yes,4
+Albizia pedicellaris,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Andira inermis,Fabaceae,tree,,,,0,,,,occasional,fodder | food | fuel | medicinal | ornamental | poison | timber,yes,3
+Andira surinamensis,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Aniba canelilla,Lauraceae,tree,,,,0,,,,widespread,timber,yes,3
+Bauhinia cheilantha,Fabaceae,tree,,,,0,,,,occasional,fodder | timber,yes,3
+Bowdichia virgilioides,Fabaceae,tree,,,,0,,,,widespread,ornamental | timber,yes,3
+Brosimum alicastrum,Moraceae,tree,,,,0,,,,occasional,fodder | food | timber,yes,3
+Brosimum gaudichaudii,Moraceae,tree,,,,0,,,,widespread,medicinal | timber,yes,3
+Brosimum guianense,Moraceae,tree,,,,0,,,,widespread,timber,yes,3
+Brosimum parinarioides,Moraceae,tree,,,,0,,,,occasional,timber,yes,3
+Brosimum rubescens,Moraceae,tree,,,,0,,,,occasional,timber,yes,3
+Cabralea canjerana,Meliaceae,tree,,,,0,,,,widespread,timber,yes,3
+Calycophyllum multiflorum,Rubiaceae,tree,,,,0,,,Vulnerable,widespread,timber,yes,3
+Calycophyllum spruceanum,Rubiaceae,tree,,,,0,,,,occasional,timber,yes,3
+Cassia fastuosa,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Cassia grandis,Fabaceae,tree,,,,0,,,,widespread,fences | fodder | food | fuel | medicinal | ornamental | resins_gums | timber,yes,3
+Cedrela odorata,Meliaceae,tree,,,,0,,,,widespread,fibres | fuel | medicinal | ornamental | timber,yes,3
+Centrolobium tomentosum,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Chamaecrista apoucouita,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Chrysophyllum gonocarpum,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Chrysophyllum lucentifolium,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Chrysophyllum pomiferum,Sapotaceae,tree,,,,0,,,,occasional,timber,yes,3
+Clarisia racemosa,Moraceae,tree,,,,0,,,,widespread,timber,yes,3
+Copaifera duckei,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Copaifera reticulata,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Coutarea hexandra,Rubiaceae,tree,,,,0,,,,widespread,timber,yes,3
+Dalbergia cearensis,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Dalbergia decipularis,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Dalbergia ecastaphyllum,Fabaceae,shrub,,,,0,,,,widespread,timber,yes,3
+Dalbergia frutescens,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Dialium guianense,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Dimorphandra gardneriana,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Diploon cuspidatum,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Diplotropis purpurea,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Dipteryx alata,Fabaceae,tree,,,,0,,,,occasional,food | timber,yes,3
+Dipteryx odorata,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Ecclinusa guianensis,Sapotaceae,tree,,,,0,,,,occasional,timber,yes,3
+Enterolobium contortisiliquum,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Enterolobium maximum,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Enterolobium schomburgkii,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Enterolobium timbouva,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Erythrina velutina,Fabaceae,tree,,,,0,,,,widespread,ornamental | timber,yes,3
+Ficus insipida,Moraceae,tree,,,,0,,,,widespread,timber,yes,3
+Ficus mathewsii,Moraceae,tree,,,,0,,,,occasional,timber,yes,3
+Ficus nymphaeifolia,Moraceae,tree,,,,0,,,,widespread,timber,yes,3
+Ficus pertusa,Moraceae,tree,,,,0,,,,occasional,timber,yes,3
+Ficus trigona,Moraceae,tree,,,,0,,,,widespread,timber,yes,3
+Genipa americana,Rubiaceae,tree,,,,0,,,,occasional,fences | fibres | fodder | food | fuel | medicinal | ornamental | timber,yes,3
+Goniorrhachis marginata,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Guarea guidonia,Meliaceae,tree,,,,0,,,,widespread,timber,yes,3
+Handroanthus heptaphyllus,Bignoniaceae,tree,,,,0,,,,widespread,timber,yes,3
+Handroanthus ochraceus,Bignoniaceae,tree,,,,0,,,,widespread,timber,yes,3
+Handroanthus serratifolius,Bignoniaceae,tree,,,,0,,,,widespread,ornamental | timber,yes,3
+Handroanthus umbellatus,Bignoniaceae,tree,,,,0,,,,widespread,timber,yes,3
+Helicostylis tomentosa,Moraceae,tree,,,,0,,,,widespread,timber,yes,3
+Hymenaea courbaril,Fabaceae,tree,,,,0,,,,widespread,fodder | food | medicinal | ornamental | resins_gums | timber,yes,3
+Hymenaea parvifolia,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Hymenolobium nitidum,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Inga alba,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Inga pezizifera,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Inga vera,Fabaceae,tree,,,,0,,,,widespread,food | fuel | medicinal | timber,yes,3
+Jacaranda caroba,Bignoniaceae,shrub,,,,0,,,,widespread,timber,yes,3
+Jacaranda cuspidifolia,Bignoniaceae,tree,,,,0,,,,widespread,ornamental | timber,yes,3
+Jacaranda micrantha,Bignoniaceae,tree,,,,0,,,,widespread,timber,yes,3
+Jacaranda puberula,Bignoniaceae,tree,,,,0,,,,widespread,ornamental | timber,yes,3
+Libidibia ferrea,Fabaceae,tree,,,,0,,,,widespread,fodder | ornamental | timber,yes,3
+Licaria chrysophylla,Lauraceae,tree,,,,0,,,,occasional,timber,yes,3
+Machaerium scleroxylon,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Machaerium villosum,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Maclura tinctoria,Moraceae,tree,,,,0,,,,widespread,timber,yes,3
+Manilkara bidentata,Sapotaceae,tree,,,,0,,,,occasional,rubber_latex | timber,yes,3
+Manilkara elata,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Micropholis guyanensis,Sapotaceae,tree,,,,0,,,,occasional,timber,yes,3
+Micropholis venulosa,Sapotaceae,tree,,,,0,,,,occasional,timber,yes,3
+Muellera campestris,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Myroxylon balsamum,Fabaceae,tree,,,,0,,,,occasional,alcohol | essential_oils | medicinal | ornamental | resins_gums | timber,yes,3
+Nectandra cuspidata,Lauraceae,tree,,,,0,,,,widespread,timber,yes,3
+Nectandra lanceolata,Lauraceae,tree,,,,0,,,,widespread,timber,yes,3
+Ocotea aciphylla,Lauraceae,tree,,,,0,,,,widespread,timber,yes,3
+Ocotea cymbarum,Lauraceae,tree,,,,0,,,,occasional,timber,yes,3
+Ocotea neesiana,Lauraceae,tree,,,,0,,,,occasional,timber,yes,3
+Ormosia coccinea,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Parkia gigantocarpa,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Parkia pendula,Fabaceae,tree,,,,0,,,,widespread,ornamental | timber,yes,3
+Piptadenia gonoacantha,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Plathymenia reticulata,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Pouteria caimito,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Pouteria egregia,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Pouteria guianensis,Sapotaceae,tree,,,,0,,,,occasional,timber,yes,3
+Pouteria oblanceolata,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Pterocarpus rohrii,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Schizolobium parahyba,Fabaceae,tree,,,,0,,,,widespread,food | fuel | ornamental | timber,yes,3
+Senegalia polyphylla,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Senna spectabilis,Fabaceae,tree,,,,0,,,,widespread,fences | fuel | ornamental | timber,yes,3
+Sideroxylon obtusifolium,Sapotaceae,tree,,,,0,,,,widespread,timber,yes,3
+Stryphnodendron pulcherrimum,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Sweetia fruticosa,Fabaceae,tree,,,,0,,,,widespread,timber,yes,3
+Swietenia macrophylla,Meliaceae,tree,,,,0,,,,occasional,lipids | medicinal | ornamental | resins_gums | timber,yes,3
+Tabebuia aurea,Bignoniaceae,tree,,,,0,,,,occasional,ornamental | timber,yes,3
+Tabebuia insignis,Bignoniaceae,tree,,,,0,,,,occasional,timber,yes,3
+Tachigali aurea,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Tachigali vulgaris,Fabaceae,tree,,,,0,,,,occasional,timber,yes,3
+Anacardium occidentale,Anacardiaceae,tree,,,,0,,,,widespread,alcohol | essential_oils | fibres | fodder | food | fuel | lipids | medicinal | poison | resins_gums | timber,yes,2
+Apeiba echinata,Malvaceae,tree,,,,0,,,,occasional,timber,yes,2
+Aspidosperma desmanthum,Apocynaceae,tree,,,,0,,,,occasional,timber,yes,2
+Aspidosperma dispermum,Apocynaceae,tree,,,,0,,,,widespread,timber,yes,2
+Aspidosperma macrocarpon,Apocynaceae,tree,,,,0,,,,occasional,timber,yes,2
+Aspidosperma pyrifolium,Apocynaceae,tree,,,,0,,,,occasional,timber,yes,2
+Aspidosperma tomentosum,Apocynaceae,tree,,,,0,,,,,timber,yes,2
+Astronium fraxinifolium,Anacardiaceae,tree,,,,0,,,,occasional,timber,yes,2
+Astronium graveolens,Anacardiaceae,tree,,,,0,,,,widespread,timber,yes,2
+Astronium urundeuva,,,,,,0,,,Indeterminada (maybe Vulnerable),,medicinal | timber,yes,2
+Bastardiopsis densiflora,Malvaceae,tree,,,,0,,,,widespread,timber,yes,2
+Bixa arborea,Bixaceae,tree,,,,0,,,,,timber,yes,2
+Bixa orellana,Bixaceae,tree,,,,0,,,,occasional,essential_oils | fibres | fodder | food | fuel | medicinal | ornamental | poison | resins_gums | timber,yes,2
+Byrsonima crassifolia,Malpighiaceae,tree,,,,0,,,,occasional,alcohol | fibres | food | fuel | lipids | medicinal | ornamental | poison | timber,yes,2
+Caraipa densifolia,Calophyllaceae,tree,,,,0,,,,occasional,timber,yes,2
+Ceiba pentandra,Malvaceae,tree,,,,0,,,,occasional,fences | fibres | fodder | lipids | medicinal | ornamental | timber,yes,2
+Cereus jamacaru,Cactaceae,tree,,,,0,,,,occasional,fodder | timber,yes,2
+Cnidoscolus quercifolius,Euphorbiaceae,tree,,,,0,,,,occasional,fodder | timber,yes,2
+Colubrina glandulosa,Rhamnaceae,tree,,,,0,,,,widespread,timber,yes,2
+Combretum leprosum,Combretaceae,tree,,,,0,,,,occasional,timber,yes,2
+Commiphora leptophloeos,Burseraceae,tree,,,,0,,,,occasional,timber,yes,2
+Conocarpus erectus,Combretaceae,tree,,,,0,,,,widespread,timber,yes,2
+Cordia alliodora,Boraginaceae,tree,,,,0,,,,occasional,food | medicinal | ornamental | timber,yes,2
+Cordia bicolor,Boraginaceae,tree,,,,0,,,,occasional,timber,yes,2
+Cordia oncocalyx,Boraginaceae,tree,,,,0,,,,occasional,timber,yes,2
+Cordia sagotii,Boraginaceae,tree,,,,0,,,,occasional,timber,yes,2
+Couepia robusta,Chrysobalanaceae,tree,,,,0,,,,occasional,timber,yes,2
+Couma macrocarpa,Apocynaceae,tree,,,,0,,,,occasional,timber,yes,2
+Couratari guianensis,Lecythidaceae,tree,,,,0,,,,occasional,timber,yes,2
+Couratari macrosperma,Lecythidaceae,tree,,,,0,,,,widespread,timber,yes,2
+Couroupita guianensis,Lecythidaceae,tree,,,,0,,,,widespread,food | ornamental | timber,yes,2
+Croton jacobinensis,Euphorbiaceae,tree,,,,0,,,,widespread,timber,yes,2
+Curatella americana,Dilleniaceae,tree,,,,0,,,,occasional,timber,yes,2
+Dendropanax cuneatus,Araliaceae,tree,,,,0,,,,widespread,timber,yes,2
+Dicksonia sellowiana,Dicksoniaceae,tree,,,,0,,,Endangered,widespread,fibres,yes,2
+Dodonaea viscosa,Sapindaceae,tree,,,,0,,,,widespread,medicinal | timber,yes,2
+Eriotheca globosa,Malvaceae,tree,,,,0,,,,occasional,timber,yes,2
+Guazuma ulmifolia,Malvaceae,tree,,,,0,,,Endangered,widespread,fibres | fodder | food | fuel | medicinal | timber,yes,2
+Heliocarpus popayanensis,Malvaceae,tree,,,,0,,,,,timber,yes,2
+Hevea brasiliensis,Euphorbiaceae,tree,,,,0,,,,occasional,fibres | fodder | food | fuel | lipids | poison | rubber_latex | timber,yes,2
+Humiria balsamifera,Humiriaceae,tree,,,,0,,,,widespread,timber,yes,2
+Hyeronima alchorneoides,Phyllanthaceae,tree,,,,0,,,,widespread,medicinal | timber,yes,2
+Lecythis lurida,Lecythidaceae,tree,,,,0,,,,widespread,timber,yes,2
+Lecythis pisonis,Lecythidaceae,tree,,,,0,,,,widespread,timber,yes,2
+Licania hypoleuca,Chrysobalanaceae,tree,,,,0,,,,occasional,timber,yes,2
+Magnolia ovata,Magnoliaceae,tree,,,,0,,,,widespread,timber,yes,2
+Monteverdia rigida,Celastraceae,tree,,,,0,,,,widespread,timber,yes,2
+Ochroma pyramidale,Malvaceae,tree,,,,0,,,,occasional,timber,yes,2
+Parinari excelsa,Chrysobalanaceae,tree,,,,0,,,,widespread,timber,yes,2
+Pera glabrata,Peraceae,tree,,,,0,,,,widespread,timber,yes,2
+Protium sagotianum,Burseraceae,tree,,,,0,,,,occasional,timber,yes,2
+Protium tenuifolium,Burseraceae,tree,,,,0,,,,occasional,timber,yes,2
+Prunus brasiliensis,Rosaceae,tree,,,,0,,,,occasional,timber,yes,2
+Qualea parviflora,Vochysiaceae,tree,,,,0,,,,occasional,timber,yes,2
+Rhizophora mangle,Rhizophoraceae,tree,,,,0,,,,widespread,timber,yes,2
+Roupala montana,Proteaceae,tree,,,,0,,,,widespread,timber,yes,2
+Sacoglottis guianensis,Humiriaceae,tree,,,,0,,,,occasional,timber,yes,2
+Salix humboldtiana,Salicaceae,tree,,,,0,,,,,timber,yes,2
+Sapium glandulosum,Euphorbiaceae,tree,,,,0,,,,widespread,timber,yes,2
+Savia dictyocarpa,Phyllanthaceae,tree,,,,0,,,,widespread,timber,yes,2
+Schinopsis brasiliensis,Anacardiaceae,tree,,,,0,,,,widespread,timber,yes,2
+Schinus molle,Anacardiaceae,tree,,,,0,,,,widespread,alcohol | essential_oils | fences | food | fuel | medicinal | ornamental | poison | resins_gums | rubber_latex | timber,yes,2
+Schinus terebinthifolia,Anacardiaceae,tree,,,,0,,,,widespread,essential_oils | fences | fodder | food | fuel | medicinal | ornamental | poison | resins_gums | timber,yes,2
+Simarouba amara,Simaroubaceae,tree,,,,0,,,,widespread,medicinal | timber,yes,2
+Spondias mombin,Anacardiaceae,tree,,,,0,,,,occasional,fences | fibres | fodder | food | fuel | medicinal | timber,yes,2
+Sterculia apetala,Malvaceae,tree,,,,0,,,,widespread,timber,yes,2
+Sterculia excelsa,Malvaceae,tree,,,,0,,,,widespread,timber,yes,2
+Symphonia globulifera,Clusiaceae,tree,,,,0,,,,occasional,timber,yes,2
+Tapirira guianensis,Anacardiaceae,tree,,,,0,,,,widespread,timber,yes,2
+Terminalia argentea,Combretaceae,tree,,,,0,,,,occasional,food | fuel | medicinal | timber,yes,2
+Terminalia oblonga,Combretaceae,tree,,,,0,,,,occasional,timber,yes,2
+Virola flexuosa,Myristicaceae,tree,,,,0,,,,occasional,timber,yes,2
+Virola sebifera,Myristicaceae,tree,,,,0,,,,occasional,timber,yes,2
+Virola surinamensis,Myristicaceae,tree,,,,0,,,,occasional,timber,yes,2
+Vitex polygama,Lamiaceae,tree,,,,0,,,,widespread,timber,yes,2
+Zanthoxylum caribaeum,Rutaceae,tree,,,,0,,,,widespread,timber,yes,2
+Zanthoxylum riedelianum,Rutaceae,tree,,,,0,,,,widespread,timber,yes,2

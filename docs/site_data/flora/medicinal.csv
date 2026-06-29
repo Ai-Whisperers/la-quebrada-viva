@@ -1,0 +1,69 @@
+binomial,family,life_form,lqv_vernacular,lqv_25km_occurrences,seen_within_5km,n_obs_5km,months_seen,py_threat_category,ar_threat_category,endemism_group,uses,is_timber,lqv_priority_score
+Trichilia catigua,Meliaceae,tree,Catiguá,61,,0,,,,widespread,medicinal,,5
+Copaifera langsdorffii,Fabaceae,tree,Brazilian diesel tree,39,,0,,,Endangered,widespread,fuel | medicinal | poison | resins_gums | timber,yes,6
+Casearia sylvestris,Salicaceae,tree,Burro caá,35,,0,,,,widespread,medicinal,,4
+Eugenia uniflora,Myrtaceae,tree,cerezo de Cayena,28,,0,,,,widespread,food | medicinal,,5
+Handroanthus impetiginosus,Bignoniaceae,tree,pink ipê,1,,0,,,,widespread,medicinal | ornamental | timber,yes,6
+Ceiba speciosa,Malvaceae,tree,Silk floss tree,1,,0,,,,widespread,essential_oils | fibres | medicinal | ornamental | timber,yes,5
+Croton urucurana,Euphorbiaceae,tree,,1,,0,,,,widespread,medicinal,,4
+Araucaria angustifolia,Araucariaceae,tree,,,,0,,en_peligro,Endangered,pure_endemic,food | medicinal | ornamental | timber,yes,6
+Mimosa scabrella,Fabaceae,tree,,,,0,,,,near_endemic,fences | fibres | fuel | medicinal | ornamental | timber,yes,5
+Calophyllum brasiliense,Calophyllaceae,tree,,,,0,,en_peligro,,widespread,fodder | lipids | medicinal | ornamental | timber,yes,4
+Copaifera trapezifolia,Fabaceae,tree,,,,0,,,,near_endemic,medicinal,,4
+Dimorphandra mollis,Fabaceae,tree,,,,0,,en_peligro,,occasional,medicinal,,4
+Eugenia brasiliensis,Myrtaceae,tree,,,,0,,,,near_endemic,essential_oils | food | medicinal | ornamental,,4
+Andira inermis,Fabaceae,tree,,,,0,,,,occasional,fodder | food | fuel | medicinal | ornamental | poison | timber,yes,3
+Brosimum gaudichaudii,Moraceae,tree,,,,0,,,,widespread,medicinal | timber,yes,3
+Cassia grandis,Fabaceae,tree,,,,0,,,,widespread,fences | fodder | food | fuel | medicinal | ornamental | resins_gums | timber,yes,3
+Cecropia glaziovii,Urticaceae,tree,,,,0,,,,near_endemic,medicinal,,3
+Cedrela odorata,Meliaceae,tree,,,,0,,,,widespread,fibres | fuel | medicinal | ornamental | timber,yes,3
+Croton celtidifolius,Euphorbiaceae,tree,,,,0,,,,near_endemic,medicinal,,3
+Drimys brasiliensis,Winteraceae,tree,,,,0,,,Endangered,near_endemic,medicinal,,3
+Genipa americana,Rubiaceae,tree,,,,0,,,,occasional,fences | fibres | fodder | food | fuel | medicinal | ornamental | timber,yes,3
+Hymenaea courbaril,Fabaceae,tree,,,,0,,,,widespread,fodder | food | medicinal | ornamental | resins_gums | timber,yes,3
+Inga vera,Fabaceae,tree,,,,0,,,,widespread,food | fuel | medicinal | timber,yes,3
+Myroxylon balsamum,Fabaceae,tree,,,,0,,,,occasional,alcohol | essential_oils | medicinal | ornamental | resins_gums | timber,yes,3
+Swietenia macrophylla,Meliaceae,tree,,,,0,,,,occasional,lipids | medicinal | ornamental | resins_gums | timber,yes,3
+Anacardium occidentale,Anacardiaceae,tree,,,,0,,,,widespread,alcohol | essential_oils | fibres | fodder | food | fuel | lipids | medicinal | poison | resins_gums | timber,yes,2
+Anemopaegma arvense,Bignoniaceae,shrub,,,,0,,,,occasional,medicinal,,2
+Astronium urundeuva,,,,,,0,,,Indeterminada (maybe Vulnerable),,medicinal | timber,yes,2
+Bauhinia forficata,Fabaceae,tree,,,,0,,,,widespread,medicinal | ornamental,,2
+Bixa orellana,Bixaceae,tree,,,,0,,,,occasional,essential_oils | fibres | fodder | food | fuel | medicinal | ornamental | poison | resins_gums | timber,yes,2
+Byrsonima crassifolia,Malpighiaceae,tree,,,,0,,,,occasional,alcohol | fibres | food | fuel | lipids | medicinal | ornamental | poison | timber,yes,2
+Ceiba pentandra,Malvaceae,tree,,,,0,,,,occasional,fences | fibres | fodder | lipids | medicinal | ornamental | timber,yes,2
+Cordia alliodora,Boraginaceae,tree,,,,0,,,,occasional,food | medicinal | ornamental | timber,yes,2
+Dodonaea viscosa,Sapindaceae,tree,,,,0,,,,widespread,medicinal | timber,yes,2
+Erythrina fusca,Fabaceae,tree,,,,0,,,,widespread,fences | fodder | food | fuel | medicinal | ornamental | poison,,2
+Erythrina speciosa,Fabaceae,tree,,,,0,,,,widespread,medicinal | ornamental,,2
+Erythrina verna,Fabaceae,tree,,,,0,,,,widespread,medicinal,,2
+Guazuma ulmifolia,Malvaceae,tree,,,,0,,,Endangered,widespread,fibres | fodder | food | fuel | medicinal | timber,yes,2
+Hyeronima alchorneoides,Phyllanthaceae,tree,,,,0,,,,widespread,medicinal | timber,yes,2
+Melanopsidium nigrum,Rubiaceae,tree,,,,0,,,,widespread,food | medicinal,,2
+Mimosa pigra,Fabaceae,shrub,,,,0,,,,widespread,fuel | medicinal,,2
+Myrcianthes fragrans,Myrtaceae,tree,,,,0,,,,occasional,medicinal,,2
+Pterodon emarginatus,Fabaceae,tree,,,,0,,,,occasional,medicinal,,2
+Pterodon pubescens,Fabaceae,tree,,,,0,,,,occasional,medicinal,,2
+Schinus molle,Anacardiaceae,tree,,,,0,,,,widespread,alcohol | essential_oils | fences | food | fuel | medicinal | ornamental | poison | resins_gums | rubber_latex | timber,yes,2
+Schinus terebinthifolia,Anacardiaceae,tree,,,,0,,,,widespread,essential_oils | fences | fodder | food | fuel | medicinal | ornamental | poison | resins_gums | timber,yes,2
+Senna alata,Fabaceae,tree,,,,0,,,,widespread,medicinal | ornamental,,2
+Simarouba amara,Simaroubaceae,tree,,,,0,,,,widespread,medicinal | timber,yes,2
+Sorocea bonplandii,Moraceae,tree,,,,0,,,,widespread,medicinal,,2
+Spondias mombin,Anacardiaceae,tree,,,,0,,,,occasional,fences | fibres | fodder | food | fuel | medicinal | timber,yes,2
+Stryphnodendron adstringens,Fabaceae,tree,,,,0,,,,widespread,medicinal,,2
+Terminalia argentea,Combretaceae,tree,,,,0,,,,occasional,food | fuel | medicinal | timber,yes,2
+Vachellia farnesiana,Fabaceae,tree,,,,0,,,,occasional,essential_oils | fodder | medicinal | resins_gums,,2
+Zollernia ilicifolia,Fabaceae,tree,,,,0,,,,widespread,medicinal,,2
+Baccharis dracunculifolia,Asteraceae,tree,,,,0,,,,widespread,medicinal,,1
+Cestrum parqui,Solanaceae,shrub,,,,0,,,,occasional,medicinal,,1
+Chrysobalanus icaco,Chrysobalanaceae,tree,,,,0,,,,widespread,medicinal,,1
+Cochlospermum regium,Bixaceae,tree,,,,0,,,,widespread,medicinal,,1
+Erythroxylum coca,Erythroxylaceae,shrub,,,,0,,,,occasional,medicinal,,1
+Ilex paraguariensis,Aquifoliaceae,tree,,,,0,,,,widespread,food | medicinal,,1
+Lafoensia pacari,Lythraceae,tree,,,,0,,,,widespread,medicinal,,1
+Manihot glaziovii,Euphorbiaceae,tree,,,,0,,,,widespread,essential_oils | fences | fodder | food | medicinal | ornamental | rubber_latex,,1
+Phytolacca dioica,Phytolaccaceae,tree,,,,0,,,,widespread,fodder | medicinal | ornamental | poison,,1
+Sambucus australis,Adoxaceae,tree,,,,0,,,,,medicinal,,1
+Solanum mauritianum,Solanaceae,tree,,,,0,,,,widespread,medicinal,,1
+Solanum paniculatum,Solanaceae,shrub,,,,0,,,,widespread,food | medicinal,,1
+Varronia curassavica,Boraginaceae,shrub,,,,0,,,,widespread,medicinal,,1
+Ximenia americana,Olacaceae,tree,,,,0,,,,widespread,alcohol | essential_oils | fences | food | fuel | lipids | medicinal | ornamental | poison,,1

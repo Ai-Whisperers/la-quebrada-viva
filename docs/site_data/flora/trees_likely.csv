@@ -1,0 +1,31 @@
+binomial,family,life_form,lqv_vernacular,lqv_25km_occurrences,seen_within_5km,n_obs_5km,months_seen,py_threat_category,ar_threat_category,endemism_group,uses,is_timber,lqv_priority_score
+Sebastiania brasiliensis,Euphorbiaceae,tree,Blanquillo,113,,0,,,,widespread,,,3
+Trichilia catigua,Meliaceae,tree,Catiguá,61,,0,,,,widespread,medicinal,,5
+Piper amalago,Piperaceae,tree,Anisillo,57,,0,,,,widespread,,,3
+Trichilia pallida,Meliaceae,tree,Chanchuwi,55,,0,,,,widespread,,,4
+Chrysophyllum marginatum,Sapotaceae,tree,Vasuriña,51,,0,,,,widespread,,,4
+Trichilia elegans,Meliaceae,tree,Catigua blanca,43,,0,,,,widespread,,,4
+Psychotria carthagenensis,Rubiaceae,tree,Jazmín de la costa,42,,0,,,,widespread,,,4
+Annona emarginata,Annonaceae,tree,Araticú,40,,0,,,,widespread,,,4
+Copaifera langsdorffii,Fabaceae,tree,Brazilian diesel tree,39,,0,,,Endangered,widespread,fuel | medicinal | poison | resins_gums | timber,yes,6
+Myrcia laruotteana,Myrtaceae,tree,,39,,0,,,,widespread,,,4
+Celtis brasiliensis,Cannabaceae,tree,,39,,0,,,,widespread,,,3
+Casearia sylvestris,Salicaceae,tree,Burro caá,35,,0,,,,widespread,medicinal,,4
+Ocotea diospyrifolia,Lauraceae,tree,Laurel Negro,35,,0,,,,widespread,,,4
+Parapiptadenia rigida,Fabaceae,tree,Anchico,34,,0,,,,widespread,timber,yes,6
+Cupania vernalis,Sapindaceae,tree,Camboatá colorado,34,,0,,,,widespread,,,3
+Seguieria aculeata,Phytolaccaceae,tree,,34,,0,,,,widespread,,,3
+Guarea macrophylla,Meliaceae,tree,Amonkaweye,33,,0,,,,widespread,,,4
+Luehea divaricata,Malvaceae,tree,Azota caballos,31,y,1,Feb,,,widespread,timber,yes,5
+Aloysia virgata,Verbenaceae,tree,Niño Rupá,30,,0,,,,widespread,,,3
+Tabernaemontana catharinensis,Apocynaceae,tree,Palo víbora,30,,0,,,,widespread,,,3
+Pilocarpus pennatifolius,Rutaceae,tree,Yaguarandí,29,,0,,,,widespread,,,3
+Nectandra megapotamica,Lauraceae,tree,canela,28,,0,,,,widespread,timber,yes,6
+Eugenia uniflora,Myrtaceae,tree,cerezo de Cayena,28,,0,,,,widespread,food | medicinal,,5
+Protium heptaphyllum,Burseraceae,tree,Caraño,28,,0,,,,widespread,timber,yes,5
+Pristimera celastroides,Celastraceae,tree,Cancerina,28,,0,,,,widespread,,,3
+Casearia gossypiosperma,Salicaceae,tree,Cambroé,27,,0,,,,widespread,timber,yes,5
+Cordia americana,Boraginaceae,tree,guayaibí,27,,0,,,,widespread,timber,yes,5
+Peltophorum dubium,Fabaceae,tree,caña fístola,26,,0,,,,widespread,timber,yes,6
+Eugenia myrcianthes,Myrtaceae,tree,Ubajay,26,,0,,,,widespread,,,4
+Croton gracilipes,Euphorbiaceae,tree,,25,,0,,,,widespread,,,3

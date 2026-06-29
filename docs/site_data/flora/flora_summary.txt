@@ -1,0 +1,12 @@
+# Flora brief — summary
+- Expected species pool: 3,906
+- Parcel-tight iNat Plantae (5 km, research-grade): 8 obs
+- Top 30 regional trees → 1 confirmed in 5 km
+- Top 20 regional shrubs → 0 confirmed in 5 km
+- Threatened species (PY en_peligro/amenazada OR AR Endangered/CR): 127
+- Threatened seen within 5 km: 0
+- Timber species: 234
+- Medicinal species: 68
+- Food/edible species: 64
+- Endemics documented within 25 km: 1
+- Palms (Arecaceae): 71

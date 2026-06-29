@@ -1,0 +1,15 @@
+binomial,family,life_form,lqv_vernacular,lqv_25km_occurrences,seen_within_5km,n_obs_5km,months_seen,py_threat_category,ar_threat_category,endemism_group,uses,is_timber,lqv_priority_score
+Capsicum baccatum,Solanaceae,shrub,ají,35,,0,,,,widespread,,,3
+Acalypha communis,Euphorbiaceae,shrub,akalyfa bežná,25,,0,,,,widespread,,,3
+Aloysia gratissima,Verbenaceae,shrub,Cedrón de monte,19,,0,,,,widespread,,,3
+Eugenia punicifolia,Myrtaceae,shrub,Murta,18,,0,,,,widespread,,,4
+Baccharis linearifolia,Asteraceae,shrub,,18,,0,,,,widespread,,,3
+Pombalia bigibbosa,Violaceae,shrub,,18,,0,,,,widespread,,,3
+Praecereus euchlorus,Cactaceae,shrub,,5,,0,,,,widespread,,,3
+Solanum viarum,Solanaceae,shrub,tropical soda-apple,5,,0,,,,widespread,,,3
+Buddleja stachyoides,Scrophulariaceae,shrub,Argentine butterfly bush,2,,0,,,,widespread,ornamental,,4
+Cereus stenogonus,Cactaceae,shrub,,2,,0,,,,widespread,,,3
+Psychotria leiocarpa,Rubiaceae,shrub,,1,,0,,,,near_endemic,,,6
+Annona nutans,Annonaceae,shrub,,1,,0,,,,occasional,,,4
+Abutilon grandifolium,Malvaceae,shrub,hairy abutilon,1,,0,,,,occasional,,,3
+Solanum glaucophyllum,Solanaceae,shrub,waxy-leaved nightshade,1,,0,,,,occasional,,,3
