@@ -1,0 +1,115 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.4030501,
+          -25.3138051
+        ]
+      },
+      "properties": {
+        "osm_id": "way/605280651",
+        "name": "Monumento Natural Cerro Choror\u00ee",
+        "iso3": "",
+        "designation": "nature_reserve",
+        "iucn_category": "",
+        "governance": "",
+        "marine": "",
+        "reported_area_km2": "",
+        "distance_km": 49.261,
+        "source": "osm_overpass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.398585,
+          -25.3245968
+        ]
+      },
+      "properties": {
+        "osm_id": "way/605280682",
+        "name": "Monumento Natural Cerro Koi",
+        "iso3": "",
+        "designation": "nature_reserve",
+        "iucn_category": "",
+        "governance": "",
+        "marine": "",
+        "reported_area_km2": "",
+        "distance_km": 48.133,
+        "source": "osm_overpass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0721784,
+          -25.6018883
+        ]
+      },
+      "properties": {
+        "osm_id": "way/1100731296",
+        "name": "Noche Con. Bosques Embrujados",
+        "iso3": "",
+        "designation": "",
+        "iucn_category": "",
+        "governance": "",
+        "marine": "",
+        "reported_area_km2": "",
+        "distance_km": 3.727,
+        "source": "osm_overpass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0358175,
+          -25.6435188
+        ]
+      },
+      "properties": {
+        "osm_id": "relation/14696825",
+        "name": "Distrito de Escobar",
+        "iso3": "",
+        "designation": "",
+        "iucn_category": "",
+        "governance": "",
+        "marine": "",
+        "reported_area_km2": "",
+        "distance_km": 4.027,
+        "source": "osm_overpass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0721784,
+          -25.6018883
+        ]
+      },
+      "properties": {
+        "osm_id": "relation/14763277",
+        "name": "Noche Con. Bosques Embrujados",
+        "iso3": "",
+        "designation": "",
+        "iucn_category": "",
+        "governance": "",
+        "marine": "",
+        "reported_area_km2": "",
+        "distance_km": 3.727,
+        "source": "osm_overpass"
+      }
+    }
+  ]
+}
