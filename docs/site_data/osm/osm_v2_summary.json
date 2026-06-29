@@ -1,0 +1,199 @@
+{
+  "buildings": {
+    "count": 645,
+    "tag_counts": {
+      "amenity": {
+        "place_of_worship": 2,
+        "police": 2
+      },
+      "building": {
+        "yes": 14,
+        "church": 1,
+        "house": 620,
+        "cabin": 1,
+        "greenhouse": 2,
+        "barn": 3,
+        "warehouse": 4
+      }
+    },
+    "closest_distance_m": 213.6,
+    "closest_tags": {
+      "building": "house",
+      "_osm_id": "way/1059146837"
+    }
+  },
+  "water": {
+    "count": 30,
+    "tag_counts": {
+      "natural": {
+        "water": 10,
+        "wetland": 20
+      }
+    },
+    "closest_distance_m": 998.9,
+    "closest_tags": {
+      "intermittent": "yes",
+      "name": "Aqua Basin",
+      "natural": "water",
+      "water": "basin",
+      "_osm_id": "way/1101568008"
+    }
+  },
+  "waterways": {
+    "count": 23,
+    "tag_counts": {
+      "waterway": {
+        "stream": 9,
+        "ditch": 14
+      }
+    },
+    "closest_distance_m": 3019.6,
+    "closest_tags": {
+      "waterway": "ditch",
+      "_osm_id": "way/1059979939"
+    }
+  },
+  "trees": {
+    "count": 174,
+    "tag_counts": {
+      "natural": {
+        "tree": 23,
+        "wood": 96,
+        "tree_row": 2
+      },
+      "landuse": {
+        "farmland": 2,
+        "forest": 41,
+        "orchard": 10
+      }
+    },
+    "closest_distance_m": 251.6,
+    "closest_tags": {
+      "landuse": "farmland",
+      "_osm_id": "way/1059146839"
+    }
+  },
+  "roads": {
+    "count": 205,
+    "tag_counts": {
+      "highway": {
+        "unclassified": 10,
+        "trunk": 5,
+        "track": 113,
+        "tertiary": 3,
+        "residential": 46,
+        "service": 19,
+        "path": 5,
+        "footway": 4
+      }
+    },
+    "closest_distance_m": 481.8,
+    "closest_tags": {
+      "highway": "unclassified",
+      "lanes": "2",
+      "name": "Camino a Escobar",
+      "oneway": "no",
+      "surface": "unpaved",
+      "_osm_id": "way/69292918"
+    }
+  },
+  "pois": {
+    "count": 20,
+    "tag_counts": {
+      "amenity": {
+        "police": 4,
+        "place_of_worship": 3,
+        "school": 1
+      },
+      "tourism": {
+        "hotel": 1,
+        "wilderness_hut": 1,
+        "guest_house": 2,
+        "camp_site": 2
+      },
+      "shop": {
+        "supermarket": 1
+      },
+      "building": {
+        "yes": 4
+      },
+      "leisure": {
+        "pitch": 3,
+        "swimming_pool": 2
+      }
+    },
+    "closest_distance_m": 1174.1,
+    "closest_tags": {
+      "amenity": "police",
+      "building": "yes",
+      "name:ca": "Policeman / Policia",
+      "name:de": "Policeman / Polizei",
+      "name:el": "Policeman / \u0391\u03c3\u03c4\u03c5\u03bd\u03bf\u03bc\u03af\u03b1",
+      "name:es": "Policeman / Polic\u00eda",
+      "name:fr": "Policeman / Police",
+      "name:ig": "Policeman / Nd\u1ecb uwe ojii",
+      "name:it": "Policeman / Polizia",
+      "name:ja": "Policeman / \u8b66\u5bdf",
+      "name:ja-Latn": "Policeman / \u8b66\u5bdf",
+      "name:ka": "Policeman / \u10de\u10dd\u10da\u10d8\u10ea\u10d8\u10d0",
+      "name:ko": "Policeman / \uacbd\ucc30",
+      "name:ko-Latn": "Policeman / \uacbd\ucc30",
+      "name:la": "Policeman / Vigilum",
+      "name:lb": "Policeman / Police",
+      "name:lo": "Policeman / \u0e95\u0ecd\u0eb2\u0eab\u0ea5\u0ea7\u0e94",
+      "name:nl": "Policeman / Politie",
+      "name:no": "Policeman / Politiet",
+      "name:pl": "Policeman / Policja",
+      "name:pt": "Policeman / Pol\u00edcia",
+      "name:ru": "Policeman / \u041f\u043e\u043b\u0438\u0446\u0438\u044f",
+      "name:uk": "Policeman / \u043f\u043e\u043b\u0456\u0446\u0456\u044f",
+      "name:zh-Hant": "Policeman / \u8b66\u5bdf",
+      "_osm_id": "way/1068683892"
+    }
+  },
+  "landuse": {
+    "count": 89,
+    "tag_counts": {
+      "landuse": {
+        "brownfield": 1,
+        "plant_nursery": 5,
+        "grass": 20,
+        "allotments": 5,
+        "farmland": 2,
+        "quarry": 1,
+        "forest": 41,
+        "orchard": 10,
+        "cemetery": 2,
+        "religious": 1,
+        "railway": 1
+      }
+    },
+    "closest_distance_m": 251.6,
+    "closest_tags": {
+      "landuse": "farmland",
+      "_osm_id": "way/1059146839"
+    }
+  },
+  "places": {
+    "count": 49,
+    "tag_counts": {
+      "place": {
+        "town": 4,
+        "hamlet": 4,
+        "village": 11,
+        "neighbourhood": 4,
+        "quarter": 25,
+        "city": 1
+      },
+      "landuse": {
+        "residential": 11
+      }
+    },
+    "closest_distance_m": 2073.1,
+    "closest_tags": {
+      "name": "Machado",
+      "place": "village",
+      "_osm_id": "way/1189529086"
+    }
+  }
+}
