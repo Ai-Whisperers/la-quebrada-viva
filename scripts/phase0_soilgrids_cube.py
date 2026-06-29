@@ -21,6 +21,8 @@ import time
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "site_data" / "soilgrids" / "cube"
@@ -36,6 +38,27 @@ VALUES = ["mean", "uncertainty"]
 
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": "lqv-phase0/1.0 (research; weissvanderpol.ivan@gmail.com)"})
+_retry = Retry(
+    total=6,
+    backoff_factor=1.5,
+    status_forcelist=(429, 500, 502, 503, 504),
+    allowed_methods=("GET",),
+    raise_on_status=False,
+)
+_adapter = HTTPAdapter(max_retries=_retry, pool_connections=4, pool_maxsize=4)
+SESSION.mount("https://", _adapter)
+SESSION.mount("http://", _adapter)
+
+
+def _get(url: str, **kw):
+    last: Exception | None = None
+    for attempt in range(4):
+        try:
+            return SESSION.get(url, timeout=kw.pop("timeout", 60), **kw)
+        except requests.exceptions.RequestException as e:
+            last = e
+            time.sleep(2 ** attempt)
+    raise last  # type: ignore[misc]
 
 
 def sample_point(lon: float, lat: float) -> dict:
@@ -48,7 +71,7 @@ def sample_point(lon: float, lat: float) -> dict:
         params.append(("value", v))
     params.append(("lon", str(lon)))
     params.append(("lat", str(lat)))
-    r = SESSION.get(
+    r = _get(
         "https://rest.isric.org/soilgrids/v2.0/properties/query",
         params=params,
         timeout=60,
