@@ -97,3 +97,10 @@ docs/site_data/chirps/tiles/
 # Re-fetch via `python3 scripts/phase0_jrc_gsw_batch.py`. AOI/polygon clips
 # + quicklooks + summary stay tracked.
 docs/site_data/jrc_gsw/_cache/
+
+# Regenerable Hansen GFC v1.12 raw 10×10° tiles (~750 MB across 4 layers;
+# treecover2000 is the bulk at ~620 MB, lossyear/gain/datamask compress hard.
+# `loss` is derived from `lossyear > 0` since v1.12 dropped the standalone band).
+# Re-fetch via `python3 scripts/phase0_hansen_gfc_batch.py`. AOI/polygon clips
+# + quicklooks + summary stay tracked.
+docs/site_data/hansen_gfc/_cache/
