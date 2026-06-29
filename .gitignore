@@ -93,6 +93,14 @@ docs/site_data/sentinel2/**/*.tif
 docs/site_data/sentinel1/*.tif
 docs/site_data/sentinel1/**/*.tif
 
+# Regenerable Landsat C2-L2 surface-reflectance and per-year index GeoTIFFs
+# (102x112 px @ 30 m, ~10-30 KB each — small, but the 41-year stack still
+# bloats `git status`). Re-fetch via `python3 scripts/phase0_landsat_annual_batch.py`
+# against Microsoft Planetary Computer's `landsat-c2-l2`. Quicklook + CSV +
+# summary + per-file .meta.json sidecars stay tracked.
+docs/site_data/landsat/*.tif
+docs/site_data/landsat/**/*.tif
+
 # Regenerable CHIRPS v2.0 monthly rainfall rasters. _cache/ is the global
 # 0.05° GeoTIFFs straight from UCSB (~14 GB, 2005-2025). tiles/ is the
 # parcel-AOI clip per month (~4 KB x 252 = 1 MB, but still binary churn).
