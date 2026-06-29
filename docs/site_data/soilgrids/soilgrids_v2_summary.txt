@@ -1,0 +1,7 @@
+# Soil brief — SoilGrids 2.0 multi-point pull (KML-derived)
+- Points sampled: 6 (centroid + 4 corners + Wesley pin)
+- Properties: clay, sand, silt, phh2o, bdod, cec, nitrogen, ocd, soc
+- Depths: 0-5cm, 5-15cm, 15-30cm, 30-60cm, 60-100cm, 100-200cm
+- Total values written: 324
+- Headline: topsoil clay 19.5%, pH 5.40, bulk-density 1.18 kg/dm³
+- Footing-depth clay (30-60 cm): 28.3%

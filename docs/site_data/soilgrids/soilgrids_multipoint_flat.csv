@@ -1,0 +1,325 @@
+point_id,lon,lat,note,property,depth,value,target_units,mapped_units
+centroid,-57.0355,-25.6073,polygon centroid,clay,0-5cm,19.500,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,clay,5-15cm,21.600,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,clay,15-30cm,21.600,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,clay,30-60cm,28.000,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,clay,60-100cm,29.900,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,clay,100-200cm,31.100,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,sand,0-5cm,60.100,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,sand,5-15cm,58.500,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,sand,15-30cm,58.300,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,sand,30-60cm,53.500,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,sand,60-100cm,51.300,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,sand,100-200cm,50.400,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,silt,0-5cm,20.300,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,silt,5-15cm,20.000,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,silt,15-30cm,20.100,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,silt,30-60cm,18.500,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,silt,60-100cm,18.800,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,silt,100-200cm,18.500,%,g/kg
+centroid,-57.0355,-25.6073,polygon centroid,phh2o,0-5cm,5.400,-,pH*10
+centroid,-57.0355,-25.6073,polygon centroid,phh2o,5-15cm,5.400,-,pH*10
+centroid,-57.0355,-25.6073,polygon centroid,phh2o,15-30cm,5.300,-,pH*10
+centroid,-57.0355,-25.6073,polygon centroid,phh2o,30-60cm,5.400,-,pH*10
+centroid,-57.0355,-25.6073,polygon centroid,phh2o,60-100cm,5.400,-,pH*10
+centroid,-57.0355,-25.6073,polygon centroid,phh2o,100-200cm,5.400,-,pH*10
+centroid,-57.0355,-25.6073,polygon centroid,bdod,0-5cm,1.190,kg/dm³,cg/cm³
+centroid,-57.0355,-25.6073,polygon centroid,bdod,5-15cm,1.240,kg/dm³,cg/cm³
+centroid,-57.0355,-25.6073,polygon centroid,bdod,15-30cm,1.270,kg/dm³,cg/cm³
+centroid,-57.0355,-25.6073,polygon centroid,bdod,30-60cm,1.280,kg/dm³,cg/cm³
+centroid,-57.0355,-25.6073,polygon centroid,bdod,60-100cm,1.310,kg/dm³,cg/cm³
+centroid,-57.0355,-25.6073,polygon centroid,bdod,100-200cm,1.320,kg/dm³,cg/cm³
+centroid,-57.0355,-25.6073,polygon centroid,cec,0-5cm,19.400,cmol(c)/kg,mmol(c)/kg
+centroid,-57.0355,-25.6073,polygon centroid,cec,5-15cm,19.200,cmol(c)/kg,mmol(c)/kg
+centroid,-57.0355,-25.6073,polygon centroid,cec,15-30cm,17.100,cmol(c)/kg,mmol(c)/kg
+centroid,-57.0355,-25.6073,polygon centroid,cec,30-60cm,16.900,cmol(c)/kg,mmol(c)/kg
+centroid,-57.0355,-25.6073,polygon centroid,cec,60-100cm,17.000,cmol(c)/kg,mmol(c)/kg
+centroid,-57.0355,-25.6073,polygon centroid,cec,100-200cm,16.300,cmol(c)/kg,mmol(c)/kg
+centroid,-57.0355,-25.6073,polygon centroid,nitrogen,0-5cm,3.030,g/kg,cg/kg
+centroid,-57.0355,-25.6073,polygon centroid,nitrogen,5-15cm,1.980,g/kg,cg/kg
+centroid,-57.0355,-25.6073,polygon centroid,nitrogen,15-30cm,1.220,g/kg,cg/kg
+centroid,-57.0355,-25.6073,polygon centroid,nitrogen,30-60cm,0.730,g/kg,cg/kg
+centroid,-57.0355,-25.6073,polygon centroid,nitrogen,60-100cm,0.500,g/kg,cg/kg
+centroid,-57.0355,-25.6073,polygon centroid,nitrogen,100-200cm,0.420,g/kg,cg/kg
+centroid,-57.0355,-25.6073,polygon centroid,ocd,0-5cm,40.600,hg/m³,dg/dm³
+centroid,-57.0355,-25.6073,polygon centroid,ocd,5-15cm,30.100,hg/m³,dg/dm³
+centroid,-57.0355,-25.6073,polygon centroid,ocd,15-30cm,20.500,hg/m³,dg/dm³
+centroid,-57.0355,-25.6073,polygon centroid,ocd,30-60cm,10.800,hg/m³,dg/dm³
+centroid,-57.0355,-25.6073,polygon centroid,ocd,60-100cm,6.400,hg/m³,dg/dm³
+centroid,-57.0355,-25.6073,polygon centroid,ocd,100-200cm,3.700,hg/m³,dg/dm³
+centroid,-57.0355,-25.6073,polygon centroid,soc,0-5cm,36.400,g/kg,dg/kg
+centroid,-57.0355,-25.6073,polygon centroid,soc,5-15cm,26.800,g/kg,dg/kg
+centroid,-57.0355,-25.6073,polygon centroid,soc,15-30cm,17.800,g/kg,dg/kg
+centroid,-57.0355,-25.6073,polygon centroid,soc,30-60cm,8.200,g/kg,dg/kg
+centroid,-57.0355,-25.6073,polygon centroid,soc,60-100cm,6.700,g/kg,dg/kg
+centroid,-57.0355,-25.6073,polygon centroid,soc,100-200cm,7.300,g/kg,dg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),clay,0-5cm,19.200,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),clay,5-15cm,20.900,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),clay,15-30cm,20.600,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),clay,30-60cm,27.200,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),clay,60-100cm,29.400,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),clay,100-200cm,30.900,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),sand,0-5cm,60.200,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),sand,5-15cm,59.000,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),sand,15-30cm,59.100,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),sand,30-60cm,54.000,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),sand,60-100cm,51.800,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),sand,100-200cm,51.400,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),silt,0-5cm,20.600,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),silt,5-15cm,20.100,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),silt,15-30cm,20.200,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),silt,30-60cm,18.800,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),silt,60-100cm,18.800,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),silt,100-200cm,17.700,%,g/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),phh2o,0-5cm,5.400,-,pH*10
+nw_high,-57.03844,-25.60542,NW corner (high ridge),phh2o,5-15cm,5.400,-,pH*10
+nw_high,-57.03844,-25.60542,NW corner (high ridge),phh2o,15-30cm,5.300,-,pH*10
+nw_high,-57.03844,-25.60542,NW corner (high ridge),phh2o,30-60cm,5.300,-,pH*10
+nw_high,-57.03844,-25.60542,NW corner (high ridge),phh2o,60-100cm,5.300,-,pH*10
+nw_high,-57.03844,-25.60542,NW corner (high ridge),phh2o,100-200cm,5.300,-,pH*10
+nw_high,-57.03844,-25.60542,NW corner (high ridge),bdod,0-5cm,1.170,kg/dm³,cg/cm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),bdod,5-15cm,1.230,kg/dm³,cg/cm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),bdod,15-30cm,1.260,kg/dm³,cg/cm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),bdod,30-60cm,1.290,kg/dm³,cg/cm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),bdod,60-100cm,1.320,kg/dm³,cg/cm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),bdod,100-200cm,1.320,kg/dm³,cg/cm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),cec,0-5cm,20.200,cmol(c)/kg,mmol(c)/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),cec,5-15cm,19.200,cmol(c)/kg,mmol(c)/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),cec,15-30cm,17.700,cmol(c)/kg,mmol(c)/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),cec,30-60cm,17.300,cmol(c)/kg,mmol(c)/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),cec,60-100cm,17.300,cmol(c)/kg,mmol(c)/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),cec,100-200cm,16.800,cmol(c)/kg,mmol(c)/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),nitrogen,0-5cm,3.220,g/kg,cg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),nitrogen,5-15cm,2.050,g/kg,cg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),nitrogen,15-30cm,1.220,g/kg,cg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),nitrogen,30-60cm,0.710,g/kg,cg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),nitrogen,60-100cm,0.530,g/kg,cg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),nitrogen,100-200cm,0.410,g/kg,cg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),ocd,0-5cm,41.800,hg/m³,dg/dm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),ocd,5-15cm,32.000,hg/m³,dg/dm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),ocd,15-30cm,22.200,hg/m³,dg/dm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),ocd,30-60cm,12.000,hg/m³,dg/dm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),ocd,60-100cm,6.800,hg/m³,dg/dm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),ocd,100-200cm,4.200,hg/m³,dg/dm³
+nw_high,-57.03844,-25.60542,NW corner (high ridge),soc,0-5cm,39.100,g/kg,dg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),soc,5-15cm,29.400,g/kg,dg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),soc,15-30cm,22.200,g/kg,dg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),soc,30-60cm,11.300,g/kg,dg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),soc,60-100cm,8.300,g/kg,dg/kg
+nw_high,-57.03844,-25.60542,NW corner (high ridge),soc,100-200cm,8.800,g/kg,dg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),clay,0-5cm,20.500,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),clay,5-15cm,23.000,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),clay,15-30cm,23.100,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),clay,30-60cm,28.600,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),clay,60-100cm,32.000,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),clay,100-200cm,33.100,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),sand,0-5cm,58.000,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),sand,5-15cm,55.800,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),sand,15-30cm,55.300,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),sand,30-60cm,51.000,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),sand,60-100cm,47.900,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),sand,100-200cm,47.500,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),silt,0-5cm,21.600,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),silt,5-15cm,21.200,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),silt,15-30cm,21.600,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),silt,30-60cm,20.400,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),silt,60-100cm,20.200,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),silt,100-200cm,19.400,%,g/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),phh2o,0-5cm,5.400,-,pH*10
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),phh2o,5-15cm,5.400,-,pH*10
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),phh2o,15-30cm,5.400,-,pH*10
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),phh2o,30-60cm,5.400,-,pH*10
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),phh2o,60-100cm,5.400,-,pH*10
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),phh2o,100-200cm,5.400,-,pH*10
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),bdod,0-5cm,1.160,kg/dm³,cg/cm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),bdod,5-15cm,1.210,kg/dm³,cg/cm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),bdod,15-30cm,1.250,kg/dm³,cg/cm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),bdod,30-60cm,1.260,kg/dm³,cg/cm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),bdod,60-100cm,1.310,kg/dm³,cg/cm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),bdod,100-200cm,1.330,kg/dm³,cg/cm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),cec,0-5cm,23.400,cmol(c)/kg,mmol(c)/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),cec,5-15cm,24.600,cmol(c)/kg,mmol(c)/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),cec,15-30cm,23.600,cmol(c)/kg,mmol(c)/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),cec,30-60cm,23.100,cmol(c)/kg,mmol(c)/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),cec,60-100cm,22.400,cmol(c)/kg,mmol(c)/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),cec,100-200cm,22.000,cmol(c)/kg,mmol(c)/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),nitrogen,0-5cm,3.050,g/kg,cg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),nitrogen,5-15cm,2.100,g/kg,cg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),nitrogen,15-30cm,1.410,g/kg,cg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),nitrogen,30-60cm,0.840,g/kg,cg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),nitrogen,60-100cm,0.530,g/kg,cg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),nitrogen,100-200cm,0.570,g/kg,cg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),ocd,0-5cm,42.100,hg/m³,dg/dm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),ocd,5-15cm,30.900,hg/m³,dg/dm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),ocd,15-30cm,22.700,hg/m³,dg/dm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),ocd,30-60cm,10.600,hg/m³,dg/dm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),ocd,60-100cm,6.600,hg/m³,dg/dm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),ocd,100-200cm,3.400,hg/m³,dg/dm³
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),soc,0-5cm,36.900,g/kg,dg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),soc,5-15cm,27.500,g/kg,dg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),soc,15-30cm,22.000,g/kg,dg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),soc,30-60cm,10.300,g/kg,dg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),soc,60-100cm,7.800,g/kg,dg/kg
+ne_corner,-57.02928,-25.6094,NE corner (east boundary),soc,100-200cm,8.500,g/kg,dg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),clay,0-5cm,19.100,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),clay,5-15cm,21.500,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),clay,15-30cm,21.300,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),clay,30-60cm,27.500,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),clay,60-100cm,30.600,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),clay,100-200cm,31.500,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),sand,0-5cm,60.500,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),sand,5-15cm,58.700,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),sand,15-30cm,58.600,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),sand,30-60cm,53.500,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),sand,60-100cm,50.300,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),sand,100-200cm,50.500,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),silt,0-5cm,20.400,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),silt,5-15cm,19.800,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),silt,15-30cm,20.000,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),silt,30-60cm,19.100,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),silt,60-100cm,19.100,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),silt,100-200cm,17.900,%,g/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),phh2o,0-5cm,5.400,-,pH*10
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),phh2o,5-15cm,5.400,-,pH*10
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),phh2o,15-30cm,5.400,-,pH*10
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),phh2o,30-60cm,5.400,-,pH*10
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),phh2o,60-100cm,5.300,-,pH*10
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),phh2o,100-200cm,5.400,-,pH*10
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),bdod,0-5cm,1.160,kg/dm³,cg/cm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),bdod,5-15cm,1.220,kg/dm³,cg/cm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),bdod,15-30cm,1.260,kg/dm³,cg/cm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),bdod,30-60cm,1.270,kg/dm³,cg/cm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),bdod,60-100cm,1.300,kg/dm³,cg/cm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),bdod,100-200cm,1.310,kg/dm³,cg/cm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),cec,0-5cm,19.100,cmol(c)/kg,mmol(c)/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),cec,5-15cm,18.300,cmol(c)/kg,mmol(c)/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),cec,15-30cm,16.400,cmol(c)/kg,mmol(c)/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),cec,30-60cm,16.200,cmol(c)/kg,mmol(c)/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),cec,60-100cm,16.200,cmol(c)/kg,mmol(c)/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),cec,100-200cm,15.600,cmol(c)/kg,mmol(c)/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),nitrogen,0-5cm,3.010,g/kg,cg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),nitrogen,5-15cm,1.960,g/kg,cg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),nitrogen,15-30cm,1.200,g/kg,cg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),nitrogen,30-60cm,0.700,g/kg,cg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),nitrogen,60-100cm,0.500,g/kg,cg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),nitrogen,100-200cm,0.440,g/kg,cg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),ocd,0-5cm,40.200,hg/m³,dg/dm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),ocd,5-15cm,32.000,hg/m³,dg/dm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),ocd,15-30cm,22.000,hg/m³,dg/dm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),ocd,30-60cm,11.100,hg/m³,dg/dm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),ocd,60-100cm,6.800,hg/m³,dg/dm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),ocd,100-200cm,4.200,hg/m³,dg/dm³
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),soc,0-5cm,37.400,g/kg,dg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),soc,5-15cm,26.300,g/kg,dg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),soc,15-30cm,18.300,g/kg,dg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),soc,30-60cm,8.100,g/kg,dg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),soc,60-100cm,6.000,g/kg,dg/kg
+sw_corner,-57.03781,-25.60748,SW corner (drainage side),soc,100-200cm,6.600,g/kg,dg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),clay,0-5cm,19.300,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),clay,5-15cm,20.900,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),clay,15-30cm,22.800,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),clay,30-60cm,29.200,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),clay,60-100cm,30.800,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),clay,100-200cm,32.600,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),sand,0-5cm,52.500,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),sand,5-15cm,51.300,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),sand,15-30cm,50.000,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),sand,30-60cm,46.100,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),sand,60-100cm,44.400,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),sand,100-200cm,43.300,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),silt,0-5cm,28.300,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),silt,5-15cm,27.800,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),silt,15-30cm,27.200,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),silt,30-60cm,24.600,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),silt,60-100cm,24.800,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),silt,100-200cm,24.100,%,g/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),phh2o,0-5cm,5.400,-,pH*10
+se_corner,-57.03356,-25.61172,SE corner (lowest),phh2o,5-15cm,5.300,-,pH*10
+se_corner,-57.03356,-25.61172,SE corner (lowest),phh2o,15-30cm,5.300,-,pH*10
+se_corner,-57.03356,-25.61172,SE corner (lowest),phh2o,30-60cm,5.300,-,pH*10
+se_corner,-57.03356,-25.61172,SE corner (lowest),phh2o,60-100cm,5.300,-,pH*10
+se_corner,-57.03356,-25.61172,SE corner (lowest),phh2o,100-200cm,5.300,-,pH*10
+se_corner,-57.03356,-25.61172,SE corner (lowest),bdod,0-5cm,1.200,kg/dm³,cg/cm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),bdod,5-15cm,1.240,kg/dm³,cg/cm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),bdod,15-30cm,1.280,kg/dm³,cg/cm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),bdod,30-60cm,1.290,kg/dm³,cg/cm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),bdod,60-100cm,1.320,kg/dm³,cg/cm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),bdod,100-200cm,1.330,kg/dm³,cg/cm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),cec,0-5cm,20.600,cmol(c)/kg,mmol(c)/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),cec,5-15cm,21.300,cmol(c)/kg,mmol(c)/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),cec,15-30cm,20.100,cmol(c)/kg,mmol(c)/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),cec,30-60cm,19.900,cmol(c)/kg,mmol(c)/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),cec,60-100cm,19.500,cmol(c)/kg,mmol(c)/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),cec,100-200cm,19.600,cmol(c)/kg,mmol(c)/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),nitrogen,0-5cm,3.120,g/kg,cg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),nitrogen,5-15cm,2.040,g/kg,cg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),nitrogen,15-30cm,1.260,g/kg,cg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),nitrogen,30-60cm,0.750,g/kg,cg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),nitrogen,60-100cm,0.520,g/kg,cg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),nitrogen,100-200cm,0.490,g/kg,cg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),ocd,0-5cm,39.800,hg/m³,dg/dm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),ocd,5-15cm,29.600,hg/m³,dg/dm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),ocd,15-30cm,20.800,hg/m³,dg/dm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),ocd,30-60cm,11.700,hg/m³,dg/dm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),ocd,60-100cm,6.300,hg/m³,dg/dm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),ocd,100-200cm,3.700,hg/m³,dg/dm³
+se_corner,-57.03356,-25.61172,SE corner (lowest),soc,0-5cm,38.000,g/kg,dg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),soc,5-15cm,25.800,g/kg,dg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),soc,15-30cm,19.300,g/kg,dg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),soc,30-60cm,9.800,g/kg,dg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),soc,60-100cm,8.400,g/kg,dg/kg
+se_corner,-57.03356,-25.61172,SE corner (lowest),soc,100-200cm,9.700,g/kg,dg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),clay,0-5cm,19.300,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),clay,5-15cm,20.900,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),clay,15-30cm,22.800,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),clay,30-60cm,29.200,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),clay,60-100cm,30.800,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),clay,100-200cm,32.600,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),sand,0-5cm,52.500,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),sand,5-15cm,51.300,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),sand,15-30cm,50.000,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),sand,30-60cm,46.100,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),sand,60-100cm,44.400,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),sand,100-200cm,43.300,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),silt,0-5cm,28.300,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),silt,5-15cm,27.800,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),silt,15-30cm,27.200,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),silt,30-60cm,24.600,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),silt,60-100cm,24.800,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),silt,100-200cm,24.100,%,g/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),phh2o,0-5cm,5.400,-,pH*10
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),phh2o,5-15cm,5.300,-,pH*10
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),phh2o,15-30cm,5.300,-,pH*10
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),phh2o,30-60cm,5.300,-,pH*10
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),phh2o,60-100cm,5.300,-,pH*10
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),phh2o,100-200cm,5.300,-,pH*10
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),bdod,0-5cm,1.200,kg/dm³,cg/cm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),bdod,5-15cm,1.240,kg/dm³,cg/cm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),bdod,15-30cm,1.280,kg/dm³,cg/cm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),bdod,30-60cm,1.290,kg/dm³,cg/cm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),bdod,60-100cm,1.320,kg/dm³,cg/cm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),bdod,100-200cm,1.330,kg/dm³,cg/cm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),cec,0-5cm,20.600,cmol(c)/kg,mmol(c)/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),cec,5-15cm,21.300,cmol(c)/kg,mmol(c)/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),cec,15-30cm,20.100,cmol(c)/kg,mmol(c)/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),cec,30-60cm,19.900,cmol(c)/kg,mmol(c)/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),cec,60-100cm,19.500,cmol(c)/kg,mmol(c)/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),cec,100-200cm,19.600,cmol(c)/kg,mmol(c)/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),nitrogen,0-5cm,3.120,g/kg,cg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),nitrogen,5-15cm,2.040,g/kg,cg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),nitrogen,15-30cm,1.260,g/kg,cg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),nitrogen,30-60cm,0.750,g/kg,cg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),nitrogen,60-100cm,0.520,g/kg,cg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),nitrogen,100-200cm,0.490,g/kg,cg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),ocd,0-5cm,39.800,hg/m³,dg/dm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),ocd,5-15cm,29.600,hg/m³,dg/dm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),ocd,15-30cm,20.800,hg/m³,dg/dm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),ocd,30-60cm,11.700,hg/m³,dg/dm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),ocd,60-100cm,6.300,hg/m³,dg/dm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),ocd,100-200cm,3.700,hg/m³,dg/dm³
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),soc,0-5cm,38.000,g/kg,dg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),soc,5-15cm,25.800,g/kg,dg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),soc,15-30cm,19.300,g/kg,dg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),soc,30-60cm,9.800,g/kg,dg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),soc,60-100cm,8.400,g/kg,dg/kg
+wes_pin,-57.03365,-25.61138,Wesley interior pin (166.3 m AMSL),soc,100-200cm,9.700,g/kg,dg/kg
