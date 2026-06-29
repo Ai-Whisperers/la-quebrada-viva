@@ -1,0 +1,41 @@
+{
+  "aoi_geojson": "docs/site_data/aoi_62ha.geojson",
+  "citation": "Contains Landsat Collection 2 Level-2 Surface Reflectance data courtesy of the U.S. Geological Survey, distributed by Microsoft Planetary Computer (landsat-c2-l2). USGS data are in the public domain.",
+  "collection": "landsat-c2-l2",
+  "fetcher": "scripts.phase0_landsat_annual_batch",
+  "git_sha": "4803be2e99dc69de959e54fe351b343194f9b0fe",
+  "grid_m": 30.0,
+  "index": "NDMI",
+  "license": "USGS-PD",
+  "license_classification": "bundle",
+  "n_scenes": 8,
+  "output": "ndmi.tif",
+  "parcel_polygon_pending": true,
+  "platforms": [
+    "landsat-7",
+    "landsat-8"
+  ],
+  "scene_ids": [
+    "LE07_L2SP_225078_20201211_02_T1",
+    "LC08_L2SP_226078_20201210_02_T1",
+    "LE07_L2SP_226078_20201031_02_T1",
+    "LE07_L2SP_225078_20200821_02_T1",
+    "LE07_L2SP_225078_20200805_02_T1",
+    "LE07_L2SP_225078_20200602_02_T1",
+    "LE07_L2SP_226078_20200524_02_T1",
+    "LE07_L2SP_226078_20200508_02_T1"
+  ],
+  "schema_version": 1,
+  "sha256": "361208ca1f12980e9b54703628cdffb23a422a6cc47f99e7210726db10a8ccaf",
+  "size_bytes": 40354,
+  "source": "stac:landsat-c2-l2#year=2020",
+  "target_bounds_utm21s": [
+    495480.0,
+    7163610.0,
+    498510.0,
+    7166970.0
+  ],
+  "target_crs": "EPSG:32721",
+  "timestamp_utc": "2026-06-29T15:23:14+00:00",
+  "year": 2020
+}
