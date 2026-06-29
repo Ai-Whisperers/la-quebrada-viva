@@ -1,0 +1,9 @@
+# Fauna brief — summary
+- Parcel-tight iNat (5 km, research-grade): 43 obs
+- Birds (top 50 of 25 km checklist): 1/50 confirmed in 5 km iNat
+- Mammals: 2/59 confirmed in 5 km iNat
+- Amphibians: 18 regional species
+- Reptiles: 0 regional species (GBIF) + 24 iNat-only
+- Amphibians supplement: 5 iNat-only species
+- Pollinator-order insects: 54 regional species
+- IUCN-flagged: 0 species
