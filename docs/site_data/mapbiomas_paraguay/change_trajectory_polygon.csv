@@ -1,0 +1,7 @@
+from_code,from_name,to_code,to_name,pixels
+3,Forest Formation,3,Forest Formation,297
+12,Grassland,12,Grassland,54
+12,Grassland,6,Flooded Forest,16
+3,Forest Formation,6,Flooded Forest,8
+12,Grassland,15,Pasture,4
+3,Forest Formation,15,Pasture,3
