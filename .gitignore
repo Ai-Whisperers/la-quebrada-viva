@@ -84,6 +84,7 @@ docs/2026-*_*.pdf
 # from the Element84 / AWS Earth Search STAC. preview_rgb.png + metadata.json
 # stay tracked so the AOI/timestamp is reproducible without a re-fetch.
 docs/site_data/sentinel2/*.tif
+docs/site_data/sentinel2/**/*.tif
 
 # Regenerable CHIRPS v2.0 monthly rainfall rasters. _cache/ is the global
 # 0.05° GeoTIFFs straight from UCSB (~14 GB, 2005-2025). tiles/ is the

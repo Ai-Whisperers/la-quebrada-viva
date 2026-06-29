@@ -1,0 +1,26 @@
+{
+  "aoi_geojson": "docs/site_data/aoi_62ha.geojson",
+  "band": "nir",
+  "citation": "Contains modified Copernicus Sentinel data, processed by ESA / element84 Earth-Search (sentinel-2-l2a).",
+  "cloud_cover": 0.004754,
+  "collection": "sentinel-2-l2a",
+  "fetcher": "scripts.phase0_sentinel2_timeseries_batch",
+  "git_sha": "337a0f3d87f42701d201ebecd1888927ebd28906",
+  "item_id": "S2B_21JVM_20210508_1_L2A",
+  "license": "CC-BY-4.0",
+  "license_classification": "bundle",
+  "output": "nir.tif",
+  "parcel_polygon_pending": true,
+  "schema_version": 1,
+  "sha256": "b1c45efb507de92e61530e22b58872e33627a72888a11d40bbdf9906866da257",
+  "size_bytes": 166102,
+  "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/21/J/VM/2021/5/S2B_21JVM_20210508_1_L2A/B08.tif",
+  "target_bounds_utm21s": [
+    495480.0,
+    7163620.0,
+    498500.0,
+    7166960.0
+  ],
+  "target_crs": "EPSG:32721",
+  "timestamp_utc": "2026-06-29T06:08:31+00:00"
+}
