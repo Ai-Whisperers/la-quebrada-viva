@@ -1,6 +1,6 @@
 # GAPS_ANALYSIS — T+2 post-escritura blindspot + upgrade ledger
 
-> 2026-06-29 (T+2). Authored by AI Whisperers under `/ultrawork`. Reads the repo at HEAD=`0554b77` (Phase-0 §12.D protected-areas + comparables landed) against MASTER_TODO (76 open items), RESEARCH_GAPS (R01–R38), DEFERRED_BUGS (closed at `78433a7`), MCP_STATUS (retired), post_escritura_site_knowledge, and the unmerged work-in-progress on disk (§12.E JRC GSW batch script). Intent: name what is missing, what is upgradeable, what is invisible, in one place — so the next sprint plans against reality, not against the deck.
+> 2026-06-29 (T+2). Authored by AI Whisperers under `/ultrawork`. Reads the repo at HEAD=`744eed7` (Phase-0 §12.A–F all landed; §12.F Hansen Global Forest Change v1.12 shipped at `744eed7` — 4 fetched layers + 1 derived `loss = (lossyear > 0)` since v1.12 dropped the standalone band) against MASTER_TODO (76 open items), RESEARCH_GAPS (R01–R38), DEFERRED_BUGS (closed at `78433a7`), MCP_STATUS (retired), post_escritura_site_knowledge, and the on-disk GFC outputs (50 km buffer, 2000–2024). Intent: name what is missing, what is upgradeable, what is invisible, in one place — so the next sprint plans against reality, not against the deck.
 
 This document is **negative-space**: it enumerates absence, not presence. The positive-space companion is `docs/research_index.md` + `STATUS.md`. When a fact contradicts STATUS, this file wins for *gaps*; STATUS wins for *delivered state*.
 
@@ -20,7 +20,7 @@ Each row carries: **what is missing**, **why it matters now (T+2 reality)**, **w
 
 ## 1. Data / GIS / open-data layer
 
-### 1.1 Acquired (cumulative through `dbff483`)
+### 1.1 Acquired (cumulative through `744eed7`)
 
 | Dataset | Coverage | Status |
 |---|---|---|
@@ -37,6 +37,10 @@ Each row carries: **what is missing**, **why it matters now (T+2 reality)**, **w
 | ERA5 climate 1990–2025 | 22 °C, 1736 mm/yr | ☑ summarised |
 | Wesley KML polygon (30.9 ha buildable) | scope-locked | ☑ at `e3d8cce` |
 | 4-DEM fusion | regional | ☑ at `dbff483` topology_lod cube |
+| WDPA + Overpass protected areas (50 km) | regional | ☑ at `0554b77` §12.D |
+| OSM comparables sweep (50 km) | regional | ☑ at `0554b77` §12.D |
+| JRC Global Surface Water v1.4 (1984–2021, 4 layers, 50 km) | regional | ☑ at `cb7a17d` §12.E — **0 historical surface-water cells** across 446 valid 30 m pixels |
+| Hansen Global Forest Change v1.12 (2000–2024, 4 fetched + 1 derived `loss`, 50 km) | regional | ☑ at `744eed7` §12.F — polygon canopy 82.1% mean at 2000, **only 7 px (~0.63 ha = 1.57%) loss across 24 years** vs 4.94% AOI loss; 0 gain px |
 
 ### 1.2 Missing — P0 (blocks design, not procurable later for the same money)
 
@@ -55,7 +59,7 @@ Each row carries: **what is missing**, **why it matters now (T+2 reality)**, **w
 | D6 | **Hyperspectral / multispectral species classification** of the canopy (R01 §canopy). Sentinel-2's 10–60 m bands cannot resolve Handroanthus impetiginosus (lapacho) vs Peltophorum dubium (yvyrá-pytá) vs Cordia trichotoma (peterebí). Drone + push-broom MicaSense or PlanetScope 8-band time-series would. Drives flower-season scene authenticity (variant A pink bloom timing). | ~$500–2k (PlanetScope subscription / drone mission) |
 | D7 | **AOI polygon vs bbox delta** — current bbox AOI (W-57.050 S-25.625 E-57.020 N-25.595) is 3 × the polygon area; SoilGrids cube and biodiversity sweep both ran on bbox not polygon. Re-clip outputs to polygon for tighter species counts and soil bearing. | 1 day scripting, no data fetch |
 | D8 | **Google Open Buildings v3** (deferred at `dbff483`) — second source for the 737 MS footprints. Triangulating with v3 would catch missed neighbouring caseríos / un-roofed permanent structures (e.g. tile-roof tobacco shed Wesley mentioned but no MS hit). | 1 day, free |
-| D9 | ~~**Protected-areas + comparables sweep**~~ — **closed** at commit `0554b77` (Phase-0 §12.D: WDPA REST + Overpass `boundary=protected_area` + `leisure=nature_reserve` within 50 km, outputs at `docs/site_data/comparables/`). Successor: **§12.E JRC Global Surface Water** WIP at `scripts/phase0_jrc_gsw_batch.py` — independent water-presence ground-truth (1984–2021) cross-checking Sentinel-2's NDWI<0 finding. Finish + ship before declaring §12 wrapped. | 0.5 day to finish + run |
+| D9 | ~~**Protected-areas + comparables sweep**~~ — **closed** at `0554b77` (Phase-0 §12.D: WDPA REST + Overpass `boundary=protected_area` + `leisure=nature_reserve` within 50 km, outputs at `docs/site_data/comparables/`). ~~**JRC Global Surface Water v1.4**~~ — **closed** at `cb7a17d` (Phase-0 §12.E: 4 layers × 1984–2021, 50 km buffer; finding: **0 historical surface-water cells across 446 valid 30 m pixels** — independent confirmation of Sentinel-2 NDWI<0). ~~**Hansen Global Forest Change v1.12**~~ — **closed** this commit (Phase-0 §12.F: 4 fetched layers + 1 derived `loss = (lossyear > 0)` × 2000–2024, 50 km buffer, tile 20S_060W). Addresses R37 (deforestation history). **Finding: property polygon = intact reserve in degrading regional context** — canopy 82.1% mean at 2000, only 7 loss pixels (~0.63 ha = 1.57%) across 24 years vs 4.94% AOI loss; 0 gain pixels. This is the kind of due-diligence headline that belongs in the Wesley one-pager + deck. Phase-0 §12 sweep now closed (A–F all landed). | 0 — done |
 | D10 | **Acoustic + dark-sky baseline** (R36) — 4 visits × 2–3 days/yr with calibrated SPL + SQM. **Single most cited differentiator in Awasi / Chaa Creek reviews.** Cannot fake; cannot retroactively grab. Need first measurements **before** Phase-1 construction noise contaminates the baseline. | $400 instruments + Ivan's time |
 | D11 | **GBIF regression in working tree** — `fetch_gbif_species.py` strips `hasCoordinate` + `basisOfRecord` filters per a prior commit. Means observation set is currently inflated with literature / fossil / unobserved records. Re-add filters and re-run; expect 20–40% record drop, much higher quality. | 2 hours |
 
@@ -271,16 +275,16 @@ DEFERRED_BUGS.md is closed (all 3 resolved at 78433a7). **However**: nothing tra
 
 | ID | Gap | Why |
 |---|---|---|
-| M1 | **STATUS.md is stale at T+2** — last updated 2026-06-25 (T-2). Doesn't reflect escritura close, T+1 post-escritura pack, Phase-0 §12.A/B/C/D drops, §12.E WIP, KML scope-lock, or this analysis. Doc cohesion erodes. |
+| M1 | **STATUS.md is stale at T+2** — last updated 2026-06-25 (T-2). Doesn't reflect escritura close, T+1 post-escritura pack, Phase-0 §12.A/B/C/D/E/F drops (F now landed with the property-intact-vs-degrading-region finding), KML scope-lock, or this analysis. Doc cohesion erodes. |
 | M2 | **`docs/T_PLUS_1_DEBRIEF.md` stub remains unfilled** (per the prior compaction). 1-hour write to fill. |
 | M3 | **`docs/AUTONOMOUS_PLAN.md` is T-1 content** — still goal-oriented to "post-78433a7 → escritura-close sprint". Has not been rewritten for T+2 post-escritura sprint. |
 | M4 | **Decision-log freshness** — `docs/DECISIONS.md` last update at 2026-06-25 (per `4cca649`). T+1 and T+2 decisions not appended. |
 | M5 | **Roast + critique cadence broken** — last honest critique pass predates `78433a7`. The polish wave fixed three named bugs; no fresh critique has surfaced what the *current* worst-three are. Per CLAUDE.md feedback memory (`feedback_critique_honest_roast`), this is a recurring need. |
 | M6 | **MASTER_TODO inflation** — 76 open items, 4 levels deep (P1/P2/P3/P4 × A/B/C). No "active sprint" subset. Reading it requires the whole thing. A 10-item "this week" view would help. |
-| M7 | **No retrospective on Phase-0 §12** drops (A biodiv ☑, B soilgrids cube ☑, C topology LOD ☑, D protected areas + comparables ☑ `0554b77`, E JRC GSW WIP) — what did the open-data sweep buy us? Quantified into design decisions? Or shelf-ware? Five datasets landed; zero became deck slides. |
+| M7 | **No retrospective on Phase-0 §12** drops (A biodiv ☑, B soilgrids cube ☑, C topology LOD ☑, D protected areas + comparables ☑ `0554b77`, E JRC GSW ☑ `cb7a17d`, F Hansen GFC ☑ this commit) — what did the 50-km open-data sweep buy us? Quantified into design decisions? Or shelf-ware? Six datasets landed; zero became deck slides, zero feeding the Wesley one-pager. Top findings — (E) zero historical surface water in 38 years, (F) property = intact reserve in a regionally-degrading buffer (1.57% vs 4.94% loss) — are exactly the due-diligence headlines that belong in the marketing pack but aren't there yet. |
 | M8 | **Wesley + Thijs comms cadence undefined** — no weekly call, no monthly status note, no async update. T+1 one-pager existed (`docs/post_escritura_one_pager.md`) but next deliverable is undefined. |
 | M9 | **The 5 unanswered "what we don't know until photos arrive" gaps** from `post_escritura_one_pager.md` §3 are not tracked as ledger items, only as prose. Move them into RESEARCH_GAPS R01-children for visibility. |
-| M10 | **The `scripts/phase0_jrc_gsw_batch.py` work-in-progress on disk** is uncommitted (Phase-0 §12.E JRC Global Surface Water v1.4, 1984–2021, 50 km buffer). Either finish + ship, or park as a stub with TODO header. Stale WIP rots. |
+| M10 | ~~`scripts/phase0_hansen_gfc_batch.py` WIP~~ — **closed this commit** (Phase-0 §12.F Hansen Global Forest Change v1.12 shipped: 4 fetched layers + 1 derived `loss = (lossyear > 0)` because v1.12 dropped the standalone band, 2000–2024, 50 km buffer, tile 20S_060W, ~778 MB raw across 4 tiles in `_cache/` gitignored, ~9 MB AOI/polygon clips + quicklooks + summary tracked). Predecessor §12.E shipped at `cb7a17d`. The next stale-WIP candidate to watch for is Mapbiomas Paraguay v1 (1985–2023) — 15-year deeper history but no script yet. |
 
 ---
 
@@ -308,7 +312,7 @@ Priority gradient: **leverage × time-to-procure × time-decay**.
 
 1. **Chase Anexo I (R02/D5)** — single email from lawyer. Free, blocks everything. 8 weeks overdue.
 2. **Photo intake activation (R01/D4)** — Wesley ping. Free, unblocks 5 named gaps.
-3. **Finish + ship `phase0_jrc_gsw_batch.py` (D9/M10, §12.E JRC Global Surface Water)** — 4 hours. Closes Phase-0 §12 narrative (A/B/C/D already landed; E is the last open script). Independent ground-truth for the Sentinel-2 NDWI<0 finding.
+3. ~~**Finish + ship `phase0_hansen_gfc_batch.py` (D9/M10, §12.F Hansen Global Forest Change v1.12)**~~ — **done this commit.** Phase-0 §12 narrative now closed (A/B/C/D/E/F all landed). 4 fetched layers + 1 derived `loss = (lossyear > 0)` (v1.12 dropped the standalone band) across 2000–2024 in a 50 km buffer. R37 addressed. **Headline finding: property polygon is an intact reserve in a regionally-degrading buffer — canopy 82.1% mean at 2000, 1.57% cumulative loss vs 4.94% AOI loss, 0 gain pixels.** Next: route into Wesley one-pager + deck v7.
 4. **GBIF regression fix (D11)** — 2 hours.
 5. **Fill `T_PLUS_1_DEBRIEF.md` (M2)** — 1 hour.
 6. **STATUS.md T+2 update (M1)** — 1 hour.
