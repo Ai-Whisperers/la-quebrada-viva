@@ -101,6 +101,15 @@ docs/site_data/sentinel1/**/*.tif
 docs/site_data/landsat/*.tif
 docs/site_data/landsat/**/*.tif
 
+# Regenerable ALOS-2 PALSAR-2 25 m gamma0 GeoTIFFs (Phase-0 §12 #9).
+# Per-year HH/HV/landfrac float32 dB rasters on the canonical EPSG:32721
+# 25 m grid (~121x134 px). Re-fetch via
+# `python3 scripts/phase0_alos_palsar_batch.py` against Microsoft
+# Planetary Computer's `alos-palsar-mosaic`. Quicklook + CSV + summary +
+# per-file .meta.json sidecars stay tracked.
+docs/site_data/alos_palsar/*.tif
+docs/site_data/alos_palsar/**/*.tif
+
 # Regenerable CHIRPS v2.0 monthly rainfall rasters. _cache/ is the global
 # 0.05° GeoTIFFs straight from UCSB (~14 GB, 2005-2025). tiles/ is the
 # parcel-AOI clip per month (~4 KB x 252 = 1 MB, but still binary churn).
