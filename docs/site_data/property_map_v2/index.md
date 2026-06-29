@@ -126,10 +126,11 @@ These are the things v2 explicitly leaves on the table for future-Tier data lift
 5. **In-polygon fauna sightings (not 25 km envelope)** → camera-trap deployment for 60 d (Tier-3, ~$300-600/trap).
 6. **Cultural/historic land-use** → neighbour + cadastral office interviews (Tier-0 time only).
 7. **Per-pixel land-use 2025+** → Mapbiomas Coll 3 once released; until then, S2 timeseries serves.
-8. **Climate cube spot-check vs WorldClim** → WorldClim 2.1 host (geodata.ucdavis.edu) currently down; CHIRPS + ERA5-Land + NASA POWER on disk are partial substitutes.
+8. **Climate cube spot-check vs WorldClim** → WorldClim 2.1 host (geodata.ucdavis.edu) currently down; CHIRPS + ERA5-Land + NASA POWER on disk are now synthesized in `docs/site_data/climate_cube.md` as the v1 cube. WorldClim spot-check + MOD16A2 ET pending v2.
 
 ## Related
 
+- Climate cube synthesis: `docs/site_data/climate_cube.md` (Phase-0 §12 #17 v1, three-source cross-validated)
 - v1 baseline: `docs/site_data/property_map/index.md` (canonical composite PNG @ 300 dpi)
 - v2 master spec: `docs/research/property_map_v2_data_sources.md` (§4-§16 source manifest)
 - v2 tooling plan: `docs/research/property_map_v2_tooling.md` (5-phase upgrade plan, Tier 0 = $0)
