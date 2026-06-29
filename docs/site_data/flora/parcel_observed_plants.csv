@@ -1,0 +1,9 @@
+id,observed_on,place_guess,longitude,latitude,taxon_id,scientific_name,common_name,rank,iconic_taxon
+269448718,2025-03-27,"Escobar, Paraguarí, Paraguay",-57.038231,-25.60629,166944,Pityrogramma calomelanos,silver fern,species,Plantae
+193724284,2022-02-19,"Chololo 031416, Paraguay",-57.0606337637,-25.5713246561,793758,Ruellia angustiflora,,species,Plantae
+193724281,2022-02-19,"Chololo 031416, Paraguay",-57.0616954606,-25.5710272112,135403,Luehea divaricata,,species,Plantae
+96907737,2021-10-02,Paraguay,-56.9952598487,-25.5851004858,460752,Allophylus edulis,cocum,species,Plantae
+63903224,2020-10-31,Paraguay,-56.9995333771,-25.5826396105,543079,Lithraea molleoides,,species,Plantae
+18395783,2018-11-02,"Unnamed Road, Paraguay",-57.0483541489,-25.5856775318,796017,Trichocentrum pumilum,,species,Plantae
+18394532,2018-10-25,"Unnamed Road, Paraguay",-57.0478381589,-25.5850884568,906882,Zygostates alleniana,,species,Plantae
+18396731,2018-10-25,"Unnamed Road, Paraguay",-57.049609758,-25.5868868197,985710,Thaumatophyllum bipinnatifidum,Tree Philodendron,species,Plantae

@@ -1,0 +1,98 @@
+[
+  {
+    "id": 269448718,
+    "observed_on": "2025-03-27",
+    "place_guess": "Escobar, Paraguar\u00ed, Paraguay",
+    "longitude": -57.038231,
+    "latitude": -25.60629,
+    "taxon_id": 166944,
+    "scientific_name": "Pityrogramma calomelanos",
+    "common_name": "silver fern",
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  },
+  {
+    "id": 193724284,
+    "observed_on": "2022-02-19",
+    "place_guess": "Chololo 031416, Paraguay",
+    "longitude": -57.0606337637,
+    "latitude": -25.5713246561,
+    "taxon_id": 793758,
+    "scientific_name": "Ruellia angustiflora",
+    "common_name": null,
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  },
+  {
+    "id": 193724281,
+    "observed_on": "2022-02-19",
+    "place_guess": "Chololo 031416, Paraguay",
+    "longitude": -57.0616954606,
+    "latitude": -25.5710272112,
+    "taxon_id": 135403,
+    "scientific_name": "Luehea divaricata",
+    "common_name": null,
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  },
+  {
+    "id": 96907737,
+    "observed_on": "2021-10-02",
+    "place_guess": "Paraguay",
+    "longitude": -56.9952598487,
+    "latitude": -25.5851004858,
+    "taxon_id": 460752,
+    "scientific_name": "Allophylus edulis",
+    "common_name": "cocum",
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  },
+  {
+    "id": 63903224,
+    "observed_on": "2020-10-31",
+    "place_guess": "Paraguay",
+    "longitude": -56.9995333771,
+    "latitude": -25.5826396105,
+    "taxon_id": 543079,
+    "scientific_name": "Lithraea molleoides",
+    "common_name": null,
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  },
+  {
+    "id": 18395783,
+    "observed_on": "2018-11-02",
+    "place_guess": "Unnamed Road, Paraguay",
+    "longitude": -57.0483541489,
+    "latitude": -25.5856775318,
+    "taxon_id": 796017,
+    "scientific_name": "Trichocentrum pumilum",
+    "common_name": null,
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  },
+  {
+    "id": 18394532,
+    "observed_on": "2018-10-25",
+    "place_guess": "Unnamed Road, Paraguay",
+    "longitude": -57.0478381589,
+    "latitude": -25.5850884568,
+    "taxon_id": 906882,
+    "scientific_name": "Zygostates alleniana",
+    "common_name": null,
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  },
+  {
+    "id": 18396731,
+    "observed_on": "2018-10-25",
+    "place_guess": "Unnamed Road, Paraguay",
+    "longitude": -57.049609758,
+    "latitude": -25.5868868197,
+    "taxon_id": 985710,
+    "scientific_name": "Thaumatophyllum bipinnatifidum",
+    "common_name": "Tree Philodendron",
+    "rank": "species",
+    "iconic_taxon": "Plantae"
+  }
+]

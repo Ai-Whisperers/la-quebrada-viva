@@ -1,0 +1,72 @@
+binomial,family,life_form,lqv_vernacular,lqv_25km_occurrences,seen_within_5km,n_obs_5km,months_seen,py_threat_category,ar_threat_category,endemism_group,uses,is_timber,lqv_priority_score
+Syagrus romanzoffiana,Arecaceae,tree,Queen palm,2,,0,,,,widespread,fodder | food | ornamental,,5
+Euterpe edulis,Arecaceae,tree,,,,0,,en_peligro,Endangered,widespread,food,yes,5
+Attalea funifera,Arecaceae,tree,,,,0,,,,pure_endemic,fibres,,4
+Butia catarinensis,Arecaceae,shrub,,,,0,,,,pure_endemic,fibres | food,,4
+Butia eriospatha,Arecaceae,tree,,,,0,,,,pure_endemic,food,,4
+Geonoma gamiova,Arecaceae,shrub,,,,0,,,,pure_endemic,fibres,,4
+Syagrus botryophora,Arecaceae,tree,,,,0,,,,pure_endemic,ornamental,,4
+Allagoptera caudescens,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Astrocaryum aculeatissimum,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Attalea apoda,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Attalea burretiana,Arecaceae,tree,,,,0,,,,near_endemic,,,3
+Attalea dubia,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Attalea humilis,Arecaceae,shrub,,,,0,,,,pure_endemic,,,3
+Bactris ferruginea,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Bactris hatschbachii,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Bactris horridispatha,Arecaceae,shrub,,,,0,,,,pure_endemic,,,3
+Bactris setosa,Arecaceae,tree,,,,0,,,,near_endemic,,,3
+Bactris timbuiensis,Arecaceae,shrub,,,,0,,,,pure_endemic,,,3
+Bactris vulgaris,Arecaceae,shrub,,,,0,,,,near_endemic,,,3
+Butia paraguayensis,Arecaceae,shrub,,,,0,,amenazada,Endangered,widespread,,,3
+Geonoma elegans,Arecaceae,shrub,,,,0,,,,pure_endemic,,,3
+Geonoma pohliana,Arecaceae,shrub,,,,0,,,,near_endemic,,,3
+Geonoma rubescens,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Geonoma schottiana,Arecaceae,shrub,,,,0,,,,near_endemic,,,3
+Syagrus hoehnei,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Syagrus insignis,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Syagrus kellyana,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Syagrus lorenzoniorum,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Syagrus macrocarpa,Arecaceae,tree,,,,0,,,,near_endemic,,,3
+Syagrus picrophylla,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Syagrus pseudococos,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Syagrus ruschiana,Arecaceae,tree,,,,0,,,,pure_endemic,,,3
+Syagrus santosii,Arecaceae,shrub,,,,0,,,,pure_endemic,,,3
+Syagrus schizophylla,Arecaceae,shrub,,,,0,,,,near_endemic,,,3
+Syagrus weddelliana,Arecaceae,shrub,,,,0,,,,pure_endemic,,,3
+Trithrinax brasiliensis,Arecaceae,tree,,,,0,,en_peligro,,widespread,,,3
+Acrocomia aculeata,Arecaceae,tree,,,,0,,,,widespread,food | ornamental,,2
+Aiphanes horrida,Arecaceae,tree,,,,0,,,,occasional,ornamental,,2
+Butia capitata,Arecaceae,tree,,,,0,,,,widespread,essential_oils | food | ornamental,,2
+Butia purpurascens,Arecaceae,shrub,,,,0,,,,occasional,ornamental,,2
+Copernicia prunifera,Arecaceae,tree,,,,0,,,,widespread,essential_oils | fibres,,2
+Mauritia flexuosa,Arecaceae,tree,,,,0,,,,occasional,fibres | food | ornamental,,2
+Syagrus cearensis,Arecaceae,tree,,,,0,,,,widespread,ornamental,,2
+Syagrus coronata,Arecaceae,tree,,,,0,,,,widespread,essential_oils | fibres | ornamental,,2
+Syagrus oleracea,Arecaceae,tree,,,,0,,,,widespread,food,,2
+Acrocomia intumescens,Arecaceae,tree,,,,0,,,,widespread,,,1
+Allagoptera campestris,Arecaceae,shrub,,,,0,,,Indeterminada,widespread,,,1
+Attalea compta,Arecaceae,tree,,,,0,,,,widespread,,,1
+Attalea exigua,Arecaceae,tree?,,,,0,,,,widespread,,,1
+Attalea oleifera,Arecaceae,tree,,,,0,,,,widespread,,,1
+Attalea phalerata,Arecaceae,tree,,,,0,,,,occasional,,,1
+Attalea pindobassu,Arecaceae,tree,,,,0,,,,widespread,,,1
+Attalea vitrivir,Arecaceae,tree,,,,0,,,,,,,1
+Bactris acanthocarpa,Arecaceae,shrub,,,,0,,,,widespread,,,1
+Bactris hirta,Arecaceae,shrub,,,,0,,,,widespread,,,1
+Bactris simplicifrons,Arecaceae,shrub,,,,0,,,,occasional,,,1
+Butia archeri,Arecaceae,shrub,,,,0,,,,occasional,,,1
+Butia odorata,Arecaceae,tree,,,,0,,,,widespread,,,1
+Butia yatay,Arecaceae,tree,,,,0,,,Vulnerable,widespread,,,1
+Desmoncus orthacanthos,Arecaceae,tree,,,,0,,,,widespread,,,1
+Geonoma brevispatha,Arecaceae,shrub,,,,0,,,,widespread,,,1
+Geonoma deversa,Arecaceae,tree,,,,0,,,,,,,1
+Geonoma weddelliana,Arecaceae,tree?,,,,0,,,,occasional,,,1
+Mauritiella armata,Arecaceae,tree,,,,0,,,,,,,1
+Syagrus comosa,Arecaceae,tree,,,,0,,,,occasional,,,1
+Syagrus flexuosa,Arecaceae,tree,,,,0,,,,widespread,,,1
+Syagrus glaucescens,Arecaceae,tree,,,,0,,,,widespread,,,1
+Syagrus loefgrenii,Arecaceae,shrub,,,,0,,,,,,,1
+Syagrus vagans,Arecaceae,shrub,,,,0,,,,widespread,,,1
+Syagrus werdermannii,Arecaceae,shrub,,,,0,,,,,,,1
+Trithrinax acanthocoma,Arecaceae,tree,,,,0,,,,,,,1
