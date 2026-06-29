@@ -92,3 +92,8 @@ docs/site_data/sentinel2/*.tif
 # summary stay tracked so the analytic record is preserved.
 docs/site_data/chirps/_cache/
 docs/site_data/chirps/tiles/
+
+# Regenerable JRC Global Surface Water v1.4 raw 10×10° tiles (~165 MB).
+# Re-fetch via `python3 scripts/phase0_jrc_gsw_batch.py`. AOI/polygon clips
+# + quicklooks + summary stay tracked.
+docs/site_data/jrc_gsw/_cache/
