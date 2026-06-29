@@ -1,0 +1,7 @@
+name,lon,lat,elev_m,slope_pct,slope_deg,twi,upslope_cells,gsw_occ_max_pct,gsw_occ_mean_pct,nearest_waterway_m,nearest_waterway_label,nearest_water_poly_m,nearest_water_poly_label,wtd_low_m,wtd_high_m,wtd_rationale
+centroid,-57.035598,-25.60716,176.21,15.01,8.53,10.53,182,0.0,0.0,2975.5,ditch,977.5,Aqua Basin,4.0,12.0,moderate TWI → mid-upper hillslope
+corner_NE,-57.029288,-25.609408,159.21,6.99,4.0,10.97,132,0.0,0.0,3462.0,ditch,968.5,Aqua Basin,4.0,12.0,moderate TWI → mid-upper hillslope
+corner_NW,-57.033568,-25.611724,156.68,10.75,6.14,10.74,161,0.0,0.0,2974.8,ditch,1353.3,Aqua Basin,4.0,12.0,moderate TWI → mid-upper hillslope
+corner_SE,-57.038441,-25.60543,190.07,11.15,6.36,11.07,234,0.0,0.0,2826.1,ditch,1035.8,Aqua Basin,2.0,6.0,high TWI → mid-hillslope discharge zone
+corner_SW,-57.037662,-25.60508,185.74,12.08,6.89,10.95,225,0.0,0.0,2912.8,ditch,950.0,Aqua Basin,4.0,12.0,moderate TWI → mid-upper hillslope
+wesley_pin,-57.033657,-25.611389,160.21,12.37,7.05,10.57,157,0.0,0.0,2977.2,ditch,1324.2,Aqua Basin,4.0,12.0,moderate TWI → mid-upper hillslope
