@@ -1,0 +1,29 @@
+{
+  "aoi_geojson": "docs/site_data/aoi_62ha.geojson",
+  "citation": "Contains modified Copernicus Sentinel-1 data, processed to Radiometrically Terrain Corrected gamma0 (sentinel-1-rtc) by Microsoft Planetary Computer.",
+  "collection": "sentinel-1-rtc",
+  "datetime": "2026-01-22T09:12:08.517718Z",
+  "fetcher": "scripts.phase0_sentinel1_sar_batch",
+  "git_sha": "17cfeb4da2e97008e528575c9fe55acf5afa586d",
+  "item_id": "S1C_IW_GRDH_1SDV_20260122T091156_20260122T091221_006014_00C0ED_rtc",
+  "license": "CC-BY-4.0",
+  "license_classification": "bundle",
+  "orbit_state": "descending",
+  "output": "vv.tif",
+  "parcel_polygon_pending": true,
+  "polarization": "vv",
+  "relative_orbit": 68,
+  "schema_version": 1,
+  "sha256": "220b80812521bfb5501cbd2b0d6f9a5e4a629b30bb99d8446b96fcc602461431",
+  "size_bytes": 361033,
+  "source": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/1/22/IW/DV/S1C_IW_GRDH_1SDV_20260122T091156_20260122T091221_006014_00C0ED_853D/measurement/iw-vv.rtc.tiff",
+  "target_bounds_utm21s": [
+    495480.0,
+    7163620.0,
+    498500.0,
+    7166960.0
+  ],
+  "target_crs": "EPSG:32721",
+  "timestamp_utc": "2026-06-29T06:24:52+00:00",
+  "units": "gamma0_linear_power"
+}
