@@ -1,7 +1,7 @@
 ---
 title: "La Quebrada Viva — climate cube (ERA5 + CHIRPS + NASA POWER)"
 phase: "Phase-0 §12 #17"
-status: "v1 — three-source cube; ET (MOD16A2) + WorldClim 30s pending v2"
+status: "v1.1 — three-source cube + FAO-56 PM ET₀; MOD16A2 + WorldClim 30s pending v2"
 canonical_point: "-25.6300, -57.0300 (parcel centroid)"
 aoi_bbox_4326: "W-57.0450 S-25.6450 E-57.0150 N-25.6150"
 window: "1990-2025 (ERA5 + NASA POWER 36 yr) / 2005-2025 (CHIRPS 21 yr)"
@@ -34,6 +34,9 @@ best one **per variable**, not the best one overall.
 | Mean RH @ 2 m                      | **73.5 %**    | NASA POWER        | ERA5 single-levels did not pull RH |
 | Köppen-Geiger class                | **Cfa — subtropical humid, no dry season** | ERA5 monthly clim | all 12 months > 50 mm except Aug @ 41 mm (CHIRPS); ERA5 has 79 mm Aug |
 | Passive cooling viable (Rule 6)    | **Yes**       | ERA5              | warmest month 26.8 °C < 35 °C threshold |
+| Annual ET₀ (FAO-56 PM)             | **1307 mm/yr** | POWER daily (v1.1) | computed from T/RH/u/R_s on disk; range 1167-1471 over 36 yr |
+| Worst ET-deficit month (Aug)       | **41 P − 81 ET₀ = −40 mm** | CHIRPS + POWER | sizes cistern August floor |
+| Annual P − ET₀ surplus             | **+226 mm/yr** | CHIRPS − POWER PM | catchment retention is the design driver, not aridity |
 
 ## Cross-validation table — same metric, three sources
 
@@ -99,7 +102,9 @@ Mean 1532 mm/yr; σ ≈ 235 mm/yr; range 1146-2096; CV ≈ 15 %.
   design draw / 2.81 / 0.75 (DC→AC + soiling) / 30 d → required kWp.
 - **Cistern sizing.** Use CHIRPS driest 3-mo run (Jun-Jul-Aug = 183 mm) over
   catchment m². Driest realized year (2020 = 1146 mm) is the worst-case
-  annual budget; rolling 12-mo drought events can dip lower.
+  annual budget; rolling 12-mo drought events can dip lower. v1.1 update:
+  August deficit P − ET₀ = −40 mm sets the August draw-down floor below the
+  pure-rainfall 41 mm number.
 - **Rule 9 (solar on steel frame, not sod roof).** Solar wins on roof or pole
   array; 50 m wind (3.35 m/s) does not justify a turbine.
 - **Hydro feasibility.** Mean 1532 mm/yr with the dry-season floor at 183 mm
@@ -115,29 +120,47 @@ months > 30 mm precipitation). CHIRPS at 5.5 km shows Aug = 41 mm — close to
 the 30 mm threshold that would tip into Cwa (dry winter). The honest call is
 "borderline Cfa / Cwa with a dry-but-not-arid August"; the deck quotes Cfa.
 
-## Water-balance hooks
+## Water-balance hooks (v1.1 — FAO-56 PM ET₀ on disk)
 
-P (annual) is in hand from three sources. **ET₀ (FAO-56 Penman-Monteith
-reference evapotranspiration) is the missing leg of the water balance.**
+ET₀ computed from `nasa_power_daily.csv` 1990-2025 via FAO-56 Penman-Monteith
+(`scripts/phase0_penman_monteith_et0.py`). u₂ derived from POWER WS10M via
+FAO-56 log profile (Eq. 47) — POWER WS2M reflects the ½° cell's mixed
+forest+farmland roughness, not the reference grass surface. Full derivation
++ caveats in `docs/site_data/nasa_power/penman_monteith_et0/summary.md`.
 
-- T_max, T_min, RH, wind, solar are all in NASA POWER daily — so Penman-
-  Monteith ET₀ can be computed from `nasa_power_daily.csv` directly without
-  another external pull. Not done in this synthesis to avoid inventing a
-  number without the FAO-56 reference implementation cross-checked.
-- A satellite-direct ET (MOD16A2 v061, 500 m 8-day) would bound the answer
-  with measured-cloud-corrected actual ET. **NASA Earthdata token is in
-  `.env.local`**; the AppEEARS / LP DAAC pull is the path; queue depth and
-  polygon CSV upload are the friction. Deferred to climate-cube v2.
-- WorldClim 2.1 30-arc-sec (~1 km) would give a higher-resolution monthly
-  climatology against which ERA5's 28 km can be sanity-checked. The host
-  (geodata.ucdavis.edu) was unreachable on 2026-06-29 — retry script left at
+**Annual: 1307 mm/yr (mean), range 1167-1471 over 36 full years.**
+
+Monthly ET₀ vs CHIRPS P:
+
+| Month | ET₀ mm/day | ET₀ mm/mo | CHIRPS P mm/mo | P − ET₀ mm/mo |
+| --- | ---: | ---: | ---: | ---: |
+| Jan | 5.43 | 168 | 137 | −32 |
+| Feb | 4.88 | 138 | 142 |  +4 |
+| Mar | 4.13 | 128 | 157 | +29 |
+| Apr | 3.01 |  90 | 157 | +67 |
+| May | 1.99 |  62 | 159 | +97 |
+| Jun | 1.60 |  48 |  78 | +30 |
+| Jul | 1.84 |  57 |  65 |  +8 |
+| Aug | 2.60 |  81 |  41 | **−40** ← worst |
+| Sep | 3.40 | 102 |  76 | −26 |
+| Oct | 4.09 | 127 | 174 | +47 |
+| Nov | 4.80 | 144 | 175 | +31 |
+| Dec | 5.23 | 162 | 173 | +11 |
+| **Annual** | — | **1307** | **1532** | **+226** |
+
+Three deficit months — Jan, Aug, Sep. **August is the worst at −40 mm.**
+That's the floor the cistern's August draw-down has to clear. The annual
+surplus +226 mm/yr is positive but smaller than a typical Cfa lowland (~400
+mm/yr) because POWER's solar-rich ½° cell pushes ET₀ a bit higher than the
+parcel microclimate (Cordillera afternoon-shade pulls real ET₀ lower).
+
+Bounding caveats:
+- Satellite-direct **MOD16A2 v061** (500 m 8-day actual ET) would bracket
+  this PM reference number. NASA Earthdata token in `.env.local`; AppEEARS
+  queue + polygon CSV upload friction. Deferred to v2.
+- **WorldClim 2.1 30s** for higher-res climate sanity-check still pending —
+  `geodata.ucdavis.edu` unreachable 2026-06-29; retry script
   `scripts/fetch_worldclim.py`.
-
-For the escritura deck and the digital twin, the working assumption is
-**ET ≈ 1100-1300 mm/yr** (Penman-Monteith reference range for subtropical
-humid lowland with the measured T+RH+solar profile), pending the actual
-NASA POWER PM computation. That leaves P-ET surplus ≈ 200-400 mm/yr →
-catchment retention is the design driver, not aridity.
 
 ## Data files (what fed this synthesis)
 
@@ -154,9 +177,12 @@ Regenerable via:
 
 ## Pending / gaps (v2 backlog)
 
-1. **ET₀ Penman-Monteith** from `nasa_power_daily.csv` (no new fetch needed).
+1. ~~ET₀ Penman-Monteith from `nasa_power_daily.csv`~~ — **done v1.1**
+   (`docs/site_data/nasa_power/penman_monteith_et0/`).
 2. **MOD16A2 v061 actual ET** 2000-2024 8-day 500 m via NASA Earthdata
-   AppEEARS (token available; queue + CSV polygon upload friction).
+   AppEEARS (token available; queue + CSV polygon upload friction). This is
+   the next-most-valuable input — bounds the FAO-56 reference with
+   measured-cloud-corrected actual ET.
 3. **WorldClim 2.1 30s** baseline 1970-2000 for higher-res climatology
    sanity-check (host down 2026-06-29; retry script ready).
 4. **Future projections** — CMIP6 NEX-GDDP-CMIP6 SSP2-4.5 / SSP5-8.5 monthly
