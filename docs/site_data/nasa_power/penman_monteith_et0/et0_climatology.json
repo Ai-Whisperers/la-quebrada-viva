@@ -1,0 +1,43 @@
+{
+  "lat": -25.63,
+  "lon": -57.03,
+  "elev_m": 350.0,
+  "method": "FAO-56 Penman-Monteith (Allen et al. 1998, Eq. 6)",
+  "wind_source": "POWER WS10M converted to u2 via FAO-56 log profile (Eq. 47)",
+  "albedo": 0.23,
+  "window": "1990-01-01 to 2025-12-31",
+  "n_days": 13149,
+  "skipped_rows": 0,
+  "monthly_climatology_mm_per_day": {
+    "Jan": 5.433,
+    "Feb": 4.883,
+    "Mar": 4.131,
+    "Apr": 3.009,
+    "May": 1.994,
+    "Jun": 1.6,
+    "Jul": 1.84,
+    "Aug": 2.6,
+    "Sep": 3.398,
+    "Oct": 4.088,
+    "Nov": 4.801,
+    "Dec": 5.231
+  },
+  "monthly_climatology_mm_per_month": {
+    "Jan": 168.4,
+    "Feb": 137.9,
+    "Mar": 128.1,
+    "Apr": 90.3,
+    "May": 61.8,
+    "Jun": 48.0,
+    "Jul": 57.0,
+    "Aug": 80.6,
+    "Sep": 101.9,
+    "Oct": 126.7,
+    "Nov": 144.0,
+    "Dec": 162.2
+  },
+  "annual_mean_mm_per_year": 1307.0,
+  "annual_min_mm_per_year": 1167.3,
+  "annual_max_mm_per_year": 1470.8,
+  "annual_n_years_full": 36
+}
