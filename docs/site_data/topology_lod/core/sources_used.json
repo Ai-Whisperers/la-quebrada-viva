@@ -1,0 +1,46 @@
+{
+  "bbox": [
+    -57.0509009009009,
+    -25.625900900900902,
+    -57.0190990990991,
+    -25.594099099099097
+  ],
+  "buffer_m": 100,
+  "sources": {
+    "alos_aw3d30": {
+      "path": "docs/site_data/extended_aoi/alos_aw3d30_dem.tif",
+      "min": 132.00494384765625,
+      "max": 361.24114990234375,
+      "mean": 237.98944091796875
+    },
+    "cop30": {
+      "path": "docs/site_data/extended_aoi/cop30_dem.tif",
+      "min": 131.24610900878906,
+      "max": 358.243408203125,
+      "mean": 236.4640350341797
+    },
+    "srtm_gl1": {
+      "path": "docs/site_data/extended_aoi/srtm_gl1_dem.tif",
+      "min": 134.04861450195312,
+      "max": 352.0,
+      "mean": 238.8160400390625
+    },
+    "nasadem": {
+      "path": "docs/site_data/extended_aoi/nasadem_dem.tif",
+      "min": 131.7349853515625,
+      "max": 349.0,
+      "mean": 236.04258728027344
+    }
+  },
+  "fused_30m_shape": [
+    118,
+    118
+  ],
+  "fused_5m_shape": [
+    706,
+    706
+  ],
+  "fused_5m_min": 132.10098266601562,
+  "fused_5m_max": 354.529296875,
+  "fused_5m_mean": 237.31837463378906
+}
