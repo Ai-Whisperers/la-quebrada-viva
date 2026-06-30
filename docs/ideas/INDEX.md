@@ -4,6 +4,12 @@
 **Read me first:** This is the canonical map of every idea Wes has surfaced, organized by domain, with priority/owner/status/deliverable for each. Each idea has its own detail file in this folder.
 ---
 
+
+## Two top-level reads
+
+- 📊 **[INSIGHTS.md](./INSIGHTS.md)** — 20 patterns, blind spots, leverage points from reading the whole catalog. Start here if you only have 10 minutes.
+- ➕ **[SUGGESTED.md](./SUGGESTED.md)** — 20 new ideas Erebus thinks should be in the catalog. Read after INSIGHTS.
+
 ## How to read this
 
 - **P0** = blocks the next sprint or the 2026-06-27 escritura follow-up
@@ -25,7 +31,7 @@
 
 ## At-a-glance
 
-**89 ideas total** across **10 categories**
+**89 original ideas + 20 suggested additions = 109 total** across **10 categories**
 
 | Priority | Count |
 |---|---:|
