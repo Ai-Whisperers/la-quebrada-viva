@@ -2,6 +2,20 @@
 **Maintained by:** Erebus (AI Whisperers) · **For:** Wesley van de Camp + Ivan + Kiki
 **Last update:** 2026-06-30 · **Source:** All brainstorm sessions, recordings, briefs, project state
 **Read me first:** This is the canonical map of every idea Wes has surfaced, organized by domain, with priority/owner/status/deliverable for each. Each idea has its own detail file in this folder.
+
+**Each idea file contains 12 sections:**
+- Metadata (priority, owner, status, source, deliverable)
+- **What Wes wants** — extracted from transcripts
+- **Why this matters** — 2nd-order analysis + insight cross-refs
+- **Full picture** — context, constraints, history
+- **What we know** — research summary
+- **What needs research** — specific questions + named sources
+- **Dependencies** — cross-references to other ideas
+- **Risks & failure modes**
+- **Cost / time estimate**
+- **Done = shipped** — measurable acceptance criteria
+- **Recommended next action** — 1-3 specific steps with owner
+- **Sources & references** + Changelog
 ---
 
 
@@ -16,6 +30,12 @@
 - **P1** = needed for Phase 1 (months 1-9 post-escritura)
 - **P2** = Phase 2 (months 9-18) or longer-term buildout
 - **P3** = Phase 3+ (year 2+) or nice-to-have
+
+**How to read the rich content per idea:**
+- Open any idea file. It contains 12 sections that turn a 1-line idea into a researched, complete spec.
+- Cross-links work between idea files and to [INSIGHTS.md](./INSIGHTS.md) + [SUGGESTED.md](./SUGGESTED.md) + project docs.
+- The `What needs research` section names specific sources + questions you (or Erebus) can act on.
+- The `Done = shipped` section has measurable criteria so you know exactly when to mark `shipped`.
 
 **Status legend:**
 - `shipped` = delivered to Wes, on disk
