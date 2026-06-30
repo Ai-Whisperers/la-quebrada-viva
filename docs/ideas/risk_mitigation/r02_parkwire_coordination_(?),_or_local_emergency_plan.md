@@ -1,37 +1,92 @@
 # R02: ParkWire coordination (?), or local emergency plan
 
-**Category:** [Risk Mitigation & Safety](../README.md)
+**Category:** [Risk Mitigation & Safety](../risk_mitigation/README.md)
 **Priority:** P1
 **Owner:** Wesley
 **Status:** `research_needed`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** emergency response protocol
-**Dependencies:** none
 
 ---
 
-## Status meaning
+## What Wes wants
 
-Open question. No answer yet. Erebus to research or Wes to provide input.
+emergency response protocol
 
-## Priority meaning
+## Why this matters
 
-**Needed for Phase 1 (months 1-9 post-escritura) or the first 30 days of post-escritura work.**
 
-## Where this came from
 
-Wes brainstorm recording, 2026-06-30. See [`../../briefs/wes_recording_2026-06-30_raw.md`](../../briefs/wes_recording_2026-06-30_raw.md).
-Specifically from the second session (later in the day) where Wes covered legal/financial structure, operational research list, and house typology specs.
+**Related insights from the catalog pass:**
 
-## Next action
+- [Insight #3: Insurance + fire risk are coupled and urgent](../INSIGHTS.md) — _Insurance + fire risk are coupled and urgent_
 
-- [ ] Erebus: research this topic and produce the deliverable
-- [ ] Wes: confirm priority + scope once deliverable lands
+## Full picture — context, constraints, history
 
-## Risks / Open questions
+**Risk mitigation + safety.** PY insurance market is thin for eco-tourism per [Insight #3](../INSIGHTS.md). Wes is building wooden/bamboo houses in a forested area — fire risk is existential. Hard gate: insurance pre-qualification before breaking ground.
 
-_(empty — add as they come up)_
+## What we know already (research summary)
+
+- **Deliverable target:** emergency response protocol
+- **Source:** [Wes's brainstorm recording](../../briefs/wes_recording_2026-06-30_raw.md) (raw transcript)
+- **Cleaned version:** [dream list](../../briefs/wes_recording_2026-06-30_dreamlist.md) + [action list](../../briefs/wes_recording_2026-06-30_actionlist.md)
+
+
+## What needs research
+
+- _No additional research tasks defined — see related ideas for context._
+
+## Dependencies
+
+**This idea depends on / is informed by:**
+
+- [`R03`](../risk_mitigation/r03_storm_+_hurricane_season_prep.md) — storm
+- [`R01`](../risk_mitigation/r01_fire_safety_plan_(firebreaks_+_water_points).md) — fire
+
+
+
+## Risks & failure modes
+
+_No specific risks identified beyond standard category risks. Add as they emerge._
+
+## Cost / time estimate
+
+Insurance broker quotes: free upfront. International broker fees: 5-15% of annual premium (paid from policy, not pocket). Hydrology consultant: $2-5k. Security system (gate + cameras): $2-8k installed.
+
+## Done = shipped
+
+**Acceptance criteria (measurable):**
+
+- emergency response protocol
+- Document the deliverable's location/path in this file
+- Update the **Status** field above to `shipped`
+- Add a 1-line entry to the Changelog below
+- For research-type ideas: link the deliverable doc + note 1 key finding
+
+## Recommended next action
+
+1. **Wes: identify the broker/consultant** (insurance broker, hydrology consultant, security firm)
+2. **Erebus: prep the brief** (what to ask, what red flags to watch)
+3. **Wes: book the consultation + log outcome**
+
+## Priority & status meaning
+
+**Priority:** **Needed for Phase 1 (months 1-9 post-escritura) or the first 30 days of post-escritura work.**
+
+**Status:** Open question. No answer yet. Erebus to research or Wes to provide input.
+
+## Sources & references
+
+- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
+- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
+- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
+- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [INDEX.md](../../INDEX.md) — master catalog
+- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog
 
-- 2026-06-30: Idea created from consolidated session review
+- 2026-06-30: Idea created from consolidated session review (initial scaffold)
+- 2026-06-30: Rich content pass — What/Why/Context/Research/Dependencies/Risks/Cost/Done/Action sections populated
