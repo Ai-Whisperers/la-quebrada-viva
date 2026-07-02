@@ -80,3 +80,58 @@ feat(reconcile): merge audio synthesis + buyer pre-sales into master
 
 Co-Authored-By: Claude <noreply@anthropic.com>
 ```
+
+## Round 2 — 2026-07-02 (this round)
+
+After the first reconcile, the page-side updates were missing:
+- Deployed index.html was the older /tmp/lqv-scan version (40342 bytes)
+- The new index.html (42553 bytes) with "About the wider project" section
+  wasn't reaching Cloudflare
+
+### What got fixed in round 2
+
+1. **Page update committed** (`feat(page): add 'About the wider project' section`)
+   - `index.html` now has the "About the wider project" section
+   - Live at https://lqv-walkthrough.pages.dev (42553 bytes verified)
+   - Links to HOUSING_PARK_CONCEPT, EUROPEAN_TOURISM_SPEC,
+     DREAMLIST_NL, RESEARCH_CATALOGUE in the canonical repo
+
+2. **Deploy script fixed** (`lqv-pages-redeploy.sh`)
+   - Now uses `/root/la-quebrada-viva/splats/exports/web` as the canonical
+     source, falling back to `/root/.hermes/lqv-splat` then `/tmp/lqv-scan`
+   - Previously hardcoded `/tmp/lqv-scan/splats/exports/web` which was stale
+
+3. **Cesium ion token pipeline** verified end-to-end
+   - Token saved in `~/.lqv/splats.env` (CESIUM_ION_TOKEN)
+   - Generated at deploy-time to `splats/exports/web/lqv-secrets/cesium-token.js`
+   - Not tracked in git (gitignored) — rotated by hand
+   - The 3D viewer at https://lqv-walkthrough.pages.dev/#3d-explore
+     works in any browser
+
+### Final state
+
+- Repo HEAD: `e21cae5` (synced to origin/master)
+- Live page: 42,553 bytes, all sections verified
+- Audio synthesis: 5 transcripts + 6 final docs + 95 ideas + 137 research items
+- Buyer page: hero + 19 previews + 9 geojsons + 1 SVG + Cesium 3D viewer
+- Splats tooling: self_host_train.py + threejs_export.py + Cesium ion
+- VastAI: smoke rental verified, 3 keys saved, 1 confirmed
+- R2: wes3dassets bucket + 3 S3 keys + 1 mgmt token
+- Cesium ion: token wired to page
+
+### Pending (operator-side, not key-blocked)
+
+1. **Wes's photo album** (P0.W2) — the actual LQV training data
+2. **15-onderwerpen materials list** (P0.3) — Wes picks 5
+3. **Sonja questionnaire** (P0.2) — salary bands, contract types, etc.
+4. **Anexo I from Escribana Peña** (P1.1) — chase Cynthia
+5. **2030 = Sonia's 16e verjaardag** milestone — long-term
+
+### Cost so far
+
+- VastAI smoke rental: $0.02 (~$0.024/hr × 30 min)
+- Cloudflare Pages: free tier
+- Cesium ion: free tier (5 GB/mo)
+- Sentinel Hub: DEPRECATED
+- **Total**: under $0.05
+
