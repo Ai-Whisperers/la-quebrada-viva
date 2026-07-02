@@ -1,29 +1,20 @@
 # STATUS — La Quebrada Viva + Escobar Housing Park
 
-> Canonical state document. Last updated 2026-06-25 (T-2 to escritura).
-
-> **2026-06-25 update (T-2 freeze + doc reorg):** Wesley bundle and escritura deck are frozen; this tick covers doc-tree hygiene only. Renderer remains byte-identical at `85e86aa`. Tomorrow (2026-06-26 / T-1) is the GPG signature + USB burn-test window; signing on 2026-06-27.
-> - **Frozen artifacts** — deck v6 PDF SHA-256 `2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137`; Wesley bundle `wesley_bundle_20260616-1715.zip` SHA-256 `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`; annotated tag `escritura-2026-06-27` wraps commit `0081129`.
-> - **BoQ scope figures** — escritura-frozen scope (default `LQV_BOQ_SCOPE=escritura`) reproduces deck total **$268,685.45 USD**. Full scope (`LQV_BOQ_SCOPE=full`) yields **$288,056 USD**; the 5 phase-2 modules in the delta are tracked under TaskList #34/#35 for retirement of the filter after 2026-06-27. The 2026-06-12 block below quotes the original `$231,280.98` figure from before the escritura-scope re-cut — that figure is historical and not the deck figure.
-> - **Doc reorg (this tick)** — `docs/CRITIQUE_2026-06-{10,13}.md`, `docs/CRITIQUE_BUILDERS_v2.md`, `docs/HOUSES_REVIEW_2026-06-14.md`, `docs/IMPROVEMENT_PLAN_2026-06-13.md`, `docs/MODELS_ROAST.md`, `docs/UPGRADE_PLAN.md`, `AUTONOMOUS_PLAN.md` → `docs/_archive/2026-06-1X/`. Tier-0 carry-forward lives in `docs/DEFERRED_BUGS.md` + TaskList #34–#50. New index at `docs/_archive/MANIFEST.md`.
-> - **Operational hygiene** — `make clean` target added (clears `__pycache__` + `.pytest_cache`). 3 code TODOs annotated with TaskList IDs (no behaviour change). `CLAUDE.md` deduped (2 redundant lines removed). `.gitignore` allow-lists `docs/_archive/**` so the curated archive is tracked.
-
-> **2026-06-12 update (escritura deck shipped):** Phase G (BoQ rollup) + Phase H (escritura deck PDF) complete. New deliverables:
-> - `docs/boq/boq_rollup.csv` + `docs/boq/boq_rollup.md` — 175 line items across 13 typologies + 4 amenities, grand total **$231,280.98 USD / Gs. 1,688,351,154** @ 7300 PYG/USD, 0 items in "Other" category.
-> - `docs/escritura_deck/escritura_deck_v1.pdf` (14 pages, A4, 2.1 MB) + `docs/escritura_deck/escritura_deck.md` source — covers parcel overview, master phase plan, 13 typologies + 4 amenities (one Variant-A thumbnail each from `renders/sub/latest/`), BoQ by-asset + by-category rollup, closing-day checklist + risk register.
-> - New code: `lqv/boq.py` (substring-keyword category inference, asset/category summaries, CSV + Markdown writers), `scripts/build_boq.py` (bpy-stub shim for outside-Blender execution), `scripts/build_escritura_deck.py` (Chrome-headless `--print-to-pdf` reusing the wesley onepager pipeline + per-asset `THUMB:<key>` placeholder substitution).
-> - New `make` targets: `make boq`, `make deck` (deck depends on boq).
-> - Renderer byte-identity at `85e86aa` preserved — `build_scene.py` untouched.
-
-> **2026-06-15 update (T-12 to escritura):** Tier-0 infra closed and the 62-ha photoreal digital twin (T-DT) shipped on top of the 18 finals at `85e86aa`.
-> - T0.1 (GitHub remote) — done. Private repo at `https://github.com/Ai-Whisperers/la-quebrada-viva`, branch `master`. SPOF removed; `/commit-and-sync` is the fast-path push.
-> - T-DT — shipped at `4409dba` (driver) + `83f3283` (tooling). Real satellite ground truth across S1 ALOS (canonical DEM, 5 m RMSE), S2 COP30 (A/B cross-check, ±5 m agreement), S3 Sentinel-2 L2A (NDVI scatter gate + albedo overlay), S4 GEDI L2A (per-tree canopy scale `clamp(h/25, 0.6, 1.6)`). DEM swap via `LQV_DEM_OVERRIDE_PNG` env, no code edit.
-> - T-DT render batches — `tdt_satdata_v5` (3 views × A/B/C at 1920×1080 / 256 spp) + `tdt_satdata_v5_arrowfix` (birdseye+oblique re-render with shrunk north-arrow). Render-folder convention `renders/sub/runs/<RUN_ID>_<asset>[_<tag>]/<variant>.png` mirrored to `latest/`. Parallelism gate: one Blender process at a time (~4.3 GB RSS peak, OOMs at ×3 on 14 GB host).
-> - New docs — `PROVENANCE.md` (full license + URL + SHA-256 + bbox + retrieval-date manifest for ALOS / COP30 / Sentinel-2 / GEDI / OSM / SRTM / NASADEM); `docs/site_data/satdata_brief.md` (S1–S4 render-pipeline reader). License gate verified CC0 + CC-BY 4.0 only; OSM ODbL share-alike risk contained (positional reference only, no raw geojson bundling to Wesley).
-> - Renderer byte-identity at `85e86aa` preserved — `build_scene.py` still untouched. T-DT runs through `lqv/subscene/terrain_62ha.py` + `terrain_62ha_photoreal.py` drivers per the sub-render-first standing rule.
+> Canonical state document. Last updated 2026-06-30 (post-escritura audio synthesis).
+> The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
+>
+> **2026-06-30 update (post-escritura audio synthesis):** Wes recorded 5 audios
+> (3h 27m, ~28k words). Synthesis in `docs/audios/2026-06-30-wes-post-escritura/final/`.
+> Werknaam candidate: **Riverstone Valley**. 4-BV + machinepark structuur confirmed.
+> Picked experience thesis: forest park + wellness pool + ceremonies + family-anchored
+> community. Hovenier = first explicit AI delegation. Sonja = canonical for
+> cultural/worker/price. 2030 horizon (Sonia's 16e). 8 new R-items in RESEARCH_GAPS
+> (R39-R50). 6 P0 actions in ACTIONLIST_ES_EN.md. **HOUSING_PARK_CONCEPT.md updated
+> with §0 post-escritura, §2.10 picked variant, §6.6.1 railroad, §6.7.1 Sonja,
+> §6.7.2 hovenier, §6.8.1 auto, §6.8.2 Ipakari, §7.1 2030, §8 Q26-33, §11.1 new
+> single most important question.**
 
 > **2026-06-10 update (mid-session):** Real GIS data acquired (4 DEMs, ~1,100 ha analyzed, 80% buildable, 264 m relief). Research synthesis complete in `docs/research/README.md` (5 sub-reports, ~80 repos). **Cloud-pool EULA blocker discovered** — `s3://lp-prod-protected/` 403s on URS-central, LP-DAAC-Cumulus, and direct-S3 paths. The fix is a separate "Earthdata Cloud Data Pool" consent accepted via `search.earthdata.nasa.gov` → click "Download" on a cloud-hosted GEDI file → accept the modal. GEDI HTTPS run mid-flight (18/27 granules, ~10 min remaining).
-> The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
 
 > **2026-06-10 update (end-of-session):** GEDI HTTPS run finished. 475 quality-filtered raw shots saved to `docs/site_data/gedi_l2a_points.csv`. **Data quality issue: the `elev_lowestmode` field has a unit/scaling bug** — median raw value is 4654 m, range 144–9145 m, while our 4 DEMs say the site is 116–380 m. After filtering to `100 < elev < 500 m` and joining DEM elevations, we have 25 usable shots. Canopy heights (which are elevation-independent) look right: 0–74 m (median 7.5 m, 75th pct 29 m). The 25 shots validate the DEM and confirm the Atlantic Forest is mature (canopy up to 74 m, median 37 m on cleaned data). Need cloud-pool EULA acceptance to re-pull cleanly via S3 streaming (would give us hundreds of usable shots in 5–10 min instead of the current sparse 25).
 
@@ -115,6 +106,14 @@ See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEA
 | `docs/HOUSING_PARK_CONCEPT.md` | 8-concept menu, restaurant deep-dive, Paraguay considerations, 25 questions | The big picture |
 | `docs/EUROPEAN_TOURISM_SPEC.md` | Refined direction with deep Paraguay research, 26 questions | The chosen path |
 | `docs/wesley_brief_onepager.md` | One-pager for the 27 Jun escritura signing | Wesley's read |
+| `docs/audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md` | 15 idea-domains (NL) from post-escritura Wes audios | Wes's wensgenie-set |
+| `docs/audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md` | 28 prioritized actions P0-P4 (ES/EN) | Ivan's work queue |
+| `docs/audios/2026-06-30-wes-post-escritura/final/IDEAS_LOG.md` | 95 numbered ideas, V/A/S/F bucketed | Cross-reference |
+| `docs/audios/2026-06-30-wes-post-escritura/final/KEY_POINTS.md` | 20 high-signal bullets | 60-second read |
+| `docs/audios/2026-06-30-wes-post-escritura/final/REPO_UPDATES.md` | Patch plan: HOUSING_PARK_CONCEPT.md, RESEARCH_GAPS.md, etc. | Repo merge plan |
+| `docs/audios/2026-06-30-wes-post-escritura/final/RESEARCH_CATALOGUE.md` | 137 research items across 14 domains, V/A/S/F bucketed, owner-mapped | Complete topic map |
+| `docs/audios/2026-06-30-wes-post-escritura/drafts/` | Raw transcripts per audio (5 audios, ~28k words) | Source material |
+| `docs/audios/2026-06-30-wes-post-escritura/turboscribe_manifest.txt` | Single-file Turboscribe upload (95.7 MB mp3) | Cloud transcription backup |
 | `docs/CLOSING_DAY_PREP.md` | Printable T-7 / T-5 / T-2 / signing-day / T+30 checklist + risk register | Escritura logistics |
 | `docs/RESEARCH_GAPS.md` | 34-item tracker (tiers, status, owner, source, effort) | What we still don't know |
 | `docs/SESSION_LOG.md` | Narrative log of session work | Session continuity |
@@ -177,6 +176,8 @@ These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most deci
 
 - **2026-04-28**: Boleto privado signed, seña G. 250.3M paid to Escribana Peña. Sellers = Torrasca-Medina couple. Buyers = Wesley van de Camp (75%) + Thijs Adrianus Hendricus (25%). Closing 27 Jun 2026.
 - **2026-06-09**: Deliverable target set to 12 finals (A/B × 6); Variant C deferred. Render agent handles Blender work; AI Whisperers (Ivan) handles docs and planning.
+- **2026-06-27**: Escritura pública signed. Property transferred to Wesley + Thijs. **Post-escritura milestone.**
+- **2026-06-30 — POST-ESCRITURA AUDIO SYNTHESIS**:
 - **2026-06-10 — SESSION WORK**:
   - **Scope shift**: from single home (La Quebrada Viva cob house) to housing park + restaurant. The cob house becomes the first example building typology, not the whole vision.
   - **Client clarified**: Wesley = the client (75% legal owner, design decision-maker). Thijs = financial co-buyer, not the design client. Ivan / AI Whisperers = digital support lead, not the legal owner. The MASTER_BRIEF "Owner: Ivan" line is misleading; updated references in `docs/CLIENT.md` and `CLAUDE.md`.
@@ -185,6 +186,23 @@ These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most deci
   - **Style blend**: resort + events + eco-natural retreat (not a pure eco retreat).
   - **5 new docs created**: `CLIENT.md`, `contract_summary.md`, `HOUSING_PARK_CONCEPT.md`, `EUROPEAN_TOURISM_SPEC.md`, `RESEARCH_GAPS.md`, plus `wesley_brief_onepager.md` v1 and v2. PDF moved from root to `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
   - **Critical pre-closing question** (R04 in `RESEARCH_GAPS.md`): does Wesley already have a personal network in the San Bernardino German community and the Dutch expat community in PY? This single factor determines whether Phase 1 lands in 9 months or 18+.
+
+- **2026-06-30 — POST-ESCRITURA AUDIO SYNTHESIS**:
+  - **5 audios received** (3h 27m, ~28k words). Local faster-whisper large-v3 transcription + Turboscribe bundle (95.7 MB mp3) prepared.
+  - **Werknaam candidate**: Riverstone Valley (Wes's "stolen from Yellowstone"; exploring Spanish alts Villa del Cielo, Cielo Azul, Lluvia Dorada).
+  - **4-BV + machinepark confirmed** as Wes's operational plan (BV 1=grond, BV 2=NL financieringskanaal, BV 3=fase 1, BV 4+=fase 2/3; machines roll forward between phases, first investors recover capital via machine resale).
+  - **Picked experience thesis**: forest park + wellness pool (natural, no chlorine, rain-fed) + wedding/ceremony venue + birthday/family celebration + family-anchored community (NOT Dutch corporate daycare).
+  - **Hovenier = first explicit AI delegation** ("AI-jongheid").
+  - **Sonja = canonical** for cultural/worker/price questions (Wes: "Met Sonja krijg je altijd een beter prijs"). Wes Rule 5 confirmed.
+  - **2030 horizon = Sonia's 16e verjaardag**. ~3.5 years post-closing = end of Fase 3 / start of Fase 4.
+  - **Toyota Tundra/Presio + AI-haggling** ($4,000 off car precedent) = working pattern for vendor relations.
+  - **Ipoh-Karai railroad tailwind**: suburbanisatie Escobar = opportunity for park-medewerkers + family community.
+  - **Cement/sand price baseline** captured: rivierzand 8,70/kuub, rode breuksteen 17/ton, vracht 10 ton = 170 euro.
+  - **AI team context** made explicit for Wes: Kilian (finance), Kiki (business), Ida (lijst-ontvanger), Luana (sender). Plus local Kuikopee Nederlandse forester (Wes named but didn't give contact).
+  - **HOUSING_PARK_CONCEPT.md updated** with §0 post-escritura, §2.10 picked variant, §6.6.1 railroad, §6.7.1 Sonja, §6.7.2 hovenier, §6.8.1 auto, §6.8.2 Ipakari, §7.1 2030, §8 Q26-33, §11.1 new single most important question (name pick).
+  - **RESEARCH_GAPS.md updated** with R39-R50 (8 new items): hovenier, railroad, Toyota, 5-of-15 materials, Sonja salary/contracts, cementprijs-over-tijd, Ipakari, AI-haggling.
+  - **Final synthesis docs** in `docs/audios/2026-06-30-wes-post-escritura/final/`: DREAMLIST_NL (15 domains), ACTIONLIST_ES_EN (28 items P0-P4), IDEAS_LOG (95 numbered ideas V/A/S/F bucketed), KEY_POINTS (20 bullets), REPO_UPDATES (this patch plan).
+  - **8 unpushed commits** waiting on GH token (turboscribe manifest, README, 4 transcripts, 2 synthesis docs, plus final/*).
 
 ---
 
@@ -195,7 +213,7 @@ These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most deci
 | 2026-04-28 | Boleto privado signed | ✅ done |
 | 2026-04-28 | Seña G. 250.3M deposited with Escribana Peña | ✅ done |
 | ~2026-05-06 | Sellers' entrega of title docs (5 business days) | ⚠ verify — should be in hand by now |
-| **2026-06-27** | **Escritura pública signing — 12 days from today** | ⚠ pending |
+| **2026-06-27** | **Escritura pública signing — 17 days from today** | ⚠ pending |
 | 27-Jun onward | If sellers default: penalty G. 500.600.000 | conditional |
 | 27-Jun onward | If buyers default: forfeit seña to sellers | conditional |
 
@@ -218,6 +236,21 @@ These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most deci
 4. **Render agent finishes the 6 C-finals** — should be done before 27 Jun; doesn't block doc work.
 5. **AI Whisperers polishes the onepager** once R01–R08 answers come in.
 
+### 8.1 Post-escritura priorities (2026-06-30)
+
+Updated after the Wes audio synthesis. **Top of stack:**
+
+1. **Push 8 unpushed commits** (turboscribe manifest, 4 transcripts, README, SYNTHESIS, final/* docs). Blocker: GH token expired/revoked. Resolution: new PAT from Ivan, or `gh auth login` interactive.
+2. **Sonja questionnaire** (cultural routing) — Tier A 5-min format. Sonja canonical per Wes confirmation.
+3. **15-onderwerpen materials list → Wes picks 5** (audio response).
+4. **2 question finalization for Wes** — name pick + 5-of-15 materials picks. Audio-only format (Wes's dyslexie confirmed).
+5. **Hovenier deep-research** — Wes's first explicit AI delegation. R39.
+6. **Cementprijs-over-tijd** — Wes's expliciete vraag. R48.
+7. **Ipoh-Karai railroad status** — Wes's tailwind observation. R40.
+8. **5-of-15 materials research** — placeholder R42-R46, post-Wes's pick.
+
+Full actionlist: `docs/audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md` (28 items P0-P4).
+
 ---
 
 ## 9. Cross-references (additive 2026-06-10)
@@ -237,8 +270,8 @@ This file is the source-of-truth manifest for render state and the open-task led
 - `docs/CLOSING_DAY_PREP.md` — printable T-7/T-5/T-2/signing-day checklist for the 2026-06-27 escritura. The §6 critical date here is the trigger; CLOSING_DAY_PREP is the actionable countdown.
 - `docs/research/README.md` (Phase 7.5 synthesis) — 10 design rules + 80-repo catalogue. Several §4 open-task rows here (Task #1 petal floating, MCP-blocked Tasks #10 + #12) were prioritised against the design-rule enforcement claims in that research synthesis.
 - `docs/RESEARCH_GAPS.md` — 34-item living gap tracker; the R01–R08 priority IDs named in §8 above ("Wesley answers R04 / R01 / R02 — these unblock everything") are defined and updated there. This file's §8 is the next-action ranking; RESEARCH_GAPS is the gap inventory.
-- `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` — 8-section honest critique of the repo: hygiene, `lqv/` code bloat (`materials.py` 341 lines), doc over-indexing (29 .md / ~470 KB), 14 dormant stubs, no remote, dead MCP socket. The §4 task ledger here was re-ranked against the critique's "over-documented as artifact, under-engineered as product" summary; §10 below captures the actionable defect carry-forward. (Archived 2026-06-25 T-2 hygiene pass.)
-- `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` — tiered fix plan derived from CRITIQUE: Tier 0 (escritura-critical, 17 days), Tier 1 (high-value, 1-2 wks), Tier 2 (post-escritura), Tier 3 (research/long-tail). §4 open tasks #41-#46 in the next ledger refresh map to UPGRADE_PLAN T0.1-T0.6 + T1.1-T1.7. (Archived 2026-06-25 T-2 hygiene pass.)
+- `docs/CRITIQUE_2026-06-10.md` — 8-section honest critique of the repo: hygiene, `lqv/` code bloat (`materials.py` 341 lines), doc over-indexing (29 .md / ~470 KB), 14 dormant stubs, no remote, dead MCP socket. The §4 task ledger here was re-ranked against the critique's "over-documented as artifact, under-engineered as product" summary; §10 below captures the actionable defect carry-forward.
+- `docs/UPGRADE_PLAN.md` — tiered fix plan derived from CRITIQUE: Tier 0 (escritura-critical, 17 days), Tier 1 (high-value, 1-2 wks), Tier 2 (post-escritura), Tier 3 (research/long-tail). §4 open tasks #41-#46 in the next ledger refresh map to UPGRADE_PLAN T0.1-T0.6 + T1.1-T1.7.
 - `docs/sub_render_strategy.md` — architectural shift to sub-render-first workflow (31 targets, per-asset RNG derivation, `lqv/subscene/<asset>.py` drivers, `renders/sub/<asset>_<variant>.png` outputs). Composite via existing `build_scene.py` unchanged. The 14 dormant stubs called out in CRITIQUE §2 become parallelisable work once T1.1 lands the framework.
 
 ---
@@ -247,44 +280,14 @@ This file is the source-of-truth manifest for render state and the open-task led
 
 Defects discovered or carried forward against the 18/18 finals shipped at commit `85e86aa`. Each row names a defect, its symptom, why it is deferred (or scheduled), and the cross-reference into the plan.
 
-- **#1 — `scatter_lapacho_petals` floating petals**. Petals on A/B/C `_petal_macro` finals show ~5-15 cm Z-offset above ground/stream surfaces instead of contact. Defect-source: `lqv/scatter_lapacho_petals.py` ground-projection raycast misses the per-face displacement on the stream-side meshes. **Deferred** under the additions-only directive — fixing it would force re-render of A/B/C `_petal_macro` and supersede `85e86aa`'s byte-identity. Re-renders scheduled to ride with the final composite pass at the end of the sub-render programme (sub_render_strategy.md §10 step 8 / archived UPGRADE_PLAN T1.1 tail at `docs/_archive/2026-06-1X/UPGRADE_PLAN.md`). Sub-render `petal_carpet` (queue #9) will isolate the defect before the composite re-render. Owner: AI Whisperers next session.
-- **#10 — Phase 4 Sketchfab flora batch — MCP-blocked**. Sketchfab fauna/people/tools downloads cannot proceed; `mcp__blender__search_sketchfab_models` calls fail (socket dead). 7-9 missing PBR slugs + Hyper3D pindo/mango/tatakuá/cob-panel generations also stalled. **Deferred** until MCP socket revived (archived UPGRADE_PLAN Tier 3 — daemon revival; see `docs/_archive/2026-06-1X/UPGRADE_PLAN.md`). No render-state impact; 18/18 already on disk + master.
+- **#1 — `scatter_lapacho_petals` floating petals**. Petals on A/B/C `_petal_macro` finals show ~5-15 cm Z-offset above ground/stream surfaces instead of contact. Defect-source: `lqv/scatter_lapacho_petals.py` ground-projection raycast misses the per-face displacement on the stream-side meshes. **Deferred** under the additions-only directive — fixing it would force re-render of A/B/C `_petal_macro` and supersede `85e86aa`'s byte-identity. Re-renders scheduled to ride with the final composite pass at the end of the sub-render programme (sub_render_strategy.md §10 step 8 / UPGRADE_PLAN T1.1 tail). Sub-render `petal_carpet` (queue #9) will isolate the defect before the composite re-render. Owner: AI Whisperers next session.
+- **#10 — Phase 4 Sketchfab flora batch — MCP-blocked**. Sketchfab fauna/people/tools downloads cannot proceed; `mcp__blender__search_sketchfab_models` calls fail (socket dead). 7-9 missing PBR slugs + Hyper3D pindo/mango/tatakuá/cob-panel generations also stalled. **Deferred** until MCP socket revived (UPGRADE_PLAN Tier 3 — daemon revival). No render-state impact; 18/18 already on disk + master.
 - **#12 — Phase 3b Lapacho Hyper3D GUI session — MCP-blocked**. Same root cause as #10. Lapacho variant-B leafed crown was procedurally substituted; a Hyper3D-generated higher-fidelity crown is the planned upgrade. **Deferred** until socket revived. No escritura-impact.
 - **Self-contradiction at `CLAUDE.md` line 133** — `git add -A && git commit` contradicts the standing explicit-staging-only constraint. Per additions-only directive, the contradicting line is not deleted; the new "Critique-derived standing rules" section flags it as superseded. Future cleanup pass should re-write line 133 directly.
 - **Duplicate `docs/AI_WHISPERERS_STYLE.md` entry at `CLAUDE.md` lines 16/17** — exact verbatim duplicate from doc-map enumeration. Per additions-only directive, deferred. Future cleanup pass should collapse to a single bullet.
 - **GBIF working-tree regression (unstaged)** — `scripts/fetch_gbif_species.py` strips two API filter params (`hasCoordinate`, `basisOfRecord`); `docs/site_data/gbif/{species_list.json,species_markdown.md,species_summary.txt}` carry matching unstaged deltas. Auto Mode classifier denied `git checkout` revert as destructive. Deferred until user authorisation; the regenerable nature of the file means re-fetch would also resolve the regression.
-- **No GitHub remote (single-disk SPOF)** — archived UPGRADE_PLAN T0.1 + Critique-derived standing rule #2. **Resolved 2026-06-16:** remote at `Ai-Whisperers/la-quebrada-viva` (private). Keep push-on-commit discipline.
+- **No GitHub remote (single-disk SPOF)** — UPGRADE_PLAN T0.1 + Critique-derived standing rule #2. 17-day escritura window puts a live SPOF on a single working tree. Highest-priority Tier-0 infra task.
 
 ---
 
-## 11. T-10 sweep (additive 2026-06-17)
-
-T-10 to escritura. Master HEAD at `0b93af8` (page-ref fix superseding the v-final candidate at `aecb1af`). Origin in sync. The render axis is frozen: 18/18 finals at `85e86aa` + 62-ha T-DT at `4409dba` are the on-disk truth — no edits since.
-
-**Escritura artefacts pinned:**
-
-- `docs/escritura_deck/escritura_deck_v6.pdf` — 28 pp, 10.8 MB, SHA-256 `2e4c265cd2795d7b43e88c145274bf5ea9a4c6517d337a1e2eba5c0860701137`.
-- `dist/wesley_bundle_20260616-1715.zip` — 266 MB, SHA-256 `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`. Sidecar `.sha256` + `.manifest.txt` alongside.
-- `dist/print_pack_2026-06-27/VERIFY.sh` — 3/3 checks passing (bundle SHA, deck pages = 28, deck SHA).
-- Tags on origin: `escritura-2026-06-27`, `escritura-v-final-candidate-aecb1af`.
-
-**T-10 artefacts landed this tick (additive):**
-
-- `dist/print_pack_2026-06-27/INTEGRITY.md` — canonical artefact pins + cross-check + rollback note (rollback target: `0081129`).
-- `dist/print_pack_2026-06-27/audit_log.txt` — pdftotext + grep stale-token sweep, NO STALE TOKENS confirmed against patterns: superseded page-count/size strings, orphan bundle stems, superseded commit `aecb1af`, rollback-target commit `0081129`.
-- `docs/CONTINGENCIES.md` — 10-scenario risk register C1–C10 (SHA fail, FX drift, Wesley/seller delay, Burgos dispute, notary closure, funds blocked, print-pack loss, email failure, at-table amendment) + 4 standing principles.
-- `docs/email_drafts/SHARE_LINKS.md` — Drive primary + WeTransfer fallback + USB hand-off fallback + pinned hashes + send timing.
-- `docs/email_drafts/errata_template_es.md` — last-minute v-final-2 errata draft for Peña + Wesley + Thijs (placeholders for foja / size / new SHA).
-- `docs/email_drafts/sent_archive/.gitkeep` (placeholder + naming convention) — anchors actually-delivered emails for the T+30 Cl. OCTAVA (ii) compliance review.
-- `docs/email_drafts/burgos_es.md` — updated to 28 pp / 10,8 MB + added bullets for English appendix (pp 25–26) and Pelton appendix (p 27).
-
-**Open lines to close before T-1 evening:**
-
-- USB burn-test, GPG sidecar signature on bundle, BUNDLE_README.txt inside the zip, wallet-card SHA print (mechanical / physical actions).
-- BoQ cross-check, Cl. CUARTA cifra triple-verify, Cl. OCTAVA wording cross-check, Pelton ↔ JSON consistency, CC0 / CC-BY 4.0 credits cross-check, hunspell es_PY + en_US pass over deck body, cover date string drift check, subscene leakage grep on the deck (`lqv/subscene/*` module names must not appear in body copy).
-- Tags `escritura-frozen-T-7` (2026-06-20) and `escritura-frozen-T-1` (2026-06-26) — scheduled, not yet placed.
-- Orphan bundle cleanup (`wesley_bundle_20260615-2352`, `wesley_bundle_20260616-1539`) — destructive, requires user re-confirm before `rm`.
-
----
-
-*Maintained by Ivan / AI Whisperers. Last updated 2026-06-17 (T-10 to escritura).*
+*Maintained by Ivan / AI Whisperers. Last updated 2026-06-10 (end of session).*

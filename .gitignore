@@ -154,3 +154,11 @@ docs/site_data/mod16/_cache/
 # and-deleted by the puller in `scripts/phase0_mod11_lst_v1.py`; AOI
 # clips + per-point CSV + JSON + brief stay tracked.
 docs/site_data/mod11/_cache/
+
+# Wes's audio MP3s (too big for git; stored externally in /tmp/lqv-keep/audios/)
+docs/audios/**/*.mp3
+docs/audios/**/tmp_mp3/
+docs/audios/**/wes_*.mp3
+
+# Cesium token (browser-side safe but keep out of repo; lives in ~/.lqv/splats.env)
+splats/exports/web/lqv-secrets/*

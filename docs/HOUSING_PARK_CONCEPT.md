@@ -2,8 +2,11 @@
 
 > Working document for Wesley. Compiled by AI Whisperers (Ivan) on 2026-06-10.
 > Purpose: gather all the considerations, options, and questions we want to bring to Wesley when he's ready to share more context. Not a final plan — a structured menu of possibilities for the 62-ha site he just bought.
-
-> **T-10 status (2026-06-17 — 10 days pre-escritura).** This doc is **frozen during the T-10 → T-0 sweep**. The cob-house renderer (`build_scene.py` byte-frozen at `85e86aa`) and 18 finals A/B/C × 6 cams are the closing-day deliverable. Housing-park planning beyond what's captured here is **deferred to T+1 (2026-06-28)**, when the land is closed and Wesley's five priority questions (§11) can be re-opened. Closing prep lives in `dist/print_pack_2026-06-27/` + `docs/T_PLUS_1_DEBRIEF.md` + `docs/OCTAVA_VENDOR_TRACKER.md` + `docs/ARCHIVE_RUNBOOK.md`. After the 2026-07-27 archive freeze, this doc flips from "concept" to "active project" framing per `ARCHIVE_RUNBOOK.md` §6.3.
+>
+> **Last updated 2026-06-30** — post-escritura audio synthesis (5 audios,
+> ~3h 27m, ~28k words). See `docs/audios/2026-06-30-wes-post-escritura/final/`
+> for the full synthesis (DREAMLIST_NL, ACTIONLIST_ES_EN, IDEAS_LOG,
+> KEY_POINTS, REPO_UPDATES).
 
 ---
 
@@ -14,6 +17,29 @@ Until this week the project was **one example house** (La Quebrada Viva, the cob
 Wesley's new direction is a **housing park** in Escobar, with a **restaurant** and other amenities. That reframes the project from "single self-sufficient home" to "real estate + hospitality + lifestyle development." The site, the research, the renders, and the contract all still apply — the cob house becomes one of several possible building typologies on the land rather than the whole vision.
 
 The 27 June 2026 closing date is unchanged. Whatever direction the project takes, decisions before then help shape what gets planned, designed, and built.
+
+### 2026-06-30 update — post-escritura synthesis
+
+The escritura was signed 2026-06-27. Three days later, Wes recorded 5
+audio messages (14:52-16:22, 3h 27m, ~28k words) — the largest single
+brainstorm since the project started. Key changes to the project posture:
+
+- **Werknaam = "Riverstone Valley"** (not final; Wes exploring Spanish
+  alternatives Villa del Cielo / Cielo Azul / Lluvia Dorada)
+- **4-BV structuur + machinepark-principe** is now Wes's plan, not
+  speculation. See §2.10 and §6.2.1.
+- **Picked experience thesis = forest park + wellness pool + ceremonies
+  + family-anchored community.** See §2.10.
+- **2030 horizon** = Sonia's 16e verjaardag. ~3.5 years post-closing =
+  end of Fase 3 / start of Fase 4. See §7.
+- **Hovenier = first explicit AI delegation** ("AI-jongheid"). See §6.7.2.
+- **Sonja = canonical** for cultural / worker / price questions (Wes
+  Rule 5 confirmed). See §6.7.1.
+
+The full synthesis is in `docs/audios/2026-06-30-wes-post-escritura/final/`.
+This document is now updated to reflect those findings; the pre-escritura
+8-concept matrix in §2 remains for reference, with §2.10 added as the
+picked variant.
 
 ---
 
@@ -93,6 +119,25 @@ Wesley's primary home + 3–6 guest/family houses on shared land, with shared re
 ### 2.9 Hybrid (most likely outcome)
 Real projects often combine 2–3 of the above. Common pairings: **co-housing + retreat** (private owners + paying guests), **agrotourism + restaurant** (farm supplies restaurant), **resort + events** (weekend hospitality + wedding business). Worth thinking about which combinations are mutually reinforcing.
 
+### 2.10 Forest park + family-anchored community (Wes's picked variant, 2026-06-30)
+
+Wes's actual direction after the escritura, captured in the post-escritura audio synthesis. Not a single-lodge retreat — a **multi-experience site** combining:
+
+- **Forest park** with native reforestation (Dutch forester contact in Kuikopee, university ecology partnerships)
+- **Wellness pool** — natural water, no chlorine, rain-fed (eco-pool / bio-pool spec)
+- **Wedding & ceremonies venue** with multi-zone capacity
+- **Birthday / family celebration** spaces
+- **Family-anchored community component** — explicitly NOT Dutch corporate daycare. "1-2 children at home, parents work in park, others work in park." Permanent bewoning for park-medewerkers + gezinnen.
+- **VR / digital twin layer** — game-style variants (summer / cold / bonfire-night / wedding simulation) for klant-preview
+- **4-BV operational model** with machinepark principle (machines roll forward between phases, first investors recover capital via machine resale)
+
+- **Best for**: European wellness travelers + Asunción elite weekend market + wedding/event market + family multi-gen gatherings + permanent residents (co-housing component)
+- **Why it fits**: matches Wes's 4-BV + machinepark operational model; serves 2030 horizon (Sonia's 16e); aligns with Wes's values (democratized production, family-anchored); plays to existing site strengths (Atlantic Forest, escarpment water catchment, mature terraces)
+- **Watch**: insurance for high-value outdoor amenities (storm/brand/orkaan); multi-BV admin overhead (4× RUC, contador, monthly filings — consider 5th holding-BV); Sonja-routed labor sourcing for 6-8 fase-1 medewerkers; cement/sand/transport price tracking (Wes already pulled baseline: rivierzand 8,70/kuub, rode breuksteen 17/ton)
+
+**Source**: `docs/audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md`
+(D1-D15) and `KEY_POINTS.md`.
+
 ---
 
 ## 3. Core components — what every version needs
@@ -109,6 +154,9 @@ Real projects often combine 2–3 of the above. Common pairings: **co-housing + 
 | Storage / maintenance | Workshop, dry storage, cold storage, fuel storage |
 | Emergency | First aid, evacuation route, fire equipment, communication (cell coverage is patchy) |
 | Security | Perimeter, lighting, possibly on-site guard |
+| Wellness pool (natural, rain-fed) | Eco-pool / bio-pool, geen chloor; Wes's signature element per §2.10 |
+| Wedding / ceremony venue | Multi-experience thesis: ceremonies + family celebrations |
+| Family-anchored housing | Permanent bewoning voor park-medewerkers + gezinnen (geen NL corporate daycare) |
 
 ---
 
@@ -295,12 +343,43 @@ This is the section that has to be right because it's what AI Whisperers' local 
 - **International ecotourism**: small but premium market. Needs strong web presence, English-speaking staff, and recognizable certifications (sustainability credentials, regenerative practices).
 - **Paraguarí specifically**: known for cerros (Cerro Perõ, Cerro Hu), the Ybycuí National Park, and religious tourism (Caacupé is in the next department). Escobar itself is a small agricultural town with limited existing tourism.
 
+### 6.6.1 Infrastructure tailwind: Ipoh-Karai railroad (post-escritura)
+
+Wes mentioned the historic Ipoh-Karai railroad line (Audio E, 2026-06-30). There are rumors of reopening plans ("the railroad that used to go through that whole valley"). If it happens, Escobar becomes much more reachable for Asunción weekenders + European tourists — a significant Phase 2+ tailwind.
+
+**Research needed (R40)**: Ipoh-Karai plan status. Sources: ANDE / Ferrocarril del PY, local news archives, transport ministry.
+
+Wes also sees a broader suburbanisatie trend (people moving outwards, "Eskenbach is empty, the houses are empty, but that is all an opportunity"). Track this for Phase 2+ timing — supports the family-anchored community thesis (§2.10) where park-medewerkers could live locally.
+
 ### 6.7 Staff / labor
 - **Local hiring**: Escobar and Paraguarí are the immediate labor pool. Service staff, kitchen help, maintenance, guides.
 - **Specialist hiring**: chef, agronomist, marketing manager likely come from Asunción. Weekly commute or on-site housing needed.
 - **Transport**: many staff won't have cars. Site is rural. Bus service from Paraguarí to Escobar is limited. Wesley likely needs to provide staff transport.
 - **Training**: hospitality training in Paraguay is thin. AI Whisperers can curate or create internal training material.
 - **Legal**: full-time staff need formal employment (IPS, aportes), not informal arrangements. Factor into the cost model.
+
+### 6.7.1 Sonja as canonical for cultural/worker/price questions (Wes Rule 5)
+
+Per Wes Rule 5 (sonia-assistant): salary bands, contract types, "hoe om te gaan met lokale medewerkers" — **route via Sonja, not Google research**. Wes's own confirmation (Audio 3, 2026-06-30): *"Met Sonja krijg je altijd een beter prijs."*
+
+Implications:
+- Tier A (5-min) Sonja questionnaire covers: salary bands per rol, dependiente vs independiente contracts, IPS/aguinaldo/vacaciones, direct vs indirect communication style
+- Use Sonja's input as the **canonical source** for the workers plan (R47 in RESEARCH_GAPS)
+- Don't substitute Google research for Sonja's knowledge
+
+### 6.7.2 Hovenier deep-research (Wes's first explicit AI delegation)
+
+Wes's first explicit task handoff to AI Whisperers (Audio D, 2026-06-30):
+> *"Die hovenier, doen we goed een diepe research ernaar. Dat u dit voor de AI-jongheid kunt doen. Wat is er mogelijk, wat hebben ze?"*
+
+Sources to investigate (R39 in RESEARCH_GAPS):
+- College van Ingenieurs Forestales PY
+- Guyra Paraguay (NGO, native reforestation)
+- Kuikopee Nederlandse forester (Wes named but didn't give contact — chase via Dutch-community PY channels)
+- Universiteit ecologie afdeling (Asunción)
+- Colegio de Ingenieros Agrónomos
+
+**Owner**: [H] Wesley boots-on-ground + local contact, [A] AI research for first contact list. Tier 1 priority.
 
 ### 6.8 Construction / supply
 - **Cob / earthen**: very cheap locally (clay is free, sand is free, labor is local). Needs skilled hands; we have the design research already.
@@ -309,6 +388,16 @@ This is the section that has to be right because it's what AI Whisperers' local 
 - **Imported materials**: kitchen equipment, AC units, pool equipment — customs + logistics add 4–6 weeks. Order early.
 - **Skilled labor**: cob artisans, timber framers, pool builders, electricians — sourcing in rural Paraguay is hit-and-miss. AI Whisperers can help vet.
 - **Permit timelines**: municipal permits for rural construction are usually fast (weeks) but commercial permits can take months. Plan ahead.
+
+### 6.8.1 Auto voor de bouwfase (Toyota Tundra vs Presio)
+
+Wes is researching Toyota Tundra vs Presio for PY dirt roads (Audio E, 2026-06-30). Hermes has already done initial web searches; results stored with sources + price ranges.
+
+AI-haggling precedent (same audio): "$4,000 off car market value" via AI-mediated negotiation. Use this same AI-research pattern for Phase 1 construction supplies (R50 in RESEARCH_GAPS).
+
+### 6.8.2 Steengroeve dichtbij Ipakari
+
+Wes mentioned a quarry/mine ("een mijn") close to Ipakari — likely a local stone source for fase 1 (Audio C, 2026-06-30). Worth investigating for hardhout / breuksteen supply (R49 in RESEARCH_GAPS).
 
 ---
 
@@ -351,6 +440,12 @@ A typical rural Paraguay development goes in waves. A possible staging (subject 
 - Brand consolidation
 - Possible subdivision (if co-housing model)
 
+### 7.1 2030 horizon (post-escritura)
+
+Wes named a personal milestone that maps to the project timeline: **Sonia's 16th verjaardag in 2030**. From escritura date (2026-06-27), 2030 is **~3.5 years out** — end of Fase 3 / start of Fase 4. This is **realistic if cashflow holds** through Fase 1-2.
+
+Implication: a working park with restaurant + wellness pool + 6-12 lodging units + family community by mid-2030 is achievable. Open question for Wes (§11 / Q31): which fase elements are *must-be-visible* by 2030 vs *nice-to-have*?
+
 ---
 
 ## 8. Open questions for Wesley
@@ -391,6 +486,37 @@ When Wesley has time, these are the questions that would unlock the most:
 23. **What revenue per month would you consider "success" in year 1?**
 24. **Will revenue stay in PYG or convert to USD?**
 25. **Are there investors, partners, or family members who should be at the table?**
+
+### Post-escritura (2026-06-30 audio-sourced)
+
+26. **Werknaam: hou je aan "Riverstone Valley" of kies je een van de
+    Spaanse alternatieven?** (Villa del Cielo, Cielo Azul, Lluvia Dorada,
+    Lluvia de Oro — of iets anders?) **Highest-priority blocker**: URL,
+    brand voice, marketing copy, business cards, website, brochures.
+
+27. **5-of-15 materials onderzoek**: welke 5 van structureel-hout / cob
+    / roofing / cement / ramen / solar / water / septic / bevestiging /
+    vloeren / verf / elektrisch / loodgieterij / isolatie / keuken
+    topics wil je dat ik eerst onderzoek?
+
+28. **Hovenier contact in Kuikopee**: heb je de naam van de Nederlandse
+    forester, of moet ik die zoeken via Dutch-community kanalen?
+
+29. **Toyota Tundra vs Presio**: auto voor de bouwfase — finaliseren
+    of verder researchen? Bestaande AI-research heeft prijsranges.
+
+30. **Railroad Ipoh-Karai status**: wil je dat ik de heropeningsplannen
+    onderzoek, of heb je een local contact die het weet?
+
+31. **2030 fase-target**: welke fase-elementen moeten *must-be-visible*
+    zijn tegen Sonia's 16e (2030) vs nice-to-have?
+
+32. **AI-onderzoek pattern** — wil je AI als prijsonderhandelaar
+    gebruiken voor vendor negotiations (Wes's "$4,000 off car"
+    precedent), of alleen voor material research?
+
+33. **Audio-only questionnaire format** — bevestigd dat Wes's voorkeur
+    audio is (dyslexie, schrijft slecht). Alle Wes-vragen via audio.
 
 ---
 
@@ -440,6 +566,14 @@ If Wesley only answers one question from §8, the most valuable is:
 The answer determines almost everything downstream — legal structure, capex, staffing, brand, restaurant format, lodging typology, timeline, and even the cob/earthen design language.
 
 Everything else in this document flows from that single decision.
+
+### 11.1 The new single most important question (post-escritura, 2026-06-30)
+
+The pre-escritura question (§11 above) is **answered**: commercial multi-experience site with family-anchored community component (see §2.10). The new highest-value single question is:
+
+> **Werknaam: hou je aan "Riverstone Valley" of kies je een van de Spaanse alternatieven (Villa del Cielo, Cielo Azul, Lluvia Dorada, Lluvia de Oro) of iets anders?**
+
+The name decision is the foundation for: URL, brand voice, marketing copy, employee/business cards, website, brochures, signage, and the SONJA-tier-A questionnaire context. Answer in **audio** (don't write — Wes confirmed dyslexic, audio-only is the right format per Wes Rule 6).
 
 ---
 

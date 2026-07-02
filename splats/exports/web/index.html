@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>La Quebrada Viva · Buyer Walkthrough</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg:#0b0f10;--fg:#fafafa;--panel:rgba(0,0,0,.78);--accent:#fbbf24;--accent-dim:#f59e0b;
+    --stream:#60a5fa;--canopy1:#86efac;--canopy3:#16a34a;--canopy4:#14532d;
+    --grid:#1f2937;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,sans-serif;overflow-x:hidden}
+  .wrap{max-width:1500px;margin:0 auto;padding:1rem}
+
+  /* === INTRO === */
+  .intro{margin:0 0 1.25rem;padding:0.75rem 1rem;background:#0d0f12;border:1px solid var(--grid);border-radius:10px;line-height:1.5}
+  .intro .lead{margin:0 0 .5rem;font-size:1rem;opacity:.9}
+  .intro .lead strong{color:var(--accent)}
+  .intro .lead em{color:#a3a3a3;font-style:normal}
+  .intro .meta{margin:0;font-size:.78rem;opacity:.55}
+  .intro .meta a{color:var(--accent);text-decoration:none}
+  .intro .meta a:hover{text-decoration:underline}
+
+  /* === HERO === */
+  header.hero{position:relative;border-radius:14px;overflow:hidden;margin-bottom:1rem;border:1px solid rgba(255,255,255,.06);background:#000;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+  header.hero img{display:block;width:100%;height:auto;max-height:720px;object-fit:cover}
+  header.hero .overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:1.5rem;background:linear-gradient(180deg, transparent 35%, rgba(0,0,0,.85) 100%);pointer-events:none}
+  header.hero h1{margin:0;font-size:2.6rem;font-weight:700;text-shadow:0 2px 12px rgba(0,0,0,.8);letter-spacing:-.5px}
+  header.hero p{margin:.5rem 0 0;font-size:1.05rem;opacity:.95;max-width:900px;line-height:1.4}
+  header.hero strong{color:var(--accent)}
+  header.hero .badges{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+  header.hero .badge{background:var(--accent);color:#000;padding:.3rem .7rem;border-radius:99px;font-size:.78rem;font-weight:600;display:inline-block;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+  header.hero .badge.dark{background:rgba(0,0,0,.5);color:#fff;border:1px solid rgba(255,255,255,.2)}
+
+  /* === SECTION HEADERS === */
+  h2{font-size:1.4rem;margin:2rem 0 .75rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
+  h2::before{content:"";display:inline-block;width:4px;height:1.2rem;background:var(--accent);border-radius:2px}
+  h2 .small{font-size:.85rem;font-weight:400;opacity:.6;margin-left:auto}
+
+  /* === LAYER CARDS === */
+  section.layer-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1rem;margin:1rem 0}
+  .card{background:#0d0f12;border-radius:10px;overflow:hidden;border:1px solid var(--grid);transition:all .2s;cursor:pointer;display:block;color:inherit;text-decoration:none}
+  .card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 24px rgba(251,191,36,.15)}
+  .card .thumb{position:relative;width:100%;height:240px;overflow:hidden;background:#000}
+  .card .thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .card:hover .thumb img{transform:scale(1.05)}
+  .card .thumb .pin{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:.2rem .5rem;border-radius:4px;font-size:.7rem;font-weight:600}
+  .card .meta{padding:.85rem 1rem}
+  .card h3{margin:0 0 .25rem;font-size:1rem;font-weight:600}
+  .card p{margin:0;font-size:.8rem;opacity:.7;line-height:1.4}
+  .card .tag{display:inline-block;background:rgba(255,255,255,.06);padding:.15rem .55rem;border-radius:4px;font-size:.7rem;margin-top:.5rem;color:var(--accent);font-weight:600}
+
+  /* === INTERACTIVE MAP === */
+  section.viewer{position:relative;border-radius:14px;overflow:hidden;margin:1.5rem 0;border:1px solid var(--grid);min-height:640px;background:#000;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+  #map{position:absolute;inset:0}
+  .no-webgl-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:1rem;background:radial-gradient(ellipse, #1a1a1a 0%, #000 80%);z-index:30;overflow-y:auto}
+  .no-webgl-fallback img{max-width:90%;max-height:480px;border-radius:8px;border:1px solid rgba(255,255,255,.15);box-shadow:0 6px 30px rgba(0,0,0,.6);margin-bottom:1rem}
+  .no-webgl-fallback h2{margin:0 0 .25rem;font-size:1.5rem}
+  .no-webgl-fallback p{opacity:.75;max-width:520px;margin:.4rem 0}
+  .data-buttons{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem;justify-content:center;max-width:780px}
+  .data-buttons a{display:inline-block;padding:.55rem 1rem;border:1px solid rgba(255,255,255,.3);border-radius:6px;color:#fff;text-decoration:none;font-size:.85rem;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);transition:all .2s}
+  .data-buttons a:hover{background:rgba(251,191,36,.15);border-color:var(--accent);color:var(--accent)}
+
+  /* === HUDs / overlays inside map === */
+  .hud{position:absolute;top:1rem;left:1rem;background:var(--panel);padding:1rem 1.25rem;border-radius:8px;max-width:380px;backdrop-filter:blur(8px);font-size:.85rem;z-index:5;border:1px solid rgba(255,255,255,.06)}
+  .hud h2{margin:0 0 .35rem;font-size:1.05rem;font-weight:600}
+  .hud p{margin:.25rem 0;opacity:.85;font-size:.8rem;line-height:1.4}
+
+  .layer-toggles{position:absolute;top:1rem;right:1rem;background:var(--panel);border-radius:8px;padding:.85rem;max-width:280px;z-index:5;font-size:.8rem;border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(8px)}
+  .layer-toggles h2{margin:0 0 .5rem;font-size:.85rem}
+  .layer-toggles label{display:flex;align-items:center;gap:.5rem;padding:.2rem 0;cursor:pointer}
+  .layer-toggles .swatch{display:inline-block;width:14px;height:14px;border-radius:3px;flex-shrink:0}
+
+  .mode-toggle{position:absolute;top:50%;right:1rem;transform:translateY(-50%);background:var(--panel);border-radius:8px;padding:.5rem;z-index:5;font-size:.85rem;backdrop-filter:blur(8px)}
+  .mode-toggle button{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);padding:.3rem .75rem;border-radius:4px;cursor:pointer;margin:0 .25rem;font:inherit}
+  .mode-toggle button.active{background:var(--accent);color:#000;border-color:var(--accent)}
+
+  .legend{position:absolute;bottom:1rem;left:1rem;background:var(--panel);border-radius:8px;padding:.85rem 1rem;max-width:420px;z-index:5;font-size:.8rem;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.06)}
+  .legend h2{margin:0 0 .5rem;font-size:.85rem}
+  .legend .row{display:flex;align-items:center;gap:.5rem;padding:.15rem 0}
+
+  .stats{position:absolute;bottom:1rem;right:1rem;background:var(--panel);border-radius:8px;padding:.5rem .75rem;font-size:.75rem;z-index:5;opacity:.85;backdrop-filter:blur(8px)}
+
+  .streams-overlay-card{display:block;width:100%;max-height:540px;background:#0d0f12;border:1px solid var(--grid);border-radius:8px;padding:1rem;margin:1rem 0}
+
+/* === CAVEATS === */
+  section.caveats{background:#0d0f12;border:1px solid var(--grid);border-radius:10px;padding:1.5rem;margin:1.5rem 0}
+  section.caveats h2{margin:0 0 .75rem;font-size:1.2rem;font-weight:600}
+  section.caveats h2 em{color:var(--accent);font-style:normal}
+  section.caveats p{margin:.5rem 0;opacity:.85;line-height:1.5}
+  section.caveats ul{margin:.5rem 0 1rem 1.5rem;line-height:1.6;opacity:.85}
+  section.caveats li{margin-bottom:.4rem}
+  section.caveats code{background:rgba(0,0,0,.4);padding:.1rem .35rem;border-radius:3px;font-size:.85em;color:var(--accent)}
+  section.caveats .caveat-note{margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--grid);font-size:.85rem;opacity:.7;font-style:italic}
+
+  /* === FOOTER === */
+  footer.link-block{padding:1.5rem 1rem;color:#aaa;font-size:.85rem;text-align:center;border-top:1px solid var(--grid);margin-top:1.5rem}
+  footer a{color:var(--accent)}
+
+
+  /* === 3D CESIUM VIEWER === */
+  section.cesium-panel{background:#0d0f12;border:1px solid var(--grid);border-radius:10px;padding:1rem;margin:1.5rem 0;position:relative}
+  .cesium-hud{display:flex;align-items:center;gap:1rem;margin-bottom:.6rem;font-size:.78rem;opacity:.85}
+  .cesium-hud .hud-badge{background:rgba(0,0,0,.6);border:1px solid var(--grid);padding:.2rem .6rem;border-radius:99px;font-weight:600;color:var(--accent)}
+  .cesium-hud .hud-meta{opacity:.7}
+  .cesium-buttons{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+  .cesium-buttons button{appearance:none;border:1px solid var(--grid);background:rgba(0,0,0,.4);color:#fff;padding:.4rem .8rem;border-radius:6px;cursor:pointer;font:inherit;font-size:.8rem;transition:all .2s}
+  .cesium-buttons button:hover{background:rgba(251,191,36,.15);border-color:var(--accent);color:var(--accent)}
+  .cesium-buttons button.primary{background:var(--accent);color:#000;border-color:var(--accent);font-weight:600}
+  .cesium-note{margin:.7rem 0 0;font-size:.75rem;opacity:.6;line-height:1.4}
+  .cesium-credit-light{color:#fafafa !important;}
+  .cesium-viewer-bottom{opacity:0.6}
+
+  /* === EXTERNAL MAP LINKS === */
+  .external-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.6rem;margin-top:1rem}
+  .external-links a{display:flex;flex-direction:column;background:rgba(0,0,0,.5);border:1px solid var(--grid);border-radius:8px;padding:.75rem 1rem;color:#fff;text-decoration:none;transition:all .2s}
+  .external-links a:hover{background:rgba(251,191,36,.15);border-color:var(--accent);transform:translateY(-1px)}
+  .external-links .ext{font-weight:600;color:var(--accent);font-size:.95rem;margin-bottom:.15rem}
+  .external-links .desc{font-size:.75rem;opacity:.7;line-height:1.3}
+
+  /* === COMPARISON PANEL === */
+  .compare-panel{background:#0d0f12;border:1px solid var(--grid);border-radius:10px;padding:1rem;margin:1rem 0}
+  .compare-panel h3{margin:0 0 .75rem;font-size:1.05rem;font-weight:600}
+  .compare-panel .grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+  .compare-panel figure{margin:0}
+  .compare-panel figure img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid var(--grid)}
+  .compare-panel figcaption{font-size:.78rem;opacity:.7;margin-top:.4rem;text-align:center;line-height:1.4}
+
+  /* === MAP RESET BUTTON === */
+  .map-reset{position:absolute;top:50%;right:1rem;transform:translateY(calc(-50% + 90px));background:rgba(0,0,0,.78);color:#fff;border:1px solid rgba(255,255,255,.15);padding:.4rem .7rem;border-radius:6px;cursor:pointer;font:inherit;font-size:.78rem;z-index:6;backdrop-filter:blur(8px);transition:all .2s}
+  .map-reset:hover{background:rgba(251,191,36,.2);border-color:var(--accent);color:var(--accent)}
+
+  /* === MOBILE RESPONSIVE === */
+  @media (max-width: 768px) {
+    .wrap{padding:.5rem}
+    header.hero h1{font-size:1.8rem}
+    header.hero p{font-size:.92rem}
+    .hero .badges{gap:.3rem}
+    .hero .badge{font-size:.7rem;padding:.2rem .5rem}
+    .health{grid-template-columns:repeat(2, 1fr)}
+    .health .stat .v{font-size:1.2rem}
+    section.layer-row{grid-template-columns:1fr;gap:.75rem}
+    .card .thumb{height:180px}
+    section.viewer{min-height:480px}
+    .layer-toggles{max-width:240px;padding:.6rem;font-size:.75rem}
+    .layer-toggles h2{font-size:.78rem}
+    .compare-panel .grid{grid-template-columns:1fr}
+    .external-links{grid-template-columns:1fr}
+    .data-buttons a{font-size:.78rem;padding:.4rem .7rem}
+    .intro{padding:.6rem .8rem}
+    .intro .lead{font-size:.95rem}
+  }
+  @media (max-width: 480px) {
+    header.hero h1{font-size:1.5rem}
+    .health{grid-template-columns:1fr}
+  }
+
+  /* === DATA HEALTH BAR === */
+  .health{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.5rem;margin-top:1rem}
+  .health .stat{background:#0d0f12;border:1px solid var(--grid);border-radius:8px;padding:.75rem 1rem;text-align:center}
+  .health .stat .v{font-size:1.5rem;font-weight:700;color:var(--accent)}
+  .health .stat .l{font-size:.7rem;opacity:.7;margin-top:.25rem;text-transform:uppercase;letter-spacing:.5px}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/cesium@1.121/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/cesium@1.121/Build/Cesium/Cesium.js"></script>
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+</head>
+<body>
+<div class="wrap">
+
+  <!-- INTRO: 1-2 sentences that orient first-time visitors -->
+  <div class="intro">
+    <p class="lead"><strong>La Quebrada Viva</strong> is a 30.9-hectare buildable forest-parcel in Mbopicua, Escobar district, Paraguarí, Paraguay.
+    This page is a <em>single-file static site</em> for a buyer pre-sales walkthrough — the entire
+    62-ha property shown through 12 derived layers (satellite imagery, NDVI canopy classes, DEM-traced streams, OSM
+    buildings &amp; roads, GBIF biodiversity, soil profile) with everything as downloadable data.</p>
+    <p class="meta">Last regenerated 2026-06-30 from the v6 build pipeline · served by Cloudflare Pages ·
+    <a href="./data/README.md">data README</a> · <a href="./DEPLOY.md">deploy notes</a> · <a href="./data/API-KEYS-CHECKLIST.md">API keys checklist</a> · <a href="./data/MAP-AUDIT-2026-06-29.md">map audit</a></p>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="./data/preview/lqv_composite_v6.webp" alt="LQV 30.9 ha buildable cluster, satellite photo at z=17 with property boundary, NDVI canopy classes, DEM-derived streams, OSM buildings" />
+    <div class="overlay">
+      <div>
+        <h1>La Quebrada Viva</h1>
+        <p>30.9 ha buildable cluster · <strong>Mbopicua, Escobar, Paraguarí, Paraguay</strong><br/>
+        Centroid 25°36′26″S, 57°02′08″W · UTM 21J · 600 m × 600 m shown</p>
+        <div class="badges">
+          <span class="badge">30.9 ha polygon</span>
+          <span class="badge">61 canopy polygons</span>
+          <span class="badge">15 stream segments</span>
+          <span class="badge">31 OSM buildings</span>
+          <span class="badge dark">Sentinel-2 + ALOS + OSM 2026-06-30</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DATA HEALTH -->
+  <h2>Data health <span class="small">all 6 layers verified at the actual LQV centroid</span></h2>
+  <div class="health">
+    <div class="stat"><div class="v">30.9 ha</div><div class="l">property polygon (Wes KML)</div></div>
+    <div class="stat"><div class="v">61</div><div class="l">canopy polygons (4 NDVI classes)</div></div>
+    <div class="stat"><div class="v">15</div><div class="l">stream segments (DEM-derived)</div></div>
+    <div class="stat"><div class="v">31</div><div class="l">OSM buildings</div></div>
+    <div class="stat"><div class="v">300</div><div class="l">GBIF observations (30 km radius)</div></div>
+    <div class="stat"><div class="v">18</div><div class="l">soil cells (SoilGrids 2.0)</div></div>
+  </div>
+
+  <!-- LAYER CARDS: zoomed-in per-layer previews -->
+  <h2>Layers (zoomed to the property)</h2>
+  <section class="layer-row">
+    <a class="card" href="./data/preview/property_zoomed.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/property_zoomed.webp" alt="LQV property boundary" />
+        <span class="pin">8 vertices</span>
+      </div>
+      <div class="meta">
+        <h3>Property boundary</h3>
+        <p>Wesley's 30.9 ha buildable cluster polygon — hand-drawn in Google Earth, transcribed from KML</p>
+        <span class="tag">8 vertices · KML</span>
+      </div>
+    </a>
+
+    <a class="card" href="./data/preview/canopy_zoomed.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/canopy_zoomed.webp" alt="Canopy NDVI 4-class" />
+        <span class="pin">4 classes</span>
+      </div>
+      <div class="meta">
+        <h3>Canopy · 4-class NDVI</h3>
+        <p>Sentinel-2 NDVI binned into sparse, open, medium, dense. 61 polygons at 10 m native resolution</p>
+        <span class="tag">4 classes · 10 m</span>
+      </div>
+    </a>
+
+    <a class="card" href="./data/preview/streams_zoomed.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/streams_zoomed.webp" alt="Stream network" />
+        <span class="pin">DEM-derived</span>
+      </div>
+      <div class="meta">
+        <h3>Streams · DEM-traced</h3>
+        <p>Copernicus GLO-30 D8 flow-accumulation. 15 segments, 2.7 ha catchment threshold. 8 main, 7 tributary</p>
+        <span class="tag">DEM-derived</span>
+      </div>
+    </a>
+
+    <a class="card" href="./data/preview/buildings_zoomed.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/buildings_zoomed.webp" alt="OSM buildings" />
+        <span class="pin">31 features</span>
+      </div>
+      <div class="meta">
+        <h3>OSM buildings</h3>
+        <p>Existing structures mapped in the area — rural farms, sheds, and the caminería</p>
+        <span class="tag">OSM · 31</span>
+      </div>
+    </a>
+
+    <a class="card" href="./data/preview/polygon_ndvi_quicklook.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/polygon_ndvi_quicklook.webp" alt="NDVI quicklook" />
+        <span class="pin">NDVI</span>
+      </div>
+      <div class="meta">
+        <h3>NDVI quicklook</h3>
+        <p>Vegetation index visualisation. Greens = mature Atlantic Forest</p>
+        <span class="tag">NDVI</span>
+      </div>
+    </a>
+
+    <a class="card" href="./data/preview/polygon_ndwi_quicklook.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/polygon_ndwi_quicklook.webp" alt="NDWI quicklook" />
+        <span class="pin">NDWI</span>
+      </div>
+      <div class="meta">
+        <h3>NDWI quicklook</h3>
+        <p>Water index visualisation. Confirms 0% open water in polygon</p>
+        <span class="tag">NDWI</span>
+      </div>
+    </a>
+
+    <a class="card" href="./data/preview/polygon_quicklook.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/polygon_quicklook.webp" alt="LQV polygon Sentinel-2 RGB" />
+        <span class="pin">RGB</span>
+      </div>
+      <div class="meta">
+        <h3>LQV Polygon · Sentinel-2 RGB</h3>
+        <p>Visible-light satellite view of the buildable cluster</p>
+        <span class="tag">Sentinel-2</span>
+      </div>
+    </a>
+
+    <a class="card" href="./data/gbif_-25.6073_-57.0355_30km.csv" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/polygon_quicklook.webp" alt="GBIF observations (LQV region)" />
+        <span class="pin">300 records</span>
+      </div>
+      <div class="meta">
+        <h3>GBIF · 300 observations</h3>
+        <p>30-km radius biodiversity envelope. Species within ~50 km of LQV</p>
+        <span class="tag">GBIF · 300</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- CYCLES HERO RENDERS -->
+  <h2>Built typologies (Cycles hero renders) <span class="small">3 HDRI variants · photoreal</span></h2>
+  <section class="layer-row">
+    <a class="card" href="./data/preview/A_hero_hero.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/A_hero_hero.webp" alt="LQV hero — A: clear noon HDRI" />
+        <span class="pin">HDRI A</span>
+      </div>
+      <div class="meta">
+        <h3>HDRI A · Clear noon</h3>
+        <p>Same Cycles render · direct sun, upper-left, clear sky · best for showing massing &amp; shadows</p>
+        <span class="tag">Cycles · 21 MB · clear noon HDRI</span>
+      </div>
+    </a>
+    <a class="card" href="./data/preview/B_hero_hero.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/B_hero_hero.webp" alt="LQV hero — B: golden hour haze HDRI" />
+        <span class="pin">HDRI B</span>
+      </div>
+      <div class="meta">
+        <h3>HDRI B · Golden hour haze</h3>
+        <p>Same Cycles render · low sun, warm tones · haze from nearby quebrada mist</p>
+        <span class="tag">Cycles · 20 MB · golden haze HDRI</span>
+      </div>
+    </a>
+    <a class="card" href="./data/preview/C_hero_hero.webp" target="_blank">
+      <div class="thumb">
+        <img src="./data/preview/C_hero_hero.webp" alt="LQV hero — C: dawn fog HDRI" />
+        <span class="pin">HDRI C</span>
+      </div>
+      <div class="meta">
+        <h3>HDRI C · Dawn fog</h3>
+        <p>Same Cycles render · morning fog rolling in from quebrada · cool tones, low contrast</p>
+        <span class="tag">Cycles · 20 MB · dawn fog HDRI</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- INTERACTIVE MAP -->
+  <h2>Interactive Map (real-time data layers) <span class="small">drag to pan · scroll to zoom</span></h2>
+  <section class="viewer" id="viewer">
+    <div id="map"></div>
+
+    <div class="no-webgl-fallback" id="no-webgl" style="display:none">
+      <img src="./data/preview/lqv_composite_v6.webp" alt="LQV satellite + canopy + streams composite" />
+      <h2>Static Preview · All data is real</h2>
+      <p>Your browser cannot initialize WebGL. The interactive MapLibre layer is disabled here. All data below remains available for download.</p>
+      <div class="data-buttons">
+        <a href="./data/lqv_bundle.geojson" download>Bundle all data (.geojson, 113 features)</a>
+        <a href="./data/preview/lqv_composite_v6.webp">Hero composite</a>
+        <a href="./data/canopy_classes.geojson" target="_blank">Canopy GeoJSON</a>
+        <a href="./data/hydrography_dem_v2.geojson" target="_blank">Streams GeoJSON</a>
+        <a href="./data/osm_buildings_near.geojson" target="_blank">OSM buildings (within 500m)</a>
+        <a href="./data/osm_roads_near.geojson" target="_blank">OSM roads (none within 500m)</a>
+        <a href="./data/osm_water_v2.geojson" target="_blank">OSM water (none within 500m)</a>
+        <a href="./data/gbif_-25.6073_-57.0355_30km.csv" target="_blank">GBIF CSV</a>
+        <a href="./data/soil_actual.json" target="_blank">Soil JSON</a>
+        <a href="./data/README.md" target="_blank">Data README</a>
+        <a href="./DEPLOY.md" target="_blank">DEPLOY.md</a>
+      </div>
+    </div>
+
+    <div class="hud" style="display:none" id="map-hud">
+      <h2>LQV · 30.9 ha buildable cluster</h2>
+      <p>Drag to orbit. Scroll to zoom. Click GBIF points for species info.</p>
+    </div>
+
+    <div class="layer-toggles" style="display:none" id="map-toggles">
+      <h2>Layers</h2>
+      <label><input type="checkbox" data-layer="canopy" checked /><span class="swatch" style="background:var(--canopy1)"></span> Canopy NDVI 4 bins</label>
+      <label><input type="checkbox" data-layer="streams" checked /><span class="swatch" style="background:var(--stream)"></span> Streams</label>
+      <label><input type="checkbox" data-layer="osm_water" checked /><span class="swatch" style="background:#3b82f6"></span> OSM water</label>
+      <label><input type="checkbox" data-layer="osm_roads" checked /><span class="swatch" style="background:#9ca3af"></span> OSM roads</label>
+      <label><input type="checkbox" data-layer="buildings" checked /><span class="swatch" style="background:#a3a3a3"></span> OSM buildings</label>
+      <label><input type="checkbox" data-layer="landcover" checked /><span class="swatch" style="background:#a78bfa"></span> OSM land-use</label>
+      <label><input type="checkbox" data-layer="trees_estimated" checked /><span class="swatch" style="background:#86efac;border:2px solid #fbbf24"></span> Estimated trees (n=345)</label>
+      <label><input type="checkbox" data-layer="gbif" /><span class="swatch" style="background:#f472b6"></span> GBIF (300 obs)</label>
+      <label><input type="checkbox" data-layer="buyer_camera" checked /><span class="swatch" style="background:var(--accent)"></span> Centroid</label>
+    </div>
+
+    <div class="mode-toggle" style="display:none" id="map-mode">
+      <button class="active" data-basemap="hybrid">Hybrid</button>
+      <button data-basemap="aerial">Aerial</button>
+      <button data-basemap="topo">Topo</button>
+    </div>
+
+    <div class="legend" style="display:none" id="map-legend">
+      <h2>Layer Legend</h2>
+      <div class="row"><span class="swatch" style="background:var(--canopy1)"></span> Sparse NDVI (&lt;0.30)</div>
+      <div class="row"><span class="swatch" style="background:#4ade80"></span> Open (0.30–0.60)</div>
+      <div class="row"><span class="swatch" style="background:var(--canopy3)"></span> Medium (0.60–0.85)</div>
+      <div class="row"><span class="swatch" style="background:var(--canopy4)"></span> Dense NDVI (&gt;0.85)</div>
+      <div class="row"><span class="swatch" style="background:var(--stream)"></span> Stream / quebrada</div>
+    </div>
+
+    <div class="stats" id="stats">loading…</div>
+    <button class="map-reset" id="map-reset" title="Reset to LQV extent" style="display:none">Reset</button>
+  </section>
+
+  <!-- EXTERNAL MAP LINKS -->
+  <h2>Open in external apps <span class="small">click to view the property in third-party tools</span></h2>
+  <div class="external-links">
+    <a href="https://www.openstreetmap.org/?mlat=-25.6073&mlon=-57.0355#map=15/-25.6073/-57.0355" target="_blank" rel="noopener">
+      <span class="ext">View on OpenStreetMap</span>
+      <span class="desc">Browser-based, all layers toggleable</span>
+    </a>
+    <a href="https://www.google.com/maps/place/-25.6073,-57.0355/@-25.6073,-57.0355,15z/data=!3m1!1e3" target="_blank" rel="noopener">
+      <span class="ext">View on Google Maps</span>
+      <span class="desc">Satellite + Street View + photos</span>
+    </a>
+    <a href="https://earth.google.com/web/@-25.6073,-57.0355,200a,1000d,35y,0h,0t,0r" target="_blank" rel="noopener">
+      <span class="ext">View in Google Earth</span>
+      <span class="desc">3D, historical imagery</span>
+    </a>
+    <a href="https://www.openstreetmap.org/edit?lat=-25.6073&lon=-57.0355&zoom=15" target="_blank" rel="noopener">
+      <span class="ext">Edit on OpenStreetMap (iD)</span>
+      <span class="desc">Help fill in the missing rural data</span>
+    </a>
+  </div>
+
+  <!-- RENDERED vs SATELLITE COMPARISON -->
+  <h2>Rendered vs satellite <span class="small">same property, two different visualizations</span></h2>
+  <div class="compare-panel">
+    <div class="grid">
+      <figure>
+        <img src="./data/preview/lqv-render-vs-satellite.webp" alt="A_hero Cycles render next to satellite photo of the same area" />
+        <figcaption>Left: A_hero Cycles render (typology A, photoreal). Right: real satellite photo (Esri, z=15).</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <object class="streams-overlay-card" data="./data/preview/streams_overlay.svg" type="image/svg+xml" aria-label="LQV stream network (DEM-derived, 15 segments)"></object>
+
+  <h2>Stream network detail <span class="small">15 DEM-derived segments · labels S01-S15</span></h2>
+  <object class="streams-overlay-card" data="./data/preview/streams_overlay.svg" type="image/svg+xml" aria-label="LQV stream network (DEM-derived, 15 segments)"></object>
+
+  <!-- 4-UP POSTER (NDVI / NDWI / RGB / Canopy) -->
+  <h2>Data layers side-by-side <span class="small">1600×400 multi-band quicklook</span></h2>
+  <div class="card">
+    <img src="./data/preview/lqv_4up_poster.webp" alt="LQV 4-up poster showing NDVI, NDWI, RGB, and Canopy classes" style="height:240px;width:100%;object-fit:cover" />
+  </div>
+
+  <!-- 3D TERRAIN VIEWER (CESIUM) -->
+  <h2>Explore in 3D <span class="small">Cesium World Terrain + Esri satellite · no key required, 5 GB/mo free tier via Cesium ion</span></h2>
+  <section class="cesium-panel">
+    <div class="cesium-hud">
+      <span class="hud-badge" id="cesium-fps">— fps</span>
+      <span class="hud-meta">Camera height <span id="cesium-height">—</span> km</span>
+      <span class="hud-meta">Cesium World Terrain via <a href="https://ion.cesium.com/" target="_blank" rel="noopener">Cesium ion</a></span>
+    </div>
+
+    <div id="cesium-container" style="height:520px;border-radius:10px;overflow:hidden;border:1px solid var(--grid)"></div>
+
+    <div class="cesium-buttons">
+      <button type="button" data-cesium-action="fly-lqv">Drop me at LQV</button>
+      <button type="button" data-cesium-action="fly-around">Fly-around demo (slow orbit)</button>
+      <button type="button" data-cesium-action="toggle-terrain">Toggle terrain</button>
+      <button type="button" data-cesium-action="toggle-imagery">Toggle imagery (Esri / OSM)</button>
+      <button type="button" data-cesium-action="reset-view">Reset view</button>
+      <button type="button" data-cesium-action="fullscreen">Fullscreen</button>
+    </div>
+
+    <p class="cesium-note">
+      Cesium World Terrain elevation data is streamed at 30 m resolution (SRTM-class).
+      Imagery: Esri World Imagery (default) or OpenStreetMap (toggle).
+      Save data: 5 GB/mo free via Cesium ion &mdash; no extra signup beyond this token.
+    </p>
+  </section>
+
+
+  <section class="caveats" id="caveats">
+    <h2>What's <em>not</em> in this data</h2>
+    <p>This is a buyer pre-sales visualization built from satellites + open data. Some things are missing or limited by source resolution:</p>
+    <ul>
+      <li><strong>Individual tree positions:</strong> the canopy is shown in 4 density zones (Sentinel-2 NDVI), not as individual trees. Crown-level positions need Wes's phone captures → COLMAP + gsplat pipeline.</li>
+      <li><strong>Cadastral (SNC) records:</strong> padrones and Anexo I from Wesley are needed for the legal-property overlay.</li>
+      <li><strong>Fire history:</strong> needs <code>FIRMS_MAP_KEY</code> for the NASA FIRMS API; the env-setup script prompts for it.</li>
+      <li><strong>Drone / Maxar high-res imagery:</strong> 30 cm/pixel from Vantor tasking is &gt;$2,800 per 100 km²; over-budget for a pre-sales page.</li>
+      <li><strong>Stream connectivity:</strong> the 15 DEM-derived stream segments are real but disconnected (D8 flow-accum fragmentation). They look like a tree of tributaries rather than a single main quebrada with branching forks.</li>
+      <li><strong>Buildings inside the LQV polygon:</strong> only 2 OSM-mapped buildings are inside the property; the other 14 within 500m are scattered rural structures.</li>
+    </ul>
+    <p class="caveat-note">For survey-grade, design-grade, or legally-binding data, engage a licensed Paraguayan agrimensor — see <code>docs/_archive/2026-06-1X/UPGRADE_PLAN.md</code> for the SoW.</p>
+  </section>
+
+  <footer class="link-block">
+    Repo: <a href="https://github.com/Ai-Whisperers/la-quebrada-viva">Ai-Whisperers/la-quebrada-viva</a> ·
+    Cycles renderer byte-frozen at <code>85e86aa</code> ·
+    Map served by <a href="https://pages.cloudflare.com">Cloudflare Pages</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  function hasWebGL() {
+    try {
+      var c = document.createElement('canvas');
+      return !!(c.getContext('webgl') || c.getContext('experimental-webgl'));
+    } catch (e) { return false; }
+  }
+  function showFallback() {
+    var ids = ['map-hud', 'map-toggles', 'map-mode', 'map-legend'];
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+    var fallback = document.getElementById('no-webgl');
+    if (fallback) fallback.style.display = 'flex';
+    var stats = document.getElementById('stats');
+    if (stats) stats.textContent = 'static preview · WebGL not available';
+  }
+  function hideFallback() {
+    var ids = ['map-hud', 'map-toggles', 'map-mode', 'map-legend'];
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = '';
+    });
+    var fallback = document.getElementById('no-webgl');
+    if (fallback) fallback.style.display = 'none';
+  }
+  function loadMapModule() {
+    var s = document.createElement('script');
+    s.type = 'module';
+    s.src = './lqv-map.js';
+    document.body.appendChild(s);
+  }
+
+  // URL params: ?layer=streams,canopy,gbif — auto-toggle the listed layers
+  // (lqv-map.js reads this from window.location.search)
+  function applyLayerParams() {
+    var sp = new URLSearchParams(window.location.search);
+    var layers = (sp.get('layer') || '').split(',').filter(Boolean);
+    if (!layers.length) return;
+    // Stash a global for lqv-map.js to read on load
+    window.__lqvInitialLayers = layers;
+  }
+
+  // Reset button: scroll the map area into view, but the actual map-reset action
+  // is performed by lqv-map.js when the user clicks the button (button shows
+  // when WebGL is available). For sandboxes the button is hidden, so we just
+  // expose a "scroll to map" fallback.
+  function wireResetButton() {
+    var btn = document.getElementById('map-reset');
+    if (!btn) return;
+    // The map module wires its own click handler that resets camera + layer toggles.
+    // We just make it visible when WebGL is up.
+    if (hasWebGL()) {
+      btn.style.display = 'block';
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    applyLayerParams();
+    if (hasWebGL()) {
+      hideFallback();
+      loadMapModule();
+      wireResetButton();
+    } else {
+      showFallback();
+    }
+  });
+})();
+</script>
+
+<script>
+(async function () {
+  const files = {
+    canopy: 'canopy_classes.geojson',
+    streams: 'hydrography_dem.geojson',
+    osm_roads: 'osm_roads_v2.geojson',
+    osm_water: 'osm_water_v2.geojson',
+    buildings: 'osm_buildings_near.geojson',
+    landcover: 'osm_landcover_zones_v2.geojson',
+    trees_estimated: 'trees_estimated.geojson',
+  };
+  for (const [k, f] of Object.entries(files)) {
+    try {
+      const r = await fetch('./data/' + f);
+      if (!r.ok) continue;
+      const j = await r.json();
+      const n = (j.features || []).length;
+      const cb = document.querySelector(`[data-layer="${k}"]`);
+      if (!cb) continue;
+      const label = cb.parentElement;
+      const txt = label.textContent.replace(/\s*\(.*\)\s*$/, '').trim();
+      const countSpan = document.createElement('span');
+      countSpan.style.color = 'var(--accent)';
+      countSpan.style.fontWeight = '600';
+      countSpan.style.marginLeft = '0.4rem';
+      countSpan.textContent = `(n=${n})`;
+      // Append
+      label.appendChild(countSpan);
+      // If 0, dim and uncheck
+      if (n === 0) {
+        cb.checked = false;
+        cb.disabled = true;
+        label.style.opacity = '0.4';
+        label.title = 'No features in this layer';
+      }
+    } catch (e) {}
+  }
+})();
+</script>
+
+
+<script>
+<script src="./lqv-secrets/cesium-token.js"></script>
+<script>
+(function () {
+  function injectCesiumToken() {
+    return window.LQV_CESIUM_ION_TOKEN || null;
+  }
+  var token = injectCesiumToken();
+  if (!token) {
+    document.getElementById('cesium-container').innerHTML =
+      '<div style="padding:2rem;color:#aaa;text-align:center;">Cesium ion token not configured. Run <code>build_viewer.py</code> after setting <code>CESIUM_ION_TOKEN</code> in splats.env.</div>';
+    return;
+  }
+
+  Cesium.Ion.defaultAccessToken = token;
+  window.__LQV_CESIUM_INIT = { startedAt: Date.now() };
+
+  var viewer = new Cesium.Viewer('cesium-container', {
+    timeline: false,
+    animation: false,
+    baseLayerPicker: false,
+    geocoder: false,
+    homeButton: false,
+    sceneModePicker: false,
+    navigationHelpButton: false,
+    fullscreenButton: false,
+    infoBox: true,
+    selectionIndicator: false,
+    shadows: false,
+    terrainProvider: new Cesium.EllipsoidTerrainProvider(), // start flat until terrain load
+  });
+
+  // Imagery: Esri World Imagery (matches the 2D map)
+  viewer.imageryLayers.removeAll();
+  var esriProvider = new Cesium.UrlTemplateImageryProvider({
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    maximumLevel: 18,
+    credit: 'Esri World Imagery'
+  });
+  var esriLayer = viewer.imageryLayers.addImageryProvider(esriProvider);
+
+  // LQV centroid
+  var LAT = -25.6073, LON = -57.0355, ALT = 166;
+  var LQV_CENTER = Cesium.Cartesian3.fromDegrees(LON, LAT, ALT + 800);
+
+  // Initial camera flyto
+  viewer.camera.flyTo({
+    destination: LQV_CENTER,
+    orientation: { heading: 0.0, pitch: -Cesium.Math.toRadians(60.0), roll: 0.0 },
+    duration: 0
+  });
+
+  // Load Cesium World Terrain asynchronously
+  Cesium.createWorldTerrainAsync({}).then(function (terrain) {
+    viewer.terrainProvider = terrain;
+    if (window.__lqvShowTerrain === undefined) window.__lqvShowTerrain = true;
+  }).catch(function (err) {
+    console.warn('[cesium] world terrain load failed:', err && err.message);
+  });
+
+  window.__lqvCesium = viewer;
+  window.__lqvCesiumState = { terrainOn: true, esriOn: true, flyAround: null };
+
+  // FPS readout
+  var fpsBox = document.getElementById('cesium-fps');
+  var heightBox = document.getElementById('cesium-height');
+  function updateReadout() {
+    if (!viewer) return;
+    var camPos = viewer.camera.positionCartographic;
+    if (fpsBox) fpsBox.textContent = Math.round(viewer.scene.frameState.commandExecute.time) + ' fps';
+    if (heightBox && camPos) heightBox.textContent = (camPos.height / 1000).toFixed(2);
+  }
+  viewer.scene.postRender.addEventListener(updateReadout);
+
+  // Action handlers
+  document.querySelectorAll('[data-cesium-action]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var action = btn.getAttribute('data-cesium-action');
+      if (action === 'fly-lqv') {
+        if (window.__lqvCesiumState.flyAround) {
+          viewer.clock.onTick.removeEventListener(window.__lqvCesiumState.flyAround);
+          window.__lqvCesiumState.flyAround = null;
+        }
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(LON, LAT, ALT + 600),
+          orientation: { heading: 0.0, pitch: -Cesium.Math.toRadians(45.0), roll: 0.0 },
+          duration: 1.5
+        });
+      } else if (action === 'fly-around') {
+        if (window.__lqvCesiumState.flyAround) return;
+        var t0 = Date.now();
+        var tick = function () {
+          var secs = (Date.now() - t0) / 1000;
+          var angle = secs * 0.05;  // 0.05 rad/s = 1 orbit / 125s
+          viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(
+              LON + Math.cos(angle) * 0.005,
+              LAT + Math.sin(angle) * 0.005,
+              ALT + 400
+            ),
+            orientation: { heading: angle + Cesium.Math.PI, pitch: -Cesium.Math.toRadians(30.0), roll: 0 },
+            duration: 0
+          });
+          // Stop after 5 minutes automatically
+          if (secs > 300) {
+            viewer.clock.onTick.removeEventListener(tick);
+            window.__lqvCesiumState.flyAround = null;
+          }
+        };
+        window.__lqvCesiumState.flyAround = tick;
+        viewer.clock.onTick.addEventListener(tick);
+      } else if (action === 'toggle-terrain') {
+        window.__lqvCesiumState.terrainOn = !window.__lqvCesiumState.terrainOn;
+        viewer.terrainProvider = window.__lqvCesiumState.terrainOn && window.__lqvWorldTerrain
+          ? window.__lqvWorldTerrain
+          : new Cesium.EllipsoidTerrainProvider();
+      } else if (action === 'toggle-imagery') {
+        window.__lqvCesiumState.esriOn = !window.__lqvCesiumState.esriOn;
+        viewer.imageryLayers.removeAll();
+        if (window.__lqvCesiumState.esriOn) {
+          viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            maximumLevel: 18,
+          }));
+        } else {
+          viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
+            url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            maximumLevel: 18,
+          }));
+        }
+      } else if (action === 'reset-view') {
+        if (window.__lqvCesiumState.flyAround) {
+          viewer.clock.onTick.removeEventListener(window.__lqvCesiumState.flyAround);
+          window.__lqvCesiumState.flyAround = null;
+        }
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(LON, LAT, ALT + 600),
+          orientation: { heading: 0.0, pitch: -Cesium.Math.toRadians(45.0), roll: 0.0 },
+          duration: 0
+        });
+      } else if (action === 'fullscreen') {
+        var c = document.getElementById('cesium-container');
+        if (!document.fullscreenElement) {
+          c.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "src_file": "doc_859e26d9375d_06-30-2026_15.32.m4a",
+  "src_path": "/root/.hermes/document_cache/doc_859e26d9375d_06-30-2026_15.32.m4a",
+  "src_size_bytes": 2020995,
+  "duration_sec": 124.57,
+  "detected_language": "en",
+  "language_probability": 0.658,
+  "n_segments": 33,
+  "transcribe_model": "faster-whisper large-v3 int8 cpu",
+  "beam_size": 5,
+  "vad_filter": true
+}
