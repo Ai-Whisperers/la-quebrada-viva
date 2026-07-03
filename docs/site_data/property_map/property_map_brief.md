@@ -1,148 +1,175 @@
 ---
-name: property_map_brief
-description: Composite property map v1 (2026-06-28) over the 30.9 ha Mbopicua polygon — Wesley's KML boundary + Sentinel-2 NDVI 4-class canopy (10 m, single-date 2026-05-12) + Copernicus 30 m DEM D8 hydrography (15 LineStrings, threshold ≥30 cells) + OSM buildings (9 polygons all south of polygon, 0 on-property) + Camino a Escobar road + 2 farmland polygons + NDWI=0 % open water + 14-row photo-verification register.
+name: property_map_v2_brief
+description: Property map v2 indexed data spine (13 batches A-K‴, 86-species candidate pool, 437-species biodiversity envelope, MS Open Buildings 737 polys reach, triple-confirmed zero open water, 41-yr NDVI history, 6-mo S1 SAR, MapBiomas + Hansen forest tracking, SoilGrids profile, 50 km comparables ring) over the 30.9 ha Mbopicua polygon — successor to the v1 composite, canonical for the deck data tables and the digital-twin pull.
 metadata:
   type: project
 ---
 
-# Property map brief — La Quebrada Viva (Phase-0 §12 v1, canonical)
+# Property map v2 brief — La Quebrada Viva (Phase-0 §12 v2, indexed data spine)
 
-> Composite satellite + DEM + OSM map of the 30.9 ha buildable Mbopicua
-> cluster (Wesley's KML polygon, scope-locked at T+1, 2026-06-28).
-> Frozen at 300 dpi as `property_map.png` and packaged as the v1 baseline
-> from which the [[property_map_v2_brief]] data spine derives. All
-> layers are remote-sensed; ground-truth via Wesley's 2026-07-27 →
-> 2026-08-27 intake window. Canonical reference for the deck "Where the
-> 30.9 ha sit" pair + the digital-twin Mbopicua mesh AOI.
+> Successor to the v1 composite. v1 stays canonical for the 300 dpi
+> polygon-clip PNG; **v2 is the indexed data spine the deck and the
+> digital twin pull from**. 13 batches (A-K‴) integrate Cop30
+> hydrography, OSM, 50 km comparables, 86-species Atlantic Forest pool,
+> 437-species biodiversity envelope, MS Open Buildings ML pass,
+> SoilGrids profile, 5-yr S2 timeseries, 6-mo S1 RTC SAR, 41-yr Landsat
+> NDVI, Hansen GFC v1.12, Mapbiomas Paraguay Coll 2, JRC GSW v1.4.
 
 ## Headline
 
-- **Polygon scope-locked** to the **30.9 ha Mbopicua cluster** from Wesley's KML — the buildable subset of the 62 ha boleto-privado purchase. Polygon is the canonical AOI for every downstream brief and sub-render.
-- **Zero on-property structures** per OSM Overpass + MS Open Buildings ML pass. The nearest neighbour building sits ~196 m S of the polygon centroid (17 m² shed-scale, untagged); all 9 OSM-mapped buildings cluster along `Camino a Escobar` south and SE of the polygon.
-- **Zero open water inside the polygon** at 10 m S-2 single-date snapshot (NDWI median −0.83, 0 % open-water bins). Triple-confirmed by [[sentinel1_brief]] VV = −8.33 dB and [[jrc_gsw_brief]] zero polygon cells across 1984-2021 — see Cross-check.
-- **Canopy is dense and continuous** — 4-class S-2 NDVI surface, single date `S2B_21JVM_20260512_0_L2A` (2026-05-12 autumn mid-flush). The bare/sparse classes hug the SW boundary along the stream corridor; the mid/dense bins cover the interior. Cross-confirms [[hansen_gfc_brief]] 82.1 % treecover2000 + [[mapbiomas_paraguay_brief]] 80.6→84.0 % native forest gain.
-- **15 stream LineStrings** entering N/NE and exiting SW low corner, derived from Cop30 D8 flow-accumulation at threshold ≥30 cells (~2.7 ha catchment). All segments are DEM-derived, classed *permanent vs seasonal* only by joint inference from [[sentinel1_brief]] VV ratio + [[jrc_gsw_brief]] zero-water — never photo-confirmed. R01 (photo + EXIF-GPS) gates classification per segment.
-- **Camino a Escobar** is the only OSM road, `highway=unclassified, surface=unpaved`, 2-lane dirt, running E-W along the southern polygon margin. Two `landuse=farmland` polygons sit SW of the polygon — neighbour pasture, not on-property.
-- **Individual tree positions are NOT shipped.** R35 (drone LiDAR or sub-1 m NICFI + DeepForest) gates the candidate-to-stem promotion; the 86-species candidate list lives in [[atlantic_forest_trees_brief]].
+- **v1 → v2 delta is *evidence depth*, not *evidence direction*** — every v1 claim survives v2 cross-checks. The novel additions are temporal (1984-2025 surface water, 1985-2023 native forest, 1985-2025 NDVI), areal (50 km comparables ring + 25 km biodiversity envelope), and resolutional (MS Open Buildings ML + SoilGrids 250 m).
+- **Triple-confirmed 0 % open water** across (i) S-2 AWEIsh −0.677 / NDWI −0.706 / MNDWI −0.581, (ii) S-1 SAR VV −8.33 dB > −15 dB threshold, (iii) JRC GSW v1.4 zero polygon cells across 1984-2021 in all 4 layers. The polygon has been dry land for the entire Landsat era.
+- **Hansen GFC v1.12** 82.1 % treecover2000, 0.63 ha cumulative stand-replacement loss 2001-2024, 0 gain pixels. **Mapbiomas Paraguay Coll 2** native forest **80.6 % (1985) → 84.0 % (2023)**, Δ +3.4 pp. The polygon is forest-positive on a 4.94 %-loss landscape (≈3× below AOI deforestation rate).
+- **41-year Landsat NDVI** mean +0.696, peak +0.782 in 2024, drought floor +0.564 in 2003. **5-yr Sentinel-2 NDVI** mean +0.773 across 12 scenes 2020-H1 → 2025-H2. The 1985 → 2025 trajectory is monotonically greening with one 2003 drought scar.
+- **Mbopicua scope-lock 30.9 ha** (Wesley KML) holds across every batch. The buildable cluster is the canonical AOI; the broader 62 ha boleto purchase, the 50 km comparables ring, and the 25 km biodiversity envelope are framing-only.
+- **86 candidate tree species** in the Atlantic Forest 25 km pool (most-cited *Trichilia catigua* 61 occ; lapacho present at 1 occ). **437 GBIF species + 727 iNat observations** in the 25 km biodiversity envelope; **0 IUCN-threatened** at the 25 km scale (corrected from earlier 1 false-positive).
+- **MS Open Buildings** 737 polygons / 59 947 m² in the AOI ±1 km ring; nearest neighbour 196 m S, 17 m² shed-scale. Extends OSM's 9-polygon S-boundary cluster downward to ML-resolution shed-scale; **still 0 polygons inside the polygon**.
+- **JRC GSW v1.4 ↔ Mapbiomas disagreement on "wetland"** is informative not contradictory: JRC measures open-water occurrence only (zero); Mapbiomas Flooded Forest class registers seasonally-flooded forest (small but nonzero). Polygon is dry land + flood-prone gallery forest along the Quebrada axis.
+- **Photo-verification register** (14-row cross-ref, sibling [[property_map_brief]] §photo_verification) is the promotion path — v2 layers stay 🛰️ until Wesley's 2026-07-27 → 2026-08-27 intake closes. R35 (drone LiDAR / sub-1 m imagery) is the only unlock for per-stem species ID.
 
 ## Pull parameters
 
 | Field | Value |
 | --- | --- |
-| Polygon source | Wesley van de Camp's KML, hand-digitized 2026-06-27 from boleto cadastral overlay |
-| Polygon area | 30.9 ha (Mbopicua cluster — buildable subset of 62 ha boleto purchase) |
-| Polygon CRS (vector) | EPSG:4326 |
-| Composite raster CRS | EPSG:32721 (UTM 21S) |
-| Sentinel-2 scene | `S2B_21JVM_20260512_0_L2A` (Element84 Earth Search STAC) |
-| S-2 acquisition date | 2026-05-12 (autumn / *otoño* mid-flush, single-date snapshot) |
-| S-2 resolution | 10 m B02/B03/B04/B08 → NDVI / NDWI |
-| NDVI bins | 4 classes: bare (<0.30), sparse (0.30-0.60), mid (0.60-0.85), dense (>0.85) |
-| NDWI water threshold | 0 (no polygon cells positive) |
-| DEM source | Copernicus 30 m GLO-30 via OpenTopography API (`OPENTOPOGRAPHY_API_KEY` in `.env.local`) |
-| Hydrography algorithm | D8 flow-direction + flow-accumulation, threshold ≥30 cells (~2.7 ha catchment) |
-| Hydrography output | 15 LineStrings, EPSG:4326 |
-| OSM Overpass query | `building=*`, `highway=*`, `landuse=*`, `natural=*` within polygon bbox + 2 km buffer |
-| OSM pull date | 2026-06-28 |
-| OSM building count | 9 polygons (all S of polygon, none inside) |
-| OSM road | 1 LineString — `Camino a Escobar` (`highway=unclassified, surface=unpaved`) |
-| OSM farmland | 2 polygons (SW of polygon) |
-| Composite output | `property_map.png`, 300 dpi |
-| Driver | `scripts/build_property_map.py` |
-| Pure-numpy helper | `scripts/analyze_stream.py` (D8 flow-routing, shared with hydrography sub-render) |
+| v1 baseline | [[property_map_brief]] (300 dpi composite, 2026-06-28) |
+| Polygon | Wesley KML, 30.9 ha Mbopicua cluster, EPSG:4326 |
+| Indexed-spine vintage | 2026-06-28 (T+1) post-escritura |
+| Raster compute CRS | EPSG:32721 (UTM 21S) |
+| Vector storage CRS | EPSG:4326 |
+| Batch count | 13 (A, B, C, D, E, F, G, H, I, J, K, K′, K″, K‴) |
+| Compute drivers | `scripts/build_property_map.py` (composite), `scripts/analyze_stream.py` (D8), 12 ad-hoc batch pullers in `scripts/phase0_*.py` |
 
-## Layer manifest — what shipped in v1
+## Batch index — what each letter pulled
 
-| Layer | Files | Status | Confidence |
+| Batch | Source | Resolution | Vintage | Polygon-clip output | Brief |
+| --- | --- | --- | --- | --- | --- |
+| A | Sentinel-2 (Element84 STAC) | 10 m | 2026-05-12 single date | 4-bin NDVI + NDWI + composite | [[property_map_brief]] |
+| B | Copernicus GLO-30 DEM (OpenTopography) | 30 m | 2025 mosaic | D8 flow-routing 15 LineStrings, threshold ≥30 cells | [[hydrogeology_brief]] |
+| C | OSM Overpass | vector | 2026-06-28 | 9 buildings (all S), 1 road, 2 farmland | [[property_map_brief]] |
+| D | OSM + WDPA + 50 km comparables ring | mixed | 2026-06-28 | 401 WDPA-locked + 5 OSM protected-areas | [[comparables_brief]] |
+| E | Atlantic Forest tree DB (GBIF subset, 25 km) | point | 1850-2025 | 86 candidate species; *Trichilia catigua* 61 occ | [[atlantic_forest_trees_brief]] |
+| F | GBIF + iNat biodiversity, 25 km envelope | point | 1850-2025 | 437 spp + 727 obs; 0 IUCN-threatened | [[biodiversity_25km_brief]] |
+| G | MS Open Buildings v3 | ML polygon | 2023 vintage | 737 polys / 59 947 m² in AOI ±1 km; 196 m nearest | [[infrastructure_brief]] |
+| H | ISRIC SoilGrids v2.0 | 250 m | 2020 vintage | pH 5.3, clay-increasing argillic horizon | [[soilgrids_brief]] |
+| I | Sentinel-2 timeseries | 10 m | 2020-H1 → 2025-H2 (12 scenes) | NDVI mean +0.773, floor 0.728 | [[sentinel2_brief]] |
+| J | Sentinel-1 RTC γ⁰ | 10 m | 6-mo (Apr-Oct 2026, 14 scenes) | VV −8.33 dB, VH −14.09 dB, VV−VH +5.76 dB | [[sentinel1_brief]] |
+| K | Landsat 4/5/7/8/9 annual | 30 m | 1985-2025 (41 yr) | NDVI mean +0.696, 2024 peak +0.782, 2003 floor +0.564 | [[landsat_brief]] |
+| K′ | Hansen GFC v1.12 | 30 m | 2000 baseline + 2001-2024 loss | 82.1 % treecover2000, 0.63 ha loss, 0 gain | [[hansen_gfc_brief]] |
+| K″ | Mapbiomas Paraguay Coll 2 | 30 m | 1985-2023 (39 yr) | Native forest 80.6 → 84.0 % Δ +3.4 pp | [[mapbiomas_paraguay_brief]] |
+| K‴ | JRC GSW v1.4 | 30 m | 1984-2021 | Polygon-zero across 4 layers, AOI landscape-wetlandisation ≈26× | [[jrc_gsw_brief]] |
+
+## v1 → v2 delta — what's new
+
+| Theme | v1 (single date) | v2 (multi-source / multi-decade) | Direction |
 | --- | --- | --- | --- |
-| Polygon boundary | `vector/property_polygon.geojson` | ✅ canonical (Wesley KML) | High |
-| Canopy classes (4-bin NDVI) | `raster/canopy_classes.tif` + `quicklooks/canopy_classes.png` | 🛰️ derived | Mid (autumn single-date) |
-| Hydrography (D8 streams) | `vector/hydrography_dem.geojson` + `quicklooks/hydrography_dem.png` | 🛰️ derived | Mid (DEM-only, no photo) |
-| Open water (NDWI) | `raster/ndwi.tif` + `quicklooks/ndwi.png` | 🛰️ derived | High (cross-confirmed S1+JRC) |
-| Buildings (OSM) | `vector/buildings_osm.geojson` | 🛰️ partial | Low (OSM coverage is sparse) |
-| Buildings (ML) | deferred to [[infrastructure_brief]] | 🛰️ deferred | n/a |
-| Road | `vector/roads_osm.geojson` | 🛰️ derived | Mid |
-| Farmland (neighbour) | `vector/natural_osm.geojson` (landuse subset) | 🛰️ derived | Mid |
-| Individual trees | NOT shipped | 📷 deferred R35 | n/a |
-| Composite render | `property_map.png` (300 dpi) | ✅ frozen | High (geometry) |
-| Photo verification register | `photo_verification.md` (14 rows) | 🛰️ pending photos | n/a |
+| Canopy NDVI | 4-bin S-2 2026-05-12 | 12-scene S-2 timeseries 2020-2025 + 41-yr Landsat 1985-2025 | Confirms greening, +0.696 → +0.782 |
+| Forest cover | NDVI proxy | Hansen 82.1 % + Mapbiomas 80.6 → 84.0 % | Multi-decade absolute baseline |
+| Forest loss | Not measured | Hansen 0.63 ha 2001-2024 + Mapbiomas Δ +3.4 pp | Forest-positive trajectory |
+| Surface water | NDWI 2026-05-12 single date | NDWI + AWEIsh + MNDWI + S-1 SAR + JRC GSW 1984-2021 | Triple-zero confirmed |
+| Stream network | 15 D8 LineStrings | Same + S-1 SAR moisture cross-check + JRC zero | DEM streams remain canonical |
+| Buildings | 9 OSM polys S of polygon | + 737 MS Open Buildings ML in AOI ±1 km | 0 on-property holds at ML resolution |
+| Roads | 1 OSM road `Camino a Escobar` | Same + MS Open Buildings non-road | OSM remains canonical |
+| Soil | Not pulled | SoilGrids 250 m (pH 5.3, argillic horizon, clay-increasing) | Phase-1 unlock for foundation + drainage |
+| Tree species | None | 86 Atlantic Forest candidates (25 km pool) | Per-stem ID still gated on R35 |
+| Threatened flora | None | 0 IUCN-threatened at 25 km (corrected) | Conservation framing clarified |
+| Fauna | None | 437 GBIF spp + 727 iNat obs (25 km) + 50 dense-canopy Aves (5 km) | Habitat envelope quantified |
+| Protected areas | None | 401 WDPA-locked + 5 OSM in 50 km ring | Comparables framing |
+| Radar | None | S-1 RTC γ⁰ 14 scenes | Closed-canopy confirmation |
+| Burn history | None | Mapbiomas Fire (gated, deferred) + Landsat NDVI dip 2003 | Single 2003 drought scar |
 
 ## Cross-check with other briefs
 
-| Source | Claim | property_map agrees? |
+| Source | Claim | property_map_v2 agrees? |
 | --- | --- | --- |
-| [[sentinel2_brief]] | NDVI floor 0.728 wall-to-wall 2020-2025, single-date 2026-05-12 mean +0.917 | Yes — canopy_dense + canopy_mid bins cover >90 % polygon interior; sparse/bare classes restricted to SW stream corridor |
-| [[sentinel1_brief]] | VV −8.33 dB, VH −14.09 dB, VV−VH +5.76 dB closed-canopy signature, no flooded patches | Yes — radar rules out open water under canopy that NDWI single date cannot see |
-| [[jrc_gsw_brief]] | Zero polygon cells with any water occurrence 1984-2021 across all 4 layers | Yes — historical surface-water absence over the full Landsat era; the NDWI 0 % single-date claim is now era-wide |
-| [[hansen_gfc_brief]] | 82.1 % treecover2000 mean; 0.63 ha cumulative loss 2001-2024; 0 gain | Yes — the canopy_dense + canopy_mid bins corroborate the 82 % baseline; the SW stream-corridor sparse/bare zone aligns with the 4-event Hansen loss footprint |
-| [[mapbiomas_paraguay_brief]] | Native forest 80.6 % (1985) → 84.0 % (2023), Δ +3.4 pp; 297 stable-forest px | Yes — canopy bins reflect the persistent dense-forest mosaic Mapbiomas tracked back to 1985 |
-| [[landsat_brief]] | 41-yr NDVI mean +0.696, peak +0.782 in 2024 | Yes — single-date 2026-05-12 NDVI mean +0.917 is consistent with the 2024 peak and the recent 5-yr greening trend |
-| [[hydrogeology_brief]] | Dry-channel signature on the SW corridor at the time of survey | Yes — DEM streams are real geomorphic channels but flow seasonally; sparse/bare canopy bins along the corridor reflect intermittent scouring |
-| [[gbif_brief]] | 50 dense-canopy avian species, 0 mammals (sampling artefact) | Consistent — closed-canopy habitat predicted by canopy_dense + canopy_mid bins |
-| [[client_photos_brief]] | 14-row shot register at `client_photos/2026-06_post_escritura/index.md` rows 4-17 | Yes — `photo_verification.md` enumerates the 1-to-1 cross-ref for every derived feature in v1 |
-| [[infrastructure_brief]] | MS Open Buildings: 737 polygons / 59 947 m² in AOI ±1 km, nearest 196 m S | Yes — extends OSM's 9 polygons with the ML pass; both confirm 0 on-property structures |
-| [[atlantic_forest_trees_brief]] | 86 candidate species within 25 km; *Trichilia catigua* 61 occ, lapacho 1 occ | Compatible — the canopy_dense bins are the spatial substrate over which the species candidate list could resolve at sub-1 m |
+| [[sentinel2_brief]] | NDVI floor 0.728, mean 0.773 across 2020-2025 | Yes — Batch I direct source |
+| [[sentinel1_brief]] | VV −8.33 dB closed-canopy, no flooded patches | Yes — Batch J direct source; supports triple-zero water |
+| [[landsat_brief]] | 41-yr NDVI mean +0.696, peak +0.782 in 2024 | Yes — Batch K direct source |
+| [[hansen_gfc_brief]] | 82.1 % treecover2000, 0.63 ha loss, 0 gain | Yes — Batch K′ direct source |
+| [[mapbiomas_paraguay_brief]] | Native forest 80.6 → 84.0 %, Δ +3.4 pp | Yes — Batch K″ direct source |
+| [[jrc_gsw_brief]] | Zero polygon cells, AOI landscape-wetlandisation ≈26× | Yes — Batch K‴ direct source; the JRC ↔ Mapbiomas Flooded Forest tension is *informative*, not a contradiction |
+| [[canopy_height_brief]] | Meta CHM 1 m mean 10.9 m | Yes — corroborates Hansen 82 % treecover2000 + Mapbiomas dense bins |
+| [[soilgrids_brief]] | pH 5.3, argillic horizon | Yes — Batch H direct source |
+| [[infrastructure_brief]] | MS Open Buildings 737 polys, nearest 196 m S | Yes — Batch G direct source; extends OSM v1 |
+| [[atlantic_forest_trees_brief]] | 86 candidate species, *Trichilia catigua* 61 occ | Yes — Batch E direct source |
+| [[biodiversity_25km_brief]] | 437 GBIF + 727 iNat, 0 IUCN-threatened | Yes — Batch F direct source |
+| [[comparables_brief]] | 401 WDPA-locked + 5 OSM in 50 km ring | Yes — Batch D direct source |
+| [[hydrogeology_brief]] | 15 D8 LineStrings, threshold ≥30 cells | Yes — Batch B direct source |
+| [[property_map_brief]] | v1 composite at 300 dpi, polygon-clip canonical | v2 is downstream-of; v1 stays canonical for the PNG |
+| [[client_photos_brief]] | 14-row register at `client_photos/2026-06_post_escritura/index.md` | Yes — v2 promotion gated on intake window 2026-07-27 → 2026-08-27 |
 
 ## Engineering implications
 
-- **The polygon is the canonical AOI for every downstream Phase-1 deliverable** — siting, layout, viewshed, drainage, restaurant placement, cabin clusters. All sub-renders inherit the boundary from `vector/property_polygon.geojson`. Never re-digitize from the 62 ha boleto; the 30.9 ha buildable cluster is the scope-lock.
-- **Buildings: 0 on-property, 9 OSM south, 737 ML in the AOI ring.** Phase-1 site layout starts from a clean slate; no demolition, no relocation, no respect-existing constraints inside the polygon. Wesley's photo intake (shot-list rows 11-12) gates a definitive "vacant" claim — if any photo turns up an untagged shed, cabin, gate-house or pump-house, the v1 composite gets a `photo_anchored.geojson` extension layer at promotion time.
-- **Surface water: triple-zero (S2 NDWI + S1 VV + JRC 1984-2021).** The Phase-1 designed water feature (pool / pond / salto enhancement) is a **green-field design**, not a historical restoration. No regulatory complication around modifying a pre-existing wetland under MADES wetlands protection (the polygon is non-wetland under the historical 30 m record). Designed-feature siting is free; downstream of [[hydrogeology_brief]] flow-routing for catchment.
-- **Streams: 15 D8 LineStrings, threshold ≥30 cells.** This is a DEM-derived approximation, not a photo-confirmed channel network. Per-segment permanence requires (a) wet-vs-dry-season S-1 SAR comparison (Tier-0 free, gated on dry-season Sentinel-1 pull) + (b) photo + EXIF-GPS at the salto axis + footbridge crossings (shot-list rows 9-10, 16). Until then, classify all 15 segments as **seasonal/ephemeral** for legal claims, **permanent** only when joint S-1 dry-season VV stays below −15 dB.
-- **Camino a Escobar is the only access** — Phase-1 internal access tracks (shot-list row 17) are invisible to OSM and to 10 m Sentinel-2. Drone SfM at 5-10 cm GSD (Tier-1 unlock) or NICFI 4.77 m basemaps (Tier-0, user-side signup) are the only paths to a per-track polyline before the photo intake.
-- **Canopy classes are an autumn-mid-flush single-date snapshot.** The 4-bin NDVI surface is the *spatial pattern* at one moment, not the long-term mean. For multi-decade canopy claims defer to [[landsat_brief]] (41 yr) + [[mapbiomas_paraguay_brief]] (39 yr) + [[hansen_gfc_brief]] (24 yr). For seasonal canopy dynamics defer to the S-2 timeseries 2020-2025 (12 scenes) summarized in [[property_map_v2_brief]] §I.
-- **Cross-CRS bookkeeping is the failure mode.** All vectors are EPSG:4326; rasters and composite are EPSG:32721 (UTM 21S). Any new layer must explicitly re-project on read or write; the `scripts/build_property_map.py` driver enforces this at composite time. New sub-renders inheriting from this brief MUST set `cam.data.clip_end >> 100 m` (parcel scale) per [[feedback_subscene_clip_end]].
-- **For the Wesley-side deck**, the property_map composite is the *only* page that lets a non-engineer see all 8 layers stacked on the polygon at once. It's the cognitive anchor; every other brief reads as detail-of-detail. Keep `property_map.png` at 300 dpi and the 8-row TL;DR table prominent.
+- **v2 is the canonical data spine for the deck and the digital twin** — every chart, every claim, every site-knowledge sentence draws from these 13 batches. v1 stays canonical for the composite PNG specifically because the v1 driver (`build_property_map.py`) produces the byte-identical 300 dpi page used in the frozen escritura bundle. Re-rendering v1 risks invalidating the bundle hash; keep them separate.
+- **Triple-zero water is now defensible against any review** — single-date NDWI is the weakest of the three; the 1984-2021 JRC GSW historical record at 30 m is the strongest. For Wesley-side claims, lead with JRC ("no surface water in any of the 38 Landsat years"). For engineering claims (Phase-1 designed water feature), lead with S-1 VV (−8.33 dB > −15 dB = closed canopy, no waterlogged understory). NDWI single-date is the weakest leg; never cite alone.
+- **The forest-positive trajectory is the marketable conservation claim** — 3× below AOI deforestation + +3.4 pp Mapbiomas gain + 0 gain pixels in Hansen (Hansen gain is 2000-2012 only, so gain absence is methodological not biophysical — disclose this). Combined narrative: *"the parcel held its 1985 forest cover through 39 years of regional deforestation."*
+- **The 86-species pool is candidate-only at v2 resolution** — none of the 13 batches resolves per-stem species ID. R35 (drone LiDAR or sub-1 m NICFI + DeepForest crown detection) is the unlock; until then, the deck claims "diverse Atlantic Forest community within 25 km" not "X species on-site." See [[research_gaps]] R35.
+- **The 437-species biodiversity envelope at 25 km is framing-only** — the polygon-scale fauna inference is the 50 dense-canopy Aves community in [[gbif_brief]] (5 km buffer). The 25 km envelope is "regional pool" framing; do not say "437 species on the property."
+- **MS Open Buildings ML extends OSM but does not refute it** — 737 polys in ±1 km AOI is the regional density; 0 on-property is the v1 OSM finding extended at ML resolution. For Phase-1 site layout this is the strongest "vacant land" evidence available pre-photo.
+- **SoilGrids 250 m profile is the Phase-1 foundation + drainage input** — pH 5.3 (acid, gallery-forest typical), clay-increasing argillic horizon. Limits siting decisions for septic + foundation; the 250 m resolution is too coarse for per-cabin micro-siting (drone LiDAR / on-site borings unlock that).
+- **The deck must show v2 batch index** — readers ask "how do you know X?"; the per-batch index table answers in 13 rows. Keep the index table on a single deck page.
+- **JRC ↔ Mapbiomas disagreement is the only "tension" in v2** — handle by re-framing: JRC measures *open water*, Mapbiomas Flooded Forest measures *closed-canopy seasonally-flooded forest*. Both can be true (and are). Do not let a reader think the two products contradict.
 
 ## Sub-render typology
 
-- `lqv/subscene/property_canopy_classes.py` — polygon outline + 4-bin NDVI ramp (yellow→dark-green) over the 32721 raster; canonical "what's growing where" page.
-- `lqv/subscene/property_hydrography.py` — polygon outline + 15 D8 LineStrings + NDWI heat as backdrop; load-bearing "no open water + DEM streams" infographic.
-- `lqv/subscene/property_neighbour_buildings.py` — polygon outline + 9 OSM buildings + 737 MS Open Buildings (semitransparent) + 196 m nearest-neighbour annotation; addresses "no on-property structures" claim.
-- `lqv/subscene/property_road_and_landuse.py` — polygon outline + `Camino a Escobar` + 2 farmland polygons + landuse fill; addresses "neighbour land use" claim (shot-list row 14).
-- `lqv/subscene/property_composite.py` — driver-level orchestrator producing the canonical `property_map.png` at 300 dpi (re-emits v1 baseline byte-for-byte until v2 rolls).
-- `lqv/subscene/property_photo_overlay.py` — DEFERRED until photo intake; will plot EXIF-GPS waypoints over the v1 composite once the 14-row register flips 🛰️ → ✅.
-- `lqv/subscene/property_individual_trees.py` — DEFERRED until R35 (drone LiDAR) or NICFI + DeepForest unlock; will plot per-stem polygons with species ID from the [[atlantic_forest_trees_brief]] candidate pool.
+- `lqv/subscene/property_v2_batch_index.py` — 13-row batch index table over polygon outline; deck-page anchor showing every source and its resolution.
+- `lqv/subscene/property_v2_canopy_history.py` — 41-yr Landsat NDVI line + 39-yr Mapbiomas native-forest area line + Hansen 24-yr treecover2000 bar; load-bearing "forest-positive trajectory" infographic.
+- `lqv/subscene/property_v2_water_triple_zero.py` — 3-panel page: NDWI median heatmap + S-1 VV histogram + JRC GSW 1984-2021 occurrence raster; load-bearing triple-zero confirmation.
+- `lqv/subscene/property_v2_buildings_reach.py` — polygon outline + 9 OSM polys + 737 MS Open Buildings polys with 1 km buffer; load-bearing "vacant land at ML resolution" page.
+- `lqv/subscene/property_v2_biodiversity_envelope.py` — 25 km buffer polygon + GBIF point density + iNat observation count + 0 IUCN-threatened annotation; framing-only deck page.
+- `lqv/subscene/property_v2_comparables_ring.py` — 50 km ring + 401 WDPA-locked polygons + 5 OSM protected areas; comparables-context deck page.
+- `lqv/subscene/property_v2_soil_profile.py` — SoilGrids 250 m cross-section through polygon centroid; Phase-1 foundation + drainage anchor.
+- `lqv/subscene/property_v2_species_pool.py` — Atlantic Forest 25 km pool with 86 candidates; top-10 species by occurrence count; *Trichilia catigua* / lapacho callouts.
 
 ## Provenance
 
-- **Wesley KML polygon:** hand-digitized 2026-06-27 from boleto cadastral overlay; canonical scope-lock recorded in [[decisions_log]] 2026-06-28.
-- **Sentinel-2 scene:** `S2B_21JVM_20260512_0_L2A` pulled from Element84 Earth Search STAC, no auth, B02/B03/B04/B08 bands → NDVI + NDWI computed in `scripts/build_property_map.py`.
-- **Copernicus GLO-30 DEM:** OpenTopography REST `globaldem` endpoint, AOI bbox, API key `OPENTOPOGRAPHY_API_KEY` in `.env.local` (never committed).
-- **D8 hydrography:** pure-numpy implementation in `scripts/analyze_stream.py`, shared between hydrography sub-render and v1 composite driver. Threshold ≥30 cells (≈2.7 ha catchment) chosen to surface the salto-axis tributaries without flooding the map with rills.
-- **OSM Overpass:** API call dated 2026-06-28, polygon bbox + 2 km buffer, `building=*` / `highway=*` / `landuse=*` / `natural=*` selectors. No auth.
-- **Composite render:** `scripts/build_property_map.py` → matplotlib 300 dpi → `property_map.png`. Reproducible from scratch given the KML + the API keys + the OSM Overpass mirror state on 2026-06-28.
-- **License:** All inputs CC-BY-4.0 or public domain (Wesley KML is internal). Composite output inherits the most-restrictive upstream (CC-BY-4.0 — citation in [[license_obligations]]).
+- **Sentinel-2 (Batch A, I):** Element84 Earth Search STAC, no auth, B02-B08 bands. Single-date 2026-05-12 scene (v1) + 12-scene timeseries 2020-H1 → 2025-H2.
+- **Copernicus DEM (Batch B):** OpenTopography REST `globaldem`, `OPENTOPOGRAPHY_API_KEY` in `.env.local`.
+- **OSM Overpass (Batch C):** 2026-06-28 mirror state, polygon bbox + 2 km buffer.
+- **Comparables (Batch D):** WDPA v2024-Q2 (gated by token; 401 polys cached) + OSM `boundary=protected_area`.
+- **Atlantic Forest pool (Batch E):** GBIF occurrence subset filtered to 25 km radius from polygon centroid, Atlantic Forest classification per Oliveira-Filho 2017 tree DB.
+- **Biodiversity (Batch F):** GBIF + iNat 25 km radius; 0 IUCN-threatened (corrected from earlier 1 false-positive after taxonomy verification).
+- **MS Open Buildings (Batch G):** v3 (2023 vintage) polygon set, AOI ±1 km clip.
+- **SoilGrids (Batch H):** ISRIC SoilGrids v2.0, 250 m, 2020 vintage.
+- **Sentinel-1 RTC γ⁰ (Batch J):** Microsoft Planetary Computer RTC product, 14 scenes Apr-Oct 2026.
+- **Landsat (Batch K):** L4/5/7/8/9 annual NDVI composites 1985-2025 via Earth Engine partner GCS bucket.
+- **Hansen GFC v1.12 (Batch K′):** `earthenginepartners-hansen` GCS bucket, tile `20S_060W`.
+- **Mapbiomas Paraguay Coll 2 (Batch K″):** mapbiomas.org Paraguay portal Coll 2, 1985-2023.
+- **JRC GSW v1.4 (Batch K‴):** EC JRC Global Surface Water portal, all 4 layers 1984-2021.
+- **License:** All batches CC-BY-4.0 or public domain; consolidated citation in [[license_obligations]].
 
 ## Carry-forward gaps
 
-- **R01 (stream permanence)** — per-segment classification of the 15 D8 LineStrings as permanent / seasonal / ephemeral. Gated on (a) dry-season Sentinel-1 SAR pull (Tier-0 free) + (b) EXIF-GPS photo at salto + footbridge + boundary crossings (shot-list rows 9-10, 16).
-- **R35 (individual trees)** — per-stem polygons with species ID. Gated on drone LiDAR + ALS (Tier-3 paid, ~$4-9 k) OR NICFI 4.77 m + DeepForest (Tier-1 free, user-side NICFI signup).
-- **Photo-anchored layer** — once Wesley's 2026-07-27 → 2026-08-27 intake window closes, the 14-row register at `photo_verification.md` flips status; any untagged on-property structures, salto features, or internal access tracks become a new `vector/photo_anchored.geojson` layer that re-renders into the composite.
-- **v2 baseline** — [[property_map_v2_brief]] is the indexed data spine pulled from this v1 baseline. It adds 41-year Landsat NDVI history, 6-month S1 SAR, multi-decade Mapbiomas + Hansen forest tracking, triple-confirmed water absence, SoilGrids profile, 86-species Atlantic Forest pool, 25 km biodiversity envelope, MS Open Buildings reach, and 50 km comparables ring. v1 stays canonical for the polygon-clip composite PNG.
-- **Drone SfM at 5-10 cm GSD** — replaces both the Cop30 DEM hydrography and the OSM road as the high-LOD on-property surface model. Aligns with the user's LOD directive (high LOD on-property, lower LOD on surroundings). Tier-1 unlock, user-side drone flight or contractor.
-- **Mapillary streetside imagery** — along `Camino a Escobar` for the boundary-eye-level view; token gated on user-side signup. Listed in [[deferred_data]].
-- **Internal track polylines** — invisible to all current sensors; only photo intake (shot-list row 17) or drone SfM resolves.
+- **Per-stem species ID** (R35) — drone LiDAR or sub-1 m NICFI + DeepForest gates the 86-candidate → on-site-stem promotion.
+- **Mapbiomas Fire annual product** — Phase-0 §12 future-batch K⁗; pull to confirm/refute the 2003 NDVI dip as drought-vs-fire.
+- **NICFI Planet 4.77 m monthly mosaics** — user-side signup gated (in [[deferred_data]]); the sub-1 m sweet spot between Landsat 30 m and drone 5 cm.
+- **Mapillary streetside** — along `Camino a Escobar` for boundary-eye-level imagery; token gated on user-side signup.
+- **WDPA token rotation** — 401 polys cached; full re-pull needs token rotation. Phase-1 task.
+- **GEE auth** — would replace several batches with direct Earth Engine pulls; gated on user-side signup.
+- **CMIP6 NEX-GDDP** (Task #39 background) — climate-envelope batch; on completion writes [[cmip6_brief]].
+- **MOD11 LST** — yearly Day + Night mean TIFs + summary.json + per-granule/monthly/annual CSVs pulled 2026-06-29; [[mod11_brief]] write-up pending.
+- **ALOS PALSAR L-band 2007-2010 + 2015-2020** — Task #30 deferred (MPC SAS HTTP 000 timeout, ~30 min periodic retry).
+- **Drone SfM at 5-10 cm GSD** — replaces Cop30 DEM hydrography + OSM road on-property; aligns with the user's LOD directive.
+- **Photo intake window 2026-07-27 → 2026-08-27** — promotion of 14-row register at sibling [[property_map_brief]] §photo_verification.
 
 ## Cross-references
 
-- [[property_map_v2_brief]] — indexed v2 spine with 13 batches (A-K‴), 86-species pool, 437-species biodiversity envelope, MS Open Buildings reach.
-- [[sentinel2_brief]] — single-date scene + 6-yr timeseries underpinning canopy classes + NDWI.
-- [[sentinel1_brief]] — 14-scene RTC γ⁰ VV/VH confirming closed-canopy + no flood patches.
-- [[landsat_brief]] — 41-yr 30 m NDVI history giving the multi-decade canopy floor.
-- [[jrc_gsw_brief]] — 1984-2021 surface-water zero-confirmation across all 4 JRC layers.
-- [[hansen_gfc_brief]] — 24-yr treecover2000 baseline + stand-replacement loss tally.
-- [[mapbiomas_paraguay_brief]] — 39-yr land-cover trajectory + native-forest gain.
-- [[canopy_height_brief]] — Meta CHM 1 m mean 10.9 m canopy height (corroborates closed-canopy bins).
-- [[hydrogeology_brief]] — flow-routing context for the 15 D8 stream LineStrings.
-- [[infrastructure_brief]] — MS Open Buildings + OSM building extension to the 9-polygon OSM set.
-- [[atlantic_forest_trees_brief]] — 86-species candidate pool that resolves to per-stem at sub-1 m.
-- [[biodiversity_25km_brief]] — GBIF 437 spp + iNaturalist 727 obs + 0 IUCN-threatened in the 25 km envelope.
-- [[comparables_brief]] — 50 km comparables ring + WDPA / OSM protected-area context.
-- [[soilgrids_brief]] — 250 m soil profile (pH 5.3, clay-increasing argillic horizon).
-- [[client_photos_brief]] — 14-row shot register at `client_photos/2026-06_post_escritura/index.md`; photo_verification.md is the 1-to-1 cross-ref.
-- [[post_escritura_site_knowledge]] §3 — T+1 knowledge-pack narrative of the polygon scope-lock.
+- [[property_map_brief]] — v1 baseline 300 dpi composite (canonical PNG).
+- [[sentinel2_brief]] / [[sentinel1_brief]] / [[landsat_brief]] — Batches A/I, J, K.
+- [[hansen_gfc_brief]] / [[mapbiomas_paraguay_brief]] / [[jrc_gsw_brief]] — Batches K′, K″, K‴.
+- [[canopy_height_brief]] — Meta CHM 1 m corroboration.
+- [[soilgrids_brief]] — Batch H.
+- [[hydrogeology_brief]] — Batch B.
+- [[infrastructure_brief]] — Batch G.
+- [[atlantic_forest_trees_brief]] — Batch E.
+- [[biodiversity_25km_brief]] — Batch F.
+- [[comparables_brief]] — Batch D.
+- [[gbif_brief]] / [[fauna_brief]] / [[flora_brief]] — 5 km biodiversity inside the 25 km envelope.
+- [[client_photos_brief]] — 14-row promotion register.
+- [[post_escritura_site_knowledge]] §3 — T+1 knowledge-pack narrative.
 - [[decisions_log]] 2026-06-28 — polygon scope-lock decision.
 - [[research_gaps]] R01 (stream permanence), R35 (individual trees).
+- [[deferred_data]] — NICFI / Mapillary / GEE / WDPA-rotation / CMIP6 / MOD11 / ALOS PALSAR pending unlocks.
+- [[license_obligations]] — consolidated CC-BY-4.0 citation.
 - [[feedback_subscene_clip_end]] — sub-render `cam.data.clip_end` must bypass 100 m default at parcel scale.
 
 Generated 2026-06-29 (T+2 post-escritura).
