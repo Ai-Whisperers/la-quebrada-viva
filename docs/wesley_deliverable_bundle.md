@@ -21,7 +21,7 @@ Wesley benefits from showing up with a **vision document** so the notary and any
 
 A single labeled folder ("La Quebrada Viva — Wesley van de Camp — 27/06/2026") containing:
 
-1. **One-pager brief** (`docs/wesley_brief_onepager.md` exported to A4 PDF, color, single sheet).
+1. **One-pager brief** (`docs/people/wesley_brief_onepager.md` exported to A4 PDF, color, single sheet).
 2. **18-render contact sheet** (A3 landscape, all 18 hero shots at thumbnail size + key callouts).
 3. **5 large prints** of selected finals: A_dusk, B_terrace, C_hero, B_stream_up, A_petal_macro at A3 color.
 4. **Floor plan + section view** (A2 print of each, from `docs/floor_plan.md` and `docs/section_view.md` rendered as drawings).
@@ -74,7 +74,7 @@ The notary doesn't have to engage with all of it; the **presence** of the bundle
 | 2026-06-09 | A and B render batches shipped (12 of 18 done). |
 | 2026-06-10–12 | C render batch finishes (6 of 18). |
 | 2026-06-13 | All 18 renders re-tagged, named, COA'd. |
-| 2026-06-14 | `docs/wesley_brief_onepager.md` polished + reviewed by Wesley. |
+| 2026-06-14 | `docs/people/wesley_brief_onepager.md` polished + reviewed by Wesley. |
 | 2026-06-15 | PDFs generated for all docs. |
 | 2026-06-16 | Asunción print shop selected; ICC profile coordinated. |
 | 2026-06-17–20 | Prints produced + collected. |
@@ -111,7 +111,7 @@ Pipeline-table row "2026-06-10–12 | C render batch finishes" is **already in m
 
 ## Cross-references
 
-- `docs/wesley_brief_onepager.md` — the one-pager itself.
+- `docs/people/wesley_brief_onepager.md` — the one-pager itself.
 - `docs/master_plan.md` — full plan.
 - `docs/HOUSING_PARK_CONCEPT.md` — typology designs.
 - `docs/floor_plan.md` — interior plan.

@@ -107,7 +107,7 @@ See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEA
 | `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` | Original 5-page borrador | Source contract text |
 | `docs/HOUSING_PARK_CONCEPT.md` | 8-concept menu, restaurant deep-dive, Paraguay considerations, 25 questions | The big picture |
 | `docs/EUROPEAN_TOURISM_SPEC.md` | Refined direction with deep Paraguay research, 26 questions | The chosen path |
-| `docs/wesley_brief_onepager.md` | One-pager for the 27 Jun escritura signing | Wesley's read |
+| `docs/people/wesley_brief_onepager.md` | One-pager for the 27 Jun escritura signing | Wesley's read |
 | `docs/audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md` | 15 idea-domains (NL) from post-escritura Wes audios | Wes's wensgenie-set |
 | `docs/audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md` | 28 prioritized actions P0-P4 (ES/EN) | Ivan's work queue |
 | `docs/audios/2026-06-30-wes-post-escritura/final/IDEAS_LOG.md` | 95 numbered ideas, V/A/S/F bucketed | Cross-reference |

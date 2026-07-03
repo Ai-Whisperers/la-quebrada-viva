@@ -2,6 +2,16 @@
 
 Single navigation entrypoint into the doc-mesh. Maintained additively; section ordering reflects what a cold-start session should read first.
 
+## Tier -1 (2026-07-03) — post-restructure pointers
+
+> **If you (or your stakeholder) is **Wes**, open [`WES_INDEX.md`](./WES_INDEX.md) instead.**
+> **If you're looking for **what blocks Phase 1 right now**, open [`POST_ESCRITURA_NOW.md`](./POST_ESCRITURA_NOW.md).**
+> **If you want to know **what's wrong with this repo**, read [`CRITIQUE_FOR_WES.md`](./CRITIQUE_FOR_WES.md) (Wes-facing) or [`audit/CRITIQUE_V2_ADDENDUM.md`](./audit/CRITIQUE_V2_ADDENDUM.md) (dev-facing).
+>
+> Wes-facing stakeholder briefs live in [`people/`](./people/) (WES_ACTIONS, ATTORNEY_BRIEF, SONJA_QUESTIONNAIRE, 4ENTITY_BV_CASCADE, the two one-pagers, CONTACTS, SITE_VISIT_BRIEF).
+
+---
+
 ## Tier 0 — escritura-critical (read first if today is 2026-06-2X)
 
 - [`MASTER_BRIEF.md`](./MASTER_BRIEF.md) — project North Star, scope boundaries, owner.

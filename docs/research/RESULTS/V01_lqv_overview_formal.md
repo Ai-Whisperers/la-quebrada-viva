@@ -71,7 +71,7 @@
 - `docs/_reconciled/CABIN_CATALOG.md` (30 cabins)
 - `docs/HOUSING_PARK_CONCEPT.md` (8 concept menu)
 - `docs/EUROPEAN_TOURISM_SPEC.md` (target market)
-- `docs/4ENTITY_BV_CASCADE.md` (visual)
+- `docs/people/4ENTITY_BV_CASCADE.md` (visual)
 - `docs/TIMELINE.md` (3-year schedule)
 - `docs/audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md` (15 wish categories)
 

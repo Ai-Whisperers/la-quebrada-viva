@@ -4,24 +4,44 @@ This project supports **Wesley van de Camp** in visualizing a real 62-ha propert
 
 ## Document map — which file is authoritative for what
 
-- `docs/CLIENT.md` — **Wesley van de Camp = client & 75% owner** (Thijs = 25% co-buyer, not the design client); AI Whisperers (Ivan) = digital support lead. Sellers, notary, intermediary, **escritura deadline 2026-06-27**. Read first for "who is this for".
-- `docs/HOUSING_PARK_CONCEPT.md` — **Wesley's expanded vision (2026-06-10)**: 62 ha as a housing park + restaurant + amenities in Escobar, Paraguarí. 8 concept models, restaurant deep-dive, Paraguay-specific legal/tax/cultural/climate considerations, phasing, **25 open questions for Wesley**, suggested next steps. The current cob/bottle design is one example house on the larger site, not the whole vision.
-- `docs/wesley_brief_onepager.md` — **DRAFT one-pager for the 27 Jun escritura signing** (short version of HOUSING_PARK_CONCEPT). Will be polished once Wesley answers the 5 priority questions.
-- `docs/EUROPEAN_TOURISM_SPEC.md` — **Refined direction (2026-06-10, latest)**: houses-first vacation rentals for European / 1st-world travelers, restaurant later (European + Dutch, sourced via San Bernardino + German community). Style blend: resort + events + eco-natural retreat. Deep Paraguay research: target market, San Bernardino / German / Dutch community supply chain, comparable properties, vacation-rental typology, events, eco positioning, restaurant plan, regulatory (SENATUR / SET / municipal), marketing channels, refined phasing, 26 open questions.
-- `docs/RESEARCH_GAPS.md` — **Living tracker of what we still need to find out**. 34 items across 5 tiers, with status (🔴 open / 🟡 in-progress / 🟢 done / ⚫ blocked), owner (W / I / A / H / L), source, effort. Tier 1 (8 items) targets the 27 Jun closing. Findings log at the bottom. This is the action list.
-- `docs/SESSION_LOG.md` — **Narrative log of the 2026-06-10 session** (the one that produced all the planning docs). What was created, decisions made, what's at risk, what's next. Read after a break to re-orient.
-- `docs/research/README.md` — **Research synthesis 2026-06-10** (5 sub-reports, ~80 repos catalogued). Includes 10 design rules, 5 site-selection criteria, 5 case studies (Chaa Creek / Awasi / Inkaterra / San Bernardino / Mennonite colonies), Tier-1/2/3 GIS layers, GEDI tooling, Blender GIS, Earthdata auth + cloud-pool EULA diagnosis. The "what to adopt / not adopt" punchlist is at the bottom.
-- `docs/site_data/DATA_INVENTORY.md` — **Clear-language reference of all the data we got from NASA + OpenTopography** (4 DEMs, GEDI L2A, derived analyses). For Wesley read-through — explains each dataset, what it shows, key findings, cross-validation, what's still missing, scripts to re-fetch.
-- `docs/research/REPO_CATALOG.md` — **141 GitHub repos across 6 domains** (Blender GIS, geospatial Python, NASA Earthdata, real estate, Paraguay/Atlantic Forest, vegetation 3D), each with verdict (adopt / reference / skip / dead). The 51/97 user-supplied URLs that were 404 are flagged honestly. Top 10 to drop in: pysheds, pyflwdir, whitebox-python, earthaccess, nasa/GEDI-Data-Resources, simonbesnard1/gedidb, joewdavies/geoblender, johnbalvin/pyairbnb, ics-py, melizeche/dolarPy.
-- `docs/AI_WHISPERERS_STYLE.md` — **Ivan's communication & execution rules** (self-improvement, learned 2026-06-10). Read first by every AI Whisperers session working on this project. No preambles, no narration, one complete deliverable per message.
-- `docs/MASTER_BRIEF.md` §16-19 — Vacation-rental synthesis added: 5 site-selection criteria, 5 case studies, 10 eco-retreat design rules, Tier-1/2/3 GIS layers. §1-15 unchanged (the cob design rules + render spec).
-- `docs/contract_summary.md` — quick-reference for the 2026-04-28 boleto privado. Greppable parcel/price/penalty table. Full text: `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
-- `docs/CLOSING_DAY_PREP.md` — printable actionable T-7 / T-5 / T-2 / signing-day / T+30 checklist for the 27 Jun escritura signing, with risk register. Companion to `contract_summary.md`.
-- `docs/paraguay_clay_house_research.md` — **v2 research, site CONFIRMED (Escobar, Paraguarí)**. Authoritative for location, stream/hydrology, orientation. Supersedes MASTER_BRIEF where they conflict.
-- `docs/MASTER_BRIEF.md` — design brief: zones, climate constraints, smart-home stack, flora inventory, Blender tech specs (§12), variants/cameras (§13), the 10 rules (§14). **Owner line (Ivan) is the architect/visualizer — not the legal landowner.** Land is Thijs + Wesley's per `CLIENT.md`.
-- `docs/prompt_house_render.md` / `docs/prompt_location_scene.md` — shot-level art direction. They describe a **Variant C (night/blue hour with fireflies) that is NOT implemented in code** — see Variants below.
+> **2026-07-03 restructure notes (Erebus addendum):**
+> - The canonical Master Brief is now `docs/_reconciled/MASTER_BRIEF.md` (post-Wes-share, housing-park scope). The top-level `docs/MASTER_BRIEF.md` is a 1-line pointer to it.
+> - The canonical decisions view is now split: `docs/_reconciled/OPEN_DECISIONS.md` (open) + `docs/people/DECISIONS_LOG.md` (closed, housing-park) + `docs/_archive/DECISIONS_LOG_escritura_week_2026-06.md` (closed, escritura-week).
+> - `docs/people/wesley_brief_onepager.md` → moved to `docs/people/`. Same for `4ENTITY_BV_CASCADE.md`, `post_escritura_one_pager.md` (renamed).
+> - 10 closed-session docs (`WES_TODO.md`, `WES_TODO_UPDATE.md`, `WES_5_THIS_WEEK.md`, `PRIORITIES_NEXT.md`, `CRITICAL_PATH.md`, `STATUS_REPORT.md`, `IMPLEMENTATION_COMPLETE.md`, `IMPLEMENTATION_PROGRESS.md`, `FINAL_SUMMARY.md`, `COMPREHENSIVE_REMAINING_RESEARCH.md`) → `docs/_archive/2026-06-30_session/`. Canonical "what to do next" is `docs/POST_ESCRITURA_NOW.md` + `docs/WES_INDEX.md`.
+
+- `docs/CLIENT.md` — **Wesley van de Camp = client & 75% owner** (Thijs = 25% co-buyer, not the design client); AI Whisperers (Ivan) = digital support lead. Sellers, notary, intermediary, **escritura signed 2026-06-27**. Read first for "who is this for".
+- `docs/HOUSING_PARK_CONCEPT.md` — **Wesley's expanded vision (2026-06-10, post-escritura update 2026-06-30)**: 62 ha as a housing park + restaurant + amenities in Escobar, Paraguarí. 8 concept models + post-escritura deltas (4-BV, wellness pool, Sonja-canonical, hovenier AI delegation, 2030 horizon). 25 open questions + 8 post-escritura audio-sourced questions.
+- `docs/WES_INDEX.md` — **One-page Wes-facing index** (post-2026-07-03 restructure). The 5-minute read for the human. Read first if your stakeholder is Wesley.
+- `docs/POST_ESCRITURA_NOW.md` — **Single ranked list of what blocks Phase 1 break-ground**, post-escritura. 5 hard gates + 12 soft gates + 9 done + 8 dropped. The action list.
+- `docs/CRITIQUE_FOR_WES.md` — **Short roast aimed at Wes**, post-restructure. What's working / what's broken / 3-phase fix plan.
+- `docs/_reconciled/MASTER_BRIEF.md` — **Canonical post-Wes-share Master Brief** (reconciled view, 18 KB). Financial model, cabin catalog, infrastructure 8 phases, equipment strategy, business structure, materials price template, open decisions, master brief. The "single source of truth" for the housing-park scope.
+- `docs/people/wesley_brief_onepager.md` — **DRAFT one-pager for the 27 Jun escritura signing** (short version of HOUSING_PARK_CONCEPT). Moved to `people/` 2026-07-03 (Wes+stakeholder audience).
+- `docs/people/wesley_post_escritura_one_pager.md` — Post-escritura one-pager (Wes-facing brief, post-signing).
+- `docs/people/4ENTITY_BV_CASCADE.md` — 4-BV corporate structure visual diagram + final spec (Wes+attorney audience).
+- `docs/people/WES_ACTIONS.md` — 5 things-only-Wes-can-do this week (with action scripts).
+- `docs/people/ATTORNEY_BRIEF.md` — Full NL+PY dual-tax brief for the 4-BV cascade (24 questions, MERCOSUR holding structure).
+- `docs/people/SONJA_QUESTIONNAIRE.md` — 16 questions, 1 call. Covers wage bands for 7 worker roles + culture + worker contracts + IPS/aguinaldo.
+- `docs/people/CONTACTS.md` — LQV human network (Wes + Ivan + Kiki + Sonja + others). Living doc.
+- `docs/people/SITE_VISIT_BRIEF.md` — Day-by-day plan for Wes's next PY visit (W1.2 in WES_TODO history).
+- `docs/EUROPEAN_TOURISM_SPEC.md` — **Refined direction (2026-06-10, latest)**: houses-first vacation rentals for European / 1st-world travelers, restaurant later (European + Dutch, sourced via San Bernardino + German community). Style blend: resort + events + eco-natural retreat. 26 open questions.
+- `docs/RESEARCH_GAPS.md` — **Living tracker of what we still need to find out**. 34 base items + R39-R50 audio-synthesized (46 total), with status (🔴 open / 🟡 in-progress / 🟢 done / ⚫ blocked), owner (W / I / A / H / L), source, effort.
+- `docs/SESSION_LOG.md` — Narrative log of the 2026-06-10 mega-session. Read after a break to re-orient.
+- `docs/research/README.md` — Research synthesis 2026-06-10 (5 sub-reports, ~80 repos catalogued). 10 design rules, 5 site-selection criteria, 5 case studies, Tier-1/2/3 GIS layers.
+- `docs/site_data/DATA_INVENTORY.md` — Clear-language reference of all the data we got from NASA + OpenTopography (4 DEMs, GEDI L2A, derived analyses).
+- `docs/research/REPO_CATALOG.md` — 141 GitHub repos across 6 domains, each with verdict (adopt / reference / skip / dead).
+- `docs/AI_WHISPERERS_STYLE.md` — Ivan's communication & execution rules. Read first by every AI Whisperers session.
+- `docs/_reconciled/MASTER_BRIEF.md` §16-19 — Vacation-rental synthesis: 5 site-selection criteria, 5 case studies, 10 eco-retreat design rules, Tier-1/2/3 GIS layers.
+- `docs/contract_summary.md` — quick-reference for the 2026-04-28 boleto privado.
+- `docs/CLOSING_DAY_PREP.md` — printable T-7 / T-5 / T-2 / signing-day / T+30 checklist for the 27 Jun escritura (historical, post-signing).
+- `docs/paraguay_clay_house_research.md` — v2 research, site CONFIRMED (Escobar, Paraguarí). Authoritative for location, stream/hydrology, orientation.
+- `docs/_archive/MASTER_BRIEF_cob_house_v1_2026-06-11.md` — **Pre-Wes-share cob-house-only master brief** (33 KB). Archived 2026-07-03; superseded by `_reconciled/MASTER_BRIEF.md`.
+- `docs/prompt_house_render.md` / `docs/prompt_location_scene.md` — shot-level art direction. They describe a **Variant C (night/blue hour with fireflies) that IS implemented in code** (as of 2026-06-10) — see Variants below.
 - `ARCHITECTURE.md` — map of the `lqv/` package + fragility notes. **Read before editing any code.**
 - `STATUS.md` — canonical current state (render manifest, vision summary, doc inventory, open tasks, decisions log, critical dates, next session priorities). **Read at session start, update at session end.**
+- `docs/audit/BEFORE_AFTER_METRICS.md` — quantified result of the 2026-07-03 restructure pass.
+- `docs/audit/CRITIQUE_V2_ADDENDUM.md` — what the 2026-06-30 audit missed (M1-M8) + what this pass did differently.
+- `docs/audit/RESTRUCTURE_PASS_2_RECOMMENDATIONS.md` — what's still on the table for further consolidation.
 - `docs/claude_code_blender_best_practices.md` — generic tooling reference; read on demand only.
 
 ### Supplementary docs (Tier 2 — planning + research artefacts, 2026-06-10 mega-session)

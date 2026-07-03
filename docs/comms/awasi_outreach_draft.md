@@ -1,6 +1,6 @@
 # Awasi outreach — draft positioning package
 
-> **Status: DRAFT — Wesley decides send. AI Whisperers does not send.** Per Ivan's standing directive ("dont send the emails etc just do the work on everythinh"), this file is a local-only pitch package for review. It exists to close the deliverable promised in `docs/RESEARCH_GAPS.md` R37 (promoted 🔴→🟡 on 2026-06-28 T+1). All technical figures trace back to `docs/post_escritura_site_knowledge.md` and `docs/post_escritura_one_pager.md`.
+> **Status: DRAFT — Wesley decides send. AI Whisperers does not send.** Per Ivan's standing directive ("dont send the emails etc just do the work on everythinh"), this file is a local-only pitch package for review. It exists to close the deliverable promised in `docs/RESEARCH_GAPS.md` R37 (promoted 🔴→🟡 on 2026-06-28 T+1). All technical figures trace back to `docs/post_escritura_site_knowledge.md` and `docs/people/wesley_post_escritura_one_pager.md`.
 
 ---
 
@@ -84,7 +84,7 @@ We are **not** asking for capital, equity, branding licensing, or staff sharing.
 
 | # | File | What it shows |
 |---|---|---|
-| 1 | `docs/post_escritura_one_pager.md` | Single-page summary, four headline numbers, partner-readable. |
+| 1 | `docs/people/wesley_post_escritura_one_pager.md` | Single-page summary, four headline numbers, partner-readable. |
 | 2 | `docs/post_escritura_site_knowledge.md` | Full 8-section technical pack — geology, climate, NDVI/NDWI, padrón hypotheses. |
 | 3 | `docs/site_data/extended_aoi/polygon_quicklook.png` | Wesley's polygon on COP30 + hillshade. |
 | 4 | `docs/site_data/extended_aoi/polygon_ndvi_quicklook.png` | NDVI clipped to the polygon — visual proof of wall-to-wall canopy. |
@@ -105,4 +105,4 @@ Send **PNG quicklooks and one-pager only** in the first message. Knowledge doc +
 
 ---
 
-*Anchors: `docs/post_escritura_site_knowledge.md` · `docs/post_escritura_one_pager.md` · `docs/site_data/escobar_property_polygon.geojson` · `docs/RESEARCH_GAPS.md` R37.*
+*Anchors: `docs/post_escritura_site_knowledge.md` · `docs/people/wesley_post_escritura_one_pager.md` · `docs/site_data/escobar_property_polygon.geojson` · `docs/RESEARCH_GAPS.md` R37.*

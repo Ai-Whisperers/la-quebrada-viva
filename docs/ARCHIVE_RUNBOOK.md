@@ -37,7 +37,7 @@ These were load-bearing during prep but are noise post-closing. Move to `_archiv
 - `docs/email_drafts/*` → archive entire directory (drafts; the sent versions live in Gmail)
 - `docs/POSTMORTEM_2026-06-17.md` → archive
 - `docs/DECISIONS_2026-06-17.md` → archive
-- `docs/wesley_brief_onepager.md` → archive (post-signing — the deck v6 superseded it)
+- `docs/people/wesley_brief_onepager.md` → archive (post-signing — the deck v6 superseded it)
 
 Move command (run at T+30):
 ```bash
@@ -48,7 +48,7 @@ git mv docs/ROLLBACK_RUNBOOK.md _archive/2026-06-27_escritura/
 git mv docs/email_drafts _archive/2026-06-27_escritura/
 git mv docs/POSTMORTEM_2026-06-17.md _archive/2026-06-27_escritura/
 git mv docs/DECISIONS_2026-06-17.md _archive/2026-06-27_escritura/
-git mv docs/wesley_brief_onepager.md _archive/2026-06-27_escritura/
+git mv docs/people/wesley_brief_onepager.md _archive/2026-06-27_escritura/
 ```
 
 Update CLAUDE.md doc map to point to the archived locations (one line: "post-escritura: see `_archive/2026-06-27_escritura/`").

@@ -67,15 +67,15 @@ Every file in the repo fits into exactly one of these. After the restructure (se
 | `lqv/materials/` | 9 | 735 | CURRENT | Bottles + glass + earth + wood + brick |
 | `lqv/amenities/` | 6 | 2,623 | CURRENT | Eco pool / floating dining / labrisa lounge / modern oasis / outdoor shower |
 | `lqv/util/` | 5 | 443 | CURRENT | 10_rules_check, sun_check, material_audit, random_audit |
-| `lqv/animation/` | 2 | 32 | STALE? | `turntable.py` only — no other animations |
-| `lqv/finance/` | 1 | 91 | STALE? | Single file `boq.py` — duplicates `scripts/build_boq.py`? |
-| `lqv/restaurant/` | 4 | 87 | STALE? | 4 files, 87 lines total — likely concept-only, not built |
+| `lqv/animation/` | 2 | 913 | CURRENT | turntable.py only — future animations |
+| `lqv/finance/` | 1 | 3,006 | CURRENT | `__init__.py` is the USD→PYG exchange rate module (single source of truth, replaces the old magic-constant pattern). No `boq.py` here — that's a historical reference from the 2026-06-30 audit; the BoQ live in `scripts/build_boq.py` |
+| `lqv/restaurant/` | 4 | 3,362 | CURRENT | dining_hall + garden_deck + kitchen + __init__. Scaffolded for Fase 1 restaurant work |
 | `lqv/output/` | 2 | 39 | CURRENT | equirectangular panorama export |
 | `renders/` | 21 PNGs | — | CURRENT | 18 finals + 3 demo renders. Sub/runs/ is gitignored |
 
-**Summary:** bucket B is mostly fine. Code-quality audit would take 4+ hours to do properly. Three sub-buckets (animation, finance, restaurant) look like stub/scaffolding that's been left in. Decision: keep, archive, or delete?
+**Summary:** bucket B is mostly fine. Code-quality audit would take 4+ hours to do properly. All three previously-flagged sub-buckets (animation, finance, restaurant) are now confirmed CURRENT — see `CRITIQUE_V2_ADDENDUM.md` §"What the 2026-06-30 audit missed".
 
-**Notable issue:** `lqv/finance/boq.py` (91 lines) and `scripts/build_boq.py` (separate) both compute BoQ. Possible duplicate. Need to verify.
+**Notable issue (resolved):** The 2026-06-30 audit flagged `lqv/finance/boq.py` (91 lines) as a duplicate of `scripts/build_boq.py`. **As of 2026-07-03, `lqv/finance/boq.py` does not exist** — the dir now contains only `__init__.py` (the FX rate module, 3 KB). The BoQ lives only in `scripts/build_boq.py`. The duplicate was removed during the restructure pass.
 
 ---
 

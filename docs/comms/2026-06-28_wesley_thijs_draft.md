@@ -1,6 +1,6 @@
 # Draft message — Wesley + Thijs · T+1 post-escritura
 
-> **Status: DRAFT — DO NOT SEND.** Per Ivan's standing directive ("dont send the emails etc just do the work on everythinh"), AI Whisperers does not push outbound comms. Wesley/Thijs send when they decide. Both versions trace back to the same one-pager (`docs/post_escritura_one_pager.md`) and knowledge pack (`docs/post_escritura_site_knowledge.md`).
+> **Status: DRAFT — DO NOT SEND.** Per Ivan's standing directive ("dont send the emails etc just do the work on everythinh"), AI Whisperers does not push outbound comms. Wesley/Thijs send when they decide. Both versions trace back to the same one-pager (`docs/people/wesley_post_escritura_one_pager.md`) and knowledge pack (`docs/post_escritura_site_knowledge.md`).
 
 ---
 
@@ -25,7 +25,7 @@
 >
 > **Lo que NO estamos haciendo todavía (a propósito):** ningún proveedor contactado, ninguna propuesta a Awasi ni a hoteles de San Bernardino, ningún dron volado, ningún arquitecto convocado. La firma está fresca — primero confirmamos terreno con tus fotos, después salimos al mercado. Los borradores existen localmente acá (no enviados); cuando estés listo los repasamos juntos antes de cualquier envío.
 >
-> El paquete técnico completo está en `docs/post_escritura_site_knowledge.md` y la hoja de resumen para imprimir / mandar a Thijs en `docs/post_escritura_one_pager.md`.
+> El paquete técnico completo está en `docs/post_escritura_site_knowledge.md` y la hoja de resumen para imprimir / mandar a Thijs en `docs/people/wesley_post_escritura_one_pager.md`.
 >
 > Abrazo,
 > Ivan
@@ -51,7 +51,7 @@
 >
 > Two artifacts to look at when you have a moment:
 >
-> 1. `docs/post_escritura_one_pager.md` — the single-page summary, suitable to forward.
+> 1. `docs/people/wesley_post_escritura_one_pager.md` — the single-page summary, suitable to forward.
 > 2. `docs/post_escritura_site_knowledge.md` — the full 8-section technical pack with padron hypotheses, buildability table, NDVI/NDWI block, climate, and the photo-gap matrix.
 >
 > Happy to schedule a 30-minute walkthrough whenever fits your week. No urgency from our side.
@@ -69,4 +69,4 @@
 - [ ] Strip the "DO NOT SEND" header above before any actual send.
 - [ ] Once sent: record the send date + channel in `docs/CLIENT.md` or a comms log so we don't double-send.
 
-*Anchors: `docs/post_escritura_one_pager.md` · `docs/post_escritura_site_knowledge.md` · `docs/site_data/escobar_property_polygon.geojson` · `docs/RESEARCH_GAPS.md` R01.*
+*Anchors: `docs/people/wesley_post_escritura_one_pager.md` · `docs/post_escritura_site_knowledge.md` · `docs/site_data/escobar_property_polygon.geojson` · `docs/RESEARCH_GAPS.md` R01.*

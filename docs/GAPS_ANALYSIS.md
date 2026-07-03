@@ -282,7 +282,7 @@ DEFERRED_BUGS.md is closed (all 3 resolved at 78433a7). **However**: nothing tra
 | M5 | **Roast + critique cadence broken** — last honest critique pass predates `78433a7`. The polish wave fixed three named bugs; no fresh critique has surfaced what the *current* worst-three are. Per CLAUDE.md feedback memory (`feedback_critique_honest_roast`), this is a recurring need. |
 | M6 | **MASTER_TODO inflation** — 76 open items, 4 levels deep (P1/P2/P3/P4 × A/B/C). No "active sprint" subset. Reading it requires the whole thing. A 10-item "this week" view would help. |
 | M7 | **No retrospective on Phase-0 §12** drops (A biodiv ☑, B soilgrids cube ☑, C topology LOD ☑, D protected areas + comparables ☑ `0554b77`, E JRC GSW ☑ `cb7a17d`, F Hansen GFC ☑ this commit) — what did the 50-km open-data sweep buy us? Quantified into design decisions? Or shelf-ware? Six datasets landed; zero became deck slides, zero feeding the Wesley one-pager. Top findings — (E) zero historical surface water in 38 years, (F) property = intact reserve in a regionally-degrading buffer (1.57% vs 4.94% loss) — are exactly the due-diligence headlines that belong in the marketing pack but aren't there yet. |
-| M8 | **Wesley + Thijs comms cadence undefined** — no weekly call, no monthly status note, no async update. T+1 one-pager existed (`docs/post_escritura_one_pager.md`) but next deliverable is undefined. |
+| M8 | **Wesley + Thijs comms cadence undefined** — no weekly call, no monthly status note, no async update. T+1 one-pager existed (`docs/people/wesley_post_escritura_one_pager.md`) but next deliverable is undefined. |
 | M9 | **The 5 unanswered "what we don't know until photos arrive" gaps** from `post_escritura_one_pager.md` §3 are not tracked as ledger items, only as prose. Move them into RESEARCH_GAPS R01-children for visibility. |
 | M10 | ~~`scripts/phase0_hansen_gfc_batch.py` WIP~~ — **closed this commit** (Phase-0 §12.F Hansen Global Forest Change v1.12 shipped: 4 fetched layers + 1 derived `loss = (lossyear > 0)` because v1.12 dropped the standalone band, 2000–2024, 50 km buffer, tile 20S_060W, ~778 MB raw across 4 tiles in `_cache/` gitignored, ~9 MB AOI/polygon clips + quicklooks + summary tracked). Predecessor §12.E shipped at `cb7a17d`. The next stale-WIP candidate to watch for is Mapbiomas Paraguay v1 (1985–2023) — 15-year deeper history but no script yet. |
 
@@ -366,7 +366,7 @@ Cross-references out:
 - `docs/DEFERRED_BUGS.md` — closed bugs, retained as history
 - `docs/MCP_STATUS.md` — §6.1 source
 - `docs/post_escritura_site_knowledge.md` — §1 ground truth
-- `docs/post_escritura_one_pager.md` — §7 communication baseline
+- `docs/people/wesley_post_escritura_one_pager.md` — §7 communication baseline
 
 ---
 

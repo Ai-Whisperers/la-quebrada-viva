@@ -29,7 +29,7 @@ Use this file as the **starting point** when joining the project.
 - **`docs/master_plan.md`** — Top-level overview (the entry-point doc most older Claude sessions read first).
 - **`docs/housing_park_phasing.md`** — 5-year build-out plan with money cadence.
 - **`docs/wesley_deliverable_bundle.md`** — Escritura-day shipping manifest.
-- **`docs/wesley_brief_onepager.md`** — One-pager for Wesley's escritura meeting.
+- **`docs/people/wesley_brief_onepager.md`** — One-pager for Wesley's escritura meeting.
 - **`docs/CLOSING_DAY_PREP.md`** — Printable T-7 / T-5 / T-2 / signing-day / T+30 escritura checklist + risk register.
 - **`docs/contract_summary.md`** — Parcel ID + ownership facts. Wesley keeps current.
 

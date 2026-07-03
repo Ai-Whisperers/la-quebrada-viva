@@ -668,7 +668,7 @@ When Wesley has time, these are the questions that would unlock the most:
 | # | Action | Who | Deliverable |
 |---|---|---|---|
 | 1 | Wesley reviews this document and the existing renders | Wesley | Top 3 priorities + answers to §8 questions (any that he can answer) |
-| 2 | AI Whisperers (Ivan) drafts a one-pager for the escritura signing, summarizing the site, the opportunity, and Phase 0 asks | Ivan | `docs/wesley_brief_onepager.md` (draft for Wesley's review before 27 Jun) |
+| 2 | AI Whisperers (Ivan) drafts a one-pager for the escritura signing, summarizing the site, the opportunity, and Phase 0 asks | Ivan | `docs/people/wesley_brief_onepager.md` (draft for Wesley's review before 27 Jun) |
 | 3 | Site visit (if Wesley is in PY) with photos of: terraces, escarpment, stream, existing structures, road access | Wesley or local contact | Photo set + rough GPS for the 6 fincas |
 | 4 | Anexo I check — does the technical description for each finca exist? | Wesley → Escribana Peña | Anexo I document |
 | 5 | Initial conversation with Municipalidad de Escobar on land use / commercial classification | Wesley (or local attorney) | Memo on what's allowed today, what needs a permit |
