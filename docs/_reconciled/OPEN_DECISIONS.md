@@ -275,7 +275,70 @@ Each open decision has:
 
 ---
 
+
+## Decision 13 — Anexo I status (NEW from W0.4 chase)
+
+**What it is:** Cl. OCTAVA (ii) of the boleto required sellers to deliver Anexo I (technical descriptions of all 6 fincas: linderos, rumbos, medidas) ~5 May 2026. Status as of 2026-06-30: overdue 2 months.
+
+**Why it matters:** Anexo I is required for legal completeness (L07), for IMAGRO tax calculations, for insurance underwriting, and for accurate property boundary mapping for cabin siting. Without it, 1+ fincas may have unclear boundaries.
+
+**Who decides:** Wes → Escribana Peña (1 phone call)
+
+**Blocks:** L07, accurate Phase 1 cabin siting, insurance, IMAGRO
+
+**Recommendation:** Chase this WEEK. A 2-month overdue Anexo I is a flag that something is wrong. Best case: paperwork delay at Peña's office. Worst case: a seller doesn't have clear title.
+
+**Status:** OPEN. See `docs/research/RESULTS/W04_anexo_I_status.md` for full context.
+
+**Tracked in:** WES_TODO W0.4
+
+---
+
+## Decision 14 — "Riverstone Valley" as canonical project name? (NEW from W0.3)
+
+**What it is:** Wes's 2026-06-30 brainstorm surfaced 5 name candidates: Riverstone Valley, Villa del Cielo, Cielo Azul, Lluvia Dorada, Lluvia de Oro. Plus existing names: La Quebrada Viva (Ivan's), Eco Jungle Resort Paraguay (Wes's working files). WES_TODO W0.3 asks Wes to pick one.
+
+**Options:**
+- (a) Riverstone Valley — Anglo, matches Eskenbach/suburbanization theme
+- (b) Villa del Cielo — Spanish, "mooi"
+- (c) Cielo Azul / Lluvia Dorada / Lluvia de Oro — other Spanish candidates
+- (d) Keep current (La Quebrada Viva or Eco Jungle Resort)
+
+**Who decides:** Wes (5 minutes)
+
+**Blocks:** All of D14 (Cross-cutting brand/naming), website, social media handles, marketing copy
+
+**Recommendation:** Pick one, check domain (Erebus does the whois via local command), defensively register .com + .com.py + .io variants
+
+**Status:** OPEN. Domain check procedure in `docs/research/RESULTS/W03_project_name_check.md`.
+
+**Tracked in:** WES_TODO W0.3
+
+---
+
+## Decision 15 — Insurance pre-qualification as hard gate? (NEW from insurance_fire_bundle.md)
+
+**What it is:** Insurance broker pre-qualification (3 quotes) is technically in WES_TODO W3.1 (month). But the hard-gate logic (no build until insured) is a separate decision. Three quotes from Marsh Brazil + Aon Argentina + Mapfre PY would take 4-6 weeks to arrive.
+
+**Options:**
+- (a) Hard gate: no break-ground until 3 quotes received and coverage confirmed at <10% of project value
+- (b) Soft gate: get quotes in parallel with Fase 1 prep; only enforce if coverage available
+- (c) Off-grid risk: build cob instead of wood/bamboo to reduce insurance requirement
+
+**Who decides:** Wes + insurance broker (after quotes arrive)
+
+**Blocks:** L07 (escritura legal completeness), Phase 1 break-ground
+
+**Recommendation:** Hard gate. Per Insight #3, building uninsured wooden structures in forested PY is gambling, not investing. €25-80K/year for proper insurance is <0.2% of the €5.5M build cost.
+
+**Status:** OPEN. Awaiting W3.1 insurance broker outreach.
+
+**Tracked in:** WES_TODO W3.1 + insurance_fire_bundle.md
+
+---
+
 ## Summary
+
 
 **12 open decisions, none blocked by Ivan's work — all waiting on Wes** (or in 2 cases, Wes + Sonja or Wes + Thijs).
 
