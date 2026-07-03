@@ -1,6 +1,6 @@
 # bamboo_clump
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_clump.png`](../contact_sheets/bamboo_clump.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_clump.jpg`](../contact_sheets/bamboo_clump.jpg) (visual)
 
 
 Total renders: **24**.

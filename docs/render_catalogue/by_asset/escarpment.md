@@ -1,6 +1,6 @@
 # escarpment
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/escarpment.png`](../contact_sheets/escarpment.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/escarpment.jpg`](../contact_sheets/escarpment.jpg) (visual)
 
 
 Total renders: **12**.

@@ -1,6 +1,6 @@
 # terrain_house_scale
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/terrain_house_scale.png`](../contact_sheets/terrain_house_scale.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/terrain_house_scale.jpg`](../contact_sheets/terrain_house_scale.jpg) (visual)
 
 
 Total renders: **10**.

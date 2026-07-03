@@ -1,5 +1,5 @@
 # Client — La Quebrada Viva
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the project identity (Wes = 75% owner, Thijs = 25%, Ivan = digital support lead)). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the project identity (Wes = 75% owner, Thijs = 25%, Ivan = digital support lead)). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 > Source of truth for *who* the project is for. Last updated: 2026-06-28 (T+1, post-escritura).
@@ -102,11 +102,11 @@ The closing has executed. Forward gating now sits on (a) Anexo I arrival from Es
 
 ## Documents for client work
 
-- **Contract**: [`docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`](./2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf) (original borrador, 5 pages)
+- **Contract**: `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` (original borrador, 5 pages — gitignored, local-only)
 - **Contract summary**: [`docs/contract_summary.md`](./contract_summary.md) (quick-reference, greppable)
 - **Site research**: [`docs/paraguay_clay_house_research.md`](./paraguay_clay_house_research.md) (site-confirmed v2, authoritative)
 - **Design brief**: [`docs/MASTER_BRIEF.md`](./MASTER_BRIEF.md) (zones, climate, flora, 10 rules)
-- **Render manifest**: [`STATUS.md`](../STATUS.md) (what's delivered, what's pending)
+- **Render manifest**: [`STATUS.md`([../STATUS.md]) (what's delivered, what's pending)
 
 ## Open items at T+1 (post-signing chase items)
 

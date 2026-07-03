@@ -1,6 +1,6 @@
 # bottle_wall
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bottle_wall.png`](../contact_sheets/bottle_wall.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bottle_wall.jpg`](../contact_sheets/bottle_wall.jpg) (visual)
 
 
 Total renders: **12**.

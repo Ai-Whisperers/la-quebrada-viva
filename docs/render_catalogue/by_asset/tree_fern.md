@@ -1,6 +1,6 @@
 # tree_fern
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/tree_fern.png`](../contact_sheets/tree_fern.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/tree_fern.jpg`](../contact_sheets/tree_fern.jpg) (visual)
 
 
 Total renders: **18**.

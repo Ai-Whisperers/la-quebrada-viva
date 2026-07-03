@@ -1,6 +1,6 @@
 # floating_dining
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/floating_dining.png`](../contact_sheets/floating_dining.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/floating_dining.jpg`](../contact_sheets/floating_dining.jpg) (visual)
 
 
 Total renders: **24**.

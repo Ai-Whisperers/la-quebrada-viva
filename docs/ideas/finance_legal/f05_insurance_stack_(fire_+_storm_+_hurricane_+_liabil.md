@@ -39,8 +39,8 @@ PY insurance broker quotes + stack
 ## What we know already (research summary)
 
 - **Deliverable target:** PY insurance broker quotes + stack
-- **Source:** [Wes's brainstorm recording](../../briefs/wes_recording_2026-06-30_raw.md) (raw transcript)
-- **Cleaned version:** [dream list](../../briefs/wes_recording_2026-06-30_dreamlist.md) + [action list](../../briefs/wes_recording_2026-06-30_actionlist.md)
+- **Source:** [Wes's brainstorm recording](../../audios/2026-06-30-wes-post-escritura/drafts/README.md) (raw transcript)
+- **Cleaned version:** [dream list](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md) + [action list](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - PY insurance market is thin for eco-tourism (per Insight #3)
 - Local brokers typically write only standard lines (auto, life, fire for residential)
 - International carriers via reinsurance cover exotic risks
@@ -57,8 +57,8 @@ PY insurance broker quotes + stack
 
 **This idea depends on / is informed by:**
 
-- [`F06`](../finance_legal/f06_forest_fire_risk_research_(escobar_paraguarí_histo.md) — fire risk
-- [`R01`](../risk_mitigation/r01_fire_safety_plan_(firebreaks_+_water_points).md) — fire plan
+- [`F06`](../_archive/2026-06-30_autofill/finance_legal/f06_forest_fire_risk_research_(escobar_paraguarí_histo.md) — fire risk
+- [`R01`](../_archive/2026-06-30_autofill/risk_mitigation/r01_fire_safety_plan_(firebreaks_+_water_points).md) — fire plan
 
 
 
@@ -99,13 +99,13 @@ NL+PY accountant: $500-2000 per consultation. NL BV set-up: ~€150 + ongoing ad
 
 ## Sources & references
 
-- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
-- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
-- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
-- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
+- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
+- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
+- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog

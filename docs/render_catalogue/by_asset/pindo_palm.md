@@ -1,6 +1,6 @@
 # pindo_palm
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/pindo_palm.png`](../contact_sheets/pindo_palm.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/pindo_palm.jpg`](../contact_sheets/pindo_palm.jpg) (visual)
 
 
 Total renders: **12**.

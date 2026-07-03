@@ -110,7 +110,7 @@ Mean 1532 mm/yr; σ ≈ 235 mm/yr; range 1146-2096; CV ≈ 15 %.
 - **Hydro feasibility.** Mean 1532 mm/yr with the dry-season floor at 183 mm
   in JJA is consistent with the year-round-stream brief, but **measured stream
   discharge at the parcel boundary is the only honest number** — see
-  `property_map_v2/index.md` honesty caveat §C.
+  `property_map/index.md` honesty caveat §C.
 
 ## Köppen-Geiger classification
 
@@ -192,7 +192,7 @@ Regenerable via:
 
 ## Cross-references
 
-- [`property_map_v2/index.md`](property_map_v2/index.md) — "Climate" row in
+- [`property_map/index.md`](property_map/index.md) — "Climate" row in
   the layer provenance table points here.
 - [`landsat/annual_median_1985_2025/summary.md`](landsat/annual_median_1985_2025/summary.md)
   — NDVI dip 2003 (driest 30-day window in CHIRPS) and NDVI plateau 2018

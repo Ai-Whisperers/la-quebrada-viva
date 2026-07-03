@@ -1,6 +1,6 @@
 # candle_path
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/candle_path.png`](../contact_sheets/candle_path.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/candle_path.jpg`](../contact_sheets/candle_path.jpg) (visual)
 
 
 Total renders: **9**.

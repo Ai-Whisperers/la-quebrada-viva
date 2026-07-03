@@ -1,6 +1,6 @@
 # fireflies
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/fireflies.png`](../contact_sheets/fireflies.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/fireflies.jpg`](../contact_sheets/fireflies.jpg) (visual)
 
 
 Total renders: **12**.

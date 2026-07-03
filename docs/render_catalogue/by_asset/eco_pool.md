@@ -1,6 +1,6 @@
 # eco_pool
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/eco_pool.png`](../contact_sheets/eco_pool.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/eco_pool.jpg`](../contact_sheets/eco_pool.jpg) (visual)
 
 
 Total renders: **24**.

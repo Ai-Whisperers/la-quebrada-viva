@@ -1,6 +1,6 @@
 # bamboo_wigwam_lodge
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_wigwam_lodge.png`](../contact_sheets/bamboo_wigwam_lodge.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_wigwam_lodge.jpg`](../contact_sheets/bamboo_wigwam_lodge.jpg) (visual)
 
 
 Total renders: **24**.

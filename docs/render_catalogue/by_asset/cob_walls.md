@@ -1,6 +1,6 @@
 # cob_walls
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/cob_walls.png`](../contact_sheets/cob_walls.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/cob_walls.jpg`](../contact_sheets/cob_walls.jpg) (visual)
 
 
 Total renders: **12**.

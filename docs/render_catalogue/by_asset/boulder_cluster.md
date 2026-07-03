@@ -1,6 +1,6 @@
 # boulder_cluster
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/boulder_cluster.png`](../contact_sheets/boulder_cluster.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/boulder_cluster.jpg`](../contact_sheets/boulder_cluster.jpg) (visual)
 
 
 Total renders: **9**.

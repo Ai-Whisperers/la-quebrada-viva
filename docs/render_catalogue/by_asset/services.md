@@ -1,6 +1,6 @@
 # services
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/services.png`](../contact_sheets/services.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/services.jpg`](../contact_sheets/services.jpg) (visual)
 
 
 Total renders: **12**.

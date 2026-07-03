@@ -1,5 +1,5 @@
 # MCP socket status — diagnostic + retire decision (CC-TOOL.1)
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the MCP daemon + integration status). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the MCP daemon + integration status). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 > **TL;DR:** the BlenderMCP socket on `localhost:9876` is intentionally **retired for the escritura phase** (through 2026-06-27 + immediate aftermath). The sub-render-first workflow does not depend on it. Revival recipe is in §3 — only execute if the work actually needs it.

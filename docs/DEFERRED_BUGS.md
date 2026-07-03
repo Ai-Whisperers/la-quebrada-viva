@@ -1,5 +1,5 @@
 # Deferred renderer bugs — post-escritura sprint queue
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the post-escritura bug ledger (D1/D2/D3 carry-forward from CRITIQUE_BUILDERS_v2)). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the post-escritura bug ledger (D1/D2/D3 carry-forward from CRITIQUE_BUILDERS_v2)). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 **Status as of 2026-06-26.** All three bugs RESOLVED at commit `78433a7` ("feat(materials,subscene,typologies,amenities,flora): post-review polish wave", 2026-06-15). The 85e86aa byte-freeze was superseded under explicit Ivan authorization for the escritura beauty sprint — print-pack at `dist/print_pack_2026-06-27/` remains SHA-pinned independently, so the post-`85e86aa` material work cannot retroactively alter shipped bytes. This doc is retained as the historical reproducer / acceptance record.

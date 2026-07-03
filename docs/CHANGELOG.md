@@ -1,5 +1,5 @@
 # CHANGELOG — La Quebrada Viva
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the session-by-session append-only log). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the session-by-session append-only log). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 Internal version log. Tracks renderer + material registry + camera helpers + delivery bundle status. **Not** a full git log — `git log --oneline` is canonical for that. This is the at-a-glance "what state are we in".

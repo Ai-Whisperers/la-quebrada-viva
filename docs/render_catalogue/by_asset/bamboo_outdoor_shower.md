@@ -1,6 +1,6 @@
 # bamboo_outdoor_shower
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_outdoor_shower.png`](../contact_sheets/bamboo_outdoor_shower.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_outdoor_shower.jpg`](../contact_sheets/bamboo_outdoor_shower.jpg) (visual)
 
 
 Total renders: **9**.

@@ -1,6 +1,6 @@
 # bamboo_curved_roof_villa
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_curved_roof_villa.png`](../contact_sheets/bamboo_curved_roof_villa.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_curved_roof_villa.jpg`](../contact_sheets/bamboo_curved_roof_villa.jpg) (visual)
 
 
 Total renders: **9**.

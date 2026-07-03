@@ -1,6 +1,6 @@
 # terraces
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/terraces.png`](../contact_sheets/terraces.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/terraces.jpg`](../contact_sheets/terraces.jpg) (visual)
 
 
 Total renders: **12**.

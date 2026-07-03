@@ -1,6 +1,6 @@
 # bamboo_beton_30
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_beton_30.png`](../contact_sheets/bamboo_beton_30.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_beton_30.jpg`](../contact_sheets/bamboo_beton_30.jpg) (visual)
 
 
 Total renders: **24**.

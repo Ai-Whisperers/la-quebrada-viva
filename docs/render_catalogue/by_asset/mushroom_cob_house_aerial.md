@@ -1,6 +1,6 @@
 # mushroom_cob_house_aerial
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/mushroom_cob_house_aerial.png`](../contact_sheets/mushroom_cob_house_aerial.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/mushroom_cob_house_aerial.jpg`](../contact_sheets/mushroom_cob_house_aerial.jpg) (visual)
 
 
 Total renders: **1**.

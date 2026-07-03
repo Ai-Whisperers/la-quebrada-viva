@@ -1,6 +1,6 @@
 # flora_jacaranda
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/flora_jacaranda.png`](../contact_sheets/flora_jacaranda.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/flora_jacaranda.jpg`](../contact_sheets/flora_jacaranda.jpg) (visual)
 
 
 Total renders: **9**.

@@ -1,6 +1,6 @@
 # bamboo_boomhut_treehouse
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_boomhut_treehouse.png`](../contact_sheets/bamboo_boomhut_treehouse.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_boomhut_treehouse.jpg`](../contact_sheets/bamboo_boomhut_treehouse.jpg) (visual)
 
 
 Total renders: **24**.

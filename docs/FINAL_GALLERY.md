@@ -1,5 +1,5 @@
 # Final Gallery — La Quebrada Viva (production composites @ `85e86aa`)
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the post-render deliverable gallery). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the post-render deliverable gallery). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 **18 hero composites** at full Cycles render (parcel-scale, 62 ha digital twin + flora photoreal + Wesley typologies placed).

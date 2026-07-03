@@ -65,23 +65,23 @@ byte-freeze parent of the print pack.
 | `A` | petal_macro | [`renders/A_petal_macro.png`](../../renders/A_petal_macro.png) | 11.1MB |
 | `A` | stream_up | [`renders/A_stream_up.png`](../../renders/A_stream_up.png) | 10.9MB |
 | `A` | terrace | [`renders/A_terrace.png`](../../renders/A_terrace.png) | 10.9MB |
-| `A_preview` | cliff | [`renders/_preview_A_cliff.png`](../../renders/_preview_A_cliff.png) | 4.4MB |
-| `A_preview` | hero | [`renders/_preview_A_hero.png`](../../renders/_preview_A_hero.png) | 5.2MB |
-| `A_preview` | petal_macro | [`renders/_preview_A_petal_macro.png`](../../renders/_preview_A_petal_macro.png) | 5.0MB |
+| `A_preview` | cliff | [`renders/_preview_A_cliff.png`](../../renders/_preview_A_cliff.png) | 4.4MB (local only — gitignored) |
+| `A_preview` | hero | [`renders/_preview_A_hero.png`](../../renders/_preview_A_hero.png) | 5.2MB (local only — gitignored) |
+| `A_preview` | petal_macro | [`renders/_preview_A_petal_macro.png`](../../renders/_preview_A_petal_macro.png) | 5.0MB (local only — gitignored) |
 | `B` | cliff | [`renders/B_cliff.png`](../../renders/B_cliff.png) | 10.9MB |
 | `B` | dusk | [`renders/B_dusk.png`](../../renders/B_dusk.png) | 10.6MB |
 | `B` | hero | [`renders/B_hero.png`](../../renders/B_hero.png) | 18.8MB |
 | `B` | petal_macro | [`renders/B_petal_macro.png`](../../renders/B_petal_macro.png) | 10.3MB |
 | `B` | stream_up | [`renders/B_stream_up.png`](../../renders/B_stream_up.png) | 10.6MB |
 | `B` | terrace | [`renders/B_terrace.png`](../../renders/B_terrace.png) | 10.6MB |
-| `B_preview` | hero | [`renders/_preview_B_hero.png`](../../renders/_preview_B_hero.png) | 4.9MB |
+| `B_preview` | hero | [`renders/_preview_B_hero.png`](../../renders/_preview_B_hero.png) | 4.9MB (local only — gitignored) |
 | `C` | cliff | [`renders/C_cliff.png`](../../renders/C_cliff.png) | 9.5MB |
 | `C` | dusk | [`renders/C_dusk.png`](../../renders/C_dusk.png) | 10.1MB |
 | `C` | hero | [`renders/C_hero.png`](../../renders/C_hero.png) | 19.0MB |
 | `C` | petal_macro | [`renders/C_petal_macro.png`](../../renders/C_petal_macro.png) | 10.6MB |
 | `C` | stream_up | [`renders/C_stream_up.png`](../../renders/C_stream_up.png) | 10.7MB |
 | `C` | terrace | [`renders/C_terrace.png`](../../renders/C_terrace.png) | 10.3MB |
-| `C_preview` | hero | [`renders/_preview_C_hero.png`](../../renders/_preview_C_hero.png) | 4.9MB |
+| `C_preview` | hero | [`renders/_preview_C_hero.png`](../../renders/_preview_C_hero.png) | 4.9MB (local only — gitignored) |
 
 ## Monday deliverable pack (5 renders)
 

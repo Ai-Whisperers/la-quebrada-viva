@@ -1,6 +1,6 @@
 # valley_mist
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/valley_mist.png`](../contact_sheets/valley_mist.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/valley_mist.jpg`](../contact_sheets/valley_mist.jpg) (visual)
 
 
 Total renders: **12**.

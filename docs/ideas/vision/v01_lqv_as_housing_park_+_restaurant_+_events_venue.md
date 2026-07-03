@@ -34,8 +34,8 @@ HOUSING_PARK_CONCEPT.md already exists
 ## What we know already (research summary)
 
 - **Deliverable target:** HOUSING_PARK_CONCEPT.md already exists
-- **Source:** [Wes's brainstorm recording](../../briefs/wes_recording_2026-06-30_raw.md) (raw transcript)
-- **Cleaned version:** [dream list](../../briefs/wes_recording_2026-06-30_dreamlist.md) + [action list](../../briefs/wes_recording_2026-06-30_actionlist.md)
+- **Source:** [Wes's brainstorm recording](../../audios/2026-06-30-wes-post-escritura/drafts/README.md) (raw transcript)
+- **Cleaned version:** [dream list](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md) + [action list](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 
 
 ## What needs research
@@ -47,8 +47,8 @@ HOUSING_PARK_CONCEPT.md already exists
 **This idea depends on / is informed by:**
 
 - [`V02`](../vision/v02_2030_operational_milestone_(sonja's_60th).md) — milestone anchor
-- [`V04`](../vision/v04_european_dutch_traveler_target_market.md) — target market
-- [`V05`](../vision/v05_resort_+_events_+_nature_blend_positioning.md) — positioning
+- [`V04`](../_archive/2026-06-30_autofill/vision/v04_european_dutch_traveler_target_market.md) — target market
+- [`V05`](../_archive/2026-06-30_autofill/vision/v05_resort_+_events_+_nature_blend_positioning.md) — positioning
 - [`F01`](../finance_legal/f01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_.md) — capital structure
 
 
@@ -87,13 +87,13 @@ $0 (framing work, no external cost)
 
 ## Sources & references
 
-- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
-- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
-- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
-- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
+- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
+- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
+- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog

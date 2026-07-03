@@ -1,5 +1,5 @@
 # House imagery shotlist — multi-view + x-ray + interior coverage
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the per-house shot-list for the 17 typologies). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the per-house shot-list for the 17 typologies). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 **Authored 2026-06-25.** Post-escritura sprint plan. Scope: convert each buildable typology from its current 3-image footprint (lighting variants A/B/C from one south-east hero angle) into a 12-shot portrait covering cardinal elevations, plan, section, x-ray cutaway, interior, and detail close-ups.

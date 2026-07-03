@@ -20,7 +20,7 @@
 
 ---
 
-### [I07: Money story for investors (5-page narrative)](./finance_legal/i07_money_story_for_investors_5-page_narrative.md)
+### [I07: Money story for investors (5-page narrative)](./_archive/2026-06-30_autofill/finance_legal/i07_money_story_for_investors_5-page_narrative.md)
 **P0** | Finance Legal | Wesley+accountant
 
 > A 5-page written document that explains: where the money goes, what investors get back, in what order, with what risk. Not a deck. A written story.
@@ -29,7 +29,7 @@
 
 ---
 
-### [I10: Insurance broker pre-qualification (BEFORE breaking ground)](./risk_mitigation/i10_insurance_broker_pre-qualification_before_breaking_ground.md)
+### [I10: Insurance broker pre-qualification (BEFORE breaking ground)](./_archive/2026-06-30_autofill/risk_mitigation/i10_insurance_broker_pre-qualification_before_breaking_ground.md)
 **P0** | Risk Mitigation | Wesley+broker
 
 > Before any structure goes up, get 3 insurance broker quotes confirming fire + storm + liability coverage is available at <10% of project value. Hard gate.
@@ -58,7 +58,7 @@
 
 ---
 
-### [I05: Referral program for expat community](./marketing/i05_referral_program_for_expat_community.md)
+### [I05: Referral program for expat community](./_archive/2026-06-30_autofill/marketing/i05_referral_program_for_expat_community.md)
 **P1** | Marketing | Erebus+Wesley
 
 > 10% commission to any expat who refers a booking that converts. Word-of-mouth is the dominant channel for the Awasi / San Bernardino / Mennonite audience Wes is targeting.
@@ -85,7 +85,7 @@
 
 ---
 
-### [I09: Guest experience playbook (before/during/after)](./operations/i09_guest_experience_playbook_before_during_after.md)
+### [I09: Guest experience playbook (before/during/after)](./_archive/2026-06-30_autofill/operations/i09_guest_experience_playbook_before_during_after.md)
 **P1** | Operations | Wesley+Erebus
 
 > A short doc that defines the guest experience: pre-arrival email, arrival ritual, daily touchpoints, check-out, follow-up. The service design behind the houses.
@@ -103,7 +103,7 @@
 
 ---
 
-### [I13: Cost-per-m2 benchmark (cob vs glamping vs conventional PY)](./finance_legal/i13_cost-per-m2_benchmark_cob_vs_glamping_vs_conventional_py.md)
+### [I13: Cost-per-m2 benchmark (cob vs glamping vs conventional PY)](./_archive/2026-06-30_autofill/finance_legal/i13_cost-per-m2_benchmark_cob_vs_glamping_vs_conventional_py.md)
 **P1** | Finance Legal | Wesley+Erebus
 
 > A 1-page comparison showing: cob house build cost $/m2, glamping tent build cost $/m2, conventional PY brick house cost $/m2, plus operating cost / revenue per night.
@@ -123,7 +123,7 @@
 
 ## Tier 3 - Address gaps that build the brand / long-term differentiation (P2/P3)
 
-### [I04: Treehouse / elevated cabin prototype](./house_typologies/i04_treehouse___elevated_cabin_prototype.md)
+### [I04: Treehouse / elevated cabin prototype](./_archive/2026-06-30_autofill/house_typologies/i04_treehouse___elevated_cabin_prototype.md)
 **P2** | House Typologies | Erebus
 
 > A small elevated cabin in a tree or on stilts, 20-35 m2, designed as photo-worthy experience lodging. Different unit economics than bamboo/cob.
@@ -141,7 +141,7 @@
 
 ---
 
-### [I14: Off-season pricing strategy](./operations/i14_off-season_pricing_strategy.md)
+### [I14: Off-season pricing strategy](./_archive/2026-06-30_autofill/operations/i14_off-season_pricing_strategy.md)
 **P2** | Operations | Wesley+Erebus
 
 > PY has wet (Nov-Mar) and dry (May-Oct) seasons. European traveler demand has its own seasonality. Map both, then define 3 pricing tiers: peak / shoulder / off.
@@ -150,7 +150,7 @@
 
 ---
 
-### [I15: Artist residency / exchange program](./amenities/i15_artist_residency___exchange_program.md)
+### [I15: Artist residency / exchange program](./_archive/2026-06-30_autofill/amenities/i15_artist_residency___exchange_program.md)
 **P3** | Amenities | Wesley
 
 > Quarterly invited artists (painters, sculptors, photographers) stay 1 month at LQV in exchange for 1 artwork. Collection becomes a Wes-curated gallery.
@@ -177,7 +177,7 @@
 
 ---
 
-### [I19: Tax-optimized depreciation schedule](./finance_legal/i19_tax-optimized_depreciation_schedule.md)
+### [I19: Tax-optimized depreciation schedule](./_archive/2026-06-30_autofill/finance_legal/i19_tax-optimized_depreciation_schedule.md)
 **P2** | Finance Legal | Wesley+accountant
 
 > A formal asset depreciation schedule across the 4 BVs. Maximizes tax shields for the first 5-7 years. PY + NL tax rules apply differently to real estate, equipment, and intangible assets.
@@ -186,7 +186,7 @@
 
 ---
 
-### [I20: Maintenance protocol (per house type)](./operations/i20_maintenance_protocol_per_house_type.md)
+### [I20: Maintenance protocol (per house type)](./_archive/2026-06-30_autofill/operations/i20_maintenance_protocol_per_house_type.md)
 **P2** | Operations | Wesley+Erebus
 
 > Documented maintenance schedule: weekly, monthly, quarterly, annual tasks per house typology. Bamboo treatment reapplied every 6-12 months. Roof inspected after each rainy season. Septic serviced annually.

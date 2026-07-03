@@ -1,5 +1,5 @@
 # Post-Escritura Site Knowledge — La Quebrada Viva
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (post-escritura site knowledge (T+1 compiled)). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (post-escritura site knowledge (T+1 compiled)). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 > Site-knowledge package compiled **2026-06-28** (T+1 post-escritura). Combines Wesley's hand-drawn parcel polygon (shared via Google Earth on 2026-06-28) with every open-data layer we already hold for the AOI. Designed to be client-presentable as-is and to seed the conversation that will arrive with Wesley's on-site photos.

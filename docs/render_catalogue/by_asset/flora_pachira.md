@@ -1,6 +1,6 @@
 # flora_pachira
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/flora_pachira.png`](../contact_sheets/flora_pachira.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/flora_pachira.jpg`](../contact_sheets/flora_pachira.jpg) (visual)
 
 
 Total renders: **9**.

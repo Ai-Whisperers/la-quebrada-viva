@@ -46,7 +46,7 @@ rural PY ADR + occupancy benchmarks
 **This idea depends on / is informed by:**
 
 - [`M01`](../marketing/m01_booking.com_+_airbnb_listings_(post-first-build).md) — booking listings
-- [`V04`](../vision/v04_european_dutch_traveler_target_market.md) — EU market
+- [`V04`](../_archive/2026-06-30_autofill/vision/v04_european_dutch_traveler_target_market.md) — EU market
 
 
 
@@ -82,13 +82,13 @@ Booking.com / Airbnb: free to list, 15% commission per booking. Drone pilot: $30
 
 ## Sources & references
 
-- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
-- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
-- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
-- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
+- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
+- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
+- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog

@@ -1,6 +1,6 @@
 # terrain_62ha_photoreal
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/terrain_62ha_photoreal.png`](../contact_sheets/terrain_62ha_photoreal.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/terrain_62ha_photoreal.jpg`](../contact_sheets/terrain_62ha_photoreal.jpg) (visual)
 
 
 Total renders: **31**.

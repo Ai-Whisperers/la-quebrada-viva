@@ -1,6 +1,6 @@
 # canopy_volume
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/canopy_volume.png`](../contact_sheets/canopy_volume.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/canopy_volume.jpg`](../contact_sheets/canopy_volume.jpg) (visual)
 
 
 Total renders: **12**.

@@ -34,13 +34,13 @@ live site map with drag-drop typology slots
 
 ## Full picture — context, constraints, history
 
-**Buyer-experience stack.** These tools are the shop window for investors + future guests. Already-shipped infrastructure: lqv-walkthrough.pages.dev (live), Three.js viewer, 12 toggleable data layers, 3DGS self-host pipeline (Vast.ai + COLMAP), Cesium 3D viewer. The capture brief at [briefs/wes_capture_brief.md](../../briefs/wes_capture_brief.md) is the protocol Wes needs to follow.
+**Buyer-experience stack.** These tools are the shop window for investors + future guests. Already-shipped infrastructure: lqv-walkthrough.pages.dev (live), Three.js viewer, 12 toggleable data layers, 3DGS self-host pipeline (Vast.ai + COLMAP), Cesium 3D viewer. The capture brief at [briefs/wes_capture_brief.md](../../audios/2026-06-30-wes-post-escritura/README.md) is the protocol Wes needs to follow.
 
 ## What we know already (research summary)
 
 - **Deliverable target:** live site map with drag-drop typology slots
-- **Source:** [Wes's brainstorm recording](../../briefs/wes_recording_2026-06-30_raw.md) (raw transcript)
-- **Cleaned version:** [dream list](../../briefs/wes_recording_2026-06-30_dreamlist.md) + [action list](../../briefs/wes_recording_2026-06-30_actionlist.md)
+- **Source:** [Wes's brainstorm recording](../../audios/2026-06-30-wes-post-escritura/drafts/README.md) (raw transcript)
+- **Cleaned version:** [dream list](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md) + [action list](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 
 
 ## What needs research
@@ -53,7 +53,7 @@ live site map with drag-drop typology slots
 
 - [`B03`](../buyer_experience/b03_satellite-driven_optimal_placement_(sun,_view,_pri.md) — placement AI
 - [`B06`](../buyer_experience/b06_lidar_drone_survey_vs_hi-res_satellite_decision.md) — LiDAR
-- [`T01`](../house_typologies/t01_type_a_—_romantic_2p_(30-40_m²).md) — typology footprint
+- [`T01`](../_archive/2026-06-30_autofill/house_typologies/t01_type_a_—_romantic_2p_(30-40_m²).md) — typology footprint
 
 
 
@@ -89,13 +89,13 @@ _Estimate pending — see "What needs research" section for named cost sources._
 
 ## Sources & references
 
-- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
-- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
-- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
-- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
+- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
+- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
+- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog

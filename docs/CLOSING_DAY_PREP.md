@@ -1,8 +1,8 @@
 # Closing-day prep — escritura pública 27 Jun 2026
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the escritura-week T-7/T-5/T-2/signing-day checklist (historical, escritura signed 2026-06-27)). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the escritura-week T-7/T-5/T-2/signing-day checklist (historical, escritura signed 2026-06-27)). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
-> Printable / actionable checklist for the escritura signing. Companion to [`contract_summary.md`](./contract_summary.md) (the legal facts), [`wesley_brief_onepager.md`](./wesley_brief_onepager.md) (the one-page brief), [`MORNING_RUNBOOK_2026-06-27.md`](./MORNING_RUNBOOK_2026-06-27.md) (signing-day laptop runbook), [`CONTINGENCIES.md`](./CONTINGENCIES.md) (pre-decided risk playbook), [`ROLLBACK_RUNBOOK.md`](./ROLLBACK_RUNBOOK.md) (errata / postponement protocol), and [`POSTMORTEM_TEMPLATE.md`](./POSTMORTEM_TEMPLATE.md) (T+1 debrief skeleton). All references are to the boleto privado of 2026-04-28.
+> Printable / actionable checklist for the escritura signing. Companion to [`contract_summary.md`](./contract_summary.md) (the legal facts), [`wesley_brief_onepager.md`([../wesley_brief_onepager.md]) (the one-page brief), [`MORNING_RUNBOOK_2026-06-27.md`](./MORNING_RUNBOOK_2026-06-27.md) (signing-day laptop runbook), [`CONTINGENCIES.md`](./CONTINGENCIES.md) (pre-decided risk playbook), [`ROLLBACK_RUNBOOK.md`](./ROLLBACK_RUNBOOK.md) (errata / postponement protocol), and [`POSTMORTEM_TEMPLATE.md`](./POSTMORTEM_TEMPLATE.md) (T+1 debrief skeleton). All references are to the boleto privado of 2026-04-28.
 >
 > **Owner**: Wesley van de Camp (75%) + Thijs van de Camp (25%) — buyers.
 > **Signing notary**: presumably Escribana Cynthia Andrea Peña Ros (Cl. SEXTA — buyers designate; she already holds the seña).
@@ -97,8 +97,8 @@
 ## Authoritative references
 
 - [`contract_summary.md`](./contract_summary.md) — the legal facts: parties, parcels, prices, penalties, clause-by-clause summary.
-- [`2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`](./2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf) — full contract text.
-- [`wesley_brief_onepager.md`](./wesley_brief_onepager.md) — one-page brief for Wesley.
+- ``2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` (gitignored, local only)` — full contract text.
+- [`wesley_brief_onepager.md`([../wesley_brief_onepager.md]) — one-page brief for Wesley.
 - [`CLIENT.md`](./CLIENT.md) — Wesley's role + Thijs's role + AI Whisperers's scope.
 - [`RESEARCH_GAPS.md`](./RESEARCH_GAPS.md) — Anexo I + sellers' docs delivery are tracked there (R02).
 - [`wesley_deliverable_bundle.md`](./wesley_deliverable_bundle.md) — what Wesley physically carries into the meeting; this checklist is item 9 of the Tier 1 folder.

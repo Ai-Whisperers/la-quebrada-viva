@@ -1,6 +1,6 @@
 # stream
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/stream.png`](../contact_sheets/stream.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/stream.jpg`](../contact_sheets/stream.jpg) (visual)
 
 
 Total renders: **12**.

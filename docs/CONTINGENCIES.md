@@ -1,5 +1,5 @@
 # Contingencies — escritura 2026-06-27
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the escritura-week C1-C10 risk register). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the escritura-week C1-C10 risk register). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 Risk register and pre-decided playbook for the 10 scenarios most likely to derail the 27 Jun signing. Frozen 2026-06-17 (T-10). Re-read on 2026-06-26 (T-1).

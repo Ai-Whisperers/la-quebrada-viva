@@ -1,6 +1,6 @@
 # bamboo_beton_family_rectangular
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_beton_family_rectangular.png`](../contact_sheets/bamboo_beton_family_rectangular.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_beton_family_rectangular.jpg`](../contact_sheets/bamboo_beton_family_rectangular.jpg) (visual)
 
 
 Total renders: **24**.

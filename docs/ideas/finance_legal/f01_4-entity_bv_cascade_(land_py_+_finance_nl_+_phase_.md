@@ -40,8 +40,8 @@ structure memo: roles, tax, equipment cascade mechanics
 ## What we know already (research summary)
 
 - **Deliverable target:** structure memo: roles, tax, equipment cascade mechanics
-- **Source:** [Wes's brainstorm recording](../../briefs/wes_recording_2026-06-30_raw.md) (raw transcript)
-- **Cleaned version:** [dream list](../../briefs/wes_recording_2026-06-30_dreamlist.md) + [action list](../../briefs/wes_recording_2026-06-30_actionlist.md)
+- **Source:** [Wes's brainstorm recording](../../audios/2026-06-30-wes-post-escritura/drafts/README.md) (raw transcript)
+- **Cleaned version:** [dream list](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md) + [action list](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - NL entity types: BV (Besloten Vennootschap) — required above ~€70k income threshold
 - PY entity types: S.A. (Sociedad Anónima), S.R.L. (Sociedad de Responsabilidad Limitada), E.A.S. (Empresa por Acciones Simplificada)
 - No current accountant engaged for the project
@@ -58,7 +58,7 @@ structure memo: roles, tax, equipment cascade mechanics
 
 **This idea depends on / is informed by:**
 
-- [`F02`](../finance_legal/f02_equipment_cascade_mechanics_(phase_1_->_phase_2_sa.md) — cascade mechanics
+- [`F02`](../_archive/2026-06-30_autofill/finance_legal/f02_equipment_cascade_mechanics_(phase_1_->_phase_2_sa.md) — cascade mechanics
 - [`F03`](../finance_legal/f03_py_s.a._vs_s.r.l._vs_e.a.s._decision.md) — entity types
 - [`F04`](../finance_legal/f04_nl_holding_+_py_subsidiary_vs_parallel_entities.md) — NL/PY structure
 
@@ -101,13 +101,13 @@ NL+PY accountant: $500-2000 per consultation. NL BV set-up: ~€150 + ongoing ad
 
 ## Sources & references
 
-- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
-- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
-- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
-- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
+- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
+- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
+- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog

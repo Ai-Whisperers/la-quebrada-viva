@@ -1,6 +1,6 @@
 # window_emission
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/window_emission.png`](../contact_sheets/window_emission.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/window_emission.jpg`](../contact_sheets/window_emission.jpg) (visual)
 
 
 Total renders: **12**.

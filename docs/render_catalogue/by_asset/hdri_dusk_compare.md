@@ -1,6 +1,6 @@
 # hdri_dusk_compare
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/hdri_dusk_compare.png`](../contact_sheets/hdri_dusk_compare.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/hdri_dusk_compare.jpg`](../contact_sheets/hdri_dusk_compare.jpg) (visual)
 
 
 Total renders: **9**.

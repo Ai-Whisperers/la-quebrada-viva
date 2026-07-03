@@ -40,8 +40,8 @@
 ## What we know already (research summary)
 
 - **Deliverable target:** 18 final renders shipped at 85e86aa
-- **Source:** [Wes's brainstorm recording](../../briefs/wes_recording_2026-06-30_raw.md) (raw transcript)
-- **Cleaned version:** [dream list](../../briefs/wes_recording_2026-06-30_dreamlist.md) + [action list](../../briefs/wes_recording_2026-06-30_actionlist.md)
+- **Source:** [Wes's brainstorm recording](../../audios/2026-06-30-wes-post-escritura/drafts/README.md) (raw transcript)
+- **Cleaned version:** [dream list](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md) + [action list](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - 18 Cycles final renders shipped at commit `85e86aa` (byte-frozen)
 - Render-pipeline tooling shipped 2026-06-15 at `78433a7` (water dielectric + lapacho PBR fixes)
 - BoQ: $268,685.45 USD across 18 typologies + 4 amenities (escritura-frozen scope)
@@ -56,8 +56,8 @@
 
 **This idea depends on / is informed by:**
 
-- [`T01`](../house_typologies/t01_type_a_—_romantic_2p_(30-40_m²).md) — first typology spec
-- [`C01`](../construction/c01_bamboo_+_wood_termite_treatment.md) — bamboo
+- [`T01`](../_archive/2026-06-30_autofill/house_typologies/t01_type_a_—_romantic_2p_(30-40_m²).md) — first typology spec
+- [`C01`](../_archive/2026-06-30_autofill/construction/c01_bamboo_+_wood_termite_treatment.md) — bamboo
 - [`C13`](../construction/c13_park_development_permits_+_licenses.md) — permits
 - [`O10`](../operations/o10_cultural_adaptation_(nl_direct_vs_py_indirect).md) — cultural
 
@@ -100,13 +100,13 @@ $0 (framing work, no external cost)
 
 ## Sources & references
 
-- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
-- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
-- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
-- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
+- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
+- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
+- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog

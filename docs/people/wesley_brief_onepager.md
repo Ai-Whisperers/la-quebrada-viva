@@ -56,7 +56,7 @@ The site has: 40–60m sandstone escarpment, year-round spring-fed stream, matur
 
 ## Closing-day prep checklist (escritura, 27 Jun)
 
-> Print-friendly day-by-day version with risk register: [`docs/CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md). The checklist below is the executive summary.
+> Print-friendly day-by-day version with risk register: [`docs/CLOSING_DAY_PREP.md`(`../CLOSING_DAY_PREP.md`). The checklist below is the executive summary.
 
 Bring or confirm in hand at least 5 days before signing:
 

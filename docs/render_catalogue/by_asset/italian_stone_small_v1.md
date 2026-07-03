@@ -1,6 +1,6 @@
 # italian_stone_small_v1
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/italian_stone_small_v1.png`](../contact_sheets/italian_stone_small_v1.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/italian_stone_small_v1.jpg`](../contact_sheets/italian_stone_small_v1.jpg) (visual)
 
 
 Total renders: **24**.

@@ -1,6 +1,6 @@
 # agave
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/agave.png`](../contact_sheets/agave.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/agave.jpg`](../contact_sheets/agave.jpg) (visual)
 
 
 Total renders: **18**.

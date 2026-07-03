@@ -1,6 +1,6 @@
 # mango
 
-> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/mango.png`](../contact_sheets/mango.png) (visual)
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/mango.jpg`](../contact_sheets/mango.jpg) (visual)
 
 
 Total renders: **18**.

@@ -1,6 +1,6 @@
 # Contract Summary — Boleto Privado de Compraventa
 
-> Quick-reference for the 2026-04-28 contract between the Torrasca-Medinas (sellers) and Wesley + Thijs van de Camp (buyers). Full text: [`2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`](./2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf).
+> Quick-reference for the 2026-04-28 contract between the Torrasca-Medinas (sellers) and Wesley + Thijs van de Camp (buyers). Full text: ``2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` (gitignored, local only)`.
 >
 > **Client = Wesley** (75% legal, design decision-maker). Thijs (25%) is financial co-buyer. See [`CLIENT.md`](./CLIENT.md).
 

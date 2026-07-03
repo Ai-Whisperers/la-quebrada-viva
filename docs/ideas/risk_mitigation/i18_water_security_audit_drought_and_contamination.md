@@ -30,7 +30,7 @@ A 30-300 house development that runs out of water in a drought is dead. Wes's ca
 
 ## Full picture — context, constraints, history
 
-_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../../SUGGESTED.md) for the rationale._
+_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../SUGGESTED.md) for the rationale._
 
 See related existing ideas: [`C10`](../construction/c10_well_vs_stream_potable_water_decision.md), [`C05`](../construction/c05_water_purification_(concrete-chemical_vs_natural_w.md)
 
@@ -40,7 +40,7 @@ See related existing ideas: [`C10`](../construction/c10_well_vs_stream_potable_w
 
 ## What needs research
 
-_Suggested addition — see [SUGGESTED.md](../../SUGGESTED.md) for context. Research tasks derived from gap analysis:_
+_Suggested addition — see [SUGGESTED.md](../SUGGESTED.md) for context. Research tasks derived from gap analysis:_
 
 - _No additional research tasks defined — see related ideas for context._
 
@@ -79,13 +79,13 @@ $2000-5000 (hydrology consultant + water testing)
 
 ## Sources & references
 
-- [Wes's brainstorm recording (raw)](../../briefs/wes_recording_2026-06-30_raw.md)
-- [Wes's dream list (cleaned)](../../briefs/wes_recording_2026-06-30_dreamlist.md)
-- [Wes's action list (cleaned)](../../briefs/wes_recording_2026-06-30_actionlist.md)
-- [Wes's capture brief](../../briefs/wes_capture_brief.md)
+- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
+- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
+- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
+- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog

@@ -1,10 +1,10 @@
 # Tooling Audit & Improvement Opportunities — La Quebrada Viva
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the tooling-axis improvement plan). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the tooling-axis improvement plan). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
 > Single source-of-truth document inventorying **everything the project currently uses** (Blender features, addons, satellite/geo data, models, code, scripts, third-party deps) and **everything it could plausibly adopt next** from the Blender 4.2 LTS feature set, the wider Cycles/EEVEE ecosystem, and the open-data GIS/asset universe.
 >
-> Companion to `docs/MASTER_BRIEF.md` (design rules), `docs/ARCHITECTURE.md` (code structure), `docs/site_data/DATA_INVENTORY.md` (geo data details), `LICENSE_BUNDLE.md` (license posture), `CREDITS.md` (per-asset attribution).
+> Companion to `docs/MASTER_BRIEF.md` (design rules), [`../ARCHITECTURE.md`](../ARCHITECTURE.md) (code structure), `docs/site_data/DATA_INVENTORY.md` (geo data details), `LICENSE_BUNDLE.md` (license posture), `CREDITS.md` (per-asset attribution).
 >
 > Compiled by AI Whisperers (Ivan + Claude). Last updated 2026-06-13.
 

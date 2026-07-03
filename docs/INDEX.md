@@ -4,9 +4,9 @@ Single navigation entrypoint into the doc-mesh. Maintained additively; section o
 
 ## Tier -1 (2026-07-03) — post-restructure pointers
 
-> **If you (or your stakeholder) is **Wes**, open [`WES_INDEX.md`](./WES_INDEX.md) instead.**
-> **If you're looking for **what blocks Phase 1 right now**, open [`POST_ESCRITURA_NOW.md`](./POST_ESCRITURA_NOW.md).**
-> **If you want to know **what's wrong with this repo**, read [`CRITIQUE_FOR_WES.md`](./CRITIQUE_FOR_WES.md) (Wes-facing) or [`audit/CRITIQUE_V2_ADDENDUM.md`](./audit/CRITIQUE_V2_ADDENDUM.md) (dev-facing).
+> **If you (or your stakeholder) is **Wes**, open [`WES_INDEX.md`([../WES_INDEX.md]) instead.**
+> **If you're looking for **what blocks Phase 1 right now**, open [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).**
+> **If you want to know **what's wrong with this repo**, read [`CRITIQUE_FOR_WES.md`([../CRITIQUE_FOR_WES.md]) (Wes-facing) or [`audit/CRITIQUE_V2_ADDENDUM.md`](./audit/CRITIQUE_V2_ADDENDUM.md) (dev-facing).
 >
 > Wes-facing stakeholder briefs live in [`people/`](./people/) (WES_ACTIONS, ATTORNEY_BRIEF, SONJA_QUESTIONNAIRE, 4ENTITY_BV_CASCADE, the two one-pagers, CONTACTS, SITE_VISIT_BRIEF, DECISIONS_LOG).
 >
@@ -39,7 +39,7 @@ Single navigation entrypoint into the doc-mesh. Maintained additively; section o
 
 ## Tier 1 — supporting deliverables
 
-- [`wesley_brief_onepager.md`](./wesley_brief_onepager.md) — one-page brief.
+- [`wesley_brief_onepager.md`([../wesley_brief_onepager.md]) — one-page brief.
 - [`wesley_deliverable_bundle.md`](./wesley_deliverable_bundle.md) — what ships to Wesley + structure.
 - [`escritura_deck/escritura_deck.md`](./escritura_deck/escritura_deck.md) — escritura deck source (PDF: `docs/escritura_deck/escritura_deck_v6.pdf`).
 - [`boq/boq_rollup.md`](./boq/boq_rollup.md) — Bill of Quantities rollup, 175 items, USD primary + PYG @ TC 7300.
@@ -57,11 +57,11 @@ Single navigation entrypoint into the doc-mesh. Maintained additively; section o
 
 ## Tier 3 — engineering + research provenance
 
-- [`ARCHITECTURE.md`](./ARCHITECTURE.md) — `lqv/` module layout + RNG order invariant + sub-render-first standing rule.
+- [`ARCHITECTURE.md`([../ARCHITECTURE.md]) — `lqv/` module layout + RNG order invariant + sub-render-first standing rule.
 - [`asset_plan.md`](./asset_plan.md) — per-asset / per-typology / per-amenity plan.
 - [`sub_render_strategy.md`](./sub_render_strategy.md) — 31-target sub-render queue + driver template + RNG derivation.
 - [`_archive/MANIFEST.md`](./_archive/MANIFEST.md) — index of archived critiques + tiered fix-plans (Tier-0 landed; carry-forward items live in `DEFERRED_BUGS.md` + TaskList #34–#50).
-- [`PROVENANCE.md`](./PROVENANCE.md) — license + URL + SHA-256 + bbox + retrieval date for ALOS / COP30 / Sentinel-2 / GEDI / OSM / SRTM / NASADEM.
+- [`PROVENANCE.md`([../PROVENANCE.md]) — license + URL + SHA-256 + bbox + retrieval date for ALOS / COP30 / Sentinel-2 / GEDI / OSM / SRTM / NASADEM.
 - [`site_data/satdata_brief.md`](./site_data/satdata_brief.md) — S1–S4 satellite render-pipeline reader.
 - [`research/README.md`](./research/README.md) — research synthesis (5 sub-reports, ~80 repos).
 - [`RESEARCH_GAPS.md`](./RESEARCH_GAPS.md) — open research gaps + tiered close plan.
@@ -76,7 +76,7 @@ Single navigation entrypoint into the doc-mesh. Maintained additively; section o
 
 ## Tier 5 — session + status
 
-- [`../STATUS.md`](../STATUS.md) — canonical state document. §11 is the T-10 sweep block.
+- [`..//STATUS.md`([../STATUS.md]) — canonical state document. §11 is the T-10 sweep block.
 - [`SESSION_LOG.md`](./SESSION_LOG.md) — continuation-arc tick log.
 - [`DECISIONS.md`](./DECISIONS.md) — append-only durable-judgement log (boleto Cl. NOVENA, render parallelism, sub-render-first, etc).
 - [`POSTMORTEM_TEMPLATE.md`](./POSTMORTEM_TEMPLATE.md) — escritura postmortem skeleton (fill T+1).
