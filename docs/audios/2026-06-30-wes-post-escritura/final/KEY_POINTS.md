@@ -40,7 +40,7 @@
 
 ## Timing
 
-8. **2030 horizon = Sonia's 16e verjaardag.** Persoonlijke mijlpaal
+8. **2030 horizon = Sonia's 60e verjaardag (2030).** Persoonlijke mijlpaal
    gekoppeld aan project. ~3.5 jaar post-closing = Fase 3 eind /
    Fase 4 start. **Realistic als cashflow houdt.**
 
@@ -116,6 +116,6 @@ Items above not yet in the canonical doc:
 - **Railroad Ipoh-Karai** (was absent)
 - **Steengroeve Ipakari** (was absent)
 - **AI as price negotiator** (was absent)
-- **2030 = Sonia's 16e** (was implicit "horizon" question)
+- **2030 = Sonia's 60e (2030)** (was implicit "horizon" question)
 
 → See REPO_UPDATES.md for the patch plan.

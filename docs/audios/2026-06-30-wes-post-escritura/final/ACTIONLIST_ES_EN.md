@@ -11,7 +11,7 @@
 
 ### P0.1 [I] Push all unpushed commits to GitHub
 **Status**: 8 unpushed commits in `/root/la-quebrada-viva/`.
-Commits: `309603e` (turboscribe manifest), `316e962` (README),
+Commits: `309603e` (turboscribe manifest), `360e (2030)962` (README),
 `b38ba78` (audio4 transcript), `6d50038` (audio2 transcript),
 `86d5808` (audio3 transcript), `7c03fc0` (audio5 transcript),
 `081442b` (first synthesis), plus new ones for the 5 final docs.
@@ -178,7 +178,7 @@ owner conversations, lessons learned.
 
 ---
 
-## P4 — 2030 horizon (Sonia's 16e verjaardag)
+## P4 — 2030 horizon (Sonia's 60e verjaardag (2030))
 
 ### P4.1 [W+I] Fase-mapping tot 2030
 Wes's personal horizon. Welke fase is dan af?

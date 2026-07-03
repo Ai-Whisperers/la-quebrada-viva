@@ -50,7 +50,7 @@ Synthesis is in `docs/audios/2026-06-30-wes-post-escritura/final/`:
 - `REPO_UPDATES.md` — this patch plan
 
 Werknaam: **Riverstone Valley** (not final). Wes's voorkeur:
-"mooi Spaans" projectnamen. Horizon: **2030** (Sonia's 16e verjaardag).
+"mooi Spaans" projectnamen. Horizon: **2030** (Sonia's 60e verjaardag (2030)).
 ```
 
 ### §2 Concept models — add §2.10
@@ -197,7 +197,7 @@ breuksteen supply.
 30. **Railroad Ipoh-Karai status**: do you want me to research the
     reopening plans, or do you have a local contact who knows?
 
-31. **2030 fase-target**: with Sonia's 16e as horizon, which fase do
+31. **2030 fase-target**: with Sonia's 60e (2030) as horizon, which fase do
     you want to have visible by then — Fase 1 (utilities + staff)?
     Fase 2 (restaurant + lodging + pool)? Or both?
 ```
@@ -301,7 +301,7 @@ Key new content vs pre-escritura:
 - Sonja canonical for cultural/worker/price
 - Toyota Tundra/Presio + AI-haggling precedent
 - Railroad Ipoh-Karai tailwind
-- 2030 horizon = Sonia's 16e
+- 2030 horizon = Sonia's 60e (2030)
 ```
 
 ---

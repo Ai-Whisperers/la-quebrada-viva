@@ -196,10 +196,10 @@ meerdere variants + event scenarios.
 
 ### D9. Termijn-doelen
 
-> "2030 deadline for Sonia's 16th birthday. Put it in the agency, yeah?"
+> "2030 deadline for Sonia's 60th birthday (2030). Put it in the agency, yeah?"
 (Audio E)
 
-Wes geeft een expliciete horizon: **2030**. Waarom: Sonia's 16e verjaardag.
+Wes geeft een expliciete horizon: **2030**. Waarom: Sonia's 60e verjaardag (2030).
 Dit is een persoonlijke milestone die Wes als motivator gebruikt voor het
 project. Niet de hele project-finish, wel een fase-mijlpaal.
 
@@ -268,7 +268,7 @@ Concrete next steps, sequenced by urgency. Tags:
 
 ### Prio 4 — 2030 horizon
 
-15. **[W]** Wes's persoonlijke horizon (Sonia's 16e). Welke fase is dan
+15. **[W]** Wes's persoonlijke horizon (Sonia's 60e (2030)). Welke fase is dan
     af? Visie hierop scherp krijgen in een aparte sessie.
 
 ---
@@ -306,7 +306,7 @@ Per sonia-assistant Wes Rule: 1-2 vragen, niet overweldigen. De top 2:
 
 ## Note voor Ivan
 
-- **5 commits lokaal** (309603e, 316e962, b38ba78, 6d50038, 86d5808, 7c03fc0)
+- **5 commits lokaal** (309603e, 360e (2030)962, b38ba78, 6d50038, 86d5808, 7c03fc0)
   wachten op push naar GitHub. Alle GH tokens in deze shell zijn dood
   (401 Bad credentials).
 - **Turboscribe bundle** (95.7 MB mp3) staat klaar in

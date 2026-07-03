@@ -18,7 +18,7 @@
   moeilijk. Referentie: kind een naam geven ipv "QR code 1521" (Audio E)
 - **Type-aanduiding**: "vakantiepark" + "vakantiehuisjes" (Center-Parcs-
   register, NL-terminologie die Wes consequent gebruikt) — Audio D+E
-- **Horizon**: 2030 = Sonia's 16e verjaardag. Persoonlijke mijlpaal die
+- **Horizon**: 2030 = Sonia's 60e verjaardag (2030). Persoonlijke mijlpaal die
   Wes aan het project koppelt. Niet "project-finish" maar fase-target.
   (Audio E)
 

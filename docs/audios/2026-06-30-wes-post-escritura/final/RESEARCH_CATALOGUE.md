@@ -383,7 +383,7 @@ These shape all downstream work.
 | BR04 | Brand voice extraction (Wes's own words, 2+ times or with emotion) | A | Audio transcripts | I+A | 1 week | P4.2 |
 | BR05 | "Mooi Spaans" projectnamen — pool of options for Wes | A | Sonja, Spanish naming conventions | S+I | 1 week | D1 |
 | BR06 | Trilingual brand (Guaraní/Spanish/English) — international tourism | A | Existing HOUSING §6.3 | — | — | HOUSING §6.3 |
-| BR07 | 2030 horizon = Sonia's 16e — fase-mapping | A | Existing HOUSING §7.1 | — | — | D1, §7.1 |
+| BR07 | 2030 horizon = Sonia's 60e (2030) — fase-mapping | A | Existing HOUSING §7.1 | — | — | D1, §7.1 |
 | BR08 | Phase 1 vs Fase 2 ordering for Wes's family decision | A | Wes's audio pick | W | 5 min | P4.1 |
 | BR09 | Audio-only questionnaire format — confirmed | V | Wes's dyslexie | — | — | D13, §11.1 |
 | BR10 | "Production means in hands of everyone" — Wes's values | S | Wes's audio | — | — | D14 |

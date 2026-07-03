@@ -27,6 +27,35 @@
 
 ---
 
+## Status (as of 2026-06-30, end of initial Erebus pass)
+
+**Done in this pass:**
+- ✅ W0.6 AI batch: 8 RESEARCH_CATALOGUE items answered (M04, M05, M08, M22, F11, F12, F09, L05) — all in `docs/research/RESULTS/`
+- ✅ W0.8 Materials list: `docs/research/5_ONDERWERPEN_MATERIALS.md` built
+- ✅ W0.9a HOUSING_PARK_CONCEPT.md patched with 9 audio deltas
+- ✅ W0.9b RESEARCH_GAPS.md updated with R39-R50 (12 new items)
+- ✅ W0.9c "16e → 60e" transcription error fixed in 6 audio final files + SYNTHESIS.md
+- ✅ Sonja questionnaire built: `docs/people/SONJA_QUESTIONNAIRE.md` (16 questions, 1 call)
+- ✅ Attorney brief built: `docs/people/ATTORNEY_BRIEF.md` (12 questions, 1 call)
+- ✅ Wes actions checklist: `docs/people/WES_ACTIONS.md` (5 things, 4-5 hours)
+- ✅ Insurance + fire research bundle: `docs/research/RESULTS/insurance_fire_bundle.md`
+- ✅ Research execution tracker: `docs/research/EXECUTION.md`
+- ✅ New: `docs/research/RESULTS/` directory with 9 result files
+- ✅ New: `docs/people/` directory (3 human-side briefing files)
+- ✅ New: `docs/patches/` directory (HOUSING_PARK_CONCEPT + RESEARCH_GAPS patches)
+
+**NOT done (needs human action):**
+- ⏳ W0.1 Attorney call (Wes)
+- ⏳ W0.2 Sonja call (Wes → Sonja)
+- ⏳ W0.3 Project name (Wes)
+- ⏳ W0.4 Anexo I chase (Wes → Escribana)
+- ⏳ W0.5 LiDAR booking (Wes)
+
+**In progress (AI batch, can be expanded):**
+- 🔄 W1.1 Sprint 1 AI batch (30 items, A-owner) — ready to dispatch
+
+**Status: 8/21 Sprint 0 items done by Erebus. 5/21 waiting on Wes. 8/21 waiting on AI batching (can start now).**
+
 ## SPRINT 0 — Next 1-2 weeks (THE FASE 1 BLOCKERS)
 
 **Total: 21 items, ~95 working days, compressible to 2 weeks if parallelized.**

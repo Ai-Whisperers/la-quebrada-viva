@@ -24,7 +24,7 @@
 | 010 | Machinepark rouleert tussen fases | D | A | Eerste investeerders krijgen geld terug |
 | 011 | NL BV boven 70k drempel | C | V | NL fiscal, niet PY |
 | 012 | "BV altijd beter in NL, want niet af te pakken" | C | V | — |
-| 013 | 2030 horizon = Sonia's 16e | E | V | Persoonlijke mijlpaal |
+| 013 | 2030 horizon = Sonia's 60e (2030) | E | V | Persoonlijke mijlpaal |
 
 ## Insurance / risk
 
