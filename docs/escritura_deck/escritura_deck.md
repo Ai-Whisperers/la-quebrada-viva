@@ -1,4 +1,4 @@
-> Source for PDF build only — image tokens (`HERO_PLACEHOLDER`, `THUMB:*`) are not real paths. The shipping artefact is `escritura_deck_v5.pdf`.
+> Source for PDF build only — image tokens (`HERO_PLACEHOLDER`, `THUMB:*`) are not real paths. The shipping artefact is `escritura_deck_v6.pdf` (the escritura-signed final, 10.8 MB). Earlier versions (v1 = 35 MB early draft, v3/v4/v5 = 10 MB each intermediate) are kept as audit trail — git history proves the T-2 freeze progression.
 
 # La Quebrada Viva
 
