@@ -2,6 +2,11 @@
 **Maintained by:** Erebus (AI Whisperers) · **For:** Wesley van de Camp + Ivan + Kiki
 **Last update:** 2026-07-03 · **Source:** All brainstorm sessions, recordings, briefs, project state
 
+**2026-07-03 update — 46 auto-fill files archived.** The 109-idea catalog is now cleanly split:
+- **63 ✓ reviewed** files in this directory (the 30 load-bearing ideas + their researched detail)
+- **46 ○ auto-fill** files in [`_archive/2026-06-30_autofill/`](./_archive/2026-06-30_autofill/) (template-fill, awaiting Wes input)
+See [`_archive/2026-06-30_autofill/MANIFEST.md`](./_archive/2026-06-30_autofill/MANIFEST.md) for what the archived files contain + when to revive them.
+
 **2026-07-03 update — Quality field added to all 109 idea files.** Each file is now tagged `✓ reviewed` (63 files, Wes quote + researched substance) or `○ auto-fill` (46 files, template structure but needs Wes input). Treat `○ auto-fill` files as draft until Wes provides the missing quote / decision.
 **Read me first:** This is the canonical map of every idea Wes has surfaced, organized by domain, with priority/owner/status/deliverable for each. Each idea has its own detail file in this folder.
 

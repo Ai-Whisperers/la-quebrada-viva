@@ -39,7 +39,7 @@ Per `README.md`, the project now spans four deliverables:
 | 3 | Escritura technical pack (deck v6 PDF + Wesley bundle ZIP, BoQ rollup, T-10 sweep) | **frozen** — tag `escritura-2026-06-27` @ `0081129` |
 | 4 | Escobar Housing Park (15 typologies + 4 amenities, sub-render matrix) | **in progress** — driven by `docs/MASTER_TODO.md` P1.A / P1.B / P1.C |
 
-This master plan continues to be the canonical roadmap for Deliverable 1 (and the historical record for Deliverables 2-3). Deliverable 4 is governed by `docs/MASTER_TODO.md`; sub-render protocol details live in `docs/sub_render_strategy.md` (variant + view axes, RNG invariant, run-folder pattern).
+This master plan continues to be the canonical roadmap for Deliverable 1 (and the historical record for Deliverables 2-3). Deliverable 4 is governed by `docs/MASTER_TODO.md` (now a pointer stub → `POST_ESCRITURA_NOW.md`); sub-render protocol details live in `docs/sub_render_strategy.md` (variant + view axes, RNG invariant, run-folder pattern). The full escritura-week MASTER_TODO is archived at `docs/_archive/MASTER_TODO_escritura_week_2026-06-25.md`.
 
 ---
 

@@ -8,7 +8,18 @@ Single navigation entrypoint into the doc-mesh. Maintained additively; section o
 > **If you're looking for **what blocks Phase 1 right now**, open [`POST_ESCRITURA_NOW.md`](./POST_ESCRITURA_NOW.md).**
 > **If you want to know **what's wrong with this repo**, read [`CRITIQUE_FOR_WES.md`](./CRITIQUE_FOR_WES.md) (Wes-facing) or [`audit/CRITIQUE_V2_ADDENDUM.md`](./audit/CRITIQUE_V2_ADDENDUM.md) (dev-facing).
 >
-> Wes-facing stakeholder briefs live in [`people/`](./people/) (WES_ACTIONS, ATTORNEY_BRIEF, SONJA_QUESTIONNAIRE, 4ENTITY_BV_CASCADE, the two one-pagers, CONTACTS, SITE_VISIT_BRIEF).
+> Wes-facing stakeholder briefs live in [`people/`](./people/) (WES_ACTIONS, ATTORNEY_BRIEF, SONJA_QUESTIONNAIRE, 4ENTITY_BV_CASCADE, the two one-pagers, CONTACTS, SITE_VISIT_BRIEF, DECISIONS_LOG).
+>
+> Closed-session + historical docs live in [`_archive/`](./_archive/) (see `_archive/MANIFEST.md` for the index):
+> - `_archive/2026-06-30_session/` — 10 closed-session docs (WES_TODO family, IMPLEMENTATION_* family, STATUS_REPORT, etc.)
+> - `_archive/2026-06-30_session/patches/` — 2 patch files (already applied)
+> - `_archive/2026-06-30_session/MANIFEST.md` — explains what was superseded by what
+> - `_archive/MASTER_BRIEF_cob_house_v1_2026-06-11.md` — pre-Wes-share cob-house master brief
+> - `_archive/MASTER_TODO_escritura_week_2026-06-25.md` — the 31 KB escritura-week master-TODO
+> - `_archive/DECISIONS_LOG_escritura_week_2026-06.md` — escritura-week decision log
+> - `_archive/GAPS_ANALYSIS_2026-06-04.md` — pre-Wes-share gap analysis
+> - `_archive/IDEAS_CATALOG_PATCH_PLAN_2026-06-30.md` — patch plan (Quality-marking addressed half; rest deferred)
+> - `_archive/T_PLUS_1_DEBRIEF_2026-06-28.md`, `_archive/PR_BACK_TO_BASE_workflow_note.md`, `_archive/REPO_STRUCTURE_2026-06-30.md` — one-offs
 
 ---
 
