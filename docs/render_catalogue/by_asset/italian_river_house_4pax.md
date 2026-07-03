@@ -1,5 +1,8 @@
 # italian_river_house_4pax
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/italian_river_house_4pax.png`](../contact_sheets/italian_river_house_4pax.png) (visual)
+
+
 Total renders: **28**.
 
 ## Coverage by view

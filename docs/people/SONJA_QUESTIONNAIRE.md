@@ -2,7 +2,7 @@
 
 **Purpose:** One 1-2 hour call with Sonja answers 16 research items. Per Wes's "Sonja is canonical" rule (audio D + KEY_POINTS).
 
-**Items this unblocks (per docs/research/EXECUTION.md):** W01, W02, W03, W04, W05, W06, W07, W09, W10, W11, W12, W13, W14, W15, W16, W19
+**Items this unblocks (per docs/research/METHODS/EXECUTION.md):** W01, W02, W03, W04, W05, W06, W07, W09, W10, W11, W12, W13, W14, W15, W16, W19
 
 ## How to use this
 

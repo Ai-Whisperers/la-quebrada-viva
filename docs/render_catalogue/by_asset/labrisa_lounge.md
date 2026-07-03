@@ -1,5 +1,8 @@
 # labrisa_lounge
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/labrisa_lounge.png`](../contact_sheets/labrisa_lounge.png) (visual)
+
+
 Total renders: **27**.
 
 ## Coverage by view

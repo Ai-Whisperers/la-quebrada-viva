@@ -1,5 +1,8 @@
 # hobbit_house
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/hobbit_house.png`](../contact_sheets/hobbit_house.png) (visual)
+
+
 Total renders: **27**.
 
 ## Coverage by view

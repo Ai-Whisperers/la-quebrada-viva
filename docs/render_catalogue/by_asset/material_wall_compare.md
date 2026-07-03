@@ -1,5 +1,8 @@
 # material_wall_compare
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/material_wall_compare.png`](../contact_sheets/material_wall_compare.png) (visual)
+
+
 Total renders: **9**.
 
 ## Coverage by view

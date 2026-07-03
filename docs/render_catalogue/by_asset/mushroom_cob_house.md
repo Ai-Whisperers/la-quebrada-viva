@@ -1,5 +1,8 @@
 # mushroom_cob_house
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/mushroom_cob_house.png`](../contact_sheets/mushroom_cob_house.png) (visual)
+
+
 Total renders: **1**.
 
 ## Coverage by view

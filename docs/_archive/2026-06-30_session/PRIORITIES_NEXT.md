@@ -58,7 +58,7 @@
 
 ### W1.1 — Continue AI batch
 - Erebus dispatches the 12 remaining Sprint 1 items
-- W1.1 plan: `docs/research/SPRINT1_AI_BATCH_PLAN.md`
+- W1.1 plan: `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md`
 
 ### W1.2 — PY site visit (May-Oct 2026, 1 week)
 - Per `people/SITE_VISIT_BRIEF.md`

@@ -1,5 +1,8 @@
 # bamboo_beton_28
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_beton_28.png`](../contact_sheets/bamboo_beton_28.png) (visual)
+
+
 Total renders: **27**.
 
 ## Coverage by view

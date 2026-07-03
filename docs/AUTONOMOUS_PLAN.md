@@ -1,4 +1,6 @@
 # AUTONOMOUS_PLAN — post-78433a7 → escritura-close sprint
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the long-running autonomy roadmap). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+
 
 Ultrawork checkpoint, T-1 (2026-06-26). Escritura signs 2026-06-27 at Escribanía Peña.
 

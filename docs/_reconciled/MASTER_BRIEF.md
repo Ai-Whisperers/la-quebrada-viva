@@ -232,7 +232,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 16. Hand tools
 17. Transport, import & logistics 🚛
 
-**Ivan's NL prices doc has pricing for 13 of these categories** (cement, sand, gravel, bricks, iron, etc.) — see `docs/research/2026-06-30_construction_prices_paraguay_nl.md`. This can be **merged into the master template** to start filling in real numbers.
+**Ivan's NL prices doc has pricing for 13 of these categories** (cement, sand, gravel, bricks, iron, etc.) — see `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`. This can be **merged into the master template** to start filling in real numbers.
 
 **See:** [`MATERIALS_PRICE_TEMPLATE.md`](MATERIALS_PRICE_TEMPLATE.md) for the full 14-sheet master with Ivan's existing prices filled in where available.
 
@@ -319,7 +319,7 @@ Ivan has built a 3DGS self-host pipeline (Vast.ai + COLMAP + gsplat) + Three.js 
 | What does each idea in the catalog look like? | `docs/ideas/INDEX.md` (109 ideas, 12-section format) |
 | What are the 20 patterns from reading the catalog? | `docs/ideas/INSIGHTS.md` |
 | What 20 ideas did Erebus push into the catalog? | `docs/ideas/SUGGESTED.md` |
-| What are the construction prices in NL/Gs/USD? | `docs/research/2026-06-30_construction_prices_paraguay_nl.md` |
+| What are the construction prices in NL/Gs/USD? | `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` |
 | What did Wes say in his brainstorms? | `briefs/wes_recording_2026-06-30_{raw,dreamlist,actionlist}.md` |
 
 ---

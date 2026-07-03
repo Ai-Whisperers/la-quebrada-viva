@@ -1,4 +1,6 @@
 # Paraguay Context — Canonical Root
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (Paraguay-specific context (cultural, climate, market)). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+
 
 **Purpose.** Single entry point for every Paraguay-specific concern across the project:
 site/climate/hydrology (where the building sits and what the weather does), market/community

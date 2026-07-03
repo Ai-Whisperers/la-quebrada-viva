@@ -1,6 +1,11 @@
 {
   "generated_at": "2026-06-26T20:24:53.209548Z",
   "total_renders": 926,
+  "_see_also": {
+    "human_index": "docs/render_catalogue/INDEX.md",
+    "per_asset_markdown": "docs/render_catalogue/by_asset/<asset>.md",
+    "contact_sheets": "docs/render_catalogue/contact_sheets/<asset>.png"
+  },
   "by_source": {
     "canonical_final": 18,
     "monday": 5,

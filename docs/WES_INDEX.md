@@ -100,7 +100,7 @@ Grouped by who's blocked waiting. **Read the bold ones first.**
 1. **Werknaam**: "Riverstone Valley" of een van de Spaanse alternatieven
    (Villa del Cielo, Cielo Azul, Lluvia Dorada)? — URL/brand/voice
 2. **5-of-15 materials onderwerpen**: welke 5 eerst? (zie
-   `docs/research/5_ONDERWERPEN_MATERIALS.md`)
+   `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md`)
 3. **Hovenier contact**: heb je de naam van de Nederlandse forester in
    Kuikopee, of moet ik die zoeken?
 4. **Toyota Tundra vs Presio** voor de bouwfase — finaliseren of

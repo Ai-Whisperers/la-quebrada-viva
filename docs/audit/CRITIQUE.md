@@ -315,7 +315,7 @@ If Ivan wants to "know where things are" in 3 hours, here's the order:
 6. `docs/audit/RESTRUCTURE_PLAN.md` (next file) (15 min) — the actual plan
 7. `STATUS.md` (30 min, if needed) — escritura state historical record
 8. `docs/ideas/INDEX.md` (15 min) — 109-idea catalog structure
-9. `docs/research/2026-06-30_construction_prices_paraguay_nl.md` (20 min) — material prices
+9. `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` (20 min) — material prices
 
 **Total: ~3 hours.**
 

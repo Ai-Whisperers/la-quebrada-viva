@@ -1,5 +1,8 @@
 # valley_mist
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/valley_mist.png`](../contact_sheets/valley_mist.png) (visual)
+
+
 Total renders: **12**.
 
 ## Coverage by view

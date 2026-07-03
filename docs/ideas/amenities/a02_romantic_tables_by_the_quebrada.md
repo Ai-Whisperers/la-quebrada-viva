@@ -22,7 +22,7 @@ site-feature amenity render
 
 > _"[Action list 2026-06-30]: d nodig) | | W5 | Spaans leren (Spaans-les plannen) | Lopend | ⚪ Persoonlijk | | W6 | In gesprek met Ivan + Kiki over AI agency | Week 2-3 | ⚪ Sales | | W7 | Contract maken voor nieuwe medewerker (overname van oude) | Week 3-4 | 🟡 Via Sonja | | W8 | Bij de bank eruit halen (lening? investeerders-uitkering?) | Week 2-3 | ⚪ Persoonlijk | --- ## §2 — WESLEY + AI (korte termijn, AI d"_
 
-> _"[Action list 2026-06-30]: oen, niet wachten op Wesley) | # | Taak | Wanneer | Status | |---|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeli"_
+> _"[Action list 2026-06-30]: oen, niet wachten op Wesley) | # | Taak | Wanneer | Status | |---|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeli"_
 
 ## Why this matters
 

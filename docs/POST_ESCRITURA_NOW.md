@@ -36,7 +36,7 @@
 | # | Item | Why | Owner | Time | Status | Path |
 |---|---|---|---|---|---|---|
 | **SG-W1** | Werknaam decision (Riverstone Valley vs 4 Spanish options) | URL, brand voice, marketing, all collateral | W | 15 min | 🔴 | HOUSING_PARK_CONCEPT §8 #26 |
-| **SG-W2** | 5-of-15 materials topics pick | Unblocks Sprint 1 research | W | 15 min | 🔴 | `docs/research/5_ONDERWERPEN_MATERIALS.md` |
+| **SG-W2** | 5-of-15 materials topics pick | Unblocks Sprint 1 research | W | 15 min | 🔴 | `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md` |
 | **SG-W3** | Hovenier contact in Kuikopee — does Wes have a name? | Unblocks R39 (Wes's first explicit AI delegation) | W | 5 min | 🔴 | HOUSING_PARK_CONCEPT §8 #28 |
 | **SG-W4** | Tundra vs Presio final call | Operational decision for Fase 1 | W | 30 min | 🔴 | HOUSING_PARK_CONCEPT §8 #29 |
 | **SG-W5** | Railroad Ipoh-Karai — research or has local contact | Phase 2+ tailwind verification | W | 5 min | 🔴 | HOUSING_PARK_CONCEPT §8 #30 |

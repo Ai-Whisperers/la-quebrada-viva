@@ -76,7 +76,7 @@
 ## What I (Erebus) can do in parallel — while Wes does the 5 things
 
 ### W1.1 — AI subagent batch (30 items)
-**Plan:** `docs/research/SPRINT1_AI_BATCH_PLAN.md`
+**Plan:** `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md`
 **Time:** 1-2 weeks with 5 parallel sub-batches
 **Status:** 12 done in this initial pass (Materials, Infrastructure, Finance, Auto+market+branding, Water+food)
 **Remaining:** 18 items to do

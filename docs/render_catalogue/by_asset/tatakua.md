@@ -1,5 +1,8 @@
 # tatakua
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/tatakua.png`](../contact_sheets/tatakua.png) (visual)
+
+
 Total renders: **12**.
 
 ## Coverage by view

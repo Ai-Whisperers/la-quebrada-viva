@@ -1,5 +1,8 @@
 # terrain_house_scale
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/terrain_house_scale.png`](../contact_sheets/terrain_house_scale.png) (visual)
+
+
 Total renders: **10**.
 
 ## Coverage by view

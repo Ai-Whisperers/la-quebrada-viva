@@ -50,9 +50,9 @@
 - `docs/people/README.md` (directory index)
 
 ### Tier 2 — Research tooling
-- `docs/research/EXECUTION.md` (research tracker)
-- `docs/research/SPRINT1_AI_BATCH_PLAN.md` (30-item plan)
-- `docs/research/5_ONDERWERPEN_MATERIALS.md` (5 sub-batch)
+- `docs/research/METHODS/EXECUTION.md` (research tracker)
+- `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md` (30-item plan)
+- `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md` (5 sub-batch)
 - 107 RESULT files in `docs/research/RESULTS/`
 - 2 patch files in `docs/patches/`
 

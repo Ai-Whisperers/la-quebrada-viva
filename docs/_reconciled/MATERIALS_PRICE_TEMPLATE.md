@@ -67,7 +67,7 @@
 | Rebar 16mm | kg | ~9,500 | $1.30 | market |
 | Rebar 25mm | kg | ~10,500 | $1.44 | market |
 
-**Source:** Ivan's NL prices doc — `docs/research/2026-06-30_construction_prices_paraguay_nl.md` (full 13-section doc, 13 verifiable sources)
+**Source:** Ivan's NL prices doc — `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` (full 13-section doc, 13 verifiable sources)
 
 ### Category 2 — Roofs & structures (🔴) — NO DATA
 
@@ -126,7 +126,7 @@ The template exists with these sheets (all with empty prices):
 
 ## Ivan's NL Prices Doc — Key Data Already Captured
 
-The full doc is at `docs/research/2026-06-30_construction_prices_paraguay_nl.md` (Dutch, 28 KB, 13 sections, 13 sources).
+The full doc is at `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` (Dutch, 28 KB, 13 sections, 13 sources).
 
 **Key data points (LQV cob house example):**
 - Total cost: €18,040 USD = ~$18,040 USD (which Wes is rendering as €18-20k for similar in his own 10-type plan)
@@ -163,7 +163,7 @@ The 6 styles are likely:
 - **Wes's brief:** `hooft lijstr van prijzen uitzoeken.docx` (17-category priority list)
 - **Wes's template:** `Master_Materialenlijst_30_Huisjes_Paraguay.xlsx` (14 sheets, empty prices)
 - **Wes's PDF:** `Materialen_Huisjes_Paraguay.pdf` (same as Excel template)
-- **Ivan's data:** `docs/research/2026-06-30_construction_prices_paraguay_nl.md` (Dutch, 13 sections, partial coverage)
+- **Ivan's data:** `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` (Dutch, 13 sections, partial coverage)
 - **Wes's brief NL:** `hooft lijstr van prijzen uitzoeken.docx` (master list of what to source)
 
 **Tracked in:** LQV catalog `docs/ideas/construction/` (15 ideas, 12-section format)

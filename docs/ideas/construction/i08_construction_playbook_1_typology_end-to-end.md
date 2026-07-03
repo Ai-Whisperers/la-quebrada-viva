@@ -16,7 +16,7 @@ A 30-page PDF that documents how to build one Type A house end-to-end: site prep
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: -|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder uitbreiden (escobar_dieren"_
+> _"[Action list 2026-06-30]: -|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder uitbreiden (escobar_dieren"_
 
 > _"[Action list 2026-06-30]: ocs/research/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Pe"_
 

@@ -199,7 +199,7 @@
 1. **`docs/WES_5_THIS_WEEK.md`** — Wes's immediate action list (5 things, 1.5-2 hr)
 2. **`docs/_reconciled/MASTER_BRIEF.md`** — single-page project overview
 3. **`docs/_reconciled/OPEN_DECISIONS.md`** — 15 pending decisions
-4. **`docs/research/EXECUTION.md`** — research tracker (65/128 items answered)
+4. **`docs/research/METHODS/EXECUTION.md`** — research tracker (65/128 items answered)
 5. **`docs/PRIORITIES_NEXT.md`** — tomorrow morning's action list (Wes's 5 things)
 
 ## How to navigate the canonical doc tree

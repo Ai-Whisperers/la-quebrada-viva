@@ -1,5 +1,8 @@
 # bamboo_outdoor_shower
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_outdoor_shower.png`](../contact_sheets/bamboo_outdoor_shower.png) (visual)
+
+
 Total renders: **9**.
 
 ## Coverage by view

@@ -18,7 +18,7 @@
 
 > _"[Action list 2026-06-30]: aak | AI-actie | Resultaat | |---|---|---|---| | WA1 | **Bamboe honing-kleur onderzoek** — kopen / groeien / importeren / termieten-behandeling | Web-research + leveranciers-vergelijking (Chaa Creek, San Bernardino Mennonieten) | Rapport + 3 offertes | | WA2 | **Bamboe-leveranciers in kaart brengen** | Database van Paraguayaanse bamboe-boeren | Lijst met contact | | WA3 | **Inboedel-onderzoek** — bedden,"_
 
-> _"[Action list 2026-06-30]: nneer | Status | |---|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder ui"_
+> _"[Action list 2026-06-30]: nneer | Status | |---|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder ui"_
 
 > _"[Action list 2026-06-30]: sley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — LQV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Week 3 | ⚪ | --- ## §4 — THIJS + WESLEY (eerste maanden — operationeel op de site) | # | Ta"_
 

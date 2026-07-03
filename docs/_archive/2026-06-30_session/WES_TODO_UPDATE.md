@@ -92,7 +92,7 @@
 
 ### W0.8 — Materials 5-onderwerpen [I] ✅ DONE
 
-- [x] **Erebus: built the materials priority list** at `docs/research/5_ONDERWERPEN_MATERIALS.md`
+- [x] **Erebus: built the materials priority list** at `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md`
 - [x] **Erebus: 8 of 15 materials topics researched** (M04, M05, M08, M22, F11, F12, F09, L05)
 - [ ] **Wes: pick 5 from the 6 remaining NEXT items** (M09, M10, M11, M21, M23, M24)
 - [ ] Erebus: dispatch those 5 as Sprint 1 W1.1 batch
@@ -121,7 +121,7 @@
 
 ### W1.1 — AI subagent batch (30 items) ⏳ READY TO DISPATCH
 
-- [x] **Erebus: built the dispatch plan** at `docs/research/SPRINT1_AI_BATCH_PLAN.md`
+- [x] **Erebus: built the dispatch plan** at `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md`
 - [ ] **Erebus: dispatch sub-batches 1-3 (Materials, Infrastructure, Finance) in parallel**
 - [ ] **Erebus: dispatch sub-batches 4-5 (Auto+market+branding, Water+food)**
 
@@ -143,7 +143,7 @@
 
 ## Backlog (later, never)
 
-**P2-P3 items (Sprint 2-3, months 2-6):** see `docs/research/SPRINT1_AI_BATCH_PLAN.md` for what's NOT in W1.1.
+**P2-P3 items (Sprint 2-3, months 2-6):** see `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md` for what's NOT in W1.1.
 
 **Long-term:** all items in research catalogue with P3+ status + the 6 items not in any todo (per `docs/audit/CRITIQUE.md` §11).
 

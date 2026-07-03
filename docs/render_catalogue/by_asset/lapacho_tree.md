@@ -1,5 +1,8 @@
 # lapacho_tree
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/lapacho_tree.png`](../contact_sheets/lapacho_tree.png) (visual)
+
+
 Total renders: **18**.
 
 ## Coverage by view

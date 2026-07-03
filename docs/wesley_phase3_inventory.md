@@ -1,4 +1,6 @@
 # Wesley phase-3 inventory — unmodeled-design backlog
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (Wes Phase 3 inventory (unmodeled-design backlog)). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+
 
 > Diff: `docs/HOUSING_PARK_CONCEPT.md` §5 catalogue × `docs/EUROPEAN_TOURISM_SPEC.md`
 > lodging refinement vs. what is actually shipped on `main` (frozen at `85e86aa`).

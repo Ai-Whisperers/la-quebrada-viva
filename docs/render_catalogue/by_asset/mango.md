@@ -1,5 +1,8 @@
 # mango
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/mango.png`](../contact_sheets/mango.png) (visual)
+
+
 Total renders: **18**.
 
 ## Coverage by view

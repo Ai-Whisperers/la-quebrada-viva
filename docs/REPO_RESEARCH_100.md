@@ -1,4 +1,6 @@
 # Open-source repo research — 169 candidates across 6 domains
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the 169-repo evaluation round). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+
 
 > Written 2026-06-25 (T-2). Research output, not a plan. Every adoption below
 > is **deferred until after the 27-Jun escritura signing** and the

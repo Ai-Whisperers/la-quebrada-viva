@@ -1,5 +1,8 @@
 # pindo_palm
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/pindo_palm.png`](../contact_sheets/pindo_palm.png) (visual)
+
+
 Total renders: **12**.
 
 ## Coverage by view

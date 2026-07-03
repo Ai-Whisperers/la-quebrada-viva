@@ -1,5 +1,8 @@
 # flora_anthurium
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/flora_anthurium.png`](../contact_sheets/flora_anthurium.png) (visual)
+
+
 Total renders: **9**.
 
 ## Coverage by view

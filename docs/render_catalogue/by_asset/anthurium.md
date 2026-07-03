@@ -1,5 +1,8 @@
 # anthurium
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/anthurium.png`](../contact_sheets/anthurium.png) (visual)
+
+
 Total renders: **18**.
 
 ## Coverage by view

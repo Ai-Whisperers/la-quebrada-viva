@@ -1,5 +1,8 @@
 # boulder_cluster
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/boulder_cluster.png`](../contact_sheets/boulder_cluster.png) (visual)
+
+
 Total renders: **9**.
 
 ## Coverage by view

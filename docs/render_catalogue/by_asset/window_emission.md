@@ -1,5 +1,8 @@
 # window_emission
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/window_emission.png`](../contact_sheets/window_emission.png) (visual)
+
+
 Total renders: **12**.
 
 ## Coverage by view

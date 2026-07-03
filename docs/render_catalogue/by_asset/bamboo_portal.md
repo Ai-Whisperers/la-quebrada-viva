@@ -1,5 +1,8 @@
 # bamboo_portal
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_portal.png`](../contact_sheets/bamboo_portal.png) (visual)
+
+
 Total renders: **9**.
 
 ## Coverage by view

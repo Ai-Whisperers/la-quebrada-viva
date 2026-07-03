@@ -1,5 +1,8 @@
 # cob_walls
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/cob_walls.png`](../contact_sheets/cob_walls.png) (visual)
+
+
 Total renders: **12**.
 
 ## Coverage by view

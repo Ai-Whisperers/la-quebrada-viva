@@ -31,7 +31,7 @@
 
 **Done in this pass:**
 - ✅ W0.6 AI batch: 8 RESEARCH_CATALOGUE items answered (M04, M05, M08, M22, F11, F12, F09, L05) — all in `docs/research/RESULTS/`
-- ✅ W0.8 Materials list: `docs/research/5_ONDERWERPEN_MATERIALS.md` built
+- ✅ W0.8 Materials list: `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md` built
 - ✅ W0.9a HOUSING_PARK_CONCEPT.md patched with 9 audio deltas
 - ✅ W0.9b RESEARCH_GAPS.md updated with R39-R50 (12 new items)
 - ✅ W0.9c "16e → 60e" transcription error fixed in 6 audio final files + SYNTHESIS.md
@@ -39,7 +39,7 @@
 - ✅ Attorney brief built: `docs/people/ATTORNEY_BRIEF.md` (12 questions, 1 call)
 - ✅ Wes actions checklist: `docs/people/WES_ACTIONS.md` (5 things, 4-5 hours)
 - ✅ Insurance + fire research bundle: `docs/research/RESULTS/insurance_fire_bundle.md`
-- ✅ Research execution tracker: `docs/research/EXECUTION.md`
+- ✅ Research execution tracker: `docs/research/METHODS/EXECUTION.md`
 - ✅ New: `docs/research/RESULTS/` directory with 9 result files
 - ✅ New: `docs/people/` directory (3 human-side briefing files)
 - ✅ New: `docs/patches/` directory (HOUSING_PARK_CONCEPT + RESEARCH_GAPS patches)

@@ -1,5 +1,8 @@
 # bamboo_beton_family_curved
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_beton_family_curved.png`](../contact_sheets/bamboo_beton_family_curved.png) (visual)
+
+
 Total renders: **24**.
 
 ## Coverage by view

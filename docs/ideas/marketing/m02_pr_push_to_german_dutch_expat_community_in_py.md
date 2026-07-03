@@ -22,7 +22,7 @@ media contact list + press release template
 
 > _"[Action list 2026-06-30]: ctuur advies** — meerdere bv's NL vs PY, wanneer verplicht | Onderzoek belastingadvies NL + PY | Memo + contacten | | WA6 | **VR/3D interactief prototype** — site-map met verplaatsbare huizen | Bouwen op lqv-walkthrough.pages.dev | Live demo | | WA7 | **Marketing-plan voor 1e-huur-huizen** (Booking.com + Airbnb + niche) | Onderzoek + template listings | Template + strategy | | WA8 | **Google O"_
 
-> _"[Action list 2026-06-30]: Wesley) | # | Taak | Wanneer | Status | |---|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 |"_
+> _"[Action list 2026-06-30]: Wesley) | # | Taak | Wanneer | Status | |---|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 |"_
 
 ## Why this matters
 

@@ -1,5 +1,8 @@
 # bamboo_river_house
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/bamboo_river_house.png`](../contact_sheets/bamboo_river_house.png) (visual)
+
+
 Total renders: **41**.
 
 ## Coverage by view

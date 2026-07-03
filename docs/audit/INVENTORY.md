@@ -326,7 +326,7 @@ After restructure, the reader should hit these in order:
 4. **`docs/_reconciled/OPEN_DECISIONS.md`** (10 KB) — what to do next
 5. **`docs/ideas/INDEX.md`** (22 KB) — 109-idea catalog
 6. **`STATUS.md`** (32 KB, only if historical/frozen needed) — escritura state
-7. **`docs/research/2026-06-30_construction_prices_paraguay_nl.md`** (28 KB) — material prices
+7. **`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`** (28 KB) — material prices
 
 **Total to read for cold-start:** ~150 KB = 30-45 minutes
 

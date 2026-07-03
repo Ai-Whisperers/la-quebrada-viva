@@ -1,4 +1,6 @@
 # Closing-day prep — escritura pública 27 Jun 2026
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the escritura-week T-7/T-5/T-2/signing-day checklist (historical, escritura signed 2026-06-27)). For post-escritura state, see [`STATUS.md`](../STATUS.md), [`WES_INDEX.md`](../WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md).
+
 
 > Printable / actionable checklist for the escritura signing. Companion to [`contract_summary.md`](./contract_summary.md) (the legal facts), [`wesley_brief_onepager.md`](./wesley_brief_onepager.md) (the one-page brief), [`MORNING_RUNBOOK_2026-06-27.md`](./MORNING_RUNBOOK_2026-06-27.md) (signing-day laptop runbook), [`CONTINGENCIES.md`](./CONTINGENCIES.md) (pre-decided risk playbook), [`ROLLBACK_RUNBOOK.md`](./ROLLBACK_RUNBOOK.md) (errata / postponement protocol), and [`POSTMORTEM_TEMPLATE.md`](./POSTMORTEM_TEMPLATE.md) (T+1 debrief skeleton). All references are to the boleto privado of 2026-04-28.
 >

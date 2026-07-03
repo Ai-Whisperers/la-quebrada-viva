@@ -165,7 +165,7 @@ Not yet decided. See OPEN_DECISIONS.md D8.
 
 **Status:** ✅ Plan built. 30 items in 5 sub-batches. Method routing per item. Ready to dispatch.
 
-**File:** `docs/research/SPRINT1_AI_BATCH_PLAN.md`
+**File:** `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md`
 
 **Time estimate:** 1-2 weeks with 5 parallel sub-batches.
 

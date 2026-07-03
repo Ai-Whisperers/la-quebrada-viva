@@ -81,7 +81,7 @@ This document tracks items that emerged **during the execution** of the W0.x pla
 
 **What:** Original WES_TODO had W1.1 = "Dispatch Sprint 1 AI batch (30 items)". That's a big task. I broke it down into 5 sub-batches by domain (Materials, Infrastructure, Finance, Auto+market+branding, Water+food).
 
-**Status:** Built `docs/research/SPRINT1_AI_BATCH_PLAN.md` with all 30 items + methods + acceptance + dispatch order. This is a roadmap for whoever dispatches the W1.1 batch.
+**Status:** Built `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md` with all 30 items + methods + acceptance + dispatch order. This is a roadmap for whoever dispatches the W1.1 batch.
 
 ### G7 — W1.2 site visit prep brief was missing
 
@@ -162,7 +162,7 @@ This document tracks items that emerged **during the execution** of the W0.x pla
 
 If you (or Erebus on a future turn) picks up the implementation:
 
-1. **Start with W1.1 AI batch** — that's 30 items in 2 weeks with 5 parallel subagents. The plan is in `docs/research/SPRINT1_AI_BATCH_PLAN.md`.
+1. **Start with W1.1 AI batch** — that's 30 items in 2 weeks with 5 parallel subagents. The plan is in `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md`.
 
 2. **Build the `/docs/people/` directory into a contact database** — currently has 4 briefing files (attorney, Sonja, Wes actions, site visit). Could grow to track every named person + their role + when last contacted.
 

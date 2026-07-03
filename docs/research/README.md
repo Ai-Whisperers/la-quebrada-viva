@@ -3,6 +3,14 @@
 > Master synthesis of the 2026-06-10 research sweep. 100+ repos catalogued across 5 parallel research agents. Findings ordered by what actually moves the project forward.
 >
 > Each sub-report lives in its own file in this directory and is referenced inline. This doc is the navigation + the cross-cutting insights.
+>
+> **As of 2026-07-03, `docs/research/` is organized into 4 sub-categories:**
+> - [`METHODS/`](./METHODS/) — how to do research (routing tables, sprint plans)
+> - [`SOURCES/`](./SOURCES/) — what to research (catalogs of repos, data sources, vendor targets)
+> - [`TOOLING/`](./TOOLING/) — the actual tooling (Blender+GIS, asset pipelines, materials)
+> - [`RESULTS/`](./RESULTS/) — the 107+ answered research results
+>
+> Plus 3 dated research files kept at this top level: `2026-06-10_vegetation_3d_research.md`, `GEDI_L2A_RESEARCH.md`, and this synthesis README.
 
 ## The single biggest finding
 

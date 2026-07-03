@@ -1,5 +1,8 @@
 # eco_pool
 
+> **See also:** [`../INDEX.md`](../INDEX.md) (catalogue index) · [`../catalogue.json`](../catalogue.json) (tooling) · [`../contact_sheets/eco_pool.png`](../contact_sheets/eco_pool.png) (visual)
+
+
 Total renders: **24**.
 
 ## Coverage by view

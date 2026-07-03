@@ -27,7 +27,7 @@ infra.
   with ≥80 new verified-CC0 Poly Haven slugs. Build sibling
   `scripts/download_ambientcg_assets.py` for ≥40 ambientCG IDs. Run both. Write
   per-asset stubs to `LICENSES/<id>.txt`. Persist research notes to
-  `docs/research/ASSET_RESEARCH_2026-06-13.md`. Target ≥200 unique IDs on disk.
+  `docs/research/TOOLING/ASSET_RESEARCH_2026-06-13.md`. Target ≥200 unique IDs on disk.
 - **W1c — autonomous-worker / #75** — Sub-render-first flora photoreal drivers:
   `lqv/subscene/flora_jacaranda.py`, `flora_anthurium.py`, `flora_pachira.py`
   following `lqv/subscene/hobbit_house.py` pattern (clip_end=20000, A/B/C variants,

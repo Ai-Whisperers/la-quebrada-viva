@@ -30,9 +30,9 @@ This project supports **Wesley van de Camp** in visualizing a real 62-ha propert
 - `docs/EUROPEAN_TOURISM_SPEC.md` — **Refined direction (2026-06-10, latest)**: houses-first vacation rentals for European / 1st-world travelers, restaurant later (European + Dutch, sourced via San Bernardino + German community). Style blend: resort + events + eco-natural retreat. 26 open questions.
 - `docs/RESEARCH_GAPS.md` — **Living tracker of what we still need to find out**. 34 base items + R39-R50 audio-synthesized (46 total), with status (🔴 open / 🟡 in-progress / 🟢 done / ⚫ blocked), owner (W / I / A / H / L), source, effort.
 - `docs/SESSION_LOG.md` — Narrative log of the 2026-06-10 mega-session. Read after a break to re-orient.
-- `docs/research/README.md` — Research synthesis 2026-06-10 (5 sub-reports, ~80 repos catalogued). 10 design rules, 5 site-selection criteria, 5 case studies, Tier-1/2/3 GIS layers.
+- `docs/research/README.md` — Research synthesis 2026-06-10 (5 sub-reports, ~80 repos catalogued). 10 design rules, 5 site-selection criteria, 5 case studies, Tier-1/2/3 GIS layers. **The single best entry-point for the research layer.**
 - `docs/site_data/DATA_INVENTORY.md` — Clear-language reference of all the data we got from NASA + OpenTopography (4 DEMs, GEDI L2A, derived analyses).
-- `docs/research/REPO_CATALOG.md` — 141 GitHub repos across 6 domains, each with verdict (adopt / reference / skip / dead).
+- `docs/research/SOURCES/REPO_CATALOG.md` — 141 GitHub repos across 6 domains, each with verdict (adopt / reference / skip / dead).
 - `docs/AI_WHISPERERS_STYLE.md` — Ivan's communication & execution rules. Read first by every AI Whisperers session.
 - `docs/_reconciled/MASTER_BRIEF.md` §16-19 — Vacation-rental synthesis: 5 site-selection criteria, 5 case studies, 10 eco-retreat design rules, Tier-1/2/3 GIS layers.
 - `docs/contract_summary.md` — quick-reference for the 2026-04-28 boleto privado.

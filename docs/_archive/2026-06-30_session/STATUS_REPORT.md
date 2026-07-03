@@ -50,9 +50,9 @@
 - `docs/WES_5_THIS_WEEK.md` — 1.5-hour action plan
 
 ### Research tooling (4)
-- `docs/research/EXECUTION.md` — research tracker
-- `docs/research/SPRINT1_AI_BATCH_PLAN.md` — 30-item plan
-- `docs/research/5_ONDERWERPEN_MATERIALS.md` — 5 sub-batch
+- `docs/research/METHODS/EXECUTION.md` — research tracker
+- `docs/research/METHODS/SPRINT1_AI_BATCH_PLAN.md` — 30-item plan
+- `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md` — 5 sub-batch
 - `docs/patches/HOUSING_PARK_CONCEPT_audio_deltas.md` — 9 deltas
 - `docs/patches/RESEARCH_GAPS_R39-R50_audio_deltas.md` — 12 items
 

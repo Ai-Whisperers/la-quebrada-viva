@@ -190,7 +190,7 @@ The 10-type plan costs (€856-€1,517/m²) are **higher** than Ivan's cob benc
 - Furniture (sometimes included in the cost/m² figure)
 - Site infrastructure allocation (roads, water, electric)
 
-**See:** `docs/research/2026-06-30_construction_prices_paraguay_nl.md` for the full NL pricing reference.
+**See:** `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` for the full NL pricing reference.
 
 ---
 
