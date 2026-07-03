@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** VR showroom mode in 3DGS viewer
 

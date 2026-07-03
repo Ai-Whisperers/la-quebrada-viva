@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** purchase + new worker contract
 

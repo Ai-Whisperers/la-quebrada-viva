@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** Documented maintenance schedule: weekly, monthly, quarterly, annual tasks per house typology. Bamboo treatment reapplied every 6-12 months. Roof inspected after each rainy season. Septic serviced annu
 

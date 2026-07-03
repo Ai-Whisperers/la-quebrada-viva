@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `research_needed`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** $200 satellite vs $1,200 LiDAR drone comparison + provider list
 

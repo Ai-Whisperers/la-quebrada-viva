@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus
 **Status:** `shipped_in_brief`
+**Quality:** `○ auto-fill`
 **Source:** MASTER_BRIEF.md
 **Deliverable:** already in design brief
 

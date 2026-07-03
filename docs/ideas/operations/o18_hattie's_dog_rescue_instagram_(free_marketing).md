@@ -4,6 +4,7 @@
 **Priority:** P3
 **Owner:** Wesley+Hattie
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** Instagram page (Poncho+Phoebe), viral potential
 

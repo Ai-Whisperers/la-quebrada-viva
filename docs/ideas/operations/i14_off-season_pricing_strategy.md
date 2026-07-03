@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** PY has wet (Nov-Mar) and dry (May-Oct) seasons. European traveler demand has its own seasonality. Map both, then define 3 pricing tiers: peak / shoulder / off.
 

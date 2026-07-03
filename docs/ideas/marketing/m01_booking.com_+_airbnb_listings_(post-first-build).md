@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** listings live + first bookings
 

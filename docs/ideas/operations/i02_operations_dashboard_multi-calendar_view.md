@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A single calendar showing all of Wes's units: typologies, worker housing, events, weddings, maintenance windows. Built for Wes to plan, not for guests.
 

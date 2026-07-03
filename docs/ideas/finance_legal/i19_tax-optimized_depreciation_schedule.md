@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Wesley+accountant
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A formal asset depreciation schedule across the 4 BVs. Maximizes tax shields for the first 5-7 years. PY + NL tax rules apply differently to real estate, equipment, and intangible assets.
 

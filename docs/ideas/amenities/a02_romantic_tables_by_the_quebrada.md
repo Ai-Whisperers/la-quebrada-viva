@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Erebus+Wesley
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** site-feature amenity render
 

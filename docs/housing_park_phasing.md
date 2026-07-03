@@ -1,5 +1,7 @@
 # Housing Park Phasing — 5-Year Build-Out of the 62-ha Property
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. Sequences the 8 typologies + restaurant + amenities on Wesley's 62 ha, from escritura (2026-06-27) through year-5 stabilisation (2031). Couples to `lqv/typologies/__init__.py`, `lqv/restaurant/*`, `lqv/amenities/*`.
 
 The goal is to spread capital and labour so each phase generates revenue or de-risks the next, and so the property never looks like a half-built construction zone.

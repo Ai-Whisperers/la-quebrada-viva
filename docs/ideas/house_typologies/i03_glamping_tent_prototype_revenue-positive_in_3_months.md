@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus+Wesley
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A safari tent on a raised wooden deck, 25-40 m2, real bed, private bathroom with bucket-shower or compost toilet. Phase 1 revenue generator that's cheaper and faster than Type A cob.
 

@@ -1,7 +1,9 @@
 # STATUS — La Quebrada Viva + Escobar Housing Park
 
-> Canonical state document. Last updated 2026-06-30 (post-escritura audio synthesis).
+> Canonical state document. Last updated 2026-07-03 (post-restructure pass).
 > The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
+>
+> **2026-07-03 update (restructure pass):** Repo reorganized. 264 MB pre-Wes snapshot gitignored. MapBiomas compressed from 83 → 19 files (40 MB saved). Property_map v1/v2 consolidated. 109 idea files quality-marked (63 ✓ reviewed, 46 ○ auto-fill). New top-level nav: `docs/WES_INDEX.md` (one-page for Wes), `docs/POST_ESCRITURA_NOW.md` (5 hard gates). README rewired with Wes-track cold-start. See `docs/audit/RESTRUCTURE_PLAN.md` + `docs/CRITIQUE_FOR_WES.md`. Net repo: 696 MB → ~390 MB tracked.
 >
 > **2026-06-30 update (post-escritura audio synthesis):** Wes recorded 5 audios
 > (3h 27m, ~28k words). Synthesis in `docs/audios/2026-06-30-wes-post-escritura/final/`.
@@ -290,4 +292,4 @@ Defects discovered or carried forward against the 18/18 finals shipped at commit
 
 ---
 
-*Maintained by Ivan / AI Whisperers. Last updated 2026-06-10 (end of session).*
+*Maintained by Ivan / AI Whisperers. Last updated 2026-07-03 (post-restructure pass).*

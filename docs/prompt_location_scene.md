@@ -1,4 +1,6 @@
 # Blender Render Prompt — Location Scene
+
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
 # "La Quebrada Viva" — Escobar District, Paraguarí, Paraguay
 # No house. The land itself. The world the house will inhabit.
 # Updated v2 — confirmed location + full stream analysis

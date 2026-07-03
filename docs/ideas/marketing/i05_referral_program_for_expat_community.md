@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus+Wesley
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** 10% commission to any expat who refers a booking that converts. Word-of-mouth is the dominant channel for the Awasi / San Bernardino / Mennonite audience Wes is targeting.
 

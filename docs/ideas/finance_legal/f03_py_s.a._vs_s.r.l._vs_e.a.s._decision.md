@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+accountant
 **Status:** `research_needed`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** entity-type comparison table
 

@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley
 **Status:** `confirmed`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** VISION.md positioning statement
 

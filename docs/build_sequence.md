@@ -1,5 +1,7 @@
 # Build Sequence — La Quebrada Viva House
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. Authoritative real-world build order for the cob/bottle house. Designed so a small site team (2 cob builders, 1 carpenter, 2 helpers) can execute it in 9–11 months, working only the dry season.
 
 This is not the *render* build sequence — that lives in `build_scene.py`. This is the physical construction sequence on site, so Wesley can plan budget, labor, and material delivery.

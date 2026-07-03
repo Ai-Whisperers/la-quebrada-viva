@@ -4,6 +4,7 @@
 **Priority:** P3
 **Owner:** Erebus+Wesley
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** EUROPEAN_TOURISM_SPEC.md
 **Deliverable:** restaurant_indoor + kitchen render
 

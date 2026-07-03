@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** San Bernardino has a long tradition of German-Paraguayan builders who specialize in timber + cob. Partner with one for knowledge transfer + first build.
 

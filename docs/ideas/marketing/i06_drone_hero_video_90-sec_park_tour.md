@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A 90-second drone flyover of the 62-ha site, edited to music, posted on YouTube + Instagram + embedded in lqv-walkthrough.pages.dev.
 

@@ -1,5 +1,7 @@
 # External assets catalog — La Quebrada Viva
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 Phase 7.5 deliverable. Ranked shortlist of downloadable 3D models, PBR textures, and HDRIs to **replace or supplement** procedural code in `lqv/`. Goal: replace the visually weakest procedural species/props with high-fidelity downloads where free, license-clean assets exist; keep procedural code for the things we can't source.
 
 Authoritative for Phase 8–10 asset integration. Pair with `docs/master_plan.md`.

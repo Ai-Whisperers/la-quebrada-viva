@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Thijs
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** GPS-located spot
 

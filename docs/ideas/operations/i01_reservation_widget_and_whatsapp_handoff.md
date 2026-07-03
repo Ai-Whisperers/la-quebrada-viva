@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that captures guest name, dates, house preference, and hands off to Wes via WhatsApp. Avoid Booking.com 15% commission for the fi
 

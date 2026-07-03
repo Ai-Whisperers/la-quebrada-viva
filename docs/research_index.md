@@ -1,5 +1,7 @@
 # Research Index — Meta-Pointer to Every Research Doc in the Project
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. The single entry point that links every research document in `docs/` so that a newcomer (Wesley, Thijs, a future Claude session, a new collaborator) can navigate without grepping the directory.
 
 Use this file as the **starting point** when joining the project.

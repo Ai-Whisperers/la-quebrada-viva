@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Wesley
 **Status:** `decided`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** site plan overlay
 

@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus
 **Status:** `research_needed`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** fire frequency data + firebreak plan if needed
 

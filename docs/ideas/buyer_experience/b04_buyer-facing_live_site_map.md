@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus
 **Status:** `shipped`
+**Quality:** `✓ reviewed`
 **Source:** prior session
 **Deliverable:** https://lqv-walkthrough.pages.dev (12 layers, 3DGS viewer)
 

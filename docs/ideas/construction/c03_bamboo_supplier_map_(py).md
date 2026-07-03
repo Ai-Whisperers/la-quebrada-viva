@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus
 **Status:** `research_needed`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** supplier database + contact info
 

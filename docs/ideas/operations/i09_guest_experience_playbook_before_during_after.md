@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A short doc that defines the guest experience: pre-arrival email, arrival ritual, daily touchpoints, check-out, follow-up. The service design behind the houses.
 

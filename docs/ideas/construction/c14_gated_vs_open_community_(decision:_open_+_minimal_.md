@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley
 **Status:** `decided`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** DECISION: open + gate + camera, not full gated
 

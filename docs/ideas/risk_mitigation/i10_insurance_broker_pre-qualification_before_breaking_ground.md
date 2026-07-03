@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+broker
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** Before any structure goes up, get 3 insurance broker quotes confirming fire + storm + liability coverage is available at <10% of project value. Hard gate.
 

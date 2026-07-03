@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** Three pre-built VR scenarios: "What if you book a Type A for 3 nights?" "What if your family books a Type C for a week?" "What if you host your wedding here?". Each scenario has different lighting, ti
 

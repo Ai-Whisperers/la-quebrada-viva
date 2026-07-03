@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+broker
 **Status:** `research_needed`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** PY insurance broker quotes + stack
 

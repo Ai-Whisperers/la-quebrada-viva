@@ -69,6 +69,13 @@ This directory is updated by Erebus as decisions get made. When a decision in `O
 ## Source
 
 **Created by:** Erebus (AI Whisperers)
-**Date:** 2026-06-30
+**Date:** 2026-06-30 (last touched 2026-07-03 — cross-link added)
 **For:** Wesley van de Camp + Ivan + Kiki
 **Trigger:** Ivan's prior work was based on a partial share from Wes. The full working set became available 2026-06-30, prompting this reconciliation.
+
+## Related
+
+- **Wes one-page index:** [`../WES_INDEX.md`](../WES_INDEX.md) — if you're Wes, start there.
+- **Post-escritura NOW:** [`../POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md) — 5 hard gates + 12 soft gates, ranked.
+- **Critique for Wes:** [`../CRITIQUE_FOR_WES.md`](../CRITIQUE_FOR_WES.md) — honest read on what works / what's broken.
+- **109-idea catalog:** [`../ideas/INDEX.md`](../ideas/INDEX.md) — the brainstorm catalog (63 ✓ reviewed, 46 ○ auto-fill).

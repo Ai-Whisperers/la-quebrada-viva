@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Wesley
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A single moestuin bed (already on the roadmap as A08) but specifically scoped to a pilot weekend: invite 1 chef + 6 guests for a Friday-Sunday "harvest and cook" experience. Validates the moestuin + c
 

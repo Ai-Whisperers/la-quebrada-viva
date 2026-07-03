@@ -1,6 +1,8 @@
 # Wes's Ideas Index — La Quebrada Viva
 **Maintained by:** Erebus (AI Whisperers) · **For:** Wesley van de Camp + Ivan + Kiki
-**Last update:** 2026-06-30 · **Source:** All brainstorm sessions, recordings, briefs, project state
+**Last update:** 2026-07-03 · **Source:** All brainstorm sessions, recordings, briefs, project state
+
+**2026-07-03 update — Quality field added to all 109 idea files.** Each file is now tagged `✓ reviewed` (63 files, Wes quote + researched substance) or `○ auto-fill` (46 files, template structure but needs Wes input). Treat `○ auto-fill` files as draft until Wes provides the missing quote / decision.
 **Read me first:** This is the canonical map of every idea Wes has surfaced, organized by domain, with priority/owner/status/deliverable for each. Each idea has its own detail file in this folder.
 
 **Each idea file contains 12 sections:**

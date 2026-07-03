@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley
 **Status:** `research_needed`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** emergency response protocol
 

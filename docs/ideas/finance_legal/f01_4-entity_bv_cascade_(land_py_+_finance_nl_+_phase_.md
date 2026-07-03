@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+Erebus+accountant
 **Status:** `research_needed`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** structure memo: roles, tax, equipment cascade mechanics
 

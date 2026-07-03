@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** site layout map
 

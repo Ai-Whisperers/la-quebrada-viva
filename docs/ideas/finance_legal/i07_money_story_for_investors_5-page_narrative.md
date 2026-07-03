@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+accountant
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A 5-page written document that explains: where the money goes, what investors get back, in what order, with what risk. Not a deck. A written story.
 

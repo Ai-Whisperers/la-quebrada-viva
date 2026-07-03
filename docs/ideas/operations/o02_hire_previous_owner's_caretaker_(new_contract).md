@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Sonja
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** new contract template via Sonja (not sitter, worker)
 

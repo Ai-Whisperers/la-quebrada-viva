@@ -1,5 +1,7 @@
 # Wesley Deliverable Bundle — 2026-06-27 Escritura Package
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. Defines exactly what Wesley van de Camp walks into the escritura traslativa meeting with on 2026-06-27. This is the master shipping manifest for the AI Whisperers engagement Phase 1.
 
 ## Why this bundle matters

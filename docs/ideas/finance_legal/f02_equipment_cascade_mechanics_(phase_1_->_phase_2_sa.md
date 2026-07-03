@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+accountant
 **Status:** `research_needed`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** legal mechanism (sale-leaseback vs asset transfer vs management agreement)
 

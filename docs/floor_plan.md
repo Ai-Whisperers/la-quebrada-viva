@@ -1,5 +1,7 @@
 # Floor Plan — La Quebrada Viva House
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. Annotated room-by-room program for the cob/bottle house. Coordinates are in metres, origin at the geometric centre of the inside floor plate. North is +Y. The house is rotated 0° (axes-aligned with the render scene).
 
 This file is the source-of-truth for room sizes and adjacencies. When `lqv/house/cob.py` walls are sculpted, they wrap this program.

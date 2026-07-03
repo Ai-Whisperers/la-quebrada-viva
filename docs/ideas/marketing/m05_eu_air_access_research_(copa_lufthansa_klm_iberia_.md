@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `research_needed`
+**Quality:** `○ auto-fill`
 **Source:** RESEARCH_GAPS.md R05
 **Deliverable:** route + price comparison
 

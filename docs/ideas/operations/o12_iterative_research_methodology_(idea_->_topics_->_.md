@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Erebus
 **Status:** `in_progress`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** /research slash command in Hermes
 

@@ -1,5 +1,7 @@
 # Asset plan — La Quebrada Viva
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 Single execution doc synthesising: (1) scene-completeness gap audit, (2) HDRI + PBR texture shortlist, (3) flora + prop 3D model shortlist, (4) integration roadmap, (5) prioritised execution order. Treat this as the source of truth for what we still need to render Variants A+B at brief quality.
 
 Authoritative inputs:

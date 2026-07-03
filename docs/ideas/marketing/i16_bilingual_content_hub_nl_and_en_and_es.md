@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A blog on lqv-walkthrough.pages.dev in three languages: NL (for Wes's primary audience), EN (international), ES (Paraguayan / LATAM). Topics: building process, local fauna, Paraguayan culture, project
 

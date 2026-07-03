@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus+Ivan
 **Status:** `shipped`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** 18 final renders shipped at 85e86aa
 

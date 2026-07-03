@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** ffmpeg pipeline + rendered video
 

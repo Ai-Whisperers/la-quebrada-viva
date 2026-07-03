@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `research_needed`
+**Quality:** `✓ reviewed`
 **Source:** RESEARCH_GAPS.md R06
 **Deliverable:** rural PY ADR + occupancy benchmarks
 

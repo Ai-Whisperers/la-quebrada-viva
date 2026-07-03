@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus+Wesley
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** PDF deck + website version
 

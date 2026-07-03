@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+Erebus
 **Status:** `in_progress`
+**Quality:** `○ auto-fill`
 **Source:** EUROPEAN_TOURISM_SPEC.md
 **Deliverable:** EUROPEAN_TOURISM_SPEC.md already exists
 

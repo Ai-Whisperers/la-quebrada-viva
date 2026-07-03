@@ -1,5 +1,7 @@
 # Site Data Spike — Acquiring Real Topo Data for the 62-ha Property
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. Describes the data-acquisition spike needed to replace the procedural terrain (`lqv/site/escarpment.py`, `lqv/site/ground.py`) with a real Digital Elevation Model (DEM) of Wesley's 62 ha in Escobar, Paraguarí.
 
 The current scene uses a hand-crafted heightfield approximation of the cerro-stream-cliff trio. That works for stills, but the housing-park master plan, water-flow studies, micro-hydro head calculation, and solar-shadow studies all need a real DEM.

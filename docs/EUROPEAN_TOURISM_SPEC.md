@@ -1,5 +1,7 @@
 # Refined Vision — European / 1st-World Tourism Housing Park
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 > Refinement of `docs/HOUSING_PARK_CONCEPT.md` based on Wesley's 2026-06-10 direction.
 > Sequence: **houses first** (Airbnb-style rentals for European / 1st-world travelers), **restaurant later** (European + Dutch cuisine, sourced via San Bernardino and the German community).
 > Style blend: **resort + events + a bit of eco-natural retreat**.

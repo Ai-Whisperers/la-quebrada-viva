@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+Erebus
 **Status:** `research_needed`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** tier definitions + pitch deck per tier
 

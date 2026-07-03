@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A 30-page PDF that documents how to build one Type A house end-to-end: site prep, foundation, walls, roof, utilities, finishes. With photos, materials lists, timing, costs.
 

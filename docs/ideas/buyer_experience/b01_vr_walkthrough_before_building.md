@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Erebus
 **Status:** `in_progress`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30 + 2026-06-30_v2
 **Deliverable:** lqv-walkthrough.pages.dev Three.js viewer
 

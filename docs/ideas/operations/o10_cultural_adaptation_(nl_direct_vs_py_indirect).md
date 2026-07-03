@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Sonja
 **Status:** `ongoing`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** cultural notes from Sonja (not too generous, not too tight)
 

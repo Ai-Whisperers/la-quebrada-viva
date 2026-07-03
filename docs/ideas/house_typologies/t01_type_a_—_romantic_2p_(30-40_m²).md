@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Erebus+Wesley
 **Status:** `in_progress`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** renders: romantic bedroom + small kitchenette + big bathroom with glass jungle wall
 

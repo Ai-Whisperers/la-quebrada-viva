@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A 1-page comparison showing: cob house build cost $/m2, glamping tent build cost $/m2, conventional PY brick house cost $/m2, plus operating cost / revenue per night.
 

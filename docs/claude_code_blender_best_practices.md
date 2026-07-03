@@ -1,5 +1,7 @@
 # Claude Code + Blender — Best Practices, Workflows, and Improvement Guide
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Purpose:** Everything needed to make Claude Code produce the best possible
 results when working with Blender — MCP setup, scripting patterns, prompt
 engineering, render optimization, procedural techniques, and toolchain.  

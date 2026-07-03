@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Erebus
 **Status:** `partial`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** asset library: native fauna (passive, not interactive game animals)
 

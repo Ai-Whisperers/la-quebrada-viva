@@ -4,6 +4,7 @@
 **Priority:** P0
 **Owner:** Wesley+Erebus
 **Status:** `shipped_waiting_on_Wes`
+**Quality:** `✓ reviewed`
 **Source:** wes_capture_brief.md
 **Deliverable:** splat pipeline live, waiting for Wes's Google Photos album
 

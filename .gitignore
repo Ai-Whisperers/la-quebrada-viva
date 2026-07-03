@@ -169,3 +169,10 @@ splats/exports/web/lqv-secrets/*
 
 # Bulk HD satellite imagery (910 MB, regenerable from ESRI/Mapbox tile servers)
 /docs/site_data_monday/
+
+# Pre-Wes-data-share snapshot (2026-06-13) — historical, on-disk only.
+# 261.9 MB of raw rasters + reference photos, fully replaced by
+# current docs/site_data/ corpus. Regenerable from source APIs.
+# README.md in the dir explains re-population paths.
+docs/site_data_2026-06-13_snapshot/
+!docs/site_data_2026-06-13_snapshot/README.md

@@ -1,5 +1,7 @@
 # Cultural Notes — La Quebrada Viva (Escobar, Paraguarí)
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. Adds verifiable cultural design constraints to back Rule 8 ("culturally Paraguayan first"). Refer here when in doubt whether a design choice reads as authentic Paraguayan or imported pastiche.
 
 ## Why this exists

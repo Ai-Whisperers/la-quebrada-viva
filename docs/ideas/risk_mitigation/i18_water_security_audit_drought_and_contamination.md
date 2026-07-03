@@ -4,6 +4,7 @@
 **Priority:** P1
 **Owner:** Wesley+Erebus
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A formal audit of water supply: existing streams, well capacity, rainwater capture, storage duration under drought conditions. Includes contamination testing.
 

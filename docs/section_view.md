@@ -1,5 +1,7 @@
 # Section View — La Quebrada Viva (NW–SE cut)
 
+> **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
+
 **Status:** living document. Describes the diagrammatic section cut through the LQV house and immediate site. The section view is the single most important drawing for explaining the design to non-architects.
 
 The cut runs **NW (upper escarpment) → SE (stream pool)**, slicing through the cob house centred on the corredor. The render-side stub for this is `lqv/site/section_view.py`.

@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Erebus
 **Status:** `planned`
+**Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
 **Deliverable:** A small elevated cabin in a tree or on stilts, 20-35 m2, designed as photo-worthy experience lodging. Different unit economics than bamboo/cob.
 

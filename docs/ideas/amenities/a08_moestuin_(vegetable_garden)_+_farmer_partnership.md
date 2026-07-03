@@ -4,6 +4,7 @@
 **Priority:** P2
 **Owner:** Wesley
 **Status:** `planned`
+**Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30_v2
 **Deliverable:** veg_garden render + farmer contract template
 

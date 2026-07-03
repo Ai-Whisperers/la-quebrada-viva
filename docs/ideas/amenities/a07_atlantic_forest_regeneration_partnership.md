@@ -4,6 +4,7 @@
 **Priority:** P3
 **Owner:** Wesley
 **Status:** `research_needed`
+**Quality:** `○ auto-fill`
 **Source:** wes_recording_2026-06-30
 **Deliverable:** partnership MoU template
 
