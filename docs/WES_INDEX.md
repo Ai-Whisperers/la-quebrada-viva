@@ -139,6 +139,30 @@ post-escritura audio-sourced questions.
 - `docs/audit/` — repo health audit (Ivan reads, not you)
 - `docs/ideas/` — 109 idea brainstorm catalog (skim, don't read all)
 
+### Wes-facing docs (the 10% you do need)
+
+| Doc | Purpose |
+|---|---|
+| **`docs/WES_INDEX.md`** (this file) | One-page Wes nav |
+| **`docs/WES_FAQ.md`** | First-timer questions, plain language |
+| **`docs/WES_GLOSSARY.md`** | NL / ES / EN vocabulary |
+| **`docs/WES_WARNINGS.md`** | Things that might surprise you |
+| **`docs/WES_HOW_WE_WORK.md`** | How AI Whisperers + Wes collaborate |
+| **`docs/WES_NEXT_30_DAYS.md`** | Your calendar, week by week |
+| **`docs/POST_ESCRITURA_NOW.md`** | What blocks Fase 1 right now |
+| **`docs/CRITIQUE_FOR_WES.md`** | Short roast — what's good / what's broken |
+| **`docs/people/WES_ACTIONS.md`** | The 5 things only you can do |
+| **`docs/audios/.../final/SYNTHESIS.md`** | The full vision, distilled |
+
+After reading this index, **read in this order**:
+1. `docs/WES_FAQ.md` (10 min)
+2. `docs/WES_GLOSSARY.md` (5 min, refer back as needed)
+3. `docs/WES_NEXT_30_DAYS.md` (5 min)
+4. `docs/WES_WARNINGS.md` (5 min)
+5. `docs/WES_HOW_WE_WORK.md` (5 min)
+
+Total: 30 min. After that, you're caught up.
+
 ---
 
 ## 8. The single most important file for THIS WEEK

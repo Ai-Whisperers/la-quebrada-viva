@@ -5,8 +5,15 @@
 ## 👋 If you're Wesley — start here
 
 Open **[`docs/WES_INDEX.md`](docs/WES_INDEX.md)** — it's the one page
-built for you. 5-min read. Then the 5 things-only-you-can-do this week
-in **[`docs/people/WES_ACTIONS.md`](docs/people/WES_ACTIONS.md)**.
+built for you. 5-min read. Then read in this order:
+
+1. [`docs/WES_FAQ.md`](docs/WES_FAQ.md) — common questions (10 min)
+2. [`docs/WES_GLOSSARY.md`](docs/WES_GLOSSARY.md) — vocabulary, NL/ES/EN
+3. [`docs/WES_NEXT_30_DAYS.md`](docs/WES_NEXT_30_DAYS.md) — your calendar
+4. [`docs/WES_WARNINGS.md`](docs/WES_WARNINGS.md) — things that might surprise you
+5. [`docs/WES_HOW_WE_WORK.md`](docs/WES_HOW_WE_WORK.md) — how AI Whisperers + Wes collaborate
+
+Then the 5 things-only-you-can-do this week in **[`docs/people/WES_ACTIONS.md`](docs/people/WES_ACTIONS.md)**.
 
 If you want to know what's blocking Phase 1 right now: **[`docs/POST_ESCRITURA_NOW.md`](docs/POST_ESCRITURA_NOW.md)**.
 
