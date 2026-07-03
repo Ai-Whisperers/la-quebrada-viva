@@ -178,7 +178,11 @@ owner conversations, lessons learned.
 
 ---
 
-## P4 — 2030 horizon (Sonia's 60e verjaardag (2030))
+<<<<<<< HEAD
+## P4 — 2030 horizon (Sonja's 60e verjaardag (2030))
+=======
+## P4 — 2030 horizon (Sonja's 60e verjaardag (2030))
+>>>>>>> 3ceca61 (docs(post-escritura): 2026-06-30 audio synthesis deltas + R39-R50 + gitignore hardening)
 
 ### P4.1 [W+I] Fase-mapping tot 2030
 Wes's personal horizon. Welke fase is dan af?

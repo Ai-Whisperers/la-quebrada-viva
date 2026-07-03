@@ -162,3 +162,10 @@ docs/audios/**/wes_*.mp3
 
 # Cesium token (browser-side safe but keep out of repo; lives in ~/.lqv/splats.env)
 splats/exports/web/lqv-secrets/*
+
+# Local Bitwarden CLI state — vault decryption keys, never in git
+.config/
+!.config/.gitkeep
+
+# Bulk HD satellite imagery (910 MB, regenerable from ESRI/Mapbox tile servers)
+/docs/site_data_monday/
