@@ -20,7 +20,7 @@ from __future__ import annotations
 import csv
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from pathlib import Path
 
 import matplotlib
@@ -72,10 +72,10 @@ SCL_KEEP = (4, 5, 6, 11)
 # 12 bi-annual buckets across 2020-01-01 → 2025-12-31.
 BUCKETS = []
 for y in range(2020, 2026):
-    BUCKETS.append((f"{y}-H1", datetime(y, 1, 1, tzinfo=timezone.utc),
-                    datetime(y, 6, 30, 23, 59, 59, tzinfo=timezone.utc)))
-    BUCKETS.append((f"{y}-H2", datetime(y, 7, 1, tzinfo=timezone.utc),
-                    datetime(y, 12, 31, 23, 59, 59, tzinfo=timezone.utc)))
+    BUCKETS.append((f"{y}-H1", datetime(y, 1, 1, tzinfo=UTC),
+                    datetime(y, 6, 30, 23, 59, 59, tzinfo=UTC)))
+    BUCKETS.append((f"{y}-H2", datetime(y, 7, 1, tzinfo=UTC),
+                    datetime(y, 12, 31, 23, 59, 59, tzinfo=UTC)))
 
 MAX_CLOUD_PCT = 30.0
 CANONICAL_CRS = "EPSG:32721"

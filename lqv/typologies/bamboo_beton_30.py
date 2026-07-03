@@ -32,8 +32,8 @@ import math
 
 import bpy
 
-from lqv.materials import MAT, assign
 from lqv.furniture import furnish_interior
+from lqv.materials import MAT, assign
 
 # ---------------------------------------------------------------------------
 # Geometry constants (6 m × 5 m footprint, 30 m²; 2 PAX)

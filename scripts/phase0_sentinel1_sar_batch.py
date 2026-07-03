@@ -20,7 +20,7 @@ from __future__ import annotations
 import csv
 import sys
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone, UTC
 from pathlib import Path
 
 import matplotlib
@@ -59,7 +59,7 @@ POLARIZATIONS = ("vv", "vh")
 
 # Most recent ~6 months ending today (2026-06-29 at session time). Held constant
 # at module load so reruns are reproducible from sidecars.
-NOW = datetime.now(timezone.utc)
+NOW = datetime.now(UTC)
 END = NOW.replace(hour=23, minute=59, second=59, microsecond=0)
 START = (END - timedelta(days=183)).replace(hour=0, minute=0, second=0, microsecond=0)
 

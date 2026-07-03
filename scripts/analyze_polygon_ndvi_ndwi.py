@@ -86,7 +86,7 @@ def load_polygon() -> dict:
     raise RuntimeError(f"No Polygon feature found in {POLY_GEOJSON}")
 
 
-def polygon_bbox_4326(feat: dict) -> Tuple[float, float, float, float]:
+def polygon_bbox_4326(feat: dict) -> tuple[float, float, float, float]:
     coords = feat["geometry"]["coordinates"][0]
     lons = [c[0] for c in coords]
     lats = [c[1] for c in coords]
@@ -95,7 +95,7 @@ def polygon_bbox_4326(feat: dict) -> Tuple[float, float, float, float]:
 
 def read_band(
     band_name: str, geom_utm: dict, pad_m: float = 60.0
-) -> Tuple[np.ndarray, Affine, str]:
+) -> tuple[np.ndarray, Affine, str]:
     """Window-read a single S2 band tight around the polygon (+pad).
 
     Returns reflectance (float32, scale-only), affine for the window,

@@ -71,6 +71,7 @@ import math
 
 import bpy
 
+from lqv.furniture import furnish_interior
 from lqv.house.bamboo_frame import (
     build_bamboo_beam,
     build_bamboo_culm,
@@ -78,7 +79,6 @@ from lqv.house.bamboo_frame import (
     build_bamboo_post_stack,
     build_palm_thatch_panel,
 )
-from lqv.furniture import furnish_interior
 from lqv.house.stone_wall import build_stone_foundation_course
 from lqv.materials import MAT, assign
 

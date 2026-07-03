@@ -17,12 +17,11 @@ without per-typology wiring.
 """
 from __future__ import annotations
 
-from typing import Iterable
+from collections.abc import Iterable
 
 import bpy
 
 from lqv.materials import MAT, assign
-
 
 _VARIANT_LANTERN_EMISSION = {'A': 0.0, 'B': 0.6, 'C': 1.0}
 

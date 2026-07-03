@@ -40,7 +40,8 @@ class Config:
     @property
     def output_filename(self) -> str:
         view_tag = '' if self.view == 'hero3q' else f"_{self.view}"
-        return f"{'_preview_' if self.is_preview else ''}{self.variant}_{self.cam_name}{view_tag}.png"
+        preview_tag = '_preview_' if self.is_preview else ''
+        return f"{preview_tag}{self.variant}_{self.cam_name}{view_tag}.png"
 
     @property
     def output_path(self) -> str:

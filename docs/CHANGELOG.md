@@ -8,6 +8,49 @@ Conventions: ISO dates, present-tense bullets, file-level granularity only when 
 
 ---
 
+## [2026-07-03] — post-restructure mega-pass (Erebus)
+
+**Repo reorganization** — 4 passes consolidated from a sprawling 80-doc top-level to 59 canonical + 32 archive + 46 auto-fill idea files. Net: −337 MB tracked, −507 tracked files, every "what to do" / "current state" / "decisions" / "master brief" question resolves to ONE canonical doc.
+
+Commits (10):
+1. `51e3ea8` docs(restructure): Wes-facing top-level nav — INDEX + NOW + critique-for-Wes
+2. `4a95e21` chore(restructure): size-reduction pass — 305 MB freed, 521 files reorg'd
+3. `3806b5c` docs(restructure): quality-mark 109 idea files + status banners + nav fixes
+4. `5f9da20` docs(audit): finalize before/after metrics with verified numbers on origin
+5. `dd7b6fa` chore(restructure): Tier 1+2 consolidation — 12 moves, 13 cross-ref fixes
+6. `f4dccd2` chore(restructure): Pass 3 — archive 7 stale docs + split 109-idea catalog
+7. `b51f285` chore(restructure): Pass 4 — 19 status banners + research/ sub-org + 4 polish items
+
+New canonical docs added (Wes-facing):
+- `docs/WES_INDEX.md` — one-page Wes-facing index (the 5-min read for the human)
+- `docs/POST_ESCRITURA_NOW.md` — 5 hard gates + 12 soft gates, ranked by Phase 1 break-ground
+- `docs/CRITIQUE_FOR_WES.md` — short roast aimed at Wes
+- `docs/audit/BEFORE_AFTER_METRICS.md` — quantified result
+- `docs/audit/CRITIQUE_V2_ADDENDUM.md` — what the 2026-06-30 audit missed
+- `docs/audit/RESTRUCTURE_PASS_{2,3,4}_RECOMMENDATIONS.md` — the playbooks
+
+Stubs created at top level (1-line pointers):
+- `docs/MASTER_BRIEF.md` → `_reconciled/MASTER_BRIEF.md`
+- `docs/MASTER_TODO.md` → `POST_ESCRITURA_NOW.md`
+- `docs/DECISIONS.md` → `_reconciled/OPEN_DECISIONS.md` + `people/DECISIONS_LOG.md`
+
+Cleanup:
+- `.config/` gitignored (Bitwarden CLI local state — vault decryption keys)
+- `docs/site_data_monday/` (910 MB bulk imagery) gitignored
+- `docs/site_data_2026-06-13_snapshot/` (264 MB pre-Wes) gitignored
+- `docs/site_data/mapbiomas_paraguay/` compressed from 83 → 19 files (5-year sampling)
+- 46 of 109 idea files (auto-fill, template-only) archived under `docs/ideas/_archive/`
+- `docs/research/` sub-organized into `METHODS/`, `SOURCES/`, `TOOLING/`, `RESULTS/`
+
+Code changes (pass 5 polish, this entry):
+- `lqv/config.py` — broke long f-string into `preview_tag` variable for E501 compliance
+- `lqv/furniture.py` — ruff auto-fixed import order
+- CLAUDE.md document map — 7 stale refs to files moved during passes 2-3, fixed
+
+**Verification:** ruff lint clean (6 known-false-positive B023 warnings left intentional); pytest 16/16 invariants green; all cross-refs verified post-move.
+
+---
+
 ## [Unreleased] — post-escritura sprint backlog
 
 **Freeze status:** Renderer byte-freeze at `85e86aa` was scoped to the print-pack contents. Print-pack at `dist/print_pack_2026-06-27/` is SHA-pinned independently on disk, so the post-`85e86aa` polish work cannot retroactively change shipped bytes. Material-registry work is OPEN since 2026-06-15 (commit `78433a7`, Ivan-authorized escritura beauty sprint). `build_scene.py` composite path remains untouched pending escritura close (2026-06-27).
