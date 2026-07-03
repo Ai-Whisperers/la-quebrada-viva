@@ -111,7 +111,7 @@ Send to:
 - **Burgos** (intermediary) — CC if previously in correspondence.
 
 Subject (ES): `Escritura van de Camp / Torrasca — paquete técnico v-final (27/06/2026)`
-Subject (EN): `La Quebrada Viva — final escritura technical pack (27 Jun 2026)`
+Subject (EN): `Riverstone Valley — final escritura technical pack (27 Jun 2026)`
 
 Body essentials:
 - Today's signing time + escribanía address.

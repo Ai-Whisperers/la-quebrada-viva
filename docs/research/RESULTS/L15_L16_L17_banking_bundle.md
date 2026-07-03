@@ -10,8 +10,8 @@ Covers 3 research items: L15 (banks), L16 (wallets), L17 (FX transfer).
 
 ## L15 — Banking for B2B + dual PYG/USD accounts
 
-### What LQV needs
-- PY business account for LQV BV (likely the Fase 1 BV)
+### What RV needs
+- PY business account for RV BV (likely the Fase 1 BV)
 - Dual PYG + USD account (for international revenue)
 - Wire transfer capability (for investors + payouts)
 - Online banking + API access
@@ -57,7 +57,7 @@ Covers 3 research items: L15 (banks), L16 (wallets), L17 (FX transfer).
 - All work via QR code + phone number transfers
 - Most PY staff (especially in rural areas) prefer these over bank accounts
 
-### For LQV
+### For RV
 - **Staff wages:** 5-7 of 7 workers in Fase 1 may prefer billeteras móviles over bank accounts
 - **Tips:** restaurant/bar tips are 90% in cash or wallet
 - **Guests:** some EU guests use wallets too (Revolut, N26)
@@ -74,19 +74,19 @@ Covers 3 research items: L15 (banks), L16 (wallets), L17 (FX transfer).
 - Slightly better international support
 - Linked to Personal cell plan
 
-### Cost for LQV
+### Cost for RV
 - Receiving payments: free
 - Sending to staff wages: free or 1-2% fee
 - Customer tips via QR: free
 - Setup: zero (apps, link to phone number)
 
-**Total: ~$0/year** (this saves LQV money on wages and tips vs card fees)
+**Total: ~$0/year** (this saves RV money on wages and tips vs card fees)
 
 ---
 
 ## L17 — FX transfer costs NL → PY (Wes + Thijs remitting)
 
-### What LQV needs
+### What RV needs
 - Wes (NL) needs to transfer EUR to PY BV account regularly
 - Thijs may also transfer from NL accounts
 - Investors may also wire from NL
@@ -107,7 +107,7 @@ Covers 3 research items: L15 (banks), L16 (wallets), L17 (FX transfer).
 - **Backup:** Revolut (if Wes already uses it for personal)
 - **Avoid:** Traditional bank wires (poor FX margins, high fees)
 
-### Cost for LQV
+### Cost for RV
 **Assume €50K/year in transfers (Fase 1 + investors):**
 - Wise: €50K × 0.6% = **€300/year in fees**
 - vs traditional bank: €50K × 2.5% = **€1,250/year in fees**

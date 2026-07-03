@@ -16,7 +16,7 @@
 | 3 | **Cielo Azul** | Wes's brainstorm | Spanish | .com / .com.py |
 | 4 | **Lluvia Dorada** | Wes's brainstorm | German place + plant reference | .com / .com.py |
 | 5 | **Lluvia de Oro** | Wes's brainstorm (variant) | " | .com / .com.py |
-| 6 | **La Quebrada Viva** | Ivan's working name | "quebrada" = stream, Spanish | .com / .com.py |
+| 6 | **Riverstone Valley** | Ivan's working name | "quebrada" = stream, Spanish | .com / .com.py |
 | 7 | **Eco Jungle Resort Paraguay** | Wes's working files | Descriptive, less branded | .com / .com.py |
 
 ---
@@ -54,7 +54,7 @@ For .com.py (Paraguay ccTLD), check via NIC.py: https://www.nic.py/
 
 Once a name is picked, check:
 - **PY trademark registry:** DINAPI (https://www.dinapi.gov.py/)
-- **Argentina trademark (INPI):** https://www.argentina.gob.ar/inpi — many LQV visitors will be from AR
+- **Argentina trademark (INPI):** https://www.argentina.gob.ar/inpi — many RV visitors will be from AR
 - **US/Intl trademark:** USPTO + WIPO Madrid System
 - **Social media handles:** Instagram, Facebook, TikTok — all should match
 - **Domain variations** to defensively register: plural, hyphenated, common misspellings
@@ -71,7 +71,7 @@ Once a name is picked, check:
 
 3. **Lluvia Dorada** — Spanish + German place reference, poetic. Likely available everywhere.
 
-**Avoid:** La Quebrada Viva (Ivan's name, descriptive, less brandable). Eco Jungle Resort Paraguay (descriptive, used as Wes's working file name but not for marketing).
+**Avoid:** Riverstone Valley (Ivan's name, descriptive, less brandable). Eco Jungle Resort Paraguay (descriptive, used as Wes's working file name but not for marketing).
 
 **Decision needed from Wes:** pick 1 (or propose another). This blocks BR02/BR03 domain check + the website/social media setup.
 

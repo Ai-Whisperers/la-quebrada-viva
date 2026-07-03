@@ -10,7 +10,7 @@
 
 ## Summary
 
-This PR lands the closing-prep arc for the 2026-06-27 La Quebrada Viva escritura signing. It bundles three weeks of T-10 → T-0 work plus the day-after debrief scaffolding. The renderer (`build_scene.py` byte-frozen at `85e86aa`) and the 18 finals are unchanged; this is documentation, distribution artifacts, and CI scaffolding only.
+This PR lands the closing-prep arc for the 2026-06-27 Riverstone Valley escritura signing. It bundles three weeks of T-10 → T-0 work plus the day-after debrief scaffolding. The renderer (`build_scene.py` byte-frozen at `85e86aa`) and the 18 finals are unchanged; this is documentation, distribution artifacts, and CI scaffolding only.
 
 ## What's in this PR
 

@@ -1,32 +1,32 @@
 # Land + Parcel
 
 **Sources:**
-- Ivan's LQV repo (62 ha Escobar, Paraguarí)
-- LQV render pipeline + ALOS DEM + Sentinel-2 + GEDI data
+- Ivan's RV repo (62 ha Escobar, Paraguarí)
+- RV render pipeline + ALOS DEM + Sentinel-2 + GEDI data
 - Escritura `0081129` (signed 2026-06-27)
-- LQV tag `escritura-2026-06-27`
+- RV tag `escritura-2026-06-27`
 
 **Date:** 2026-06-30
 **Status:** Ivan's data is from earlier work. Wes needs to confirm + add specific data from his own working files.
 
 ---
 
-## 1. What's Confirmed (from LQV repo + escritura)
+## 1. What's Confirmed (from RV repo + escritura)
 
 | Field | Value | Source |
 |---|---|---|
-| Land size | **62 ha** | LQV repo, prior work |
-| Location | **Escobar, Paraguarí, Paraguay** | LQV repo, prior work |
-| Centroid (approx) | ~26°36'S, 56°51'W (Paraguarí region) | LQV repo |
-| Distance from Asunción | ~120 km SE | LQV repo |
+| Land size | **62 ha** | RV repo, prior work |
+| Location | **Escobar, Paraguarí, Paraguay** | RV repo, prior work |
+| Centroid (approx) | ~26°36'S, 56°51'W (Paraguarí region) | RV repo |
+| Distance from Asunción | ~120 km SE | RV repo |
 | Ownership | **Wesley van de Camp + Thijs 75/25** | escritura `0081129` |
-| Escritura status | **Signed 2026-06-27** | LQV tag `escritura-2026-06-27` |
-| Topography | Mixed: 116-380m elevation, ~80% buildable, 264m relief | LQV `docs/site_data/SITE_DIAGNOSTIC.md` |
-| Existing water | Stream + creek through the parcel | LQV render `lqv/site/stream.py` |
-| Existing road access | Last 7km dirt road from main route | LQV `docs/site_data_spike.md` |
-| Climate | Sub-tropical, wet season Nov-Mar, dry May-Oct | LQV `docs/site_data/climate_era5/` |
-| Soil (regional) | Red laterite, sandy loam, well-draining | LQV `docs/site_data/SITE_DIAGNOSTIC.md` |
-| Vegetation | Atlantic Forest edge (mature canopy up to 74m) | LQV `docs/site_data/` |
+| Escritura status | **Signed 2026-06-27** | RV tag `escritura-2026-06-27` |
+| Topography | Mixed: 116-380m elevation, ~80% buildable, 264m relief | RV `docs/site_data/SITE_DIAGNOSTIC.md` |
+| Existing water | Stream + creek through the parcel | RV render `lqv/site/stream.py` |
+| Existing road access | Last 7km dirt road from main route | RV `docs/site_data_spike.md` |
+| Climate | Sub-tropical, wet season Nov-Mar, dry May-Oct | RV `docs/site_data/climate_era5/` |
+| Soil (regional) | Red laterite, sandy loam, well-draining | RV `docs/site_data/SITE_DIAGNOSTIC.md` |
+| Vegetation | Atlantic Forest edge (mature canopy up to 74m) | RV `docs/site_data/` |
 
 ---
 
@@ -34,8 +34,8 @@
 
 | Field | Status | Action |
 |---|---|---|
-| Exact centroid coordinates (lat/lon) | LQV has approx | Confirm from escritura |
-| Property boundaries (exact polygon) | LQV has KML | Verify with surveyor |
+| Exact centroid coordinates (lat/lon) | RV has approx | Confirm from escritura |
+| Property boundaries (exact polygon) | RV has KML | Verify with surveyor |
 | Topographic survey (cm-accurate) | Not done | Phase 1 infra task |
 | Soil tests (load-bearing) | Not done | Phase 1 infra task |
 | Water table depth | Not tested | Phase 1 infra task (well drilling) |
@@ -53,7 +53,7 @@ Ivan has built a 3D render of the site using:
 
 - **ALOS DEM** (30m resolution, free) — elevation
 - **Sentinel-2 L2A** (10m optical, free) — vegetation, NDVI
-- **GEDI L2A** — canopy height (with some data quality issues, see LQV `docs/site_data/SITE_DIAGNOSTIC.md`)
+- **GEDI L2A** — canopy height (with some data quality issues, see RV `docs/site_data/SITE_DIAGNOSTIC.md`)
 - **OSM Overpass** — buildings, roads, water features (within 5km radius)
 - **Hansen GFC** — forest cover change 2001-2024 (82% canopy, 0.63 ha loss 2001-24)
 - **JRC Global Surface Water 1984-2021** — water bodies
@@ -120,9 +120,9 @@ Wes's 5 phone videos → COLMAP → gsplat → 3DGS model → Three.js viewer
 
 ---
 
-## 6. Cross-Reference: LQV Site-Specifics Catalog
+## 6. Cross-Reference: RV Site-Specifics Catalog
 
-Ivan's LQV catalog has 7 site-specifics ideas:
+Ivan's RV catalog has 7 site-specifics ideas:
 - S01: Cabernet village concept (clustered houses)
 - S02: Eco positioning (NOT "ecopark" — politically loaded)
 - S03: Locate depot on terrain
@@ -141,6 +141,6 @@ Ivan's LQV catalog has 7 site-specifics ideas:
 - **Ivan's render pipeline:** `lqv/subscene/terrain_62ha.py` + `lqv/site/` modules
 - **Ivan's terrain_62ha_photoreal:** `lqv/subscene/terrain_62ha_photoreal.py` (v5, with sat imagery)
 - **Escritura:** `escritura-2026-06-27` tag, `0081129` commit
-- **LQV render catalogue:** `docs/render_catalogue/` (926 renders, 53 assets)
+- **RV render catalogue:** `docs/render_catalogue/` (926 renders, 53 assets)
 
-**Tracked in:** LQV catalog `docs/ideas/site_specifics/` (7 ideas)
+**Tracked in:** RV catalog `docs/ideas/site_specifics/` (7 ideas)

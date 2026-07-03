@@ -1,4 +1,4 @@
-# F12: Starlink installability at LQV site (Escobar, Paraguarí)
+# F12: Starlink installability at RV site (Escobar, Paraguarí)
 **Method:** MEM + general knowledge
 **Confidence:** High
 **Date:** 2026-06-30
@@ -19,7 +19,7 @@
 
 **Source:** https://www.starlink.com/py/ (Paraguay-specific page)
 
-## Installability at LQV
+## Installability at RV
 
 **Hardware requirements:**
 - Clear sky view (no trees, no buildings within ~25° elevation)
@@ -27,8 +27,8 @@
 - Mounting location (roof, pole, or ground)
 - Cabling to indoor router (50-100m max with standard cable)
 
-**For LQV (rural Escobar, forested):**
-- **Tree cover is the main risk.** LQV has 82% Atlantic Forest canopy (per Hansen GFC).
+**For RV (rural Escobar, forested):**
+- **Tree cover is the main risk.** RV has 82% Atlantic Forest canopy (per Hansen GFC).
 - Solution: mount on the highest structure on the property (planned reception building) + clear a small sky window
 - Alternative: tall pole mount (10-15m) to clear tree line
 - **Estimate:** 30-50% chance site has clear enough sky from a single mount point. May need 2-3 dishes to get full property coverage.
@@ -41,7 +41,7 @@
 
 ## Performance expectations
 
-**For LQV guest WiFi:**
+**For RV guest WiFi:**
 - **Target:** 100+ Mbps per cabin, 5-10 concurrent users
 - Starlink Standard delivers this in most weather conditions
 - Latency 25-60ms is fine for video calls, streaming, browsing
@@ -52,7 +52,7 @@
 - Estimated: 1 main router + 4-5 mesh nodes for full property coverage
 - Cost: Gs. 2,500,000-4,000,000 for the network gear
 
-## Cost estimate for LQV Phase 1 (5 cabins)
+## Cost estimate for RV Phase 1 (5 cabins)
 
 | Item | Cost USD | Cost Gs |
 |---|---:|---:|
@@ -67,7 +67,7 @@ For full 30-cabin Phase 1: ~$6,000-8,000 first year, ~$2,500/month recurring.
 
 ## When to use Starlink vs alternatives
 
-**Starlink = primary for LQV because:**
+**Starlink = primary for RV because:**
 - Available everywhere in PY now
 - High bandwidth (100+ Mbps) sufficient for guest WiFi
 - Easy self-install
@@ -90,12 +90,12 @@ For full 30-cabin Phase 1: ~$6,000-8,000 first year, ~$2,500/month recurring.
 ## When Starlink is NOT enough
 
 - **Dense tree cover** (e.g. inside forest, 360° obstructed)
-- **High-rise buildings** (not LQV's case)
+- **High-rise buildings** (not RV's case)
 - **Multi-property distributed** (need separate dish per site)
 
 ## Status
 
-✅ Answered. Starlink works at LQV (1-3 dishes). Specific performance requires on-site test. **Routes to F05 (Wes PY site visit, W1.2) for sky-view verification.**
+✅ Answered. Starlink works at RV (1-3 dishes). Specific performance requires on-site test. **Routes to F05 (Wes PY site visit, W1.2) for sky-view verification.**
 
 ## Next
 

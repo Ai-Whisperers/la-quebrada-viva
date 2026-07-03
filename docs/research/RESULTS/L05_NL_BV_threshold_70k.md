@@ -12,12 +12,12 @@ The €70,000 threshold refers to the Dutch **box 1 income tax** boundary where 
 - **BV:** Corporate income tax at **19%** on first €200,000 profit, 25.8% above
 - **No legal threshold** for *having* a BV; the €70k number is a practical breakeven point where the BV's lower corporate tax + dividend tax becomes more efficient than the IB's high progressive rates
 
-**Why this matters for LQV:**
+**Why this matters for RV:**
 Wes is already past the threshold if Phase 1 generates €70k+ net profit. Even at the negative-scenario 20% occupancy (€465K cabin revenue − €203K staff − €235K fixed = ~€27K profit), Phase 1 alone is borderline. Phase 2 + 3 will easily exceed €70k.
 
 **Wes's quote from audio C:** "Ja, boven de 70.000. Maar op dit moment is een BV altijd beter in Nederland. Want je kunt het toen niet afpakken."
 
-This is correct: for LQV's projected revenue scale, BV is structurally better than IB, AND the BV's assets (land, machines) are legally protected from personal seizure.
+This is correct: for RV's projected revenue scale, BV is structurally better than IB, AND the BV's assets (land, machines) are legally protected from personal seizure.
 
 ## Verification
 

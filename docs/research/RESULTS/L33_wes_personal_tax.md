@@ -81,7 +81,7 @@
 
 **4. Reinvestment strategy:**
 - Keep dividends in BV2 (no personal tax)
-- BV2 reinvests in LQV-2, LQV-3, etc. (no distribution to Wes)
+- BV2 reinvests in RV-2, RV-3, etc. (no distribution to Wes)
 - Long-term: BV2 has multiple assets, lower single-event risk
 
 **5. Timing:**

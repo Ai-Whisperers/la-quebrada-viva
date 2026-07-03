@@ -4,7 +4,7 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## What LQV needs
+## What RV needs
 
 **Wes (Dutch national) needs to be able to:**
 - Stay in PY long-term for Fase 1 build + operations

@@ -12,7 +12,7 @@
 
 ## 0. Context — what changed
 
-Until this week the project was **one example house** (La Quebrada Viva, the cob/bottle concept) on a fully-modeled 3D site in Escobar, Paraguarí. 12 of 18 final renders delivered, all A/B variants verified.
+Until this week the project was **one example house** (Riverstone Valley, the cob/bottle concept) on a fully-modeled 3D site in Escobar, Paraguarí. 12 of 18 final renders delivered, all A/B variants verified.
 
 Wesley's new direction is a **housing park** in Escobar, with a **restaurant** and other amenities. That reframes the project from "single self-sufficient home" to "real estate + hospitality + lifestyle development." The site, the research, the renders, and the contract all still apply — the cob house becomes one of several possible building typologies on the land rather than the whole vision.
 
@@ -64,11 +64,11 @@ Wes has a PLAN, not a brainstorm, for the corporate spine:
 
 ### NEW: NL BV > IB threshold (per audio C)
 
-Wes's existing rule: for income >€70k/yr, use a BV (not IB). LQV will easily exceed this in Fase 1 alone.
+Wes's existing rule: for income >€70k/yr, use a BV (not IB). RV will easily exceed this in Fase 1 alone.
 
 > "Een BV altijd beter in Nederland, want je kunt het toen niet afpakken."
 
-Confirmed: BV is structurally better for LQV. **5th holding BV on top of the 4 operational BVs may be worth it for fiscal reasons** — to be validated with the NL+PY dual-tax attorney (see W0.1).
+Confirmed: BV is structurally better for RV. **5th holding BV on top of the 4 operational BVs may be worth it for fiscal reasons** — to be validated with the NL+PY dual-tax attorney (see W0.1).
 
 ### NEW: Wellness pool (per audio E)
 
@@ -372,7 +372,7 @@ Not all are needed. Listed for completeness so Wesley can pick.
 - Boardroom / meeting rooms
 
 ### Lodging typologies
-- Cob/earthen cabins (the La Quebrada Viva model)
+- Cob/earthen cabins (the Riverstone Valley model)
 - Timber cabins (lapacho/cedro frame, lighter footprint)
 - Glamping tents / platform cabins
 - Family suites

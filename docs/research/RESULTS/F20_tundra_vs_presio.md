@@ -40,7 +40,7 @@
 **If Wes chooses Tundra (new):**
 - Save $10,000-15,000 by going with Hilux instead
 - OR save $25,000+ by buying a used Hilux
-- Tundra's extra power not needed for LQV's terrain (Escobar is hilly but not extreme)
+- Tundra's extra power not needed for RV's terrain (Escobar is hilly but not extreme)
 
 **If Wes really wants Tundra:**
 - Buy used from US (1-2 yr, ~50K km) — still need to pay import tax
@@ -48,7 +48,7 @@
 
 ## Recommendation
 
-**For LQV bouwfase: Toyota Hilux (called "Presio" in PY market, same vehicle):**
+**For RV bouwfase: Toyota Hilux (called "Presio" in PY market, same vehicle):**
 - Cheaper (new and used)
 - Easier to find in PY (common fleet vehicle)
 - Spare parts available throughout the country
@@ -83,7 +83,7 @@
 
 ## NPV check (per AH03)
 
-For LQV bouwfase, the NPV analysis already shows:
+For RV bouwfase, the NPV analysis already shows:
 - Used Tundra @ $35K = -$32K NPV
 - Used Hilux @ $30K = -$27K NPV
 - Difference: $5K in favor of Hilux
@@ -100,7 +100,7 @@ But with the import tax consideration:
 **Buy: Used 2-3 year Toyota Hilux from PY market or BR import**
 - Budget: $30,000
 - Savings vs Tundra: $15,000-30,000
-- Match for use case: 95% (the missing 5% is power for heavy towing, which LQV won't need)
+- Match for use case: 95% (the missing 5% is power for heavy towing, which RV won't need)
 
 ## Sources to verify
 - Toyota Hilux vs Tundra: https://www.toyota.com/

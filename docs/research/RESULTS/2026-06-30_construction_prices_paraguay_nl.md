@@ -2,7 +2,7 @@
 
 **Datum:** 30-06-2026 · Referentie wisselkoers: **7.300 Gs/USD** (kan schommelen tussen 7.200–7.500) · **Pariteit 2026:** Paraguayaanse Aannemers
 
-**Gebruik:** Capex-referentie voor La Quebrada Viva + Paraguay-projecten in het algemeen. Alle onderstaande prijzen zijn **prijzen afgeleverd op de werf in Asunción / Gran Asunción**. Voor levering aan Escobar, Paraguarí (~120 km ten zuidoosten van Asunción), zie §6 voor de vrachttarieven.
+**Gebruik:** Capex-referentie voor Riverstone Valley + Paraguay-projecten in het algemeen. Alle onderstaande prijzen zijn **prijzen afgeleverd op de werf in Asunción / Gran Asunción**. Voor levering aan Escobar, Paraguarí (~120 km ten zuidoosten van Asunción), zie §6 voor de vrachttarieven.
 
 **Belangrijke waarschuwing:** Paraguay heeft **twee parallelle prijsmarkten**:
 - **Met factuur (BTW inbegrepen)** — prijs ~10–15% hoger
@@ -33,7 +33,7 @@ Vraag bij elke leverancier beide modaliteiten aan voordat u bestelt.
 - 1 m² bepleistering 2 cm vereist ~**0,4 zakken**
 - 1 m² dekvloer 8 cm vereist ~**0,9 zakken**
 
-**Voor LQV** (escritura T-2): wij gebruiken cement CP II-F32 van Vallemí aan **Gs. 44.000/zak** omdat het werk 100% metselwerk/lichte funderingen betreft en geen hoge sterkte vereist. U bespaart **Gs. 11.000/zak vs CP II-C40** (~$1,50 USD/zak × 50 zakken = $75 USD per typische woning).
+**Voor RV** (escritura T-2): wij gebruiken cement CP II-F32 van Vallemí aan **Gs. 44.000/zak** omdat het werk 100% metselwerk/lichte funderingen betreft en geen hoge sterkte vereist. U bespaart **Gs. 11.000/zak vs CP II-C40** (~$1,50 USD/zak × 50 zakken = $75 USD per typische woning).
 
 ---
 
@@ -137,10 +137,10 @@ Vraag bij elke leverancier beide modaliteiten aan voordat u bestelt.
 - 1 lm kolom 20×20 met 4×10 mm + beugels 6 mm h/15 → **~5 kg/lm**
 - 1 lm balk 20×30 met 4×12 mm boven/onder + beugels 8 mm h/20 → **~7 kg/lm**
 
-**Voor LQV:** het cob-huis gebruikt niet veel structureel ijzer (de muren zijn dragend in leem), maar er is wel nodig:
+**Voor RV:** het cob-huis gebruikt niet veel structureel ijzer (de muren zijn dragend in leem), maar er is wel nodig:
 - Ankers ⌀12 mm × 200 mm voor fundering → 12 stuks @ Gs. ~3.000/st = Gs. 36.000
 - Ringbalk perimeter (25 lm × ~3 kg/lm = 75 kg) ≈ Gs. 690.000
-- Totaal ijzer LQV typisch huis: **~100 kg = Gs. ~950.000 = $130 USD**
+- Totaal ijzer RV typisch huis: **~100 kg = Gs. ~950.000 = $130 USD**
 
 ---
 
@@ -162,7 +162,7 @@ Vraag bij elke leverancier beide modaliteiten aan voordat u bestelt.
 - Vs. geprefabriceerd: **Gs. 720.000** = $98,63/m³
 - **Omslagpunt:** in-situ is goedkoper onder ~3 m³, geprefabriceerd boven ~5 m³
 
-**Voor LQV:** de funderingen van het cob-huis zijn ~6 m³ totaal ciclopeus beton. In-situ is goedkoper maar vereist gespecialiseerd personeel. Aanbeveling: in-situ met gehuurde betonmixer + 1 metselaar + 2 helpers.
+**Voor RV:** de funderingen van het cob-huis zijn ~6 m³ totaal ciclopeus beton. In-situ is goedkoper maar vereist gespecialiseerd personeel. Aanbeveling: in-situ met gehuurde betonmixer + 1 metselaar + 2 helpers.
 
 ---
 
@@ -324,11 +324,11 @@ Vraag bij elke leverancier beide modaliteiten aan voordat u bestelt.
 | **Pekel/grondwerker** | dagloon 8u | 80.000–100.000 | $10,96–13,70 | Markt |
 | **Nachtwaker** | dagloon 12u | 120.000 | $16,44 | Markt |
 
-**Voor LQV:** typisch landelijk team voor cob-huis 80 m²:
+**Voor RV:** typisch landelijk team voor cob-huis 80 m²:
 - 1 meester + 2 officiële metselaars + 2 helpers + 1 grondwerker = **6 personen**
 - Typische landelijke werkdag: 8:00–17:00 met 1u lunchpauze = 8 effectieve uren
-- Duur LQV cob-huis: **6–9 maanden** afhankelijk van klimaat
-- Totale arbeidskosten LQV: **Gs. 90.000.000–120.000.000** = $12.330–16.440 USD
+- Duur RV cob-huis: **6–9 maanden** afhankelijk van klimaat
+- Totale arbeidskosten RV: **Gs. 90.000.000–120.000.000** = $12.330–16.440 USD
 
 ---
 
@@ -375,9 +375,9 @@ Vraag bij elke leverancier beide modaliteiten aan voordat u bestelt.
 
 ---
 
-## §11 — Toepassing LQV (cob-huis 80 m², Escobar Paraguarí)
+## §11 — Toepassing RV (cob-huis 80 m², Escobar Paraguarí)
 
-**Totale geschatte kosten LQV cob-huis eerste voorbeeld:**
+**Totale geschatte kosten RV cob-huis eerste voorbeeld:**
 
 | Categorie | USD | Gs |
 |---|---:|---:|
@@ -398,7 +398,7 @@ Vraag bij elke leverancier beide modaliteiten aan voordat u bestelt.
 | **Totaal materialen afgeleverd Escobar** | **3.710** | **27.061.000** |
 | Arbeid (7 maanden × 6 personen × 22 dagen × Gs. 145.000/dag gemiddeld) | 13.530 | 98.800.000 |
 | Indirect (bouwkantoor, omheining, toiletten, huur) | 800 | 5.840.000 |
-| **TOTAAL LQV cob-huis 80 m²** | **18.040** | **131.701.000** |
+| **TOTAAL RV cob-huis 80 m²** | **18.040** | **131.701.000** |
 | **Effectieve kosten/m² landelijk Paraguay** | **$225/m²** | **Gs. 1,65M/m²** |
 
 **Vergelijking met conventionele typologie (baksteen + H21, zelfde oppervlak):**

@@ -21,7 +21,7 @@
 
 ## Session arc
 
-The session opened with a single artifact: the `Borrador Boleto Compraventa Torrasca Van de Camp.pdf` at the project root, plus a working Blender + Python render pipeline for the La Quebrada Viva cob house. The user asked to analyze the PDF, organize the project, and understand the client.
+The session opened with a single artifact: the `Borrador Boleto Compraventa Torrasca Van de Camp.pdf` at the project root, plus a working Blender + Python render pipeline for the Riverstone Valley cob house. The user asked to analyze the PDF, organize the project, and understand the client.
 
 Over the course of the session, the project scope shifted from "single self-sufficient home" to "housing park + restaurant on 62 hectares" — a meaningful change with major implications for the planning work. By the end of the session we had a clear refined direction, a research tracker, and a 17-day clock to the escritura signing.
 
@@ -66,7 +66,7 @@ Over the course of the session, the project scope shifted from "single self-suff
 
 ### 2. Scope reframing
 
-- **Old scope**: single self-sufficient home (La Quebrada Viva) on the 62 ha.
+- **Old scope**: single self-sufficient home (Riverstone Valley) on the 62 ha.
 - **New scope**: housing park + restaurant + amenities on the 62 ha.
 - The cob house design becomes the **first example building typology** within the larger vision, not the whole vision.
 - The 12 existing renders stay valid as concept art for the cob typology.

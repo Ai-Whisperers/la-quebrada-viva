@@ -14,7 +14,7 @@
 - **Bar** (per D6)
 - **Events** (per D3, D7 — weddings, corporate)
 
-## Net effect on LQV (annual estimate, Fase 1)
+## Net effect on RV (annual estimate, Fase 1)
 
 **Per FINANCIAL_MODEL (€5.5M Phase 1, 5 cabins + restaurant):**
 
@@ -39,7 +39,7 @@
 - Remit to SET by the 15th of the next month
 - Late: 1-3% penalty + interest
 
-## What LQV needs to do operationally
+## What RV needs to do operationally
 
 - **Use Marangatu portal** for monthly IVA filing
 - **Register with SET** (done in BV setup per L08)

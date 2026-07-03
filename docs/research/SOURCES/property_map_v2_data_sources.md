@@ -81,7 +81,7 @@ The doc is organised by data domain. Each domain ends with a **`pull_list`** —
 | **TRY Plant Trait Database** | Functional traits (leaf area, wood density) for ~300k species | https://www.try-db.org |
 | **BIEN (Botanical Information and Ecology Network)** | New World species ranges + traits | https://bien.nceas.ucsb.edu |
 
-### 2.2 Expected genera at La Quebrada Viva (Upper Paraná Atlantic Forest, BSAU)
+### 2.2 Expected genera at Riverstone Valley (Upper Paraná Atlantic Forest, BSAU)
 **Reference for "what should be there"** — anchored to biome literature + INFONA forest typology + Guyra Paraguay monitoring + GBIF occurrence density within 10 km of the polygon:
 
 | Genus / common name | Likelihood | Why |
@@ -112,7 +112,7 @@ The doc is organised by data domain. Each domain ends with a **`pull_list`** —
 ### 2.3 Field-walk preparation
 - **Trail-guide reference for the field botanist**: print a 1-page key with the 20 genera above + diagnostic photos.
 - **Pl@ntNet API key**: free 500 calls/day at https://my.plantnet.org/account — set up before the field walk.
-- **iNaturalist project**: create "La Quebrada Viva — Mbopicua cluster" private project to gate observations.
+- **iNaturalist project**: create "Riverstone Valley — Mbopicua cluster" private project to gate observations.
 - **Herbarium voucher protocol**: dry-press samples for any unidentified stem, deposit at **CTES (Corrientes herbarium, Argentina, the closest regional reference)** or **PY (Asunción herbarium, MNHNP)**.
 
 ### `pull_list` for §2
@@ -333,7 +333,7 @@ These typologies inform the eventual 3D twin: even before we get on-property pho
 | **PNN/INFONA wildlife camera-trap network** | Internal | Mammal records (FOIA-able) |
 | **Reptile Database Paraguay** | https://reptile-database.reptarium.cz | Herpetofauna |
 
-### 7.2 Expected mammals at La Quebrada Viva (Upper Paraná Atlantic Forest)
+### 7.2 Expected mammals at Riverstone Valley (Upper Paraná Atlantic Forest)
 | Group | Likelihood | Species |
 |---|---|---|
 | Primates | High | *Sapajus nigritus* (capuchin), *Alouatta caraya* (howler) — confirmed nearby Mbaracayú |
@@ -379,7 +379,7 @@ The user's request "all relevant data … of close by to understand what should 
 - **Reserva Natural Morombí** (Itapúa department, distant cross-comparable)
 - **Refugio Biológico Yvyty Rokai** (Cordillera de los Altos)
 
-For each: pull boundary GeoJSON, sample DEM/NDVI/canopy stats, compare to our polygon → "where on the spectrum of BSAU integrity does La Quebrada Viva fall?"
+For each: pull boundary GeoJSON, sample DEM/NDVI/canopy stats, compare to our polygon → "where on the spectrum of BSAU integrity does Riverstone Valley fall?"
 
 ### 8.2 Eco-lodge / regenerative-tourism comparables
 Operational rural-lodge precedents we can study for buildable program + planning:
@@ -409,7 +409,7 @@ Operational rural-lodge precedents we can study for buildable program + planning
 2. For each protected area: zonal stats (NDVI median + slope + canopy class %) vs our polygon → `docs/site_data/comparables/zonal_stats.csv`.
 3. Pull NICFI + S2 for 2 km buffer around our polygon → neighbour-parcel canopy comparison map.
 4. Google Earth Pro historical screenshots at 5-year intervals → `docs/site_data/comparables/historical/`.
-5. Output `docs/site_data/comparables/index.md` summarising "where does La Quebrada Viva fit on the BSAU integrity spectrum + what does similar elsewhere look like done well?"
+5. Output `docs/site_data/comparables/index.md` summarising "where does Riverstone Valley fit on the BSAU integrity spectrum + what does similar elsewhere look like done well?"
 
 ---
 

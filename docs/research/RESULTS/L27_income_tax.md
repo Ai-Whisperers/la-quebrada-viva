@@ -5,7 +5,7 @@
 
 ## What L27 is
 
-**Two layers of tax on LQV's income:**
+**Two layers of tax on RV's income:**
 
 ### Layer 1: BV-level income tax (PY)
 - IRE 10% (commercial activities, per L25)
@@ -42,7 +42,7 @@ Wes (NL resident) → receives dividend from BV2
   → if NL box 3, savings rate (deemed return from net wealth)
 ```
 
-**Net for Wes + Thijs:** ~25% effective personal tax on LQV profit
+**Net for Wes + Thijs:** ~25% effective personal tax on RV profit
 
 ## Optimizations
 

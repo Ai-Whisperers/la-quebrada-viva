@@ -4,7 +4,7 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## What LQV needs (Fase 1 + ongoing reforestation)
+## What RV needs (Fase 1 + ongoing reforestation)
 
 **Per Wes's W1.1 batch + AUDIO D:** Deep research on native plant species for the 62-ha property, focusing on:
 1. Reforestation species (after any clearing)
@@ -82,7 +82,7 @@
 - Nest trees (native cavity-nesters prefer old growth — leave some dead trees)
 - Water features (small ponds at low points = amphibian habitat)
 
-## Recommended planting plan for LQV
+## Recommended planting plan for RV
 
 ### Fase 1 (immediate, around the 5 cabins + reception)
 

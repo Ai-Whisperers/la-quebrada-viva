@@ -1,4 +1,4 @@
-# Biodiversity 25 km — La Quebrada Viva (Phase-0 §12)
+# Biodiversity 25 km — Riverstone Valley (Phase-0 §12)
 
 _Pulled 2026-06-29 from GBIF Occurrence (per-class queries) + iNaturalist (research-grade observations only). 25 km radius around parcel centroid (-57.0355, -25.6073), BBox W-57.2853 S-25.8325 E-56.7857 N-25.3821. Covers the parcel + ~ Quiindy + ~ Acahay + the Lago Ypoá western shore — a Cerrado / Atlantic-Forest transition belt._
 

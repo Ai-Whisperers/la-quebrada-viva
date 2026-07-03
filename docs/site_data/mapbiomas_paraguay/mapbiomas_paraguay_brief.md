@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-# MapBiomas Paraguay 1985-2023 land-cover trajectory brief — La Quebrada Viva (Phase-0 §12 v1)
+# MapBiomas Paraguay 1985-2023 land-cover trajectory brief — Riverstone Valley (Phase-0 §12 v1)
 
 > MapBiomas Paraguay Collection 2 (1985-2023) 39 annual categorical
 > rasters at 30 m, pulled from the public GCS bucket. Class statistics

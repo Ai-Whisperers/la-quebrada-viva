@@ -1,4 +1,4 @@
-# Cultural Notes — La Quebrada Viva (Escobar, Paraguarí)
+# Cultural Notes — Riverstone Valley (Escobar, Paraguarí)
 
 > **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
 
@@ -25,7 +25,7 @@ Wesley's audience for the housing park is European / 1st-world travelers. The te
 ## Materials and colors authoritative for Paraguay (not Mediterranean / Asian / Northern European)
 
 - **Cob (adobe)**: red-tan to ochre, NEVER bleached white. Lime-wash to soft cream or honey, not pure white.
-- **Roof tile**: terracotta, weathered. Or grass sod in the LQV variant.
+- **Roof tile**: terracotta, weathered. Or grass sod in the RV variant.
 - **Floor inside**: polished red brick OR red-laterite-tinted concrete (NOT cement-grey).
 - **Floor on corredor**: rough-laid sandstone or red brick.
 - **Doors**: solid lapacho or urunday, with iron hardware (not bronze, not brass).
@@ -106,7 +106,7 @@ Even though we are visualizing, not catering, the renders read more authentic wh
 - `docs/paraguay_clay_house_research.md` — site-specific climate and material data.
 - `docs/HOUSING_PARK_CONCEPT.md` — typology selection that must respect the same cultural vocabulary.
 - `docs/photographic_references.md` (planned) — annotated source images grouped by motif.
-- `lqv/restaurant/dining_hall.py` NOTES — sod-roof restaurant continuation of the LQV language.
+- `lqv/restaurant/dining_hall.py` NOTES — sod-roof restaurant continuation of the RV language.
 - `lqv/typologies/adobe_courtyard.py` — most overtly Rule-8 typology of the eight.
 
 ### Extended back-pointers (additive 2026-06-10)

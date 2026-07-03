@@ -34,7 +34,7 @@
 
 **Trend:** ~14% annual inflation in cement. Major jumps at 2022 (fuel crisis) and 2025 (river transport disruption due to Paraguay River bajante).
 
-**For LQV construction cost realism:** Use 2026-06 prices as baseline. **Add 12% inflation buffer for 12-month forward budgeting.** For 50+ tons of cement over 3 years, expect Gs. 200-400k/ton of inflation cost if prices track 14%/yr.
+**For RV construction cost realism:** Use 2026-06 prices as baseline. **Add 12% inflation buffer for 12-month forward budgeting.** For 50+ tons of cement over 3 years, expect Gs. 200-400k/ton of inflation cost if prices track 14%/yr.
 
 ## Rebar pricing (PY market, 2026)
 
@@ -56,9 +56,9 @@
 - **Cemnet global:** https://www.cemnet.com/News/tag/Paraguay/ (industry news)
 - **Globalcement.com:** https://www.globalcement.com/news/itemlist/tag/Paraguay
 
-## Cost impact for LQV
+## Cost impact for RV
 
-For LQV's 5-cabin Phase 1 (per reconciled view):
+For RV's 5-cabin Phase 1 (per reconciled view):
 - 30 bags cement × Gs. 50,000 avg = Gs. 1.5M per cabin = **Gs. 7.5M total cement** for first 5 cabins
 - 100 kg rebar × Gs. 10,000 avg = **Gs. 1M per cabin** = Gs. 5M total
 - **Total cement + rebar Phase 1: ~Gs. 12.5M ≈ $1,750 USD** (at 7,150 Gs/USD)

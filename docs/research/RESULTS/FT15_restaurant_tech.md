@@ -4,12 +4,12 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## What LQV needs (Fase 1 restaurant)
+## What RV needs (Fase 1 restaurant)
 
 **5 systems:**
 1. **POS (point of sale)** — order taking, payment processing
 2. **Reservations** — booking management
-3. **Online ordering** — if LQV does delivery (probably not for Fase 1)
+3. **Online ordering** — if RV does delivery (probably not for Fase 1)
 4. **Inventory** — track food + beverage
 5. **Staff scheduling** — for 7 restaurant staff
 
@@ -20,13 +20,13 @@
 | **Square (US, available in PY)** | ✅ | partial | basic | Free + $60-150/mo for advanced | Simple, good for small restaurants |
 | **Toast (US, US-focused)** | ✅ | ❌ | basic | $165-200/mo | Not in PY |
 | **Lightspeed (US, CA-focused)** | ✅ | partial | good | $69-200/mo | Good for hotels + restaurants |
-| **Cloudbeds (US, strong in LATAM)** | partial | ✅ | basic | $20-30/mo | **Best for the LQV hotel + restaurant** |
+| **Cloudbeds (US, strong in LATAM)** | partial | ✅ | basic | $20-30/mo | **Best for the RV hotel + restaurant** |
 | **Mews (CZ, newer, growing)** | ❌ | ✅ | ❌ | $50-100/mo | Property management focus |
-| **Cloudbeds + Lightspeed combo** | ✅ | ✅ | good | ~$200-300/mo | **Recommended for LQV** |
+| **Cloudbeds + Lightspeed combo** | ✅ | ✅ | good | ~$200-300/mo | **Recommended for RV** |
 | **Lodgify** (Spain) | partial | ✅ | basic | $20-30/mo | Vacation rental focus |
 | **Loca01 / ProSoftware** (PY local) | ✅ | ❌ | basic | $30-50/mo | PY-local, but limited features |
 
-## Recommended stack for LQV
+## Recommended stack for RV
 
 **Primary: Cloudbeds + Lightspeed combo**
 
@@ -48,14 +48,14 @@
 
 ## Alternative: Cloudbeds only
 
-If LQV wants simplicity (1 system for hotel + restaurant), Cloudbeds does have basic POS. For Fase 1 with limited restaurant volume (25-40 covers/day), Cloudbeds' POS is sufficient.
+If RV wants simplicity (1 system for hotel + restaurant), Cloudbeds does have basic POS. For Fase 1 with limited restaurant volume (25-40 covers/day), Cloudbeds' POS is sufficient.
 
 **Total monthly cost: $20-30/month**
 
 ## Recommendation: Cloudbeds + Lightspeed
 
-For LQV (Fase 1 expanding into Fase 2/3):
-- **Cloudbeds** for the hotel/booking system (LQV's 30 cabins)
+For RV (Fase 1 expanding into Fase 2/3):
+- **Cloudbeds** for the hotel/booking system (RV's 30 cabins)
 - **Lightspeed** for the restaurant POS (when restaurant volume justifies)
 
 **Add later:**
@@ -84,4 +84,4 @@ For LQV (Fase 1 expanding into Fase 2/3):
 
 ## Status
 
-✅ Done. Recommend Cloudbeds + Lightspeed for LQV. ~$200-300/month initially.
+✅ Done. Recommend Cloudbeds + Lightspeed for RV. ~$200-300/month initially.

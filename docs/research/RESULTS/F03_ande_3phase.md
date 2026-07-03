@@ -1,10 +1,10 @@
-# F03 — ANDE 3-phase upgrade for LQV (W1.2 site visit)
+# F03 — ANDE 3-phase upgrade for RV (W1.2 site visit)
 
 **Method:** MEM + general PY electrical knowledge
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## What LQV needs (Fase 1)
+## What RV needs (Fase 1)
 
 **Load estimate (per F09 + F15 + F19 + M22 + A06):**
 - 5 cabins × AC + lights + fridge = 2 kW per cabin peak
@@ -17,7 +17,7 @@
 
 **This requires 3-phase power at the property.**
 
-## Options for LQV
+## Options for RV
 
 ### Option 1: ANDE 3-phase upgrade (recommended)
 - Apply at local ANDE office (Paraguarí)
@@ -41,7 +41,7 @@
 - Generator for emergencies
 - **Highest cost but highest resilience**
 
-**For LQV: recommended Option 1 + Option 2 hybrid**
+**For RV: recommended Option 1 + Option 2 hybrid**
 
 ## ANDE 3-phase upgrade process
 
@@ -88,7 +88,7 @@
 - **Risk:** delays (PY government infrastructure projects can be slow)
 - **Backup:** off-grid solar (F09 + F10) bridges the gap
 
-## LQV's optimal approach
+## RV's optimal approach
 
 1. **Apply NOW** (don't wait for F09 to be designed)
 2. **Design F09 to be ANDE-compatible** (hybrid inverter, can sell back to grid if ANDE has net metering — unlikely in PY but worth checking)

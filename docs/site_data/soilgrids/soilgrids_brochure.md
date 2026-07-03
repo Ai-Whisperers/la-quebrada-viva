@@ -1,4 +1,4 @@
-# SoilGrids 250 m — La Quebrada Viva parcel
+# SoilGrids 250 m — Riverstone Valley parcel
 
 Source: ISRIC SoilGrids v2.0 (https://soilgrids.org), CC-BY 4.0  
 Point: lon=-57.03000, lat=-25.63000 (parcel centroid)  

@@ -5,27 +5,27 @@
 
 ## What W18 is
 
-**LQV staff commute from:**
-- Paraguarí city (closest town, ~30 km from LQV)
+**RV staff commute from:**
+- Paraguarí city (closest town, ~30 km from RV)
 - Asunción (1.5 hours, 50% of staff would live there)
 - Caacupé (1 hour, some Mennonite workers)
 - Loma Plata (4 hours, occasional specialists)
 
-## Transport options for LQV staff
+## Transport options for RV staff
 
 ### Option 1: Public bus
 - **Cost:** Gs. 5,000-15,000/person/day (one-way)
 - **Frequency:** 3-5 buses per day between major cities
 - **Reliability:** decent, weather-dependent
-- **LQV cost:** ~$30-50/day per staff member
+- **RV cost:** ~$30-50/day per staff member
 - **Best for:** Workers who live in nearby towns (Paraguarí, Caacupé)
 
-### Option 2: LQV-shared transport
-- 1 minivan or bus owned/leased by LQV
+### Option 2: RV-shared transport
+- 1 minivan or bus owned/leased by RV
 - Pick up staff from common collection point
 - **Cost:** $500-1,000/month lease + $100-200/month fuel
 - **Reliability:** full
-- **LQV cost:** $7,200-14,400/year
+- **RV cost:** $7,200-14,400/year
 - **Best for:** Workers who don't have own transport
 
 ### Option 3: Personal transport
@@ -33,7 +33,7 @@
 - Bicycles
 - **Cost:** Workers own + maintain
 - **Reliability:** variable
-- **LQV cost:** 0 (but provide parking + shelter)
+- **RV cost:** 0 (but provide parking + shelter)
 - **Best for:** Workers who live close to the property
 
 ### Option 4: On-site housing
@@ -42,15 +42,15 @@
 - Rent-free + utilities included
 - **Cost:** $2,000-5,000/year per casita (utilities + maintenance)
 - **Reliability:** full
-- **LQV cost:** $5,000-15,000/year
+- **RV cost:** $5,000-15,000/year
 - **Best for:** Long-term key staff
 
-## Recommended approach for LQV
+## Recommended approach for RV
 
 **Phase 1 (Y1):**
 - **Key staff on-site** (chef, hovenier, resort manager): rent-free casita
 - **Other staff** from Paraguarí (close enough for daily commute)
-- LQV-shared minivan for emergency transport
+- RV-shared minivan for emergency transport
 - 1 monthly stipend for staff transport: ~$30/month
 
 **Cost estimate Phase 1:**

@@ -1,4 +1,4 @@
-# L09 — Fire safety plan for LQV (R01 + new) [W1.2 / insurance hard gate]
+# L09 — Fire safety plan for RV (R01 + new) [W1.2 / insurance hard gate]
 
 **Method:** MEM + Brazilian fire safety standards
 **Confidence:** Medium
@@ -6,16 +6,16 @@
 
 ## Why this is critical
 
-**LQV's risk profile:**
+**RV's risk profile:**
 - 82% Atlantic Forest canopy
-- Wooden/bamboo structures (LQV signature style)
+- Wooden/bamboo structures (RV signature style)
 - 30 cabins + restaurant + reception (high-occupancy)
 - PY dry season (Aug-Oct) is high fire risk
 - Lightning common in PY
 
-**Fire is the single biggest risk to LQV's survival.** One ignition could wipe out 10+ cabins in 30 minutes.
+**Fire is the single biggest risk to RV's survival.** One ignition could wipe out 10+ cabins in 30 minutes.
 
-## What LQV needs (per insurance underwriting + safety)
+## What RV needs (per insurance underwriting + safety)
 
 ### 1. Firebreaks (cleared strips)
 
@@ -24,7 +24,7 @@
 - **Width at building interface:** 3-5m around each cabin
 - **Width at property boundary:** varies (fire-resistant material instead of cleared)
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - Tractor clearing: Gs. 50,000-100,000/hectare = $7-14/ha
 - ~10 ha of firebreak = $70-140 (cheap)
 - **Total: $100-200**
@@ -35,7 +35,7 @@
 - **Combine with cistern system** (F15) — same water infrastructure
 - **4-6 hydrants** at key locations (near cabin clusters, restaurant, reception, property entrance)
 
-**Cost for LQV:**
+**Cost for RV:**
 - Hydrants: $200-500 each
 - 4-6 hydrants: $800-3,000
 - Plumbing: $500-1,500
@@ -73,7 +73,7 @@
 - **Fire blankets** in kitchen
 - **Hoses** (connected to water hydrants)
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - ABC extinguishers: $50-150 each
 - 8 extinguishers: $400-1,200
 - Class K: $200-400

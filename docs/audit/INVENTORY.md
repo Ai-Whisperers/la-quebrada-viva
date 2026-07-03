@@ -1,4 +1,4 @@
-# Repo Inventory — LQV Project (audit pass 2026-06-30)
+# Repo Inventory — RV Project (audit pass 2026-06-30)
 
 **Purpose:** Complete file inventory with classification. Not a "what to read" guide (that's MASTER_BRIEF + INDEX). This is a structural map of what exists, what it does, and what bucket it belongs in.
 
@@ -157,7 +157,7 @@ This is the bucket that grew most in the last 7 days and is now the most over-in
 | Sub-bucket | Files | Size | Verdict |
 |---|---:|---:|---|
 | `docs/ideas/` (catalog) | 122 | 828 KB | **MIXED** — 89 original ideas + 20 suggested + INSIGHTS + SUGGESTED + INDEX = 122 files. Most of the 109 idea files are 4-5 KB each, all generated in one pass. Quality varies. **CRITIQUE: see CRITIQUE.md §2** |
-| `docs/_reconciled/` (merged view) | 11 | 108 KB | CURRENT — Built 4 hours ago. Bridges Wes's files + Ivan's LQV work. OK but duplicates some content from STATUS.md + HOUSING_PARK_CONCEPT.md |
+| `docs/_reconciled/` (merged view) | 11 | 108 KB | CURRENT — Built 4 hours ago. Bridges Wes's files + Ivan's RV work. OK but duplicates some content from STATUS.md + HOUSING_PARK_CONCEPT.md |
 | `docs/research/` | 10 | 248 KB | MOSTLY CURRENT — Ivan's NL prices doc is the load-bearing one. Others are research sub-reports from earlier sessions |
 | `docs/render_catalogue/` | 2 | 9.3 MB | **DUPLICATE?** — the 926-render catalogue exists in two places: `docs/render_catalogue/` (markdown index) + `renders/` (PNG files). The PNGs in render_catalogue/by_asset/ are derived renders. The contact_sheets/ are PNGs too |
 | `docs/MASTER_TODO.md` | 31 KB | CURRENT | P0a-P4 phase plan. Escritura-week heavy. Doesn't reflect post-Wes-data-share state |
@@ -185,7 +185,7 @@ This is the bucket that grew most in the last 7 days and is now the most over-in
 | `.githooks/` | 1 | CURRENT — pre-commit |
 | `.github/` | (workflows) | CURRENT |
 
-**Summary:** mostly fine. Tests are thin. Some `scripts/` files are 1-shot utilities (build_pelton_head_map.py, build_pelton_siting.py — these are LQV-specific, not generic). The 100-file count includes subdirs (`scripts/satellite/`).
+**Summary:** mostly fine. Tests are thin. Some `scripts/` files are 1-shot utilities (build_pelton_head_map.py, build_pelton_siting.py — these are RV-specific, not generic). The 100-file count includes subdirs (`scripts/satellite/`).
 
 ---
 
@@ -245,7 +245,7 @@ This is the bucket that grew most in the last 7 days and is now the most over-in
 
 **Issue:** Both pre-Wes's full data share. Both still useful as background. Both don't mention 30 cabins / 10 types / €5.5M.
 
-**Recommendation:** Mark both with "as of 2026-06-10 — pre-Wes-data-share" header. Keep as historical. Don't delete (they're the source of the 13 typologies in the LQV render pipeline).
+**Recommendation:** Mark both with "as of 2026-06-10 — pre-Wes-data-share" header. Keep as historical. Don't delete (they're the source of the 13 typologies in the RV render pipeline).
 
 ### D. The 109-idea catalog quality
 

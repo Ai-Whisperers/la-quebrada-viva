@@ -2,7 +2,7 @@
 
 > **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
 
-**Project:** La Quebrada Viva — Clay and bottle earthen smart home, eastern Paraguay  
+**Project:** Riverstone Valley — Clay and bottle earthen smart home, eastern Paraguay  
 **Owner:** Ivan Weiss Van Der Pol — Senior Data Engineer / AI Whisperers, Asunción, Paraguay  
 **Status:** Research and design phase — Blender render in development  
 **Last updated:** June 2026
@@ -19,7 +19,7 @@ The home sits on a real property in eastern Paraguay's Atlantic Forest region. T
 
 ---
 
-## 2. The Site — La Quebrada Viva
+## 2. The Site — Riverstone Valley
 
 ### 2.1 What the photographs reveal
 

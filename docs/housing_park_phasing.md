@@ -8,11 +8,11 @@ The goal is to spread capital and labour so each phase generates revenue or de-r
 
 ## Strategic principle
 
-The cob/bottle LQV house (typology 1) is BOTH:
+The cob/bottle RV house (typology 1) is BOTH:
 - the founder's residence + workshop,
 - and the **show home** that prospective housing-park buyers tour to decide.
 
-So LQV-1 must finish first. No other typology can predate it. Period.
+So RV-1 must finish first. No other typology can predate it. Period.
 
 ## Phase 0 — Escritura + entitlements (months 0–3, 2026-Q3)
 
@@ -25,7 +25,7 @@ So LQV-1 must finish first. No other typology can predate it. Period.
 **Capital required:** ~USD 8 000 (soft costs).
 **Revenue:** zero.
 
-## Phase 1 — LQV house + entry road (months 4–14, 2026-Q4 to 2027-Q3)
+## Phase 1 — RV house + entry road (months 4–14, 2026-Q4 to 2027-Q3)
 
 - 2026-10: clearing, foundation, trees felled.
 - 2026-11 to 2027-04: cob walls + roof (Phase 0–6 in `docs/build_sequence.md`).
@@ -38,8 +38,8 @@ So LQV-1 must finish first. No other typology can predate it. Period.
 
 ## Phase 2 — Restaurant + dining hall (months 12–22, 2027-Q3 to 2028-Q2)
 
-- 2027-08: restaurant pad cleared, 300 m southwest of LQV house, near the entry road.
-- 2027-09 to 2028-02: dining hall built (sod-roof extension of LQV language; serves 40 covers).
+- 2027-08: restaurant pad cleared, 300 m southwest of RV house, near the entry road.
+- 2027-09 to 2028-02: dining hall built (sod-roof extension of RV language; serves 40 covers).
 - 2028-03 to 2028-05: outdoor kitchen + dual tatakuá + commercial kitchen rough-in.
 - 2028-06: SENATUR + SET licensing; soft open.
 
@@ -77,7 +77,7 @@ So LQV-1 must finish first. No other typology can predate it. Period.
 **Capital required:** ~USD 85 000.
 **Revenue:** USD 110–160/night; year-1 USD 24 000 net.
 
-**Why typology 3 here:** doubles down on the LQV-style earthen story — strongest brand consistency play.
+**Why typology 3 here:** doubles down on the RV-style earthen story — strongest brand consistency play.
 
 ## Phase 6 — Typologies 4 & 5 in parallel (months 36–54, 2029-Q3 to 2031-Q1)
 
@@ -108,8 +108,8 @@ Final 3 typologies (selected from): Tropical Modernist, Earth-bag Dome, Containe
 
 | Phase | Cannot start before | Cannot start after |
 |---|---|---|
-| 1. LQV house | Phase 0 (escritura) | — |
-| 2. Restaurant | LQV roof complete | LQV habilitación + 6 months |
+| 1. RV house | Phase 0 (escritura) | — |
+| 2. Restaurant | RV roof complete | RV habilitación + 6 months |
 | 3. Amenities | Phase 2 50% complete | Phase 4 start |
 | 4. Typology 2 | Phase 2 open | Phase 3 25% complete |
 | 5. Typology 3 | Typology 2 habilitación | Phase 6 start |
@@ -148,8 +148,8 @@ Final 3 typologies (selected from): Tropical Modernist, Earth-bag Dome, Containe
 
 - `docs/HOUSING_PARK_CONCEPT.md` — typology designs.
 - `docs/EUROPEAN_TOURISM_SPEC.md` — guest profile and pricing.
-- `docs/build_sequence.md` — LQV build details (Phase 1).
-- `docs/bom.md` — LQV capex baseline; multipliers for typology 2–8.
+- `docs/build_sequence.md` — RV build details (Phase 1).
+- `docs/bom.md` — RV capex baseline; multipliers for typology 2–8.
 - `lqv/typologies/__init__.py` — module ordering matches phase ordering.
 - `lqv/restaurant/*` — Phase 2 typology.
 - `lqv/amenities/*` — Phase 3 deliverables.

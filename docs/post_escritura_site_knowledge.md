@@ -1,4 +1,4 @@
-# Post-Escritura Site Knowledge — La Quebrada Viva
+# Post-Escritura Site Knowledge — Riverstone Valley
 > **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (post-escritura site knowledge (T+1 compiled)). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
@@ -95,7 +95,7 @@ Wesley's pin at 166.3 m sits at roughly **P4** — almost at the bottom of the p
 | **Terrace-required** | 15–30 % | **13.87** | 44.8 % |
 | Unbuildable | > 30 % | 0.09 | 0.3 % |
 
-Reads as **classic quebrada rolling terrain**: a small share of true flat ground, lots of working slope. **Phase-1 cabanas (4–6 units) fit comfortably in the 4.28 ha flat band** with siting headroom to spare. Pushing to a larger Phase-2/3 program would need terracing on the 13.87 ha mid-band — buildable, just with capex on stone retaining walls (already in the LQV vernacular).
+Reads as **classic quebrada rolling terrain**: a small share of true flat ground, lots of working slope. **Phase-1 cabanas (4–6 units) fit comfortably in the 4.28 ha flat band** with siting headroom to spare. Pushing to a larger Phase-2/3 program would need terracing on the 13.87 ha mid-band — buildable, just with capex on stone retaining walls (already in the RV vernacular).
 
 ### 3.3 Aspect (which direction slopes face)
 
@@ -141,7 +141,7 @@ Inside the polygon (3,270 cells on 10 m bands, polygon reprojected to UTM 21S):
 
 - **0 shots inside the polygon** (small target, sparse GEDI sampling).
 - **1 nearby shot ~500 m SW**: canopy height **27.7 m**.
-- LQV-wide GEDI canopy distribution (cleaned, 25 shots): median **25.3 m**, range 18.9–80 m (80 m tail is sensor saturation).
+- RV-wide GEDI canopy distribution (cleaned, 25 shots): median **25.3 m**, range 18.9–80 m (80 m tail is sensor saturation).
 
 Reading: emergent canopy on Wesley's polygon is consistent with **mature secondary Atlantic Forest**, ~25–28 m tall, with the usual lapacho / cedro / mango hero-tree distribution.
 
@@ -154,7 +154,7 @@ Reading: emergent canopy on Wesley's polygon is consistent with **mature seconda
 
 ## 5. Climate envelope (ERA5 1990–2025, project center)
 
-Already integrated in the LQV climate brochure; re-stated here for the client deliverable:
+Already integrated in the RV climate brochure; re-stated here for the client deliverable:
 
 | Metric | Value |
 |---|---|
@@ -218,7 +218,7 @@ Original AOI bbox (`docs/site_data/aoi_62ha.geojson`, north `-25.615`) **cut off
 
 - `docs/site_data/satdata_brief.md` — the satdata reader the render pipeline was built against. This doc is the **client-facing companion** with Wesley's polygon as the new anchor.
 - `docs/contract_summary.md` — 6 fincas table, prices, seña, escritura timing.
-- `docs/MASTER_BRIEF.md` — overall LQV master brief.
+- `docs/MASTER_BRIEF.md` — overall RV master brief.
 - `docs/RESEARCH_GAPS.md` — R02 (Anexo I / cadastral shapes) is the explicit unblock for the padron-hypothesis disambiguation (§2 above).
 - `docs/CLIENT.md` — Wesley + Thijs ownership context.
 - `docs/site_data/aoi_62ha_extended.geojson` — extended AOI bbox (schema 1.1) used for all rasters in `extended_aoi/`.

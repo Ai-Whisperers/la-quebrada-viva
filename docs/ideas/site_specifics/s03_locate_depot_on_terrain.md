@@ -22,7 +22,7 @@ GPS-located spot
 
 > _"[Action list 2026-06-30]: + Jos + Thijs | | T4 | **Water-afvoer locaties bepalen** | Maand 1-2 | Wesley + Thijs | | T5 | **Basis-gereedschap regelen** voor kleine werkzaamheden | Maand 1 | Wesley | | T6 | **Jos + Thijs onboarding** voor eerste maanden | Week 2-3 | Wesley | | T7 | **Locatie onderzoeken** voor de 13 typol"_
 
-> _"[Action list 2026-06-30]: aak | Wanneer | Owner | |---|---|---|---| | H1 | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per LQV calc, + bamboe-import) | Week 4 | Erebus | | H4 | **Bouw eerste huis** starten | Maand 2-3 | Wesley + team"_
+> _"[Action list 2026-06-30]: aak | Wanneer | Owner | |---|---|---|---| | H1 | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per RV calc, + bamboe-import) | Week 4 | Erebus | | H4 | **Bouw eerste huis** starten | Maand 2-3 | Wesley + team"_
 
 ## Why this matters
 
@@ -30,7 +30,7 @@ GPS-located spot
 
 ## Full picture — context, constraints, history
 
-**LQV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../INSIGHTS.md) + eco-framing matters per [Insight #8](../INSIGHTS.md).
+**RV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../INSIGHTS.md) + eco-framing matters per [Insight #8](../INSIGHTS.md).
 
 ## What we know already (research summary)
 

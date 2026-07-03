@@ -1,4 +1,4 @@
-# Bill of Materials — La Quebrada Viva House
+# Bill of Materials — Riverstone Valley House
 
 **Status:** living document. Authoritative real-world quantity take-off for the cob/bottle house. Quantities are budgetary (±15%) until verified by a quantity surveyor.
 

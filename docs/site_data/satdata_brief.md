@@ -1,4 +1,4 @@
-# Satellite Data Brief — La Quebrada Viva
+# Satellite Data Brief — Riverstone Valley
 
 Compact reader: what we pulled, what it tells us about the 62-ha Escobar parcel, and exactly where each dataset feeds the render pipeline. Full provenance + SHAs in `PROVENANCE.md` (project root). Full pedagogical inventory in `docs/site_data/DATA_INVENTORY.md`.
 

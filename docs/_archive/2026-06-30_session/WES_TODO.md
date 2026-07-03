@@ -88,7 +88,7 @@
 
 **Decision only. Everything else blocks on this.**
 
-- [ ] Pick from candidates: "Riverstone Valley" (Wes's brainstorm) | "Villa del Cielo" | "Cielo Azul" | "Lluvia Dorada" | "Lluvia de Oro" | "La Quebrada Viva" (Ivan's) | "Eco Jungle Resort Paraguay" (Wes's working files)
+- [ ] Pick from candidates: "Riverstone Valley" (Wes's brainstorm) | "Villa del Cielo" | "Cielo Azul" | "Lluvia Dorada" | "Lluvia de Oro" | "Riverstone Valley" (Ivan's) | "Eco Jungle Resort Paraguay" (Wes's working files)
 - [ ] Domain check (BR02, BR03 — AI subagent, 1 day)
 - [ ] Update `README.md` with the chosen name
 - [ ] Update `STATUS.md` cross-references
@@ -380,7 +380,7 @@ These are "nice to know" but not on the critical path. Don't do them now. Save t
 | 1 | Business structure: 4-entity BV vs founder-controlled vs hybrid | Wes | Open | 0 (W0.1) |
 | 2 | Currency canonical: EUR vs USD vs 3-layer | Wes | Open | 0 |
 | 3 | Cabin typology: 10-type plan vs 13 render-files (retire extras) | Wes | Open | 1 |
-| 4 | LQV 3DGS pipeline integration | Wes+Ivan | Blocked on B07 | 1-2 |
+| 4 | RV 3DGS pipeline integration | Wes+Ivan | Blocked on B07 | 1-2 |
 | 5 | Materials pricing collection sprint | Wes | Open | 0 (W0.6+W0.8) |
 | 6 | Insurance pre-qualification BEFORE breaking ground | Wes+broker | **URGENT** | 0 |
 | 7 | Build order within Phase 1 Year 1: 5 cabins (which types?) | Wes+Ivan | Open | 1 |

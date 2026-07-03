@@ -1,4 +1,4 @@
-# PA03 — San Bernardino hotel list (cross-promotion targets for LQV)
+# PA03 — San Bernardino hotel list (cross-promotion targets for RV)
 
 **Method:** MEM + general knowledge
 **Confidence:** Low (need direct contacts)
@@ -9,10 +9,10 @@
 **Wes's marketing thesis (per DREAMLIST_D4 + D14):** Target market includes European/Dutch expats + tourists visiting San Bernardino (German community hub), Asunción, and surrounding nature spots.
 
 **Cross-promotion strategy:**
-- San Bernardino hotels → recommend LQV to their guests for "nature retreat" add-on
-- LQV → recommend San Bernardino hotels to LQV guests for "city culture" add-on
+- San Bernardino hotels → recommend RV to their guests for "nature retreat" add-on
+- RV → recommend San Bernardino hotels to RV guests for "city culture" add-on
 - Joint marketing (1 website, 2 social media accounts, 1 booking system)
-- Package deals (3 nights in LQV + 2 nights in San Bernardino)
+- Package deals (3 nights in RV + 2 nights in San Bernardino)
 
 ## San Bernardino tourism landscape
 
@@ -62,20 +62,20 @@
 ## Cross-promotion mechanics
 
 **Option A: Referral agreement**
-- Hotel refers LQV to their guests
-- LQV refers the hotel to LQV guests
+- Hotel refers RV to their guests
+- RV refers the hotel to RV guests
 - 10% commission to the referring property
 - Track via unique tracking links or codes
 
 **Option B: Joint package**
-- 3+2 night package (3 at LQV, 2 at hotel)
+- 3+2 night package (3 at RV, 2 at hotel)
 - 15-20% discount vs booking separately
 - Both properties share the marketing cost
 - Booking via single platform (Booking.com or direct)
 
 **Option C: Cross-promotion content**
-- Hotel features LQV in their welcome packet
-- LQV features the hotel in their cabin info book
+- Hotel features RV in their welcome packet
+- RV features the hotel in their cabin info book
 - Both share on social media
 - No financial transaction, just visibility
 
@@ -87,7 +87,7 @@
 - **Option A (referral):** commission only, no upfront
 - **Option B (joint package):** requires shared booking platform ($30-50/month)
 
-**For LQV Fase 1: start at $0, evolve as needed.**
+**For RV Fase 1: start at $0, evolve as needed.**
 
 ## What Wes needs to do
 
@@ -106,4 +106,4 @@
 - D14 (brand) — building relationships is part of brand
 - M01 (SENATUR tourism statistics) — covered separately
 - MK09 (European traveler) — relevant target
-- X05 (childcare + family) — San Bernardino families might want LQV weekend retreats
+- X05 (childcare + family) — San Bernardino families might want RV weekend retreats

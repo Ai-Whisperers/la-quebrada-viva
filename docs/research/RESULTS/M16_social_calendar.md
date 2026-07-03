@@ -5,7 +5,7 @@
 
 ## What M16 is
 
-**LQV's social media strategy across Instagram, Facebook, TikTok:**
+**RV's social media strategy across Instagram, Facebook, TikTok:**
 - 5 posts per week (3 IG, 1 FB, 1 TikTok)
 - Mix of content types (property, food, family, story)
 - Mix of formats (photo, video, carousel, story)
@@ -13,10 +13,10 @@
 ## Weekly content template
 
 **Monday (Property + Story):**
-- Photo: LQV property feature (cabin, pool, garden, sunset)
+- Photo: RV property feature (cabin, pool, garden, sunset)
 - Caption: Story of the place (history, design, intent)
 - 3-5 hashtags
-- Story: Same photo + "LQV day" caption
+- Story: Same photo + "RV day" caption
 - 1 hour effort
 
 **Tuesday (Food + Restaurant):**
@@ -27,33 +27,33 @@
 - 1.5 hours effort (food prep + photo + caption)
 
 **Wednesday (Family + Community):**
-- Photo or video: Family moment at LQV
-- Caption: LQV is family-anchored, here's why
+- Photo or video: Family moment at RV
+- Caption: RV is family-anchored, here's why
 - Story: Poll or question ("Which of these would your family love?")
 - 1 hour effort
 
 **Thursday (Behind-the-scenes / Build):**
 - Photo or video: Construction update, garden progress, staff moment
-- Caption: What's happening at LQV this week
+- Caption: What's happening at RV this week
 - Story: Reel highlight
 - 1.5 hours effort
 
 **Friday (Seasonal / Mood):**
 - Photo or video: Sun, sunset, weather, season
-- Caption: PY season + LQV moment
+- Caption: PY season + RV moment
 - Story: Quote + image
 - 30 min effort
 
 ## Monthly content themes
 
 **January (summer peak in PY):**
-- Family fun at LQV
+- Family fun at RV
 - Pool + river
 - Cool activities for hot weather
 
 **February:**
 - Carnival in PY (cultural moment)
-- Coexistence of PY traditions + LQV
+- Coexistence of PY traditions + RV
 
 **March (end of summer):**
 - Last summer moments
@@ -66,7 +66,7 @@
 - New menu items (seasonal)
 
 **June-July (winter, low season):**
-- "Why winter is great at LQV"
+- "Why winter is great at RV"
 - Sauna + wellness focus
 - Discounts for slow season
 
@@ -99,12 +99,12 @@
 - 1-2 posts per week
 - More for community, events, longer posts
 - Facebook Events for activities (volunteer days, family weekends)
-- Facebook Group for LQV community (Y2)
+- Facebook Group for RV community (Y2)
 
 **TikTok:**
 - 1-2 posts per week
 - Short-form video, behind-the-scenes
-- Trending sounds + LQV content
+- Trending sounds + RV content
 - Reels format works on both IG and TikTok
 
 ## Time + cost
@@ -115,7 +115,7 @@
 - Responding to DMs/comments: 1 hour
 - Strategic planning: 30 min
 
-**For LQV at Fase 1:**
+**For RV at Fase 1:**
 - 1 social media manager (part-time, can be hybrid role)
 - Or: Wes + Sonja do it personally, 1-2 hours/week
 - Or: marketing student intern (PY university) for 1 semester

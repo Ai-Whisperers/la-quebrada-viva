@@ -1,4 +1,4 @@
-# Hydrogeology brief — La Quebrada Viva (Phase-0 §12 v1)
+# Hydrogeology brief — Riverstone Valley (Phase-0 §12 v1)
 
 _Pulled 2026-06-29 from already-cached COP30 / JRC GSW / OSM / CHIRPS / POWER / SoilGrids. Sample points: 6 (centroid + 4 KML corners + Wesley pin)._
 

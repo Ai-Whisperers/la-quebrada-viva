@@ -4,7 +4,7 @@ Bundle (266 MB) is too large for direct email attachment. The deck (10.8 MB) is 
 
 ## Primary: Google Drive
 
-- Folder: `La Quebrada Viva — escritura 2026-06-27`
+- Folder: `Riverstone Valley — escritura 2026-06-27`
 - Path: `Drive > Ai-Whisperers > Clients > Wesley van de Camp > escritura_2026-06-27`
 - Sharing: link-restricted, viewer permission, recipients = `wesley@...`, `thijs@...`, `pena@...`, optionally `burgos@...` if asked.
 - Link expiry: 2026-09-27 (90 days post-signing). Renew once if Wesley still needs it after that.

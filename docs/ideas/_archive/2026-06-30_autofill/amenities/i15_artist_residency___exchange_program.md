@@ -6,13 +6,13 @@
 **Status:** `planned`
 **Quality:** `○ auto-fill`
 **Source:** Erebus insights pass 2026-06-30
-**Deliverable:** Quarterly invited artists (painters, sculptors, photographers) stay 1 month at LQV in exchange for 1 artwork. Collection becomes a Wes-curated gallery.
+**Deliverable:** Quarterly invited artists (painters, sculptors, photographers) stay 1 month at RV in exchange for 1 artwork. Collection becomes a Wes-curated gallery.
 
 ---
 
 ## What Wes wants
 
-Quarterly invited artists (painters, sculptors, photographers) stay 1 month at LQV in exchange for 1 artwork. Collection becomes a Wes-curated gallery.
+Quarterly invited artists (painters, sculptors, photographers) stay 1 month at RV in exchange for 1 artwork. Collection becomes a Wes-curated gallery.
 
 ## Why this matters
 
@@ -53,7 +53,7 @@ Free lodging x 4 artists/year = ~$15k opportunity cost
 
 ## Done = shipped
 
-Collection shown at LQV + sold (optional)
+Collection shown at RV + sold (optional)
 
 ## Recommended next action
 

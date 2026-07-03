@@ -13,7 +13,7 @@ Source tile: `60W_20S` from `https://storage.googleapis.com/global-surface-water
 | recurrence | 14401584 | 2.11 | 446 | 0.00 | 0 |
 | transitions | 14401584 | 2.11 | 446 | 0.00 | 0 |
 
-## Interpretation for La Quebrada Viva polygon
+## Interpretation for Riverstone Valley polygon
 
 - **Surface water inside polygon: 0 cells with any historical water occurrence.** JRC GSW agrees with the Sentinel-2 NDWI finding (`property_map/index.md`): no permanent or seasonal open water inside the 30.9 ha polygon at 30 m resolution.
 - Polygon seasonality max: **0 months/year** (mean 0.00).

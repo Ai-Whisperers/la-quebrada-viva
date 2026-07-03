@@ -7,7 +7,7 @@
 
 | # | ID | Topic | Method | Why now |
 |---|---|---|---|---|
-| 1 | V01 | LQV as housing park + restaurant + events venue | MEM | Already in master brief; build formal version |
+| 1 | V01 | RV as housing park + restaurant + events venue | MEM | Already in master brief; build formal version |
 | 2 | V02 | 2030 milestone (Sonja's 60th) | MEM | Already in timeline; formal doc needed |
 | 3 | V03 | First typology = cob/bottle house | MEM | Already in CABIN_CATALOG; extract the design intent |
 | 4 | BR09 | Phase naming (Fase 1/2/3) | MEM | Need explicit naming convention |
@@ -76,11 +76,11 @@
 - OP10: HR policies (PY law compliant)
 
 ### Market + competition research (5 items)
-- MC01: LQV vs competition in PY eco-lodging space
-- MC02: LQV vs Brazilian eco-lodges (Iguazú region)
-- MC03: LQV vs Argentine eco-lodges (Iberá, Mendoza)
-- MC04: LQV customer segments (eco-tourist, wellness, family, etc.)
-- MC05: LQV pricing sensitivity (what breaks demand at $200/night?)
+- MC01: RV vs competition in PY eco-lodging space
+- MC02: RV vs Brazilian eco-lodges (Iguazú region)
+- MC03: RV vs Argentine eco-lodges (Iberá, Mendoza)
+- MC04: RV customer segments (eco-tourist, wellness, family, etc.)
+- MC05: RV pricing sensitivity (what breaks demand at $200/night?)
 
 ### Build + design research (4 items)
 - BD01: Cob construction cost + time in PY (per m²)
@@ -107,7 +107,7 @@
 
 ## Part 4: 5 EXECUTION items (Wes can do anytime, low cost)
 
-- EX01: Write 1-page "why LQV" story (investor deck input)
+- EX01: Write 1-page "why RV" story (investor deck input)
 - EX02: Record 30-min voice memo to Erebus (DREAMLIST-style ideas dump)
 - EX03: Sonja questionnaire (the 16-question call)
 - EX04: Get 3 quotes from Kiki's network for attorney call

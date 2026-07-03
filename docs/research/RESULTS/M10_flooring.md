@@ -1,10 +1,10 @@
-# M10 — Vloeren (flooring) options for LQV cabins
+# M10 — Vloeren (flooring) options for RV cabins
 
 **Method:** MEM + general construction knowledge
 **Confidence:** Medium for categories, low for 2026 PY prices
 **Date:** 2026-06-30
 
-## Flooring options for LQV cabins
+## Flooring options for RV cabins
 
 ### Option 1: Tegels (ceramic/porcelain tile)
 
@@ -27,7 +27,7 @@
 - Roca (Spanish, premium)
 - Local ferreterías carry Chinese imports (budget)
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - Tile material: Gs. 25,000-45,000/m² = $3.50-6.50
 - Installation: Gs. 15,000-25,000/m² = $2-3.50
 - **Total:** Gs. 40,000-70,000/m² = **$5.50-9.70/m²**
@@ -39,7 +39,7 @@
 - Authentic, beautiful finish
 - Durable (30+ year lifespan)
 - Low maintenance
-- Matches the LQV aesthetic (raw/concrete + bamboo = minimalist)
+- Matches the RV aesthetic (raw/concrete + bamboo = minimalist)
 - Excellent thermal mass for radiant heating
 
 **Cons:**
@@ -53,7 +53,7 @@
 - Likely 1-2 weeks wait for a mobile team from Asunción
 - Cost higher than tile for materials, but lower for install if done right
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - Concrete material: Gs. 35,000-50,000/m² = $5-7
 - Polishing labor: Gs. 25,000-40,000/m² = $3.50-5.50
 - Sealing: Gs. 5,000-8,000/m² = $0.70-1.10
@@ -64,7 +64,7 @@
 
 **Pros:**
 - Beautiful, unique character
-- LQV aesthetic (eco + natural)
+- RV aesthetic (eco + natural)
 - Low cost (if sourced well)
 - Story-telling for marketing
 
@@ -81,17 +81,17 @@
 - Imported reclaimed wood (premium)
 - Salvaged hardwoods (quebracho, lapacho)
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - Material: Gs. 20,000-60,000/m² (highly variable)
 - Installation: Gs. 15,000-25,000/m²
 - Sealing/maintenance: ongoing
 - **Total:** Gs. 35,000-85,000/m² = **$5-12/m²**
 - 200m² → **$1,000-2,400 total**
 
-### Option 4: Bamboe (bamboo flooring) — most LQV-aesthetic
+### Option 4: Bamboe (bamboo flooring) — most RV-aesthetic
 
 **Pros:**
-- Matches LQV's bamboo + cob construction philosophy
+- Matches RV's bamboo + cob construction philosophy
 - Beautiful, sustainable
 - PY has bamboo expertise (Wes's $155K Bali craftsmen budget)
 
@@ -107,14 +107,14 @@
 - San Bernardino German community
 - Local workshops (Asunción, 2-3)
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - Material: Gs. 50,000-100,000/m² = $7-14
 - Installation: Gs. 25,000-50,000/m² = $3.50-7
 - Sealing: Gs. 8,000-12,000/m² = $1-1.70
 - **Total:** Gs. 83,000-162,000/m² = **$11.50-22.50/m²**
 - 200m² → **$2,300-4,500 total**
 
-### Option 5: Wood-look porcelain tile (recommended for LQV)
+### Option 5: Wood-look porcelain tile (recommended for RV)
 
 **Pros:**
 - Looks like wood, performs like tile
@@ -129,7 +129,7 @@
 
 **PY availability:** Strong. Wood-look tile is the #1 trend in PY hospitality.
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - Material: Gs. 30,000-55,000/m² = $4-7.50
 - Installation: Gs. 15,000-25,000/m²
 - **Total:** Gs. 45,000-80,000/m² = **$6-11/m²**
@@ -141,7 +141,7 @@
 |---|---|---|
 | **Bathroom + wet areas** | **Ceramic tile** (small format, 30×30 cm) | Waterproof, slip-resistant, classic |
 | **Kitchen** | **Ceramic tile** | Easy to clean, durable |
-| **Living/sleeping area** | **Wood-look porcelain** (large format 20×120 cm plank) | Matches LQV aesthetic, easy maintenance |
+| **Living/sleeping area** | **Wood-look porcelain** (large format 20×120 cm plank) | Matches RV aesthetic, easy maintenance |
 | **Outdoor deck** | **Ipe lapacho hardwood** (not the same as interior) | Weather-resistant, premium feel |
 | **Bathroom walls** | **Ceramic tile or waterproof plaster** | Waterproof |
 

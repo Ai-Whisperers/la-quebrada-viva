@@ -6,7 +6,7 @@
 ## What BD04 is
 
 **Per M08 (septic) + L21 (SENATUR) + R01 (fire plan):**
-- LQV's 5 cabins + restaurant + reception = ~25-30 people equivalent
+- RV's 5 cabins + restaurant + reception = ~25-30 people equivalent
 - PY regulations require proper wastewater treatment
 - On-site (no municipal sewer) is the only option
 
@@ -17,14 +17,14 @@
 - PY regulations satisfied
 - Maintenance: periodic sludge pumping
 - Cost: $3-5K initial + $500/year maintenance
-- **Recommended for LQV**
+- **Recommended for RV**
 
 ### Option 2: Biorock / advanced biofilter
 - Biorock: small chamber with media
 - Lower maintenance than septic + reed
 - Higher cost: $8-12K
 - Less natural aesthetic
-- Not recommended for LQV's eco-positioning
+- Not recommended for RV's eco-positioning
 
 ### Option 3: Constructed wetland (large)
 - Larger reed bed (no tank)
@@ -38,9 +38,9 @@
 - Less wastewater generated
 - Lower cost ($2-4K for 5 cabin set)
 - But: maintenance-intensive, cultural perception
-- Not recommended for LQV's target market (Europeans expect flush)
+- Not recommended for RV's target market (Europeans expect flush)
 
-## Detailed design for LQV
+## Detailed design for RV
 
 **Per M08 + L21:**
 
@@ -98,7 +98,7 @@
 - Trucked waste removal
 - $500-1,000 emergency
 
-## Specific to LQV's site
+## Specific to RV's site
 
 **Per L21 (water permit) + L21 (SENATUR):**
 - INAA permit for water extraction (well) and treatment

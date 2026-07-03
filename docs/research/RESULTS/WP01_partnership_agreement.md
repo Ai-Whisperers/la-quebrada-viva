@@ -5,7 +5,7 @@
 
 ## What WP01 is
 
-**Wes (75%) and Thijs (25%) are co-owners of LQV via escritura (per 2026-06-27).**
+**Wes (75%) and Thijs (25%) are co-owners of RV via escritura (per 2026-06-27).**
 **Per escritura + D10 (personal success metric) + D9 (4-BV vs hybrid):**
 - The partnership needs formal documentation
 - Covers: profit split, decision authority, dispute resolution, exit
@@ -67,7 +67,7 @@
 - Sonja's 60th + estate planning
 
 **10. Confidentiality + non-compete:**
-- LQV business info confidential
+- RV business info confidential
 - No competing eco-lodge in PY within X years
 - Penalty for breach
 

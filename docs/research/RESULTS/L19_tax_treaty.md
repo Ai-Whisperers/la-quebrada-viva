@@ -4,9 +4,9 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## Why this matters for LQV
+## Why this matters for RV
 
-**LQV has Dutch (Wes + Thijs) + Paraguayan operations. Tax treaties affect:**
+**RV has Dutch (Wes + Thijs) + Paraguayan operations. Tax treaties affect:**
 - Dividends from BV (PY) → BV2 (NL) → NL investors
 - Capital gains when selling PY property
 - Withholding taxes on transfers
@@ -26,9 +26,9 @@
 - **PY domestic law** has some relief (e.g. reduced withholding on dividends to non-residents in some cases)
 - **NL unilateral relief** (deelnemingsvrijstelling) may apply for direct investments
 
-## What this means for LQV
+## What this means for RV
 
-### For Wes (NL resident, owns 50-100% of LQV BVs)
+### For Wes (NL resident, owns 50-100% of RV BVs)
 
 **Direct holding of PY BVs:**
 - Income from PY BVs (dividends, interest) taxed in PY
@@ -59,7 +59,7 @@ Same as Wes (NL resident, BV2 holds PY BVs).
 
 ## Key action: formal tax advice
 
-**For LQV's tax structure to be optimized, the W0.1 attorney call must cover:**
+**For RV's tax structure to be optimized, the W0.1 attorney call must cover:**
 - NL unilateral relief (deelnemingsvrijstelling)
 - PY withholding tax rates (depends on participation, holding period)
 - Anti-treaty-shopping rules (NL has these)
@@ -85,16 +85,16 @@ Same as Wes (NL resident, BV2 holds PY BVs).
 - Property sale: 5% on gross sale price (PY law)
 - Or 15% on net gain (whichever higher)
 - No treaty relief available
-- **Material for LQV when Wes + Thijs sell**
+- **Material for RV when Wes + Thijs sell**
 
 **4. PY IRE on operational profits:**
 - 10% IRE (commercial activities)
 - 5% IRE (agricultural, real estate may qualify as small landowner)
-- Most LQV operations will be 10% IRE
+- Most RV operations will be 10% IRE
 
 **5. NL box 3 (savings) for Wes personally:**
 - Taxed on deemed return from net wealth
-- Real estate in NL: not relevant if LQV is PY
+- Real estate in NL: not relevant if RV is PY
 - PY real estate: may be relevant for Dutch box 3 if Wes directly owns PY assets
 - **Important: BV2 (NL holding) avoids this for Wes**
 

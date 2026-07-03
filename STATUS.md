@@ -1,7 +1,7 @@
-# STATUS — La Quebrada Viva + Escobar Housing Park
+# STATUS — Riverstone Valley + Escobar Housing Park
 
 > Canonical state document. Last updated 2026-07-03 (post-restructure pass).
-> The project is now **dual scope**: (a) the original 18-final Blender render matrix for the La Quebrada Viva cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
+> The project is now **dual scope**: (a) the original 18-final Blender render matrix for the Riverstone Valley cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
 >
 > **2026-07-03 update (restructure pass):** Repo reorganized. 264 MB pre-Wes snapshot gitignored. MapBiomas compressed from 83 → 19 files (40 MB saved). Property_map v1/v2 consolidated. 109 idea files quality-marked (63 ✓ reviewed, 46 ○ auto-fill). New top-level nav: `docs/WES_INDEX.md` (one-page for Wes), `docs/POST_ESCRITURA_NOW.md` (5 hard gates). README rewired with Wes-track cold-start. See `docs/audit/RESTRUCTURE_PLAN.md` + `docs/CRITIQUE_FOR_WES.md`. Net repo: 696 MB → ~390 MB tracked.
 >
@@ -181,7 +181,7 @@ These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most deci
 - **2026-06-27**: Escritura pública signed. Property transferred to Wesley + Thijs. **Post-escritura milestone.**
 - **2026-06-30 — POST-ESCRITURA AUDIO SYNTHESIS**:
 - **2026-06-10 — SESSION WORK**:
-  - **Scope shift**: from single home (La Quebrada Viva cob house) to housing park + restaurant. The cob house becomes the first example building typology, not the whole vision.
+  - **Scope shift**: from single home (Riverstone Valley cob house) to housing park + restaurant. The cob house becomes the first example building typology, not the whole vision.
   - **Client clarified**: Wesley = the client (75% legal owner, design decision-maker). Thijs = financial co-buyer, not the design client. Ivan / AI Whisperers = digital support lead, not the legal owner. The MASTER_BRIEF "Owner: Ivan" line is misleading; updated references in `docs/CLIENT.md` and `CLAUDE.md`.
   - **"Barro house scrapped" claim reframed**: not scrapped. It's the *first* example house within the larger housing park vision. The 12 existing renders stay valid as concept art for the cob typology.
   - **Refined direction**: houses first, restaurant later. Houses = Airbnb-style vacation rentals for European / 1st-world travelers. Restaurant = European-Dutch cuisine, sourced via San Bernardino + German community, deferred to Phase 3.

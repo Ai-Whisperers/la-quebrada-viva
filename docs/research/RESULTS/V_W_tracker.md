@@ -7,9 +7,9 @@
 
 | # | Item | Status | Result file |
 |---|---|---|---|
-| V01 | LQV as housing park + restaurant + events | ✅ Already in DREAMLIST_NL | (existing) |
+| V01 | RV as housing park + restaurant + events | ✅ Already in DREAMLIST_NL | (existing) |
 | V02 | 2030 operational milestone (Sonja's 60th) | ✅ Corrected from 16e typo | WES_TODO_UPDATE.md |
-| V03 | First typology = La Quebrada Viva cob/bottle | ✅ Existing in HOUSING_PARK_CONCEPT | (existing) |
+| V03 | First typology = Riverstone Valley cob/bottle | ✅ Existing in HOUSING_PARK_CONCEPT | (existing) |
 | V04 | European/Dutch target market | ✅ Done | V04_european_dutch_market.md |
 | V05 | Resort + events + nature blend positioning | ✅ Already in DREAMLIST_NL | (existing) |
 | V06 | Multi-season 3DGS captures | ❌ Pending Wes 4 trips | V08_multi_season_tour.md (plan) |

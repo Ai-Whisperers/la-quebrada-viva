@@ -1,4 +1,4 @@
-# Penman-Monteith reference ET₀ — La Quebrada Viva parcel
+# Penman-Monteith reference ET₀ — Riverstone Valley parcel
 
 Phase-0 §12 #17 v1.1 — closes the ET gap flagged in `climate_cube.md` v1.
 

@@ -9,11 +9,11 @@
 **Event:** Her 60th birthday weekend
 **Date:** 2030 (specific date TBD — Wes said "18th of November or 18th of February")
 **Action:** 30+ cabins + full amenities operational + family + friends invited
-**Purpose:** Operational validation of the entire LQV project
+**Purpose:** Operational validation of the entire RV project
 
 ## What this means for the project
 
-**By Sonja's 60th in 2030, LQV must have:**
+**By Sonja's 60th in 2030, RV must have:**
 - 30 cabins operational (Fase 1 + Fase 2 + Fase 3 complete)
 - Restaurant + lounge
 - Wellness pool

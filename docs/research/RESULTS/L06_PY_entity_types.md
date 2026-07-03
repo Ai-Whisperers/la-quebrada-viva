@@ -56,7 +56,7 @@
 **Pros:** Fastest, cheapest, simplest to set up. Online registration possible.
 **Cons:** Still new in PY (less legal precedent), not all banks may recognize, harder to bring sophisticated investors
 
-## Comparison table for LQV's 4-BV cascade
+## Comparison table for RV's 4-BV cascade
 
 | BV | Recommended type | Rationale |
 |---|---|---|
@@ -83,7 +83,7 @@
 | S.R.L. | 1,500,000-2,500,000 | $210-350 | 1,000,000-1,800,000 |
 | E.A.S. | 800,000-1,500,000 | $110-210 | 600,000-1,200,000 |
 
-**For LQV 4-BV cascade:**
+**For RV 4-BV cascade:**
 - 1 × S.A. (land): ~$400 + $200/year
 - 1 × NL BV (finance): ~$2,000 (Dutch legal) + $500/year
 - 2 × E.A.S. (operational): ~$300 + $160/year
@@ -93,7 +93,7 @@
 
 All 3 types pay the same taxes (IRE 10% for commercial, IVA 10%, etc.). The difference is administrative burden and access to certain benefits.
 
-**Importantly for LQV:**
+**Importantly for RV:**
 - **IRE 10% for tourism activities** (restaurants, lodging, etc.)
 - **IVA 5% for lodging** (vs 10% for restaurant)
 - **IVA exempt** for export services (Booking.com payments to non-PY entities = 0% IVA)

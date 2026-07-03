@@ -29,7 +29,7 @@
 - BV2 receives $475K net
 - BV2 has substance (offices, staff, decisions)
 - BV2 receives exemption in NL (participation exemption)
-- BV2 reinvests in LQV-2 (no Wes distribution)
+- BV2 reinvests in RV-2 (no Wes distribution)
 - **Effective: $25K in tax on $500K = 5%**
 
 **Savings: $165K through planning**
@@ -70,7 +70,7 @@
 - Trust or family office structure (for higher wealth)
 - Anti-abuse rules apply
 
-## What LQV does (W0.1 attorney + ongoing)
+## What RV does (W0.1 attorney + ongoing)
 
 **1. W0.1: confirm participation exemption + substance:**
 - Document BV2 substance

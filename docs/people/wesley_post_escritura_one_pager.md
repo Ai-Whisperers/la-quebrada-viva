@@ -1,4 +1,4 @@
-# La Quebrada Viva — Post-Escritura One-Pager
+# Riverstone Valley — Post-Escritura One-Pager
 
 > Cliente: Wesley van de Camp (75%) + Thijs van de Camp (25%) · Escritura traslativa firmada **2026-06-27** · Hoja resumen al T+1 (**2026-06-28**), preparada por AI Whisperers a partir de la KML compartida por Wesley y los datos abiertos ya en el repo. Cifras técnicas trazables a `docs/post_escritura_site_knowledge.md`.
 
@@ -10,7 +10,7 @@
 |---|---|---|
 | **Núcleo edificable** | **30.9 ha** | Polígono dibujado por Wesley en Google Earth — el "cluster norte de Mbopicua", contiguo, subconjunto de las 62.57 ha legales. |
 | **Suelo plano (<8 % de pendiente)** | **4.28 ha · 13.8 %** | Suficiente para 4 cabañas Fase 1 sin terraceo, con margen para mover. La banda media (8–15 %, 12.76 ha) absorbe escalamiento a ~12 cabañas con muros bajos de piedra. |
-| **Orientación dominante** | **71.6 % S/SW** | Caras frescas, vista hacia el valle — favorece habitaciones con amanecer, miradores, terrazas. Coincide con la regla LQV de aleros 90 cm + enfriamiento pasivo ≤35 °C. |
+| **Orientación dominante** | **71.6 % S/SW** | Caras frescas, vista hacia el valle — favorece habitaciones con amanecer, miradores, terrazas. Coincide con la regla RV de aleros 90 cm + enfriamiento pasivo ≤35 °C. |
 | **Cobertura forestal** | **NDVI 0.917 · dosel GEDI 27.7 m** | Atlántica madura pared a pared. Sentinel-2 no detecta claros, no detecta agua estancada. Activo central del proyecto. |
 
 **Contexto envolvente**: 62.57 ha totales en 6 fincas (Mbopicua + Ybyraty). El polígono cubre **3 de las 6** (hipótesis padrón A o B, ambas 30.35 ha, ver §2 del knowledge doc). Las ~32 ha restantes (finca 697 Mbopicua + finca 298 Ybyraty) quedan como reserva forestal / activo paisajístico sin programa edificable inmediato.

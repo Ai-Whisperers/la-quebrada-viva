@@ -14,7 +14,7 @@ Source tile: `20S_060W` from `https://storage.googleapis.com/earthenginepartners
 | datamask | 14401584 | 100.00 | 446 | 100.00 | 1.00 |
 | loss (derived from lossyear>0) | 14401584 | 4.94 | 446 | 1.57 | 0.02 |
 
-## Interpretation for La Quebrada Viva polygon
+## Interpretation for Riverstone Valley polygon
 
 - **Canopy cover at 2000:** mean **82.1%**, max 100%, 412 of 446 cells with any canopy at 2000.
 - **Stand-replacement loss 2001–2024:** 7 pixels (~0.63 ha at 30 m) flagged as loss.

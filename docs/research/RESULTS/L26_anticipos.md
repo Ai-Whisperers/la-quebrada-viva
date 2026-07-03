@@ -10,7 +10,7 @@
 - Different rates based on type of payment
 - The BV withholds and remits to SET
 
-## Anticipos rates (2026, relevant to LQV)
+## Anticipos rates (2026, relevant to RV)
 
 | Type of payment | Anticipos rate |
 |---|---:|
@@ -24,9 +24,9 @@
 | **Sale of real estate (PY source)** | 5-15% |
 | **Sale of shares (PY source)** | varies |
 
-## How anticipos work in practice (LQV example)
+## How anticipos work in practice (RV example)
 
-**Scenario: LQV pays a Paraguayan carpenter Gs. 5,000,000 for a 3-month build phase**
+**Scenario: RV pays a Paraguayan carpenter Gs. 5,000,000 for a 3-month build phase**
 
 1. **Invoice received:** Gs. 5,000,000 (gross)
 2. **Anticipos calc:** 2% (construction services) × 5,000,000 = Gs. 100,000
@@ -34,11 +34,11 @@
 4. **Carpenter's gross income:** 5,000,000 (declared in his annual IRP)
 5. **Anticipos credit:** the 100,000 counts toward his annual IRP
 
-**Net effect on LQV:** no impact (it's a pass-through, just timing of cash flow)
+**Net effect on RV:** no impact (it's a pass-through, just timing of cash flow)
 
-**Cash flow impact on LQV:** the withheld amount stays with LQV for ~1-2 months before remittance to SET. Working capital effect.
+**Cash flow impact on RV:** the withheld amount stays with RV for ~1-2 months before remittance to SET. Working capital effect.
 
-## Operational SOP (LQV)
+## Operational SOP (RV)
 
 **For every vendor payment > Gs. 1,000,000:**
 1. Issue invoice to vendor
@@ -52,7 +52,7 @@
 - Anticipos on interest: 1.5-15%
 - Anticipos on services: 2-10%
 
-## LQV's expected anticipos profile (Fase 1, annual)
+## RV's expected anticipos profile (Fase 1, annual)
 
 | Vendor type | Annual spend (Gs) | Anticipos rate | Anticipos (Gs) |
 |---|---:|---:|---:|

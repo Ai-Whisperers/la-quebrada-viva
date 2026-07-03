@@ -6,13 +6,13 @@
 **Status:** `in_progress`
 **Quality:** `✓ reviewed`
 **Source:** wes_recording_2026-06-30_v2
-**Deliverable:** Wes personal, not LQV
+**Deliverable:** Wes personal, not RV
 
 ---
 
 ## What Wes wants
 
-Wes personal, not LQV
+Wes personal, not RV
 
 **From Wes's words:**
 
@@ -30,7 +30,7 @@ Wes personal, not LQV
 
 ## What we know already (research summary)
 
-- **Deliverable target:** Wes personal, not LQV
+- **Deliverable target:** Wes personal, not RV
 - **Source:** [Wes's brainstorm recording](../../audios/2026-06-30-wes-post-escritura/drafts/README.md) (raw transcript)
 - **Cleaned version:** [dream list](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md) + [action list](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 
@@ -55,7 +55,7 @@ NL+PY accountant: $500-2000 per consultation. NL BV set-up: ~€150 + ongoing ad
 
 **Acceptance criteria (measurable):**
 
-- Wes personal, not LQV
+- Wes personal, not RV
 - Document the deliverable's location/path in this file
 - Update the **Status** field above to `shipped`
 - Add a 1-line entry to the Changelog below

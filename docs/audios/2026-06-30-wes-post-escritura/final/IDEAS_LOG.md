@@ -136,7 +136,7 @@
 | 072 | "Production means in hands of everyone" | E | S | Values statement |
 | 073 | "Everyone can do this" (AI tools) | E | S | Democratized production |
 | 074 | "Wij zitten in het verleden te leven, 50 jaar geleden... in NL zit ik al in de toekomst... 80 jaar verschil" | A3 | S | Temporal dislocation |
-| 075 | "Fred Flintstone" (zelf-reflectie bouwstijl) | A3 | F | Color, niet LQV-specifiek |
+| 075 | "Fred Flintstone" (zelf-reflectie bouwstijl) | A3 | F | Color, niet RV-specifiek |
 | 076 | "AI-jongheid" — Wes's term voor onze werk | D | V | Naming signal |
 
 ## Off-topic / F-bucket (gefiltred)
@@ -145,8 +145,8 @@
 |---|---|---|---|---|
 | 077 | Horse + 3 donkeys verhaal | B | F | Audio 1, skip |
 | 078 | Pipe smoking | B | F | — |
-| 079 | Asterix / Oblix AI-namen brainstorm | E | F | Gezellig, niet LQV |
-| 080 | Hermes tutorial voor derden | E | F | Real Wes-time but NOT LQV |
+| 079 | Asterix / Oblix AI-namen brainstorm | E | F | Gezellig, niet RV |
+| 080 | Hermes tutorial voor derden | E | F | Real Wes-time but NOT RV |
 | 081 | "OpenCode vs Hermes" uitleg | E | F | Tooling discussion |
 | 082 | Cement/Sand price research methodology (Mário 64 joke) | C | F | Joke context |
 | 083 | Sensory Sirensappels water quality | C | F | Color, not blocker |

@@ -4,7 +4,7 @@
 **Confidence:** Medium-low
 **Date:** 2026-06-30
 
-## What LQV can learn from existing restaurants
+## What RV can learn from existing restaurants
 
 **Questions to ask (visit 3-4 in W1.2 site visit):**
 - What's the daily cover range?
@@ -46,7 +46,7 @@
 
 ## What to learn from each
 
-**For the LQV Fase 1 restaurant (per D6 Dutch-German cuisine), the most relevant:**
+**For the RV Fase 1 restaurant (per D6 Dutch-German cuisine), the most relevant:**
 
 | Question | Ask German restaurants | Ask Italian | Ask fusion |
 |---|---|---|---|
@@ -57,7 +57,7 @@
 | Staffing | Family + 1-2 hired | 1 chef + 1-2 staff | 1 chef + 2-3 staff |
 | First-year breakages | (very common in PY) | (very common in PY) | (very common) |
 
-**For LQV specifically, ask about:**
+**For RV specifically, ask about:**
 - How they handle 80% humidity (food storage, food safety)
 - How they handle ANDE power outages (LFP battery backup? gas generators?)
 - How they handle remote delivery (PY's distribution challenges)
@@ -73,7 +73,7 @@
 - Marketing: 3-5% of revenue
 - Profit: 10-15% of revenue (PY is tough)
 
-**For LQV's restaurant, target:**
+**For RV's restaurant, target:**
 - 30-40 covers/day peak
 - 25-30 covers/day average
 - Average ticket: 60,000-80,000 Gs (~$9-12)
@@ -81,7 +81,7 @@
 - Monthly: 45-96M Gs ($6,500-13,800)
 - Annual: 540M-1.15B Gs ($78,000-165,000)
 
-This is in the 5-10% of LQV's annual revenue target range (per FINANCIAL_MODEL.md).
+This is in the 5-10% of RV's annual revenue target range (per FINANCIAL_MODEL.md).
 
 ## Sources to verify
 
@@ -103,7 +103,7 @@ This is in the 5-10% of LQV's annual revenue target range (per FINANCIAL_MODEL.m
 - [ ] Capture the "what broke" stories
 - [ ] Cross-reference their supplier lists with M22
 - [ ] Document the visits in `docs/people/restaurant_visit_2026-MM-DD.md`
-- [ ] Identify if any of them would consider being a consultant for LQV (Fase 1 opening)
+- [ ] Identify if any of them would consider being a consultant for RV (Fase 1 opening)
 
 ## Status
 

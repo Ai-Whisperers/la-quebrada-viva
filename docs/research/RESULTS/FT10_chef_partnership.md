@@ -4,7 +4,7 @@
 **Confidence:** Low (need Sonja for specific contacts)
 **Date:** 2026-06-30
 
-## What LQV needs
+## What RV needs
 
 **Per Wes's D6 (Dutch-German restaurant) + D7 (family-anchored):**
 - 1 chef for Fase 1 (Fase 1 restaurant, 20-30 covers/day)
@@ -40,7 +40,7 @@
 - Restaurant industry contacts
 - Possibly direct chef connections
 
-## Salary + contract structure for LQV
+## Salary + contract structure for RV
 
 **Fase 1 chef (1 person):**
 - Monthly: Gs. 5,000,000-7,000,000 (~$720-1,000) depending on experience
@@ -77,7 +77,7 @@
 - 4-6 weeks lead time
 - Best for Fase 2+ when margins are higher
 
-## What LQV needs to know from the chef
+## What RV needs to know from the chef
 
 1. **Languages:** German + Spanish (German + English also OK)
 2. **Experience:** 3+ years head chef
@@ -93,7 +93,7 @@
 - "What's the typical salary for a head chef in the San Bernardino market?"
 - "Are there any European-trained chefs currently looking for work in PY?"
 
-## Cost estimate for LQV (Fase 1)
+## Cost estimate for RV (Fase 1)
 
 | Item | Monthly Gs | Monthly USD | Annual Gs | Annual USD |
 |---|---:|---:|---:|---:|
@@ -111,7 +111,7 @@ For 1 chef per Fase 1. Sous chef adds ~$10,000/year in Fase 2.
 Wes mentioned "we have many people" and the "ideas I don't have" — this hints at:
 - Wes cooks occasionally (yes, per his DJ mixer lifestyle + "smoke a pipe" tone)
 - Wes has the German community connections through Sonja
-- LQV restaurant is core to the experience, not just a side business
+- RV restaurant is core to the experience, not just a side business
 
 **For the chef interview:**
 - Wes cooks the family meal once a week (relaxed, hospitality)

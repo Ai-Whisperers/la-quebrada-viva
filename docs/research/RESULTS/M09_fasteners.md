@@ -4,7 +4,7 @@
 **Confidence:** Medium for categories, low for specific 2026 PY prices (need Wes to validate)
 **Date:** 2026-06-30
 
-## Scope of fasteners for LQV (Fase 1, 5 cabins)
+## Scope of fasteners for RV (Fase 1, 5 cabins)
 
 Per cabin: 1,000-2,000 fasteners total
 - Wood screws (decking, framing, finish): 60% of count
@@ -68,10 +68,10 @@ Per cabin: 1,000-2,000 fasteners total
 - **Roofing screws:** EPDM-sealed, with neoprene washers, to prevent leaks
 - **Concrete anchors:** Use wedge anchors, not sleeve anchors, for heavy loads
 
-## Specialty fasteners LQV might need
+## Specialty fasteners RV might need
 
 - **Hurricane straps** (for PY storm season, especially if 2p Boomhut)
-- **Bamboo fasteners** (specific to LQV's construction, see C15)
+- **Bamboo fasteners** (specific to RV's construction, see C15)
 - **Stainless steel cable** (for pergola / outdoor shade structures)
 - **Specialty deck screws** (for the wooden deck around each cabin)
 - **Cabinet soft-close hinges** (for kitchen cabinets)

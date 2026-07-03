@@ -6,13 +6,13 @@
 
 ## Why this matters
 
-**LQV's market sizing depends on understanding:**
+**RV's market sizing depends on understanding:**
 - Total annual international visitors to PY
 - Source-market breakdown (which countries, which cities)
 - Average length of stay + spend per day
 - Seasonal patterns
 - Where tourists currently go (Asunción, Iguazú, etc.)
-- What's the gap LQV fills (nature retreat, slow tourism)
+- What's the gap RV fills (nature retreat, slow tourism)
 
 ## SENATUR key data (per latest published Anuario Estadístico)
 
@@ -44,7 +44,7 @@
 | Asia | ~2-3% | Growing |
 | Other (Middle East, etc.) | ~2-3% | Small |
 
-**LQV's target:**
+**RV's target:**
 - European visitors (10-15% of total = ~150-200K potential customers)
 - Brazilian/Argentine weekend visitors (huge volume, lower ADR)
 - US/Canadian expats in PY (~50K community)
@@ -56,7 +56,7 @@
 - Daily spend: $50-150 USD
 - Total per visit: $200-1,000
 
-**LQV's positioning:**
+**RV's positioning:**
 - Week-long guest stay: $1,500-3,000 per booking (cabin + F&B + activities)
 - Weekend: $400-800 (2-3 nights)
 - Honeymoon: $2,500-5,000 (week+)
@@ -70,9 +70,9 @@
 **San Bernardino (5%):** Weekend getaway
 **Other (10%):** Pantanal, Chaco, etc.
 
-**The gap for LQV:** There's no major eco-retreat / nature experience in PY. LQV fills this gap.
+**The gap for RV:** There's no major eco-retreat / nature experience in PY. RV fills this gap.
 
-## Specific data LQV needs (per anuario)
+## Specific data RV needs (per anuario)
 
 1. **Asunción region arrivals (Ypacaraí lake, San Bernardino, Paraguarí):** ~30,000-50,000/year
 2. **Asunción resident expat population (potential weekend market):** ~50,000-80,000
@@ -90,7 +90,7 @@
 ## What Wes needs to do
 
 - [ ] Get the latest SENATUR anuario (2024 or 2025 edition)
-- [ ] Verify the European visitor numbers (LQV's target market)
+- [ ] Verify the European visitor numbers (RV's target market)
 - [ ] Calculate: if 200K European visitors × 5% choose nature retreat = 10,000 potential customers
 - [ ] Cross-reference with Asunción expat population
 - [ ] Use this in the investor pitch deck (D9)

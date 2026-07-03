@@ -1,4 +1,4 @@
-# Infrastructure brief — La Quebrada Viva (Phase-0 §12 v1)
+# Infrastructure brief — Riverstone Valley (Phase-0 §12 v1)
 
 > Built-environment census within 1 km of the 30.9 ha Mbopicua parcel
 > polygon. Combines Microsoft Global ML Building Footprints + Google Open

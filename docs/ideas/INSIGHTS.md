@@ -133,7 +133,7 @@ Wes correctly noticed that "ecopark" is politically loaded in Paraguarí (right-
 
 All three deliver the same features (regeneration, native species, biodiversity) without triggering the political framing issue.
 
-Recommendation: pick the second one. It positions LQV in a **familiar PY tradition** (estancia = ranch) while signaling the upgrade (boutique + ecological).
+Recommendation: pick the second one. It positions RV in a **familiar PY tradition** (estancia = ranch) while signaling the upgrade (boutique + ecological).
 
 ---
 
@@ -210,7 +210,7 @@ Wes hasn't mentioned:
 - **Treehouse / elevated cabin** — even at $15-20k, photo-worthy, 2-3 week build
 - **Tiny house on wheels** — wheels = no permit needed in PY, $5-8k build, can be moved
 
-These have **different unit economics** than bamboo/cob and get LQV cash-flow positive in 3 months instead of 12.
+These have **different unit economics** than bamboo/cob and get RV cash-flow positive in 3 months instead of 12.
 
 Reason to include: the **first paying guest** is more valuable than the first beautiful house. It validates the booking pipeline, the guest experience, the pricing. A safari tent on the right spot is more useful to Wes's business than a cob house still under construction.
 
@@ -269,7 +269,7 @@ Build schedule: **2 houses per quarter** from Q3 2027 onwards. Sustainable pace.
 
 Across both recordings, Wes shows impatience with timelines and a bias toward "now or 6 months". This is **normal** for a founder but **counterproductive** for a 5-year build.
 
-The fastest version of LQV that succeeds = **3-5 years to first profitable year**, **7-10 years to peak revenue**.
+The fastest version of RV that succeeds = **3-5 years to first profitable year**, **7-10 years to peak revenue**.
 The fastest version that fails = **1 year to first revenue, 2 years to burnout**.
 
 Insight: every "decision now" Wes makes should pass this filter: **does this decision still matter in 18 months?** If not, defer it. If yes, decide now.

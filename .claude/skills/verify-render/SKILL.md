@@ -1,6 +1,6 @@
 ---
 name: verify-render
-description: Visual verification checklist for a La Quebrada Viva render image - the 10 design rules, species accuracy, and variant correctness. Use after every preview or final render, before claiming any render is done.
+description: Visual verification checklist for a Riverstone Valley render image - the 10 design rules, species accuracy, and variant correctness. Use after every preview or final render, before claiming any render is done.
 ---
 
 # Verify render

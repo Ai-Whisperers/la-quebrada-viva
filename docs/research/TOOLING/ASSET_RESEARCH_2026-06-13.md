@@ -1,6 +1,6 @@
 # Asset library expansion research — 2026-06-13
 
-Push the LQV asset library past 200 unique CC0 / CC-BY-4.0 IDs on disk.
+Push the RV asset library past 200 unique CC0 / CC-BY-4.0 IDs on disk.
 
 Baseline (2026-06-12): 132 IDs on disk = 10 HDRIs + 42 texture dirs + 80 model blends.
 Target: ≥ 200 unique IDs. Delta planned: +200 from Poly Haven (curated) +85 from
@@ -148,7 +148,7 @@ hand tools (machete, crowbar, planes), carts / wheels, kitchen / hearth items.
 
 Targets: more brick / wood / ground / metal / concrete variants beyond what
 Poly Haven covers; specifically the canonical ambientCG categories that the
-LQV materials currently lacks. All ambientCG IDs verified against the
+RV materials currently lacks. All ambientCG IDs verified against the
 `https://ambientcg.com/api/v2/full_json?type=PhotoTexturePBR&category=<cat>`
 endpoint before inclusion.
 
@@ -177,7 +177,7 @@ convention).
 - **ambientCG**: blanket CC0 1.0 Universal per <https://docs.ambientcg.com/license>.
   Same treatment.
 
-Both sites are explicitly allow-listed for the LQV redistribution bundle
+Both sites are explicitly allow-listed for the RV redistribution bundle
 (`LICENSE_BUNDLE.md` §1). No new license-text files need to land in `LICENSES/`
 — `CC0-1.0.txt` already covers both sources.
 

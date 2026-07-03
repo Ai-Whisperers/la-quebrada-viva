@@ -1,7 +1,7 @@
 # L31 — IPS vs private insurance for staff (definitive)
 
 **Date:** 2026-06-30
-**Status:** MEM-based. Confirmed for LQV's 27 staff.
+**Status:** MEM-based. Confirmed for RV's 27 staff.
 
 ## IPS (Instituto de Previsión Social)
 
@@ -20,7 +20,7 @@
 - Retirement pension (after 25 years contributions)
 - Disability coverage
 
-**For LQV (27 staff, average salary Gs. 3.5M/month):**
+**For RV (27 staff, average salary Gs. 3.5M/month):**
 - Annual payroll: ~Gs. 113,400,000
 - IPS employer portion: ~16.5% × 113,400,000 = **Gs. 18,700,000/year** (~$2,680 USD)
 - IPS employee portion (withheld): 9% × 113,400,000 = Gs. 10,200,000 (withheld from staff)
@@ -29,17 +29,17 @@
 
 ## Private insurance alternative
 
-**For LQV staff who want better coverage:**
+**For RV staff who want better coverage:**
 - Private health insurance (Hospital del Parque, Migone, etc.)
 - Cost: Gs. 200,000-500,000/month per person
 - Better hospitals, faster access
 - 1-2 week wait instead of months
 
-**LQV's decision:**
+**RV's decision:**
 - IPS mandatory: all dependiente staff
 - Optional private supplement: based on staff preference
 
-## What LQV pays
+## What RV pays
 
 **Mandatory costs (in payroll overhead):**
 - IPS employer portion: 16.5% of salary
@@ -82,7 +82,7 @@
 - Aguinaldo (13th month) is mandatory
 - Vacaciones is mandatory (varies by tenure)
 - Private insurance is optional
-- LQV pays ~32% labor overhead on top of base salary
+- RV pays ~32% labor overhead on top of base salary
 - Budget $30M/year for Fase 1 labor overhead
 
 ## Status

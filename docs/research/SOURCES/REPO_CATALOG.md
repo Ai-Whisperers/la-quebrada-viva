@@ -1,4 +1,4 @@
-# Repo Catalog — 141 GitHub Repos for La Quebrada Viva
+# Repo Catalog — 141 GitHub Repos for Riverstone Valley
 
 > **Consolidated catalog from 6 parallel research sweeps (2026-06-10).** 141 repos across 6 domains, each with verdict (adopt / reference / skip / dead).
 >

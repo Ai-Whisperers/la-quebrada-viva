@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-# Property map v2 brief — La Quebrada Viva (Phase-0 §12 v2, indexed data spine)
+# Property map v2 brief — Riverstone Valley (Phase-0 §12 v2, indexed data spine)
 
 > Successor to the v1 composite. v1 stays canonical for the 300 dpi
 > polygon-clip PNG; **v2 is the indexed data spine the deck and the

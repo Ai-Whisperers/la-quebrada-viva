@@ -1,4 +1,4 @@
-# M21 — Pool equipment for LQV wellness pool (D6)
+# M21 — Pool equipment for RV wellness pool (D6)
 
 **Method:** MEM + Wes's M22 file + general pool engineering
 **Confidence:** Medium
@@ -27,7 +27,7 @@
 - DAB (IT, available)
 - Local Chinese (cheap, lower reliability)
 
-**Cost for LQV:**
+**Cost for RV:**
 - 1-2 HP variable-speed pump: $400-800
 - Installation: $100-200
 - **Total:** **$500-1,000 per pool**
@@ -90,7 +90,7 @@
 - **Lab testing (bacteria):** $50-100 per test, monthly recommended
 - **Annual cost:** $700-1,200 (lab tests + consumables)
 
-## Total cost for LQV wellness pool (1 pool, 50m²)
+## Total cost for RV wellness pool (1 pool, 50m²)
 
 | Component | Cost USD |
 |---|---:|
@@ -108,16 +108,16 @@
 
 ## Comparison to conventional chlorine pool
 
-| Aspect | Chlorine pool | Natural pool (LQV choice) |
+| Aspect | Chlorine pool | Natural pool (RV choice) |
 |---|---|---|
 | Equipment cost | $1,000-2,000 (filter) + chemicals | $2,000-4,000 (biological + UV) |
 | Operating cost/year | $500-1,000 (chlorine, acid) | $700-1,300 (UV lamps, tests) |
 | Maintenance | Weekly chemical testing + dosing | Weekly bacteria testing + plant care |
 | User experience | Chlorine smell, dry skin, eye irritation | Natural water, no smell, healthier |
 | Marketing | "Swimming pool" | "Natural swimming pond" (much higher perceived value) |
-| Wes's design fit | Standard | Matches LQV aesthetic perfectly |
+| Wes's design fit | Standard | Matches RV aesthetic perfectly |
 
-**LQV's natural pool is 2-3x the build cost but:**
+**RV's natural pool is 2-3x the build cost but:**
 - 0 chemical smell = better for weddings + wellness retreats
 - "Natural swimming" = higher nightly rate ($220+ for 2p Luxe Spa)
 - Marketing differentiator (rare in PY)

@@ -1,4 +1,4 @@
-# MODELS_ROAST.md — Honest critique of every model in La Quebrada Viva
+# MODELS_ROAST.md — Honest critique of every model in Riverstone Valley
 
 **Author:** critic agent · **Date:** 2026-06-12 · **Scope:** 13 typologies + 4 amenities + 7 Poly Haven CC0 assets · **Render source:** `renders/sub/latest/<asset>_A.png` (Variant A golden hour, 1280x720 sub-render).
 

@@ -1,6 +1,6 @@
 {
   "aoi_geojson": "docs/site_data/aoi_62ha.geojson",
-  "citation": "La Quebrada Viva \u2014 DEM cross-check oblique-render contact sheet. \u00a9 AI Whisperers 2026, derived from JAXA AW3D30 (CC-BY 4.0), ESA Copernicus DEM (CC-BY 4.0), NASA SRTM v3 GL1 (public domain), NASADEM (public domain) via OpenTopography.",
+  "citation": "Riverstone Valley \u2014 DEM cross-check oblique-render contact sheet. \u00a9 AI Whisperers 2026, derived from JAXA AW3D30 (CC-BY 4.0), ESA Copernicus DEM (CC-BY 4.0), NASA SRTM v3 GL1 (public domain), NASADEM (public domain) via OpenTopography.",
   "collection": "lqv-derived-cross-check",
   "companion_sheet": "docs/site_data/dem_ab_contact.png",
   "composer": "scripts/contact_sheet_dem_ab_oblique.py",

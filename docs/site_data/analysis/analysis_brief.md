@@ -1,4 +1,4 @@
-# Parcel-centred ALOS DEM analysis brief — La Quebrada Viva (Phase-0 §12 v1)
+# Parcel-centred ALOS DEM analysis brief — Riverstone Valley (Phase-0 §12 v1)
 
 > Parcel-centred 3.0 × 3.3 km clip of ALOS AW3D30 v3.2 (108 × 108 px = 11 664
 > valid pixels @ ~28 × 31 m) covering the 30.9 ha Mbopicua polygon. Source

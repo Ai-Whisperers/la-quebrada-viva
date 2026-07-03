@@ -20,7 +20,7 @@ ANDE vs private subcontractor quotes
 
 > _"[Action list 2026-06-30]: rzoek** — bedden, meubels, keuken — lokaal vs import (Troostwijk veilingen NL) | Prijsvergelijking + haalbaarheid | Tabel met aanbeveling | | WA4 | **ANDE stroomvoorziening onderzoek** — verzwaring in 3 fases, plan + offertes | Onderzoek ANDE-procedure + particulier vs subcontractor | Offertes + tijdlijn | | WA5 | **BV/bedrijfsstructuur advies** — meerdere bv's NL vs PY, wanneer verplicht | Onderzoek"_
 
-> _"[Action list 2026-06-30]: zoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5"_
+> _"[Action list 2026-06-30]: zoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5"_
 
 > _"[Action list 2026-06-30]: rteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Week 3 | ⚪ | --- ## §4 — THIJS + WESLEY (eerste maanden — operationeel op de site) | # | Taak | Wanneer | Owner | |---|---|---|---| | T1 | **Locaties voor typologie-huizen bepalen** (via VR + site-visie) | Maand 1 | Wesley + Erebus | | T2 | **Depot-locatie bepalen** (opslag materialen op het terrein) |"_
 
@@ -30,7 +30,7 @@ ANDE vs private subcontractor quotes
 
 ## Full picture — context, constraints, history
 
-**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
+**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
 
 ## What we know already (research summary)
 
@@ -61,7 +61,7 @@ _No specific risks identified beyond standard category risks. Add as they emerge
 
 ## Cost / time estimate
 
-See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate.
+See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate.
 
 ## Done = shipped
 

@@ -5,7 +5,7 @@
 
 ## What BR10 is
 
-**LQV's tagline + value proposition are the elevator-pitch version:**
+**RV's tagline + value proposition are the elevator-pitch version:**
 - 1 sentence (tagline)
 - 1 paragraph (value prop)
 - 1 page (full pitch)
@@ -28,19 +28,19 @@
 
 **For European eco-conscious travelers:**
 
-LQV is a 30-cabin eco-vacation park on a 62 ha Atlantic Forest property in Paraguarí, Paraguay. We offer authentic local experiences (Paraguayan food, native reforestation, family-anchored community) with European quality (cob + bamboo architecture, European-trained chef, German + Dutch owners). Three-phase build: Phase 1 (ALBA, 5 cabins) opens Q4 2026. Phase 2 (DÍA, +10 cabins) by 2028. Phase 3 (NOCHE, +15 cabins + full amenities) by 2029. Sonja's 60th birthday (2030) is our operational milestone.
+RV is a 30-cabin eco-vacation park on a 62 ha Atlantic Forest property in Paraguarí, Paraguay. We offer authentic local experiences (Paraguayan food, native reforestation, family-anchored community) with European quality (cob + bamboo architecture, European-trained chef, German + Dutch owners). Three-phase build: Phase 1 (ALBA, 5 cabins) opens Q4 2026. Phase 2 (DÍA, +10 cabins) by 2028. Phase 3 (NOCHE, +15 cabins + full amenities) by 2029. Sonja's 60th birthday (2030) is our operational milestone.
 
 **Pricing per cabin:** $150-450/night depending on type (Basic to Luxe Spa).
 
 **For investors:**
 
-LQV is a 4-BV cascade project (NL holding + 3 PY operating BVs) with a built-in machinepark cascade that gives Fase 1 investors their machine money back before Fase 2 starts. Total Phase 1 budget: €5.5M (excluding land, already owned by Wes + Thijs). 30 cabins + full amenities by 2029. Operational validation: Sonja's 60th birthday weekend in 2030. **Investment entry:** €50K+ via BV2 (NL holding). **Expected return:** 8-12% IRR + capital appreciation (depending on hold period).
+RV is a 4-BV cascade project (NL holding + 3 PY operating BVs) with a built-in machinepark cascade that gives Fase 1 investors their machine money back before Fase 2 starts. Total Phase 1 budget: €5.5M (excluding land, already owned by Wes + Thijs). 30 cabins + full amenities by 2029. Operational validation: Sonja's 60th birthday weekend in 2030. **Investment entry:** €50K+ via BV2 (NL holding). **Expected return:** 8-12% IRR + capital appreciation (depending on hold period).
 
 ## Full pitch (1 page)
 
 **For media / investors / partners:**
 
-**Title:** LQV: A new model for eco-tourism in Paraguay
+**Title:** RV: A new model for eco-tourism in Paraguay
 
 **The story:**
 - Wes (Dutch, AI entrepreneur) + Sonja (Asunción, local anchor) + Thijs (Dutch, 25% partner) = 3 owners
@@ -52,7 +52,7 @@ LQV is a 4-BV cascade project (NL holding + 3 PY operating BVs) with a built-in 
 - Native reforestation + Atlantic Forest regeneration as ongoing program
 - Operational milestone: Sonja's 60th birthday (2030)
 
-**What makes LQV different:**
+**What makes RV different:**
 - Authentic (PY first, European quality)
 - Family-anchored (not corporate)
 - Eco-credentials (reforestation, native species)

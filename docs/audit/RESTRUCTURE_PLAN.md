@@ -1,4 +1,4 @@
-# Restructure Plan — LQV Repo (audit pass 2026-06-30)
+# Restructure Plan — RV Repo (audit pass 2026-06-30)
 
 **Purpose:** Concrete plan for restructuring the repo. File moves, deletions, content edits — all with git commands ready to execute.
 
@@ -379,7 +379,7 @@ the reconciled view is canonical or just a bridge."
 
 **Edit to `HOUSING_PARK_CONCEPT.md`** (prepend):
 ```markdown
-> **As of 2026-06-10** — pre-Wes-data-share. Still valid for the **8 concepts + 25 questions** which trace back to the LQV render pipeline (13 typologies).
+> **As of 2026-06-10** — pre-Wes-data-share. Still valid for the **8 concepts + 25 questions** which trace back to the RV render pipeline (13 typologies).
 >
 > **For current state** (post-Wes-share, 30 cabins / 10 types / €5.5M), see `docs/_reconciled/MASTER_BRIEF.md`.
 >
@@ -400,7 +400,7 @@ git commit -m "docs: mark HOUSING_PARK_CONCEPT and EUROPEAN_TOURISM_SPEC as 'as 
 
 Both predate Wes's full data share. Still useful as background (concepts,
 target market, supply chain). Headers now point to the reconciled view for
-current state. The 13 typologies in the LQV render pipeline trace back
+current state. The 13 typologies in the RV render pipeline trace back
 to HOUSING_PARK_CONCEPT — that's the load-bearing link."
 ```
 
@@ -477,7 +477,7 @@ Resolves the 3-way 'where do I start?' problem. Reader can now choose
 ## What this plan does NOT do
 
 1. **Does not modify the escritura-frozen scope.** `docs/escritura_deck/`, `docs/boq/`, `docs/finance/`, `docs/comms/`, `docs/email_drafts/`, `LICENSES/`, `dist/print_pack_2026-06-27/` — all untouched.
-2. **Does not touch the LQV render pipeline code.** `lqv/` is preserved as-is. Only the 13 typology files get a "plan match" annotation.
+2. **Does not touch the RV render pipeline code.** `lqv/` is preserved as-is. Only the 13 typology files get a "plan match" annotation.
 3. **Does not delete any content.** Everything gitignored stays on disk. Everything archived goes to `_archive/`. The git log preserves all history.
 4. **Does not change the canonical current state.** The reconciled view is bridge content; the underlying facts don't change.
 5. **Does not make any irreversible decisions for Wes.** Each step is reversible. The plan can be partially executed. The audit docs (this dir) are kept so future audits can build on this one.

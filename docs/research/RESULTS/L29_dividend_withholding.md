@@ -45,12 +45,12 @@
 
 ## How to structure the cash flow
 
-**For LQV:**
+**For RV:**
 
 **Y1-Y3 (no dividends, all reinvested):**
 - BV3-5 retain earnings
 - No withholding triggered
-- LQV grows from internal cash flow
+- RV grows from internal cash flow
 
 **Y4+ (start distributing dividends):**
 - Per L19, BV2 receives dividends
@@ -58,7 +58,7 @@
 - NL-side: 0% (participation exemption)
 - Net: ~$0.07-0.20 per $1 dividend
 
-**For LQV's projected Y5+ profit ($1M+):**
+**For RV's projected Y5+ profit ($1M+):**
 - $100K-$200K in dividends to NL investors
 - $5K-$30K in withholding
 - Net: $70K-$195K to investors

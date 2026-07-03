@@ -16,14 +16,14 @@ Wes's audio E says "Toyota Tundra Presio" — this is shorthand for **"Tundra vs
 - **Hilux SRX (4x4, top trim, 2.7L or 2.8L):** $48,000-55,000
 - **Hilux GR-S (sport trim, top of line):** $55,000-65,000
 
-**For LQV bouwfase:** **SRV trim (4x4 double cab)** is the right choice. ~$42,000-50,000 new.
+**For RV bouwfase:** **SRV trim (4x4 double cab)** is the right choice. ~$42,000-50,000 new.
 
 **Used (2-3 years, 30-60K km):**
 - **Hilux SR (4x2):** $22,000-28,000
 - **Hilux SRV (4x4):** $28,000-35,000
 - **Hilux SRX (4x4, top trim):** $35,000-42,000
 
-**For LQV bouwfase used:** ~$30,000 for a 2-3 year SRV.
+**For RV bouwfase used:** ~$30,000 for a 2-3 year SRV.
 
 ## Toyota Tundra pricing (PY market, 2026 estimates)
 
@@ -37,7 +37,7 @@ Wes's audio E says "Toyota Tundra Presio" — this is shorthand for **"Tundra vs
 - **Tundra SR/SR5:** $40,000-55,000
 - **Tundra Limited/TRD:** $55,000-75,000
 
-**For LQV bouwfase used:** $45,000-65,000 for a 2-3 year Tundra SR5.
+**For RV bouwfase used:** $45,000-65,000 for a 2-3 year Tundra SR5.
 
 ## Cost comparison (per F20 analysis)
 
@@ -72,7 +72,7 @@ Wes's audio E says "Toyota Tundra Presio" — this is shorthand for **"Tundra vs
 
 1. **Wes: visit 2-3 dealers** in Asunción + 1 in CDE
 2. **Get 3 quotes** for the same model year + trim + km
-3. **Test drive** on rough road (the cabs are mostly sealed roads but LQV site is rough)
+3. **Test drive** on rough road (the cabs are mostly sealed roads but RV site is rough)
 4. **Mechanical inspection** ($100-200 by independent mechanic)
 5. **Title + RUC transfer** at escribanía
 6. **Insurance** (mandatory liability, $300-500/year)
@@ -99,7 +99,7 @@ Wes's audio E says "Toyota Tundra Presio" — this is shorthand for **"Tundra vs
 
 - **Used Hilux SRV from CDE import (MERCOSUR 0% tax):** BEST option
 - $28,000-32,000, 2-3 year old
-- Matches all LQV bouwfase needs
+- Matches all RV bouwfase needs
 - Spare parts available in PY
 
 ## Status

@@ -1,4 +1,4 @@
-# NASA POWER daily climatology — La Quebrada Viva parcel
+# NASA POWER daily climatology — Riverstone Valley parcel
 
 Source: NASA POWER (https://power.larc.nasa.gov), US public domain  
 Point: lon=-57.03000, lat=-25.63000 (nearest grid cell ~½°)  

@@ -18,7 +18,7 @@ Three pre-built VR scenarios: "What if you book a Type A for 3 nights?" "What if
 
 > _"[Action list 2026-06-30]: WA5 | **BV/bedrijfsstructuur advies** — meerdere bv's NL vs PY, wanneer verplicht | Onderzoek belastingadvies NL + PY | Memo + contacten | | WA6 | **VR/3D interactief prototype** — site-map met verplaatsbare huizen | Bouwen op lqv-walkthrough.pages.dev | Live demo | | WA7 | **Marketing-plan voor 1e-huur-huizen** (Booking.com + Airbnb + niche) | Onderzoek + template listings | Template + strategy |"_
 
-> _"[Action list 2026-06-30]: E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan"_
+> _"[Action list 2026-06-30]: E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan"_
 
 > _"[Action list 2026-06-30]: ley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Week 3 | ⚪ | --- ## §4 — THIJS + WESLEY (eerste maanden — operationeel op de site) | # | Taak | Wanneer | Owner | |---|---|---|---| | T1 | **Locaties voor typologie-huizen bepalen** (via VR + site-visie) | Maa"_
 
@@ -26,7 +26,7 @@ Three pre-built VR scenarios: "What if you book a Type A for 3 nights?" "What if
 
 ## Why this matters
 
-Investors don't buy houses. They buy experiences. Showing them three different experiences they could have at LQV (each priced and bookable) makes the project concrete.
+Investors don't buy houses. They buy experiences. Showing them three different experiences they could have at RV (each priced and bookable) makes the project concrete.
 
 **Related insights from the catalog pass:**
 

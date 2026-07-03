@@ -1,11 +1,11 @@
-# SX04 — Exit strategy options for LQV
+# SX04 — Exit strategy options for RV
 
 **Date:** 2026-06-30
 **Status:** MEM-based. Long-term strategic planning.
 
 ## What SX04 is
 
-**LQV's 5-year+ exit options for Wes + Thijs + investors.**
+**RV's 5-year+ exit options for Wes + Thijs + investors.**
 
 ## Exit options ranked
 
@@ -13,7 +13,7 @@
 **Year:** 5-7 years (Y7-9 of operation)
 **Buyer profile:** Eco-lodge chain (Awasi, Aman, Six Senses, 1 Hotels)
 **Valuation:** 5-8x annual revenue (typical hospitality multiple)
-**For LQV Y5-7:** $5-12M sale price (per scenarios 3a-3c)
+**For RV Y5-7:** $5-12M sale price (per scenarios 3a-3c)
 **Net to Wes + Thijs (75% equity):** $3.75-9M
 **Net to NL investors (25% via BV2):** $1.25-3M
 
@@ -30,7 +30,7 @@
 **Year:** 5-8 years
 **Buyer profile:** Long-stay operator, coliving network
 **Valuation:** 4-6x annual revenue
-**For LQV:** $4-8M
+**For RV:** $4-8M
 **Net to Wes + Thijs:** $3-6M
 **Net to NL investors:** $1-2M
 
@@ -51,7 +51,7 @@
 **Year:** 7-10 years
 **Mechanism:** BV2 (NL) buys back investor shares at pre-agreed multiple (e.g. 2-3x)
 **Valuation:** Pre-agreed formula
-**For LQV:** $1-3M to buy back 25% of equity (if all investors want out)
+**For RV:** $1-3M to buy back 25% of equity (if all investors want out)
 **Net to investors:** Full exit with profit
 
 **Pros:** Clean exit for investors, Wes + Thijs retain 100% control
@@ -71,7 +71,7 @@
 **Year:** 5-8 years
 **Mechanism:** Transfer ownership to a trust or REIT, sell shares to public
 **Valuation:** Real estate multiple
-**For LQV:** $5-10M
+**For RV:** $5-10M
 **Net to Wes + Thijs:** Depends on structure
 
 **Pros:** Liquidity, professional management
@@ -87,7 +87,7 @@
 **Pros:** Maintains vision + control
 **Cons:** Limited exit, family risk (health, etc.)
 
-## Recommended path for LQV
+## Recommended path for RV
 
 **Year 1-3:** Build to operational track record
 - Phase 1 complete (5 cabins)
@@ -121,7 +121,7 @@
 **Per scenario 3c (hyper-growth), assuming 5-year exit:**
 - Equity value at Y5: $10-15M
 - Total Wes + Thijs share: $7.5-11.25M
-- **Plus brand value (LQV eco-name recognition)**
+- **Plus brand value (RV eco-name recognition)**
 
 ## What Wes needs to do
 

@@ -4,23 +4,23 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## What LQV's reforestation program could be
+## What RV's reforestation program could be
 
 **Per D7 (family-anchored community) + A07 (Atlantic Forest regeneration):**
 
-**The opportunity:** Volunteer tourism = paying guests help reforest LQV's 62 ha as part of their stay.
+**The opportunity:** Volunteer tourism = paying guests help reforest RV's 62 ha as part of their stay.
 - **Today:** Volunteer tourism is a $100M+ global market (per VolunteerWorld data)
 - **PY opportunity:** Almost no competition (Wes has first-mover advantage)
 - **Audience:** Eco-conscious travelers, gap-year students, sabbaticals, corporate retreats
-- **LQV differentiator:** Active reforestation + comfortable lodging + great food
+- **RV differentiator:** Active reforestation + comfortable lodging + great food
 
 ## Volunteer tourism models
 
 ### Model 1: Pay-and-volunteer (most common)
 - Guest pays standard cabin rate
 - During their stay, contributes 2-4 hours to reforestation (planting, watering, etc.)
-- "LQV Forest Passport" or certificate of contribution
-- **Pays LQV standard rate** + low-cost reforestation
+- "RV Forest Passport" or certificate of contribution
+- **Pays RV standard rate** + low-cost reforestation
 - **Best for:** Fase 1, simple to implement
 
 ### Model 2: Volunteer-only stays (less common)
@@ -36,12 +36,12 @@
 - **Best for:** Fase 2-3 (after main operations stable)
 
 ### Model 4: Researcher accommodation
-- University ecology students stay at LQV
+- University ecology students stay at RV
 - Research local forest, fauna, soil
 - Modest fees ($20-40/night) + university funds research
 - **Best for:** Continuous research program, builds academic partnerships
 
-## What LQV needs (Fase 2-3 for full implementation)
+## What RV needs (Fase 2-3 for full implementation)
 
 - 1 arborist/forestry manager (already planning per O09)
 - Volunteer coordination (1 staff member can do this)
@@ -88,7 +88,7 @@
 - **Time cost:** Wes's time supervising, training
 - **Reputation risk:** if a volunteer gets hurt
 
-## Recommended for LQV
+## Recommended for RV
 
 **Fase 1:** Model 1 (Pay-and-volunteer) only
 - All guests have option to participate 2-4 hours

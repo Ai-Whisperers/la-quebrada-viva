@@ -2,7 +2,7 @@
 
 **Per DREAMLIST_D6 (wellness pool with natural water, no chlorine) + DREAMLIST_X10**
 
-## What LQV's wellness pool is
+## What RV's wellness pool is
 
 **Per Wes's audio E:** "wellness pool with natural water, no chlorine, eco pool amenities, rain fed, romantic, dish for couples, wedding and ceremonies, birthday, family celebration, like different types of experiences in the place and what it should have."
 

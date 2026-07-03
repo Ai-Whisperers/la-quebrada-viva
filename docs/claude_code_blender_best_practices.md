@@ -5,7 +5,7 @@
 **Purpose:** Everything needed to make Claude Code produce the best possible
 results when working with Blender — MCP setup, scripting patterns, prompt
 engineering, render optimization, procedural techniques, and toolchain.  
-**Scope:** Applies to this project (La Quebrada Viva) and any future Blender work.  
+**Scope:** Applies to this project (Riverstone Valley) and any future Blender work.  
 **Last updated:** June 2026
 
 ---
@@ -508,7 +508,7 @@ def embed_bottle_cluster(wall_mesh, center, radius, bottle_count, seed=42):
 
 ### 4.2 Parametric terrain generation
 
-For the La Quebrada Viva flat-rock pool and stream terrain:
+For the Riverstone Valley flat-rock pool and stream terrain:
 
 ```python
 import bpy
@@ -935,7 +935,7 @@ def configure_render_output(output_path, variant_name):
 
 ### 7.1 Linked library workflow
 
-For the La Quebrada Viva project, use linked libraries to keep scenes
+For the Riverstone Valley project, use linked libraries to keep scenes
 manageable:
 
 ```
@@ -949,7 +949,7 @@ la_quebrada_viva/
 │   ├── stone_assets.blend       # Boulder, terrace wall, weir wall
 │   └── house_components.blend   # Cob walls, gallery, tatakuá
 ├── scenes/
-│   ├── location_scene.blend     # La Quebrada Viva — no house
+│   ├── location_scene.blend     # Riverstone Valley — no house
 │   ├── house_scene.blend        # House render (links location scene)
 │   └── detail_shots.blend       # Close-up renders
 └── renders/

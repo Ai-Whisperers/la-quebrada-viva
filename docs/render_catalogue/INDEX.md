@@ -1,4 +1,4 @@
-# Render catalogue — La Quebrada Viva
+# Render catalogue — Riverstone Valley
 
 > **Three views of the same data:**
 > - This file (`INDEX.md`) — human-readable, organised by category

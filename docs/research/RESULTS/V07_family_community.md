@@ -8,13 +8,13 @@
 **Per Wes's audio E (A07 family-community):**
 > "A nice park. Children can go around. Maybe a daycare center. You..."
 
-**This is LQV's specific positioning vs:**
+**This is RV's specific positioning vs:**
 - Pure eco-lodge (no kids)
 - Dutch corporate daycare (cold + formal)
 - Resort (formal + sterile)
 - Retreat (transient, no community)
 
-**LQV is:** A family-anchored community where guests (and staff) are part of a living place, not just staying in a hotel.
+**RV is:** A family-anchored community where guests (and staff) are part of a living place, not just staying in a hotel.
 
 ## What this means in practice
 
@@ -53,7 +53,7 @@
 - Eco-awareness is high (especially NL + DE)
 - "Real life experience" > "resort luxury"
 
-**LQV matches this perfectly:**
+**RV matches this perfectly:**
 - 30 cabins (not 5-10, but not 100+ either)
 - Family-anchored
 - Eco-credentials
@@ -62,7 +62,7 @@
 
 ## Sonja's role in this
 
-**Sonja is the community anchor.** Per the LQV DREAMLIST:
+**Sonja is the community anchor.** Per the RV DREAMLIST:
 - Sonja knows the local community
 - Sonja is "Wes's cultural compass"
 - Sonja can help with hiring + family programming
@@ -70,13 +70,13 @@
 
 ## Marketing story
 
-**The "LQV community" narrative:**
+**The "RV community" narrative:**
 - "Wes + Sonja built this for their family + friends + guests"
 - "30 cabins around a shared heart"
 - "Slow-stay, multi-gen, eco-luxury"
 - "Real Paraguay, real family"
 
-**This is the emotional core of all LQV marketing.**
+**This is the emotional core of all RV marketing.**
 
 ## Risks
 

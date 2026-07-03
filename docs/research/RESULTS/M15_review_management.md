@@ -3,7 +3,7 @@
 **Date:** 2026-06-30
 **Status:** Strategic outline.
 
-## Why reviews matter for LQV
+## Why reviews matter for RV
 
 **Per V04 (European market):**
 - European travelers check TripAdvisor + Booking.com + Google Maps reviews
@@ -11,7 +11,7 @@
 - A 4.5+ rating is the threshold for "consider" — below 4.0 kills conversion
 - A few "great" reviews with personal stories outperform many 5-stars
 
-**LQV starts with no reviews.** First 6-12 months are critical to build the review base.
+**RV starts with no reviews.** First 6-12 months are critical to build the review base.
 
 ## Review management plan
 
@@ -26,7 +26,7 @@
 ### Phase 2 (Y2): Optimization
 - 50+ reviews per month
 - Aim for 4.7+ stars
-- Reviews posted to LQV website + Booking.com + Google Maps (synced)
+- Reviews posted to RV website + Booking.com + Google Maps (synced)
 - Respond within 24 hours
 - Use reviews in marketing (with permission)
 
@@ -53,7 +53,7 @@
 
 **The truth:** 1 in 10 reviews will be 1-3 stars. Some are legitimate (a real issue), some are unfair.
 
-**LQV's response approach:**
+**RV's response approach:**
 1. Read carefully + identify the core issue
 2. Reply within 24 hours (always)
 3. Acknowledge + apologize + explain
@@ -69,9 +69,9 @@
 - Specific stories (not just "great stay")
 - Visual content (their photos, your photos)
 - Name + country (builds trust)
-- Detail about why they chose LQV (e.g. "I came for the natural pool, stayed for the staff")
+- Detail about why they chose RV (e.g. "I came for the natural pool, stayed for the staff")
 
-**For LQV's marketing deck:**
+**For RV's marketing deck:**
 - 10-15 best quotes per year (with permission)
 - 1-2 "guest journey" videos per year
 - Reference to specific amenities (pool, food, family, view)

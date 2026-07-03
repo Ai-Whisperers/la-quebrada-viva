@@ -178,7 +178,7 @@ The multi-year NDVI stack covers 2018-2026. The deck shows ONE composite.
 - 2025-08-01 → 2026-04-01 (most recent full dry season + green-up — shows
   the parcel in transition state, which is the most visually informative).
 
-### [ ] 2.3  Hansen GFC year cutoff for "loss since LQV bought"
+### [ ] 2.3  Hansen GFC year cutoff for "loss since RV bought"
 
 Hansen runs 2000-2024. We can highlight loss in years matching your
 property history.

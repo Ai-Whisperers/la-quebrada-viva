@@ -18,7 +18,7 @@ process + samples list
 
 > _"[Action list 2026-06-30]: soonlijk | --- ## §2 — WESLEY + AI (korte termijn, AI doet het werk) | # | Taak | AI-actie | Resultaat | |---|---|---|---| | WA1 | **Bamboe honing-kleur onderzoek** — kopen / groeien / importeren / termieten-behandeling | Web-research + leveranciers-vergelijking (Chaa Creek, San Bernardino Mennonieten) | Rapport + 3 offertes | | WA2 | **Bamboe-leveranciers in kaart brengen** | Database van Paraguaya"_
 
-> _"[Action list 2026-06-30]: and 3 | Erebus + Wesley | --- ## §8 — EERSTE HUIS BOUW (komende 6 maanden) | # | Taak | Wanneer | Owner | |---|---|---|---| | H1 | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per LQV calc, + bamboe-impor"_
+> _"[Action list 2026-06-30]: and 3 | Erebus + Wesley | --- ## §8 — EERSTE HUIS BOUW (komende 6 maanden) | # | Taak | Wanneer | Owner | |---|---|---|---| | H1 | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per RV calc, + bamboe-impor"_
 
 > _"[Dream list 2026-06-30]: , resultaat in 1 minuut | | A9 | "Geef prijzen" | Auto-prijsraming op basis van gekozen typologie + parameters | | A10 | "Onderzoek hoe bamboe honing-kleur te krijgen" | Specifieke web-research + Paraguay-leveranciers | | A11 | "Vergelijk offertes ANDE vs particulier" | Multi-source prijsonderzoek, rapport in markdown | | A12 | "Onderzoek of ik bamboe kan kopen, importeren of zelf groeien" | Supply-cha"_
 
@@ -34,7 +34,7 @@ process + samples list
 
 ## Full picture — context, constraints, history
 
-**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
+**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
 
 ## What we know already (research summary)
 
@@ -61,7 +61,7 @@ _No specific risks identified beyond standard category risks. Add as they emerge
 
 ## Cost / time estimate
 
-See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate.
+See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate.
 
 ## Done = shipped
 

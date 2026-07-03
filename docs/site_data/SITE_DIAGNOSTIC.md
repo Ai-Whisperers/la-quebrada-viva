@@ -1,4 +1,4 @@
-# Site Diagnostic — La Quebrada Viva, Escobar, Paraguarí
+# Site Diagnostic — Riverstone Valley, Escobar, Paraguarí
 
 > First-pass interpretation of the ALOS World 3D 30 m DEM (and cross-checks against Copernicus GLO-30, SRTM v3 GL1, NASADEM). GEDI L2A points are still downloading in the background; canopy/biomass analysis lands in v2.
 >

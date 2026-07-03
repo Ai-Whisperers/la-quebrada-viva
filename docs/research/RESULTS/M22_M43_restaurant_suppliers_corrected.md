@@ -41,7 +41,7 @@ These are imported via Ciudad del Este or Asunción and resold by local dealers:
 | **Asunción commercial kitchen designers** (2-3 firms) | Full design + install | Google "diseño cocinas comerciales Asunción" |
 | **Direct used-equipment dealers** | Refurbished hotel/restaurant equipment | Mercado 4, weekends |
 
-## Recommended sourcing strategy for LQV
+## Recommended sourcing strategy for RV
 
 **For Fase 1 (5 cabins, ~20-30 covers/day):**
 - **Walk-in CDE (Ciudad del Este)** for general equipment (Gastromaq, Tedimetal, Metalúrgica Real)
@@ -68,7 +68,7 @@ These are imported via Ciudad del Este or Asunción and resold by local dealers:
 - Coffee/beverage: $1,000-1,200
 - **Total: $7,700-9,200** (similar range, but with better sourcing detail)
 
-## Specific LQV-relevant items
+## Specific RV-relevant items
 
 - **Fase 1 essentials:**
   - 4-burner range + oven: ~$800-1,200 (BR commercial)

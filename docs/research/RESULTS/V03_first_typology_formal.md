@@ -1,27 +1,27 @@
-# V03 — First typology = LQV cob/bottle house (FORMAL)
+# V03 — First typology = RV cob/bottle house (FORMAL)
 
 **Date:** 2026-06-30
 **Status:** Formal version. The prototype that defines the typology system.
 
 ## What V03 is
 
-**The LQV cob/bottle house is:**
+**The RV cob/bottle house is:**
 - 18 Cycles final renders shipped at `85e86aa` (byte-frozen)
 - A/B/C × 6 cameras = 18 hero images
 - Source: `lqv/typologies/` + `renders/`
 - Build cost estimate: $18,040 USD for 80m² (per NL prices doc)
-- Per LQV's 10-type plan: this is the "Luxe Spa" tier (Type 2p or 4p at 90-115m²)
+- Per RV's 10-type plan: this is the "Luxe Spa" tier (Type 2p or 4p at 90-115m²)
 
 ## Why this is the prototype
 
 **V03 (the cob house) defines:**
-- LQV's aesthetic (cob + bamboo + bottle + lime + stone)
-- LQV's technical approach (low-tech, sustainable, breathable)
-- LQV's cost model (per m², including premium finishes)
-- LQV's local sourcing strategy (PY materials + Wes's NL+BR craft network)
-- LQV's master-rule (no cement plaster, no chlorine, no right angles)
+- RV's aesthetic (cob + bamboo + bottle + lime + stone)
+- RV's technical approach (low-tech, sustainable, breathable)
+- RV's cost model (per m², including premium finishes)
+- RV's local sourcing strategy (PY materials + Wes's NL+BR craft network)
+- RV's master-rule (no cement plaster, no chlorine, no right angles)
 
-**Any new typology in LQV derives from this prototype's principles.**
+**Any new typology in RV derives from this prototype's principles.**
 
 ## The prototype's 10 design rules (per CLAUDE.md)
 
@@ -78,7 +78,7 @@
 
 ## V03 vs the 13 render typology files in lqv/typologies/
 
-**Note:** the LQV render pipeline has 13 typology build files (boomhut, river_house, cob, etc.) that were used during the 18-final sprint. These are CONCEPT ART, not commitment.
+**Note:** the RV render pipeline has 13 typology build files (boomhut, river_house, cob, etc.) that were used during the 18-final sprint. These are CONCEPT ART, not commitment.
 
 **Per the reconciled view (BR/CR + reconfirmed):**
 - 10-type plan (in CABIN_CATALOG) = the build commitment
@@ -105,4 +105,4 @@
 
 ## Status
 
-✅ Done. V03 is the prototype that defines the LQV aesthetic + cost model. Build it first.
+✅ Done. V03 is the prototype that defines the RV aesthetic + cost model. Build it first.

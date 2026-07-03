@@ -17,7 +17,7 @@ See `BR01_name_pick.md` — Wes needs to pick 1 (or 2) of the 5 candidates befor
 | 3 | **Cielo Azul** | cieloazul.com, .com.py, .es | May be taken (popular) |
 | 4 | **Lluvia Dorada** | lluviadorada.com, .com.py, .es | May be taken (poetic name) |
 | 5 | **Lluvia de Oro** | lluviadeoro.com, .com.py, .es | May be taken |
-| 6 | **La Quebrada Viva** | quebradaviva.com, .com.py, .es | Likely taken (used by Ivan's prior work) |
+| 6 | **Riverstone Valley** | quebradaviva.com, .com.py, .es | Likely taken (used by Ivan's prior work) |
 
 ## How to check
 

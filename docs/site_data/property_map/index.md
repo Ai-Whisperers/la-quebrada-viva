@@ -1,4 +1,4 @@
-# Property map — La Quebrada Viva (T+1, 2026-06-28)
+# Property map — Riverstone Valley (T+1, 2026-06-28)
 
 > Satellite + DEM + OSM-derived map of the 30.9 ha buildable Mbopicua cluster (Wesley's KML polygon). **All layers are remote-sensed and pending photo verification** from Wesley's promised on-site intake (window 2026-07-27 → 2026-08-27).
 

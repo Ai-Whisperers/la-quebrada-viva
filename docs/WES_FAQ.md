@@ -10,7 +10,7 @@
 
 ## 1. What is this repo?
 
-This is the **digital workspace for La Quebrada Viva (Riverstone Valley)**
+This is the **digital workspace for Riverstone Valley**
 — a 62-hectare (153-acre) parcel in Escobar, Paraguarí, Paraguay that
 Wesley van de Camp and Thijs bought together (75% / 25%). The repo holds:
 

@@ -80,7 +80,7 @@ Full corpus: 16 × 24 = **384 finals** + 16 × 24 previews at 720p = **768 PNGs 
 `hobbit_house`, `cob_bottle_lqv`
 
 - Add `section_long` cut on east face to show sod-roof depth (250–400 mm) — passive-design evidence.
-- `xray` of `cob_bottle_lqv` must show the bottle wall in cross-section (the bottle bottoms reading as colored disks through translucent cob). This is the *signature* shot for La Quebrada Viva.
+- `xray` of `cob_bottle_lqv` must show the bottle wall in cross-section (the bottle bottoms reading as colored disks through translucent cob). This is the *signature* shot for Riverstone Valley.
 - `detail_bottle_wall` at 50 mm: bottle bases protruding through interior cob, light passing through.
 - `detail_tatakua` at 50 mm: clay oven (`lqv/subscene/tatakua.py` exists) integrated to corredor.
 

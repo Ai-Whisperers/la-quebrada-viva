@@ -1,11 +1,11 @@
 # BR09 — Phase naming convention (Fase 1, 2, 3)
 
 **Date:** 2026-06-30
-**Status:** MEM-based. Naming convention for LQV's build phases.
+**Status:** MEM-based. Naming convention for RV's build phases.
 
 ## What BR09 is
 
-**LQV's 3-phase build needs clear naming for:**
+**RV's 3-phase build needs clear naming for:**
 - Marketing (different offers per phase)
 - Investor communication (different opportunity per phase)
 - Operational (different teams, different ops per phase)
@@ -39,9 +39,9 @@
 - Brand-friendly
 
 **Marketing integration:**
-- LQV ALBA: "The beginning" - for early adopters, low ADR, high community
-- LQV DÍA: "The growth" - middle phase, mid-ADR
-- LQV NOCHE: "The abundance" - mature phase, high-ADR + events
+- RV ALBA: "The beginning" - for early adopters, low ADR, high community
+- RV DÍA: "The growth" - middle phase, mid-ADR
+- RV NOCHE: "The abundance" - mature phase, high-ADR + events
 
 **Alternative naming (if user prefers English):**
 - The Dawn
@@ -59,9 +59,9 @@
 
 - [ ] Per W0.3 + brand, integrate phase naming
 - [ ] Update marketing materials with phase names
-- [ ] Y1 launch: LQV ALBA tagline
-- [ ] Y2 launch: LQV DÍA (transition)
-- [ ] Y3 launch: LQV NOCHE (full)
+- [ ] Y1 launch: RV ALBA tagline
+- [ ] Y2 launch: RV DÍA (transition)
+- [ ] Y3 launch: RV NOCHE (full)
 
 ## Cross-reference
 - TIMELINE.md

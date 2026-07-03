@@ -1,4 +1,4 @@
-# GitHub & Docs Research — La Quebrada Viva
+# GitHub & Docs Research — Riverstone Valley
 
 > Master synthesis of the 2026-06-10 research sweep. 100+ repos catalogued across 5 parallel research agents. Findings ordered by what actually moves the project forward.
 >

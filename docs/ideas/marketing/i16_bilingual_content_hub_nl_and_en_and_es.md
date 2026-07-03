@@ -16,7 +16,7 @@ A blog on lqv-walkthrough.pages.dev in three languages: NL (for Wes's primary au
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: ** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij LQV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet alle wensen zijn letterlijk bedoeld; §3 dreamlist toont wat genegeerd kan worden. 5. **Wesley is geen techneut** — moet niet overvallen worden met tech; iteratieve adoptie ("stapje voor stapje"). 6. **Ivan + Ki"_
+> _"[Action list 2026-06-30]: ** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij RV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet alle wensen zijn letterlijk bedoeld; §3 dreamlist toont wat genegeerd kan worden. 5. **Wesley is geen techneut** — moet niet overvallen worden met tech; iteratieve adoptie ("stapje voor stapje"). 6. **Ivan + Ki"_
 
 > _"[Action list 2026-06-30]: # Wesley's Actielijst — 30 dagen + Lopend **Datum:** 2026-06-30 **Bron:** NL opname Wesley van de Camp **Filter:** Concrete taken die in de komende 30 dagen gedaan kunnen worden. Geen dromen, geen "ooit". --- ## §1 — PERSOONLIJK (Wesley-only, geen AI-actie) | # | Taak | Wanneer | Status | |---|---|---|---| | W1 | Interpol"_
 

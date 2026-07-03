@@ -6,7 +6,7 @@
 
 ## What Wes needs
 
-A drone LiDAR survey of the 62 ha LQV parcel for:
+A drone LiDAR survey of the 62 ha RV parcel for:
 - Sub-meter vertical accuracy terrain model
 - Used for cabin siting (B02, B03 placement tool)
 - Water-shed analysis
@@ -36,7 +36,7 @@ A drone LiDAR survey of the 62 ha LQV parcel for:
 
 ## What to ask for in quotes
 
-For the 62 ha LQV parcel:
+For the 62 ha RV parcel:
 - **DEM (Digital Elevation Model)** at 0.5m or 1m grid spacing
 - **Point cloud** (raw LiDAR returns)
 - **Orthomosaic** (RGB photo mosaic at 5cm/px)

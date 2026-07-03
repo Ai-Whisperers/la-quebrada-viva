@@ -1,4 +1,4 @@
-# Wes's Ideas Index — La Quebrada Viva
+# Wes's Ideas Index — Riverstone Valley
 **Maintained by:** Erebus (AI Whisperers) · **For:** Wesley van de Camp + Ivan + Kiki
 **Last update:** 2026-07-03 · **Source:** All brainstorm sessions, recordings, briefs, project state
 

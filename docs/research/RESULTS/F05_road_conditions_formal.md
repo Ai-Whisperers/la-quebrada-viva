@@ -5,7 +5,7 @@
 
 ## Why this matters
 
-**LQV's site access affects:**
+**RV's site access affects:**
 - Construction deliveries (timber, concrete, equipment)
 - Guest arrivals (first impression)
 - Emergency response (medical, fire)
@@ -32,7 +32,7 @@
 - Occasional closures
 - Best to plan major deliveries before or after
 
-## LQV's access roadmap
+## RV's access roadmap
 
 ### Phase 1 (Y1): Improve the 7 km
 - Initial grading + maintenance: $2,000-5,000

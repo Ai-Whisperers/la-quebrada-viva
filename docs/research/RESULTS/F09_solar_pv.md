@@ -1,9 +1,9 @@
-# F09: Solar PV sizing for LQV park + restaurant
+# F09: Solar PV sizing for RV park + restaurant
 **Method:** MEM + cross-ref to existing climate data in repo
 **Confidence:** High for sizing methodology, medium for specific costs
 **Date:** 2026-06-30
 
-## Load profile for LQV Fase 1 (5 cabins + restaurant)
+## Load profile for RV Fase 1 (5 cabins + restaurant)
 
 | Item | Count | Power (W) | Daily hours | Daily kWh |
 |---|---:|---:|---:|---:|
@@ -21,7 +21,7 @@
 
 ## Climate data (already in repo)
 
-The LQV repo has **ERA5 climate reanalysis data** in `docs/site_data/climate_era5/`. Key metrics for solar sizing:
+The RV repo has **ERA5 climate reanalysis data** in `docs/site_data/climate_era5/`. Key metrics for solar sizing:
 
 - **Paraguarí, PY average daily solar radiation:** 4.5-5.5 kWh/m²/day (peak summer: 6.0-6.5, winter: 3.0-3.5)
 - **Annual average:** ~4.8 kWh/m²/day
@@ -74,7 +74,7 @@ The LQV repo has **ERA5 climate reanalysis data** in `docs/site_data/climate_era
 
 ## Grid-tie vs off-grid decision
 
-**For LQV Fase 1:**
+**For RV Fase 1:**
 - **Off-grid** (solar + battery + generator) is more expensive upfront BUT:
   - ANDE grid may not reach the property (F03 to verify)
   - ANDE 3-phase upgrade = 4-8 months + $3,000-8,000
@@ -84,7 +84,7 @@ The LQV repo has **ERA5 climate reanalysis data** in `docs/site_data/climate_era
 
 **Recommendation: start off-grid, plan for ANDE 3-phase in Year 2.** This gets Fase 1 operational fastest, and ANDE becomes the resilience backup.
 
-## LQV-specific considerations
+## RV-specific considerations
 
 - **Shade from Atlantic Forest:** 82% canopy around the property. **PV must be on the building rooftops or cleared patches**, not in the forest.
 - **Dust/pollen:** PY has dust storms (Sept-Oct) that reduce PV efficiency by 5-15%. Annual cleaning 2-3x recommended.

@@ -1,4 +1,4 @@
-# Soil brief — La Quebrada Viva (30.9 ha Mbopicua cluster)
+# Soil brief — Riverstone Valley (30.9 ha Mbopicua cluster)
 
 Source: ISRIC SoilGrids 2.0 REST API (250 m raster), CC-BY 4.0  
 Pulled: 2026-06-29T18:10:57Z  

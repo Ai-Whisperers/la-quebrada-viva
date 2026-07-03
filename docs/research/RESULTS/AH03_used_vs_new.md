@@ -7,7 +7,7 @@
 ## Decision: Tundra/Presio (or similar) for Fase 1 bouwfase — new or used?
 
 ### Context
-- LQV needs 1 vehicle for Fase 1 (5 cabins, 1 year build)
+- RV needs 1 vehicle for Fase 1 (5 cabins, 1 year build)
 - Tundra = $50-70K USD new, ~$30-40K 2-3 year used
 - Presio (Hilux) = $40-55K new, ~$25-35K used
 - Other options: Land Cruiser, Hilux, Ranger

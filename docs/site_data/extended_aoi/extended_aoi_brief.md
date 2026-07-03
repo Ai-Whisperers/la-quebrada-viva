@@ -1,4 +1,4 @@
-# Extended-AOI multi-DEM + polygon vegetation brief — La Quebrada Viva (Phase-0 §12 v1)
+# Extended-AOI multi-DEM + polygon vegetation brief — Riverstone Valley (Phase-0 §12 v1)
 
 > Lat/lon AOI rectangle 0.03° × 0.05° (~3 × 5.5 km) centred on the 30.9 ha
 > Mbopicua parcel polygon (centroid −57.0355, −25.6073). Four open-data DEMs

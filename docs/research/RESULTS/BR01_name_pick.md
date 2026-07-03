@@ -15,7 +15,7 @@
 | 3 | **Cielo Azul** | Wes's brainstorm | Spanish, distinctive | Common Spanish name |
 | 4 | **Lluvia Dorada** | Wes's brainstorm | German place + plant reference, poetic | Less brandable |
 | 5 | **Lluvia de Oro** | Wes's brainstorm (variant) | Similar to #4 | Same as #4 |
-| 6 | **La Quebrada Viva** | Ivan's working name | Already established, descriptive | Descriptive, not distinctive |
+| 6 | **Riverstone Valley** | Ivan's working name | Already established, descriptive | Descriptive, not distinctive |
 | 7 | **Eco Jungle Resort Paraguay** | Wes's working files | Descriptive, accurate | Too long, not brandable |
 
 ## Wes's preference (from the audio)

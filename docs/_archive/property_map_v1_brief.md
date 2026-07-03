@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-# Property map brief — La Quebrada Viva (Phase-0 §12 v1, canonical)
+# Property map brief — Riverstone Valley (Phase-0 §12 v1, canonical)
 
 > Composite satellite + DEM + OSM map of the 30.9 ha buildable Mbopicua
 > cluster (Wesley's KML polygon, scope-locked at T+1, 2026-06-28).

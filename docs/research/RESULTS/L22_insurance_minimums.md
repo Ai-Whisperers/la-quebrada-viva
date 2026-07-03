@@ -4,7 +4,7 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## What LQV needs
+## What RV needs
 
 **Per W0.7 + insurance_fire_bundle.md:**
 - Coverage types: fire, storm, liability, business interruption
@@ -26,7 +26,7 @@
 | **Umbrella** (excess liability) | Catastrophic events | $5M+ | $1,000-2,000 |
 | **Workers' liability** (limited PY) | Often covered by IPS | — | (included in IPS) |
 
-**Total annual insurance for LQV Fase 1 (5 cabins + restaurant):**
+**Total annual insurance for RV Fase 1 (5 cabins + restaurant):**
 - Property: $8,000-15,000
 - Liability: $2,000-4,000
 - Business interruption: $1,500-3,000

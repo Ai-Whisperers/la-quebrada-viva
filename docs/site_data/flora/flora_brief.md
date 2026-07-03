@@ -1,5 +1,5 @@
 ---
-title: "Flora brief — La Quebrada Viva"
+title: "Flora brief — Riverstone Valley"
 phase: Phase-0
 section: "§12 #4 extension"
 centroid: "-57.0355, -25.6073"
@@ -10,7 +10,7 @@ status: "v1 — synthesis on top of biodiversity_25km/ + new 5 km Plantae pull"
 parcel_inat_plantae_obs: 8
 ---
 
-# Flora brief — La Quebrada Viva
+# Flora brief — Riverstone Valley
 
 Parcel centroid `-57.0355, -25.6073` (-25.6073°S, -57.0355°W), ~350 m elevation, Atlantic Forest / Cerrado ecotone, Paraguarí. Expected-species ranking is the curated 3,906-row checklist crossed against Atlantic-Forest (BF.2020), Argentine, and Paraguayan threatened-species lists.
 

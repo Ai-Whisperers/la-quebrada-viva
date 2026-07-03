@@ -1,6 +1,6 @@
 # Blender GIS & 3D Landscape Pipeline Research
 
-> Re-research of GitHub repos for Blender GIS / terrain mesh / landscape pipelines, targeted at **La Quebrada Viva** (Escobar, Paraguarí, Paraguay — Atlantic Forest + sandstone escarpment + cob house). 23 repos catalogued. Compiled 2026-06-10, same day as the previous `docs/research/README.md` mega-sweep — this report cross-checks and **overrides** the previous verdicts on the 7 Blender-addon repos based on live GitHub state today.
+> Re-research of GitHub repos for Blender GIS / terrain mesh / landscape pipelines, targeted at **Riverstone Valley** (Escobar, Paraguarí, Paraguay — Atlantic Forest + sandstone escarpment + cob house). 23 repos catalogued. Compiled 2026-06-10, same day as the previous `docs/research/README.md` mega-sweep — this report cross-checks and **overrides** the previous verdicts on the 7 Blender-addon repos based on live GitHub state today.
 
 ## TL;DR — Top 3 recommendations
 

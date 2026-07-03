@@ -76,7 +76,7 @@ final). Fixed.
 
 ### M7 — `_reconciled/README.md` was a dead end
 
-The reconciled view is the merge of Wes-files + Ivan-LQV, but it
+The reconciled view is the merge of Wes-files + Ivan-RV, but it
 linked forward to nothing — readers landing there had to figure out
 where to go. Fix: added "Related" section pointing at WES_INDEX,
 POST_ESCRITURA_NOW, CRITIQUE_FOR_WES, ideas/INDEX.

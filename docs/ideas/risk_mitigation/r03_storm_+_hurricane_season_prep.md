@@ -20,7 +20,7 @@ prep checklist + insurance trigger
 
 > _"[Dream list 2026-06-30]: A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat Wesley zei | Werkelijke betekenis | Actie | |---|---|---|---| | F1 | "Laten we er lemuren op de VR-plaats zetten" | Voorbeeld van hoe alles kan — niet letterlijk | Negeren — niet in scope | | F2 | "E"_
 
-> _"[Dream list 2026-06-30]: et de Hermes desktop" | Klacht over desktop UX | Bekend issue, niet Wes's probleem | | F6 | "Verkoop data van dentisten in Parijs" | Zijdelingse brainstorm over data-sales | Niet LQV-relevant, niet Acme-relevant | | F7 | "Marketing met 1M followers" | Hyperbool voor "groot bereik" | Realistisch: niche-targeted SEO + Booking.com | | F8 | "De audio moet ik luider zeggen" | Opname-instructie, niet wens |"_
+> _"[Dream list 2026-06-30]: et de Hermes desktop" | Klacht over desktop UX | Bekend issue, niet Wes's probleem | | F6 | "Verkoop data van dentisten in Parijs" | Zijdelingse brainstorm over data-sales | Niet RV-relevant, niet Acme-relevant | | F7 | "Marketing met 1M followers" | Hyperbool voor "groot bereik" | Realistisch: niche-targeted SEO + Booking.com | | F8 | "De audio moet ik luider zeggen" | Opname-instructie, niet wens |"_
 
 > _"[Dream list 2026-06-30]: — Onderzoeksmethode (Wes's proces, geformaliseerd) Wesley wil dat de AI dit patroon volgt voor elk idee: ``` 1. Idee (bv. "wellness pool") 2. Brainstorm 10-20 tangentieel-gerelateerde onderwerpen: - materialen, vergunningen, concurrenten, gezondheid, gebruikers-ervaring, kosten, locatie, personeel, veiligheid, marketing, juridisch, etc. 3. Onderzoek de top 5-10 (parallel) 4. Vind gaps —"_
 

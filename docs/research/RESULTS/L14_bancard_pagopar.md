@@ -6,8 +6,8 @@
 
 ## Card payment in Paraguay
 
-**Why it matters for LQV:**
-- LQV will accept credit/debit cards (Booking.com, direct bookings, restaurant bills)
+**Why it matters for RV:**
+- RV will accept credit/debit cards (Booking.com, direct bookings, restaurant bills)
 - Stripe/PayPal NOT available in PY for direct merchant accounts
 - Local processors required
 - 2-3% transaction fees are standard
@@ -60,11 +60,11 @@
 - Bank-specific: Banco Itaú e-pay, Familiar digital wallet
 - Tipping apps for restaurants
 
-**For LQV Fase 1:**
+**For RV Fase 1:**
 - **Primary:** Bancard or Pagopar (both will work)
 - **Backup:** Tigo Money + Personal Pay (for direct local bookings)
 
-## Cost estimate for LQV
+## Cost estimate for RV
 
 **Assuming 30% of revenue is via card (rest is direct bank transfer or cash):**
 - $300K annual revenue × 30% card = $90K card volume
@@ -74,7 +74,7 @@
 
 For full 30-cabin Phase 1: **~$5,000/year**
 
-## Recommended action for LQV
+## Recommended action for RV
 
 1. **Apply for both Bancard and Pagopar** (it's free to apply, only pay per transaction)
 2. **Use Pagopar as primary** (lower fees, better API, modern)

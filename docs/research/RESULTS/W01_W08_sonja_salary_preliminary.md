@@ -37,9 +37,9 @@ This is the **absolute floor** for any legal employment. Construction workers in
 ## Source quality
 - Training data ranges are rough estimates
 - Real PY wages vary significantly by region (Asunción 20-30% higher than rural Paraguarí)
-- **Sonja questionnaire is the canonical source** for LQV's actual rates
+- **Sonja questionnaire is the canonical source** for RV's actual rates
 
-## What LQV should pay (Fase 1 budget)
+## What RV should pay (Fase 1 budget)
 
 | Role | Recommended monthly (Gs) | Annual cost (Gs) |
 |---|---:|---:|
@@ -72,9 +72,9 @@ My estimate of $175K (Gs. 1,243M) is **lower** than Wes's financial model. Possi
 
 **Conclusion:** my estimate and Wes's model are within ~10% of each other. The actual rates will be confirmed by Sonja questionnaire (Q1-Q7).
 
-## What this means for LQV's cost model
+## What this means for RV's cost model
 
-The personnel line is **the largest cost center** in LQV's Fase 1 P&L. The difference between $175K and $231K (~$56K/year) is the difference between a tight margin and a comfortable one. Sonja's answers will determine which.
+The personnel line is **the largest cost center** in RV's Fase 1 P&L. The difference between $175K and $231K (~$56K/year) is the difference between a tight margin and a comfortable one. Sonja's answers will determine which.
 
 ## Cross-reference
 - W01-W08 in RESEARCH_CATALOGUE — covered by this preliminary research
@@ -84,4 +84,4 @@ The personnel line is **the largest cost center** in LQV's Fase 1 P&L. The diffe
 
 ## Status
 
-⚠️ Preliminary. Training data + official minimum wage. Sonja's answers are the canonical source for LQV-specific rates.
+⚠️ Preliminary. Training data + official minimum wage. Sonja's answers are the canonical source for RV-specific rates.

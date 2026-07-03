@@ -2,8 +2,8 @@
 
 **Sources:**
 - Wes's `invesment center.docx` (founder-controlled + 3-5 passive investors)
-- Ivan's LQV catalog `F01` (4-entity BV cascade)
-- LQV repo: `escritura-2026-06-27` (Wesley + Thijs 75/25, legal owners)
+- Ivan's RV catalog `F01` (4-entity BV cascade)
+- RV repo: `escritura-2026-06-27` (Wesley + Thijs 75/25, legal owners)
 
 **Date:** 2026-06-30
 **Status:** OPEN — both drafts preserved, decision owed by Wes + (eventual) accountant
@@ -58,7 +58,7 @@
 
 ---
 
-## 3. Ivan's "4-Entity BV Cascade" (from LQV catalog F01)
+## 3. Ivan's "4-Entity BV Cascade" (from RV catalog F01)
 
 **4 entities:**
 
@@ -158,7 +158,7 @@ The answers to these 8 questions will point to one of the three options (founder
 3. **Walk through 8 decision criteria** (above) with the accountant
 4. **Get the accountant's recommendation** — they'll have seen many similar structures
 5. **Document the final structure** in a new file: `BUSINESS_STRUCTURE_FINAL.md`
-6. **Update the LQV catalog F01** to reflect the decision
+6. **Update the RV catalog F01** to reflect the decision
 
 **Cost:** €500-2,000 for the accountant intro + structure recommendation.
 
@@ -167,7 +167,7 @@ The answers to these 8 questions will point to one of the three options (founder
 ## 8. Action Plan (Erebus)
 
 1. **Erebus drafts a 1-page summary** of the 3 options + the 8 decision criteria (Wes brings this to the accountant)
-2. **Erebus updates LQV catalog F01** to reflect the 3-option framing
+2. **Erebus updates RV catalog F01** to reflect the 3-option framing
 3. **Erebus monitors the decision** — once locked, update all related docs (FINANCIAL_MODEL, OPEN_DECISIONS, etc.)
 
 ---
@@ -175,6 +175,6 @@ The answers to these 8 questions will point to one of the three options (founder
 ## 9. Source
 
 - **Wes's draft:** `invesment center.docx` (founder-controlled + interest arbitrage)
-- **Ivan's draft:** LQV catalog `F01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_.md` (12-section format)
-- **LQV context:** `escritura-2026-06-27` tag, `0081129` commit, partnership = Wes + Thijs 75/25
+- **Ivan's draft:** RV catalog `F01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_.md` (12-section format)
+- **RV context:** `escritura-2026-06-27` tag, `0081129` commit, partnership = Wes + Thijs 75/25
 - **Erebus third option:** this document (hybrid)

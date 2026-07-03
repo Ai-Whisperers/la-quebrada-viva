@@ -3,11 +3,11 @@
 **Date:** 2026-06-30
 **Status:** MEM-based. Critical for Fase 1. Will be enriched with Kuikopee forester meeting in W1.2.
 
-## What hovenier = landscaper for LQV
+## What hovenier = landscaper for RV
 
 **Per AUDIO D (Wes):** "Die hovenier, doen we goed een diepe research ernaar. Dat u dit voor de AI-jongheid kunt doen. Wat is er mogelijk, wat hebben ze?"
 
-**The hovenier for LQV is responsible for:**
+**The hovenier for RV is responsible for:**
 - Landscape design + execution (paths, gardens, terraces)
 - Tree planting + care (reforestation + native species)
 - Edible gardens (herb spiral, fruit trees, vegetable beds)
@@ -17,7 +17,7 @@
 - Wildlife habitat (bird-friendly, native plant species)
 - Maintenance + care of all green areas
 
-## LQV's needs (Fase 1)
+## RV's needs (Fase 1)
 
 **Surface area (estimates):**
 - 62 ha total property
@@ -49,12 +49,12 @@
 - Direct contact via Wes (Sonja's network)
 - Best for native reforestation + Atlantic Forest expertise
 - Likely Dutch expat, established in PY
-- **This is the top candidate for LQV**
+- **This is the top candidate for RV**
 
 **2. Mennonite colonies (Loma Plata, Filadelfia):**
 - Large nurseries
 - Expertise in agricultural + reforestation
-- LQV already targeting them for M25 materials
+- RV already targeting them for M25 materials
 
 **3. San Bernardino German community:**
 - Some landscape designers
@@ -73,7 +73,7 @@
 - Network connections
 - Paid (not free)
 
-## Hovenier profile (LQV's target hire)
+## Hovenier profile (RV's target hire)
 
 **For Fase 1:**
 - 1 hovenier (full-time, on-site)
@@ -115,7 +115,7 @@
 ## What Wes needs to do (in W0.2 Sonja Q&A + W1.2)
 
 - [ ] Sonja Q3: Hovenier salary bands + candidate referrals
-- [ ] W1.2: Visit Kuikopee Dutch forester, ask for candidates + LQV-specific guidance
+- [ ] W1.2: Visit Kuikopee Dutch forester, ask for candidates + RV-specific guidance
 - [ ] W1.2: Visit 1-2 nurseries (Mennonite colony + Asunción)
 - [ ] Build a 1-page "Hovenier Role Description" for posting
 - [ ] Budget $5-10K for plants + equipment in Fase 1

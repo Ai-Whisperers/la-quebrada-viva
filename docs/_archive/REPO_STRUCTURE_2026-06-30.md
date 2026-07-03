@@ -256,7 +256,7 @@
 - `audit/RESTRUCTURE_PLAN.md` (proposed actions)
 - `audit/PATCHES_AND_GAPS_FOUND.md` (gap analysis)
 
-**For the canonical code** (the LQV renderer pipeline):
+**For the canonical code** (the RV renderer pipeline):
 - `lqv/` (148 Python files, 22K LOC, 14 subpackages)
 - `ARCHITECTURE.md` (lqv/ package map)
 - `CLAUDE.md` (AI session instructions)

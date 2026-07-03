@@ -437,7 +437,7 @@ Domain reports follow.
 | `emoncms/emoncms` | AGPL-3.0 | **ADOPT** | PV/battery/micro-hydro telemetry dashboard for ops + guest "green" page. |
 | `Green-bms/SmartBMS` | GPL-3.0 | **ADOPT** | Cell-level LiFePO4 bank monitoring. |
 | `simat/BatteryMonitor` | GPL-3.0 | REFERENCE | Lower-spec ESP32-class alt. |
-| `victronenergy/venus` | MIT | REFERENCE | If LQV buys Victron — Venus exposes MQTT directly to emoncms. |
+| `victronenergy/venus` | MIT | REFERENCE | If RV buys Victron — Venus exposes MQTT directly to emoncms. |
 | `openremote/openremote` | AGPL-3.0 | **ADOPT** | Single pane: PV + water tanks + door locks + climate sensors per cabin. |
 | `thingsboard/thingsboard` | Apache-2.0 | REFERENCE | Stronger SCADA visuals; pick one of (OpenRemote, ThingsBoard). |
 | `node-red/node-red` | Apache-2.0 | **ADOPT** | Wire Bancard webhook → Telegram → PMS → SIFEN without writing services. |
@@ -514,7 +514,7 @@ Ranked by **legitimacy + escritura-window leverage + low blast radius**.
    *what-to-use* tooling backlog. They get consumed together.
 3. **AGPL items (emoncms, OpenRemote, satisfecho/pos, xeokit, ladybug
    energy/radiance/dragonfly, Poly-Haven API)** are fine for self-hosted
-   internal use; only matters if LQV ever *distributes* a derived
+   internal use; only matters if RV ever *distributes* a derived
    product.
 4. **Suggested sweep order after renderer-freeze release:**
    - Week 1: D5 deterministic-build hygiene (uv, qpdf, just, git-cliff).

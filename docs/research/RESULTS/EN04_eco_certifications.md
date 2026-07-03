@@ -3,7 +3,7 @@
 **Date:** 2026-06-30
 **Status:** MEM-based. Important for marketing and ESG narrative.
 
-## What eco-certifications are available to LQV
+## What eco-certifications are available to RV
 
 **Global Sustainable Tourism Council (GSTC):**
 - Industry-standard sustainability criteria
@@ -23,7 +23,7 @@
 **Bird-Friendly certification:**
 - From BirdLife International
 - Specifically for properties with significant bird habitat
-- For LQV: potential (Atlantic Forest has high biodiversity)
+- For RV: potential (Atlantic Forest has high biodiversity)
 - Cost: $500-2,000
 - Process: 3-6 months
 - Marketing value: medium (birding community, eco-tourists)
@@ -43,7 +43,7 @@
 - BREEAM (UK origin, broader sustainability)
 - LEED (US, but buildings-focused)
 
-## What LQV should pursue
+## What RV should pursue
 
 **For Fase 1 (Y1):**
 - **No certification yet** (cost ~$5-10K initial + Y2 ongoing, not worth before revenue)
@@ -52,12 +52,12 @@
 
 **For Fase 2 (Y2):**
 - **GSTC** (broadest recognition, $2-5K)
-- **Bird-Friendly** (LQV-specific value, $1-2K, fast to get)
+- **Bird-Friendly** (RV-specific value, $1-2K, fast to get)
 - Marketing assets: "Officially sustainable since 2028"
 
 **For Fase 3 (Y3):**
 - **Rainforest Alliance** (deeper, $3-5K, longer process)
-- **Carbon Neutral** (offsets LQV's carbon, ESG credibility)
+- **Carbon Neutral** (offsets RV's carbon, ESG credibility)
 - Marketing: "One of few sustainable tourism projects in PY"
 
 **Total investment for full ESG certification:** $10-20K initial + $5-15K/year ongoing
@@ -70,14 +70,14 @@
 - Pricing premium of 10-20% for certified properties
 - ESG reporting requirements (some corporates require it)
 
-**Per LQV's positioning:**
-- LQV's story is already eco-strong (cob, reforestation, native species)
-- Certification would formalize what LQV is already doing
+**Per RV's positioning:**
+- RV's story is already eco-strong (cob, reforestation, native species)
+- Certification would formalize what RV is already doing
 - Marketing multiplier (especially DE + NL markets)
 
-## LQV's specific advantages
+## RV's specific advantages
 
-**What LQV has that makes certification easy:**
+**What RV has that makes certification easy:**
 - Forest regeneration (volunteer program)
 - Local employment (community impact)
 - Local sourcing (PY-first products)
@@ -85,18 +85,18 @@
 - No chlorine (wellness pool)
 - Bamboo + cob + stone (natural building)
 
-**What LQV would need to add for certification:**
+**What RV would need to add for certification:**
 - Documented sustainability policy
 - Waste management plan
 - Energy/water monitoring
 - Staff training on sustainability
-- Community engagement program (which LQV is doing via Sonja)
+- Community engagement program (which RV is doing via Sonja)
 - Annual third-party audit (costs $3-5K/year)
 
 ## Cost-benefit analysis
 
 **Total ESG certification investment:** $10-20K initial + $5-15K/year
-**Per LQV's expected revenue:**
+**Per RV's expected revenue:**
 - Y1: $200K (Fase 1 partial)
 - Y2: $500K (full Fase 1)
 - Y3: $700K (Fase 2 added)
@@ -113,13 +113,13 @@
 ## What Wes needs to do
 
 - [ ] Per W0.3 + brand, integrate ESG story into marketing
-- [ ] Per W0.2 Sonja Q&A, ask about community connections (LQV's existing credentials)
+- [ ] Per W0.2 Sonja Q&A, ask about community connections (RV's existing credentials)
 - [ ] Y2 budget: $5-10K for GSTC + Bird-Friendly
 - [ ] Y3 budget: $3-5K for Rainforest Alliance + carbon offsets
 - [ ] Continuous measurement (energy use, water, waste) — start now in Fase 1
 
 ## Cross-reference
-- A07 (Atlantic Forest regeneration) - main LQV credential
+- A07 (Atlantic Forest regeneration) - main RV credential
 - D14 (brand positioning) - integrate ESG
 - V04 (European market) - 60-70% check credentials
 - EN05 (volunteer tourism) - related to ESG

@@ -12,16 +12,16 @@
 - Required for: well drilling, stream water extraction, weir construction
 - Also regulates water quality standards
 
-## Why LQV needs INAA
+## Why RV needs INAA
 
-Per the LQV property:
+Per the RV property:
 - Has a stream through the property (existing)
 - Will drill a well for primary water (Fase 1)
 - Will collect rainwater (F15)
 - Will need to construct a small weir on the stream (for irrigation? for swimming pool natural water source?)
 - Will need water extraction permits for the well
 
-## Water use permits needed for LQV
+## Water use permits needed for RV
 
 ### Well drilling permit (Fase 1)
 - Apply at INAA regional office (Asunción or nearest)
@@ -34,13 +34,13 @@ Per the LQV property:
 - **Lead time:** 4-8 weeks
 
 ### Stream water use permit (if applicable)
-- Apply if LQV will extract from the existing stream
+- Apply if RV will extract from the existing stream
 - **Required docs:** similar to well, plus stream impact assessment
 - **Fee:** similar
 - **Lead time:** 4-12 weeks (stream permits take longer)
 
 ### Weir construction permit (if applicable)
-- Apply if LQV will build a small weir on the stream
+- Apply if RV will build a small weir on the stream
 - **Required docs:** engineering design, environmental impact assessment
 - **Fee:** Gs. 2,000,000-5,000,000 ($280-700) for the EIA
 - **Lead time:** 8-16 weeks
@@ -51,7 +51,7 @@ Per the LQV property:
 - **Fee:** Gs. 1,000,000-3,000,000 ($140-420)
 - **Lead time:** 6-12 weeks
 
-## Cost + time summary for LQV (Fase 1)
+## Cost + time summary for RV (Fase 1)
 
 | Permit | Cost (Gs) | Cost USD | Lead time |
 |---|---:|---:|---|
@@ -61,12 +61,12 @@ Per the LQV property:
 | Discharge permit | 1M-3M | $140-420 | 6-12 weeks |
 | **Total (worst case)** | **4M-11M** | **$560-1,520** | **2-4 months (parallel)** |
 
-## What LQV actually needs
+## What RV actually needs
 
 **For Fase 1:**
 - Well drilling permit (F08, F15) — **YES, needed**
 - Discharge permit for reed-bed treated water — **YES, needed**
-- Stream water use permit — **MAYBE** (if LQV extracts from the stream)
+- Stream water use permit — **MAYBE** (if RV extracts from the stream)
 - Weir construction permit — **MAYBE** (depends on the design)
 
 **For Fase 2+:**

@@ -4,7 +4,7 @@
 **Confidence:** High (these services are well-known)
 **Date:** 2026-06-30
 
-## LQV FX transfer needs
+## RV FX transfer needs
 
 **Three flows:**
 1. **Wes (NL) → BV1 land (PY)**: occasional large transfers for land + improvements
@@ -17,7 +17,7 @@
 
 | Service | Fee structure | FX margin | Speed | Best for |
 |---|---|---|---|---|
-| **Wise** (TransferWise) | 0.4-0.7% of transfer | mid-market + ~0.05% | 1-2 days | **Best overall** for most LQV transfers |
+| **Wise** (TransferWise) | 0.4-0.7% of transfer | mid-market + ~0.05% | 1-2 days | **Best overall** for most RV transfers |
 | **Revolut** | Free on Premium, 0.5% on Standard | mid-market (weekday) | same day (instant) | Quick transfers, no margin on weekend |
 | **N26** | Free on Premium, 1.7% on Standard | mid-market | 2 days | For Wes's personal NL account (he already uses it) |
 | **Traditional bank wire (Itaú)** | €25-50 flat fee | 1-3% margin | 2-5 days | Avoid unless required |
@@ -53,9 +53,9 @@
 | **Itaú bank wire** | €50 | €1,250 (2.5%) | **€1,300** | €0 (baseline) |
 | **Crypto USDT** | €150 | variable | **€150 + risk** | variable |
 
-**LQV annual savings with Wise vs bank wires:** **€1,000-2,000** depending on transfer volume
+**RV annual savings with Wise vs bank wires:** **€1,000-2,000** depending on transfer volume
 
-## Setup steps for LQV
+## Setup steps for RV
 
 1. **Wes:** Open Wise account, verify ID, link NL bank
 2. **Wes:** Open Revolut Premium if he doesn't have it already
@@ -64,7 +64,7 @@
 5. **Verify PY bank (Itaú) can receive from Wise** (most can, but verify for BVI/BVI2)
 6. **Establish a monthly transfer schedule** (e.g. €5,000/month for operating costs)
 
-## What LQV needs to do for investors
+## What RV needs to do for investors
 
 **When bringing in NL investors (BV2 finance):**
 - Set up Wise for investor onboarding

@@ -9,14 +9,14 @@
 
 ---
 
-## A. Project-specific terms (LQV)
+## A. Project-specific terms (RV)
 
 | Term | Lang | Meaning | More |
 |---|---|---|---|
 | **Riverstone Valley** | EN | The working project name (D1 in DREAMLIST_NL). Not yet locked. | [`WES_INDEX.md §0`](./WES_INDEX.md) |
 | **Escobar** | ES | The district in Paraguarí where the 62-ha parcel sits. ~2h from Asunción. | [`PROVENANCE.md`](../PROVENANCE.md) |
 | **62 ha** | EN | 62 hectares = ~620,000 m² = ~153 acres. The whole parcel. | [`HOUSING_PARK_CONCEPT.md`](./HOUSING_PARK_CONCEPT.md) |
-| **La Quebrada Viva** | ES | The original name (translates to "The Living Ravine"). Used in the repo URL + escritura. | [`MASTER_BRIEF.md`](./_reconciled/MASTER_BRIEF.md) |
+| **Riverstone Valley** | ES | The original name (translates to "The Living Ravine"). Used in the repo URL + escritura. | [`MASTER_BRIEF.md`](./_reconciled/MASTER_BRIEF.md) |
 | **Fase 1 / 2 / 3** | EN/ES | The 3-year phased build. Fase 1 = 5 Type A cabins + restaurant + pool. Fase 2 = 7 Type B. Fase 3 = 3 Type C + spa. | [`TIMELINE.md`](./TIMELINE.md) |
 | **Type A / B / C** | EN | Cabin size tiers. A=romantic 2p (30-40m²), B=4p family (40-80m²), C=6-8p family (80-150m²). | [`HOUSING_PARK_CONCEPT.md §3`](./HOUSING_PARK_CONCEPT.md) |
 | **4-BV cascade** | NL/EN | The 4-BV corporate structure: BV-PY-1 (land) + BV-NL (finance) + BV-PY-2 (Fase 1) + BV-PY-3 (Fase 2-3). | [`HOUSING_PARK_CONCEPT.md §6.1`](./HOUSING_PARK_CONCEPT.md) |
@@ -120,7 +120,7 @@ in [`CLAUDE.md`](../CLAUDE.md) §"Things to refuse / push back on":
 - **INAA** = Instituto Nacional de Alimentación
 - **KML** = Keyhole Markup Language (Google Earth)
 - **LoD** = Level of Detail
-- **LQV** = La Quebrada Viva
+- **RV** = Riverstone Valley
 - **MADES** = Ministerio del Ambiente y Desarrollo Sostenible
 - **NDVI** = Normalized Difference Vegetation Index
 - **NDWI** = Normalized Difference Water Index

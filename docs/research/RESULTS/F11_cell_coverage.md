@@ -1,4 +1,4 @@
-# F11: Cell coverage Tigo/Personal/Claro at LQV site (Escobar, Paraguarí)
+# F11: Cell coverage Tigo/Personal/Claro at RV site (Escobar, Paraguarí)
 **Method:** SEARCH (Brave) + MEM
 **Confidence:** High for general operator coverage, low for specific site
 **Date:** 2026-06-30
@@ -30,10 +30,10 @@
 - **Tigo:** Has coverage in Escobar district (town center) — 3G at minimum, 4G likely in parts
 - **Personal:** Decent coverage in town, weak in rural interior
 - **Claro:** Strong in Paraguarí city, weak as you go south into Escobar
-- **Likely coverage gap:** If LQV is >5 km from Escobar town center, expect 3G/edge with frequent drops
+- **Likely coverage gap:** If RV is >5 km from Escobar town center, expect 3G/edge with frequent drops
 - **Best option for rural site:** Multi-SIM router (Tigo + Personal) with auto-failover
 
-**For LQV's specific location (Escobar, exact property):**
+**For RV's specific location (Escobar, exact property):**
 - **Wes needs to verify on-site** — physical signal test with 3 SIMs is the only reliable answer
 - This is item F05 / W1.2 (PY site visit)
 

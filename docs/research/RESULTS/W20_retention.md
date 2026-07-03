@@ -5,7 +5,7 @@
 
 ## What W20 is
 
-**LQV's staff retention challenge:**
+**RV's staff retention challenge:**
 - Phase 1-2 staff hired in 2026-2027
 - Need them to stay 5+ years (per Sonja's 60th weekend)
 - Hospitality turnover in PY is typically 30-50% per year
@@ -42,7 +42,7 @@
 - 1-2% BV2 equity per key staff
 - Vesting over 4-5 years
 - Big retention value
-- Cost: 10-30% of LQV's profit (but only if successful)
+- Cost: 10-30% of RV's profit (but only if successful)
 
 ### 7. Training + development (per W15)
 - Hospitality training in PY (formal programs)
@@ -56,7 +56,7 @@
 - Cost: $1,200-2,400/year per staff
 
 ### 9. Family-friendly policies
-- Sick child days (mandatory per PY law but LQV more generous)
+- Sick child days (mandatory per PY law but RV more generous)
 - School transportation (if staff family nearby)
 - Vacation during school breaks
 - Cost: variable, mostly goodwill
@@ -89,7 +89,7 @@
 
 **Per W18 + W20 (combined staff engagement):**
 
-If LQV's retention rate is:
+If RV's retention rate is:
 - 50% (PY hospitality average): 13 staff leave/year, $200K replacement cost (recruit + train + lost productivity)
 - 80% (target with W20 strategies): 5 staff leave/year, $80K replacement cost
 - 90% (excellent retention): 2-3 staff leave/year, $50K replacement cost

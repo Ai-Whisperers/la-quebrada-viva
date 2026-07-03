@@ -1,4 +1,4 @@
-# LQV Repo Reconciliation — 2026-07-02
+# RV Repo Reconciliation — 2026-07-02
 
 ## What happened
 
@@ -60,7 +60,7 @@ This commit unifies both into the canonical `master` branch.
 3. **Move audio files to R2** (`s3 cp wes_2026-06-30_full.mp3 s3://wes3dassets/audios/`)
 4. **Re-run preflight** to verify all key data files exist on deployed page
 5. **Update buyer page** to communicate the full 62-ha vision (currently
-   positions LQV as the whole project; should position as first cob house
+   positions RV as the whole project; should position as first cob house
    on the larger Riverstone Valley project)
 
 ## Author / commit message
@@ -121,7 +121,7 @@ After the first reconcile, the page-side updates were missing:
 
 ### Pending (operator-side, not key-blocked)
 
-1. **Wes's photo album** (P0.W2) — the actual LQV training data
+1. **Wes's photo album** (P0.W2) — the actual RV training data
 2. **15-onderwerpen materials list** (P0.3) — Wes picks 5
 3. **Sonja questionnaire** (P0.2) — salary bands, contract types, etc.
 4. **Anexo I from Escribana Peña** (P1.1) — chase Cynthia

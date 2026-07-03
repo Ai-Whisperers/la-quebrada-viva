@@ -1,6 +1,6 @@
 ---
 name: preview-render
-description: Build and render a fast 1280x720 preview of the La Quebrada Viva scene for one variant/camera, then visually verify it against the design rules. Use after any code change to lqv/ or when asked to "check the scene", "preview", or "render a test".
+description: Build and render a fast 1280x720 preview of the Riverstone Valley scene for one variant/camera, then visually verify it against the design rules. Use after any code change to lqv/ or when asked to "check the scene", "preview", or "render a test".
 ---
 
 # Preview render

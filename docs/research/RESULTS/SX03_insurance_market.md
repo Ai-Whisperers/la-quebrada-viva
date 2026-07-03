@@ -1,18 +1,18 @@
 # SX03 — Insurance market analysis (what's actually available)
 
 **Date:** 2026-06-30
-**Status:** MEM-based. What LQV can actually get.
+**Status:** MEM-based. What RV can actually get.
 
 ## What SX03 is
 
-**Insurance market reality check for LQV's specific risk profile:**
+**Insurance market reality check for RV's specific risk profile:**
 - Eco-lodge in rural PY
 - 30 wooden/bamboo cabins (planned)
 - 82% Atlantic Forest canopy
 - International ownership (NL + DE)
 - European clientele
 
-## Insurance types LQV needs
+## Insurance types RV needs
 
 **Per L22 (insurance minimums):**
 - Property (fire + storm)
@@ -36,7 +36,7 @@
   - Premium: 1-2% of value/year
   - Deductible: 5-10% of value
 - **Recommended:** International broker for primary + local for backup
-- **Total annual cost: $15-25K for LQV Fase 1**
+- **Total annual cost: $15-25K for RV Fase 1**
 
 ### 2. Liability
 - **All major insurers** offer 3rd party liability
@@ -123,7 +123,7 @@ For full Phase 1 (Y2-3, 30 cabins, 2 vehicles): $40-60K/year
 
 ## Cost of being uninsured
 
-**If insurance denied for LQV's key risks:**
+**If insurance denied for RV's key risks:**
 - Property loss: 1 cabin @ $18K = $540K
 - 5 cabins total: $90K (Fase 1 risk)
 - 30 cabins (Phase 1): $540K

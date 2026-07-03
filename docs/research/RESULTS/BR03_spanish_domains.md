@@ -17,7 +17,7 @@ This file covers the Spanish-language alternatives. Wes picks per BR01 (or choos
 | | villadelcielo.com.py | Possibly available (less saturated) | Check first |
 | **Cielo Azul** | cieloazul.com | Probably taken (popular) | Common phrase |
 | | cieloazul.com.py | Possibly available | Check |
-| **Lluvia Dorada** | lluviadorada.com | Less common, possibly available | Poetic, fits LQV's nature theme |
+| **Lluvia Dorada** | lluviadorada.com | Less common, possibly available | Poetic, fits RV's nature theme |
 | | lluviadorada.com.py | Possibly available | Check |
 | **Lluvia de Oro** | lluviadeoro.com | Popular, likely taken | Common phrase |
 | | lluviadeoro.com.py | Possibly available | Check |

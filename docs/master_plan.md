@@ -1,4 +1,4 @@
-# La Quebrada Viva — Master Plan
+# Riverstone Valley — Master Plan
 
 > Single source of truth for what the scene should ultimately contain, what is already shipped, what is missing, and how the remaining work is sequenced. Supersedes the scattered roadmap notes in `STATUS.md` and `docs/asset_plan.md` for high-level planning; those remain authoritative for fine-grained task tracking.
 

@@ -1,5 +1,5 @@
 ---
-title: "La Quebrada Viva — climate cube (ERA5 + CHIRPS + NASA POWER)"
+title: "Riverstone Valley — climate cube (ERA5 + CHIRPS + NASA POWER)"
 phase: "Phase-0 §12 #17"
 status: "v1.1 — three-source cube + FAO-56 PM ET₀; MOD16A2 + WorldClim 30s pending v2"
 canonical_point: "-25.6300, -57.0300 (parcel centroid)"
@@ -8,7 +8,7 @@ window: "1990-2025 (ERA5 + NASA POWER 36 yr) / 2005-2025 (CHIRPS 21 yr)"
 last_synth: "2026-06-29"
 ---
 
-# Climate cube — La Quebrada Viva
+# Climate cube — Riverstone Valley
 
 Three independent reanalysis / satellite-rainfall products co-validated at the
 parcel centroid (-25.63, -57.03). Each source has a different native resolution

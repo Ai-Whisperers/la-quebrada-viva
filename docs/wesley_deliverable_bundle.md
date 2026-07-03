@@ -19,7 +19,7 @@ Wesley benefits from showing up with a **vision document** so the notary and any
 
 ### Tier 1 — physical bundle Wesley brings to the meeting
 
-A single labeled folder ("La Quebrada Viva — Wesley van de Camp — 27/06/2026") containing:
+A single labeled folder ("Riverstone Valley — Wesley van de Camp — 27/06/2026") containing:
 
 1. **One-pager brief** (`docs/people/wesley_brief_onepager.md` exported to A4 PDF, color, single sheet).
 2. **18-render contact sheet** (A3 landscape, all 18 hero shots at thumbnail size + key callouts).
@@ -27,7 +27,7 @@ A single labeled folder ("La Quebrada Viva — Wesley van de Camp — 27/06/2026
 4. **Floor plan + section view** (A2 print of each, from `docs/floor_plan.md` and `docs/section_view.md` rendered as drawings).
 5. **Site plan** (A2 print of the 62 ha with 8 typology pads marked, from `lqv/site/site_plan.py` + topo overlay).
 6. **5-year phasing chart** (A4, condensed from `docs/housing_park_phasing.md`).
-7. **Construction cost estimate summary** (A4, top-line from `docs/bom.md`, total USD 56k for the LQV house).
+7. **Construction cost estimate summary** (A4, top-line from `docs/bom.md`, total USD 56k for the RV house).
 8. **Energy + water systems schematic** (A4 diagram from `docs/energy_budget.md`).
 9. **Day-by-day closing checklist** (A4 print of [`docs/CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md) — T-7 / T-5 / T-2 / signing-day / T+30 sequence + risk register; for Wesley's own use, not handed to notary).
 
@@ -92,7 +92,7 @@ The notary doesn't have to engage with all of it; the **presence** of the bundle
 ## Post-escritura follow-up
 
 1. **2026-07-15**: Wesley confirms inscription at registro de inmuebles. We archive a copy of the título escritura in `docs/contract_summary.md`.
-2. **2026-07-30**: Phase 1 (LQV house construction) kicks off; AI Whisperers shifts to construction-supervision tooling (cost tracker, photo journal generator).
+2. **2026-07-30**: Phase 1 (RV house construction) kicks off; AI Whisperers shifts to construction-supervision tooling (cost tracker, photo journal generator).
 3. **2026-09**: Soft launch of `quebrada-viva.com` (placeholder TBD).
 
 ## Variant C delivery satellite (additive 2026-06-10, in-session)

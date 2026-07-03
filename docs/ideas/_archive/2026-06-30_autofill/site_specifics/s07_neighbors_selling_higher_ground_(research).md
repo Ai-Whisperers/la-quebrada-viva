@@ -20,7 +20,7 @@ parcel-adjacent sale listings (not pushy)
 
 ## Full picture — context, constraints, history
 
-**LQV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../INSIGHTS.md) + eco-framing matters per [Insight #8](../INSIGHTS.md).
+**RV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../INSIGHTS.md) + eco-framing matters per [Insight #8](../INSIGHTS.md).
 
 ## What we know already (research summary)
 

@@ -13,7 +13,7 @@
 - **Mold/mildew risk:** high (constant humidity)
 - **Insects:** termites can attack some wood finishes
 
-## Best paint types for LQV
+## Best paint types for RV
 
 ### Option 1: Acrylic exterior (recommended)
 
@@ -39,7 +39,7 @@
 - Duralba (AR)
 - International brands at Sherwin Williams stores
 
-**Cost for LQV Fase 1:**
+**Cost for RV Fase 1:**
 - Material: Gs. 35,000-60,000/gallon (3.5L)
 - 1 gallon covers 30-40 m² (1 coat)
 - Application labor: Gs. 15,000-25,000/m²
@@ -69,7 +69,7 @@
 ### Option 3: Mineral paint (lime-based, traditional)
 
 **Pros:**
-- Authentic (matches LQV's cob/earthen aesthetic)
+- Authentic (matches RV's cob/earthen aesthetic)
 - Breathable
 - Naturally anti-mold (high pH)
 - Low cost
@@ -85,7 +85,7 @@
 
 **Cost:** ⅓ acrylic. ~$150-300 per cabin exterior.
 
-**For LQV (Wes's cob construction + "no cement plaster" rule):** Mineral/lime paint is the **most authentic choice**. Pairs with the lime mortar in the cob walls.
+**For RV (Wes's cob construction + "no cement plaster" rule):** Mineral/lime paint is the **most authentic choice**. Pairs with the lime mortar in the cob walls.
 
 ### Option 4: Wood stain (for the wood-cladding areas)
 
@@ -106,7 +106,7 @@
 
 **Cost:** ~$100-200 per cabin for stain application.
 
-## Recommended paint system for LQV (per cabin)
+## Recommended paint system for RV (per cabin)
 
 | Surface | Treatment | Cost/cabin |
 |---|---|---:|
@@ -122,7 +122,7 @@
 
 ## Phasing
 
-- **Fase 1:** Mineral paint on cob + wood stain on wood + acrylic in wet areas. Authentically LQV.
+- **Fase 1:** Mineral paint on cob + wood stain on wood + acrylic in wet areas. Authentically RV.
 - **Fase 2-3:** Same system, with maintenance plan (re-stain every 5 years, re-paint every 7-10 years)
 
 ## Anti-fungal considerations

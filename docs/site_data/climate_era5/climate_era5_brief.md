@@ -1,4 +1,4 @@
-# ERA5 reanalysis climate brief — La Quebrada Viva (Phase-0 §12 v1)
+# ERA5 reanalysis climate brief — Riverstone Valley (Phase-0 §12 v1)
 
 _Pulled 2026-06-11 (re-synthesized 2026-06-29) from ECMWF ERA5 single-levels monthly means via Copernicus C3S CDS, 1990-01 → 2025-12 (36 yr, 432 monthly samples). 0.25° grid (~31 km), nearest cell (-25.75, -57.0) ~12 km NE of parcel centroid (-25.6073, -57.0355). Four variables ingested as NetCDF: 2 m air temperature (`t2m`), total precipitation (`tp`), 10 m wind vectors (`u10`, `v10`), surface solar radiation downward (`ssrd`). Note: this is the **structural climate envelope** — 31 km grid blurs the parcel-scale gradients that show up in [[mod16_brief]] / [[chelsa_brief]] / [[canopy_height_brief]]; ERA5's role here is the long-baseline (1990 onward) trend + extreme value reference._
 

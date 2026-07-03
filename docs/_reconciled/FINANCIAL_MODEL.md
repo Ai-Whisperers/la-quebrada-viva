@@ -145,7 +145,7 @@
 
 - **Canonical:** EUR (Wes's model)
 - **PY local:** PYG (₲) for Paraguay-based costs
-- **Cross-reference:** USD (Ivan's NL prices doc, LQV BoQ)
+- **Cross-reference:** USD (Ivan's NL prices doc, RV BoQ)
 
 **FX assumption (2026-06-30):** 1 EUR ≈ 1.10 USD ≈ 8,000 PYG
 

@@ -1,19 +1,19 @@
 # EN08 — Wildlife corridor analysis (forest fragments near property)
 
 **Date:** 2026-06-30
-**Status:** MEM-based. Important for bird-friendly certification + LQV's eco-narrative.
+**Status:** MEM-based. Important for bird-friendly certification + RV's eco-narrative.
 
 ## What EN08 is
 
-**LQV's 62 ha + surrounding context:**
-- LQV's property in forest matrix
+**RV's 62 ha + surrounding context:**
+- RV's property in forest matrix
 - Adjacent forest fragments (could be protected via corridor)
 - Local wildlife (mammals + birds + reptiles)
 - Migration routes + habitat connectivity
 
 ## Wildlife expected in the area
 
-**Per LQV's existing GIS data (per docs/site_data/fauna/):**
+**Per RV's existing GIS data (per docs/site_data/fauna/):**
 - **Mammals:** coatimundi, capybara, howler monkey, fox, opossum
 - **Birds (200+ species in Atlantic Forest):** toucans, macaws (some species), hummingbirds, raptors
 - **Reptiles + amphibians:** caiman (small), various lizards, frogs
@@ -25,7 +25,7 @@
 
 ## Wildlife corridor design
 
-**For LQV's reforestation (per A07):**
+**For RV's reforestation (per A07):**
 - Plant 5-10 ha of native species in cleared zones
 - Connect to adjacent forest fragments
 - Create "stepping stone" habitat patches
@@ -34,7 +34,7 @@
 **For bird-friendly certification (per EN04):**
 - Plant specific bird-attracting species (per EN02 list)
 - Maintain snags (dead trees) for cavity-nesters
-- Avoid pesticides (LQV's natural pool is already pesticide-free)
+- Avoid pesticides (RV's natural pool is already pesticide-free)
 - Provide water sources (bird baths, small ponds)
 
 **For mammal-friendly:**
@@ -71,10 +71,10 @@
 ## Marketing integration
 
 **Wildlife corridor + bird-friendly features:**
-- "LQV is a 62 ha Atlantic Forest property with X km of wildlife corridor, Y species identified"
+- "RV is a 62 ha Atlantic Forest property with X km of wildlife corridor, Y species identified"
 - Instagram posts with bird photos, camera trap videos
 - Birder community outreach
-- "Birding with LQV" programming
+- "Birding with RV" programming
 - Research partnerships (universities)
 
 **For V04 (European market):**
@@ -91,7 +91,7 @@
 - [ ] Y2+: wildlife monitoring (for bird-friendly cert)
 
 ## Cross-reference
-- A07 (Atlantic Forest regeneration) - main LQV feature
+- A07 (Atlantic Forest regeneration) - main RV feature
 - EN02 (native plants) - 20+ species for the corridor
 - EN04 (eco-certifications) - bird-friendly is one of them
 - EN06 (volunteer tourism) - related to corridor maintenance

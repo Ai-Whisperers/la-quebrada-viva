@@ -8,15 +8,15 @@
 **The risk:** What if PY guaraní devalues significantly against EUR/USD?
 
 **Per L18 (FX hedging) + L19 (no treaty):**
-- LQV's operational costs are in PYG
+- RV's operational costs are in PYG
 - NL investors receive dividends in EUR via BV2
-- 10-30% PYG devaluation in a year would significantly impact LQV
+- 10-30% PYG devaluation in a year would significantly impact RV
 
 ## Scenarios
 
 ### Scenario 1: Stable PYG (-2% to +2% per year)
 - Status quo, no significant impact
-- LQV operations smooth
+- RV operations smooth
 - Dividends in EUR (BV2 holds) are unaffected
 - **Most likely scenario (5-year probability ~50%)**
 
@@ -31,16 +31,16 @@
 - Operational costs spike (PY hyperinflation)
 - Revenue also spikes (in PYG) but lags
 - Operating margin squeezed
-- LQV can't easily pass through to guests (booking lags)
+- RV can't easily pass through to guests (booking lags)
 - **Probability (~10-20%) — PY history shows episodic instability**
 
 ### Scenario 4: PYG crashes (50%+ per year)
 - Hyperinflation scenario
-- LQV needs to operate in USD/EUR
+- RV needs to operate in USD/EUR
 - Insurance + regulatory issues
 - **Probability (~5-10%) — would force structural change**
 
-## LQV's natural hedges
+## RV's natural hedges
 
 **1. NL holding structure (per 4ENTITY_BV_CASCADE):**
 - BV2 (NL) holds operational capital
@@ -48,7 +48,7 @@
 - **PY devaluation doesn't affect BV2 or NL investors directly**
 
 **2. PYG/USD balance:**
-- LQV's PYG costs (operational) vs PYG revenue (guests)
+- RV's PYG costs (operational) vs PYG revenue (guests)
 - If PYG devalues, both go up equally
 - Net effect: near zero (assuming same-currency balance)
 
@@ -64,13 +64,13 @@
 **5. Asset diversification:**
 - BV1 land value (PY): PYG-denominated, but real value is independent of currency
 - BV2 holdings (NL): EUR-denominated, insulated from PYG
-- LQV equipment: EUR import values
+- RV equipment: EUR import values
 
 **6. Operational cost real-time adjustments:**
 - Prices updated every 6 months in Cloudbeds
 - Wages reviewed annually (with PY inflation)
 
-## What LQV does (if scenarios 2-3 happen)
+## What RV does (if scenarios 2-3 happen)
 
 **1. Per L18: hold 3-6 months operating buffer in USD/EUR:**
 - Acts as natural hedge
@@ -99,18 +99,18 @@
 - Operate as foreign-owned hotel
 - **Last resort**
 
-## LQV's resilience to devaluation
+## RV's resilience to devaluation
 
 **Net assessment:**
-- LQV's NL holding structure (per 4BV) is the strongest hedge
+- RV's NL holding structure (per 4BV) is the strongest hedge
 - Operational PYG/USD balance is partial natural hedge
 - Asset real value (land, building) is independent of currency
 - Major devaluation would compress margins but not destroy value
-- **LQV is more resilient than pure PY operators**
+- **RV is more resilient than pure PY operators**
 
 ## Probability × impact
 
-| Scenario | Probability | Impact on LQV | Recommended action |
+| Scenario | Probability | Impact on RV | Recommended action |
 |---|---:|---|---|
 | Stable PYG | 50% | None | Continue plan |
 | Mild (5-15%/yr) | 25% | 5-10% margin compression | Hold 3-6 month USD buffer |
@@ -118,7 +118,7 @@
 | Crash (50%+) | 10% | 30-50% margin erosion | Operational restructuring |
 | Combined risk | weighted avg: | ~10% impact/year | Multi-layer hedge |
 
-**Annual PYG risk budget for LQV:** $5-10K/year (FX buffer cost)
+**Annual PYG risk budget for RV:** $5-10K/year (FX buffer cost)
 **This is the cost of insurance against the scenario**
 
 ## What Wes needs to do
@@ -134,7 +134,7 @@
 - L19 (no NL-PY tax treaty) - related
 - 4ENTITY_BV_CASCADE - structural hedge
 - V04 (European market) - EUR revenue source
-- LQV's overall resilience
+- RV's overall resilience
 
 ## Status
 

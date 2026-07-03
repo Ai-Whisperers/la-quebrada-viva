@@ -3,7 +3,7 @@
 **Date:** 2026-06-30
 **Status:** MEM + Wes's recordings. The strategic positioning.
 
-## What LQV is (positioning)
+## What RV is (positioning)
 
 **Per Wes's recordings (AUDIO E + DREAMLIST_D14):** "Resort + events + nature blend"
 
@@ -63,7 +63,7 @@
 
 ## Strategic value
 
-**Brand differentiation:** LQV is "more than a hotel." It's a destination that has a story.
+**Brand differentiation:** RV is "more than a hotel." It's a destination that has a story.
 **Pricing power:** Events can charge 2-3x standard ADR
 **Loyalty:** Nature experience creates emotional connection, repeat visits
 **Media coverage:** Weddings + reforestation = ongoing press

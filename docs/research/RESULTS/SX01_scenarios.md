@@ -1,11 +1,11 @@
 # SX01 — Alternative scenarios (3a-3d) with full P&L for each
 
 **Date:** 2026-06-30
-**Status:** MEM-based. Strategic scenarios for LQV's future.
+**Status:** MEM-based. Strategic scenarios for RV's future.
 
 ## What SX01 is
 
-**Four alternative future scenarios for LQV's growth + P&L for each.**
+**Four alternative future scenarios for RV's growth + P&L for each.**
 
 ## Common assumptions (all scenarios)
 
@@ -124,7 +124,7 @@
 | Exit value Y5-7 | $5-7M | $8-12M | $10-15M | $6-8M |
 | Risk | Low | Mid | High | Low-Mid |
 
-## What LQV does
+## What RV does
 
 **1. W0.1 + 4-BV: commit to Scenario 3b (aggressive) as the plan**
 - Most aligned with Wes's timeline + Wes's AI-leverage speed

@@ -1,5 +1,5 @@
 ---
-title: "GBIF historical species census brief — La Quebrada Viva"
+title: "GBIF historical species census brief — Riverstone Valley"
 phase: Phase-0
 section: "§12 #19 — historical biodiversity record"
 centroid: "-57.0300, -25.6300 (legacy bbox centre)"
@@ -13,7 +13,7 @@ data_sources: ["GBIF.org occurrence search (parcel-tight 0.03° box)"]
 status: "v1 — historical record, complements iNat-driven fauna_brief/flora_brief"
 ---
 
-# GBIF historical species census brief — La Quebrada Viva (Phase-0 §12 v1)
+# GBIF historical species census brief — Riverstone Valley (Phase-0 §12 v1)
 
 > Single-bbox GBIF pull over a 0.03° × 0.03° box (~3.3 × 3.3 km) approximately
 > over Mbopicuá, accessed 2026-06-10. 54 unique species across 4 classes.

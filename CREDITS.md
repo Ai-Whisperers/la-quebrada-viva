@@ -1,4 +1,4 @@
-# Credits — La Quebrada Viva
+# Credits — Riverstone Valley
 
 Attribution for third-party assets used in the render pipeline. Update this file as assets land in `assets/models/`; remove entries when assets are removed from the scene.
 

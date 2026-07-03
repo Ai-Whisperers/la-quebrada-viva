@@ -2,7 +2,7 @@
 
 > **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
 
-**Status:** living document. Authoritative reference for what we owe whom when we ship the LQV renders, share the project repo publicly, or deliver to Wesley.
+**Status:** living document. Authoritative reference for what we owe whom when we ship the RV renders, share the project repo publicly, or deliver to Wesley.
 
 ## License posture summary
 
@@ -34,13 +34,13 @@ CC-BY 4.0 ("Attribution") REQUIRES, when we publish or redistribute the work:
 
 In practice, every CC-BY 4.0 asset gets a row in `CREDITS.md`:
 
-> **`mango_canopy_v2.glb`** — Created by *Felipe Vargas*, sourced from Sketchfab (https://sketchfab.com/3d-models/xxxxx), CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified: re-UV'd, re-textured, scaled to LQV scene units.
+> **`mango_canopy_v2.glb`** — Created by *Felipe Vargas*, sourced from Sketchfab (https://sketchfab.com/3d-models/xxxxx), CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified: re-UV'd, re-textured, scaled to RV scene units.
 
 ## What CC-BY-SA forbids us from using
 
 CC-BY-SA ("Share-Alike") would require the *entire derivative work* to be re-released under CC-BY-SA. That means:
 
-- If we used a CC-BY-SA model in the LQV scene, the whole `.blend` file might need to ship CC-BY-SA.
+- If we used a CC-BY-SA model in the RV scene, the whole `.blend` file might need to ship CC-BY-SA.
 - Wesley couldn't monetise renders as commercial advertising for the housing park without licensing complications.
 - We'd be forced to open the entire repo under CC-BY-SA.
 
@@ -56,7 +56,7 @@ This is **per asset**.
 
 ## Render output license
 
-The 18 final renders (A/B/C × 6 cameras) are **work product for Wesley van de Camp** under the AI Whisperers engagement. We retain copyright; Wesley has a perpetual, transferable license to use, distribute, and commercialise them for the LQV project and its derivatives (housing park marketing, escritura meeting, fundraising deck, investor pitch, social media).
+The 18 final renders (A/B/C × 6 cameras) are **work product for Wesley van de Camp** under the AI Whisperers engagement. We retain copyright; Wesley has a perpetual, transferable license to use, distribute, and commercialise them for the RV project and its derivatives (housing park marketing, escritura meeting, fundraising deck, investor pitch, social media).
 
 If Wesley wants to re-license the renders to a third party (e.g., a film), we should be looped in to verify CC-BY chains are respected.
 
@@ -102,7 +102,7 @@ When publishing renders or the repo:
 
 ## Open questions for Wesley
 
-1. **Is the LQV brand "Quebrada Viva" or "La Quebrada Viva" trademarked?** If so, supply the registration so we can include the ® on renders.
+1. **Is the RV brand "Quebrada Viva" or "Riverstone Valley" trademarked?** If so, supply the registration so we can include the ® on renders.
 2. **Does Wesley want the renders to be embeddable on the Wesley/Thijs housing-park marketing site?** That changes the metadata embedded.
 3. **Will the renders ship in any printed booklet for the escritura meeting?** Print needs 300 dpi A2 / A3 settings; current 2560×1440 hero is enough for A3 max.
 

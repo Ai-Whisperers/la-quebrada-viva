@@ -25,7 +25,7 @@ VISION.md positioning statement
 
 ## Full picture — context, constraints, history
 
-**Project-level anchor.** This is one of the top-level framing decisions for LQV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md).
+**Project-level anchor.** This is one of the top-level framing decisions for RV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md).
 
 ## What we know already (research summary)
 

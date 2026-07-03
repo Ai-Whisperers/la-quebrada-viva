@@ -4,7 +4,7 @@
 > `scripts/satellite/`. Pick a path, run the copy-paste invocation, and the
 > license gate + sidecar + CRS-normalize pipeline does the rest.
 >
-> Scope: the canonical 62-ha La Quebrada Viva AOI (W −57.045, S −25.645,
+> Scope: the canonical 62-ha Riverstone Valley AOI (W −57.045, S −25.645,
 > E −57.015, N −25.615) at Escobar, Paraguarí. Every fetcher reads the AOI
 > from `docs/site_data/aoi_62ha.geojson` and writes under `docs/site_data/<dataset>/`.
 
@@ -90,7 +90,7 @@ cached files so older partial fetches get upgraded.
 ### 3.1 Planetary Computer search (default first move)
 
 ```bash
-# Probe which LQV-relevant collections are present:
+# Probe which RV-relevant collections are present:
 python -m scripts.satellite.pc_stac_quickstart --list-collections
 
 # Recent Sentinel-2 L2A scenes (90-day window, ≤20% cloud):
@@ -146,7 +146,7 @@ python -m scripts.satellite.fetch_nicfi \
 
 Output: `docs/site_data/nicfi/<mosaic>/z15/<x>_<y>.png` + one mosaic-level
 `_nicfi.meta.json` sidecar (per-tile sidecars would explode the manifest).
-Zoom 15 ≈ 5 m/px at the equator; LQV AOI fits in a handful of tiles.
+Zoom 15 ≈ 5 m/px at the equator; RV AOI fits in a handful of tiles.
 
 ### 3.5 Landcover triad (WorldCover + JRC GSW + Hansen GFC)
 
@@ -161,7 +161,7 @@ Output:
 
 Hansen comes from the public GCS bucket
 (`storage.googleapis.com/earthenginepartners-hansen/GFC-2023-v1.11/`); tile
-naming for the LQV AOI is `20S_060W`. All three carry CC-BY-4.0.
+naming for the RV AOI is `20S_060W`. All three carry CC-BY-4.0.
 
 ### 3.6 Climate (CHIRPS + TerraClimate)
 

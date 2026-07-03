@@ -8,11 +8,11 @@
 This is the **merged view** of two overlapping but non-identical project state sets:
 
 1. **Wes's working files** (the Excel/DOCX set Ivan pasted in) — canonical for financial, cabin, infra, equipment, activities, F&B, materials, business structure
-2. **Ivan's LQV repo + working dir** (`Ai-Whisperers/la-quebrada-viva` + `/root/.hermes/lqv-splat/`) — canonical for escritura milestone, land details, 3DGS pipeline, Sonja's 2030 deadline, partnership structure, render-pipeline typology concept art
+2. **Ivan's RV repo + working dir** (`Ai-Whisperers/la-quebrada-viva` + `/root/.hermes/lqv-splat/`) — canonical for escritura milestone, land details, 3DGS pipeline, Sonja's 2030 deadline, partnership structure, render-pipeline typology concept art
 
 This directory does **not** modify or replace either source. Both stay intact:
 - Wes's files live on his local machine
-- LQV repo lives on GitHub (commit `1d4c855` + the new commit from this PR)
+- RV repo lives on GitHub (commit `1d4c855` + the new commit from this PR)
 
 The reconciled docs here are the **bridge** — what Wes, Ivan, Kiki, Erebus read together to understand the project as it stands now.
 
@@ -33,7 +33,7 @@ The reconciled docs here are the **bridge** — what Wes, Ivan, Kiki, Erebus rea
 | `CABIN_CATALOG.md` | 30 cabins, 10 types | Per-type build cost, night price, guest count |
 | `INFRASTRUCTURE_8_PHASES.md` | Survey → materials → water → sewer → electric → internet → roads → irrigation | Phase ordering, deliverables, costs |
 | `EQUIPMENT_STRATEGY.md` | Heavy equipment import 2nd hand NL, standard buy PY | Equipment buy/rent decisions |
-| `ACTIVITIES_25_PLUS.md` | 25+ activities catalogued | Activity list, pricing, cross-ref to LQV amenities |
+| `ACTIVITIES_25_PLUS.md` | 25+ activities catalogued | Activity list, pricing, cross-ref to RV amenities |
 | `MATERIALS_PRICE_TEMPLATE.md` | 17-category priority list + 14-sheet master | What materials to source, in what order |
 | `BUSINESS_STRUCTURE.md` | Founder vs 4-entity BV vs hybrid | Legal structure decision |
 | `LAND_PARCEL.md` | 62 ha Escobar + escritura + 3DGS | Land details, what's confirmed, what's open |
@@ -42,17 +42,17 @@ The reconciled docs here are the **bridge** — what Wes, Ivan, Kiki, Erebus rea
 ## Cross-references
 
 Each doc links to:
-- **Source files** (Wes's local files, LQV repo, written transcripts)
-- **LQV catalog** (109 ideas in `docs/ideas/`, INSIGHTS, SUGGESTED)
-- **LQV render pipeline** (where it intersects)
+- **Source files** (Wes's local files, RV repo, written transcripts)
+- **RV catalog** (109 ideas in `docs/ideas/`, INSIGHTS, SUGGESTED)
+- **RV render pipeline** (where it intersects)
 
 ## Maintenance
 
 This directory is updated by Erebus as decisions get made. When a decision in `OPEN_DECISIONS.md` resolves:
 1. Update the relevant doc (e.g. `BUSINESS_STRUCTURE.md` if Decision 1 closes)
-2. Update the LQV catalog idea file (e.g. `F01_4-entity_bv_cascade...md`)
+2. Update the RV catalog idea file (e.g. `F01_4-entity_bv_cascade...md`)
 3. Update `OPEN_DECISIONS.md` to reflect the new state
-4. Commit to LQV repo (preserves history)
+4. Commit to RV repo (preserves history)
 
 ## What this is NOT
 

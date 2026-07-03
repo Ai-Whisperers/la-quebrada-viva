@@ -13,14 +13,14 @@
 - Pro-rated for partial year (new hires in middle of year)
 - Tax: not subject to income tax up to certain limit (~Gs. 2,000,000/year, but check current)
 
-**For LQV (PY 2026):**
+**For RV (PY 2026):**
 - Employee earns Gs. 50,000 per month = Gs. 600,000/year
 - Aguinaldo accrued: 1/12 × 600,000 = **Gs. 50,000**
 - Wait — that's the formula. Actual aguinaldo = total salary earned in year ÷ 12
 - So if employee works full year at 600K annual: aguinaldo = 50K (1 month's salary)
 - Partial year: pro-rated
 
-**Cost for LQV with 27 employees (Fase 1):**
+**Cost for RV with 27 employees (Fase 1):**
 - Average salary ~Gs. 3,500,000/year (mix of roles)
 - Total annual payroll: ~Gs. 95,000,000
 - **Aguinaldo total: 95,000,000 ÷ 12 = Gs. 7,900,000** (~$1,130 USD/year)
@@ -41,7 +41,7 @@
 - Can be paid in cash at end of employment (double rate) OR taken as time off
 - Holiday pay: 1 month's salary
 
-**For LQV (Fase 1, all employees new):**
+**For RV (Fase 1, all employees new):**
 - Each employee: 12 working days/year
 - Average daily rate: Gs. 3,500,000 ÷ 25 working days = Gs. 140,000/day
 - 12 days × 140,000 = Gs. 1,680,000/employee/year
@@ -50,9 +50,9 @@
 
 **Total annual vacation + holiday pay cost:** ~$20,000/year (Fase 1)
 
-**Plus "Vacaciones no gozadas" (unused vacation paid out):** if employee doesn't take vacation, must pay out at end of year. Critical for LQV (remote location = hard to take vacation).
+**Plus "Vacaciones no gozadas" (unused vacation paid out):** if employee doesn't take vacation, must pay out at end of year. Critical for RV (remote location = hard to take vacation).
 
-## Practical implications for LQV
+## Practical implications for RV
 
 1. **Vacation scheduling:** plan vacation in shifts so not all 27 staff are off at once
 2. **For Fase 1:** most staff will accrue full 12-day vacation by end of Year 1
@@ -68,7 +68,7 @@
 | Health insurance (IPS) | 9% of salary | 6% | 3% |
 | Retirement (jubilación) | varies | varies | varies |
 
-**For LQV, employer cost:** ~16.5% of total payroll (per M08 earlier file)
+**For RV, employer cost:** ~16.5% of total payroll (per M08 earlier file)
 - Annual payroll: Gs. 95,000,000
 - IPS: 16.5% × 95,000,000 = **Gs. 15,675,000/year** (~$2,250 USD)
 

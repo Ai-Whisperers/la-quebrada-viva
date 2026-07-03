@@ -1,17 +1,17 @@
-# M23 — AC units for LQV (PY climate sizing + import lead time)
+# M23 — AC units for RV (PY climate sizing + import lead time)
 
 **Method:** MEM + general knowledge
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## Why AC matters for LQV
+## Why AC matters for RV
 
 PY climate (Escobar, Paraguarí):
 - **Summer (Oct-Mar):** 35-42°C, 70-85% humidity, feels like 45-50°C
 - **Winter (Apr-Sep):** 10-25°C, drier, can still be warm
 - **Year-round AC for guest comfort** (especially for European guests unaccustomed to humidity)
 
-**For LQV Fase 1 (5 cabins):**
+**For RV Fase 1 (5 cabins):**
 - 5 cabins × 1-2 AC units each = 5-10 units
 - 1 unit in reception + 1 in restaurant = 12 total
 - Plus commercial kitchen needs (refrigeration already counted separately in M22)
@@ -21,7 +21,7 @@ PY climate (Escobar, Paraguarí):
 **Rule of thumb for PY climate:**
 - **1 ton (3.5 kW / 12,000 BTU) per 20-30 m²** of well-insulated space
 - For poorly insulated (rooftop heat gain in PY): 1 ton per 15-20 m²
-- For LQV cabins (~30-40 m²): **1.5 ton (5.3 kW / 18,000 BTU) per cabin**
+- For RV cabins (~30-40 m²): **1.5 ton (5.3 kW / 18,000 BTU) per cabin**
 - For 2p Basic (smaller, 40m²): 1.5 ton
 - For 2p Luxe Spa (larger, 90m², better insulation): 3 ton
 - For reception: 2 ton
@@ -48,7 +48,7 @@ PY climate (Escobar, Paraguarí):
 | **TCL** | CN | Budget | Common |
 | **Hisense** | CN | Mid-range | Growing |
 
-**Recommended for LQV:** **Samsung Wind-Free** or **Midea** (mid-range, reliable, available)
+**Recommended for RV:** **Samsung Wind-Free** or **Midea** (mid-range, reliable, available)
 - Inverter technology (saves 30-50% on energy vs non-inverter)
 - Suitable for PY humidity (look for tropical-rated units)
 
@@ -57,7 +57,7 @@ PY climate (Escobar, Paraguarí):
 **PY electricity cost (ANDE 2026):**
 - ~Gs. 500-700/kWh (~$0.07-0.10/kWh) for residential
 - ~Gs. 700-1,000/kWh (~$0.10-0.14/kWh) for commercial
-- **LQV will be commercial rate** (for the BV)
+- **RV will be commercial rate** (for the BV)
 
 **Per-cabin AC operating cost (assuming 8h/day, 150 days/year at 1.5 kW):**
 - 1.5 kW × 8h × 150 days = 1,800 kWh/year
@@ -89,7 +89,7 @@ PY climate (Escobar, Paraguarí):
 - **Local PY stock** (when available): 0-2 weeks (but limited SKUs, may not have what you need)
 
 **Recommendation:** 
-- For LQV Fase 1: buy 5-10 units from local PY stock (Samsung Wind-Free, Midea, or Gree) — immediate availability, 1-2 week lead
+- For RV Fase 1: buy 5-10 units from local PY stock (Samsung Wind-Free, Midea, or Gree) — immediate availability, 1-2 week lead
 - For Fase 2-3: order bulk from China (Midea) via direct import, 8-14 weeks lead
 
 **Critical:** Order AC units **2-3 months before** guest arrival. PY is hot. Installing AC during construction is far cheaper than retrofitting.

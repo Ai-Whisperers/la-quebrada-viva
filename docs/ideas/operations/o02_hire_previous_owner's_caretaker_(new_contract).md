@@ -16,7 +16,7 @@ new contract template via Sonja (not sitter, worker)
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: s | --- ## §10 — RISICO'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij LQV operationeel, kan helpen met content."_
+> _"[Action list 2026-06-30]: s | --- ## §10 — RISICO'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij RV operationeel, kan helpen met content."_
 
 > _"[Action list 2026-06-30]: | | W5 | Spaans leren (Spaans-les plannen) | Lopend | ⚪ Persoonlijk | | W6 | In gesprek met Ivan + Kiki over AI agency | Week 2-3 | ⚪ Sales | | W7 | Contract maken voor nieuwe medewerker (overname van oude) | Week 3-4 | 🟡 Via Sonja | | W8 | Bij de bank eruit halen (lening? investeerders-uitkering?) | Week 2-3 | ⚪ Persoonlijk | --- ## §2 — WESLEY + AI (korte termijn, AI doet het werk) | # | Taak | AI-a"_
 

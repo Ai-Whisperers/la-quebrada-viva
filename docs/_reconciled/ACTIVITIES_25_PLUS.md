@@ -78,11 +78,11 @@ Per Wes's brief, activities should be:
 
 ---
 
-## Cross-Reference: Ivan's LQV Amenities Catalog
+## Cross-Reference: Ivan's RV Amenities Catalog
 
-Ivan's LQV catalog (10 amenities in `docs/ideas/amenities/`) overlaps with this list:
+Ivan's RV catalog (10 amenities in `docs/ideas/amenities/`) overlaps with this list:
 
-| LQV Amenity Idea | Overlap |
+| RV Amenity Idea | Overlap |
 |---|---|
 | A01 Wellness pools with natural water, no chlorine | Matches ice baths + outdoor gym |
 | A02 Romantic tables by the quebrada | Matches romantic dinner |
@@ -104,4 +104,4 @@ Ivan's LQV catalog (10 amenities in `docs/ideas/amenities/`) overlaps with this 
 - **Files:** `neven actievtijten park.docx` (full activity list) + `Wat heben we nodig voor een parkje te starten.docx` (Phase 1 startup checklist, includes activities)
 - **Caveat:** per-activity revenue impact needs to be modeled. Currently only "wellness" and "F&B additional revenue" are in the financial model.
 
-**Tracked in:** LQV catalog `docs/ideas/amenities/` (10 ideas, 12-section format)
+**Tracked in:** RV catalog `docs/ideas/amenities/` (10 ideas, 12-section format)

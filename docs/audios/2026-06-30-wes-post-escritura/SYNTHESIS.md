@@ -20,7 +20,7 @@ session, ranges across project structure, closes with the temporal-dislocation
 frame ("Wij zitten in het verleden... 80 jaar verschil").
 
 **Audio B (2 min, EN)** — off-topic. Story about a horse + 3 donkeys at a
-previous house, smoking a pipe. **Not Wes LQV content.** Skip for analysis.
+previous house, smoking a pipe. **Not Wes RV content.** Skip for analysis.
 
 **Audio C (29 min, NL)** — multi-BV Paraguay setup, contactgegevens needed,
 "BV altijd beter in Nederland, want je kunt het toen niet afpakken" (NL
@@ -33,7 +33,7 @@ build materials research, hovenier "AI-jongheid" delegation, Dutch forester
 contact in Kuikopee, university ecology contacts.
 
 **Audio E (1h 50m, EN)** — **mixed character.** Contains:
-- LQV brainstorm fragments: forest park, wellness pool (natural water, no
+- RV brainstorm fragments: forest park, wellness pool (natural water, no
   chlorine, eco-pool, rain-fed), wedding/ceremony venue, Toyota Tundra
   research for PY roads, Ipoh-Karai railroad research
 - **Pedagogical content (large fraction):** Wes explaining Hermes/OpenCode
@@ -43,8 +43,8 @@ contact in Kuikopee, university ecology contacts.
 - High fraction of VAD silence hallucinations ("yeah yeah yeah" / "bye bye")
   that faster-whisper emits at the start/end of long audios
 
-The pedagogical content in E is real Wes-time but NOT LQV content. It's
-Wes-teaching-someone-how-to-use-AI material. **Filtered to F-bucket for LQV
+The pedagogical content in E is real Wes-time but NOT RV content. It's
+Wes-teaching-someone-how-to-use-AI material. **Filtered to F-bucket for RV
 synthesis** (per Wes Rule 6 — post-escritura relaxed-state audio ≠ literal
 deliverables).
 
@@ -279,12 +279,12 @@ Per Wes Rule 6: post-escritura relaxed-state audio ≠ literal deliverables.
 Items die **wel in de audio staan maar niet in de actionlist horen**:
 
 - Het pedagogische deel van Audio E (Wes legt Hermes/OpenCode uit aan een
-  derde). **Real Wes-time but NOT LQV.** Past in een aparte "Wes Hermes
+  derde). **Real Wes-time but NOT RV.** Past in een aparte "Wes Hermes
   tutorial voor anderen" repo of sessie.
 - Audio B (2 min) horse/donkey verhaal — off-topic, skip.
-- Wes's "Asterix / Oblix" brainstorm voor AI-namen — gezellig, niet LQV.
+- Wes's "Asterix / Oblix" brainstorm voor AI-namen — gezellig, niet RV.
 - "20.000 guaraníes voor een chip" en "5000 per maand" prepaid WhatsApp
-  nummers — operationeel interessant maar geen LQV blocker.
+  nummers — operationeel interessant maar geen RV blocker.
 
 ---
 

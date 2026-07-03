@@ -70,7 +70,7 @@ This is where Ivan's existing pipeline intersects with Wes's equipment plan:
 | Vast.ai GPU rental | 3DGS training compute | Ivan's account | 0.35-0.45/hour |
 | R2 storage (Cloudflare) | 3DGS models + renders | Ivan's account | 0.023/GB/mo |
 
-**See:** Ivan's LQV catalog idea `B06_lidar_drone_survey_vs_hi-res_satellite_decision.md` for the satellite ($200) vs LiDAR ($1,200) decision.
+**See:** Ivan's RV catalog idea `B06_lidar_drone_survey_vs_hi-res_satellite_decision.md` for the satellite ($200) vs LiDAR ($1,200) decision.
 
 ---
 

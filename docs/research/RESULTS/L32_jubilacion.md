@@ -1,4 +1,4 @@
-# L32 — Retirement planning (jubilación) for LQV staff
+# L32 — Retirement planning (jubilación) for RV staff
 
 **Date:** 2026-06-30
 **Status:** MEM-based. PY-specific.
@@ -13,11 +13,11 @@
 - 25 years of contributions = full pension (~60% of average salary)
 - Less than 25 years = partial pension
 
-**For LQV (employer side):**
+**For RV (employer side):**
 - Employer has no additional jubilación obligation beyond IPS
 - IPS handles the employee's retirement pension
 
-## What LQV can do as employer
+## What RV can do as employer
 
 **For Fase 1 (Y1):**
 - All staff on IPS (mandatory)
@@ -32,7 +32,7 @@
 ## Retention strategy
 
 **For staff who stay 5+ years:**
-- Partner with LQV equity in BV2 (NL holding, via 4-BV cascade)
+- Partner with RV equity in BV2 (NL holding, via 4-BV cascade)
 - Wes + Thijs can allocate 1-5% of BV2 to key staff
 - Vesting over 4-5 years (full equity after 5 years)
 - This is the "retention bonus" that aligns staff with project success
@@ -40,24 +40,24 @@
 **For staff who stay 10+ years:**
 - Full partner status
 - Profit-sharing (1-2% of net profit, distributed annually)
-- Lifetime accommodation at LQV (1 week/year for family vacation)
+- Lifetime accommodation at RV (1 week/year for family vacation)
 
 ## Cost estimate (Fase 1 retention)
 
-**If LQV offers 2% equity in BV2 to each key staff member:**
+**If RV offers 2% equity in BV2 to each key staff member:**
 - 5 staff × 2% = 10% of BV2 distributed
 - BV2 holds equity in BV3-5 (the operating BVs)
 - 10% of dividends from BV3-5 to BV2 = 10% × 100% = 10% of total dividends
-- This is 10% of LQV's annual profit
+- This is 10% of RV's annual profit
 
-**For LQV with $1M annual profit (Y3-Y4+):**
+**For RV with $1M annual profit (Y3-Y4+):**
 - 10% to staff = $100K/year distributed
 - $20K per staff member per year (in equity)
 - Massive retention value
 
 **For staff:** $20K/year × 5 years = $100K lifetime equity stake (potentially worth much more at Sonja's 60th valuation)
 
-## What LQV should do
+## What RV should do
 
 **For Fase 1 (Y1):**
 - All staff on IPS (mandatory)

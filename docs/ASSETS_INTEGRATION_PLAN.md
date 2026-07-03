@@ -1,4 +1,4 @@
-# La Quebrada Viva — Asset Integration Plan
+# Riverstone Valley — Asset Integration Plan
 > **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the asset-import + phase plan (Phases 1-8)). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 
@@ -256,7 +256,7 @@ adoption is a downstream step. CC-BY-SA and `?`-license rows are intentionally e
 
 | ID | Type | Score | License | Size MB | Files | Notes |
 |---|---|---:|---|---:|---|---|
-| `shanghai_bund` | hdri | 2 | CC0 1.0 | 20.7 | shanghai_bund_4k.exr | non-LQV default — last resort |
+| `shanghai_bund` | hdri | 2 | CC0 1.0 | 20.7 | shanghai_bund_4k.exr | non-RV default — last resort |
 
 ### props/furniture — 7 asset(s)
 

@@ -5,12 +5,12 @@
 
 ## What M14 is
 
-**LQV's guest experience from discovery → booking → arrival → stay → checkout → repeat:**
+**RV's guest experience from discovery → booking → arrival → stay → checkout → repeat:**
 
 ## The full journey
 
 ### 1. Discovery (awareness → interest)
-**Where guests find LQV:**
+**Where guests find RV:**
 - Booking.com / Airbnb search
 - Instagram posts (per M16)
 - Google search ("eco resort Paraguay")
@@ -18,19 +18,19 @@
 - Personal referrals (Wes's network, San Bernardino)
 - Travel blogs / YouTube
 
-**Conversion goal:** click-through to LQV.com
-**LQV's tools:** SEO-optimized website, social media, Booking.com listing, TripAdvisor presence
+**Conversion goal:** click-through to RV.com
+**RV's tools:** SEO-optimized website, social media, Booking.com listing, TripAdvisor presence
 
 ### 2. Research (consideration → evaluation)
 **What guests do:**
-- Read the LQV website (cabins, food, location)
+- Read the RV website (cabins, food, location)
 - Check reviews on Booking, TripAdvisor, Google
 - Compare with other PY eco-lodges
-- Contact LQV (WhatsApp, email) for questions
+- Contact RV (WhatsApp, email) for questions
 - Talk to friends who may have visited
 
 **Conversion goal:** booking
-**LQV's tools:** high-quality photos, clear pricing, instant chat response, FAQ
+**RV's tools:** high-quality photos, clear pricing, instant chat response, FAQ
 
 ### 3. Booking (decision → commitment)
 **Path options:**
@@ -38,7 +38,7 @@
 - Direct (no commission, but no platform visibility)
 - Airbnb (mid-commission, different audience)
 
-**LQV's tools:** Cloudbeds for channel management, direct booking via own website, multi-channel sync
+**RV's tools:** Cloudbeds for channel management, direct booking via own website, multi-channel sync
 
 ### 4. Pre-arrival (anticipation → preparation)
 **Communication:**
@@ -47,10 +47,10 @@
 - 24 hours before: check-in time, contact for any questions
 - Optional: pre-arrival consultation (dietary, accessibility, special requests)
 
-**LQV's tools:** automated emails (Cloudbeds), WhatsApp Business API, pre-arrival guide PDF
+**RV's tools:** automated emails (Cloudbeds), WhatsApp Business API, pre-arrival guide PDF
 
 ### 5. Arrival (first impression → orientation)
-**LQV's protocol:**
+**RV's protocol:**
 - Welcome at the gate/entrance
 - 15-minute orientation tour
 - Cabin walk-through
@@ -73,7 +73,7 @@
 **Tools:** schedule, activity guide, dinner reservation system (Cloudbeds)
 
 ### 7. Checkout (last impression → review)
-**LQV's protocol:**
+**RV's protocol:**
 - Final breakfast
 - Quick property check-out
 - Thank you + photo opportunity

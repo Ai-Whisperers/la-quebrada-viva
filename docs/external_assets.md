@@ -1,4 +1,4 @@
-# External assets catalog — La Quebrada Viva
+# External assets catalog — Riverstone Valley
 
 > **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
 
@@ -122,7 +122,7 @@ These overlay onto existing materials via masks; they don't replace builders.
 - `clay_roof_tiles_03` (4K/8K, 2.6m).
 - `clay_roof_tiles` (4K/8K, 4m).
 - `roof_tiles` (4K/8K/16K).
-- **Use case:** LQV uses **living-sod / cob roof** on the main house — only useful for the tatakuá lip / service shed / ancillary structures. **Low priority.**
+- **Use case:** RV uses **living-sod / cob roof** on the main house — only useful for the tatakuá lip / service shed / ancillary structures. **Low priority.**
 
 #### Cob wall / lime plaster surface
 - `worn_plaster_wall` — closest match; uneven, chipped lime-look.

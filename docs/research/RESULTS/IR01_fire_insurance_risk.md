@@ -8,21 +8,21 @@
 **The risk:** What if fire insurance is unavailable OR > 10% of project value?
 
 **Per Insight #3 (from prior audit) and D15 (insurance hard gate):**
-- Fire insurance is critical for LQV's wooden structures
+- Fire insurance is critical for RV's wooden structures
 - PY insurance market is thin for eco-tourism specialty risks
 - International brokers may not write this risk in PY
 
 ## If insurance is unavailable (worst case)
 
-**LQV's backup options:**
+**RV's backup options:**
 
 ### Option A: Build with masonry instead of wood
 - Replace cob/bottle facade with concrete + lime render
 - Maintain bamboo for interior
-- Sacrifices ~30% of LQV's signature aesthetic
+- Sacrifices ~30% of RV's signature aesthetic
 - Cost: +$10-15K per cabin materials
 - Insurance cost: 30-50% lower (less risky)
-- **Tradeoff: more expensive cabin build + less insurance + less LQV identity**
+- **Tradeoff: more expensive cabin build + less insurance + less RV identity**
 
 ### Option B: Reduce risk exposure
 - Limit cabin count (start with 3, not 5)
@@ -36,7 +36,7 @@
 - Get partial insurance (fire only, not storm)
 - **Tradeoff: huge capital lockup + risk exposure**
 
-### Option D: Self-insurance cooperative (LQV + similar)
+### Option D: Self-insurance cooperative (RV + similar)
 - Pool with other eco-lodges in PY
 - Share risk + reduce individual cost
 - Requires 2-3 other properties
@@ -45,7 +45,7 @@
 ### Option E: Pay higher premium
 - International broker + high-risk surcharge
 - 15-20% of project value (vs 8-10% normal)
-- Cost: $1-1.5M/year for LQV (vs $500-800K normal)
+- Cost: $1-1.5M/year for RV (vs $500-800K normal)
 - **Tradeoff: eats into operational margin significantly**
 
 ### Option F: Switch to PY insurer (suboptimal)
@@ -55,7 +55,7 @@
 - Cost: 8-12% (similar to international)
 - **Tradeoff: less comprehensive coverage**
 
-## What LQV does (W0.7)
+## What RV does (W0.7)
 
 **1. Get 3 quotes (Marsh, Aon, Mapfre PY):**
 - Per the insurance bundle
@@ -88,7 +88,7 @@
 **Scenario A (current design + insurance approved):**
 - Build cost: $18,040/cabin
 - Insurance: $20K/year
-- **Net: standard LQV plan**
+- **Net: standard RV plan**
 
 **Scenario B (masonry + insurance approved):**
 - Build cost: $28-33K/cabin (+50%)

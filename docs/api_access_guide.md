@@ -1,4 +1,4 @@
-# API Access Guide — La Quebrada Viva (LQV)
+# API Access Guide — Riverstone Valley (RV)
 
 **Project:** Cob/bottle earthen house on 62-ha in Escobar, Paraguarí, Paraguay  
 **Client:** Wesley van de Camp (75%) + Thijs (25%) — escritura 2026-06-27  

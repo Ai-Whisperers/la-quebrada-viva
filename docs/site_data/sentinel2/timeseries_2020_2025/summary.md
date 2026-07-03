@@ -47,7 +47,7 @@ Per-scene Scene Classification (SCL) is the L2A 20 m product band. We **keep** c
 
 - Phase-0 §12 #10 (Hansen GFC, `docs/site_data/hansen_gfc/`) gives continuous treecover2000 / loss-year — pair with NDVI median for the deck's canopy story.
 - Phase-0 §12 #11 (Mapbiomas PY, `docs/site_data/mapbiomas_paraguay/`) gives categorical 30 m LULC 1985–2023 — pair with MNDWI/AWEIsh median to check whether Mapbiomas' Flooded Forest (class 6) pixels actually carry water signal here.
-- Phase-0 §12 #12 (JRC GSW, `docs/site_data/jrc_gsw/`) gives global surface-water occurrence — AWEIsh median is the high-res LQV-only counterpart.
+- Phase-0 §12 #12 (JRC GSW, `docs/site_data/jrc_gsw/`) gives global surface-water occurrence — AWEIsh median is the high-res RV-only counterpart.
 
 ## Files
 

@@ -201,7 +201,7 @@ All 23 items remain 🔴 except R37 + R38 (promoted 🟡 at T+1). Highest-levera
 |---|---|---|
 | C1 | **Pricing model + revenue forecast** — capex is anchored ($268,685.45 escritura BoQ; $288,056 full). Revenue side is hand-wave: "Phase 1 = 4 cabins, ADR €X, occupancy Y%". No spreadsheet. R06 (AirDNA), R12 (SENATUR) feed it but the model itself doesn't exist. |
 | C2 | **Channel mix strategy** — Booking vs Airbnb vs direct vs Awasi-referral vs San-Ber-cross-promo. R37 + R38 desk research exists; no allocation %. |
-| C3 | **Brand identity** — "La Quebrada Viva" is the project name. No logo, no typography, no colour palette beyond material colors. CC-SALES.3 needs this. |
+| C3 | **Brand identity** — "Riverstone Valley" is the project name. No logo, no typography, no colour palette beyond material colors. CC-SALES.3 needs this. |
 | C4 | **Domain / digital presence** — `paragu-ai.com/s/lqv` is the planned home (CC-SALES.4). Not yet live. No social handles secured. **Squatter risk on `laquebradaviva.com.py` etc.** Cheap to defend ($15 + 30 min). |
 | C5 | **Booking-flow stack** — Smoobu / Hostaway / Lodgify / direct on Bookingmood. R33 (Tier-5) covers it. Decision blocks Phase-1-go-live. |
 | C6 | **Payment rails** — Bancard local + Stripe / Adyen / Wise for international. PYG/USD/EUR FX exposure unhedged (R29 Tier-5). |

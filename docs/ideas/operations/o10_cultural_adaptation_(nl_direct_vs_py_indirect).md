@@ -20,9 +20,9 @@ cultural notes from Sonja (not too generous, not too tight)
 
 > _"[Action list 2026-06-30]: nderzoeksmethode-skill bouwen (E1) | Erebus | --- ## §10 — RISICO'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij L"_
 
-> _"[Action list 2026-06-30]: E1) | Erebus | --- ## §10 — RISICO'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij LQV operationeel, kan helpen"_
+> _"[Action list 2026-06-30]: E1) | Erebus | --- ## §10 — RISICO'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij RV operationeel, kan helpen"_
 
-> _"[Action list 2026-06-30]: O'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij LQV operationeel, kan helpen met content. 4. **Cannabis-context op"_
+> _"[Action list 2026-06-30]: O'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij RV operationeel, kan helpen met content. 4. **Cannabis-context op"_
 
 ## Why this matters
 

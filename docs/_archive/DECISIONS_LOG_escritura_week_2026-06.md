@@ -1,4 +1,4 @@
-# Decisions Log — La Quebrada Viva
+# Decisions Log — Riverstone Valley
 
 > Append-only. One entry per durable judgement call. Newest at bottom.
 > Format: ISO date · short title · decision · why · alternatives considered · revisit when.

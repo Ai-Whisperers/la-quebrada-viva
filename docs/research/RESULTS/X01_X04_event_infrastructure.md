@@ -2,7 +2,7 @@
 
 **Per DREAMLIST_NL §X-series + D6 (wellness pool) + D7 (family-anchored community):**
 
-## What LQV needs for events/ceremonies
+## What RV needs for events/ceremonies
 
 **Fase 1 (basic events):**
 - 1 ceremony/celebration space (outdoor, covered)

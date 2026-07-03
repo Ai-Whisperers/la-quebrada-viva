@@ -1,4 +1,4 @@
-# MOD11A2 LST 1 km 8-day brief — La Quebrada Viva (Phase-0 §12 v1)
+# MOD11A2 LST 1 km 8-day brief — Riverstone Valley (Phase-0 §12 v1)
 
 > NASA Terra MOD11A2 v6.1 Land Surface Temperature & Emissivity, 1 km
 > sinusoidal grid, 8-day composite, tile h12v11. 459/459 granules

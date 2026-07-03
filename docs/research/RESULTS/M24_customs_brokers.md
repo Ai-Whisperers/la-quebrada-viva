@@ -4,11 +4,11 @@
 **Confidence:** Medium-low (need direct quotes)
 **Date:** 2026-06-30
 
-## Why LQV needs a despachante (customs broker)
+## Why RV needs a despachante (customs broker)
 
 - **Every** import into PY requires a despachante (cannot self-clear unless you're a large importer)
 - Cost: Gs. 200,000-500,000 per shipment + percentage of CIF value (~0.5-1.5%)
-- LQV will import: 2nd hand vehicles (AH-series), equipment (M-series), bamboo from BR (C-series), glass/aluminum (M05), possibly container (B-series)
+- RV will import: 2nd hand vehicles (AH-series), equipment (M-series), bamboo from BR (C-series), glass/aluminum (M05), possibly container (B-series)
 - Estimated 5-15 shipments over Fase 1-3
 
 ## Top despachantes in PY (Asunción)
@@ -30,7 +30,7 @@
 4. **Inspections** (aduana SENATUR/MADES/ANDE/Municipalidad coordination)
 5. **Storage & release** (if shipment arrives before documentation is ready)
 
-## What LQV needs to provide
+## What RV needs to provide
 
 For each shipment:
 - Commercial invoice (from supplier)
@@ -41,7 +41,7 @@ For each shipment:
 - Waybill / transport doc (from freight forwarder)
 - Your RUC + CIT number (despachante needs this for the declaration)
 
-## Cost estimate for LQV (5-15 shipments over 3 years)
+## Cost estimate for RV (5-15 shipments over 3 years)
 
 | Component | Cost USD |
 |---|---:|
@@ -53,7 +53,7 @@ For each shipment:
 
 **Plus:** despachante time + communication overhead. Budget 2-4 hours per shipment.
 
-## Special cases for LQV
+## Special cases for RV
 
 ### 2nd hand vehicles (AH-series)
 - **Andean Community (CAN) vehicles** (Brazil, Argentina, Uruguay) = 0% import tax
@@ -62,7 +62,7 @@ For each shipment:
 - **Tundra from Mexico** = 0% under CAN
 - **Tundra from Brazil (Tundra is NOT made in BR, but Hilux is)** = 0% under CAN
 
-**For LQV:** if Wes chooses Hilux (made in BR, sold in PY as Presio), 0% import tax. If Tundra (US), 25-35%. Significant savings on Hilux.
+**For RV:** if Wes chooses Hilux (made in BR, sold in PY as Presio), 0% import tax. If Tundra (US), 25-35%. Significant savings on Hilux.
 
 ### Building materials (M-series)
 - **From Mercosur (BR, AR, UY):** 0% import tax
@@ -72,7 +72,7 @@ For each shipment:
 ### Equipment (kitchen, pool, AC, etc.)
 - **Same as materials:** Mercosur = 0%, others = 10-22%
 
-## Recommended workflow for LQV
+## Recommended workflow for RV
 
 1. **Pick 1-2 despachantes** based on quotes (use ADUANA BROKERS PY directory)
 2. **Establish relationship** before first shipment

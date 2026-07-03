@@ -22,7 +22,7 @@ listings live + first bookings
 
 > _"[Action list 2026-06-30]: ouwen op lqv-walkthrough.pages.dev | Live demo | | WA7 | **Marketing-plan voor 1e-huur-huizen** (Booking.com + Airbnb + niche) | Onderzoek + template listings | Template + strategy | | WA8 | **Google One upgrade uitvoeren** | Handleiding Wesley | Wesley doet credit-card-actie | --- ## §3 — AI / EREBUS (zelf doen, niet wachten op Wesley) | # | Taak | Wanneer | Status | |---|---|---|---| | E1 | Onderzoe"_
 
-> _"[Dream list 2026-06-30]: les | Niet LQV-relevant, niet Acme-relevant | | F7 | "Marketing met 1M followers" | Hyperbool voor "groot bereik" | Realistisch: niche-targeted SEO + Booking.com | | F8 | "De audio moet ik luider zeggen" | Opname-instructie, niet wens | Geen actie nodig | --- ## §4 — Wensen voor de site / ervaring (geldig, lange termijn) | # | Wens | Wie | Termijn | |---|---|---|---| | S1 | Romantische tafeltjes bij de qu"_
+> _"[Dream list 2026-06-30]: les | Niet RV-relevant, niet Acme-relevant | | F7 | "Marketing met 1M followers" | Hyperbool voor "groot bereik" | Realistisch: niche-targeted SEO + Booking.com | | F8 | "De audio moet ik luider zeggen" | Opname-instructie, niet wens | Geen actie nodig | --- ## §4 — Wensen voor de site / ervaring (geldig, lange termijn) | # | Wens | Wie | Termijn | |---|---|---|---| | S1 | Romantische tafeltjes bij de qu"_
 
 ## Why this matters
 

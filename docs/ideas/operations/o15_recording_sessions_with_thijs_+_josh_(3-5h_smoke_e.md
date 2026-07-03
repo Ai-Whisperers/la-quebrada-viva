@@ -22,7 +22,7 @@ session template + transcription pipeline
 
 > _"[Action list 2026-06-30]: VR-prototype update (E3) | Erebus | | 7 | Locaties typologie-huizen (T1, T7) | Wesley + Erebus | | 8 | Koeien-overname (K1-K4) | Wesley | | 9 | Jos + Thijs onboarding (T6) | Wesley | | 10 | Onderzoeksmethode-skill bouwen (E1) | Erebus | --- ## §10 — RISICO'S / AANDACHTSPUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet t"_
 
-> _"[Action list 2026-06-30]: e karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij LQV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet alle wensen zijn letterlijk b"_
+> _"[Action list 2026-06-30]: e karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij RV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet alle wensen zijn letterlijk b"_
 
 ## Why this matters
 

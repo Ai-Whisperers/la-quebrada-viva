@@ -123,7 +123,7 @@
 Wes's plan has 6 different styles across 30 cabins. This is intentional:
 - Allows repeat guests to return for "new" experience
 - Distributes risk across price points
-- Matches the LQV rule: "Don't be a single-typology property"
+- Matches the RV rule: "Don't be a single-typology property"
 
 **Mix summary:**
 - 2p units: 15 (50% of count)
@@ -150,11 +150,11 @@ Per Wes: "Start with concrete + bamboo, use Paraguayan construction workers (no 
 
 ---
 
-## Ivan's LQV Render Pipeline Cross-Reference
+## Ivan's RV Render Pipeline Cross-Reference
 
-The LQV render pipeline (`/root/la-quebrada-viva/lqv/typologies/`) has 13 typology build files created during the 18-final-render sprint (2026-05-2026). These are **concept art**, not a build commitment. Some overlap with Wes's 10-type plan:
+The RV render pipeline (`/root/la-quebrada-viva/lqv/typologies/`) has 13 typology build files created during the 18-final-render sprint (2026-05-2026). These are **concept art**, not a build commitment. Some overlap with Wes's 10-type plan:
 
-| LQV Render File | Overlap with Wes's Plan |
+| RV Render File | Overlap with Wes's Plan |
 |---|---|
 | `bamboo_beton_28.py` | Partial (concrete + bamboo typology) |
 | `bamboo_beton_30.py` | Partial |

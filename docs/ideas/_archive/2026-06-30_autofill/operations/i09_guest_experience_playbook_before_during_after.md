@@ -16,7 +16,7 @@ A short doc that defines the guest experience: pre-arrival email, arrival ritual
 
 ## Why this matters
 
-Houses alone don't make a destination. The experience does. Wes mentioned his stone-shop memory of "place your stone in your garden" - that's the same logic. LQV needs a guest journey, not just bedrooms.
+Houses alone don't make a destination. The experience does. Wes mentioned his stone-shop memory of "place your stone in your garden" - that's the same logic. RV needs a guest journey, not just bedrooms.
 
 **Related insights from the catalog pass:**
 

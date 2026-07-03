@@ -1,4 +1,4 @@
-# Critique + Roast — LQV Repo (2026-06-30)
+# Critique + Roast — RV Repo (2026-06-30)
 
 **Purpose:** Honest critical assessment of every major section. Specific. Constructive. No "looks good" hedging.
 
@@ -95,7 +95,7 @@ The 12 sections include 6 that are derivable (Sources, Changelog, Priority meani
 
 ### ⚠️ Issue 2.1: Concept art typologies don't match the build plan
 
-The LQV render pipeline has 13 typology build files. Wes's 10-type plan is the build plan. There's an **imperfect overlap** (boomhut, bamboo_curved_roof, bamboo_river match types in Wes's plan; cob, bottle, hobbit, container, clay_terracotta, italian_stone do not).
+The RV render pipeline has 13 typology build files. Wes's 10-type plan is the build plan. There's an **imperfect overlap** (boomhut, bamboo_curved_roof, bamboo_river match types in Wes's plan; cob, bottle, hobbit, container, clay_terracotta, italian_stone do not).
 
 **What this means:** Ivan rendered 13 typologies as concept art. 3-5 of them match Wes's plan; 8-10 are not in the plan. They're not useless — they could be used for the buyer-experience VR walkthrough, or as future expansion options. But they're **not** the build plan.
 
@@ -191,7 +191,7 @@ The reconciled view has MASTER_BRIEF.md (18 KB), FINANCIAL_MODEL.md (6.5 KB), CA
 
 Both stay. But the reader doesn't know which is the canonical.
 
-**Fix:** every doc in `_reconciled/` should clearly state its relationship to the source. e.g. `BUSINESS_STRUCTURE.md` should say "summary of LQV catalog F01 + Wes's invesment center.docx" so the reader knows where to go for full detail.
+**Fix:** every doc in `_reconciled/` should clearly state its relationship to the source. e.g. `BUSINESS_STRUCTURE.md` should say "summary of RV catalog F01 + Wes's invesment center.docx" so the reader knows where to go for full detail.
 
 ### 🪨 Issue 4.2: OPEN_DECISIONS.md duplicates idea files
 
@@ -226,7 +226,7 @@ OPEN_DECISIONS.md has 12 decisions. Many of these decisions are **also** tracked
 
 PROJECT_INDEX.md says "1,186 tracked files" (per the README's "Cold-start docs" section). Actual: 2,159.
 
-**What happened:** the file was written when the repo was at 1,186 files (probably around 2026-06-25). Since then, 973 files were added (site_data corpus + the 109-idea catalog + the 11 reconciled docs + the LQV subcode work).
+**What happened:** the file was written when the repo was at 1,186 files (probably around 2026-06-25). Since then, 973 files were added (site_data corpus + the 109-idea catalog + the 11 reconciled docs + the RV subcode work).
 
 **Fix:** regenerate PROJECT_INDEX.md. Or better, make it a generated file (script reads the repo, writes the index).
 
@@ -277,7 +277,7 @@ Per the inventory, `renders/sub/` has the latest sub-renders. Some are tracked. 
 
 Both written 2026-06-10. Both useful as historical/background. Both don't mention 30 cabins / 10 types / €5.5M.
 
-**What they're good for:** the **13 typologies** in the LQV render pipeline trace back to these docs. The 8 concepts in HOUSING_PARK_CONCEPT are still valid. The 25 questions in HOUSING_PARK_CONCEPT are still relevant.
+**What they're good for:** the **13 typologies** in the RV render pipeline trace back to these docs. The 8 concepts in HOUSING_PARK_CONCEPT are still valid. The 25 questions in HOUSING_PARK_CONCEPT are still relevant.
 
 **What they're stale for:** the financial figures, the 10-type build plan, the 4-entity BV vs founder-controlled decision.
 

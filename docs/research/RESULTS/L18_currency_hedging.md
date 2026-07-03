@@ -4,7 +4,7 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## LQV's currency exposure
+## RV's currency exposure
 
 **Three currencies:**
 - **EUR** (Wes + Thijs personal, NL investors via BV2)
@@ -19,7 +19,7 @@
 
 **Risk:** PYG devaluation against EUR/USD. PY inflation 4-6%/year typically, but PYG can move 10-20% in crisis years.
 
-## Hedging options for LQV
+## Hedging options for RV
 
 ### Option 1: Keep PYG (no hedge, accept risk)
 - **Pro:** Simple, no fees
@@ -42,7 +42,7 @@
 - Dutch brokers offer FX forward contracts
 - BNP Paribas, ING, Rabobank
 - **Pro:** Professional, can lock in rates
-- **Con:** Min contract size €100K+ (too big for LQV Fase 1)
+- **Con:** Min contract size €100K+ (too big for RV Fase 1)
 
 ### Option 5: Natural hedge via operating decisions
 - Charge guests in USD/EUR (most European OTA clients are EUR-priced)
@@ -51,7 +51,7 @@
 - **Pro:** Free, no fees
 - **Con:** Requires operational discipline
 
-## Recommendation for LQV
+## Recommendation for RV
 
 **Fase 1:** Option 5 (natural hedge)
 - Price everything in USD/EUR (Booking.com is in these currencies)
@@ -82,7 +82,7 @@
 ## Cost of NOT hedging
 
 - PYG devaluation 10%/year (bad year) = 10% of operating capital eroded
-- LQV has $50-200K in operating capital typically
+- RV has $50-200K in operating capital typically
 - Risk: $5-20K/year in lost purchasing power
 - **Total over 5 years (compounded):** $30-100K of lost value
 - **vs cost of natural hedge (free):** save $30-100K

@@ -16,9 +16,9 @@ A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that capt
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: onnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — LQV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Wee"_
+> _"[Action list 2026-06-30]: onnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Wee"_
 
-> _"[Dream list 2026-06-30]: ain research | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de WhatsApp-groep" | Auto-message naar LQV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat We"_
+> _"[Dream list 2026-06-30]: ain research | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de WhatsApp-groep" | Auto-message naar RV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat We"_
 
 > _"[Raw transcript 2026-06-30]: # Wesley Brainstorm Recording — Raw Transcript (NL) **Datum:** 2026-06-30 **Bron:** WhatsApp voice notes van Wesley van de Camp naar Erebus **Transcriptie:** TurboScribe (auto) — kan hallucinatie bevatten op namen/details **Doel:** ideeëncapture, niet letterlijk te nemen. Wesley was aan het brainstormen tijdens consumptie van cannabis — ope"_
 

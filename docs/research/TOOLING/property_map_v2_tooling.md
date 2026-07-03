@@ -99,7 +99,7 @@ Drones close every gap at once: sub-1 m imagery, cm-scale DSM/DTM via SfM, optio
 | LiDAR | DJI Matrice 350 RTK + Zenmuse L2 | RGB + LiDAR (240k pts/s, 5 cm acc) | ~$25,000+ | **Under-canopy DTM + per-stem CHM in one flight** |
 | Pro mapping | WingtraOne / Quantum Trinity F90+ | RGB + RTK fixed-wing | ~$35,000+ | 100s of ha per flight; overkill at 30 ha |
 
-**For 30.9 ha at La Quebrada Viva:** a single Mavic 3E flight covers it in ~25 min at 60 m AGL → 2 cm GSD orthomosaic. A Zenmuse L2 LiDAR pass covers it in ~35 min → 200+ pts/m² CHM. Both are *one-flight* jobs.
+**For 30.9 ha at Riverstone Valley:** a single Mavic 3E flight covers it in ~25 min at 60 m AGL → 2 cm GSD orthomosaic. A Zenmuse L2 LiDAR pass covers it in ~35 min → 200+ pts/m² CHM. Both are *one-flight* jobs.
 
 ### Hiring vs buying
 **Hire for 1–3 surveys, buy if we'll re-fly quarterly.** Going rates in Paraguay / Argentina border region (2026):
@@ -168,7 +168,7 @@ docker run -d -p 8000:8000 --name webodm opendronemap/webodm
 
 ## 5. LiDAR — the only path to per-stem positions under closed canopy
 
-R35 has been on hold for this. The Atlantic Forest at La Quebrada Viva has ~85 % closed canopy on satellite — photogrammetry alone cannot give us ground topo or count understorey stems.
+R35 has been on hold for this. The Atlantic Forest at Riverstone Valley has ~85 % closed canopy on satellite — photogrammetry alone cannot give us ground topo or count understorey stems.
 
 ### Capture options
 - **Drone LiDAR (Zenmuse L2 + M350 RTK)** — best price/perf at 30 ha, 200 pts/m², ±5 cm accuracy. ~$2,500–4,500 to hire.

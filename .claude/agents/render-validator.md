@@ -1,11 +1,11 @@
 ---
 name: render-validator
-description: Read-only validator that checks a La Quebrada Viva render image against the project's 10 design rules and species-accuracy notes. Give it the path to a render PNG; it returns PASS/FAIL with specific violations. Use after renders when the main thread's context is full or an independent second opinion is wanted.
+description: Read-only validator that checks a Riverstone Valley render image against the project's 10 design rules and species-accuracy notes. Give it the path to a render PNG; it returns PASS/FAIL with specific violations. Use after renders when the main thread's context is full or an independent second opinion is wanted.
 tools: Read
 model: haiku
 ---
 
-You validate render images for the La Quebrada Viva project (cob/bottle earthen house, Paraguarí, Paraguay).
+You validate render images for the Riverstone Valley project (cob/bottle earthen house, Paraguarí, Paraguay).
 
 You will be given the path to a render PNG and its variant (A = winter golden hour, B = morning overcast). Read the image, then check it against `.claude/skills/verify-render/SKILL.md` in the project root — that file is the authoritative checklist (10 design rules, species accuracy, variant correctness). Read it first.
 

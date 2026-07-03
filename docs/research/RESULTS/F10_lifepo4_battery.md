@@ -1,10 +1,10 @@
-# F10 — LiFePO4 battery sizing for backup (solar + LQV ops)
+# F10 — LiFePO4 battery sizing for backup (solar + RV ops)
 
 **Method:** MEM + cross-ref to F09 solar PV
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## Why LQV needs battery backup
+## Why RV needs battery backup
 
 **Use cases:**
 - Off-grid solar (when ANDE 3-phase is not yet available)
@@ -13,12 +13,12 @@
 - Phone/comm tower backup (Starlink)
 - Restaurant + cabin lighting during grid failure
 
-**LQV's battery priority (from F09 plan):**
+**RV's battery priority (from F09 plan):**
 - **LFP (LiFePO4) preferred** over lead-acid (3-4x lifespan, deeper DoD, faster charge)
 - **Modular design** — can expand as needs grow
 - **High cycle count** — handles daily cycling well
 
-## Sizing estimate for LQV Fase 1
+## Sizing estimate for RV Fase 1
 
 | Use case | Power draw | Daily hours | Daily energy |
 |---|---:|---:|---:|
@@ -45,7 +45,7 @@
 | **Huawei Luna 2000** | 5-30 kWh per pack | $1,800-2,500 | Modular, popular in LATAM |
 | **DIY LFP cells** | various | varies | Cheaper but requires assembly skill |
 
-**For LQV Fase 1 (100 kWh system):**
+**For RV Fase 1 (100 kWh system):**
 - ~20 Pylontech US5000 units = $36,000-44,000
 - ~20 Dyness B4850 units = $30,000-36,000
 - **Recommended: Dyness B4850 (best price + best PY distribution via solar installers)**
@@ -68,7 +68,7 @@
 - **Deye SUN-12K-SG04LP3** (12 kW, very popular in LATAM): $2,000-3,000
 - **Victron Quattro** (premium): $4,000-6,000
 
-**Recommended for LQV:** Victron MultiPlus-II 10 kW (best reliability, PY distributor support).
+**Recommended for RV:** Victron MultiPlus-II 10 kW (best reliability, PY distributor support).
 
 ## Total battery + inverter cost (Fase 1)
 
@@ -88,7 +88,7 @@
 **Warranty:** 10 years typical
 **Operating cost:** Near zero (no maintenance, no water refills)
 
-**Vs lead-acid (which LQV should AVOID):**
+**Vs lead-acid (which RV should AVOID):**
 - Lead-acid lifespan: 500-1,000 cycles = 1.5-3 years
 - 50-60% round-trip efficiency
 - Needs water top-ups

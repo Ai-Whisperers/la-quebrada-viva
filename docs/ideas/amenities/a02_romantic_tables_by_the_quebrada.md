@@ -16,7 +16,7 @@ site-feature amenity render
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per LQV calc, + bamboe-import) | Week 4 | Erebus | | H4 | **Bouw eerste huis** starten | Maand 2-3 | Wesley + team | | H5 | **Inboedel aanschaffen** voor eerste hu"_
+> _"[Action list 2026-06-30]: | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per RV calc, + bamboe-import) | Week 4 | Erebus | | H4 | **Bouw eerste huis** starten | Maand 2-3 | Wesley + team | | H5 | **Inboedel aanschaffen** voor eerste hu"_
 
 > _"[Action list 2026-06-30]: oit". --- ## §1 — PERSOONLIJK (Wesley-only, geen AI-actie) | # | Taak | Wanneer | Status | |---|---|---|---| | W1 | Interpol documenten afronden | Week 1 | ⚪ Persoonlijk | | W2 | Bankrekening openen (lokale bank PY) | Week 1-2 | ⚪ Persoonlijk | | W3 | Tekenen voor de grond (escritura) | ✅ 2026-06-27 gedaan | ✅ | | W4 | Google One 1 TB upgrade + foto-sync met Erebus | Vandaag | 🟡 Gestart (credit car"_
 

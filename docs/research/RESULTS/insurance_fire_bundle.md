@@ -25,7 +25,7 @@
   - **They do NOT typically write forest fire + eco-tourism liability** — that's a specialty risk
 - **International brokers (via Mercosur):** Marsh, Aon, WTW, Zurich, Chubb all have LATAM desks
   - These handle specialty risks via reinsurance
-  - **This is the path that works for LQV**
+  - **This is the path that works for RV**
 
 ### The 3 quotes Wes needs
 1. **Mapfre PY** — for baseline (auto + home + small business, not the main risk)
@@ -58,7 +58,7 @@
 
 ### Sources
 - IPS official: https://www.ips.gov.py/
-- Sonja questionnaire (Q9): confirms exact calculation method for LQV's worker mix
+- Sonja questionnaire (Q9): confirms exact calculation method for RV's worker mix
 
 ---
 
@@ -104,7 +104,7 @@
 **Status:** **URGENT. Insurance underwriting requirement.**
 
 ### Why it's critical
-- LQV is 82% Atlantic Forest canopy
+- RV is 82% Atlantic Forest canopy
 - Paraguay's dry season (Aug-Oct) + accidental ignition = high fire risk
 - A single lightning strike in dry season can wipe out hectares in hours
 - **Insurance underwriters will not cover a wooden-structure park in forested area without a fire safety plan**

@@ -1,4 +1,4 @@
-# Client photo intake brief — La Quebrada Viva (Phase-0 §12 v1)
+# Client photo intake brief — Riverstone Valley (Phase-0 §12 v1)
 
 > **Empty-pending-photos intake state.** Wesley + Thijs are the first
 > human eyes on the parcel post-escritura (2026-06-27). This brief

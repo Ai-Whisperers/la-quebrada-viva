@@ -1,4 +1,4 @@
-# Satellite / Remote-Sensing Capability Analysis — La Quebrada Viva (62 ha, Escobar, Paraguarí)
+# Satellite / Remote-Sensing Capability Analysis — Riverstone Valley (62 ha, Escobar, Paraguarí)
 
 **Status:** what we can already do with on-disk data, with zero new fetches and zero EULA blockers. Written to answer "what we can do with what we have" without commissioning the Tier-1 agrimensor.
 
@@ -82,7 +82,7 @@ Total ≈ **1 working day** to ship all eight, assuming no debugging. Most are I
 
 ---
 
-## 4. LQV-specific use cases (tied to scene & escritura)
+## 4. RV-specific use cases (tied to scene & escritura)
 
 ### 4.1 Build-envelope lock — answers "where on the 62 ha can we put houses?"
 

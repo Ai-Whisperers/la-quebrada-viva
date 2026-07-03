@@ -1,11 +1,11 @@
-# MC03 — LQV vs Argentine eco-lodges (Iberá, Mendoza)
+# MC03 — RV vs Argentine eco-lodges (Iberá, Mendoza)
 
 **Date:** 2026-06-30
 **Status:** MEM-based. Cross-country competitive analysis.
 
 ## What MC03 is
 
-**LQV's competitive set includes Argentine eco-lodges:**
+**RV's competitive set includes Argentine eco-lodges:**
 - Iberá (nearby, same ecosystem)
 - Mendoza (wine country, different ecosystem)
 - Patagonia (further, different ecosystem)
@@ -15,7 +15,7 @@
 
 **The Iberá Wetlands** (Corrientes province):
 - One of South America's largest wetland reserves
-- Similar ecosystem to LQV's Atlantic Forest (in some respects)
+- Similar ecosystem to RV's Atlantic Forest (in some respects)
 - Argentine eco-tourism market mature
 
 **Notable properties:**
@@ -27,9 +27,9 @@
 
 **Total Iberá capacity:** ~30 rooms across 5-7 properties
 
-## LQV vs Iberá comparison
+## RV vs Iberá comparison
 
-| Aspect | LQV | Iberá average |
+| Aspect | RV | Iberá average |
 |---|---|---|
 | Location | Paraguay | Argentina |
 | Ecosystem | Atlantic Forest | Iberá Wetlands |
@@ -39,16 +39,16 @@
 | Price | $150-450/night | $200-500/night |
 | Capacity | 30 cabins (planned) | ~6 rooms average |
 | Investment | Eco + community | Eco + birding |
-| Brand | LQV (new) | Established (20+ years) |
+| Brand | RV (new) | Established (20+ years) |
 
-**LQV's advantages over Iberá:**
+**RV's advantages over Iberá:**
 - **30 cabins** vs. Iberá's small boutique scale
 - **EU ownership** (Dutch + German + PY) — different from Iberá's mostly AR ownership
 - **Family-anchored community** — Iberá is mostly couples/wildlife
 - **Wedding/events venue** — Iberá doesn't focus on this
 - **New** — can be cutting-edge (Iberá is established but old-school)
 
-**LQV's challenges vs Iberá:**
+**RV's challenges vs Iberá:**
 - **Accessibility** — Iberá is closer to BA's airports
 - **Brand** — Iberá is known in European eco-tourism
 - **Ecosystem** — Iberá's wetland is more iconic than Atlantic Forest
@@ -63,7 +63,7 @@
 - **Cavas del Águila** (boutique, 6 rooms, $300-400)
 - **Cavas Rosell Boher** (boutique, 8 rooms, $250-350)
 
-**Mendoza is a different market** — wine + Andean mountains, not PY-style eco. LQV competes on different axes.
+**Mendoza is a different market** — wine + Andean mountains, not PY-style eco. RV competes on different axes.
 
 ## Patagonia eco-lodges (further)
 
@@ -72,7 +72,7 @@
 - **Awasi Patagonia** (El Chaltén, 14 rooms, $800-1000/night)
 - **Patagonia Camp** (Torres del Paine, 19 rooms, $500-700/night)
 
-**Patagonia is the high-end benchmark** — Awasi, Eolo, Camp are 5-star operations. LQV's positioning is different (eco + community + family, not high-end Patagonia wilderness).
+**Patagonia is the high-end benchmark** — Awasi, Eolo, Camp are 5-star operations. RV's positioning is different (eco + community + family, not high-end Patagonia wilderness).
 
 ## Iguazú eco-lodges (border region)
 
@@ -82,30 +82,30 @@
 - **La Aldea de la Selva Lodge** (AR side, 16 rooms, $200-300)
 - **Yvyty Kora Lodge** (AR side, 8 rooms, $200-300)
 
-**Awasi Iguazú is the closest direct competitor** (similar brand, similar positioning, similar guest profile). LQV's differentiation:
+**Awasi Iguazú is the closest direct competitor** (similar brand, similar positioning, similar guest profile). RV's differentiation:
 - **Larger scale** (30 cabins vs Awasi's 14)
 - **Family-focused** (vs Awasi's couples focus)
 - **PY first vs BR** (different country, different ecosystem)
 
-## LQV's cross-country positioning
+## RV's cross-country positioning
 
-**LQV is:**
+**RV is:**
 - Between Iberá (smaller, established) and Awasi Iguazú (high-end, established)
 - 2-3 hours from Asunción (vs. Iberá 5-6 hours from BA)
 - Different from Mendoza (wine country) and Patagonia (iconic wilderness)
 
-**LQV's niche:**
+**RV's niche:**
 - Family eco + community + Atlantic Forest
 - 30-cabin scale (largest in PY)
 - PY first + European quality
 - New (Wes's 8x speed model)
 
-## What LQV does
+## What RV does
 
 **1. Y1: differentiate from Iberá (closest):**
 - Family focus (vs Iberá's couples)
 - 30 cabins (5x Iberá)
-- LQV community + wedding potential (Iberá doesn't focus)
+- RV community + wedding potential (Iberá doesn't focus)
 - Per V04 + D14: integrate differentiation
 
 **2. Y2-3: differentiate from Awasi Iguazú (next closest):**
@@ -115,7 +115,7 @@
 - 4-BV vs Awasi's single owner
 
 **3. Long-term:**
-- Build LQV as "the Awasi of Paraguay" (per Awasi's model)
+- Build RV as "the Awasi of Paraguay" (per Awasi's model)
 - Family-friendly variant
 - PY nature + community
 

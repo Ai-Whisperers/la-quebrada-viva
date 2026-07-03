@@ -24,7 +24,7 @@
       "request_time": "2026-06-18T18:52:36+00:00",
       "bucket": "hyp3-edc-prod-contentbucket-1fv14ed36ifj6",
       "credit_cost": 10,
-      "name": "LQV-parcel-insar",
+      "name": "RV-parcel-insar",
       "priority": 8000
     }
   ],

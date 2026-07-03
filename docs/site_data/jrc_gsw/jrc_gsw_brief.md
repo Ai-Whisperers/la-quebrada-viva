@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-# JRC GSW v1.4 surface-water brief — La Quebrada Viva (Phase-0 §12 v1)
+# JRC GSW v1.4 surface-water brief — Riverstone Valley (Phase-0 §12 v1)
 
 > JRC Global Surface Water v1.4 (1984-2021) tile `60W_20S` pulled from
 > `https://storage.googleapis.com/global-surface-water/downloads2021`.

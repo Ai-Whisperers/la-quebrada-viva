@@ -196,7 +196,7 @@ De huidige Blender scene in `lqv/` is al een basis. Wes bevestigt
 
 ## D11. Toyota Tundra / auto-onderzoek voor de bouwfase
 
-Niet LQV-core, wel LQV-operationeel (Audio E):
+Niet RV-core, wel RV-operationeel (Audio E):
 - Tundra vs Presio vergelijken voor PY dirt roads
 - Hermes doet al web search voor Paraguay
 - Prijsmatch-vraag aan AI: "Does the price match a bit for the task?"
@@ -224,7 +224,7 @@ Wes gebruikt al AI als:
 - Index van chats (transcripts indexed for search)
 - "It's your brain" — project-level memory
 
-Voor LQV impliceert dit: één research file, sub-files per topic, alle
+Voor RV impliceert dit: één research file, sub-files per topic, alle
 audios getranscribeerd + indexed, AI kan terugvinden wat Wes eerder
 zei.
 
@@ -255,7 +255,7 @@ Wes's slot-vision (Audio E):
 > products in the hands of everyone. But in principle. What you are
 > doing now. Everyone can do this."
 
-→ **Production means democratized** als project-value. Niet LQV-specifiek
+→ **Production means democratized** als project-value. Niet RV-specifiek
 maar kleur Wes's hele benadering: hij wil dat de AI/tooling die hij
 gebruikt, ook door anderen (Europeanen in PY, lokale Paraguayanen)
 gebruikt kan worden.

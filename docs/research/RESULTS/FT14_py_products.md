@@ -4,10 +4,10 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## Why LQV cares about "Paraguayan first" products
+## Why RV cares about "Paraguayan first" products
 
 **Per Wes's D6 Dutch-German restaurant + the "PY first" claim:**
-- LQV's marketing story is "Paraguayan products, European technique"
+- RV's marketing story is "Paraguayan products, European technique"
 - Wine, cheese, chocolate, coffee are the 4 most-exported artisanal products
 - Sourcing from local producers = lower cost, better story, supports community
 
@@ -29,12 +29,12 @@
 - **Challenge:** Hot climate = high alcohol, low acidity
 - **Price:** Gs. 30,000-80,000/bottle for quality PY wine (similar to mid-range AR or CL)
 
-**For LQV restaurant (Fase 1):**
+**For RV restaurant (Fase 1):**
 - Stock 3-4 PY wines (red, white, rosé)
 - Pair with European wines for the "international guest" option
 - Build a wine list that tells the PY story + has international coverage
 
-**LQV's wine budget (Fase 1):**
+**RV's wine budget (Fase 1):**
 - Initial stock: 100-200 bottles
 - Replacement: 20-30 bottles/month
 - Cost: ~Gs. 1,000,000-1,500,000/month for wine inventory
@@ -61,7 +61,7 @@
 **Quality:** Very good for fresh, decent for aged
 **Price:** Gs. 25,000-60,000/kg (varies widely)
 
-**For LQV:**
+**For RV:**
 - Feature queso Paraguay on the menu (especially as appetizer or dessert)
 - Source from Mennonite colonies (Loma Plata)
 - Build a "cheese plate" with local varieties + European cheeses
@@ -83,7 +83,7 @@
 **Quality:** Excellent (small batch, careful fermentation)
 **Price:** Gs. 50,000-150,000/bar (200g)
 
-**For LQV:**
+**For RV:**
 - Source for the restaurant's dessert menu
 - Marketing story ("recovered from Jesuit heritage")
 - Cost: Gs. 300,000-500,000/month for chocolate inventory
@@ -106,7 +106,7 @@
 
 **Price:** Gs. 30,000-100,000/kg (rare, gift-quality)
 
-## Cross-cutting supplier list (the PY "food basket" LQV should source)
+## Cross-cutting supplier list (the PY "food basket" RV should source)
 
 | Item | Source | Price range | Status |
 |---|---|---:|---|
@@ -120,7 +120,7 @@
 | **Sésamo** (sesame) | Caaguazú region | Gs. 20,000-40,000/kg | Quality |
 | **Stevia / Ka'a he'ẽ** | Native, varies | Gs. 50,000-200,000/kg | Niche, premium |
 
-## For LQV's "Paraguayan first" claim
+## For RV's "Paraguayan first" claim
 
 **Wes's marketing story:**
 - "PY first" = feature local products with their story
@@ -158,7 +158,7 @@ Assuming food cost 30% of restaurant revenue, restaurant revenue target ≈ **$4
 
 - [ ] In W1.2 site visit: visit 3-4 artisan producers (vineyard in Itapúa, cheese in Loma Plata, cacao in Misiones, coffee in Caaguazú)
 - [ ] Get pricing + supply volumes
-- [ ] Build supplier list (the "LQV Paraguayan first" list)
+- [ ] Build supplier list (the "RV Paraguayan first" list)
 - [ ] Document stories for the marketing deck
 - [ ] Coordinate with FT10 (chef) — chef knows the food scene best
 

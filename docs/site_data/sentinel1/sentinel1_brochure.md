@@ -1,4 +1,4 @@
-# Sentinel-1 SLC scenes — La Quebrada Viva parcel
+# Sentinel-1 SLC scenes — Riverstone Valley parcel
 
 Source: ASF DAAC (https://search.asf.alaska.edu), Sentinel: CC0  
 Window: 2024-01-01 → 2026-06-18  

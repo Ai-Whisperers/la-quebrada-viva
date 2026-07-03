@@ -5,7 +5,7 @@
 
 ## What F21 is
 
-**Smart hotel technology for LQV:**
+**Smart hotel technology for RV:**
 - AI-driven guest experience (chatbots, smart rooms)
 - Operational optimization (energy, water, staff scheduling)
 - Predictive maintenance (sensor-based)
@@ -75,7 +75,7 @@
 - Estancia La Oriental (PY): mid-tech, ADR ~$200
 - San Bernardino boutique: low-tech, ADR ~$100-150
 
-**LQV's positioning:** mid-tech smart hotel. European-quality without over-tech.
+**RV's positioning:** mid-tech smart hotel. European-quality without over-tech.
 
 ## What Wes needs to do
 
@@ -90,7 +90,7 @@
 - M15 (review management)
 - F09 (solar PV) - smart energy integration
 - F10 (LiFePO4 battery) - smart storage
-- LQV operational excellence
+- RV operational excellence
 
 ## Status
 

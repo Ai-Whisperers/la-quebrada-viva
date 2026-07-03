@@ -30,11 +30,11 @@ Wes has a PLAN, not a brainstorm, for the corporate spine:
 
 ### NEW: NL BV > IB threshold (per audio C)
 
-Wes's existing rule: for income >€70k/yr, use a BV (not IB). LQV will easily exceed this in Fase 1 alone.
+Wes's existing rule: for income >€70k/yr, use a BV (not IB). RV will easily exceed this in Fase 1 alone.
 
 > "Een BV altijd beter in Nederland, want je kunt het toen niet afpakken."
 
-Confirmed: BV is structurally better for LQV. **5th holding BV on top of the 4 operational BVs may be worth it for fiscal reasons** — to be validated with the NL+PY dual-tax attorney (see W0.1).
+Confirmed: BV is structurally better for RV. **5th holding BV on top of the 4 operational BVs may be worth it for fiscal reasons** — to be validated with the NL+PY dual-tax attorney (see W0.1).
 
 ### NEW: Wellness pool (per audio E)
 

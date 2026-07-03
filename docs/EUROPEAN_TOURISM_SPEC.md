@@ -176,7 +176,7 @@ This is a **white space**, not a crowded market. The risk is the inverse: buildi
 European / 1st-world travelers don't want a 200-key resort. They want 4–12 places to stay, each with character, all on one property.
 
 ### 4.1 Recommended typology mix
-- **2–3 cob / earthen houses** (the La Quebrada Viva model, sized 60–120 m², 2–4 guests each)
+- **2–3 cob / earthen houses** (the Riverstone Valley model, sized 60–120 m², 2–4 guests each)
 - **2–3 timber-frame cabins** (lapacho / cedro, similar size, 2–4 guests)
 - **1 family / multi-bedroom house** (3–4 bedrooms, 6–8 guests, premium pricing)
 - **Total**: 6–8 keys initially, scaling to 12–16

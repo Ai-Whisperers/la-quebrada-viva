@@ -14,7 +14,7 @@
 
 **For a 5-cabin Phase 1:** likely 5 × 4 = 20-person equivalent load. Standard design = biodigester + reed-bed polishing.
 
-## Septic system design for LQV
+## Septic system design for RV
 
 **Biodigester (primary treatment):**
 - Capacity: 1,500-2,000 L per cabin (4-person avg occupancy)
@@ -43,7 +43,7 @@ This matches the €60,000 (~$65K) "Water/septic/sewer" line item in Wes's finan
 
 ## Compliance checklist
 
-For LQV Phase 1 permit:
+For RV Phase 1 permit:
 - [ ] Septic design by licensed engineer (required for >20 persons)
 - [ ] Discharge permit from Municipalidad de Escobar
 - [ ] MADES notification (for >50 m² wetland construction)
@@ -63,7 +63,7 @@ For LQV Phase 1 permit:
 - Cons: Connection fee (often Gs. 1-3M per cabin), monthly bill (Gs. 50-150k/cabin/month), requires municipal infrastructure
 - Best for: Phase 2-3 if Escobar municipal sewer reaches the property
 
-**For LQV (rural Escobar, 120km from Asunción):** municipal sewer unlikely. **Off-grid biodigester + reed-bed is the only viable option.** Wes should plan this in from day 1.
+**For RV (rural Escobar, 120km from Asunción):** municipal sewer unlikely. **Off-grid biodigester + reed-bed is the only viable option.** Wes should plan this in from day 1.
 
 ## Sources to verify
 

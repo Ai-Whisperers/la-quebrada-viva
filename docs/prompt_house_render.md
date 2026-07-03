@@ -2,14 +2,14 @@
 
 > **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
 # Paraguay Clay & Bottle Earthen Smart Home
-# Placed on the La Quebrada Viva site — Escobar District, Paraguarí
+# Placed on the Riverstone Valley site — Escobar District, Paraguarí
 # Updated v2 — confirmed location + orientation + stream infrastructure
 
 ---
 
 ## PREREQUISITE: BUILD THE LOCATION SCENE FIRST
 
-This prompt adds the house to the completed La Quebrada Viva location scene.
+This prompt adds the house to the completed Riverstone Valley location scene.
 The terrain, stream, trees, terraces, and lighting from the location render carry forward.
 The house is placed ON the upper stone terrace platform (Shot 3 position in location prompt).
 

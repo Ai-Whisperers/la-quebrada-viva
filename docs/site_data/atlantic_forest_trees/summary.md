@@ -1,4 +1,4 @@
-# Atlantic Forest Tree DB × LQV — Phase-0 §12 #3
+# Atlantic Forest Tree DB × RV — Phase-0 §12 #3
 **Citation.** Lima RAF, Oliveira AA, Pitta GR, et al. (2024) Comprehensive conservation assessments reveal high extinction risks across Atlantic Forest trees. Science 383(6680):219-225. DOI 10.1126/science.abq5099
 **Source.** [https://github.com/LimaRAF/THREAT](https://github.com/LimaRAF/THREAT) — repo license GPL-3 for code, data tables redistributed with attribution.
 ## Counts
@@ -12,7 +12,7 @@
 | AR-endemic (BAAPA cross-border) | 271 |
 | Commercial timber species | 234 |
 | Species with documented uses | 348 |
-| Also documented within 25 km of LQV (Batch A: GBIF + iNat) | 86 |
+| Also documented within 25 km of RV (Batch A: GBIF + iNat) | 86 |
 
 ## Top 15 families in merged checklist
 | Family | Species |
@@ -33,8 +33,8 @@
 | Erythroxylaceae | 83 |
 | Moraceae | 81 |
 
-## Top 25 LQV-area overlap species (already documented within 25 km)
-| # | Binomial | Family | Vernacular (PY) | AF status | PY threat | Endemism | LQV occ. | Score |
+## Top 25 RV-area overlap species (already documented within 25 km)
+| # | Binomial | Family | Vernacular (PY) | AF status | PY threat | Endemism | RV occ. | Score |
 | ---: | --- | --- | --- | --- | --- | --- | ---: | ---: |
 | 1 | *Balfourodendron riedelianum* | Rutaceae | marfim | confirmed | en_peligro | widespread | 1 | 7 |
 | 2 | *Cordia trichotoma* | Boraginaceae | — | confirmed | en_peligro | widespread | 1 | 7 |
@@ -65,7 +65,7 @@
 ## Files
 ```
 docs/site_data/atlantic_forest_trees/
-├── atlantic_forest_checklist_master.csv  ← full join (binomial × AF/PY/AR/uses/LQV)
+├── atlantic_forest_checklist_master.csv  ← full join (binomial × AF/PY/AR/uses/RV)
 ├── threatened_species_paraguay.csv       ← PY threat slice
 └── summary.md                            ← this file
 docs/site_data/flora/

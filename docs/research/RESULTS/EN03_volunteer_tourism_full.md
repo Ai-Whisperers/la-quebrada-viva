@@ -5,8 +5,8 @@
 
 ## What EN03 is
 
-**LQV's volunteer tourism program:**
-- Guests (and external volunteers) help reforest LQV's 62 ha
+**RV's volunteer tourism program:**
+- Guests (and external volunteers) help reforest RV's 62 ha
 - Combines eco-tourism + community impact
 - Premium pricing possible (vs. just passive resort)
 
@@ -28,7 +28,7 @@
 
 **3. Marketing integration:**
 - "Plant a tree on your stay" - Instagram-shareable
-- LQV Forest Passport - tracking contributions
+- RV Forest Passport - tracking contributions
 - Tour groups: schools + corporate + eco-clubs
 
 ## Cost-benefit

@@ -128,7 +128,7 @@ The template exists with these sheets (all with empty prices):
 
 The full doc is at `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` (Dutch, 28 KB, 13 sections, 13 sources).
 
-**Key data points (LQV cob house example):**
+**Key data points (RV cob house example):**
 - Total cost: €18,040 USD = ~$18,040 USD (which Wes is rendering as €18-20k for similar in his own 10-type plan)
 - 50 bags cement
 - 10 m³ sand
@@ -166,4 +166,4 @@ The 6 styles are likely:
 - **Ivan's data:** `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` (Dutch, 13 sections, partial coverage)
 - **Wes's brief NL:** `hooft lijstr van prijzen uitzoeken.docx` (master list of what to source)
 
-**Tracked in:** LQV catalog `docs/ideas/construction/` (15 ideas, 12-section format)
+**Tracked in:** RV catalog `docs/ideas/construction/` (15 ideas, 12-section format)

@@ -4,9 +4,9 @@
 **Status:** Reconciled view (read-only — does not modify either source)
 **Sources:**
 - **Wes's working files** (the Excel/DOCX set Ivan pasted in) — **CANONICAL** for financial, cabin, infra, equipment, activities, F&B, materials, business structure
-- **Ivan's LQV repo + working dir** (`Ai-Whisperers/la-quebrada-viva` + `/root/.hermes/lqv-splat/`) — **SUPPLEMENTARY** for escritura milestone, land details, 3DGS pipeline, Sonja's 2030 deadline, partnership structure, render-pipeline typology concept art
+- **Ivan's RV repo + working dir** (`Ai-Whisperers/la-quebrada-viva` + `/root/.hermes/lqv-splat/`) — **SUPPLEMENTARY** for escritura milestone, land details, 3DGS pipeline, Sonja's 2030 deadline, partnership structure, render-pipeline typology concept art
 
-**How to read this document set:** This is the **merged view**. It does not modify or replace either source. Both stay intact (Wes's files locally, LQV repo on GitHub). This set is the single page Wes + Ivan + Kiki + Erebus read to understand the project as it stands now.
+**How to read this document set:** This is the **merged view**. It does not modify or replace either source. Both stay intact (Wes's files locally, RV repo on GitHub). This set is the single page Wes + Ivan + Kiki + Erebus read to understand the project as it stands now.
 
 ---
 
@@ -15,25 +15,25 @@
 | Field | Value | Source |
 |---|---|---|
 | Project name | **Eco Jungle Resort Paraguay** (Wes's working name) | Wes's files |
-| Working alias | La Quebrada Viva (LQV) | LQV repo |
+| Working alias | Riverstone Valley (RV) | RV repo |
 | Location | Paraguay, riverfront jungle (exact location TBD) | Wes's files |
-| **Confirmed land** | 62 ha in **Escobar, Paraguarí** (~120 km SE of Asunción) | LQV repo (Ivan's earlier work) |
+| **Confirmed land** | 62 ha in **Escobar, Paraguarí** (~120 km SE of Asunción) | RV repo (Ivan's earlier work) |
 | Currency (canonical) | **EUR** (primary, per Wes's models) | Wes's files |
 | Currency (PY local) | PYG (₲) | Wes's files |
-| Currency (cross-ref) | USD (Ivan's NL price doc) | LQV repo |
-| **Escritura** | **Signed 2026-06-27** at commit `0081129` (escritura-2026-06-27 tag) | LQV repo |
+| Currency (cross-ref) | USD (Ivan's NL price doc) | RV repo |
+| **Escritura** | **Signed 2026-06-27** at commit `0081129` (escritura-2026-06-27 tag) | RV repo |
 | Phase 1 scope | 30 cabins (10 types), full infra + amenities, 3-year build | Wes's files |
 | Phase 1 build budget | **€5,503,736** (excl. land) | Wes's financial model |
 | Phase 1 occupancy scenarios | 20% / 25% / 35% | Wes's financial model |
-| Hard milestone | **Sonja's 60th in 2030** = operational by Sept 2029 | LQV repo (Wes's verbal commitment) |
-| Partnership | **Wesley + Thijs 75/25** (legal owners, escritura-frozen) | LQV repo |
+| Hard milestone | **Sonja's 60th in 2030** = operational by Sept 2029 | RV repo (Wes's verbal commitment) |
+| Partnership | **Wesley + Thijs 75/25** (legal owners, escritura-frozen) | RV repo |
 | Investment vehicle | TBD: founder-controlled + 3-5 passive (per Wes) **OR** 4-entity BV cascade (per Ivan) | Conflict — see §10 |
 
 ---
 
 ## 2. The 4-Entity BV Cascade (Ivan's draft, NOT YET LOCKED)
 
-Wes's working files mention a "founder-controlled structure with 3-5 passive investors getting capital + co-ownership." Ivan's LQV repo independently drafted a 4-entity BV cascade as a candidate structure. **Both are drafts, neither is locked.** The decision is owed by Wes + Thijs + (eventual) accountant.
+Wes's working files mention a "founder-controlled structure with 3-5 passive investors getting capital + co-ownership." Ivan's RV repo independently drafted a 4-entity BV cascade as a candidate structure. **Both are drafts, neither is locked.** The decision is owed by Wes + Thijs + (eventual) accountant.
 
 **Ivan's 4-entity draft (from prior session):**
 1. **Land BV (PY)** — owns 62 ha parcel. Stays with Wes + Thijs personally. Ground income stays in their pocket.
@@ -45,7 +45,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Why it may not be right:** Wes's working files emphasize a "founder-controlled structure" that prevents removal/takeover. The 4-entity BV cascade with separate phase BVs is structurally similar (each phase BV is independent) but adds Dutch-incorporation complexity that the simple founder model avoids.
 
-**Status:** **OPEN DECISION.** Booked as Idea F01 in the LQV catalog. See `docs/ideas/finance_legal/f01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_.md`.
+**Status:** **OPEN DECISION.** Booked as Idea F01 in the RV catalog. See `docs/ideas/finance_legal/f01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_.md`.
 
 ---
 
@@ -69,7 +69,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 **Nightly rate range:** €75-€420
 **Total Phase 1 cabin build:** €3.629M (66% of total Phase 1 capex)
 
-**Note on Ivan's LQV 13 typologies:** Ivan's prior render pipeline (`lqv/typologies/`) contains 13 typology build files (cob, bottle, clay_terracotta, italian_stone, hobbit, boomhut, container, etc.) which were built as **concept art** during the 18-final-render sprint. These are NOT a commitment to 13 specific built structures. They serve as visual reference for Wes to choose from. Some (cob, boomhut) overlap with the 10-type plan. Some (hobbit, container, clay_terracotta) are not in the current 10-type plan. Decision needed: keep them as concept art only, or retire.
+**Note on Ivan's RV 13 typologies:** Ivan's prior render pipeline (`lqv/typologies/`) contains 13 typology build files (cob, bottle, clay_terracotta, italian_stone, hobbit, boomhut, container, etc.) which were built as **concept art** during the 18-final-render sprint. These are NOT a commitment to 13 specific built structures. They serve as visual reference for Wes to choose from. Some (cob, boomhut) overlap with the 10-type plan. Some (hobbit, container, clay_terracotta) are not in the current 10-type plan. Decision needed: keep them as concept art only, or retire.
 
 **See:** [`CABIN_CATALOG.md`](CABIN_CATALOG.md) for full per-type detail with build cost calculations, materials, and design notes.
 
@@ -141,7 +141,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Total personnel:** €203,280 (low scenario) → €231,000 (avg) → €258,720 (good)
 
-**Note:** these roles are 4-5x more staff than the LQV catalog estimated (~7 workers for Phase 1). The full Phase 1 buildout is operationally heavier than the cob-house-only concept.
+**Note:** these roles are 4-5x more staff than the RV catalog estimated (~7 workers for Phase 1). The full Phase 1 buildout is operationally heavier than the cob-house-only concept.
 
 **See:** [`FINANCIAL_MODEL.md`](FINANCIAL_MODEL.md) for the full breakdown.
 
@@ -162,7 +162,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Important:**
 - Build only in **dry season** (May-Oct) for cob/earthen work that needs dry cure
-- 14 GB host constraint applies to any digital design (LQV render pipeline) but not to physical construction
+- 14 GB host constraint applies to any digital design (RV render pipeline) but not to physical construction
 - 3-5 month build window per cabin batch (typical)
 
 ---
@@ -177,7 +177,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
   - 20-ton crawler crane = €60,000 vs €260,000
 - **Standard agricultural / light equipment → buy new in Paraguay**
   - Tractors, dump trucks, flatbed trailers: PY market is competitive
-- **Power tools** → mix (LQV render pipeline needs high-spec; build site can use mid-range)
+- **Power tools** → mix (RV render pipeline needs high-spec; build site can use mid-range)
 
 **See:** [`EQUIPMENT_STRATEGY.md`](EQUIPMENT_STRATEGY.md) for the full 10-category equipment comparison tool.
 
@@ -258,7 +258,7 @@ These decisions are owed by Wes + (where applicable) Ivan, Kiki, accountant, law
 
 ### 10.1 Business structure (4-entity BV vs founder-controlled + 3-5 passive)
 
-| Aspect | Ivan's LQV draft (F01) | Wes's working files |
+| Aspect | Ivan's RV draft (F01) | Wes's working files |
 |---|---|---|
 | Entity 1 | Land BV (PY, owned by Wes + Thijs) | Implied: founder-controlled structure |
 | Entity 2 | Finance BV (NL, for Dutch investors) | Not mentioned |
@@ -276,8 +276,8 @@ These decisions are owed by Wes + (where applicable) Ivan, Kiki, accountant, law
 |---|---|
 | Wes's financial model | EUR |
 | Ivan's NL prices doc | USD + PYG |
-| LQV render pipeline budget | USD |
-| LQV BoQ | USD |
+| RV render pipeline budget | USD |
+| RV BoQ | USD |
 
 **Decision needed:** Pick one canonical base. **Erebus recommendation:** EUR for investor-facing (matches Wes's audience), USD for international comparisons, PYG for PY local costs. Three layers, explicit conversion dates, no hidden math.
 
@@ -291,7 +291,7 @@ Wes's files show 10 specific types (2p/4p/family × basic/boomhut/beek/luxe spa)
 
 **Tracked in:** `docs/ideas/finance_legal/f01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_.md` (cross-reference to `docs/ideas/house_typologies/`)
 
-### 10.4 LQV 3DGS pipeline integration
+### 10.4 RV 3DGS pipeline integration
 
 Ivan has built a 3DGS self-host pipeline (Vast.ai + COLMAP + gsplat) + Three.js viewer at `lqv-walkthrough.pages.dev`. This is relevant to:
 - B07 phone capture pipeline (Wes needs to share 5 phone videos)

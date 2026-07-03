@@ -1,7 +1,7 @@
 # 4-entity BV cascade (visual diagram + final spec)
 
 **Date:** 2026-06-30
-**Status:** Per Wes's plan in audio C + Ivan's LQV draft. Awaiting W0.1 attorney call for canonical validation.
+**Status:** Per Wes's plan in audio C + Ivan's RV draft. Awaiting W0.1 attorney call for canonical validation.
 
 ## The 4-BV structure (Wes's words, audio C)
 
@@ -96,7 +96,7 @@
 
 **Y4+ (2030 Sonja's 60th):**
 - All 3 BVs operational + profitable
-- LQV as a brand
+- RV as a brand
 - New investors can buy into BV2 (additional capital raise)
 - Or BV3-5 can be merged into a single holding for an exit event
 

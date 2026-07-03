@@ -1,4 +1,4 @@
-# Sentinel-2 L2A vegetation + water indices brief — La Quebrada Viva (Phase-0 §12 v1)
+# Sentinel-2 L2A vegetation + water indices brief — Riverstone Valley (Phase-0 §12 v1)
 
 > Sentinel-2 L2A surface reflectance over the 62 ha AOI rectangle covering
 > the 30.9 ha Mbopicua polygon. Includes a 6-band single-scene snapshot

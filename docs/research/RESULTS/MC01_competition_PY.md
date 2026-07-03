@@ -1,4 +1,4 @@
-# MC01 — LQV vs competition in PY eco-lodging
+# MC01 — RV vs competition in PY eco-lodging
 
 **Date:** 2026-06-30
 **Status:** MEM-based. Competitive landscape.
@@ -7,7 +7,7 @@
 
 **PY eco-lodging competitive landscape:**
 - Who else is in the eco-lodge / nature retreat space in PY?
-- How is LQV differentiated?
+- How is RV differentiated?
 - What are the threats and opportunities?
 
 ## PY eco-lodges (per training data, May 2026)
@@ -33,9 +33,9 @@
 
 **Total estimated:** ~50-80 eco-lodges in PY, mostly small (4-12 rooms), few larger (20-40 rooms)
 
-**Market share:** LQV's 30 cabins would be 1 of the 2-3 largest eco-lodges in PY (alongside Resort Yacht & Golf and a few others)
+**Market share:** RV's 30 cabins would be 1 of the 2-3 largest eco-lodges in PY (alongside Resort Yacht & Golf and a few others)
 
-## LQV's competitive position
+## RV's competitive position
 
 ### Strengths
 - **30 cabins planned** — among the largest eco-lodges
@@ -56,7 +56,7 @@
 - **Insurance uncertainty** — eco-lodges hard to insure
 
 ### Opportunities
-- **PY has very few large eco-lodges** — LQV fills a gap
+- **PY has very few large eco-lodges** — RV fills a gap
 - **European market** — Wes's network + family connections
 - **PY is "undiscovered" by Europeans** — first-mover advantage
 - **Sonja's 60th in 2030** — built-in anchor for momentum
@@ -70,7 +70,7 @@
 - **Brazilian competitors** (Bonito region) — nearby competition
 - **Argentine competitors** (Iberá) — same continent
 
-## LQV's differentiation strategy
+## RV's differentiation strategy
 
 **1. Scale:**
 - 30 cabins vs. typical 4-12
@@ -97,14 +97,14 @@
 - 2-3 hour from Asunción (accessible, not isolated)
 - Near San Bernardino + Mennonite colonies (cross-promotion)
 
-## Competitive response to LQV
+## Competitive response to RV
 
-**If LQV succeeds:**
+**If RV succeeds:**
 - Other eco-lodges improve quality to match
 - New competitors enter the market
-- LQV's brand position becomes "first-mover advantage"
+- RV's brand position becomes "first-mover advantage"
 
-**If LQV fails:**
+**If RV fails:**
 - Niche remains open for next entrant
 - Lessons learned inform future
 

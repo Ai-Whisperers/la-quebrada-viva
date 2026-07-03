@@ -1,4 +1,4 @@
-# PROJECT_INDEX — La Quebrada Viva
+# PROJECT_INDEX — Riverstone Valley
 
 Full-repo navigation. Auto-generated structural sweep (`git ls-files`, `wc -l`, `du -sh`).
 
@@ -8,7 +8,7 @@ This file is the cold-start map: tells a reader what the repo holds, where the l
 
 A Blender-driven photoreal model of a 62-ha parcel in Escobar/Paraguarí, Paraguay, owned 75/25 by **Wesley van de Camp** and **Thijs**. Post-escritura (signed 2026-06-27), the project is now **dual-scope**:
 
-1. **La Quebrada Viva cob house** — first example building typology on site. 18 photoreal Cycles finals (A/B/C × 6 cameras) shipped at byte-frozen commit `85e86aa`.
+1. **Riverstone Valley cob house** — first example building typology on site. 18 photoreal Cycles finals (A/B/C × 6 cameras) shipped at byte-frozen commit `85e86aa`.
 2. **Escobar Housing Park ("Riverstone Valley")** — Wes's expanded vision: housing park + restaurant + wellness pool + ceremonies + family-anchored community. 15 vacation-rental typologies + 4 amenities. 4-BV corporate structure. 2030 horizon (Sonja's 60th birthday).
 
 ## 2. Top-level layout
@@ -69,7 +69,7 @@ A Blender-driven photoreal model of a 62-ha parcel in Escobar/Paraguarí, Paragu
 3. **`CLAUDE.md`** — operating playbook for AI sessions
 4. **`ARCHITECTURE.md`** — only if you're editing `lqv/`
 5. **`docs/WES_INDEX.md`** — only if your stakeholder is Wes
-6. **`docs/_reconciled/README.md`** — the merged Wes-files + LQV view
+6. **`docs/_reconciled/README.md`** — the merged Wes-files + RV view
 7. **`docs/audit/BEFORE_AFTER_METRICS.md`** — only if you want repo restructure history
 
 ---

@@ -3,11 +3,11 @@
 **Date:** 2026-06-30
 **Status:** MEM-based. Cost-effective alternative materials research.
 
-## What LQV could source
+## What RV could source
 
 **Per D6 (natural building) + M11 (paint) + M15 (cabin materials):**
 - The build materials can include PY-grown wood + reclaimed wood from Mennonite colonies
-- This is **separate from the cob/bottle/bamboo** main LQV aesthetic
+- This is **separate from the cob/bottle/bamboo** main RV aesthetic
 - This is for interior furniture, deck wood, accent features
 
 ## What PY produces
@@ -35,13 +35,13 @@
 | Imported ipe (BR) | Gs. 4,000,000-6,000,000 | Premium | Lower (transport) |
 | Treated pine (PY) | Gs. 800,000-1,200,000 | Mid | Mid |
 
-**For LQV's use cases:**
+**For RV's use cases:**
 - Reclaimed Mennonite hardwood: 60-70% cost savings vs new
 - Quality is equal (often better — older trees were slower-grown)
 - Sustainability story: "we saved this wood from a landfill"
 - Marketing: "authentic, local, sustainable"
 
-## What LQV could use it for
+## What RV could use it for
 
 **Phase 1 (Y1, 5 cabins):**
 - Floor (per M10): reclaimed hardwood flooring
@@ -84,7 +84,7 @@ Compare to new wood (M04 + M15 + others): $250-450K. **Savings: $50-225K** (20-5
 - Premium
 - Not local
 
-**5. LQV's own property (selective harvest):**
+**5. RV's own property (selective harvest):**
 - Could selectively harvest a few trees from the property itself
 - But environmental permits needed
 - Not recommended for Fase 1
@@ -108,7 +108,7 @@ Compare to new wood (M04 + M15 + others): $250-450K. **Savings: $50-225K** (20-5
 **Net impact: saves money + adds story + improves sustainability.**
 
 ## Cross-reference
-- M10 (flooring) - reclaimed option for LQV
+- M10 (flooring) - reclaimed option for RV
 - M15 (cabin materials) - reclaimed elements
 - M25 (long-term materials supplier) - Mennonite source
 - D14 (brand) - sustainability story

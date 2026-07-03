@@ -7,8 +7,8 @@
 
 **The risk:** What if a pandemic or major health crisis hits again (like COVID)?
 
-**Per LQV's nature-based positioning:**
-- LQV is well-suited for pandemic scenarios (open-air, isolated, low-density)
+**Per RV's nature-based positioning:**
+- RV is well-suited for pandemic scenarios (open-air, isolated, low-density)
 - But the booking curve and travel patterns could change
 
 ## Pandemic scenarios
@@ -34,25 +34,25 @@
 - Major loss of investment value
 - **Probability ~5% over 5 years**
 
-## LQV's natural resilience
+## RV's natural resilience
 
 **Per V04 + V05 (positioning):**
-- LQV is in **rural Paraguarí** (low-density, isolated)
-- LQV is **open-air** (cabin + pool + garden, minimal indoor)
-- LQV is **family-anchored** (people who trust families escape cities)
-- LQV is **eco-positioned** (people who value nature over cities)
-- LQV is **European** (visa + remittance flexibility)
+- RV is in **rural Paraguarí** (low-density, isolated)
+- RV is **open-air** (cabin + pool + garden, minimal indoor)
+- RV is **family-anchored** (people who trust families escape cities)
+- RV is **eco-positioned** (people who value nature over cities)
+- RV is **European** (visa + remittance flexibility)
 
-**LQV is well-suited to attract post-pandemic travelers who prefer:**
+**RV is well-suited to attract post-pandemic travelers who prefer:**
 - Isolation
 - Nature
 - Family bonding
 - Open-air activities
 - Escape from urban density
 
-**LQV may actually benefit** from a mild pandemic if positioned correctly.
+**RV may actually benefit** from a mild pandemic if positioned correctly.
 
-## What LQV does (if Scenario 1)
+## What RV does (if Scenario 1)
 
 **1. Per L21 + D14, integrate "pandemic-safe" positioning in marketing:**
 - "Open-air cabins in 62 ha of forest"
@@ -75,7 +75,7 @@
 - Business interruption insurance (limited)
 - **Per L22: standard insurance doesn't cover pandemic**
 
-## What LQV does (if Scenario 2)
+## What RV does (if Scenario 2)
 
 **1. Emergency funding:**
 - Bridge loan from BV2 (NL) to operational BVs
@@ -99,11 +99,11 @@
 - Aggressive marketing discounts for first 6 months
 - Target repeat + referral + expat community
 
-## What LQV does (if Scenario 3)
+## What RV does (if Scenario 3)
 
 **1. Project restructure:**
 - BV2 may need to inject additional capital
-- Consider: convert LQV to long-stay rental only
+- Consider: convert RV to long-stay rental only
 - Or: sell to a hotel chain (per exit strategy)
 
 **2. Asset preservation:**
@@ -116,7 +116,7 @@
 - Long-stay digital nomads (Fase 2)
 - Family reunions (Fase 2-3)
 
-## LQV's specific advantages in pandemic
+## RV's specific advantages in pandemic
 
 **1. Geographic isolation:**
 - 62 ha in rural Paraguarí
@@ -165,7 +165,7 @@
 - Pandemic (NOT covered, per L22)
 - Self-insurance reserve: ~$20-50K (for pandemic scenarios)
 
-**What LQV does NOT do:**
+**What RV does NOT do:**
 - Rely on standard insurance for pandemic
 - Rely on a single market (Booking.com only)
 - Rely on a single currency for long-term reserves

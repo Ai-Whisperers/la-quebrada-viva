@@ -1,4 +1,4 @@
-# F19 — Generator sizing for restaurant + cabin backup (LQV)
+# F19 — Generator sizing for restaurant + cabin backup (RV)
 
 **Method:** MEM + electrical engineering
 **Confidence:** Medium
@@ -29,7 +29,7 @@
 - Lights: 200W
 - **Per cabin peak:** ~1,800W = 2.5 kVA
 
-**LQV Fase 1 (5 cabins + restaurant + reception):**
+**RV Fase 1 (5 cabins + restaurant + reception):**
 - Restaurant: 10 kVA
 - Reception: 2 kVA
 - 2 Luxe Spa cabins (priority during outage): 2.5 kVA × 2 = 5 kVA
@@ -90,7 +90,7 @@
 - **Quieter, cleaner, lower operating cost**
 - Best for high-end cabins where noise is unacceptable
 
-**For LQV:** Start with Option A (proven, cheaper upfront), upgrade to Option B in Year 2 as cabin density increases.
+**For RV:** Start with Option A (proven, cheaper upfront), upgrade to Option B in Year 2 as cabin density increases.
 
 ## Fuel cost estimate
 
@@ -101,7 +101,7 @@
 - 8 kVA at full load: 2-2.5 L/hour
 - 8 kVA at 50% load: 1-1.5 L/hour
 
-**LQV running pattern (estimated):**
+**RV running pattern (estimated):**
 - 8 kVA runs 2-4 hours/day for cabins = 60-90 L/month
 - 20 kVA runs 4-8 hours/day for restaurant + reception = 240-480 L/month
 - **Total: 300-570 L/month = $300-680/month = $3,600-8,200/year**

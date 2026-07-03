@@ -1,17 +1,17 @@
 # OP08 — Security (cameras, gates, night staff) [W1.1 + operation]
 
 **Date:** 2026-06-30
-**Status:** MEM-based. Operational security for LQV.
+**Status:** MEM-based. Operational security for RV.
 
 ## What OP08 is
 
-**LQV's security infrastructure for the 62 ha property + 5 cabins + restaurant + reception:**
+**RV's security infrastructure for the 62 ha property + 5 cabins + restaurant + reception:**
 
 ## Components
 
 ### 1. Perimeter + entry
 - **Main gate** (electric, with intercom)
-- **Sign** (LQV branded, with rules + contact info)
+- **Sign** (RV branded, with rules + contact info)
 - **Driveway approach** (visible from road, ~500m)
 
 ### 2. Cameras
@@ -93,7 +93,7 @@
 - Clear access roads for fire trucks
 - Per R01 fire safety plan
 
-**LQV's security + R01 = insurance-friendly property.**
+**RV's security + R01 = insurance-friendly property.**
 
 ## What Wes needs to do
 

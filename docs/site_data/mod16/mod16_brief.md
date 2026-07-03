@@ -1,4 +1,4 @@
-# MOD16A2 v6.1 actual ET brief — La Quebrada Viva (Phase-0 §12 v1)
+# MOD16A2 v6.1 actual ET brief — Riverstone Valley (Phase-0 §12 v1)
 
 _Pulled 2026-06-29 from MODIS Terra/Aqua Combined Net Evapotranspiration 8-day L4 500 m (MOD16A2.061, NASA LP DAAC Earthdata Cloud). Tile h12v11 covers the AOI. 184 granules ingested (collection v6.1 reprocessing currently spans 2021-01-01 → 2024-12-31 for this tile = 4 complete years, 46 granules/yr). AOI: 5 km buffer around parcel centroid (-57.0355, -25.6073), 8×7 = 56 pixels @ 500 m. Six sample points (centroid + 4 KML corners + Wesley pin) extracted with bilinear pyhdf reads on the sinusoidal grid._
 

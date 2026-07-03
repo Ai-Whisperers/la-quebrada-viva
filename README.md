@@ -1,4 +1,16 @@
-# La Quebrada Viva — Riverstone Valley
+# Riverstone Valley
+
+> **⚠️ NAME STATUS — provisional pending Wes's W0.6 decision**
+> The repo content has been renamed from "La Quebrada Viva" → "Riverstone Valley"
+> as Wes's **first instinct** (audio E: "Stolen from Yellowstone, it's Riverstone Valley. Boom. Boom. Boom.").
+> However, Wes has **not formally decided** yet — see [`docs/people/PROJECT_NAME_CANDIDATES.md`](docs/people/PROJECT_NAME_CANDIDATES.md)
+> for 100 candidates and 3 top recommendations (Erebus's pick: **Villa del Cielo**).
+>
+> **What's safe to use "Riverstone Valley" for:** internal repo, marketing copy, email, code comments.
+> **What's NOT changed:** repo URL (`github.com/Ai-Whisperers/la-quebrada-viva`), the legal name on the escritura
+> (which says "La Quebrada Viva"), the `lqv/` Python package name, the 18 final render filenames, scripts/.
+>
+> **To revert:** `git revert` this commit. The rename is one atomic commit for clean rollback.
 
 62-hectare parcel in Escobar District, Paraguarí, Paraguay (~26°36'S 56°51'W). Owned 75/25 by **Wesley van de Camp** + Thijs. Escritura signed **2026-06-27**. Vision locked **2026-06-30** (5 audio recordings, 3h 19m, 28K words).
 
@@ -25,14 +37,14 @@ Cold-start docs (open in this order):
 - [`STATUS.md`](STATUS.md) — canonical current state
 - [`CLAUDE.md`](CLAUDE.md) — operating instructions for AI sessions
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) — `lqv/` package map + fragility notes
-- [`docs/_reconciled/README.md`](docs/_reconciled/README.md) — Wes-files + Ivan-LQV merged view
+- [`docs/_reconciled/README.md`](docs/_reconciled/README.md) — Wes-files + Ivan-RV merged view
 - [`docs/audit/CRITIQUE.md`](docs/audit/CRITIQUE.md) + [`RESTRUCTURE_PLAN.md`](docs/audit/RESTRUCTURE_PLAN.md) — repo health
 
 ## Project scope
 
 Dual scope (post-escritura):
 
-1. **La Quebrada Viva cob house** — first example building typology on site. 18 photoreal Cycles finals (A/B/C × 6 cameras) shipped at byte-frozen commit `85e86aa`.
+1. **Riverstone Valley cob house** — first example building typology on site. 18 photoreal Cycles finals (A/B/C × 6 cameras) shipped at byte-frozen commit `85e86aa`.
 2. **Escobar Housing Park** ("Riverstone Valley") — Wesley's expanded vision: housing park + restaurant + wellness pool + ceremonies + family-anchored community. 15 vacation-rental typologies + 4 amenities. 4-BV corporate structure (machinepark principle). 2030 horizon (Sonja's 60th birthday).
 
 ## Deliverables (priority order)

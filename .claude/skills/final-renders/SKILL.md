@@ -1,6 +1,6 @@
 ---
 name: final-renders
-description: Render the deliverable final images for La Quebrada Viva (12 finals - variants A/B x 6 cameras) at full resolution, verify each, update the STATUS.md manifest, and commit. Use when asked for "finals", "deliverables", or "render everything".
+description: Render the deliverable final images for Riverstone Valley (12 finals - variants A/B x 6 cameras) at full resolution, verify each, update the STATUS.md manifest, and commit. Use when asked for "finals", "deliverables", or "render everything".
 ---
 
 # Final renders

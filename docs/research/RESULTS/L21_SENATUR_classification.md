@@ -4,9 +4,9 @@
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## What LQV needs
+## What RV needs
 
-**For LQV to operate as vacation rentals legally:**
+**For RV to operate as vacation rentals legally:**
 - SENATUR classification
 - Tourism operation license
 - Tax compliance
@@ -17,12 +17,12 @@
 **Step 1: Classify the property**
 
 **Options:**
-- **Alojamiento turístico rural (rural tourism lodging):** Best fit for LQV
-- **Hotel:** Urban-based, not LQV
+- **Alojamiento turístico rural (rural tourism lodging):** Best fit for RV
+- **Hotel:** Urban-based, not RV
 - **Hospedaje:** Smaller scale
-- **Apartamento turístico:** Urban apartment, not LQV
+- **Apartamento turístico:** Urban apartment, not RV
 
-**LQV's best fit:** Alojamiento turístico rural
+**RV's best fit:** Alojamiento turístico rural
 
 **Step 2: Apply for SENATUR registration**
 
@@ -51,7 +51,7 @@
 - **Tourism IRE:** 10% (same as general)
 - **Tourism tax holiday:** Some categories get first-2-years tax exemption (verify with lawyer)
 
-## What LQV needs operationally
+## What RV needs operationally
 
 **Standard vacation rental compliance:**
 - Fire safety plan (covered by R01)
@@ -69,7 +69,7 @@
 - Insurance: $25,000-80,000/year (separate from SENATUR)
 - **Total: ~$26,500-83,000/year** (most is insurance)
 
-## Recommendation for LQV
+## Recommendation for RV
 
 **Apply for SENATUR registration in Q3 2026** (after Wes's 5 actions, before Fase 1 opening):
 - Alojamiento turístico rural classification

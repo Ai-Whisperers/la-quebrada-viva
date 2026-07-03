@@ -1,4 +1,4 @@
-# Canopy height brief — La Quebrada Viva (Phase-0 §12 v1)
+# Canopy height brief — Riverstone Valley (Phase-0 §12 v1)
 
 _Pulled 2026-06-29 from Tolan et al. 2024 Meta High-Resolution Canopy Height (1 m source, EPSG:4326 10° resampled summary). AOI: 5 km buffer around parcel centroid (-57.0355, -25.6073). Sample points: 6 (centroid + 4 KML corners + Wesley pin)._
 

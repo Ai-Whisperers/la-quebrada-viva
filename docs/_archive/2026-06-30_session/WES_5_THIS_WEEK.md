@@ -57,18 +57,18 @@
 
 ## Bonus (Wes's existing skills + knowledge)
 
-### Wes: write 1-page "why LQV" investor story (30 min)
+### Wes: write 1-page "why RV" investor story (30 min)
 
 **Why:** Per M09 (Sonja questionnaire Q12), Wes mentioned "3-5 uur opname maken" — that's the input to investor story. Worth capturing.
 
 **Action:** Record a 30-min voice memo (3-5 uur, 4-6 questions, per Sonja's recommendation). Send to Erebus.
-**Output:** 1-2 page "LQV story" for investor pitch.
+**Output:** 1-2 page "RV story" for investor pitch.
 
 ### Wes: identify 5 "mooi" things for the 5-cabin Fase 1 (10 min)
 
 **Per AUDIO C: "kijk als je meer dingen hebt, kijk als je die mooi Spaans vindt"**
-**Why:** LQV's differentiation comes from the 5-6 stories Wes can tell
-**Action:** Send Erebus a 10-min voice note listing 5 things that make LQV special
+**Why:** RV's differentiation comes from the 5-6 stories Wes can tell
+**Action:** Send Erebus a 10-min voice note listing 5 things that make RV special
 **Output:** Marketing copy bank
 
 ---

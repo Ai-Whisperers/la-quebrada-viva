@@ -15,7 +15,7 @@
 - The model is one "scene" — could be the property in one season
 - Adding more videos (or different seasons) = more "scenes" of the same property
 
-**For LQV's marketing:**
+**For RV's marketing:**
 - Spring scene (flowers, green, fresh)
 - Summer scene (lush, warm, vibrant)
 - Autumn scene (cooler, golden, harvest)
@@ -57,7 +57,7 @@
 - 4 separate 3DGS scenes
 - 1 website that lets visitors toggle between seasons
 - 4 different "moods" of the same property
-- Marketing power: "see LQV in any season, any time"
+- Marketing power: "see RV in any season, any time"
 
 ## Wes's action
 

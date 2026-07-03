@@ -29,7 +29,7 @@
 
 ## Direct to Ciudad del Este (CDE) — closer to Escobar
 - **No scheduled international flights to CDE**
-- But CDE is 200 km from LQV (vs 400 km to ASU)
+- But CDE is 200 km from RV (vs 400 km to ASU)
 - Currently a charter option only
 
 ## Flight costs (one-way, peak season, 2026 estimates)
@@ -55,25 +55,25 @@
 
 **MAD → ASU:** 14-18h (less layover time, more direct options)
 
-**Add to LQV (Paraguarí):**
-- ASU airport → LQV: 2-3 hours by car (120 km)
-- **Total trip: 18-25h from NL → LQV door**
+**Add to RV (Paraguarí):**
+- ASU airport → RV: 2-3 hours by car (120 km)
+- **Total trip: 18-25h from NL → RV door**
 
-## LQV positioning implications
+## RV positioning implications
 
 **For Dutch/German guests:**
 - Trip is 18-25h door-to-door (1-1.5 days of travel each way)
-- **3-day weekend trip = 2 full days at LQV** (not 3)
-- **7-day vacation = 5 full days at LQV** (ideal)
+- **3-day weekend trip = 2 full days at RV** (not 3)
+- **7-day vacation = 5 full days at RV** (ideal)
 - **14-day vacation = 12 full days** (good for combining with Asunción, Iguazú, etc.)
 
 **For shorter stays:**
 - Direct GRU-ASU daily flights make 2-3 day visits feasible
-- For weekend-only: 1 full day at LQV (Fri night - Sun night)
+- For weekend-only: 1 full day at RV (Fri night - Sun night)
 - For 4-day trip: 2.5 full days
 
 **Pricing implication:**
-- At €1,000+ round trip + €1,000+/week at LQV = need to position as 5+ day minimum stay
+- At €1,000+ round trip + €1,000+/week at RV = need to position as 5+ day minimum stay
 - Tagline opportunity: "5+ days of peace, 1.5 days of travel" (transparent about the trip)
 
 ## Seasonal demand
@@ -81,7 +81,7 @@
 - **Shoulder (Apr-Jun, Sep-Nov):** Moderate demand, mid-price
 - **Low (Jul-Aug, Southern winter):** Low demand, cheap flights, mild PY weather
 
-**For LQV booking strategy:**
+**For RV booking strategy:**
 - Target shoulder season for European guests
 - Offer off-season discounts in Jul-Aug
 - Partner with KLM/Lufthansa for bundled travel + stay packages
@@ -92,7 +92,7 @@
 - Pricing strategy (minimum stay)
 - Marketing copy (don't oversell a 3-day weekend)
 - Booking patterns (peak season in Dec-Mar)
-- Partner airline outreach (if LQV ever does that)
+- Partner airline outreach (if RV ever does that)
 
 ## Sources to verify
 - Google Flights: https://www.google.com/travel/flights

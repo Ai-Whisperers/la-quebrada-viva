@@ -1,4 +1,4 @@
-# V03: First typology = La Quebrada Viva cob/bottle house
+# V03: First typology = Riverstone Valley cob/bottle house
 
 **Category:** [Project Vision](../vision/README.md)
 **Priority:** P0
@@ -16,9 +16,9 @@
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | LQV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — LQV-groep"_
+> _"[Action list 2026-06-30]: VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep"_
 
-> _"[Action list 2026-06-30]: Owner | |---|---|---|---| | H1 | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per LQV calc, + bamboe-import) | Week 4 | Erebus | | H4 | **Bouw eerste huis** starten | Maand 2-3 | Wesley + team | | H5 | **"_
+> _"[Action list 2026-06-30]: Owner | |---|---|---|---| | H1 | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per RV calc, + bamboe-import) | Week 4 | Erebus | | H4 | **Bouw eerste huis** starten | Maand 2-3 | Wesley + team | | H5 | **"_
 
 > _"[Dream list 2026-06-30]: eldig) | Datum | Mijlpaal | |---|---| | 2026-06-27 | Escritura getekend ✅ | | 2026-06-30 | Eerste prijzen-doc, NL versie ✅ | | 2026-07 | Eerste casa cob bouw, bamboe-onderzoek, ANDE-offertes | | 2026-09 | Eerste typology gebouwd, eerste gasten verblijf | | 2027-Q2 | 3-6 huizen operationeel (Airbnb/Booking) | | 2027-H2 | Events-module operationeel | | 2028 | Restaurant, wellness pools | | **2030** |"_
 
@@ -35,7 +35,7 @@
 
 ## Full picture — context, constraints, history
 
-**Project-level anchor.** This is one of the top-level framing decisions for LQV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md).
+**Project-level anchor.** This is one of the top-level framing decisions for RV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md).
 
 ## What we know already (research summary)
 

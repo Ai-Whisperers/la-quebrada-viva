@@ -1,10 +1,10 @@
-# F15 — Cistern sizing for rainwater + backup (LQV)
+# F15 — Cistern sizing for rainwater + backup (RV)
 
 **Method:** MEM + general water engineering
 **Confidence:** Medium
 **Date:** 2026-06-30
 
-## LQV water demand
+## RV water demand
 
 **Per cabin (Fase 1, 5 cabins + reception + restaurant + workers):**
 
@@ -24,7 +24,7 @@
 
 **Monthly demand:** 54,000L/month (avg) to 90,000L/month (peak)
 
-## Supply sources (LQV-specific)
+## Supply sources (RV-specific)
 
 **1. Rainwater (primary)**
 - Escobar average rainfall: ~1,500-1,800 mm/year
@@ -37,7 +37,7 @@
 - Need: well drilling, pump, treatment
 
 **3. Stream water (emergency)**
-- LQV has the existing stream per property
+- RV has the existing stream per property
 - Seasonal — only wet season (Nov-Mar)
 - Not suitable for human consumption without treatment
 - Could be used for garden/irrigation
@@ -73,7 +73,7 @@
 - 5 cabins + reception + restaurant + workers: ~1,800 L/day deficit
 - **6 months dry season deficit:** 1,800 × 180 = **324,000 L = 324 m³ = 324,000 L**
 
-**Recommended cistern sizes for LQV:**
+**Recommended cistern sizes for RV:**
 - **Primary:** 4 × 50,000 L cisterns (200,000 L total) = 50 m³ each, underground
 - **Backup:** 2 × 25,000 L cisterns (50,000 L total) = for fire reserves
 - **Total water storage: ~250 m³** (covers ~140 days of dry season)
@@ -97,7 +97,7 @@
 | **Bolted steel tank (galvanized)** | 50,000-500,000 | $0.15-0.40/L | Large volumes, fast install | Corrosion risk over time |
 | **Pillow/bladder tank** | 5,000-50,000 | $0.20-0.40/L | Portable, expandable | Less durable |
 
-**For LQV recommended: PE underground tanks, 4 × 50,000L.**
+**For RV recommended: PE underground tanks, 4 × 50,000L.**
 - Total: 200,000L
 - Cost: $40,000-100,000 (PE tanks are cheap, install is the cost)
 - Alternative: 1 × 250,000L concrete cistern, $75,000-150,000 (more permanent)
@@ -116,7 +116,7 @@
 - Operating: $50-100/month for electricity
 - **This is the "drought year" insurance** (when even the cistern runs out)
 
-## Cost summary for LQV water system (Fase 1)
+## Cost summary for RV water system (Fase 1)
 
 | Component | Cost USD |
 |---|---:|

@@ -1,4 +1,4 @@
-# T+1 Debrief — La Quebrada Viva escritura
+# T+1 Debrief — Riverstone Valley escritura
 
 > Pre-stub. Fill in the morning of 2026-06-28 (T+1) while the closing is fresh. Goal: capture what happened well, what went wrong, what surprised us, before memory decays.
 

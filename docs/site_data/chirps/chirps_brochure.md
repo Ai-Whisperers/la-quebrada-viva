@@ -1,4 +1,4 @@
-# CHIRPS monthly precipitation — La Quebrada Viva parcel
+# CHIRPS monthly precipitation — Riverstone Valley parcel
 
 Source: CHIRPS v2.0 (Climate Hazards Group, UCSB), public domain  
 Resolution: 0.05° (~5.5 km)  

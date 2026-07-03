@@ -58,7 +58,7 @@
 - Concrete (ready-mix vs on-site)
 - Rebar (6-25mm)
 
-**Decision:** Per Wes's NL prices doc, ready-mix concrete is €98/m³ vs in-situ (hand-mixed) at €38-48/m³. Break-even ~3 m³ (below = in-situ, above = ready-mix). LQV total foundations ~6 m³ → recommended: in-situ with hired mixer.
+**Decision:** Per Wes's NL prices doc, ready-mix concrete is €98/m³ vs in-situ (hand-mixed) at €38-48/m³. Break-even ~3 m³ (below = in-situ, above = ready-mix). RV total foundations ~6 m³ → recommended: in-situ with hired mixer.
 
 **Suppliers to contact:** Inc. cement (INC Vallemí), Mennonite colony bamboo (Loma Plata), local quarry (Caacupé area), aggregate suppliers (Sumerlabs + Clasipar-listed).
 
@@ -194,7 +194,7 @@
 
 ---
 
-## Cross-Reference: Ivan's 3DGS Pipeline + LQV Ideas
+## Cross-Reference: Ivan's 3DGS Pipeline + RV Ideas
 
 Ivan's render pipeline can contribute to multiple phases:
 - Phase 1 (terrain model) — from 5 phone videos + ALOS DEM + Sentinel-2
@@ -202,7 +202,7 @@ Ivan's render pipeline can contribute to multiple phases:
 - Phase 3-4 (water + sewer design visualization)
 - Buyer/investor experience (VR walkthrough of the planned build)
 
-**LQV idea files that intersect:**
+**RV idea files that intersect:**
 - B01: VR walkthrough before building
 - B02: Interactive site-placement tool
 - B03: Satellite-driven optimal placement

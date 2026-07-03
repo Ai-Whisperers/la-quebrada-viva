@@ -1,12 +1,20 @@
-# Wes's Index — Riverstone Valley (La Quebrada Viva)
+# Wes's Index — Riverstone Valley
 
+> **⚠️ NAME STATUS — provisional pending Wes's W0.6 decision.**
+> The repo content has been renamed from "La Quebrada Viva" → "Riverstone Valley"
+> as Wes's **first instinct**. **Wes has NOT formally decided yet** — see
+> [`PROJECT_NAME_CANDIDATES.md`](./people/PROJECT_NAME_CANDIDATES.md) for 100 candidates
+> + 3 top recommendations (Erebus's pick: **Villa del Cielo**).
+>
+> **To revert:** `git revert` the rename commit. The rename is atomic for clean rollback.
+>
 > **For Wesley van de Camp.** One page that tells you what's in this
 > repo, what only you can do, and what's already done.
 >
 > The repo is large (380+ docs, ~700 MB of source files). You don't need
 > to read most of it. Start here, then jump to the page you need.
 >
-> **Last updated 2026-07-03** (post-escritura, 6 days after signing).
+> **Last updated:** 2026-07-03 (post-escritura, 6 days after signing).
 
 ---
 
@@ -23,7 +31,7 @@
 | # | Document | What it answers |
 |---|---|---|
 | 1 | **`docs/HOUSING_PARK_CONCEPT.md`** | What the housing park vision is, what changed since escritura, what's still open |
-| 2 | **`docs/_reconciled/README.md`** | Single page summary of the reconciled Wes-files + Ivan-LQV merged view |
+| 2 | **`docs/_reconciled/README.md`** | Single page summary of the reconciled Wes-files + Ivan-RV merged view |
 | 3 | **`docs/_reconciled/OPEN_DECISIONS.md`** | The 30 open decisions that block Phase 1 (each with a recommended default) |
 | 4 | **`docs/audios/2026-06-30-wes-post-escritura/final/KEY_POINTS.md`** | Your 20 bullet points from the 5 audio sessions (3 min read) |
 | 5 | **`docs/people/WES_ACTIONS.md`** | The 5 things only you can do this week |
@@ -135,7 +143,7 @@ post-escritura audio-sourced questions.
 - `renders/` — 18 final PNG renders + sub-renders
 - `docs/site_data/` — 45 files of GIS / satellite / climate / biodiversity data (technical)
 - `docs/_archive/` — historical snapshots (do not read)
-- `docs/_reconciled/` — Wes-files + Ivan-LQV merged view (your section)
+- `docs/_reconciled/` — Wes-files + Ivan-RV merged view (your section)
 - `docs/audit/` — repo health audit (Ivan reads, not you)
 - `docs/ideas/` — 109 idea brainstorm catalog (skim, don't read all)
 

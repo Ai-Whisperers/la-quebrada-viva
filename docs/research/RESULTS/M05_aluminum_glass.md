@@ -46,12 +46,12 @@
 - Cons: Quality varies, smaller workshops have capacity limits, finish quality lower than factory
 - Best for: All other typologies (Type A Basic, Type B, Type C)
 
-**Recommended split for LQV:**
+**Recommended split for RV:**
 - Type A Luxe Spa (7 units): Import premium frames from Brazil (Aluar) or Spain (Genebre) — focus on finish quality for the premium price
 - All other types (23 units): Local Asunción workshops — Alear, FV distributors
 - Special: Kitchen + restaurant windows — local (frequent replacement expected)
 
-## Cost estimate for LQV Phase 1 (5 cabins)
+## Cost estimate for RV Phase 1 (5 cabins)
 
 - 5 cabins × 8 windows avg × Gs. 350,000 = **Gs. 14M (~ $2,000 USD)** for typical windows
 - 5 cabins × 1 sliding door × Gs. 1,000,000 = **Gs. 5M (~ $700 USD)** for sliding doors

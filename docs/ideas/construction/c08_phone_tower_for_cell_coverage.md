@@ -16,7 +16,7 @@ Tigo/Personal/Claro coverage map + tower options
 
 **From Wes's words:**
 
-> _"[Dream list 2026-06-30]: arijs" | Zijdelingse brainstorm over data-sales | Niet LQV-relevant, niet Acme-relevant | | F7 | "Marketing met 1M followers" | Hyperbool voor "groot bereik" | Realistisch: niche-targeted SEO + Booking.com | | F8 | "De audio moet ik luider zeggen" | Opname-instructie, niet wens | Geen actie nodig | --- ## §4 — Wensen voor de site / ervaring (geldig, lange termijn) | # | Wens | Wie | Termijn | |---|--"_
+> _"[Dream list 2026-06-30]: arijs" | Zijdelingse brainstorm over data-sales | Niet RV-relevant, niet Acme-relevant | | F7 | "Marketing met 1M followers" | Hyperbool voor "groot bereik" | Realistisch: niche-targeted SEO + Booking.com | | F8 | "De audio moet ik luider zeggen" | Opname-instructie, niet wens | Geen actie nodig | --- ## §4 — Wensen voor de site / ervaring (geldig, lange termijn) | # | Wens | Wie | Termijn | |---|--"_
 
 > _"[Raw transcript 2026-06-30]: ar dan WhatsApp je. Niet WhatsApp." > > "Chatty butty. Maar dan tegen je eigen agent. Dus niet dat je... Ja, ja, ja." > > "Maar dat is... Ja, maar de phone app. Ik kon het een keer werken. En dan moest ik het weer configureren." > > "Het werkt niet zo goed. Nog niet. Ja, het is een nieuwe technologie." *(Phone-app demo, WhatsApp-bot uitleg)* > "Het duurt een beetje tijd. Hetzelfde met de Hermes deskt"_
 
@@ -26,7 +26,7 @@ Tigo/Personal/Claro coverage map + tower options
 
 ## Full picture — context, constraints, history
 
-**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
+**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
 
 ## What we know already (research summary)
 
@@ -53,7 +53,7 @@ _No specific risks identified beyond standard category risks. Add as they emerge
 
 ## Cost / time estimate
 
-See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate.
+See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate.
 
 ## Done = shipped
 

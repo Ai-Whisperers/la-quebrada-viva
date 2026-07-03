@@ -16,7 +16,7 @@ $200 satellite vs $1,200 LiDAR drone comparison + provider list
 
 **From Wes's words:**
 
-> _"[Dream list 2026-06-30]: llucinaties) | # | Wens | Werkelijk doel | Wie kan het | Status | |---|---|---|---|---| | D1 | **3D/VR site placement tool** — huizen verplaatsen op satelliet, 5m, andere kant, grotere veranda | Interactieve LQV-site-map met typology-plaatsing | Erebus / Hermes | ✅ Reeds lopend via `lqv-walkthrough.pages.dev` | | D2 | **VR-bril walkthrough** — investeerder/koper loopt virtueel door huis | Buyer-facing 3DG"_
+> _"[Dream list 2026-06-30]: llucinaties) | # | Wens | Werkelijk doel | Wie kan het | Status | |---|---|---|---|---| | D1 | **3D/VR site placement tool** — huizen verplaatsen op satelliet, 5m, andere kant, grotere veranda | Interactieve RV-site-map met typology-plaatsing | Erebus / Hermes | ✅ Reeds lopend via `lqv-walkthrough.pages.dev` | | D2 | **VR-bril walkthrough** — investeerder/koper loopt virtueel door huis | Buyer-facing 3DG"_
 
 > _"[Dream list 2026-06-30]: S viewer (Three.js / Cesium / UE5) | Erebus + Vast.ai pipeline | 🟡 Pipeline klaar, wacht op Wes's Luma-captures | | D3 | **Satelliet-imagerie voor optimale huis-plaatsing** — zon, uitzicht, elkaar niet zien | Auto-layout script met zonsimulatie + viewshed-analyse | Erebus | 🟢 Mogelijk met ALOS DEM + Sentinel-2 albedo, Fase 2 | | D4 | **Foto's/VB rond de site** voor visuele refere"_
 

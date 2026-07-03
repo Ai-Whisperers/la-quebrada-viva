@@ -1,7 +1,7 @@
 # DEM Analysis Tooling — Research for v2
 
 > **For:** `scripts/analyze_dem.py` v2 + `lqv/site/terrain_62ha.py` heightmap pipeline
-> **Site:** La Quebrada Viva, Escobar/Paraguarí, PY (62 ha property, 3.3×3.3 km analysis bbox)
+> **Site:** Riverstone Valley, Escobar/Paraguarí, PY (62 ha property, 3.3×3.3 km analysis bbox)
 > **Existing:** 4 DEMs (ALOS 30m, Copernicus 30m, SRTM v3 GL1, NASADEM) in `docs/site_data/`
 > **Researcher:** AI Whisperers, 2026-06-10
 
@@ -353,7 +353,7 @@ if __name__ == "__main__":
 The current `terrain_62ha.py` is a 30-line stub. Replace it with this:
 
 ```python
-"""62-ha terrain mesh for the La Quebrada Viva Blender scene.
+"""62-ha terrain mesh for the Riverstone Valley Blender scene.
 
 Reads a heightmap pipeline output (sidecar JSON + 16-bit PNG displacement)
 and builds a subdivided plane with vertex displacement, sized to the real

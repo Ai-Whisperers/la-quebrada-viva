@@ -1,4 +1,4 @@
-# AUTONOMOUS_PLAN — La Quebrada Viva ultrawork (2026-06-13 → 2026-06-27)
+# AUTONOMOUS_PLAN — Riverstone Valley ultrawork (2026-06-13 → 2026-06-27)
 
 Source-of-truth plan at `/home/ai-whisperers/.claude/plans/glimmering-tumbling-fiddle.md`
 (Phases A–H **complete** at `85e86aa`). This file tracks the post-A→H asset-pivot +
@@ -7,7 +7,7 @@ project-roast/improvement-plan ultrawork wave.
 ## Goal
 
 1. Push downloaded asset count past **200** (currently 132 unique IDs on disk).
-2. Analyze every asset, integrate the top picks into LQV builders via sub-render-first
+2. Analyze every asset, integrate the top picks into RV builders via sub-render-first
    workflow.
 3. Honest roast of the entire project (critic), translate findings into a numbered
    improvement plan, implement the plan.

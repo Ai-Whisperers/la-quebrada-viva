@@ -1,4 +1,4 @@
-# Landsat C2-L2 annual greenness brief — La Quebrada Viva (Phase-0 §12 #8)
+# Landsat C2-L2 annual greenness brief — Riverstone Valley (Phase-0 §12 #8)
 
 _Pulled 2026-06-29 from USGS Landsat Collection 2 Level-2 Surface Reflectance via Microsoft Planetary Computer (`landsat-c2-l2`). 41-year stack 1985-2025, eight cleanest scenes per year (`eo:cloud_cover < 30 %`), QA_PIXEL-masked, per-year np.nanmedian composite at 30 m. Five sensors: TM-4 / TM-5 / ETM+ / OLI-8 / OLI-2. AOI: parcel polygon, 101×112 px on EPSG:32721 (~11 312 valid pixels per year, stable across the record). Output indices: NDVI, NBR, NDMI._
 

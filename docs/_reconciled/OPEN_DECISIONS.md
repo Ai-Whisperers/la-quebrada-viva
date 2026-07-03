@@ -36,7 +36,7 @@ Each open decision has:
 
 **See:** `BUSINESS_STRUCTURE.md` for full analysis
 
-**Tracked in:** LQV catalog `F01_4-entity_bv_cascade...md`
+**Tracked in:** RV catalog `F01_4-entity_bv_cascade...md`
 
 ---
 
@@ -80,11 +80,11 @@ Each open decision has:
 
 **See:** `CABIN_CATALOG.md` for the cross-reference table
 
-**Tracked in:** LQV catalog `house_typologies/` (4 ideas including T04 worker housing)
+**Tracked in:** RV catalog `house_typologies/` (4 ideas including T04 worker housing)
 
 ---
 
-## Decision 4 — LQV 3DGS pipeline integration
+## Decision 4 — RV 3DGS pipeline integration
 
 **What it is:** Ivan has a 3DGS self-host pipeline (Vast.ai + COLMAP + gsplat) + Three.js viewer. Where does it fit in Phase 1?
 
@@ -101,7 +101,7 @@ Each open decision has:
 
 **Status:** BLOCKED on Wes's captures (B07)
 
-**See:** `LAND_PARCEL.md` §4 + LQV catalog `B07_phone_capture_pipeline...md`
+**See:** `LAND_PARCEL.md` §4 + RV catalog `B07_phone_capture_pipeline...md`
 
 ---
 
@@ -124,7 +124,7 @@ Each open decision has:
 
 **See:** `MATERIALS_PRICE_TEMPLATE.md`
 
-**Tracked in:** LQV catalog `docs/ideas/construction/` (15 ideas)
+**Tracked in:** RV catalog `docs/ideas/construction/` (15 ideas)
 
 ---
 
@@ -145,9 +145,9 @@ Each open decision has:
 
 **Status:** OPEN — URGENT
 
-**See:** LQV catalog `I10_insurance_broker_pre-qualification...md` + `F05_insurance_stack...md` + `R01_fire_safety_plan...md`
+**See:** RV catalog `I10_insurance_broker_pre-qualification...md` + `F05_insurance_stack...md` + `R01_fire_safety_plan...md`
 
-**Tracked in:** LQV catalog `risk_mitigation/`
+**Tracked in:** RV catalog `risk_mitigation/`
 
 ---
 
@@ -168,7 +168,7 @@ Each open decision has:
 
 **Status:** OPEN
 
-**Tracked in:** LQV catalog `house_typologies/` + `operations/`
+**Tracked in:** RV catalog `house_typologies/` + `operations/`
 
 ---
 
@@ -189,7 +189,7 @@ Each open decision has:
 
 **Status:** OPEN
 
-**Tracked in:** LQV catalog `M01_booking.com_+_airbnb...md` + `I05_referral_program...md`
+**Tracked in:** RV catalog `M01_booking.com_+_airbnb...md` + `I05_referral_program...md`
 
 ---
 
@@ -250,7 +250,7 @@ Each open decision has:
 
 **Status:** OPEN
 
-**Tracked in:** LQV catalog `V02_2030_operational_milestone...md`
+**Tracked in:** RV catalog `V02_2030_operational_milestone...md`
 
 ---
 
@@ -271,7 +271,7 @@ Each open decision has:
 
 **Status:** OPEN — needs Sonja conversation
 
-**Tracked in:** LQV catalog `O02_hire_previous_owner's_caretaker...md` + `O10_cultural_adaptation...md`
+**Tracked in:** RV catalog `O02_hire_previous_owner's_caretaker...md` + `O10_cultural_adaptation...md`
 
 ---
 
@@ -296,13 +296,13 @@ Each open decision has:
 
 ## Decision 14 — "Riverstone Valley" as canonical project name? (NEW from W0.3)
 
-**What it is:** Wes's 2026-06-30 brainstorm surfaced 5 name candidates: Riverstone Valley, Villa del Cielo, Cielo Azul, Lluvia Dorada, Lluvia de Oro. Plus existing names: La Quebrada Viva (Ivan's), Eco Jungle Resort Paraguay (Wes's working files). WES_TODO W0.3 asks Wes to pick one.
+**What it is:** Wes's 2026-06-30 brainstorm surfaced 5 name candidates: Riverstone Valley, Villa del Cielo, Cielo Azul, Lluvia Dorada, Lluvia de Oro. Plus existing names: Riverstone Valley (Ivan's), Eco Jungle Resort Paraguay (Wes's working files). WES_TODO W0.3 asks Wes to pick one.
 
 **Options:**
 - (a) Riverstone Valley — Anglo, matches Eskenbach/suburbanization theme
 - (b) Villa del Cielo — Spanish, "mooi"
 - (c) Cielo Azul / Lluvia Dorada / Lluvia de Oro — other Spanish candidates
-- (d) Keep current (La Quebrada Viva or Eco Jungle Resort)
+- (d) Keep current (Riverstone Valley or Eco Jungle Resort)
 
 **Who decides:** Wes (5 minutes)
 
@@ -353,4 +353,4 @@ Each open decision has:
 - D5: online research for the 17 categories (60% coverage achievable in 1 week)
 - D8: marketing research (channels + comparables)
 
-**Tracked in:** LQV catalog `OPEN_DECISIONS.md` (mirror of this file in the catalog directory)
+**Tracked in:** RV catalog `OPEN_DECISIONS.md` (mirror of this file in the catalog directory)

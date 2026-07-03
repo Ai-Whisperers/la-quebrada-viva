@@ -1,4 +1,4 @@
-# Client — La Quebrada Viva
+# Client — Riverstone Valley
 > **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the project identity (Wes = 75% owner, Thijs = 25%, Ivan = digital support lead)). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
 
 

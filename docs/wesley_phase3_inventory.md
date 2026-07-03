@@ -30,7 +30,7 @@ bamboo_curved_roof_villa · clay_terracotta_estate
 **Amenities (4, §4 TERRAIN_PIVOT):** labrisa_lounge · eco_pool ·
 floating_dining · eco_retreat_modern_oasis
 
-**Site-scale sub-renders:** cob_bottle_lqv (the LQV reference), terrain
+**Site-scale sub-renders:** cob_bottle_lqv (the RV reference), terrain
 digital-twin (T-DT), features sub-render. Pelton micro-hydro is a
 sub-render driver, not a typology.
 

@@ -15,7 +15,7 @@ Years pulled: 1985–2023 (39 annual rasters)
 | 2015 | 81.9 | 81.9 | 2.6 | 0.0 |
 | 2023 | 84.0 | 84.0 | 1.8 | 0.0 |
 
-## Interpretation for La Quebrada Viva polygon
+## Interpretation for Riverstone Valley polygon
 
 - **Native forest fraction (classes 3 + 6) 1985 → 2023:** 80.6% → 84.0% (Δ +3.4 pp).
 - **Polygon footprint at 30 m:** ~382 pixels × 0.09 ha ≈ 34.4 ha (coarser than Hansen due to a different reprojection grid; treat as area-share indicator, not parcel-accurate hectarage).

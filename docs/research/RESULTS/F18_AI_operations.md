@@ -5,13 +5,13 @@
 
 ## What F18 is
 
-**AI tools for LQV's operational excellence:**
+**AI tools for RV's operational excellence:**
 - AI for customer service (chatbot, email triage)
 - AI for marketing (content generation, social media)
 - AI for operations (predictive maintenance, energy)
 - AI for booking (dynamic pricing, channel optimization)
 
-## LQV's specific AI use cases
+## RV's specific AI use cases
 
 ### 1. AI for guest communication (Chatlayer or similar)
 - Multilingual chatbot (Dutch, German, English, Spanish)

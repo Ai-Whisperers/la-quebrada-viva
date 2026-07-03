@@ -1,4 +1,4 @@
-# NASA & OpenTopography Data Inventory — La Quebrada Viva
+# NASA & OpenTopography Data Inventory — Riverstone Valley
 
 > What we pulled, what each one means, and what it tells us about the 62-ha property in Escobar, Paraguarí, Paraguay. Compiled by AI Whisperers (Ivan) on 2026-06-10.
 
@@ -339,7 +339,7 @@ For reproducibility, every data product above has a script that can re-fetch it.
 
 ## 11. Satellite data roadmap (T1–T4)
 
-Ranked list of satellite / GIS data sources to add to the LQV digital twin,
+Ranked list of satellite / GIS data sources to add to the RV digital twin,
 prioritised by impact-per-effort. T1 = high impact + low effort (do first).
 The canonical AOI for every fetcher is `docs/site_data/aoi_62ha.geojson`
 (loaded via `scripts/satellite/_aoi.py`).

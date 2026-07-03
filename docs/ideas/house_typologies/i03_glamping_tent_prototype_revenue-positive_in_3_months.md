@@ -16,7 +16,7 @@ A safari tent on a raised wooden deck, 25-40 m2, real bed, private bathroom with
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij LQV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet alle wensen zijn letterlijk bedoeld; §3 dreamlist toont wat genegeerd kan worden. 5. **Wesley is geen techneut** — moet niet overvallen worden met tech; iteratieve adoptie ("stapje voor stapje"). 6. **Ivan + Ki"_
+> _"[Action list 2026-06-30]: — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij RV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet alle wensen zijn letterlijk bedoeld; §3 dreamlist toont wat genegeerd kan worden. 5. **Wesley is geen techneut** — moet niet overvallen worden met tech; iteratieve adoptie ("stapje voor stapje"). 6. **Ivan + Ki"_
 
 > _"[Dream list 2026-06-30]: render-pipeline | | D9 | **In 2030 draait het** — eerste Sonja-boeking voor haar 60ste | Project-mijlpaal | Allen | 📅 T-3.5 jaar | | D10 | **AI assistent weet alle prijzen, is expert grondonderzoek, expert bouwen** — buddy niet tool | Erebus-context met capex-data + research-synthese | Erebus | ✅ Nu: 13 NL-prijzen-doc online + research corpus | --- ## §2 — Wensen voor AI assistent (geldig, kan AI)"_
 

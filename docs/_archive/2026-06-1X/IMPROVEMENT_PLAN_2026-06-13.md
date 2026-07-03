@@ -1,4 +1,4 @@
-# LQV Improvement Plan — 2026-06-13
+# RV Improvement Plan — 2026-06-13
 
 Numbered actions derived from `docs/CRITIQUE_2026-06-13.md`. Renderer at `85e86aa` is byte-frozen; no item below modifies `lqv/build_scene.py`. P0 items are escritura blockers (deadline 2026-06-27).
 

@@ -20,7 +20,7 @@ cost/throughput comparison
 
 ## Full picture — context, constraints, history
 
-**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
+**Construction, materials, site tech.** Reference price doc: [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate. Also: [bom.md](../../bom.md) — bill of materials for the cob house. [build_sequence.md](../../build_sequence.md) — physical construction phasing.
 
 ## What we know already (research summary)
 
@@ -47,7 +47,7 @@ _No specific risks identified beyond standard category risks. Add as they emerge
 
 ## Cost / time estimate
 
-See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD LQV cob house estimate.
+See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../research/2026-06-30_construction_prices_paraguay_nl.md) — 13 sections, 13 verifiable sources, $18,040 USD RV cob house estimate.
 
 ## Done = shipped
 

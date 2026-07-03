@@ -1,5 +1,5 @@
 ---
-title: "Fauna brief — La Quebrada Viva"
+title: "Fauna brief — Riverstone Valley"
 phase: Phase-0
 section: "§12 #4 extension"
 centroid: "-57.0355, -25.6073"
@@ -10,7 +10,7 @@ status: "v1 — synthesis on top of biodiversity_25km/ + new 5 km tight iNat pul
 parcel_inat_obs: 43
 ---
 
-# Fauna brief — La Quebrada Viva
+# Fauna brief — Riverstone Valley
 
 Parcel centroid `-57.0355, -25.6073` (-25.6073°S, -57.0355°W), ~350 m elevation, Atlantic Forest / Cerrado ecotone, Paraguarí.
 

@@ -1,7 +1,7 @@
-# Vegetation 3D Research — Atlantic Forest (La Quebrada Viva)
+# Vegetation 3D Research — Atlantic Forest (Riverstone Valley)
 
 Date: 2026-06-10
-Project: house-field (La Quebrada Viva)
+Project: house-field (Riverstone Valley)
 Scope: Identify ready-to-use 3D assets for the 7 procedural species already wired in `lqv/flora/` (pindo, lapacho, mango, fern, bamboo, agave, anthurium), pick a Sketchfab download pipeline, and produce a reproducible batch-fetch script.
 
 > **Headline finding:** 7 of the 10 GitHub repos in the original research list are **404 (deleted or moved)**. The project already has a curated Sketchfab shortlist for **6/7 species** in `CREDITS.md` — the real gap is **lapacho** and the **download pipeline itself** (the historical `nicoptere/sketchfab_downloader` is gone). The correct tool is the **Sketchfab Data API v3**, scripted in Python.

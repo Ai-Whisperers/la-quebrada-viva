@@ -68,7 +68,7 @@
 - Few mechanics know the platform
 - Parts wait time: 2-4x longer than Hilux
 - Specialist knowledge: rare
-- **For LQV bouwfase (remote property, lots of off-road) → Hilux is the right tool**
+- **For RV bouwfase (remote property, lots of off-road) → Hilux is the right tool**
 
 ## Recommendation (per F20 / AH03)
 
@@ -78,9 +78,9 @@
 - 4WD double cab
 - Parts: abundant, common, cheap
 - Mechanics: know it well
-- **For LQV's use case (remote property, rough roads, frequent off-road) → ideal tool**
+- **For RV's use case (remote property, rough roads, frequent off-road) → ideal tool**
 
-**Don't choose Tundra for LQV bouwfase.** The cost of slow repairs + parts wait + specialist fees would offset any Tundra power advantage (which LQV doesn't need).
+**Don't choose Tundra for RV bouwfase.** The cost of slow repairs + parts wait + specialist fees would offset any Tundra power advantage (which RV doesn't need).
 
 ## What Wes needs to do
 

@@ -1,7 +1,7 @@
 # Blender Render Prompt — Location Scene
 
 > **Status as of 2026-06-30:** Pre-escritura doc. Still authoritative for its specific scope (cob-house design / asset integration / research catalogue). For post-escritura housing-park scope, see `docs/HOUSING_PARK_CONCEPT.md` §0 and `docs/POST_ESCRITURA_NOW.md`. Updated 2026-07-03 (restructure pass).
-# "La Quebrada Viva" — Escobar District, Paraguarí, Paraguay
+# "Riverstone Valley" — Escobar District, Paraguarí, Paraguay
 # No house. The land itself. The world the house will inhabit.
 # Updated v2 — confirmed location + full stream analysis
 
@@ -29,7 +29,7 @@ The stream runs south from that cliff through the property.
 Create a photorealistic Blender render of a wild forest ravine in Escobar District, 
 Paraguarí Department, Paraguay — in the Cordillera de los Altos sandstone belt.
 This is a location scene with NO buildings — the site itself before the house is built.
-The scene is called "La Quebrada Viva" (The Living Ravine).
+The scene is called "Riverstone Valley" (The Living Ravine).
 
 The defining elements are: a spring-fed stream descending from a sandstone escarpment 
 through layered subtropical Atlantic Forest, channeled by 50–100 year old colonial stone 

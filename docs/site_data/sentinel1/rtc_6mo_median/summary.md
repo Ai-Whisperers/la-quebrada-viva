@@ -49,7 +49,7 @@ Microsoft Planetary Computer's `sentinel-1-rtc` collection is **Radiometrically 
 
 - Phase-0 §12 #6 (Sentinel-2 L2A timeseries, `docs/site_data/sentinel2/timeseries_2020_2025/`) is on the **same** 302×334 EPSG:32721 10 m grid. Per-pixel S2 NDVI median (optical canopy density) and S1 VH median (radar volume scatter) can be differenced/regressed without resampling. Expect them to correlate positively across the 62 ha.
 - Phase-0 §12 #10 (Hansen GFC, `docs/site_data/hansen_gfc/`) gives continuous treecover2000 / loss-year on a 30 m grid — VH median should track treecover2000 within the same parcel.
-- Phase-0 §12 #12 (JRC GSW, `docs/site_data/jrc_gsw/`) gives surface-water occurrence; SAR water-mask (VV<−15 dB AND ratio>10 dB) is the high-res LQV-only counterpart. No persistent open water expected inside the 62 ha bbox — see Batch I AWEIsh result.
+- Phase-0 §12 #12 (JRC GSW, `docs/site_data/jrc_gsw/`) gives surface-water occurrence; SAR water-mask (VV<−15 dB AND ratio>10 dB) is the high-res RV-only counterpart. No persistent open water expected inside the 62 ha bbox — see Batch I AWEIsh result.
 
 ## Files
 

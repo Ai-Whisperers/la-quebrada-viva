@@ -1,6 +1,6 @@
 # Houses Review — 2026-06-14
 
-Hand-off review gallery for Wesley's full La Quebrada Viva catalog: 13 typologies + 4 amenities, 3 variants each (A interior-dawn, B neutral mid-day, C hero-golden). 51 sub-renders total.
+Hand-off review gallery for Wesley's full Riverstone Valley catalog: 13 typologies + 4 amenities, 3 variants each (A interior-dawn, B neutral mid-day, C hero-golden). 51 sub-renders total.
 
 §-refs trace back to `docs/TERRAIN_PIVOT.md` (§3.x typologies, §4.x amenities). Thumbnail paths point at the `renders/sub/latest/` mirror — the per-run originals live at `renders/sub/runs/review_2026-06-14_<asset>/<variant>.png`.
 

@@ -1,4 +1,4 @@
-# OSM brief — La Quebrada Viva (5 km radius around KML centroid)
+# OSM brief — Riverstone Valley (5 km radius around KML centroid)
 
 Source: OpenStreetMap via Overpass API, ODbL 1.0  
 Pulled: 2026-06-29T18:18:08Z  

@@ -1,4 +1,4 @@
-# CHELSA v2.1 bioclim brief — La Quebrada Viva (Phase-0 §12 v1)
+# CHELSA v2.1 bioclim brief — Riverstone Valley (Phase-0 §12 v1)
 
 _Pulled 2026-06-29 from CHELSA v2.1 1981-2010 climatologies, 30-arcsec (~1 km) global grid, via the Switch.ch zhdk mirror (WorldClim UC Davis hosts are dead this session). AOI: 5 km buffer around parcel centroid (-57.0355, -25.6073). 19 standard BIO vars + 6 sample points (centroid + 4 KML corners + Wesley pin). 144 pixels @ ~1 km in the AOI window._
 

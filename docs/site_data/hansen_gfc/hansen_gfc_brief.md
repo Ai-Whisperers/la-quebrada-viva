@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-# Hansen GFC v1.12 forest-change brief — La Quebrada Viva (Phase-0 §12 v1)
+# Hansen GFC v1.12 forest-change brief — Riverstone Valley (Phase-0 §12 v1)
 
 > Hansen Global Forest Change v1.12 (2000-2024) tile `20S_060W` pulled
 > from `earthenginepartners-hansen` GCS bucket. Five layers

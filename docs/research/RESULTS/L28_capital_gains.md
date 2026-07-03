@@ -1,11 +1,11 @@
 # L28 — Capital gains tax (PY + NL) on property sale
 
 **Date:** 2026-06-30
-**Status:** MEM-based. Important for LQV exit strategy.
+**Status:** MEM-based. Important for RV exit strategy.
 
 ## What L28 is
 
-**When Wes + Thijs sell LQV (or part of it):**
+**When Wes + Thijs sell RV (or part of it):**
 - PY capital gains tax on the PY real estate (BV1)
 - NL capital gains tax on the holding (BV2 equity)
 - Total tax cost can be 10-30% of sale price
@@ -19,7 +19,7 @@
 - No exemption for primary residence
 - Can be deferred if proceeds are reinvested in PY real estate within 2 years
 
-**For LQV (sale at $5M):**
+**For RV (sale at $5M):**
 - 5% × $5M = **$250,000 in PY tax**
 - Or 15% × $4M net = $600,000
 - **Likely cost: $250K-$600K**
@@ -37,7 +37,7 @@
 - 26.9% on substantial interest capital gains
 - Participates in normal income tax calculation
 
-**For LQV (Wes's equity in BV2, sold at $5M):**
+**For RV (Wes's equity in BV2, sold at $5M):**
 - 26.9% × $4M gain (Wes's share) = **$1.08M in NL tax**
 - Plus Wes's other income (box 1 + box 2)
 - **Effective rate: 26.9% to 49.5% depending on brackets**
@@ -69,7 +69,7 @@
 
 **2. Reinvest in PY real estate:**
 - If proceeds reinvested in another PY property, can defer PY tax
-- Especially relevant if LQV expands to LQV-2 or related properties
+- Especially relevant if RV expands to RV-2 or related properties
 
 **3. Sell in tranches:**
 - Multiple smaller sales vs one large sale
@@ -86,7 +86,7 @@
 - PY estate tax is 0% for first Gs. 350M of inheritance
 - 5% for next tier
 - Strategic for Wes's personal estate
-- Not relevant for LQV sale, but for end-of-life
+- Not relevant for RV sale, but for end-of-life
 
 **6. Family office structure:**
 - Holdings via trust or family office

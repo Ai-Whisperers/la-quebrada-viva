@@ -153,9 +153,9 @@
 ### [I15: Artist residency / exchange program](./_archive/2026-06-30_autofill/amenities/i15_artist_residency___exchange_program.md)
 **P3** | Amenities | Wesley
 
-> Quarterly invited artists (painters, sculptors, photographers) stay 1 month at LQV in exchange for 1 artwork. Collection becomes a Wes-curated gallery.
+> Quarterly invited artists (painters, sculptors, photographers) stay 1 month at RV in exchange for 1 artwork. Collection becomes a Wes-curated gallery.
 
-**Shipped = Collection shown at LQV + sold (optional)**
+**Shipped = Collection shown at RV + sold (optional)**
 
 ---
 

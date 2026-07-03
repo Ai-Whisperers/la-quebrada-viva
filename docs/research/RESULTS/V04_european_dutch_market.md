@@ -4,7 +4,7 @@
 
 ## Why this matters
 
-LQV's primary target market is European/Dutch/German travelers visiting PY. Without understanding this market, marketing budget is wasted, pricing is wrong, and partnerships are wrong.
+RV's primary target market is European/Dutch/German travelers visiting PY. Without understanding this market, marketing budget is wasted, pricing is wrong, and partnerships are wrong.
 
 ## European/Dutch traveler profile
 
@@ -13,7 +13,7 @@ LQV's primary target market is European/Dutch/German travelers visiting PY. With
 - Income: €50,000-150,000/year (middle-to-upper-middle class)
 - Travel style: nature, culture, slow travel
 - Typical party: 2 adults, sometimes 1-2 children
-- Trip length: 2-3 weeks (combining LQV + Asunción + Iguazú)
+- Trip length: 2-3 weeks (combining RV + Asunción + Iguazú)
 - Budget: $150-300/day per couple
 
 **Their priorities:**
@@ -55,7 +55,7 @@ LQV's primary target market is European/Dutch/German travelers visiting PY. With
 - 1-2 days Encarnación / Jesuit ruins
 - Some add: Chaco, Pantanal, Mennonite colonies
 
-**The gap:** there's no major "eco-retreat / nature experience / 4-day slow-stay" option in PY. LQV fills this gap.
+**The gap:** there's no major "eco-retreat / nature experience / 4-day slow-stay" option in PY. RV fills this gap.
 
 ## What's in the market (competition)
 
@@ -76,7 +76,7 @@ LQV's primary target market is European/Dutch/German travelers visiting PY. With
 - Mostly budget/mid-range
 - Seasonal (peak = July-August European holidays)
 
-**LQV's niche (the gap to fill):**
+**RV's niche (the gap to fill):**
 - Nature retreat (Atlantic Forest setting)
 - Slow-stay (4-7 days, not 1-2)
 - European quality + local authenticity
@@ -84,7 +84,7 @@ LQV's primary target market is European/Dutch/German travelers visiting PY. With
 - Couple/family focus
 - Pre-built into phase 2: weddings, retreats, events
 
-## LQV pricing strategy
+## RV pricing strategy
 
 **Based on comparable properties:**
 
@@ -96,10 +96,10 @@ LQV's primary target market is European/Dutch/German travelers visiting PY. With
 | Awasi Iguazú (Brazil) | Foz do Iguaçu | $400-600 | 70% |
 | Estancia Lapacho (Loma Plata) | Loma Plata | $100-150 | 50-60% |
 | Casa de Campo Loma (Loma Plata) | Loma Plata | $120-180 | 50-60% |
-| **LQV target (eco retreat, 2p Basic)** | **Escobar** | **$150-200** | **40-60%** |
-| **LQV target (4p Luxe Spa)** | **Escobar** | **$300-450** | **30-50%** |
+| **RV target (eco retreat, 2p Basic)** | **Escobar** | **$150-200** | **40-60%** |
+| **RV target (4p Luxe Spa)** | **Escobar** | **$300-450** | **30-50%** |
 
-**LQV's $150-200/2p ADR is in line with PY mid-range but lower than Iguazú. The differentiator is the eco/wellness + family focus.**
+**RV's $150-200/2p ADR is in line with PY mid-range but lower than Iguazú. The differentiator is the eco/wellness + family focus.**
 
 ## Marketing channels
 

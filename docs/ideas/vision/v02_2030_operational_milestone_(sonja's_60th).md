@@ -20,7 +20,7 @@ milestone in TIMELINE.md
 
 > _"[Action list 2026-06-30]: waarde + gezondheid kudde | Week 3 | Wesley + dierenarts | | K3 | Afronden overname + nieuwe contract medewerker (vee + terrein) | Week 4 | Wesley + Sonja | | K4 | Terreinonderhoud-schema (weide, water, gezondheid) | Lopend | Nieuwe medewerker | --- ## §6 — FINANCIEEL / INVESTEERDERS | # | Taak | Wanneer | Owner | |---|---|---|---| | F1 | **Prijsraming voor plan** — wat kost het project totaal | We"_
 
-> _"[Action list 2026-06-30]: PUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij LQV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet a"_
+> _"[Action list 2026-06-30]: PUNTEN 1. **Culturele sensitiviteit** — Wesley wees expliciet op NL-direct vs PY-indirect. Niet te gul zijn ("oppas-geld") en niet te karig. → Vraag Sonja om details. 2. **Tiso/Thijs = Wesley's zakenpartner** — hem betrekken bij investeerder-pitches + contract-beslissingen. 3. **Saskia (schoonzus?)** — niet betrokken bij RV operationeel, kan helpen met content. 4. **Cannabis-context opname** — niet a"_
 
 > _"[Dream list 2026-06-30]: t lokale dieren** (jaguar, vogels) voor site-context | Asset library: lokale fauna modellen | Erebus | 🟡 Al geleverd in render-pipeline | | D9 | **In 2030 draait het** — eerste Sonja-boeking voor haar 60ste | Project-mijlpaal | Allen | 📅 T-3.5 jaar | | D10 | **AI assistent weet alle prijzen, is expert grondonderzoek, expert bouwen** — buddy niet tool | Erebus-context met capex-data + research-synthese"_
 
@@ -35,7 +35,7 @@ milestone in TIMELINE.md
 
 ## Full picture — context, constraints, history
 
-**Project-level anchor.** This is one of the top-level framing decisions for LQV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md).
+**Project-level anchor.** This is one of the top-level framing decisions for RV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md).
 
 ## What we know already (research summary)
 

@@ -1,6 +1,6 @@
 # la-quebrada-viva — project instructions
 
-This project supports **Wesley van de Camp** in visualizing a real 62-ha property in **Escobar District, Paraguarí, Paraguay**, on which Wesley plans a **housing park + restaurant + amenities**. The current 3D work renders **La Quebrada Viva**, a cob/bottle earthen house that's the first example building typology on the site. Renders are concept art; the site model is the durable deliverable. See `docs/HOUSING_PARK_CONCEPT.md` for the full vision and `docs/CLIENT.md` for who Wesley is.
+This project supports **Wesley van de Camp** in visualizing a real 62-ha property in **Escobar District, Paraguarí, Paraguay**, on which Wesley plans a **housing park + restaurant + amenities**. The current 3D work renders **Riverstone Valley**, a cob/bottle earthen house that's the first example building typology on the site. Renders are concept art; the site model is the durable deliverable. See `docs/HOUSING_PARK_CONCEPT.md` for the full vision and `docs/CLIENT.md` for who Wesley is.
 
 ## Document map — which file is authoritative for what
 
@@ -25,7 +25,7 @@ This project supports **Wesley van de Camp** in visualizing a real 62-ha propert
 - `docs/people/WES_ACTIONS.md` — 5 things-only-Wes-can-do this week (with action scripts).
 - `docs/people/ATTORNEY_BRIEF.md` — Full NL+PY dual-tax brief for the 4-BV cascade (24 questions, MERCOSUR holding structure).
 - `docs/people/SONJA_QUESTIONNAIRE.md` — 16 questions, 1 call. Covers wage bands for 7 worker roles + culture + worker contracts + IPS/aguinaldo.
-- `docs/people/CONTACTS.md` — LQV human network (Wes + Ivan + Kiki + Sonja + others). Living doc.
+- `docs/people/CONTACTS.md` — RV human network (Wes + Ivan + Kiki + Sonja + others). Living doc.
 - `docs/people/SITE_VISIT_BRIEF.md` — Day-by-day plan for Wes's next PY visit (W1.2 in WES_TODO history).
 - `docs/EUROPEAN_TOURISM_SPEC.md` — **Refined direction (2026-06-10, latest)**: houses-first vacation rentals for European / 1st-world travelers, restaurant later (European + Dutch, sourced via San Bernardino + German community). Style blend: resort + events + eco-natural retreat. 26 open questions.
 - `docs/RESEARCH_GAPS.md` — **Living tracker of what we still need to find out**. 34 base items + R39-R50 audio-synthesized (46 total), with status (🔴 open / 🟡 in-progress / 🟢 done / ⚫ blocked), owner (W / I / A / H / L), source, effort.

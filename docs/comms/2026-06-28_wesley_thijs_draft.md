@@ -34,7 +34,7 @@
 
 ## B · For Thijs — English, formal-but-warm, partner-to-investor
 
-**Suggested subject:** La Quebrada Viva · T+1 post-closing · land checks out, polygon confirmed
+**Suggested subject:** Riverstone Valley · T+1 post-closing · land checks out, polygon confirmed
 
 > Thijs,
 >
@@ -44,7 +44,7 @@
 >
 > - **30.9 ha buildable cluster** in the northern Mbopicua section — a subset of the 62.57 ha legal total. The remaining ~32 ha read as forest reserve / landscape asset rather than near-term build zone.
 > - **4.28 ha of flat ground** (<8 % slope) — comfortable footprint for the four Phase-1 cabins without terracing.
-> - **71.6 % south-southwest aspect** — cool faces, valley views, well-aligned with the LQV design rules (90 cm overhangs, passive cooling ≤35 °C).
+> - **71.6 % south-southwest aspect** — cool faces, valley views, well-aligned with the RV design rules (90 cm overhangs, passive cooling ≤35 °C).
 > - **NDVI 0.917** with a GEDI canopy height of 27.7 m — wall-to-wall mature Atlantic Forest. Sentinel-2 finds no clearings and no standing water inside the polygon.
 >
 > **Next 30 days are research, not construction.** No vendor outreach, no architect engagements, no drone flight, no proposals sent to Awasi or San Bernardino contacts. All of that is drafted locally in the repo and will only leave when Wesley signs off after his on-site photos arrive. The reason for the pause: the in-person photos he flagged will likely re-anchor at least a few satellite-derived assumptions (stream position, internal road, canopy species mix). Flying a drone or commissioning architects before those photos would risk burning quotes on geometry the photos would re-define.

@@ -5,7 +5,7 @@
 
 ## What M18 is
 
-**LQV's PR strategy covers:**
+**RV's PR strategy covers:**
 - Local press (Asunción + San Bernardino + Encarnación)
 - International press (Europe, especially NL + DE)
 - Online presence (TripAdvisor, Booking.com reviews, social)
@@ -64,7 +64,7 @@
 - Per M16 (content calendar)
 - IG + FB + TikTok
 
-**LQV website:**
+**RV website:**
 - 1 main site (per BR01 + D14 brand)
 - Booking.com channel
 - Optional: blog with travel + nature + project stories
@@ -75,7 +75,7 @@
 
 ## Word-of-mouth strategy
 
-**Most important for LQV:**
+**Most important for RV:**
 
 **1. Wes + Sonja's personal network (largest):**
 - 50-200 personal contacts each
@@ -84,7 +84,7 @@
 - Each contact is a potential guest
 - Personal invitations = first 5-10 bookings
 
-**2. LQV guests (post-stay):**
+**2. RV guests (post-stay):**
 - 30 cabins × 50% occupancy = 15 guests/week = 750/year
 - 10% refer someone = 75 referrals/year
 - Each referral = 1 new guest

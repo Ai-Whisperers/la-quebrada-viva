@@ -3,7 +3,7 @@
 **Confidence:** Medium for lead times, low for specific customs rates
 **Date:** 2026-06-30
 
-## Kitchen equipment categories for LQV Fase 1
+## Kitchen equipment categories for RV Fase 1
 
 For 5-cabin Phase 1 (estimated 20-30 covers/day at restaurant):
 - **Cooking line:** 4-burner range + oven + griddle + fryer

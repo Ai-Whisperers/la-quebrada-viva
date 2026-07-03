@@ -1,4 +1,4 @@
-# GBIF Species — La Quebrada Viva Region
+# GBIF Species — Riverstone Valley Region
 
 Bbox: -25.645°S to -25.615°S, -57.045°W to -57.015°W
 

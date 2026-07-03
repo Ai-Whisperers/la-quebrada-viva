@@ -47,7 +47,7 @@
 ## Marketing % of revenue target
 
 **Hospitality standard:** 5-10% of revenue for marketing
-**LQV target:** 8-10% of revenue (lower end)
+**RV target:** 8-10% of revenue (lower end)
 
 **For Fase 1 (Fase 1 revenue ~$200K/year):**
 - Target 10% = $20K marketing budget

@@ -74,7 +74,7 @@
 | **Cielo Azul** | Wes brainstorm | Spanish, "mooi" | BR03: check |
 | **Lluvia Dorada** | Wes brainstorm | German place + plant reference | BR03: check |
 | **Lluvia de Oro** | Wes brainstorm (variant) | German place + plant reference | BR03: check |
-| **La Quebrada Viva** | Ivan's working name | Existing brand | Check availability |
+| **Riverstone Valley** | Ivan's working name | Existing brand | Check availability |
 | **Eco Jungle Resort Paraguay** | Wes's working files | Descriptive | Check |
 
 ### Steps

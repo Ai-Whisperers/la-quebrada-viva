@@ -1,9 +1,9 @@
-# V01 — LQV as housing park + restaurant + events venue (FORMAL)
+# V01 — RV as housing park + restaurant + events venue (FORMAL)
 
 **Date:** 2026-06-30
 **Status:** Formal version. The strategic positioning of the project.
 
-## What LQV is (the canonical answer)
+## What RV is (the canonical answer)
 
 **Project name candidates (per BR01 — Wes decision pending):**
 - Riverstone Valley (recommended)
@@ -12,9 +12,9 @@
 - Lluvia Dorada
 - Lluvia de Oro
 
-**Once chosen:** LQV = 62-ha eco-vacation-rental park + restaurant + events venue in Escobar, Paraguarí, Paraguay.
+**Once chosen:** RV = 62-ha eco-vacation-rental park + restaurant + events venue in Escobar, Paraguarí, Paraguay.
 
-## What LQV is NOT
+## What RV is NOT
 
 - ❌ Eco-luxury generic resort
 - ❌ "Ecopark" (politically loaded term in PY)
@@ -23,7 +23,7 @@
 - ❌ Generic luxury hotel
 - ❌ "Coworking + nature" hub (that's Wes's separate AI work)
 
-## What LQV is (precise)
+## What RV is (precise)
 
 **Project Type:** Eco-vacation-rental park with cabined lodging + restaurant + events venue
 **Market segment:** European (Dutch, German) travelers + Asunción expats + San Bernardino weekend market

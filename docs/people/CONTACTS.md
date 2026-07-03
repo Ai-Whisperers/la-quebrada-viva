@@ -1,11 +1,11 @@
-# CONTACTS.md — LQV human network (Wes + Ivan + Kiki + Sonja + others)
+# CONTACTS.md — RV human network (Wes + Ivan + Kiki + Sonja + others)
 
 **Date:** 2026-06-30
 **Status:** Living document. Updates as contacts surface.
 
 ## Tier 1 — Critical (named, with role + function)
 
-| Person | Role | Function for LQV | Contact status | Source |
+| Person | Role | Function for RV | Contact status | Source |
 |---|---|---|---|---|
 | **Wesley van de Camp** | Founder + legal owner (75%) | All decisions + Netherlands-side actions | Internal | escritura |
 | **Thijs** | Co-founder + legal owner (25%) | Operational partner, also on-site periodically | Internal | escritura |

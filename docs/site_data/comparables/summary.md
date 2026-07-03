@@ -1,6 +1,6 @@
 # Protected areas + comparables — 50 km buffer (Phase-0 §12.D)
 
-Centroid: `-57.0355, -25.6073` (La Quebrada Viva)
+Centroid: `-57.0355, -25.6073` (Riverstone Valley)
 Buffer: 50 km radius (BBOX W=-57.5350 S=-26.0578 E=-56.5360 N=-25.1568)
 
 ## Counts by source
