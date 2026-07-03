@@ -51,6 +51,45 @@ Code changes (pass 5 polish, this entry):
 
 ---
 
+## [2026-07-03] — comprehensive link + content sweep (Pass 6)
+
+After the 5 restructure passes, did a fresh sweep of all readmes, indexes, and links. Found **1000+ broken link references** across the doc layer.
+
+**Sweep results:** 434 .md files scanned. **0 broken links remaining** (excluding known-fine: gitignored render PNGs, dist/, MEMORY.md, deck template tokens).
+
+Commits added (2, this entry):
+- `349592d` pass 5 — lint cleanup + CLAUDE.md doc-map accuracy + CHANGELOG entry
+- `d2c99a1` pass 6 — comprehensive link/content sweep, 0 broken refs across 434 .md files
+
+Doc layer fixes (155 files modified):
+
+- `ideas/INDEX.md` — REGENERATED from disk (was 22 KB with refs to 46 archived idea files). Now lists only the 63 surviving files.
+- `ideas/<cat>/README.md` (10 files) — REGENERATED. Each lists only surviving files in its category.
+- `ideas/SUGGESTED.md` — 10 broken refs redirected to `_archive/2026-06-30_autofill/<cat>/<file>.md`
+- 63 idea files — 567 refs fixed: `../../briefs/...` → `../../audios/...`, `../../INSIGHTS.md` → `../INSIGHTS.md`, `../../SUGGESTED.md` → `../SUGGESTED.md`, `../../research/2026-06-30_construction_prices_paraguay_nl.md` → `../../research/RESULTS/...`
+- 19 docs/*.md (status banners) — 60 wrong relative paths fixed: `../X` → `./X` (banners are siblings of X, not one level up)
+- 19 docs/*.md (cross-refs) — `./STATUS.md` → `../STATUS.md` etc. (refs to root-level files)
+- Cross-cat archived file refs (47 archived × multiple sources) — fixed to use `../_archive/2026-06-30_autofill/`
+- `render_catalogue/by_asset/*.md` (53 files) — contact_sheets refs fixed from .png → .jpg (actual file ext)
+- `render_catalogue/INDEX.md` — 5 `_preview_*.png` rows annotated "(local only — gitignored)"
+- `_reconciled/MASTER_BRIEF.md`, `_reconciled/README.md` — `briefs/` + `../X` paths fixed
+- `people/wesley_brief_onepager.md` — `./CLOSING_DAY_PREP.md` → `../CLOSING_DAY_PREP.md`
+- `TOOLING_AUDIT_AND_OPPORTUNITIES.md` — `docs/ARCHITECTURE.md` → `../ARCHITECTURE.md`
+- `CLIENT.md`, `CLOSING_DAY_PREP.md`, `contract_summary.md` — boleto PDF refs → text ref (file is gitignored)
+- `site_data/climate_cube.md` — `property_map_v2/index.md` → `property_map/index.md` (v2 dir deleted during pass 1)
+
+Root-level file moves:
+
+- `RECONCILIATION_2026-07-02.md` (one-time merge note, 6.2 KB) → `docs/_archive/RECONCILIATION_2026-07-02_merge_note.md`
+
+Root-level file regeneration:
+
+- `PROJECT_INDEX.md` (was 27 KB, said 1,186 files when actual is 1,861) — REGENERATED from disk state. Accurate layout, LOC summary, cold-start reading order.
+
+The previous note about ruff clean is now slightly outdated: 1 UP035 remains (typing.Tuple in scripts/analyze_polygon_ndvi_ndwi.py). Left for future pass; not blocking.
+
+---
+
 ## [Unreleased] — post-escritura sprint backlog
 
 **Freeze status:** Renderer byte-freeze at `85e86aa` was scoped to the print-pack contents. Print-pack at `dist/print_pack_2026-06-27/` is SHA-pinned independently on disk, so the post-`85e86aa` polish work cannot retroactively change shipped bytes. Material-registry work is OPEN since 2026-06-15 (commit `78433a7`, Ivan-authorized escritura beauty sprint). `build_scene.py` composite path remains untouched pending escritura close (2026-06-27).
