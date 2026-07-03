@@ -1,0 +1,131 @@
+# Repo Critique — Honest Read for Wes (2026-07-03)
+
+> **For Wesley.** Ivan asked Erebus to do an honest roast of the repo
+> and propose a restructure that serves YOU, not the developers.
+> This is the short version. The full audit is in
+> `docs/audit/CRITIQUE.md` (for Ivan/Kiki/Erebus eyes, not for you).
+>
+> **TL;DR:** The repo is over-built. ~380 docs is too many. The
+> information you need is scattered across 5-7 places. Here's the fix.
+
+---
+
+## What's working well ✅
+
+1. **The 5-minute read works** if you start at `docs/WES_INDEX.md`
+   (just added). The 5 docs there answer 90% of "where are we?" questions.
+2. **Your dream is captured** in the 7 audio synthesis files
+   (`docs/audios/2026-06-30-wes-post-escritura/final/`). They are the canon.
+3. **The 4-BV structure is locked** — the highest-leverage decision in
+   the whole project, and we have it.
+4. **Sonja-canonical rule is enforced** — every worker/culture/price
+   question routes through her. No more "ask Ivan" loops.
+
+## What's broken (and how we're fixing it) 🔥
+
+### 🔥 Problem 1: 109-idea catalog is mostly template-fill
+
+**Symptom:** The 109 idea files in `docs/ideas/` are well-formatted
+but ~60% of them have placeholder content ("no direct quote extracted",
+"category default", "standard category risks").
+
+**Why it happened:** Auto-generated in 2 large script passes, June 30.
+Good structure, weak substance.
+
+**Fix:** Mark the 30 load-bearing ideas (V01-V05, F01, B07, C07, M01,
+etc.) as **✓ reviewed**. Archive the other ~80 as
+`docs/ideas/_archive/2026-06-30_autopass/`. Keeps the structure for
+later verification but doesn't pretend they're done.
+
+**Wes impact:** You won't accidentally read a low-quality idea file and
+think it's verified. The 30 reviewed ones are the only ones that count
+for Phase 1 decisions.
+
+### 🔥 Problem 2: 3 contradictory "current state" docs
+
+**Symptom:** `STATUS.md` (last update 2026-06-25), `PROJECT_INDEX.md`
+(says 1,186 files, actual is ~2,200), and the post-escritura synthesis
+all claim to be "current state" — and all disagree.
+
+**Fix:** Rewrite `STATUS.md` once, post-escritura, and treat it as the
+single source of truth. Mark `PROJECT_INDEX.md` as deprecated.
+
+**Wes impact:** When you ask "what's the latest?", Ivan points at
+**ONE doc**, not three.
+
+### 🔥 Problem 3: 264 MB of pre-Wes-data-share snapshot is in the repo
+
+**Symptom:** `docs/site_data_2026-06-13_snapshot/` is 18 files,
+264 MB, all from before you shared your working file set. It's
+historical, but it's still in the tree.
+
+**Fix:** Gitignore it. Keep on local disk only. (Already proposed in
+`docs/audit/RESTRUCTURE_PLAN.md` Step 1.)
+
+**Wes impact:** None directly — but repo goes from 700 MB to 436 MB,
+faster clones for collaborators.
+
+### ⚠️ Problem 4: INSIGHTS.md is the best file but nobody links to it
+
+**Symptom:** `docs/ideas/INSIGHTS.md` (20 patterns, 18 KB) is the
+single most-valuable doc in the repo. But it's not in the root
+README, not in `WES_INDEX.md`, not in cold-start reading order.
+
+**Fix:** Surface it. Link from `WES_INDEX.md`, from the reconciled
+view's `OPEN_DECISIONS.md`, from `HOUSING_PARK_CONCEPT.md`.
+
+**Wes impact:** You read the 20 patterns, you get 80% of the project
+wisdom in 10 minutes.
+
+### 🪨 Problem 5: 910 MB of untracked bulk imagery
+
+**Symptom:** `docs/site_data_monday/hd_imagery/` (266 files, 910 MB)
+got accidentally created in the working dir during the Sprint 0
+research batch. Never committed, just sitting there.
+
+**Fix:** Gitignored as of 2026-07-03 (this commit). Regenerable from
+ESRI tile server if needed.
+
+**Wes impact:** None — purely hygiene.
+
+---
+
+## The proposed restructure (3 phases)
+
+### Phase 1 — Ship now (this commit + 2 more)
+
+- ✅ Add `docs/WES_INDEX.md` (this commit)
+- ✅ Add `docs/POST_ESCRITURA_NOW.md` (this commit)
+- 🔵 Rewrite `README.md` so it's aimed at you, not at devs
+- 🔵 Rewrite `STATUS.md` post-escritura
+
+### Phase 2 — Quality mark + archive (1 hour)
+
+- Add `Quality: ✓ reviewed / ○ auto / ✗ flagged` to all 109 idea files
+- Move ~80 low-quality auto-pass files to `docs/ideas/_archive/`
+- Keep the 12-section template (works when filled in) but stop
+  pretending all 109 are filled in
+
+### Phase 3 — Light trim (30 min, optional)
+
+- Gitignore the 264 MB pre-Wes snapshot
+- Compress the 50 MB MapBiomas rasters to 5-year sampling
+- Deprecate `PROJECT_INDEX.md` (already stale)
+
+**Net result:** ~30 high-quality idea files instead of 109 mixed ones.
+One current-state doc instead of three. A Wes-facing README + index.
+
+---
+
+## What I will NOT do (and why)
+
+- ❌ **Won't delete anything.** All archives stay in `_archive/`.
+- ❌ **Won't rewrite your audios.** They are canon, you said so, I won't touch.
+- ❌ **Won't consolidate the technical docs** (`lqv/`, `docs/site_data/`).
+  Those are for Ivan/Kiki/Erebus, not for you.
+- ❌ **Won't touch the financial model** until HG-1 attorney call lands
+  real numbers (not worth building twice).
+
+---
+
+*Generated by Erebus · 2026-07-03 · based on `docs/audit/CRITIQUE.md` + `RESTRUCTURE_PLAN.md`*

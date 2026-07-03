@@ -1,11 +1,32 @@
-# La Quebrada Viva
+# La Quebrada Viva — Riverstone Valley
 
-62-hectare parcel in Escobar District, Paraguarí, Paraguay (~26°36'S 56°51'W). Owned 75/25 by **Wesley van de Camp** + Thijs. Escritura signing: **2026-06-27**.
+62-hectare parcel in Escobar District, Paraguarí, Paraguay (~26°36'S 56°51'W). Owned 75/25 by **Wesley van de Camp** + Thijs. Escritura signed **2026-06-27**. Vision locked **2026-06-30** (5 audio recordings, 3h 19m, 28K words).
 
-Dual scope:
+## 👋 If you're Wesley — start here
+
+Open **[`docs/WES_INDEX.md`](docs/WES_INDEX.md)** — it's the one page
+built for you. 5-min read. Then the 5 things-only-you-can-do this week
+in **[`docs/people/WES_ACTIONS.md`](docs/people/WES_ACTIONS.md)**.
+
+If you want to know what's blocking Phase 1 right now: **[`docs/POST_ESCRITURA_NOW.md`](docs/POST_ESCRITURA_NOW.md)**.
+
+## 👋 If you're Ivan / Kiki / Erebus — start here
+
+Cold-start docs (open in this order):
+
+- [`docs/POST_ESCRITURA_NOW.md`](docs/POST_ESCRITURA_NOW.md) — what's blocking Phase 1, post-escritura
+- [`STATUS.md`](STATUS.md) — canonical current state
+- [`CLAUDE.md`](CLAUDE.md) — operating instructions for AI sessions
+- [`ARCHITECTURE.md`](ARCHITECTURE.md) — `lqv/` package map + fragility notes
+- [`docs/_reconciled/README.md`](docs/_reconciled/README.md) — Wes-files + Ivan-LQV merged view
+- [`docs/audit/CRITIQUE.md`](docs/audit/CRITIQUE.md) + [`RESTRUCTURE_PLAN.md`](docs/audit/RESTRUCTURE_PLAN.md) — repo health
+
+## Project scope
+
+Dual scope (post-escritura):
 
 1. **La Quebrada Viva cob house** — first example building typology on site. 18 photoreal Cycles finals (A/B/C × 6 cameras) shipped at byte-frozen commit `85e86aa`.
-2. **Escobar Housing Park** — Wesley's expanded vision: 15 vacation-rental typologies + 4 amenities for European / 1st-world travelers. Driven via the sub-render-first pipeline (`lqv/subscene/<asset>.py` → `renders/sub/runs/<RUN_ID>_<asset>/<variant>.png`).
+2. **Escobar Housing Park** ("Riverstone Valley") — Wesley's expanded vision: housing park + restaurant + wellness pool + ceremonies + family-anchored community. 15 vacation-rental typologies + 4 amenities. 4-BV corporate structure (machinepark principle). 2030 horizon (Sonja's 60th birthday).
 
 ## Deliverables (priority order)
 
