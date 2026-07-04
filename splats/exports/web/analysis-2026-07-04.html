@@ -667,26 +667,218 @@
 </footer>
 
 <!-- ============================================== -->
-<!-- MapLibre interactive map -->
+<!-- MapLibre interactive map (loaded on-demand to support WebGL-less browsers) -->
 <!-- ============================================== -->
-<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
 <script>
 (function () {
   'use strict';
 
+  // ---- Detect WebGL first, synchronously, before loading MapLibre ----
+  function detectWebGL() {
+    try {
+      const probe = document.createElement('canvas');
+      const gl = probe.getContext('webgl2')
+            || probe.getContext('webgl')
+            || probe.getContext('experimental-webgl');
+      return !!gl;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // ---- Show a static, no-WebGL fallback (Leaflet via CDN) ----
+  // Leaflet is CSS-based — no WebGL needed. We use it as the fallback
+  // so users without WebGL still see an interactive map.
+  function showLeafletFallback() {
+    // Set the mount height if not already
+    const mount = document.getElementById('map-mount');
+    if (!mount) return;
+    // Load Leaflet CSS dynamically
+    if (!document.getElementById('leaflet-css')) {
+      const link = document.createElement('link');
+      link.id = 'leaflet-css';
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+      link.crossOrigin = '';
+      document.head.appendChild(link);
+    }
+    // Load Leaflet JS
+    const s = document.createElement('script');
+    s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    s.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    s.crossOrigin = '';
+    s.onload = function () {
+      const L = window.L;
+      if (!L) return;
+      const map = L.map('map-mount', {
+        center: [-25.6082, -57.030],
+        zoom: 14,
+        zoomControl: true,
+      });
+      // Default: Esri satellite
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19, attribution: 'Esri World Imagery (CC-BY)'
+      }).addTo(map);
+
+      // Load all data and add as layers
+      const F = (p) => fetch('./data/' + p).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+
+      // Boundary
+      F('rv_boundary.geojson').then((b) => {
+        if (b) L.geoJSON(b, { style: { color: '#d4a154', weight: 2.5, fillOpacity: 0 }}).addTo(map);
+      });
+
+      // GPS waterfall (red star)
+      const gpsIcon = L.divIcon({
+        className: 'gps-marker',
+        html: '<div style="background:#ef4444;width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(239,68,68,0.6)"></div>',
+        iconSize: [18, 18], iconAnchor: [9, 9]
+      });
+      L.marker([-25.6074, -57.0264], { icon: gpsIcon })
+        .bindPopup('<b>⭐ GPS-confirmed waterfall</b><br>Altitude: 274m<br>Source: Wes walk 2026-06-28')
+        .addTo(map);
+
+      // Top 50 waterfalls
+      F('rv_waterfall_top50.geojson').then((data) => {
+        if (data) {
+          L.geoJSON(data, {
+            pointToLayer: (f, latlng) => {
+              const drop = f.properties.drop_to_lowest_neighbor_m || 0;
+              const color = drop > 15 ? '#ef4444' : drop > 8 ? '#f97316' : '#fbbf24';
+              const radius = Math.max(4, drop / 2);
+              return L.circleMarker(latlng, {
+                radius, fillColor: color, color: '#fff', weight: 1, fillOpacity: 0.8
+              });
+            },
+            onEachFeature: (f, layer) => {
+              const p = f.properties;
+              layer.bindPopup(`<b>Waterfall candidate</b><br>Drop: ${p.drop_to_lowest_neighbor_m}m<br>Elev: ${p.elevation_m}m`);
+            }
+          }).addTo(map);
+        }
+      });
+
+      // Wetlands
+      F('water_features_final.geojson').then((data) => {
+        if (data) {
+          const wetlands = data.features.filter(f => f.properties.category && f.properties.category.startsWith('wetland'));
+          L.geoJSON({ type: 'FeatureCollection', features: wetlands }, {
+            pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+              radius: 12, fillColor: '#06b6d4', color: '#fff', weight: 2, fillOpacity: 0.6
+            })
+          }).addTo(map);
+        }
+      });
+
+      // Trees (load hidden by default)
+      F('rv_trees.geojson').then((data) => {
+        if (data) {
+          const treeLayer = L.geoJSON(data, {
+            pointToLayer: (f, latlng) => {
+              const h = f.properties.canopy_height_m || 5;
+              return L.circleMarker(latlng, {
+                radius: Math.max(3, h / 3),
+                fillColor: h > 15 ? '#65a30d' : h > 10 ? '#84cc16' : '#a3e635',
+                color: '#fff', weight: 0.5, fillOpacity: 0.7
+              });
+            },
+            onEachFeature: (f, layer) => {
+              const p = f.properties;
+              layer.bindPopup(`<b>${p.tree_id}</b><br>${p.species}<br>Height: ${p.canopy_height_m}m`);
+            }
+          });
+          window.__lqvTreeLayer = treeLayer;
+          // Don't add by default
+        }
+      });
+
+      // Rocks
+      F('rv_rocks.geojson').then((data) => {
+        if (data) {
+          const rockLayer = L.geoJSON(data, {
+            pointToLayer: (f, latlng) => {
+              const score = f.properties.rock_score || 0;
+              return L.circleMarker(latlng, {
+                radius: 3 + score * 5,
+                fillColor: score > 0.85 ? '#cccccc' : '#999999',
+                color: '#fff', weight: 0.5, fillOpacity: 0.6
+              });
+            }
+          });
+          window.__lqvRockLayer = rockLayer;
+        }
+      });
+
+      // Wire basemap toggles
+      const baseMaps = {
+        satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
+        osm: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }),
+        topo: L.tileLayer('https://a.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 17 })
+      };
+      baseMaps.satellite.addTo(map);
+
+      document.querySelectorAll('[data-basemap]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-basemap]').forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          const which = btn.dataset.basemap;
+          Object.values(baseMaps).forEach((layer) => map.removeLayer(layer));
+          if (baseMaps[which]) baseMaps[which].addTo(map);
+        });
+      });
+
+      // Wire layer toggles
+      const layerMap = { trees: '__lqvTreeLayer', rocks: '__lqvRockLayer' };
+      document.querySelectorAll('[data-toggle]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const name = btn.dataset.toggle;
+          if (layerMap[name]) {
+            const layer = window[layerMap[name]];
+            if (layer) {
+              if (map.hasLayer(layer)) {
+                map.removeLayer(layer);
+                btn.classList.remove('active');
+              } else {
+                layer.addTo(map);
+                btn.classList.add('active');
+              }
+            }
+          } else if (name === 'all-waterfalls') {
+            // Just an info: all 50 are already shown
+            btn.classList.toggle('active');
+          }
+        });
+      });
+    };
+    s.onerror = function () {
+      // Even Leaflet failed — show a static message
+      mount.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#aaa;padding:2rem;text-align:center;font-family:sans-serif">Interactive map unavailable. All data is downloadable below.</div>';
+    };
+    document.head.appendChild(s);
+  }
+
+  // ---- MapLibre loader (with WebGL preflight) ----
   function loadMapLibre() {
+    if (!detectWebGL()) return Promise.reject(new Error('WebGL not supported in this browser'));
     if (window.maplibregl) return Promise.resolve(window.maplibregl);
     return new Promise((resolve, reject) => {
-      const probe = document.createElement('canvas');
-      const gl = probe.getContext('webgl') || probe.getContext('experimental-webgl');
-      if (!gl) return reject(new Error('WebGL not supported'));
       const s = document.createElement('script');
       s.src = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
-      s.onload = () => resolve(window.maplibregl);
+      s.onload = () => {
+        if (window.maplibregl) resolve(window.maplibregl);
+        else reject(new Error('MapLibre failed to initialize'));
+      };
       s.onerror = () => reject(new Error('Failed to load MapLibre'));
       document.head.appendChild(s);
     });
+  }
+
+  // ---- 1. Sync WebGL check — if no WebGL, go straight to Leaflet ----
+  if (!detectWebGL()) {
+    console.info('[LQV] WebGL not available — using Leaflet fallback');
+    showLeafletFallback();
+    return;
   }
 
   const F = (p) => fetch('./data/' + p).then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -696,24 +888,36 @@
     try {
       maplibregl = await loadMapLibre();
     } catch (e) {
-      const el = document.getElementById('map-mount');
-      if (el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#aaa;padding:2rem;text-align:center;font-family:sans-serif">This interactive map needs a desktop browser with WebGL.<br>All data is downloadable below.</div>';
+      console.warn('[LQV] MapLibre unavailable — falling back to Leaflet:', e.message);
+      showLeafletFallback();
       return;
     }
 
-    const map = new maplibregl.Map({
-      container: 'map-mount',
-      style: {
-        version: 8,
-        sources: {
-          'esri': { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256 },
-          'osm':  { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256 },
-          'topo':  { type: 'raster', tiles: ['https://a.tile.opentopomap.org/{z}/{x}/{y}.png'], tileSize: 256 },
+    let map;
+    try {
+      map = new maplibregl.Map({
+        container: 'map-mount',
+        style: {
+          version: 8,
+          sources: {
+            'esri': { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256 },
+            'osm':  { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256 },
+            'topo':  { type: 'raster', tiles: ['https://a.tile.opentopomap.org/{z}/{x}/{y}.png'], tileSize: 256 },
+          },
+          layers: [{ id: 'esri', type: 'raster', source: 'esri' }],
         },
-        layers: [{ id: 'esri', type: 'raster', source: 'esri' }],
-      },
-      center: [-57.030, -25.6082],
-      zoom: 14,
+        center: [-57.030, -25.6082],
+        zoom: 14,
+      });
+    } catch (e) {
+      console.warn('[LQV] MapLibre constructor failed — falling back to Leaflet:', e.message);
+      showLeafletFallback();
+      return;
+    }
+
+    map.on('error', (e) => {
+      // MapLibre runtime errors (e.g., context lost) — fall back
+      console.warn('[LQV] MapLibre runtime error:', e && e.error);
     });
 
     map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
@@ -746,7 +950,6 @@
         map.addLayer({ id: 'waterfalls-dot', type: 'circle', source: 'waterfalls',
           paint: { 'circle-radius': 6, 'circle-color': '#f97316', 'circle-opacity': 0.8, 'circle-stroke-color': '#fff', 'circle-stroke-width': 1 }
         });
-        // Click popup
         map.on('click', 'waterfalls-dot', (e) => {
           const p = e.features[0].properties;
           new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
@@ -764,7 +967,7 @@
         map.on('mouseenter', 'gps-waterfall-dot', () => map.getCanvas().style.cursor = 'pointer');
       }
 
-      // Wetlands (filter from water features)
+      // Wetlands
       const wf = await F('water_features_final.geojson');
       if (wf) {
         const wetlands = { type: 'FeatureCollection', features: wf.features.filter(f => f.properties.category && f.properties.category.startsWith('wetland')) };
