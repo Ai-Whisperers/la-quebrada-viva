@@ -1,0 +1,1209 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "lon": -57.01902777776062,
+        "lat": -25.625138888904488,
+        "elevation_m": 287.0,
+        "drop_to_lowest_neighbor_m": 28.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 28.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "lon": -57.018749999982845,
+        "lat": -25.625138888904488,
+        "elevation_m": 296.0,
+        "drop_to_lowest_neighbor_m": 28.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 28.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01652777776062,
+          -25.626805555571156
+        ]
+      },
+      "properties": {
+        "lon": -57.01652777776062,
+        "lat": -25.626805555571156,
+        "elevation_m": 235.0,
+        "drop_to_lowest_neighbor_m": 27.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 27.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.626805555571156
+        ]
+      },
+      "properties": {
+        "lon": -57.015972222205065,
+        "lat": -25.626805555571156,
+        "elevation_m": 234.0,
+        "drop_to_lowest_neighbor_m": 26.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 26.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01847222220507,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "lon": -57.01847222220507,
+        "lat": -25.625416666682266,
+        "elevation_m": 275.0,
+        "drop_to_lowest_neighbor_m": 25.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 25.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "lon": -57.01986111109396,
+        "lat": -25.625416666682266,
+        "elevation_m": 226.0,
+        "drop_to_lowest_neighbor_m": 24.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 24.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "lon": -57.018749999982845,
+        "lat": -25.625694444460045,
+        "elevation_m": 245.0,
+        "drop_to_lowest_neighbor_m": 24.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 24.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01819444442729,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "lon": -57.01819444442729,
+        "lat": -25.625694444460045,
+        "elevation_m": 260.0,
+        "drop_to_lowest_neighbor_m": 24.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 24.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.624583333348934
+        ]
+      },
+      "properties": {
+        "lon": -57.02041666664951,
+        "lat": -25.624583333348934,
+        "elevation_m": 207.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "lon": -57.01986111109396,
+        "lat": -25.625138888904488,
+        "elevation_m": 236.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0193055555384,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "lon": -57.0193055555384,
+        "lat": -25.625138888904488,
+        "elevation_m": 271.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "lon": -57.015972222205065,
+        "lat": -25.625138888904488,
+        "elevation_m": 298.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "lon": -57.018749999982845,
+        "lat": -25.625416666682266,
+        "elevation_m": 268.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01819444442729,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "lon": -57.01819444442729,
+        "lat": -25.625416666682266,
+        "elevation_m": 283.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "lon": -57.015972222205065,
+        "lat": -25.625416666682266,
+        "elevation_m": 290.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01569444442729,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "lon": -57.01569444442729,
+        "lat": -25.625416666682266,
+        "elevation_m": 267.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "lon": -57.01902777776062,
+        "lat": -25.625694444460045,
+        "elevation_m": 237.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01847222220507,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "lon": -57.01847222220507,
+        "lat": -25.625694444460045,
+        "elevation_m": 250.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01791666664951,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "lon": -57.01791666664951,
+        "lat": -25.625694444460045,
+        "elevation_m": 271.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "lon": -57.015972222205065,
+        "lat": -25.625694444460045,
+        "elevation_m": 285.0,
+        "drop_to_lowest_neighbor_m": 23.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 23.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01819444442729,
+          -25.61958333334893
+        ]
+      },
+      "properties": {
+        "lon": -57.01819444442729,
+        "lat": -25.61958333334893,
+        "elevation_m": 257.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02097222220507,
+          -25.621805555571154
+        ]
+      },
+      "properties": {
+        "lon": -57.02097222220507,
+        "lat": -25.621805555571154,
+        "elevation_m": 241.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02069444442729,
+          -25.622083333348932
+        ]
+      },
+      "properties": {
+        "lon": -57.02069444442729,
+        "lat": -25.622083333348932,
+        "elevation_m": 235.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.624861111126712
+        ]
+      },
+      "properties": {
+        "lon": -57.01958333331618,
+        "lat": -25.624861111126712,
+        "elevation_m": 264.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "lon": -57.01902777776062,
+        "lat": -25.625416666682266,
+        "elevation_m": 259.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01569444442729,
+          -25.625972222237824
+        ]
+      },
+      "properties": {
+        "lon": -57.01569444442729,
+        "lat": -25.625972222237824,
+        "elevation_m": 259.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01652777776062,
+          -25.626527777793378
+        ]
+      },
+      "properties": {
+        "lon": -57.01652777776062,
+        "lat": -25.626527777793378,
+        "elevation_m": 257.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01569444442729,
+          -25.626805555571156
+        ]
+      },
+      "properties": {
+        "lon": -57.01569444442729,
+        "lat": -25.626805555571156,
+        "elevation_m": 225.0,
+        "drop_to_lowest_neighbor_m": 22.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 22.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0168055555384,
+          -25.619305555571156
+        ]
+      },
+      "properties": {
+        "lon": -57.0168055555384,
+        "lat": -25.619305555571156,
+        "elevation_m": 279.0,
+        "drop_to_lowest_neighbor_m": 21.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 21.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "lon": -57.02041666664951,
+        "lat": -25.62236111112671,
+        "elevation_m": 225.0,
+        "drop_to_lowest_neighbor_m": 21.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 21.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.624861111126712
+        ]
+      },
+      "properties": {
+        "lon": -57.01986111109396,
+        "lat": -25.624861111126712,
+        "elevation_m": 242.0,
+        "drop_to_lowest_neighbor_m": 21.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 21.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0193055555384,
+          -25.624861111126712
+        ]
+      },
+      "properties": {
+        "lon": -57.0193055555384,
+        "lat": -25.624861111126712,
+        "elevation_m": 285.0,
+        "drop_to_lowest_neighbor_m": 21.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 21.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01763888887174,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "lon": -57.01763888887174,
+        "lat": -25.625694444460045,
+        "elevation_m": 280.0,
+        "drop_to_lowest_neighbor_m": 21.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 21.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0168055555384,
+          -25.626527777793378
+        ]
+      },
+      "properties": {
+        "lon": -57.0168055555384,
+        "lat": -25.626527777793378,
+        "elevation_m": 251.0,
+        "drop_to_lowest_neighbor_m": 21.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 21.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01624999998285,
+          -25.626527777793378
+        ]
+      },
+      "properties": {
+        "lon": -57.01624999998285,
+        "lat": -25.626527777793378,
+        "elevation_m": 258.0,
+        "drop_to_lowest_neighbor_m": 21.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 21.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.61958333334893
+        ]
+      },
+      "properties": {
+        "lon": -57.01986111109396,
+        "lat": -25.61958333334893,
+        "elevation_m": 241.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.61958333334893
+        ]
+      },
+      "properties": {
+        "lon": -57.015972222205065,
+        "lat": -25.61958333334893,
+        "elevation_m": 322.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01652777776062,
+          -25.61986111112671
+        ]
+      },
+      "properties": {
+        "lon": -57.01652777776062,
+        "lat": -25.61986111112671,
+        "elevation_m": 317.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.020138888871735,
+          -25.62013888890449
+        ]
+      },
+      "properties": {
+        "lon": -57.020138888871735,
+        "lat": -25.62013888890449,
+        "elevation_m": 267.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02208333331618,
+          -25.62097222223782
+        ]
+      },
+      "properties": {
+        "lon": -57.02208333331618,
+        "lat": -25.62097222223782,
+        "elevation_m": 226.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02124999998284,
+          -25.621805555571154
+        ]
+      },
+      "properties": {
+        "lon": -57.02124999998284,
+        "lat": -25.621805555571154,
+        "elevation_m": 225.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.622083333348932
+        ]
+      },
+      "properties": {
+        "lon": -57.02041666664951,
+        "lat": -25.622083333348932,
+        "elevation_m": 245.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02069444442729,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "lon": -57.02069444442729,
+        "lat": -25.62236111112671,
+        "elevation_m": 213.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.6237500000156
+        ]
+      },
+      "properties": {
+        "lon": -57.01902777776062,
+        "lat": -25.6237500000156,
+        "elevation_m": 288.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.624305555571155
+        ]
+      },
+      "properties": {
+        "lon": -57.01958333331618,
+        "lat": -25.624305555571155,
+        "elevation_m": 264.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.624305555571155
+        ]
+      },
+      "properties": {
+        "lon": -57.01902777776062,
+        "lat": -25.624305555571155,
+        "elevation_m": 303.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01791666664951,
+          -25.624861111126712
+        ]
+      },
+      "properties": {
+        "lon": -57.01791666664951,
+        "lat": -25.624861111126712,
+        "elevation_m": 326.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "lon": -57.01958333331618,
+        "lat": -25.625138888904488,
+        "elevation_m": 256.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01569444442729,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "lon": -57.01569444442729,
+        "lat": -25.625138888904488,
+        "elevation_m": 275.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01791666664951,
+          -25.625972222237824
+        ]
+      },
+      "properties": {
+        "lon": -57.01791666664951,
+        "lat": -25.625972222237824,
+        "elevation_m": 248.0,
+        "drop_to_lowest_neighbor_m": 20.0,
+        "higher_neighbors": 2,
+        "estimated_waterfall_height_m": 20.0,
+        "type": "waterfall_candidate",
+        "category": "waterfall",
+        "confidence": "high",
+        "source": "DEM step-detection (ALOS AW3D30 30m)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03618436227747,
+          -25.606809550482087
+        ]
+      },
+      "properties": {
+        "centroid_lat": -25.606809550482087,
+        "centroid_lon": -57.03618436227747,
+        "size_pixels": 5,
+        "approx_area_ha": 0.45,
+        "elevation_m_est": 176.2,
+        "category": "wetland_cluster",
+        "type": "wetland",
+        "source": "MapBiomas 2023",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03709166071443,
+          -25.60580343736387
+        ]
+      },
+      "properties": {
+        "centroid_lat": -25.60580343736387,
+        "centroid_lon": -57.03709166071443,
+        "size_pixels": 6,
+        "approx_area_ha": 0.54,
+        "elevation_m_est": 243.66666666666666,
+        "category": "wetland_cluster",
+        "type": "wetland",
+        "source": "MapBiomas 2023",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03648702542704,
+          -25.606204224182935
+        ]
+      },
+      "properties": {
+        "centroid_lat": -25.606204224182935,
+        "centroid_lon": -57.03648702542704,
+        "size_pixels": 13,
+        "approx_area_ha": 1.17,
+        "elevation_m_est": 214.30769230769232,
+        "category": "wetland_cluster",
+        "type": "wetland",
+        "source": "MapBiomas 2023",
+        "confidence": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0264,
+          -25.6074
+        ]
+      },
+      "properties": {
+        "lon": -57.0264,
+        "lat": -25.6074,
+        "gps_altitude_m": 274,
+        "category": "waterfall_confirmed",
+        "type": "waterfall",
+        "confidence": "very_high",
+        "source": "Wes GPS walk 2026-06-28",
+        "note": "Outside current DEM coverage (DEM ends at lat -25.615, waterfall at lat -25.607). GPS altitude 274m is the top of the waterfall; the drop is somewhere between 5-50m based on DEM elevation gradients in the parcel.",
+        "estimated_height_m": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0193,
+          -25.6318
+        ]
+      },
+      "properties": {
+        "lon": -57.0193,
+        "lat": -25.6318,
+        "elevation_m": 143,
+        "flow_accumulation_cells": 220.0,
+        "category": "quebrada_outlet",
+        "type": "stream_outlet",
+        "note": "Computed from DEM D8 flow accumulation - downstream end of main quebrada",
+        "confidence": "high"
+      }
+    }
+  ]
+}
