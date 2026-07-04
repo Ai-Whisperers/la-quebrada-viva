@@ -1,0 +1,50 @@
+{
+  "source": "Multi-source water feature detection (DEM + JRC GSW + MapBiomas + Sentinel-2 + GPS)",
+  "analysis_date": "2026-07-04",
+  "dem_bounds": {
+    "left": -57.04499999998285,
+    "right": -57.01499999998285,
+    "top": -25.6150000000156,
+    "bottom": -25.645000000015603
+  },
+  "dem_pixel_count": 11664,
+  "flow_accumulation_max": 220.0,
+  "stream_network_pixels": 3,
+  "stream_orders": {
+    "order_1_tributaries": 152,
+    "order_2_branches": 3,
+    "order_3_main": 0
+  },
+  "waterfall_candidates": {
+    "count": 0,
+    "note": "Heuristic \u2014 high slope + >5m elevation drop + in stream network. Verify on site."
+  },
+  "wetlands_mapbiomas": 24,
+  "wetlands_dem_based_pixels": 685,
+  "jrc_permanent_water": 0,
+  "jrc_seasonal_water": 0,
+  "spring_candidates": 30,
+  "riparian_zone_ha": 1.17,
+  "gps_waterfall": {
+    "lon": -57.0263979,
+    "lat": -25.6074104,
+    "cat": 72,
+    "desc": "GPS-hoogte: \u2191 274 m",
+    "type": "waterfall"
+  },
+  "sentinel2_ndwi_summary": {
+    "max_ndwi_date": "2024-10-19",
+    "max_ndwi_value": -0.6579148769378662,
+    "min_ndwi_date": "2021-05-08",
+    "min_ndwi_value": -0.7671009302139282,
+    "interpretation": "All NDWI values negative (<0) \u2014 quebrada is sub-pixel at Sentinel-2 10m resolution"
+  },
+  "gps_waterfall_match": {
+    "gps_coords": [
+      -57.0263979,
+      -25.6074104
+    ],
+    "gps_elevation_m": 184.0,
+    "is_in_stream_network": false
+  }
+}

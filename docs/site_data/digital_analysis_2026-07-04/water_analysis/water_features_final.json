@@ -1,0 +1,98 @@
+{
+  "analysis_date": "2026-07-04",
+  "method": "DEM step-detection + MapBiomas wetlands + GPS walk integration",
+  "dem_bounds": {
+    "left": -57.04499999998285,
+    "right": -57.01499999998285,
+    "top": -25.6150000000156,
+    "bottom": -25.645000000015603
+  },
+  "dem_coverage_note": "DEM covers lat -25.645 to -25.615 (southern part of GPS polygon). GPS waterfall at lat -25.607 is NORTH of coverage. To get full parcel coverage, acquire new DEM tiles.",
+  "gps_waterfall_in_dem_coverage": false,
+  "waterfall_candidates_count": 50,
+  "waterfall_candidates_top_5": [
+    {
+      "lon": -57.01902777776062,
+      "lat": -25.625138888904488,
+      "elevation_m": 287.0,
+      "drop_to_lowest_neighbor_m": 28.0,
+      "higher_neighbors": 2,
+      "estimated_waterfall_height_m": 28.0,
+      "type": "waterfall_candidate",
+      "category": "waterfall",
+      "confidence": "high",
+      "source": "DEM step-detection (ALOS AW3D30 30m)"
+    },
+    {
+      "lon": -57.018749999982845,
+      "lat": -25.625138888904488,
+      "elevation_m": 296.0,
+      "drop_to_lowest_neighbor_m": 28.0,
+      "higher_neighbors": 2,
+      "estimated_waterfall_height_m": 28.0,
+      "type": "waterfall_candidate",
+      "category": "waterfall",
+      "confidence": "high",
+      "source": "DEM step-detection (ALOS AW3D30 30m)"
+    },
+    {
+      "lon": -57.01652777776062,
+      "lat": -25.626805555571156,
+      "elevation_m": 235.0,
+      "drop_to_lowest_neighbor_m": 27.0,
+      "higher_neighbors": 2,
+      "estimated_waterfall_height_m": 27.0,
+      "type": "waterfall_candidate",
+      "category": "waterfall",
+      "confidence": "high",
+      "source": "DEM step-detection (ALOS AW3D30 30m)"
+    },
+    {
+      "lon": -57.015972222205065,
+      "lat": -25.626805555571156,
+      "elevation_m": 234.0,
+      "drop_to_lowest_neighbor_m": 26.0,
+      "higher_neighbors": 2,
+      "estimated_waterfall_height_m": 26.0,
+      "type": "waterfall_candidate",
+      "category": "waterfall",
+      "confidence": "high",
+      "source": "DEM step-detection (ALOS AW3D30 30m)"
+    },
+    {
+      "lon": -57.01847222220507,
+      "lat": -25.625416666682266,
+      "elevation_m": 275.0,
+      "drop_to_lowest_neighbor_m": 25.0,
+      "higher_neighbors": 2,
+      "estimated_waterfall_height_m": 25.0,
+      "type": "waterfall_candidate",
+      "category": "waterfall",
+      "confidence": "high",
+      "source": "DEM step-detection (ALOS AW3D30 30m)"
+    }
+  ],
+  "wetlands_count": 3,
+  "wetlands_clustered_count": 3,
+  "gps_waterfall": {
+    "lon": -57.0264,
+    "lat": -25.6074,
+    "gps_altitude_m": 274,
+    "category": "waterfall_confirmed",
+    "type": "waterfall",
+    "confidence": "very_high",
+    "source": "Wes GPS walk 2026-06-28",
+    "note": "Outside current DEM coverage (DEM ends at lat -25.615, waterfall at lat -25.607). GPS altitude 274m is the top of the waterfall; the drop is somewhere between 5-50m based on DEM elevation gradients in the parcel.",
+    "estimated_height_m": null
+  },
+  "quebrada_main_outlet": {
+    "lon": -57.0193,
+    "lat": -25.6318,
+    "elevation_m": 143,
+    "flow_accumulation_cells": 220.0,
+    "category": "quebrada_outlet",
+    "type": "stream_outlet",
+    "note": "Computed from DEM D8 flow accumulation - downstream end of main quebrada",
+    "confidence": "high"
+  }
+}
