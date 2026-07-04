@@ -1,0 +1,22 @@
+{
+  "source": "Computed from ALOS AW3D30 DEM",
+  "parcel_slope_mean_pct": 10.33,
+  "parcel_slope_median_pct": 7.41,
+  "valley_bottom_pct": 58.4,
+  "flat_areas_pct": 1.8,
+  "valley_elevation_band_m": [
+    121.0,
+    151.0
+  ],
+  "interpretation": {
+    "flat_areas": "Buildable, likely near quebrada or gentle ridges",
+    "valley_bottom": "Likely quebrada/riparian zones - keep forested for water protection",
+    "mid_slope": "Moderate terrain - cabin placement with terracing possible",
+    "steep_areas": "Preserve as forest, not for building"
+  },
+  "quebrada_estimate": {
+    "expected_location": "Likely runs through valley_bottom zone",
+    "estimated_width_m": "5-15m (typical quebrada in PY eastern hills)",
+    "flow_direction": "Likely W to E based on DEM gradient (low elevation on east)"
+  }
+}

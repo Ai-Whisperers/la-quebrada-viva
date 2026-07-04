@@ -1,0 +1,58 @@
+{
+  "chm_avg_m": {
+    "source": "Meta Tolan et al. 2024 (avg)",
+    "mean_m": 3.46,
+    "median_m": 1.22,
+    "p95_m": 13.01,
+    "min_m": 0.0,
+    "max_m": 24.52
+  },
+  "chm_median_m": {
+    "source": "Meta Tolan et al. 2024 (median)",
+    "mean_m": 3.3,
+    "median_m": 0.0,
+    "p95_m": 13.0,
+    "min_m": 0.0,
+    "max_m": 25.0
+  },
+  "chm_p95_m": {
+    "source": "Meta Tolan et al. 2024 (p95)",
+    "mean_m": 5.69,
+    "median_m": 5.0,
+    "p95_m": 16.0,
+    "min_m": 0.0,
+    "max_m": 31.0
+  },
+  "chm_cover_m": {
+    "source": "Meta Tolan et al. 2024 (cover)",
+    "mean_m": 42.36,
+    "median_m": 27.9,
+    "p95_m": 100.0,
+    "min_m": 0.0,
+    "max_m": 100.0
+  },
+  "chm_cover5m_m": {
+    "source": "Meta Tolan et al. 2024 (cover5m)",
+    "mean_m": 28.91,
+    "median_m": 2.7,
+    "p95_m": 100.0,
+    "min_m": 0.0,
+    "max_m": 100.0
+  },
+  "chm_stdev_m": {
+    "source": "Meta Tolan et al. 2024 (stdev)",
+    "mean_m": 1.33,
+    "median_m": 1.09,
+    "p95_m": 3.78,
+    "min_m": 0.0,
+    "max_m": 11.47
+  },
+  "chm_count_m": {
+    "source": "Meta Tolan et al. 2024 (count)",
+    "mean_m": 0.98,
+    "median_m": 1.0,
+    "p95_m": 3.0,
+    "min_m": 0.0,
+    "max_m": 9.0
+  }
+}

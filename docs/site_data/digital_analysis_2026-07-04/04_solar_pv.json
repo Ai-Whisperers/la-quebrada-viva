@@ -1,0 +1,13 @@
+{
+  "source": "COP30 DEM-derived slope + aspect (30m)",
+  "parcel_area_ha": 275.5,
+  "optimal_north_facing_pct": 0.2,
+  "optimal_area_ha": 0.5,
+  "suitable_pct": 7.4,
+  "suitable_area_ha": 20.5,
+  "pv_kw_per_hectare_theoretical": 1000,
+  "max_pv_capacity_suitable_kw": 20500,
+  "phase1_realistic_kw": "5-10 kW (cabins + restaurant)",
+  "panel_density_assumption": "1kW per 10m\u00b2 = 1 MW per hectare (conservative)",
+  "recommendation": "Place PV panels on north-facing building roofs or ridge tops. East-facing slopes (most common at RV) are suboptimal but acceptable."
+}

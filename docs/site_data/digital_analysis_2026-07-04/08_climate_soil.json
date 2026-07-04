@@ -1,0 +1,48 @@
+{
+  "source": "CHELSA v2.1 (1981-2010 climatologies, 30-arcsec)",
+  "parcel_coords": [
+    -57.03,
+    -25.63
+  ],
+  "temperature": {
+    "annual_mean_c": 21.4,
+    "warmest_month_max_c": 30.7,
+    "coldest_month_min_c": 12.3,
+    "annual_range_c": 18.5,
+    "no_frost": true,
+    "koppen": "Cfa (humid subtropical, no dry season)"
+  },
+  "precipitation": {
+    "annual_mm": 1776,
+    "wettest_quarter_mm": 580,
+    "driest_quarter_mm": 255,
+    "seasonality_pct_cv": 30,
+    "wet_season_concentration_pct": 70
+  },
+  "spatial_gradient_in_parcel": {
+    "NE_to_SW_temp_change_c": 0.3,
+    "NE_to_SW_precip_change_mm": -215,
+    "interpretation": "NE corner is wetter/cooler (gallery forest), SW corner is drier/warmer (cleared pasture)"
+  },
+  "soil_summary": {
+    "source": "SoilGrids 2.0 (250m point query + 6 sample points)",
+    "topsoil_0_5cm": {
+      "clay_pct": 19.5,
+      "ph": 5.4,
+      "bulk_density_kg_dm3": 1.18
+    },
+    "footing_depth_30_60cm_clay_pct": 28.3,
+    "interpretation": {
+      "clay_pct_19.5": "Moderate clay \u2014 good for cob construction (target 15-30%)",
+      "ph_5.4": "Slightly acidic \u2014 suitable for most plants, may need lime amendment for some",
+      "bulk_density_1.18": "Healthy soil (not compacted) \u2014 good for vegetation growth",
+      "clay_28.3_at_30_60cm": "Higher clay at depth \u2014 good for cob + water retention"
+    }
+  },
+  "implications": {
+    "cob_construction": "Soil is right for cob (clay + sand + straw). 19.5% clay topsoil is within the 15-30% range needed.",
+    "rainwater_harvesting": "1776 mm annual rain = excellent cistern refill rate",
+    "plant_species": "Cfa climate + slightly acidic soil suits Atlantic Forest native species",
+    "microclimate_zones": "NE corner (wetter/cooler) better for sensitive species; SW corner better for sun-loving crops"
+  }
+}

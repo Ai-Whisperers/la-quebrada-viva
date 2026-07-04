@@ -1,0 +1,143 @@
+{
+  "source": "Sentinel-2 L2A (10m native, EPSG:32721), element84 Earth-Search",
+  "time_period": "2020-03 to 2025-10 (5.5 years)",
+  "scenes_count": 12,
+  "ndvi_stats": {
+    "min": 0.728,
+    "max": 0.825,
+    "mean": 0.773,
+    "trend_2020_to_2025": 0.01
+  },
+  "water_index": {
+    "interpretation": "NDWI < 0 across all scenes = no open water at 10m resolution (quebrada is sub-pixel)",
+    "mean_ndwi": -0.706
+  },
+  "timeseries": [
+    {
+      "date": "2020-03-24",
+      "scene": "S2B_21JVM_20200324_1_L2A",
+      "cloud_pct": 0.004104,
+      "valid_pixels": 100860,
+      "ndvi": 0.7610350847244263,
+      "ndwi": -0.7003179788589478,
+      "mndwi": -0.5791510343551636,
+      "aweish": -0.6566924452781677
+    },
+    {
+      "date": "2020-12-09",
+      "scene": "S2B_21JVM_20201209_1_L2A",
+      "cloud_pct": 0.003224,
+      "valid_pixels": 100844,
+      "ndvi": 0.766178548336029,
+      "ndwi": -0.6930509805679321,
+      "mndwi": -0.5586180090904236,
+      "aweish": -0.7670405507087708
+    },
+    {
+      "date": "2021-05-08",
+      "scene": "S2B_21JVM_20210508_1_L2A",
+      "cloud_pct": 0.004754,
+      "valid_pixels": 100816,
+      "ndvi": 0.8251883387565613,
+      "ndwi": -0.7671009302139282,
+      "mndwi": -0.6277318000793457,
+      "aweish": -0.6030718088150024
+    },
+    {
+      "date": "2021-12-24",
+      "scene": "S2B_21JVM_20211224_1_L2A",
+      "cloud_pct": 0.003692,
+      "valid_pixels": 100860,
+      "ndvi": 0.7397814989089966,
+      "ndwi": -0.6853844523429871,
+      "mndwi": -0.5728968381881714,
+      "aweish": -0.7306761741638184
+    },
+    {
+      "date": "2022-04-18",
+      "scene": "S2A_21JVM_20220418_0_L2A",
+      "cloud_pct": 0.005662,
+      "valid_pixels": 100868,
+      "ndvi": 0.808790922164917,
+      "ndwi": -0.7359621524810791,
+      "mndwi": -0.5989094972610474,
+      "aweish": -0.6473670601844788
+    },
+    {
+      "date": "2022-11-24",
+      "scene": "S2A_21JVM_20221124_0_L2A",
+      "cloud_pct": 0.003481,
+      "valid_pixels": 100860,
+      "ndvi": 0.7697055339813232,
+      "ndwi": -0.6905477643013,
+      "mndwi": -0.5621715784072876,
+      "aweish": -0.7408420443534851
+    },
+    {
+      "date": "2023-03-19",
+      "scene": "S2B_21JVM_20230319_1_L2A",
+      "cloud_pct": 0.004665,
+      "valid_pixels": 100860,
+      "ndvi": 0.7890512943267822,
+      "ndwi": -0.7089604139328003,
+      "mndwi": -0.5745841860771179,
+      "aweish": -0.6338284611701965
+    },
+    {
+      "date": "2023-10-10",
+      "scene": "S2A_21JVM_20231010_0_L2A",
+      "cloud_pct": 0.004171,
+      "valid_pixels": 100860,
+      "ndvi": 0.7336647510528564,
+      "ndwi": -0.6646918654441833,
+      "mndwi": -0.5590702891349792,
+      "aweish": -0.6734382510185242
+    },
+    {
+      "date": "2024-03-13",
+      "scene": "S2B_21JVM_20240313_0_L2A",
+      "cloud_pct": 0.003606,
+      "valid_pixels": 100860,
+      "ndvi": 0.7823109030723572,
+      "ndwi": -0.7220069766044617,
+      "mndwi": -0.6133922934532166,
+      "aweish": -0.6640769839286804
+    },
+    {
+      "date": "2024-10-19",
+      "scene": "S2B_21JVM_20241019_1_L2A",
+      "cloud_pct": 0.002298,
+      "valid_pixels": 18524,
+      "ndvi": 0.7282277941703796,
+      "ndwi": -0.6579148769378662,
+      "mndwi": -0.5580915212631226,
+      "aweish": -0.667509138584137
+    },
+    {
+      "date": "2025-05-12",
+      "scene": "S2C_21JVM_20250512_0_L2A",
+      "cloud_pct": 0.004362,
+      "valid_pixels": 100864,
+      "ndvi": 0.80115807056427,
+      "ndwi": -0.7452327609062195,
+      "mndwi": -0.6163235306739807,
+      "aweish": -0.6330889463424683
+    },
+    {
+      "date": "2025-10-14",
+      "scene": "S2B_21JVM_20251014_0_L2A",
+      "cloud_pct": 0.003693,
+      "valid_pixels": 100856,
+      "ndvi": 0.7709622979164124,
+      "ndwi": -0.699491024017334,
+      "mndwi": -0.557054877281189,
+      "aweish": -0.7119413018226624
+    }
+  ],
+  "land_cover_2026_snapshot": {
+    "vegetation_pct": 89.88,
+    "bare_pct": 8.03,
+    "water_pct": 2.07
+  },
+  "drought_resilience_2022": "NDVI stayed >0.76 through 2022 La Ni\u00f1a drought \u2014 forest is drought-resilient"
+}

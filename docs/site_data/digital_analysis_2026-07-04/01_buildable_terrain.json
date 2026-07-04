@@ -1,0 +1,65 @@
+{
+  "source": "ALOS AW3D30 DEM (30m resolution, JPAL Global)",
+  "parcel_bounds_lon_lat": [
+    [
+      -57.038,
+      -57.029
+    ],
+    [
+      -25.612,
+      -25.605
+    ]
+  ],
+  "pixel_resolution_m": 27.8,
+  "parcel_area_analyzed_ha": 275.53,
+  "elevation_m": {
+    "min": 121.0,
+    "max": 263.0,
+    "mean": 149.8,
+    "median": 145.0,
+    "relief": 142.0
+  },
+  "slope_stats": {
+    "mean_pct": 10.33,
+    "median_pct": 7.41,
+    "p95_pct": 28.07,
+    "max_pct": 73.02
+  },
+  "buildable_classification": {
+    "flat_<5pct": {
+      "pixels": 1048,
+      "ha": 81.02,
+      "pct": 29.4
+    },
+    "moderate_5_15pct": {
+      "pixels": 1793,
+      "ha": 138.62,
+      "pct": 50.3
+    },
+    "steep_15_30pct": {
+      "pixels": 571,
+      "ha": 44.14,
+      "pct": 16.0
+    },
+    "very_steep_>30pct": {
+      "pixels": 152,
+      "ha": 11.75,
+      "pct": 4.3
+    }
+  },
+  "aspect_distribution_pct": {
+    "N": 8.6,
+    "NE": 14.5,
+    "E": 22.9,
+    "SE": 18.4,
+    "S": 14.3,
+    "SW": 10.3,
+    "W": 6.8,
+    "NW": 4.2
+  },
+  "best_build_zones": {
+    "flat_or_moderate": "79.7%",
+    "ha": "219.6 ha",
+    "suitable_for_cabins": "flat_or_moderate areas"
+  }
+}
