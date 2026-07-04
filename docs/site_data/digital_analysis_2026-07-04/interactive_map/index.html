@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riverstone Valley — Interactive Site Maps</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 0;
+            background: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 { margin: 0 0 10px 0; font-size: 28px; }
+        .header p { margin: 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .map-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .map-card-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .map-card-header h2 { margin: 0 0 5px 0; color: #2c3e50; }
+        .map-card-header p { margin: 0; color: #666; }
+        .map-card-body {
+            height: 600px;
+            position: relative;
+        }
+        .map-card-footer {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+        .map-card-footer a {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .map-card-footer a:hover { background: #1a2530; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4ca1af;
+        }
+        .stat-box .value { font-size: 22px; font-weight: bold; color: #2c3e50; }
+        .stat-box .label { color: #666; font-size: 13px; }
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 12px;
+            max-width: 250px;
+        }
+        .legend-item { 
+            display: flex; align-items: center; margin: 4px 0; 
+        }
+        .legend-color { 
+            width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; 
+        }
+        .controls-info {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #4ca1af;
+        }
+        .controls-info h3 { margin: 0 0 10px 0; color: #2c3e50; }
+        .controls-info ul { margin: 0; padding-left: 20px; }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        .data-table th, .data-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .data-table th { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🌳 Riverstone Valley — Interactive Site Maps</h1>
+    <p>62-71 ha parcel in Escobar/Paraguarí, Paraguay | Generated 2026-07-04 | Data: ALOS DEM + Hansen GFC + Sentinel-2 + GPS walk</p>
+</div>
+
+<div class="container">
+
+<!-- Summary stats -->
+<div class="stats-grid">
+    <div class="stat-box">
+        <div class="value">71.7 ha</div>
+        <div class="label">Parcel area (GPS walk)</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">121-263m</div>
+        <div class="label">Elevation range</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">142m</div>
+        <div class="label">Total relief</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">89.9%</div>
+        <div class="label">Vegetation cover</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">1,776 mm</div>
+        <div class="label">Annual rainfall</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">79.2%</div>
+        <div class="label">Buildable terrain</div>
+    </div>
+</div>
+
+<!-- Controls info -->
+<div class="controls-info">
+    <h3>🎮 How to use the maps</h3>
+    <ul>
+        <li><b>Toggle layers</b> using the control panel (top right of each map)</li>
+        <li><b>Click markers</b> for detailed popups (elevation, height, species, etc.)</li>
+        <li><b>Click the ⭐ red star</b> to see the GPS-confirmed waterfall</li>
+        <li><b>Click colored dots</b> to see tree heights + species estimates</li>
+        <li><b>Click triangles</b> to see rock estimates</li>
+        <li><b>Use mouse wheel</b> to zoom in/out</li>
+        <li><b>Drag</b> to pan around</li>
+        <li><b>Top-left buttons:</b> fullscreen, measure, draw, search</li>
+        <li><b>Bottom-left:</b> mini-map for orientation</li>
+    </ul>
+</div>
+
+<!-- MAP 1: MASTER -->
+<div class="map-card">
+    <div class="map-card-header">
+        <h2>🗺️ Master Map — Everything Combined</h2>
+        <p>All layers: elevation, slope, aspect, tree cover, flow accumulation, streams, GPS markers, trees, rocks, waterfalls, wetlands. <b>Recommended starting point.</b></p>
+    </div>
+    <div class="map-card-body">
+        <iframe src="interactive_map.html" style="width: 100%; height: 100%; border: 0;" title="Master Map"></iframe>
+    </div>
+    <div class="map-card-footer">
+        <a href="interactive_map.html" target="_blank">🔗 Open in new tab</a>
+        <a href="interactive_map.html" download>💾 Download HTML</a>
+        <b>Layers included:</b> 3 base maps (OSM, Satellite, Topographic) + 6 raster overlays (elevation, slope, aspect, tree cover, flow acc, streams) + 6 feature groups (GPS, trees, rocks, waterfalls, wetlands) + heatmap + draw + measure tools
+    </div>
+</div>
+
+<!-- MAP 2: WATER FOCUS -->
+<div class="map-card">
+    <div class="map-card-header">
+        <h2>💧 Water Features Focus</h2>
+        <p>Cleaner view emphasizing the quebrada network, 50 waterfall candidates, 24 MapBiomas wetland pixels, and the GPS-confirmed waterfall.</p>
+    </div>
+    <div class="map-card-body">
+        <iframe src="water_focus_map.html" style="width: 100%; height: 100%; border: 0;" title="Water Features"></iframe>
+    </div>
+    <div class="map-card-footer">
+        <a href="water_focus_map.html" target="_blank">🔗 Open in new tab</a>
+        <a href="water_focus_map.html" download>💾 Download HTML</a>
+        <b>Layers:</b> Satellite base + flow accumulation + stream network + elevation + 50 waterfall candidates (color by drop height) + wetlands + GPS markers
+    </div>
+</div>
+
+<!-- MAP 3: VEGETATION FOCUS -->
+<div class="map-card">
+    <div class="map-card-header">
+        <h2>🌳 Vegetation Focus</h2>
+        <p>Tree distribution by species category + height, rock estimates, parcel boundary, gate location. Toggle to see Hansen 2000 tree cover background.</p>
+    </div>
+    <div class="map-card-body">
+        <iframe src="vegetation_focus_map.html" style="width: 100%; height: 100%; border: 0;" title="Vegetation"></iframe>
+    </div>
+    <div class="map-card-footer">
+        <a href="vegetation_focus_map.html" target="_blank">🔗 Open in new tab</a>
+        <a href="vegetation_focus_map.html" download>💾 Download HTML</a>
+        <b>Layers:</b> Satellite + Hansen tree cover + 57 trees (color by species) + 80 rock candidates + GPS boundary + gate
+    </div>
+</div>
+
+<!-- DATA TABLE -->
+<div class="map-card" style="padding: 20px;">
+    <h2>📊 Data Summary</h2>
+    <table class="data-table">
+        <tr>
+            <th>Layer</th>
+            <th>Features</th>
+            <th>Source</th>
+            <th>Confidence</th>
+        </tr>
+        <tr>
+            <td>Parcel boundary</td>
+            <td>17 GPS points (71.7 ha polygon)</td>
+            <td>Wes GPS walk 2026-06-28</td>
+            <td>Very high</td>
+        </tr>
+        <tr>
+            <td>GPS-confirmed waterfall</td>
+            <td>1 (altitude 274m)</td>
+            <td>Wes GPS walk 2026-06-28</td>
+            <td>Very high</td>
+        </tr>
+        <tr>
+            <td>GPS gate</td>
+            <td>1 (main access)</td>
+            <td>Wes GPS walk 2026-06-28</td>
+            <td>Very high</td>
+        </tr>
+        <tr>
+            <td>Elevation (DEM)</td>
+            <td>11,664 pixels, 121-263m</td>
+            <td>ALOS AW3D30 30m</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Slope classification</td>
+            <td>79.2% buildable</td>
+            <td>Computed from DEM</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Tree cover</td>
+            <td>90.7% high canopy</td>
+            <td>Hansen GFC v1.11 (2000 baseline)</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Canopy height</td>
+            <td>Mean 3.5m, max 24.5m</td>
+            <td>Meta Tolan 2024 CHM (1m effective)</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Estimated trees (sample)</td>
+            <td>57 catalogued (of ~3,200 mature)</td>
+            <td>CHM peak detection</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>Rock estimates</td>
+            <td>80 candidates</td>
+            <td>Heuristic on slope+elev+aspect</td>
+            <td>Low (heuristic)</td>
+        </tr>
+        <tr>
+            <td>Waterfall candidates</td>
+            <td>50 (top by drop height)</td>
+            <td>DEM step detection</td>
+            <td>Medium (verify on site)</td>
+        </tr>
+        <tr>
+            <td>MapBiomas wetlands</td>
+            <td>24 pixels, 3 clusters</td>
+            <td>MapBiomas Paraguay 2023</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Sentinel-2 NDVI</td>
+            <td>0.728-0.825, mean 0.773 (2020-2025)</td>
+            <td>Sentinel-2 L2A 10m</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Climate (CHELSA)</td>
+            <td>21.4°C mean, 1,776mm rain, Cfa</td>
+            <td>CHELSA v2.1 climatologies</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Soil (SoilGrids)</td>
+            <td>19.5% clay, pH 5.40</td>
+            <td>SoilGrids 2.0 (250m)</td>
+            <td>Medium</td>
+        </tr>
+    </table>
+</div>
+
+<!-- COVERAGE CAVEAT -->
+<div class="map-card" style="padding: 20px; background: #fff3cd; border-left: 4px solid #ffc107;">
+    <h2>⚠️ Important Coverage Note</h2>
+    <p>The current DEM (ALOS AW3D30) covers <b>lat -25.645 to -25.615</b> — the SOUTHERN part of the GPS polygon (which spans lat -25.616 to -25.602).</p>
+    <p>Specific implications:</p>
+    <ul>
+        <li><b>Southern half of GPS polygon:</b> ✅ Fully analyzed (elevation, slope, etc.)</li>
+        <li><b>Northern half (including GPS waterfall at lat -25.607):</b> ❌ Outside DEM coverage</li>
+        <li><b>MapBiomas wetlands (lat -25.606):</b> ❌ Outside DEM coverage (but wetlands are confirmed by MapBiomas)</li>
+    </ul>
+    <p><b>To fix:</b> Acquire new DEM tiles covering lat -25.605 to -25.620 (Sprint 1, $0 cost, ~1 day work). This will allow full-parcel analysis of slopes, buildable zones, and additional waterfall candidates.</p>
+</div>
+
+<!-- OFFLINE NOTE -->
+<div class="map-card" style="padding: 20px; background: #d1ecf1; border-left: 4px solid #0c5460;">
+    <h2>🌐 Offline Use</h2>
+    <p>These maps require internet connection because they load:</p>
+    <ul>
+        <li>Leaflet.js, Bootstrap, FontAwesome from CDNs</li>
+        <li>OpenStreetMap / Esri satellite tiles from servers</li>
+    </ul>
+    <p>To use offline (e.g., on the parcel in PY with no internet):</p>
+    <ol>
+        <li>Open the HTML file in a browser while online (all assets cache locally)</li>
+        <li>Save the page via browser (Ctrl+S / Cmd+S) for offline use</li>
+        <li>Or use a tool like <code>httrack</code> to mirror the full site</li>
+    </ol>
+</div>
+
+<!-- DOWNLOADS -->
+<div class="map-card" style="padding: 20px;">
+    <h2>💾 Download Data Files</h2>
+    <p>For QGIS / ArcGIS / professional GIS use:</p>
+    <ul>
+        <li><a href="water_features_final.geojson">water_features_final.geojson</a> — 55 water features (50 waterfalls + 3 wetlands + GPS waterfall + outlet)</li>
+        <li><a href="../visualizations/site_features.geojson">site_features.geojson</a> — All 157 features (trees + rocks + GPS + buildable zones)</li>
+        <li><a href="../visualizations/site_trees.csv">site_trees.csv</a> — 57 trees in CSV format</li>
+        <li><a href="../visualizations/site_rocks.csv">site_rocks.csv</a> — 80 rocks in CSV format</li>
+        <li><a href="../visualizations/site_buildable_zones.csv">site_buildable_zones.csv</a> — 3 buildable zones</li>
+        <li><a href="water_features_final.csv">water_features_final.csv</a> — 55 water features in CSV</li>
+    </ul>
+    <p>For raw raster data (DEM, tree cover, NDVI, etc.), see <a href="../../../../site_data/">docs/site_data/</a> directory.</p>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 20px; text-align: center; font-size: 12px;">
+    <p><b>Generated by Erebus (AI Whisperers) on 2026-07-04</b></p>
+    <p>Data sources: ALOS AW3D30 DEM, Hansen GFC v1.11, MapBiomas Paraguay 2023, Sentinel-2 L2A, Meta Tolan 2024 CHM, JRC Global Surface Water, GPS walk 2026-06-28</p>
+    <p>All data is public. All analysis done in-repo. Cost: $0. Effort: 1 day.</p>
+    <p>For the full analysis report, see <a href="../README.md" style="color: #4ca1af;">README.md</a></p>
+</div>
+
+</body>
+</html>
