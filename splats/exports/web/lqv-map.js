@@ -10,13 +10,37 @@
   'use strict';
 
   // ---- WebGL preflight ----
+  // Cesium needs full WebGL2 OR WebGL with depth+stencil. Just probing basic
+  // WebGL isn't enough — we need to test the full context attributes Cesium uses.
   function detectWebGL() {
     try {
+      // Test 1: basic WebGL context
       const probe = document.createElement('canvas');
-      const gl = probe.getContext('webgl2')
+      let gl = probe.getContext('webgl2')
             || probe.getContext('webgl')
             || probe.getContext('experimental-webgl');
-      return !!gl;
+      if (!gl) return false;
+      // Test 2: can we get depth + stencil buffers (Cesium needs these)
+      const attrs = gl.getContextAttributes();
+      if (attrs && attrs.depth === false) return false;
+      // Test 3: try to allocate a small render buffer
+      const rb = gl.createRenderbuffer();
+      if (!rb) return false;
+      gl.bindRenderbuffer(gl.RENDERBUFFER, rb);
+      try {
+        gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_STENCIL, 1, 1);
+      } catch (e) {
+        return false;
+      }
+      gl.deleteRenderbuffer(rb);
+      // Test 4: try to compile a simple shader (Cesium uses shaders a lot)
+      const vs = gl.createShader(gl.VERTEX_SHADER);
+      gl.shaderSource(vs, 'attribute vec2 p;void main(){gl_Position=vec4(p,0,1);}');
+      gl.compileShader(vs);
+      const compiled = gl.getShaderParameter(vs, gl.COMPILE_STATUS);
+      gl.deleteShader(vs);
+      if (!compiled) return false;
+      return true;
     } catch (e) {
       return false;
     }
@@ -29,13 +53,15 @@
   function loadMapLibre() {
     if (!HAS_WEBGL) return Promise.reject(new Error('WebGL not supported'));
     if (window.maplibregl) return Promise.resolve(window.maplibregl);
-    return new Promise((resolve, reject) => {
-      const s = document.createElement('script');
-      s.src = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
-      s.onload = () => window.maplibregl ? resolve(window.maplibregl) : reject(new Error('MapLibre failed'));
-      s.onerror = () => reject(new Error('Failed to load MapLibre'));
-      document.head.appendChild(s);
-    });
+    // Load CSS first
+    if (!document.getElementById('maplibre-css')) {
+      const link = document.createElement('link');
+      link.id = 'maplibre-css';
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css';
+      document.head.appendChild(link);
+    }
+    return loadScript('https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js', { checkGlobal: 'maplibregl' });
   }
 
   // ---- 2. Leaflet fallback (CSS-based, no WebGL) ----
@@ -269,38 +295,88 @@
     });
   }
 
-  // ---- 4. Cesium 3D viewer ----
-  function buildCesium() {
-    if (!HAS_WEBGL) {
-      // Replace mount with a static image
+  // ---- Script loaders (Cesium + MapLibre) ----
+  function loadScript(src, attrs = {}) {
+    return new Promise((resolve, reject) => {
+      // Already loaded?
+      if (attrs.checkGlobal && window[attrs.checkGlobal]) return resolve(window[attrs.checkGlobal]);
+      const s = document.createElement('script');
+      s.src = src;
+      if (attrs.integrity) { s.integrity = attrs.integrity; s.crossOrigin = ''; }
+      s.onload = () => resolve(attrs.checkGlobal ? window[attrs.checkGlobal] : true);
+      s.onerror = () => reject(new Error('Failed to load ' + src));
+      document.head.appendChild(s);
+    });
+  }
+
+  // ---- Cesium 3D viewer ----
+  async function buildCesium() {
+    // Re-check WebGL fresh (the cached HAS_WEBGL might be stale)
+    if (!detectWebGL()) {
       const mount = document.getElementById('cesium-mount');
       if (mount) {
-        mount.innerHTML = '<div style="position:relative;width:100%;height:100%;background:linear-gradient(135deg,#1a2a1a 0%,#0a1a2a 100%);display:flex;align-items:center;justify-content:center"><div style="text-align:center;padding:2rem"><h3 style="color:#d4a154;margin-bottom:1rem;font-family:Cormorant Garamond,serif;font-size:1.8rem">3D viewer needs WebGL</h3><p style="color:#aaa;max-width:400px;margin:0 auto">Your browser has WebGL disabled or in a sandboxed environment. The static image below shows the property.</p></div></div>';
+        mount.innerHTML = '<div style="position:relative;width:100%;height:100%;background:linear-gradient(135deg,#1a2a1a 0%,#0a1a2a 100%);display:flex;align-items:center;justify-content:center"><div style="text-align:center;padding:2rem"><h3 style="color:#d4a154;margin-bottom:1rem;font-family:Cormorant Garamond,serif;font-size:1.8rem">3D viewer needs WebGL</h3><p style="color:#aaa;max-width:400px;margin:0 auto">Your browser has WebGL disabled or in a sandboxed environment. All data is downloadable below.</p></div></div>';
       }
       return;
     }
     const token = window.LQV_CESIUM_ION_TOKEN;
     if (!token) return;
-    if (!window.Cesium) return;
 
-    Cesium.Ion.defaultAccessToken = token;
-    const LON = -57.0355, LAT = -25.6073, ALT = 166;
-    const viewer = new Cesium.Viewer('cesium-mount', {
-      timeline: false, animation: false, baseLayerPicker: false, geocoder: false,
-      homeButton: false, sceneModePicker: false, navigationHelpButton: false,
-      fullscreenButton: false, infoBox: false, selectionIndicator: false, shadows: false,
-      terrainProvider: new Cesium.EllipsoidTerrainProvider(),
-    });
-    viewer.imageryLayers.removeAll();
-    viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
-      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-      maximumLevel: 18,
-    }));
-    viewer.camera.setView({
-      destination: Cesium.Cartesian3.fromDegrees(LON, LAT, ALT + 800),
-      orientation: { heading: 0, pitch: -Cesium.Math.toRadians(60), roll: 0 }
-    });
-    Cesium.createWorldTerrainAsync({}).then((t) => { viewer.terrainProvider = t; });
+    // Load Cesium + widgets CSS on demand
+    let Cesium;
+    try {
+      if (!document.getElementById('cesium-css')) {
+        const link = document.createElement('link');
+        link.id = 'cesium-css';
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/npm/cesium@1.121/Build/Cesium/Widgets/widgets.css';
+        document.head.appendChild(link);
+      }
+      Cesium = await loadScript('https://cdn.jsdelivr.net/npm/cesium@1.121/Build/Cesium/Cesium.js', { checkGlobal: 'Cesium' });
+      if (!Cesium || !Cesium.Viewer) throw new Error('Cesium did not initialize');
+    } catch (e) {
+      console.warn('[LQV] Cesium failed to load:', e.message);
+      const mount = document.getElementById('cesium-mount');
+      if (mount) {
+        mount.innerHTML = '<div style="position:relative;width:100%;height:100%;background:linear-gradient(135deg,#1a2a1a 0%,#0a1a2a 100%);display:flex;align-items:center;justify-content:center"><div style="text-align:center;padding:2rem"><h3 style="color:#d4a154;margin-bottom:1rem;font-family:Cormorant Garamond,serif;font-size:1.8rem">3D viewer unavailable</h3><p style="color:#aaa;max-width:400px;margin:0 auto">Could not load Cesium in this environment. The 2D map below shows the same data.</p></div></div>';
+      }
+      return;
+    }
+
+    let viewer;
+    try {
+      Cesium.Ion.defaultAccessToken = token;
+      const LON = -57.0355, LAT = -25.6073, ALT = 166;
+      viewer = new Cesium.Viewer('cesium-mount', {
+        timeline: false, animation: false, baseLayerPicker: false, geocoder: false,
+        homeButton: false, sceneModePicker: false, navigationHelpButton: false,
+        fullscreenButton: false, infoBox: false, selectionIndicator: false, shadows: false,
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(),
+      });
+    } catch (e) {
+      console.warn('[LQV] Cesium construction failed:', e.message);
+      const mount = document.getElementById('cesium-mount');
+      if (mount) {
+        mount.innerHTML = '<div style="position:relative;width:100%;height:100%;background:linear-gradient(135deg,#1a2a1a 0%,#0a1a2a 100%);display:flex;align-items:center;justify-content:center"><div style="text-align:center;padding:2rem"><h3 style="color:#d4a154;margin-bottom:1rem;font-family:Cormorant Garamond,serif;font-size:1.8rem">3D viewer unavailable</h3><p style="color:#aaa;max-width:400px;margin:0 auto">Your browser is in a sandboxed environment. The 2D map and the static renders below show the same data.</p></div></div>';
+      }
+      return;
+    }
+    // If construction succeeded, set up the viewer
+    try {
+      viewer.imageryLayers.removeAll();
+      viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        maximumLevel: 18,
+      }));
+      const LON = -57.0355, LAT = -25.6073, ALT = 166;
+      viewer.camera.setView({
+        destination: Cesium.Cartesian3.fromDegrees(LON, LAT, ALT + 800),
+        orientation: { heading: 0, pitch: -Cesium.Math.toRadians(60), roll: 0 }
+      });
+      Cesium.createWorldTerrainAsync({}).then((t) => { viewer.terrainProvider = t; });
+    } catch (e) {
+      console.warn('[LQV] Cesium setup partial:', e.message);
+    }
 
     let flyAround = null;
     document.querySelectorAll('[data-cesium-action]').forEach((btn) => {
