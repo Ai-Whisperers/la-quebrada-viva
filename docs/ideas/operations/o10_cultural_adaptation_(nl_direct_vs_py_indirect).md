@@ -30,12 +30,12 @@ cultural notes from Sonja (not too generous, not too tight)
 
 **Related insights from the catalog pass:**
 
-- [Insight #11: The biggest under-costed item is cultural adaptation (O10)](../INSIGHTS.md) — _The biggest under-costed item is cultural adaptation (O10)_
-- [Insight #19: One risk Wes hasn't named](../INSIGHTS.md) — _One risk Wes hasn't named_
+- [Insight #11: The biggest under-costed item is cultural adaptation (O10)](../_meta/INSIGHTS.md) — _The biggest under-costed item is cultural adaptation (O10)_
+- [Insight #19: One risk Wes hasn't named](../_meta/INSIGHTS.md) — _One risk Wes hasn't named_
 
 ## Full picture — context, constraints, history
 
-**Operations, team, AI workflow.** Wes + Thijs + Jos form the core operational team. O10 (cultural adaptation) is the highest-ROI 1-hour call per [Insight #11](../INSIGHTS.md). AI workflow items (O11-O15) integrate with the [lqv-bundle skill](../). Worker roster (O16) and equipment cascade (O17) tie back to F01 (BV cascade).
+**Operations, team, AI workflow.** Wes + Thijs + Jos form the core operational team. O10 (cultural adaptation) is the highest-ROI 1-hour call per [Insight #11](../_meta/INSIGHTS.md). AI workflow items (O11-O15) integrate with the [lqv-bundle skill](../). Worker roster (O16) and equipment cascade (O17) tie back to F01 (BV cascade).
 
 ## What we know already (research summary)
 
@@ -99,8 +99,8 @@ Varies by role. Typical PY rural wages: Gs. 1.5-3M/month ($200-400 USD). Account
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

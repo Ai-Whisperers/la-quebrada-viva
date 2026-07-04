@@ -8,7 +8,8 @@ Reports three classes of drift so the bundle stays attribution-complete:
 
 Slug derivation:
     assets/hdris/<slug>_4k.{exr,hdr}            -> <slug>
-    assets/hdris/_unused_wrong_biome/<slug>_4k* -> <slug> (still on disk -> still requires attribution)
+    assets/hdris/_unused_wrong_biome/<slug>_4k* -> <slug>
+                                                    (still on disk -> still requires attribution)
     assets/models/<slug>/                       -> <slug>
     assets/textures/<slug>/                     -> <slug>
     assets/{models,textures}/<vendor>/<slug>/   -> <slug> (vendor wrapper auto-detected

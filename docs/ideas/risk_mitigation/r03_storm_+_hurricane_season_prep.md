@@ -30,11 +30,11 @@ prep checklist + insurance trigger
 
 **Related insights from the catalog pass:**
 
-- [Insight #3: Insurance + fire risk are coupled and urgent](../INSIGHTS.md) — _Insurance + fire risk are coupled and urgent_
+- [Insight #3: Insurance + fire risk are coupled and urgent](../_meta/INSIGHTS.md) — _Insurance + fire risk are coupled and urgent_
 
 ## Full picture — context, constraints, history
 
-**Risk mitigation + safety.** PY insurance market is thin for eco-tourism per [Insight #3](../INSIGHTS.md). Wes is building wooden/bamboo houses in a forested area — fire risk is existential. Hard gate: insurance pre-qualification before breaking ground.
+**Risk mitigation + safety.** PY insurance market is thin for eco-tourism per [Insight #3](../_meta/INSIGHTS.md). Wes is building wooden/bamboo houses in a forested area — fire risk is existential. Hard gate: insurance pre-qualification before breaking ground.
 
 ## What we know already (research summary)
 
@@ -52,7 +52,7 @@ prep checklist + insurance trigger
 **This idea depends on / is informed by:**
 
 - [`R01`](../_archive/2026-06-30_autofill/risk_mitigation/r01_fire_safety_plan_(firebreaks_+_water_points).md) — fire
-- [`F05`](../finance_legal/f05_insurance_stack_(fire_+_storm_+_hurricane_+_liabil.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`F05`](../finance_legal/f05_insurance_stack_(fire_+_storm_+_hurricane_+_liabil.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

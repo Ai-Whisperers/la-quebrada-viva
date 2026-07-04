@@ -38,14 +38,15 @@ A Blender-driven photoreal model of a 62-ha parcel in Escobar/Paraguarí, Paragu
 | `LICENSE` | 1.7 KB | MIT license for code. |
 | `LICENSE_BUNDLE.md` | 9.4 KB | Per-license summary + bundle-readiness checklist. |
 | `Makefile` | 3.1 KB | Build orchestration (boq, deck, sub, render, etc.). |
-| `PROJECT_INDEX.md` | 26.9 KB | This file — full repo structural map. |
+| `PROJECT_INDEX.md` | ~ | This file — full repo structural map. |
 | `PROVENANCE.md` | 11.1 KB | Asset license + URL + SHA-256 manifest for all upstream data. |
 | `README.md` | 5.4 KB | Cold-start entry point. Two-track nav (Wes / dev). |
-| `RECONCILIATION_2026-07-02.md` | 6.1 KB | — |
 | `STATUS.md` | 29.7 KB | Canonical current state (render manifest, decisions log, critical dates). |
 | `build_scene.py` | 4.2 KB | 93-line entry point that wires lqv/ modules. |
 | `pyproject.toml` | 2.0 KB | Python project metadata + tooling config. |
 | `pyrightconfig.json` | 0.1 KB | Pyright type-checker config. |
+
+> **Last regenerated:** 2026-07-04 (post-restructure, 1875 tracked files).
 
 ## 4. LOC summary
 

@@ -30,7 +30,7 @@ A 30-300 house development that runs out of water in a drought is dead. Wes's ca
 
 ## Full picture — context, constraints, history
 
-_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../SUGGESTED.md) for the rationale._
+_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../_meta/SUGGESTED.md) for the rationale._
 
 See related existing ideas: [`C10`](../construction/c10_well_vs_stream_potable_water_decision.md), [`C05`](../construction/c05_water_purification_(concrete-chemical_vs_natural_w.md)
 
@@ -40,7 +40,7 @@ See related existing ideas: [`C10`](../construction/c10_well_vs_stream_potable_w
 
 ## What needs research
 
-_Suggested addition — see [SUGGESTED.md](../SUGGESTED.md) for context. Research tasks derived from gap analysis:_
+_Suggested addition — see [SUGGESTED.md](../_meta/SUGGESTED.md) for context. Research tasks derived from gap analysis:_
 
 - _No additional research tasks defined — see related ideas for context._
 
@@ -49,7 +49,7 @@ _Suggested addition — see [SUGGESTED.md](../SUGGESTED.md) for context. Researc
 **This idea depends on / is informed by:**
 
 - [`C10`](../construction/c10_well_vs_stream_potable_water_decision.md) — well vs stream
-- [`C05`](../construction/c05_water_purification_(concrete-chemical_vs_natural_w.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`C05`](../construction/c05_water_purification_(concrete-chemical_vs_natural_w.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

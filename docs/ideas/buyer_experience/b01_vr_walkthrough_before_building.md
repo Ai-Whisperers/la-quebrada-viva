@@ -30,8 +30,8 @@ lqv-walkthrough.pages.dev Three.js viewer
 
 **Related insights from the catalog pass:**
 
-- [Insight #6: The buyer-experience tools are 80% done — just needs the captures](../INSIGHTS.md) — _The buyer-experience tools are 80% done — just needs the captures_
-- [Insight #12: Three "research_needed" items have known answers Wes can act on](../INSIGHTS.md) — _Three "research_needed" items have known answers Wes can act on_
+- [Insight #6: The buyer-experience tools are 80% done — just needs the captures](../_meta/INSIGHTS.md) — _The buyer-experience tools are 80% done — just needs the captures_
+- [Insight #12: Three "research_needed" items have known answers Wes can act on](../_meta/INSIGHTS.md) — _Three "research_needed" items have known answers Wes can act on_
 
 ## Full picture — context, constraints, history
 
@@ -99,8 +99,8 @@ _Estimate pending — see "What needs research" section for named cost sources._
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

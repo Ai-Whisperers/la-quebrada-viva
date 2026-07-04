@@ -1,5 +1,5 @@
 # USER_ACTIONS — Satellite & Site-Data Build-Out
-> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the satellite-data user actions). For post-escritura state, see [`STATUS.md`([../STATUS.md]), [`WES_INDEX.md`([../WES_INDEX.md]), and [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).
+> **Status as of 2026-07-03:** Pre-escritura doc (last touched 2026-06-28). Still authoritative for its specific scope (the satellite-data user actions). For post-escritura state, see [`STATUS.md`](../../STATUS.md), [`WES_INDEX.md`](../wes/WES_INDEX.md), and [`POST_ESCRITURA_NOW.md`](../state/POST_ESCRITURA_NOW.md).
 
 
 This file lists things only you (Ivan) can do or provide. The repo side of

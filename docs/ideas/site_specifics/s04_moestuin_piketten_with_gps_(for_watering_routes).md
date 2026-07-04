@@ -30,7 +30,7 @@ GPS map + first piketten placed
 
 ## Full picture — context, constraints, history
 
-**RV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../INSIGHTS.md) + eco-framing matters per [Insight #8](../INSIGHTS.md).
+**RV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../_meta/INSIGHTS.md) + eco-framing matters per [Insight #8](../_meta/INSIGHTS.md).
 
 ## What we know already (research summary)
 
@@ -88,8 +88,8 @@ GPS piketten + ground stakes: $200-500. Land surveyor for first 13 typology posi
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

@@ -30,12 +30,12 @@ structure memo: roles, tax, equipment cascade mechanics
 
 **Related insights from the catalog pass:**
 
-- [Insight #1: The 4-entity BV cascade is the single highest-leverage decision](../INSIGHTS.md) — _The 4-entity BV cascade is the single highest-leverage decision_
-- [Insight #11: The biggest under-costed item is cultural adaptation (O10)](../INSIGHTS.md) — _The biggest under-costed item is cultural adaptation (O10)_
+- [Insight #1: The 4-entity BV cascade is the single highest-leverage decision](../_meta/INSIGHTS.md) — _The 4-entity BV cascade is the single highest-leverage decision_
+- [Insight #11: The biggest under-costed item is cultural adaptation (O10)](../_meta/INSIGHTS.md) — _The biggest under-costed item is cultural adaptation (O10)_
 
 ## Full picture — context, constraints, history
 
-**Finance, legal, insurance — the corporate spine.** F01 (4-entity BV cascade) is the single highest-leverage decision per [Insight #1](../INSIGHTS.md). Insurance + fire risk are coupled and urgent per [Insight #3](../INSIGHTS.md). Tax structuring (F11/F19) requires a NL+PY accountant.
+**Finance, legal, insurance — the corporate spine.** F01 (4-entity BV cascade) is the single highest-leverage decision per [Insight #1](../_meta/INSIGHTS.md). Insurance + fire risk are coupled and urgent per [Insight #3](../_meta/INSIGHTS.md). Tax structuring (F11/F19) requires a NL+PY accountant.
 
 ## What we know already (research summary)
 
@@ -106,8 +106,8 @@ NL+PY accountant: $500-2000 per consultation. NL BV set-up: ~€150 + ongoing ad
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

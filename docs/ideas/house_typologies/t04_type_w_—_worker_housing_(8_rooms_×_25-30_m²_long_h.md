@@ -28,7 +28,7 @@ renders: simple casings, pitched roof, kitchen, bathroom. Dutch-quality low-budg
 
 **Related insights from the catalog pass:**
 
-- [Insight #9: The 8-room worker house should be Phase 1, not Type A](../INSIGHTS.md) — _The 8-room worker house should be Phase 1, not Type A_
+- [Insight #9: The 8-room worker house should be Phase 1, not Type A](../_meta/INSIGHTS.md) — _The 8-room worker house should be Phase 1, not Type A_
 
 ## Full picture — context, constraints, history
 
@@ -90,8 +90,8 @@ Type A (30-40m² romantic): ~$22k build. Type B (40-80m² family): ~$30k. Type C
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK../../research/strategy/HOUSING_PARK_CONCEPT.mdRK_CONCEPT.m../../specs/tourism/EUROPEAN_TOURISM_SPEC.md(../../../../_reconciled/MASTER_BRIEF.md.md), [MAS../../research/strategy/RESEARCH_GAPS.mdSTER_BRIEF.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

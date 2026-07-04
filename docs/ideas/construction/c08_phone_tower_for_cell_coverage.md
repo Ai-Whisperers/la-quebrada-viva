@@ -84,9 +84,9 @@ See [docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md](../../
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [../../research/strategy/HOUSING_PARK_CONCEPT.md./HOUSING_PA../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdISM_SPE../../_reconciled/MASTER_BRIEF.mdTOURISM_SP../../research/strategy/RESEARCH_GAPS.mdmd](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
+- Related project docs: [../../research/strategy/HOUSING_PARK_CONCEPT.md./HOUSING_PA../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdISM_SPE../../_reconciled/MASTER_BRIEF.mdTOURISM_SP../../research/strategy/RESEARCH_GAPS.mdmd](../../state/MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

@@ -3,7 +3,7 @@
 > Canonical state document. Last updated 2026-07-03 (post-restructure pass).
 > The project is now **dual scope**: (a) the original 18-final Blender render matrix for the Riverstone Valley cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
 >
-> **2026-07-03 update (restructure pass):** Repo reorganized. 264 MB pre-Wes snapshot gitignored. MapBiomas compressed from 83 → 19 files (40 MB saved). Property_map v1/v2 consolidated. 109 idea files quality-marked (63 ✓ reviewed, 46 ○ auto-fill). New top-level nav: `docs/WES_INDEX.md` (one-page for Wes), `docs/POST_ESCRITURA_NOW.md` (5 hard gates). README rewired with Wes-track cold-start. See `docs/audit/RESTRUCTURE_PLAN.md` + `docs/CRITIQUE_FOR_WES.md`. Net repo: 696 MB → ~390 MB tracked.
+> **2026-07-03 update (restructure pass):** Repo reorganized. 264 MB pre-Wes snapshot gitignored. MapBiomas compressed from 83 → 19 files (40 MB saved). Property_map v1/v2 consolidated. 109 idea files quality-marked (63 ✓ reviewed, 46 ○ auto-fill). New top-level nav: `docs/wes/WES_INDEX.md` (one-page for Wes), `docs/state/POST_ESCRITURA_NOW.md` (5 hard gates). README rewired with Wes-track cold-start. See `docs/audit/RESTRUCTURE_PLAN.md` + `docs/wes/CRITIQUE_FOR_WES.md`. Net repo: 696 MB → ~390 MB tracked.
 >
 > **2026-06-30 update (post-escritura audio synthesis):** Wes recorded 5 audios
 > (3h 27m, ~28k words). Synthesis in `docs/audios/2026-06-30-wes-post-escritura/final/`.
@@ -16,9 +16,9 @@
 > §6.7.2 hovenier, §6.8.1 auto, §6.8.2 Ipakari, §7.1 2030, §8 Q26-33, §11.1 new
 > single most important question.**
 
-> **2026-06-10 update (mid-session):** Real GIS data acquired (4 DEMs, ~1,100 ha analyzed, 80% buildable, 264 m relief). Research synthesis complete in `docs/research/README.md` (5 sub-reports, ~80 repos). **Cloud-pool EULA blocker discovered** — `s3://lp-prod-protected/` 403s on URS-central, LP-DAAC-Cumulus, and direct-S3 paths. The fix is a separate "Earthdata Cloud Data Pool" consent accepted via `search.earthdata.nasa.gov` → click "Download" on a cloud-hosted GEDI file → accept the modal. GEDI HTTPS run mid-flight (18/27 granules, ~10 min remaining).
+> **2026-06-10 update (mid-session):** Real GIS data acquired (4 DEMs, ~1,100 ha analyzed, 80% buildable, 264 m relief). Research synthesis complete in `docs/research/strategy/README.md` (5 sub-reports, ~80 repos). **Cloud-pool EULA blocker discovered** — `s3://lp-prod-protected/` 403s on URS-central, LP-DAAC-Cumulus, and direct-S3 paths. The fix is a separate "Earthdata Cloud Data Pool" consent accepted via `search.earthdata.nasa.gov` → click "Download" on a cloud-hosted GEDI file → accept the modal. GEDI HTTPS run mid-flight (18/27 granules, ~10 min remaining).
 
-> **2026-06-10 update (end-of-session):** GEDI HTTPS run finished. 475 quality-filtered raw shots saved to `docs/site_data/gedi_l2a_points.csv`. **Data quality issue: the `elev_lowestmode` field has a unit/scaling bug** — median raw value is 4654 m, range 144–9145 m, while our 4 DEMs say the site is 116–380 m. After filtering to `100 < elev < 500 m` and joining DEM elevations, we have 25 usable shots. Canopy heights (which are elevation-independent) look right: 0–74 m (median 7.5 m, 75th pct 29 m). The 25 shots validate the DEM and confirm the Atlantic Forest is mature (canopy up to 74 m, median 37 m on cleaned data). Need cloud-pool EULA acceptance to re-pull cleanly via S3 streaming (would give us hundreds of usable shots in 5–10 min instead of the current sparse 25).
+> **2026-06-10 update (end-of-session):** GEDI HTTPS run finished. 475 quality-filtered raw shots saved to `docs/site_data/gedi/gedi_l2a_points.csv`. **Data quality issue: the `elev_lowestmode` field has a unit/scaling bug** — median raw value is 4654 m, range 144–9145 m, while our 4 DEMs say the site is 116–380 m. After filtering to `100 < elev < 500 m` and joining DEM elevations, we have 25 usable shots. Canopy heights (which are elevation-independent) look right: 0–74 m (median 7.5 m, 75th pct 29 m). The 25 shots validate the DEM and confirm the Atlantic Forest is mature (canopy up to 74 m, median 37 m on cleaned data). Need cloud-pool EULA acceptance to re-pull cleanly via S3 streaming (would give us hundreds of usable shots in 5–10 min instead of the current sparse 25).
 
 ---
 
@@ -89,7 +89,7 @@ The manifest table above was last frozen at session-start ("⏳ in progress" for
 - **Style blend**: resort + events + eco-natural retreat
 - **The cob house in the renders** is the first example building typology, not the whole vision
 
-See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEAN_TOURISM_SPEC.md` (the refined direction with Paraguay research).
+See `docs/research/strategy/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/specs/tourism/EUROPEAN_TOURISM_SPEC.md` (the refined direction with Paraguay research).
 
 ---
 
@@ -102,12 +102,12 @@ See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEA
 | `STATUS.md` | This file — current state | What exists, what's pending |
 | `CREDITS.md` | CC-BY asset attributions | License compliance |
 | `LICENSE_BUNDLE.md` | License stack | License compliance |
-| `docs/CLIENT.md` | Wesley = client, sellers, notary, intermediary, project relationship | Who this is for |
-| `docs/contract_summary.md` | Greppable boleto privado summary | Contract reference |
+| `docs/legal/CLIENT.md` | Wesley = client, sellers, notary, intermediary, project relationship | Who this is for |
+| `docs/legal/contract_summary.md` | Greppable boleto privado summary | Contract reference |
 | `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` | Original 5-page borrador | Source contract text |
-| `docs/HOUSING_PARK_CONCEPT.md` | 8-concept menu, restaurant deep-dive, Paraguay considerations, 25 questions | The big picture |
-| `docs/EUROPEAN_TOURISM_SPEC.md` | Refined direction with deep Paraguay research, 26 questions | The chosen path |
-| `docs/people/wesley_brief_onepager.md` | One-pager for the 27 Jun escritura signing | Wesley's read |
+| `docs/research/strategy/HOUSING_PARK_CONCEPT.md` | 8-concept menu, restaurant deep-dive, Paraguay considerations, 25 questions | The big picture |
+| `docs/specs/tourism/EUROPEAN_TOURISM_SPEC.md` | Refined direction with deep Paraguay research, 26 questions | The chosen path |
+| `docs/people/wes/wesley_brief_onepager.md` | One-pager for the 27 Jun escritura signing | Wesley's read |
 | `docs/audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md` | 15 idea-domains (NL) from post-escritura Wes audios | Wes's wensgenie-set |
 | `docs/audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md` | 28 prioritized actions P0-P4 (ES/EN) | Ivan's work queue |
 | `docs/audios/2026-06-30-wes-post-escritura/final/IDEAS_LOG.md` | 95 numbered ideas, V/A/S/F bucketed | Cross-reference |
@@ -116,17 +116,17 @@ See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEA
 | `docs/audios/2026-06-30-wes-post-escritura/final/RESEARCH_CATALOGUE.md` | 137 research items across 14 domains, V/A/S/F bucketed, owner-mapped | Complete topic map |
 | `docs/audios/2026-06-30-wes-post-escritura/drafts/` | Raw transcripts per audio (5 audios, ~28k words) | Source material |
 | `docs/audios/2026-06-30-wes-post-escritura/turboscribe_manifest.txt` | Single-file Turboscribe upload (95.7 MB mp3) | Cloud transcription backup |
-| `docs/CLOSING_DAY_PREP.md` | Printable T-7 / T-5 / T-2 / signing-day / T+30 checklist + risk register | Escritura logistics |
-| `docs/RESEARCH_GAPS.md` | 34-item tracker (tiers, status, owner, source, effort) | What we still don't know |
-| `docs/SESSION_LOG.md` | Narrative log of session work | Session continuity |
-| `docs/paraguay_clay_house_research.md` | 628-line site analysis (climate, hydrology, flora) | The site |
-| `docs/MASTER_BRIEF.md` | Design brief + 10 design rules | The design language |
-| `docs/asset_plan.md` | 3D asset production roadmap | Render-pipeline work |
-| `docs/master_plan.md` | Project master plan | The old plan |
-| `docs/external_assets.md` | External asset registry | Asset sourcing |
-| `docs/prompt_house_render.md` | Shot art direction | Render direction |
-| `docs/prompt_location_scene.md` | Location art direction | Render direction |
-| `docs/claude_code_blender_best_practices.md` | Generic tooling ref | Tooling |
+| `docs/legal/CLOSING_DAY_PREP.md` | Printable T-7 / T-5 / T-2 / signing-day / T+30 checklist + risk register | Escritura logistics |
+| `docs/research/strategy/RESEARCH_GAPS.md` | 34-item tracker (tiers, status, owner, source, effort) | What we still don't know |
+| `docs/state/SESSION_LOG.md` | Narrative log of session work | Session continuity |
+| `docs/research/paraguay_context/paraguay_clay_house_research.md` | 628-line site analysis (climate, hydrology, flora) | The site |
+| `docs/state/MASTER_BRIEF.md` | Design brief + 10 design rules | The design language |
+| `docs/specs/render/asset_plan.md` | 3D asset production roadmap | Render-pipeline work |
+| `docs/state/master_plan.md` | Project master plan | The old plan |
+| `docs/specs/assets_legal/external_assets.md` | External asset registry | Asset sourcing |
+| `docs/specs/render/prompt_house_render.md` | Shot art direction | Render direction |
+| `docs/comms/prompt_location_scene.md` | Location art direction | Render direction |
+| `docs/specs/render/claude_code_blender_best_practices.md` | Generic tooling ref | Tooling |
 
 ---
 
@@ -134,9 +134,9 @@ See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEA
 
 ### 4.1 Pre-closing (now → 27 Jun 2026) — highest priority
 
-For the day-by-day signing logistics, see [`docs/CLOSING_DAY_PREP.md`](docs/legal/CLOSING_DAY_PREP.md) (T-7 / T-5 / T-2 / signing-day / T+30 checklist with risk register).
+For the day-by-day signing logistics, see [`docs/legal/CLOSING_DAY_PREP.md`](docs/legal/CLOSING_DAY_PREP.md) (T-7 / T-5 / T-2 / signing-day / T+30 checklist with risk register).
 
-These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most decisions:
+These are the Tier 1 items from `docs/research/strategy/RESEARCH_GAPS.md` that block the most decisions:
 
 - [ ] **R01 — Site visit to Escobar** (human-in-PY; 1 day). Photograph the 6 fincas, terraces, stream, structures, road.
 - [ ] **R02 — Anexo I of the boleto** (Wesley + Escribana Peña; 1 day). Technical descriptions of each finca.
@@ -182,7 +182,7 @@ These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most deci
 - **2026-06-30 — POST-ESCRITURA AUDIO SYNTHESIS**:
 - **2026-06-10 — SESSION WORK**:
   - **Scope shift**: from single home (Riverstone Valley cob house) to housing park + restaurant. The cob house becomes the first example building typology, not the whole vision.
-  - **Client clarified**: Wesley = the client (75% legal owner, design decision-maker). Thijs = financial co-buyer, not the design client. Ivan / AI Whisperers = digital support lead, not the legal owner. The MASTER_BRIEF "Owner: Ivan" line is misleading; updated references in `docs/CLIENT.md` and `CLAUDE.md`.
+  - **Client clarified**: Wesley = the client (75% legal owner, design decision-maker). Thijs = financial co-buyer, not the design client. Ivan / AI Whisperers = digital support lead, not the legal owner. The MASTER_BRIEF "Owner: Ivan" line is misleading; updated references in `docs/legal/CLIENT.md` and `CLAUDE.md`.
   - **"Barro house scrapped" claim reframed**: not scrapped. It's the *first* example house within the larger housing park vision. The 12 existing renders stay valid as concept art for the cob typology.
   - **Refined direction**: houses first, restaurant later. Houses = Airbnb-style vacation rentals for European / 1st-world travelers. Restaurant = European-Dutch cuisine, sourced via San Bernardino + German community, deferred to Phase 3.
   - **Style blend**: resort + events + eco-natural retreat (not a pure eco retreat).
@@ -264,17 +264,17 @@ This file is the source-of-truth manifest for render state and the open-task led
 - `CREDITS.md` §Cross-references — this file is the source of truth for which `[PLANNED]` Sketchfab/Hyper3D entries in CREDITS.md actually got wired into the build vs deferred behind the MCP-socket block. CREDITS forward-points here for that disposition.
 - `LICENSE_BUNDLE.md` §8 Cross-references — the §6 bundle-readiness gates flip to ☑ only when a §1 manifest cell here flips to ☑ on the same release. This file is the trigger; LICENSE_BUNDLE is the checklist.
 - `LICENSES/README.md` §Cross-references — verbatim CC0 + CC-BY 4.0 mirror; the legal-code mirror only matters once §1 here ships 18/18 finals and a bundle release is cut. Until then it's a frozen reference.
-- `docs/SESSION_LOG.md` — narrative log of the 2026-06-10 mega-session; the per-tick render-state lines there ("16/18 finals on disk, C_dusk in flight at Sample 96/256") snapshot the §1 manifest at points in time. SESSION_LOG is the time-series view; this file is the current-state view.
-- `docs/asset_plan.md` §G Cross-references — the asset import phase ordering (Phase 1–8) plans the `[PLANNED]` → `[USED]` flips that downstream cascade through CREDITS.md and the LICENSE_BUNDLE §6 gates above. asset_plan is the forward plan; STATUS §4 is the current execution state.
-- `docs/external_assets.md` §Cross-references — download log + per-asset `[USED]` / `[PLANNED]` state, MCP-socket-block carve-out (Tasks #10 + #12). The blocked-asset rows there explain why several §4 open-task entries here are blocked rather than just deferred.
-- `docs/license_obligations.md` — narrative explanation of how each license obligation is satisfied at render-distribution time + repo-distribution time. The §6 critical date (2026-06-27 escritura) here is *not* a license trigger; license triggers are bundle releases, which are gated by the §1 manifest flipping to 18/18 ☑.
-- `docs/wesley_deliverable_bundle.md` — Tier-1 (renders only) + Tier-2 (full repo + license bundle) + Tier-3 (interactive Blender file) delivery plan. Tier-1 ships once §1 here reaches 18/18 ☑; Tier-2 ships once the LICENSE_BUNDLE §6 gates and CREDITS.md are also closed.
-- `docs/CLOSING_DAY_PREP.md` — printable T-7/T-5/T-2/signing-day checklist for the 2026-06-27 escritura. The §6 critical date here is the trigger; CLOSING_DAY_PREP is the actionable countdown.
-- `docs/research/README.md` (Phase 7.5 synthesis) — 10 design rules + 80-repo catalogue. Several §4 open-task rows here (Task #1 petal floating, MCP-blocked Tasks #10 + #12) were prioritised against the design-rule enforcement claims in that research synthesis.
-- `docs/RESEARCH_GAPS.md` — 34-item living gap tracker; the R01–R08 priority IDs named in §8 above ("Wesley answers R04 / R01 / R02 — these unblock everything") are defined and updated there. This file's §8 is the next-action ranking; RESEARCH_GAPS is the gap inventory.
-- `docs/CRITIQUE_2026-06-10.md` — 8-section honest critique of the repo: hygiene, `lqv/` code bloat (`materials.py` 341 lines), doc over-indexing (29 .md / ~470 KB), 14 dormant stubs, no remote, dead MCP socket. The §4 task ledger here was re-ranked against the critique's "over-documented as artifact, under-engineered as product" summary; §10 below captures the actionable defect carry-forward.
-- `docs/UPGRADE_PLAN.md` — tiered fix plan derived from CRITIQUE: Tier 0 (escritura-critical, 17 days), Tier 1 (high-value, 1-2 wks), Tier 2 (post-escritura), Tier 3 (research/long-tail). §4 open tasks #41-#46 in the next ledger refresh map to UPGRADE_PLAN T0.1-T0.6 + T1.1-T1.7.
-- `docs/sub_render_strategy.md` — architectural shift to sub-render-first workflow (31 targets, per-asset RNG derivation, `lqv/subscene/<asset>.py` drivers, `renders/sub/<asset>_<variant>.png` outputs). Composite via existing `build_scene.py` unchanged. The 14 dormant stubs called out in CRITIQUE §2 become parallelisable work once T1.1 lands the framework.
+- `docs/state/SESSION_LOG.md` — narrative log of the 2026-06-10 mega-session; the per-tick render-state lines there ("16/18 finals on disk, C_dusk in flight at Sample 96/256") snapshot the §1 manifest at points in time. SESSION_LOG is the time-series view; this file is the current-state view.
+- `docs/specs/render/asset_plan.md` §G Cross-references — the asset import phase ordering (Phase 1–8) plans the `[PLANNED]` → `[USED]` flips that downstream cascade through CREDITS.md and the LICENSE_BUNDLE §6 gates above. asset_plan is the forward plan; STATUS §4 is the current execution state.
+- `docs/specs/assets_legal/external_assets.md` §Cross-references — download log + per-asset `[USED]` / `[PLANNED]` state, MCP-socket-block carve-out (Tasks #10 + #12). The blocked-asset rows there explain why several §4 open-task entries here are blocked rather than just deferred.
+- `docs/specs/assets_legal/license_obligations.md` — narrative explanation of how each license obligation is satisfied at render-distribution time + repo-distribution time. The §6 critical date (2026-06-27 escritura) here is *not* a license trigger; license triggers are bundle releases, which are gated by the §1 manifest flipping to 18/18 ☑.
+- `docs/wes/wesley_deliverable_bundle.md` — Tier-1 (renders only) + Tier-2 (full repo + license bundle) + Tier-3 (interactive Blender file) delivery plan. Tier-1 ships once §1 here reaches 18/18 ☑; Tier-2 ships once the LICENSE_BUNDLE §6 gates and CREDITS.md are also closed.
+- `docs/legal/CLOSING_DAY_PREP.md` — printable T-7/T-5/T-2/signing-day checklist for the 2026-06-27 escritura. The §6 critical date here is the trigger; CLOSING_DAY_PREP is the actionable countdown.
+- `docs/research/strategy/README.md` (Phase 7.5 synthesis, post-restructure) — 10 design rules + 80-repo catalogue. Several §4 open-task rows here (Task #1 petal floating, MCP-blocked Tasks #10 + #12) were prioritised against the design-rule enforcement claims in that research synthesis.
+- `docs/research/strategy/RESEARCH_GAPS.md` — 34-item living gap tracker; the R01–R08 priority IDs named in §8 above ("Wesley answers R04 / R01 / R02 — these unblock everything") are defined and updated there. This file's §8 is the next-action ranking; RESEARCH_GAPS is the gap inventory.
+- `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` — 8-section honest critique of the repo: hygiene, `lqv/` code bloat (`materials.py` 341 lines), doc over-indexing (29 .md / ~470 KB), 14 dormant stubs, no remote, dead MCP socket. The §4 task ledger here was re-ranked against the critique's "over-documented as artifact, under-engineered as product" summary; §10 below captures the actionable defect carry-forward.
+- `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` — tiered fix plan derived from CRITIQUE: Tier 0 (escritura-critical, 17 days), Tier 1 (high-value, 1-2 wks), Tier 2 (post-escritura), Tier 3 (research/long-tail). §4 open tasks #41-#46 in the next ledger refresh map to UPGRADE_PLAN T0.1-T0.6 + T1.1-T1.7.
+- `docs/specs/render/sub_render_strategy.md` — architectural shift to sub-render-first workflow (31 targets, per-asset RNG derivation, `lqv/subscene/<asset>.py` drivers, `renders/sub/<asset>_<variant>.png` outputs). Composite via existing `build_scene.py` unchanged. The 14 dormant stubs called out in CRITIQUE §2 become parallelisable work once T1.1 lands the framework.
 
 ---
 
@@ -286,7 +286,7 @@ Defects discovered or carried forward against the 18/18 finals shipped at commit
 - **#10 — Phase 4 Sketchfab flora batch — MCP-blocked**. Sketchfab fauna/people/tools downloads cannot proceed; `mcp__blender__search_sketchfab_models` calls fail (socket dead). 7-9 missing PBR slugs + Hyper3D pindo/mango/tatakuá/cob-panel generations also stalled. **Deferred** until MCP socket revived (UPGRADE_PLAN Tier 3 — daemon revival). No render-state impact; 18/18 already on disk + master.
 - **#12 — Phase 3b Lapacho Hyper3D GUI session — MCP-blocked**. Same root cause as #10. Lapacho variant-B leafed crown was procedurally substituted; a Hyper3D-generated higher-fidelity crown is the planned upgrade. **Deferred** until socket revived. No escritura-impact.
 - **Self-contradiction at `CLAUDE.md` line 133** — `git add -A && git commit` contradicts the standing explicit-staging-only constraint. Per additions-only directive, the contradicting line is not deleted; the new "Critique-derived standing rules" section flags it as superseded. Future cleanup pass should re-write line 133 directly.
-- **Duplicate `docs/AI_WHISPERERS_STYLE.md` entry at `CLAUDE.md` lines 16/17** — exact verbatim duplicate from doc-map enumeration. Per additions-only directive, deferred. Future cleanup pass should collapse to a single bullet.
+- **Duplicate `docs/reference/AI_WHISPERERS_STYLE.md` entry at `CLAUDE.md` lines 16/17** — exact verbatim duplicate from doc-map enumeration. Per additions-only directive, deferred. Future cleanup pass should collapse to a single bullet.
 - **GBIF working-tree regression (unstaged)** — `scripts/fetch_gbif_species.py` strips two API filter params (`hasCoordinate`, `basisOfRecord`); `docs/site_data/gbif/{species_list.json,species_markdown.md,species_summary.txt}` carry matching unstaged deltas. Auto Mode classifier denied `git checkout` revert as destructive. Deferred until user authorisation; the regenerable nature of the file means re-fetch would also resolve the regression.
 - **No GitHub remote (single-disk SPOF)** — UPGRADE_PLAN T0.1 + Critique-derived standing rule #2. 17-day escritura window puts a live SPOF on a single working tree. Highest-priority Tier-0 infra task.
 

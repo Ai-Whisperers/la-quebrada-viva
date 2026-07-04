@@ -1,6 +1,6 @@
 # Finance, Legal & Insurance
 
-**8 ideas** in this category. See [`../INDEX.md`](../INDEX.md) for the full list across all categories.
+**8 ideas** in this category. See [`../_meta/INDEX.md`](../_meta/INDEX.md) for the full list across all categories.
 
 **Quality legend:** ✓ reviewed = Wes quote + researched substance. ○ auto-fill = template-only (moved to `_archive/2026-06-30_autofill/` during 2026-07-03 restructure).
 

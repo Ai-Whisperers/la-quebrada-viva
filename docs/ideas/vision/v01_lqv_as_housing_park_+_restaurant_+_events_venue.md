@@ -24,12 +24,12 @@ HOUSING_PARK_CONCEPT.md already exists
 
 **Related insights from the catalog pass:**
 
-- [Insight #1: The 4-entity BV cascade is the single highest-leverage decision](../INSIGHTS.md) — _The 4-entity BV cascade is the single highest-leverage decision_
-- [Insight #5: The 2030 deadline is a forcing function — use it](../INSIGHTS.md) — _The 2030 deadline is a forcing function — use it_
+- [Insight #1: The 4-entity BV cascade is the single highest-leverage decision](../_meta/INSIGHTS.md) — _The 4-entity BV cascade is the single highest-leverage decision_
+- [Insight #5: The 2030 deadline is a forcing function — use it](../_meta/INSIGHTS.md) — _The 2030 deadline is a forcing function — use it_
 
 ## Full picture — context, constraints, history
 
-**Project-level anchor.** This is one of the top-level framing decisions for RV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md](../../MASTER_BRIEF.md).
+**Project-level anchor.** This is one of the top-level framing decisions for RV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md](../../state/MASTER_BRIEF.md).
 
 ## What we know already (research summary)
 
@@ -92,9 +92,9 @@ $0 (framing work, no external cost)
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Rela../../research/strategy/HOUSING_PARK_CONCEPT.mdRK_CONCEPT.m../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdmd), [E../../_reconciled/MASTER_BRIEF.mdmd](../../../../research/strategy/RESEARCH_GAPS.mdmd), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
+- Rela../../research/strategy/HOUSING_PARK_CONCEPT.mdRK_CONCEPT.m../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdmd), [E../../_reconciled/MASTER_BRIEF.mdmd](../../research/strategy/RESEARCH_GAPS.md), [MASTER_BRIEF.md](../../state/MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

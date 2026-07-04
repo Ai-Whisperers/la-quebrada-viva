@@ -28,11 +28,11 @@ advisor selected + memo
 
 **Related insights from the catalog pass:**
 
-- [Insight #1: The 4-entity BV cascade is the single highest-leverage decision](../INSIGHTS.md) — _The 4-entity BV cascade is the single highest-leverage decision_
+- [Insight #1: The 4-entity BV cascade is the single highest-leverage decision](../_meta/INSIGHTS.md) — _The 4-entity BV cascade is the single highest-leverage decision_
 
 ## Full picture — context, constraints, history
 
-**Finance, legal, insurance — the corporate spine.** F01 (4-entity BV cascade) is the single highest-leverage decision per [Insight #1](../INSIGHTS.md). Insurance + fire risk are coupled and urgent per [Insight #3](../INSIGHTS.md). Tax structuring (F11/F19) requires a NL+PY accountant.
+**Finance, legal, insurance — the corporate spine.** F01 (4-entity BV cascade) is the single highest-leverage decision per [Insight #1](../_meta/INSIGHTS.md). Insurance + fire risk are coupled and urgent per [Insight #3](../_meta/INSIGHTS.md). Tax structuring (F11/F19) requires a NL+PY accountant.
 
 ## What we know already (research summary)
 
@@ -49,7 +49,7 @@ advisor selected + memo
 
 **This idea depends on / is informed by:**
 
-- [`F01`](f03_py_s.a._vs_s.r.l._vs_e.a.s._decision.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`F01`](f03_py_s.a._vs_s.r.l._vs_e.a.s._decision.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

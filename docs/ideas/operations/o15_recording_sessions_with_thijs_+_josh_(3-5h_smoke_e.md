@@ -30,11 +30,11 @@ session template + transcription pipeline
 
 **Related insights from the catalog pass:**
 
-- [Insight #13: Risk: Wes's brainstorm cadence creates work, not decisions](../INSIGHTS.md) — _Risk: Wes's brainstorm cadence creates work, not decisions_
+- [Insight #13: Risk: Wes's brainstorm cadence creates work, not decisions](../_meta/INSIGHTS.md) — _Risk: Wes's brainstorm cadence creates work, not decisions_
 
 ## Full picture — context, constraints, history
 
-**Operations, team, AI workflow.** Wes + Thijs + Jos form the core operational team. O10 (cultural adaptation) is the highest-ROI 1-hour call per [Insight #11](../INSIGHTS.md). AI workflow items (O11-O15) integrate with the [lqv-bundle skill](../). Worker roster (O16) and equipment cascade (O17) tie back to F01 (BV cascade).
+**Operations, team, AI workflow.** Wes + Thijs + Jos form the core operational team. O10 (cultural adaptation) is the highest-ROI 1-hour call per [Insight #11](../_meta/INSIGHTS.md). AI workflow items (O11-O15) integrate with the [lqv-bundle skill](../). Worker roster (O16) and equipment cascade (O17) tie back to F01 (BV cascade).
 
 ## What we know already (research summary)
 
@@ -51,7 +51,7 @@ session template + transcription pipeline
 
 **This idea depends on / is informed by:**
 
-- [`O14`](o14_whatsapp_lqv_group_(wes+thijs+josh+ivan+kiki+erebu.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`O14`](o14_whatsapp_lqv_group_(wes+thijs+josh+ivan+kiki+erebu.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

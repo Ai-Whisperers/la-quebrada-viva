@@ -30,11 +30,11 @@ For 1-3 houses in Phase 1, Booking is overkill and eats margin. Direct booking v
 
 **Related insights from the catalog pass:**
 
-- [Insight #7: There's a missing entity: the reservation system](../INSIGHTS.md) — _There's a missing entity: the reservation system_
+- [Insight #7: There's a missing entity: the reservation system](../_meta/INSIGHTS.md) — _There's a missing entity: the reservation system_
 
 ## Full picture — context, constraints, history
 
-_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../SUGGESTED.md) for the rationale._
+_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../_meta/SUGGESTED.md) for the rationale._
 
 See related existing ideas: [`B04`](../buyer_experience/b04_buyer-facing_live_site_map.md), [`I02`](../operations/i02_operations_dashboard_multi-calendar_view.md)
 
@@ -44,7 +44,7 @@ See related existing ideas: [`B04`](../buyer_experience/b04_buyer-facing_live_si
 
 ## What needs research
 
-_Suggested addition — see [SUGGESTED.md](../SUGGESTED.md) for context. Research tasks derived from gap analysis:_
+_Suggested addition — see [SUGGESTED.md](../_meta/SUGGESTED.md) for context. Research tasks derived from gap analysis:_
 
 - _No additional research tasks defined — see related ideas for context._
 
@@ -88,8 +88,8 @@ Single-page reservation form on the live site; WhatsApp handoff; SMS backup if W
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

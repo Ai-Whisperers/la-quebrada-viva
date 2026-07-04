@@ -30,7 +30,7 @@ eco_pool render subscene
 
 **Related insights from the catalog pass:**
 
-- [Insight #3: Insurance + fire risk are coupled and urgent](../INSIGHTS.md) — _Insurance + fire risk are coupled and urgent_
+- [Insight #3: Insurance + fire risk are coupled and urgent](../_meta/INSIGHTS.md) — _Insurance + fire risk are coupled and urgent_
 
 ## Full picture — context, constraints, history
 
@@ -51,7 +51,7 @@ eco_pool render subscene
 
 **This idea depends on / is informed by:**
 
-- [`C05`](a03_weddings_&_ceremonies_venue.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`C05`](a03_weddings_&_ceremonies_venue.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

@@ -30,7 +30,7 @@ GPS-located spot
 
 ## Full picture — context, constraints, history
 
-**RV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../INSIGHTS.md) + eco-framing matters per [Insight #8](../INSIGHTS.md).
+**RV parcel-specific decisions.** 62-ha in Escobar, Paraguarí. Boundary + centroid documented in [docs/site_data/](../../site_data/). DEM + Sentinel-2 + GEDI canopy + OSM data integrated. Decision: open community (not gated) per [Insight #8](../_meta/INSIGHTS.md) + eco-framing matters per [Insight #8](../_meta/INSIGHTS.md).
 
 ## What we know already (research summary)
 
@@ -47,7 +47,7 @@ GPS-located spot
 
 **This idea depends on / is informed by:**
 
-- [`T04`](../house_typologies/t04_type_w_—_worker_housing_(8_rooms_×_25-30_m²_long_h.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`T04`](../house_typologies/t04_type_w_—_worker_housing_(8_rooms_×_25-30_m²_long_h.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

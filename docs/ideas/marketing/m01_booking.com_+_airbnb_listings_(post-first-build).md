@@ -30,11 +30,11 @@ listings live + first bookings
 
 **Related insights from the catalog pass:**
 
-- [Insight #7: There's a missing entity: the reservation system](../INSIGHTS.md) — _There's a missing entity: the reservation system_
+- [Insight #7: There's a missing entity: the reservation system](../_meta/INSIGHTS.md) — _There's a missing entity: the reservation system_
 
 ## Full picture — context, constraints, history
 
-**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via WhatsApp saves Booking.com commission (15%) per [Insight #7](../INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
+**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via WhatsApp saves Booking.com commission (15%) per [Insight #7](../_meta/INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
 
 ## What we know already (research summary)
 
@@ -94,8 +94,8 @@ Booking.com / Airbnb: free to list, 15% commission per booking. Drone pilot: $30
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

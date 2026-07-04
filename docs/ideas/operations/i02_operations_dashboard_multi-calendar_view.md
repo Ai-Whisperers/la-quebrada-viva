@@ -24,11 +24,11 @@ When Wes has 5+ houses + events + maintenance windows, the mental load of "what'
 
 **Related insights from the catalog pass:**
 
-- [Insight #7: There's a missing entity: the reservation system](../INSIGHTS.md) — _There's a missing entity: the reservation system_
+- [Insight #7: There's a missing entity: the reservation system](../_meta/INSIGHTS.md) — _There's a missing entity: the reservation system_
 
 ## Full picture — context, constraints, history
 
-_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../SUGGESTED.md) for the rationale._
+_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../_meta/SUGGESTED.md) for the rationale._
 
 See related existing ideas: [`I01`](../operations/i01_reservation_widget_and_whatsapp_handoff.md), [`I14`](../_archive/2026-06-30_autofill/operations/i14_off-season_pricing_strategy.md)
 
@@ -38,7 +38,7 @@ See related existing ideas: [`I01`](../operations/i01_reservation_widget_and_wha
 
 ## What needs research
 
-_Suggested addition — see [SUGGESTED.md](../SUGGESTED.md) for context. Research tasks derived from gap analysis:_
+_Suggested addition — see [SUGGESTED.md](../_meta/SUGGESTED.md) for context. Research tasks derived from gap analysis:_
 
 - _No additional research tasks defined — see related ideas for context._
 
@@ -82,8 +82,8 @@ Calendar view showing 12 months x all units; booking pipeline visualization; exp
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

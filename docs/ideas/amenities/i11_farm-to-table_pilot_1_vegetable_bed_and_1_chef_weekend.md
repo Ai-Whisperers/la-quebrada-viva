@@ -24,7 +24,7 @@ Moestuin as standalone idea is too soft. A specific weekend format makes it oper
 
 ## Full picture — context, constraints, history
 
-_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../SUGGESTED.md) for the rationale._
+_This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../_meta/SUGGESTED.md) for the rationale._
 
 See related existing ideas: [`A08`](../amenities/a08_moestuin_(vegetable_garden)_+_farmer_partnership.md), [`A06`](../amenities/a06_dutch-german_restaurant_(san_bernardino_supply).md)
 
@@ -34,7 +34,7 @@ See related existing ideas: [`A08`](../amenities/a08_moestuin_(vegetable_garden)
 
 ## What needs research
 
-_Suggested addition — see [SUGGESTED.md](../SUGGESTED.md) for context. Research tasks derived from gap analysis:_
+_Suggested addition — see [SUGGESTED.md](../_meta/SUGGESTED.md) for context. Research tasks derived from gap analysis:_
 
 - _No additional research tasks defined — see related ideas for context._
 
@@ -78,8 +78,8 @@ $500-2000 (seed + chef weekend). First chef might do it for free in exchange for
 - [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
 - [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
 - [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
+- [INSIGHTS.md](../_meta/INSIGHTS.md) — 20 patterns from reading the catalog
+- [SUGGESTED.md](../_meta/SUGGESTED.md) — 20 ideas Erebus pushed in
 - Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog

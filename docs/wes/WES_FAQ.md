@@ -4,24 +4,25 @@
 > like Wes, Thijs, Sonja, or a future investor.** Plain-language answers
 > to the 12 questions that come up first.
 >
-> **Last updated:** 2026-07-03
+> **Last updated:** 2026-07-04
 
 ---
 
 ## 1. What is this repo?
 
-This is the **digital workspace for Riverstone Valley**
-— a 62-hectare (153-acre) parcel in Escobar, Paraguarí, Paraguay that
-Wesley van de Camp and Thijs bought together (75% / 25%). The repo holds:
+This is the **digital workspace for Riverstone Valley** — a 62-hectare
+(153-acre) parcel in Escobar, Paraguarí, Paraguay that Wesley van de Camp
+and Thijs bought together (75% / 25%). The repo holds:
 
 - The 18 photoreal 3D renders of the first cob-bottle house (shipped)
 - 380+ planning docs (research, decisions, audio synth, briefs)
 - The Python code (`lqv/`) that builds the 3D scene in Blender
 - All the post-escritura work for the **bigger vision**: housing park +
-  restaurant + wellness pool + ceremonies, finished by 2030
+  restaurant + wellness pool + ceremonies + family-anchored community
 
-The repo is large. Most people only need 2-3 docs. See
-[`WES_INDEX.md`](./WES_INDEX.md) for the 5-min read.
+You don't need most of it. [`WES_INDEX.md`](./WES_INDEX.md) for the 5-min
+read. [`POST_ESCRITURA_NOW.md`](../state/POST_ESCRITURA_NOW.md) is what
+blocks Phase 1.
 
 ## 2. Who is it for?
 
@@ -30,8 +31,8 @@ Three audiences, with three different entry points:
 | Audience | Start here |
 |---|---|
 | **Wesley / Thijs / family** | [`WES_INDEX.md`](./WES_INDEX.md) → [`POST_ESCRITURA_NOW.md`](../state/POST_ESCRITURA_NOW.md) |
-| **Ivan / Kiki (AI Whisperers team)** | [`STATU../../STATUS.mdATUS.md) → [`CL../../CLAUDE.md/CLAUDE.md) |
-| **Investor / partner (cold)** | [`wesley_brief_o../people/wes/wesley_brief_onepager.mdf_onepager.md) + the 18 final PNGs |
+| **Ivan / Kiki (AI Whisperers team)** | [`STATUS.md`](../../STATUS.md) → [`CLAUDE.md`](../../CLAUDE.md) |
+| **Investor / partner (cold)** | [`wesley_brief_onepager.md`](../people/wes/wesley_brief_onepager.md) + the 18 final PNGs |
 
 ## 3. What stage is the project at?
 
@@ -46,11 +47,12 @@ Three audiences, with three different entry points:
 | 4-BV cascade operational | 2026-10-15 target | 🔴 Pending |
 | **Phase 1 first guests** | **2026-12-15 target** | 🔴 Pending |
 
-Full timeline../state/TIMELINE.mdmd`](../state/TIMELINE.md).
+Full timeline: [`TIMELINE.md`](../state/TIMELINE.md).
 
 ## 4. What can I do with the repo?
 
 **Read-only by default.** Anyone with GitHub read access can:
+
 - Browse all docs in `docs/`
 - View all 18 final PNGs in `renders/`
 - Open the per-asset `render_catalogue/by_asset/` to see what each typology looks like
@@ -60,129 +62,93 @@ or to suggest changes, message Erebus on WhatsApp.
 
 ## 5. What's the most important thing to look at first?
 
-**If you're Wes:** [../people/wes/WES_ACTIO../people/wes/WES_ACTIONS.mdIONS.md) —
-5 things only you can do this week. Print it, do the 5 things, mark ✅.
+**If you're Wes:** [`WES_ACTIONS.md`](../people/wes/WES_ACTIONS.md) — 5 things
+only you can do this week. Print it, do the 5 things, mark ✅.
 
-**If../../STATUS.md:** [`../../STATUS.md../STATUS.md) — current state.
+**If you're anyone else:** [`WES_INDEX.md`](./WES_INDEX.md) for the
+10-doc reading stack.
 
-**If you're a cold investor:** [`p../people/wes/wesley_brief_onepager.md./people/wesley_brief_onepager.md) — the 1-pager. Then the 18 final PNGs in [`renders/`](../renders/).
+## 6. What does "post-escritura" mean?
 
-## 6. What's the actual vision? (not the legal jargon)
+Literally "after the escritura." The escritura is the notarial public deed
+— the legal document that transfers property title. It was signed
+**2026-06-27**. Everything in the repo after that date is "post-escritura":
+the new vision, the sprint-0 research results, the 5 audio recordings, the
+Wes-facing action stack.
 
-> *"A forest park with cabins, a wellness pool, a restaurant, and
-> ceremonies — anchored by family — finished by 2030 (Sonja's 60th
-> birthday)."*
+## 7. What's the actual scope of the project?
 
-15 vacation-rental cabins (3 size tiers), 1 wood-fired restaurant,
-1 eco-pool with reed-bed filtration, 1 ceremonies space, native species
-reforestation, ~25-30 local jobs. Pays for itself. Family holds it
-together. That's it.
+Two-scope project (post-escritura):
 
-Full narrati../audios/2026-06-30-wes-post-escritura/SYNTHESIS.md-wes-post-escritura/final/SYNTHESIS.md).
+1. **The first cob-bottle house** — a 30-40 m² romantic 2p cabin with cob
+   walls + bottle roof, photoreal 3D renders shipped. **This is what the
+   18 PNGs are.**
+2. **The Escobar Housing Park** — the bigger vision: a 5-15 cabin housing
+   park + restaurant + wellness pool + ceremonies + family-anchored
+   community, with Phase 1 first guests by 2026-12-15.
 
-## 7. What does "4-BV cascade" mean?
+## 8. Who owns the land?
 
-A **Dutch BV (Besloten Vennootschap = private limited company)** holds
-the financing. Below it, 3 Paraguayan companies:
-- **BV-PY-1** owns the 62 ha land
-- **BV-PY-2** builds + operates Fase 1 (first 5 cabins + restaurant)
-- **BV-PY-3** builds + operates Fase 2-3 (expansion)
+Wesley van de Camp owns 75%, Thijs owns 25%. The escritura is held at
+the Paraguayan notary (Escobar district). All legal paperwork in
+[`docs/legal/`](../legal/).
 
-This way:
-- NL investors go through the Dutch BV (clean tax treatment above €70k)
-- PY operations stay legally separate (insurance, liability, sell-able)
-- Machines from Fase 1 can be sold to Fase 2 BV to repay early investors
+## 9. What's in `docs/`?
 
-Validation pending attorney call (W0.1).
+Almost everything. **482 markdown files** organized into **24 subdirs**:
 
-## 8. Why is the repo so big?
+- `docs/wes/` — your 10-doc reading stack
+- `docs/state/` — project state (decisions, timeline, master brief, etc.)
+- `docs/research/` — strategy + Paraguay context + satellite research
+- `docs/specs/` — technical specs (render pipeline, house design, tourism)
+- `docs/people/` — stakeholder briefs (Wes, Sonja, attorney, contacts)
+- `docs/legal/` — escritura + closing + contract summary
+- `docs/audios/` — 5 audio transcripts (your recordings)
+- `docs/ideas/` — 109 brainstorm ideas, organized by category
+- `docs/site_data/` — GIS data, satellite imagery, climate cubes (547 files)
+- `docs/render_catalogue/` — 18 final PNGs + per-asset previews + contact sheets
 
-3 reasons:
-1. **3 years of work captured**, including historical docs that are now in `_archive/`
-2. **Heavy data**: 264 MB of satellite imagery (DEM, Sentinel-2, MapBiomas) + 18 final PNGs (5-20 MB each)
-3. **Wes's own pattern**: AI generates 3 options → Sonja / human reality-checks → 1 final choice. So we keep the options around for traceability.
+Plus `docs/INDEX.md` as the canonical navigation index. **No file in
+`docs/` root except CHANGELOG.md + INDEX.md.**
 
-You don't need most of it. [`WES_INDEX.md`](./WES_INDEX.m../state/POST_ESCRITURA_NOW.md_NOW.md`](./POST_ESCRITURA_NOW.md) are 90% of what
-anyone needs.
+## 10. What can Wes break right now if he doesn't act?
 
-## 9. How does AI Whisperers work with Wes?
+The 5 hard gates in [`docs/state/POST_ESCRITURA_NOW.md`](../state/POST_ESCRITURA_NOW.md):
 
-Cadence:
-- **Wes records audios** when inspiration strikes (Dreamlist, Actionlist, etc.)
-- **Erebus transcribes** (TurboScribe) + organizes into canon docs (DREAMLIST, ACTIONLIST, RESEARCH_CATALOGUE)
-- **Erebus asks clarifying questions** (1-2 per turn, never dump 5 things at once)
-- **Wes answers** in chat / audios
-- **Erebus updates the canon docs** + commits to GitHub
+1. **NL+PY attorney call** — get the right corporate structure (4-BV cascade) confirmed
+2. **Sonja questionnaire** — confirm the operational milestone (her 60th birthday in 2030)
+3. **Anexo I verification** — confirm no liens or easements on the title
+4. **Ownership decision** — Wes+Thijs vs Wes 100% vs Thijs separately
+5. **Materials vendor quotes** — get the 3 cost pillars (cob/wood/bamboo) priced for PY
 
-Each session = one session_id (visible at the top of the chat). The
-repo gets a commit per turn. Wes can re-read the repo at any time to
-see the current state../../CLAUDE.mde [`sonia-assistant` skill](../CLAUDE.md) for full):
-- 1 thing per turn, not 5
-- Read Wes's words, don't lecture
-- Change the input space (ask a different kind of question)
-- Transcribe verbatim, never paraphrase
-- A/B/C questionnaires when Wes needs to choose between options
+If Wes doesn't do these this week, **Phase 1 first guests slip from
+2026-12-15 → Q2 2027**.
 
-## 10. What are the Wes rules (the 10 design rules)?
+## 11. What's the build order?
 
-These govern ../_reconciled/MASTER_BRIEF.mdER_BRIEF.md`](./_reconciled/MASTER_../../CLAUDE.md4 and mirrored in../../CLAUDE.md`](../CLAUDE.md):
+Phase 1 (2026-12 target):
+- 5 × Type A (romantic 2p cob cabins)
+- Restaurant (1)
+- Wellness pool (1)
+- Check-in office + caretaker house (1)
 
-1. **Landscape first** — buildings follow the land
-2. **Low-impact footprint** — cabins sit lightly
-3. **Local materials where possible** — bamboo, lapacho, earth, stone
-4. **Native species in landscaping** — no ornamental imports
-5. **Sonja is the canonical cultural / worker / price authority**
-6. **Cultural authenticity over efficiency** — tatakuá not gas oven
-7. **Reforestation, not just preservation** — actively replant
-8. **Family-anchored** — the place holds the family together
-9. **8-foot corredor around the whole house** — Paraguayan tradition
-10. **Open community, not gated** — gate + camera only
+Phase 2 (2027): 7 × Type B (family 4p)
+Phase 3 (2028): 3 × Type C (6-8p) + restaurant expansion + amenities
+Phase 4 (2029): full park + native plantings + reforestation partnership
+Phase 5 (2030): operational milestone (Sonja's 60th) — first major public event
 
-If a proposal violates a rule, it's rejected. The rule beats the
-proposal.
+## 12. How do I contact the team?
 
-## 11. What if I disagree with something in the repo?
+- **Wes** → via the AI Whisperers WhatsApp group (Ivan has the group ID)
+- **Ivan** → via WhatsApp
+- **Kiki** (sales/marketing) → via WhatsApp
+- **Erebus** (the AI agent building this) → via Ivan or Kiki
 
-Three escalation paths:
-
-1. **Doc-level disagreement** — message Erebus on WhatsApp, point at
-   the specific doc + line, suggest the change. Erebus will either
-   update the doc (if the change is correct) or explain the reasoning
-   (if not). Most doc changes happen within a day.
-
-2. **Decision-level disagreement** — open a discussio../_reconciled/OPEN_DECISIONS.md_DECISIONS.md`](./_reconciled/OPEN_DECISIONS.md).
-   That doc lists all 30 open decisions with the recommended default +
-   the alternative + who needs to decide. Pick a decision, write your
-   reasoning, mark it "in discussion".
-
-3. **Strategic disagreement** — talk to Ivan directly. Ivan is the
-   project manager; he arbitrates strategic questions.
-
-For urgent issues (something that blocks work this week): WhatsApp
-Erebus directly. For everything else, GitHub Issues or a doc comment
-is fine.
-
-## 12. How do I contribute?
-
-Easiest path: **send Erebus a message** with what you want added /
-changed. Format:
-- **One thing at a time** (don't dump 5 things in one message)
-- **What you want** ("add a new idea: X")
-- **Why** (one sentence)
-- **Where it goes** (which doc / category)
-
-Erebus will draft it, show you the diff, and ask for ✅ before committing.
-
-If you want to edit directly, request GitHub access from Ivan.
+For technical questions about the repo, use WhatsApp to ask Ivan to ping
+Erebus.
 
 ---
 
-## More questions?
-
-- **Glossary** of NL / ES / EN terms: [`WES_GLOSSARY.md`](./WES_GLOSSARY.md)
-- **The 5 things ../people/wes/WES_ACTIONS.md`people/WES_ACTIONS.md`](./people/WES_ACTIONS.md)
-- **../state/POST_ESCRITURA_NOW.md**: [`POST_E../state/POST_ESCRITURA_NOW.mdT_ESCRITURA_NOW.md)
-- **What We../audios/2026-06-30-wes-post-escritura/SYNTHESIS.md`](../audios/2026-06-30-wes-post-escritura/SYNTHESIS.md)
-
-*Last updated: 2026-07-03. If you have a question that's not answered
-here, ping Erebus on WhatsApp and it'll be in the next commit.*
+*See also: [`WES_WARNINGS.md`](./WES_WARNINGS.md) for things that might
+surprise you. [`WES_HOW_WE_WORK.md`](./WES_HOW_WE_WORK.md) for the
+working agreement.*
