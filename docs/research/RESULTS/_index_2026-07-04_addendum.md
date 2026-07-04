@@ -1,19 +1,20 @@
-# RESEARCH_GAP_ANALYSIS_2026-07-04_ADDENDUM — 21 New Research Results
+# RESEARCH_GAP_ANALYSIS_2026-07-04_ADDENDUM — 24 New Research Results
 
 > **For Ivan + Kiki + Erebus (Wes-reading is optional).** This is the
 > addendum to [`RESEARCH_GAP_ANALYSIS_2026-07-04.md`](./RESEARCH_GAP_ANALYSIS_2026-07-04.md),
-> documenting **21 brand-new research results** written 2026-07-04 from
+> documenting **24 brand-new research results** written 2026-07-04 from
 > direct web fetches of authoritative public sources.
 >
 > **What these add:** Coverage of topics that were previously unknown
 > or partial. **What they don't add:** Specific 2026 quotes/prices for
 > Wes/PY (those still need on-the-ground outreach).
 
-## The 21 new docs
+## The 24 new docs
 
-### Market + competition (PR01-PR02)
+### Market + competition (PR01-PR02, PR21)
 - [`PR01_paraguay_eco_tourism_market`](./PR01_paraguay_eco_tourism_market.md) — PY tourism hit 2.2M visitors 2024 (+22% YoY); EU visitors ~60-100K/year, USD 850 avg spend
 - [`PR02_san_bernardino_tourism`](./PR02_san_bernardino_tourism.md) — San Ber = the resort town 45km away, supply ecosystem, cross-promotion opportunity
+- [`PR21_eco_competitor_landscape`](./PR21_eco_competitor_landscape.md) — **No direct competitors** in cob/bamboo/quebrada/EU positioning. 8-12 indirect competitors in 3 categories.
 
 ### Materials + construction (PR03-PR04, PR20)
 - [`PR03_paraguay_cob_construction_pioneers`](./PR03_paraguay_cob_construction_pioneers.md) — PY has cob/adobe tradition; cob is the right first typology choice
@@ -27,7 +28,7 @@
 ### Regulations + permits (PR07, PR17-PR19)
 - [`PR07_py_construction_permits`](./PR07_py_construction_permits.md) — 4-permit process: municipal + MADES + ANDE + ESSAP; USD 15-25K total
 - [`PR17_py_water_permits`](./PR17_py_water_permits.md) — MADES authority; both well + surface water permits needed
-- [`PR18_py_septic_regulations`](./PR18_septic_regulations.md) — Constructed wetland recommended; USD 9-16K cost
+- [`PR18_py_septic_regulations`](./PR18_py_septic_regulations.md) — Constructed wetland recommended; USD 9-16K cost
 - [`PR19_py_electric_grid`](./PR19_py_electric_grid.md) — ANDE trifásica + backup generator; 500m line distance critical
 
 ### Business + financial (PR08, PR11-PR13)
@@ -36,9 +37,10 @@
 - [`PR12_py_labor_law`](./PR12_py_labor_law.md) — Live-in workers protected; USD 600-700/month all-in cost
 - [`PR13_py_lodging_tax`](./PR13_py_lodging_tax.md) — 10% IVA + 1% SENATUR + 0.5% municipal = ~12-14% tax burden
 
-### Customers (PR09-PR10)
+### Customers (PR09-PR10, PR22)
 - [`PR09_eu_travelers_paraguay`](./PR09_eu_travelers_paraguay.md) — EU expats in PY = 30-50K pool; primary market for RV
 - [`PR10_py_booking_platforms`](./PR10_py_booking_platforms.md) — Booking.com + Airbnb dominate; multi-channel strategy needed
+- [`PR22_eu_eco_certifications`](./PR22_eu_eco_certifications.md) — Green Key recommended for Y2; EU Ecolabel not applicable to PY property
 
 ### Logistics + supply (PR15-PR16)
 - [`PR15_py_freight_logistics`](./PR15_py_freight_logistics.md) — Rail dead; river barge saves 30% on bulk materials
@@ -46,6 +48,10 @@
 
 ### Personal (PR14)
 - [`PR14_py_residency_eu`](./PR14_py_residency_eu.md) — MERCOSUR-EU residence is best path for Wes; 3-6 month processing
+
+### Biodiversity + restoration (PR23-PR24)
+- [`PR23_biodiversity_paraguay`](./PR23_biodiversity_paraguay.md) — Eastern PY is Upper Paraná Atlantic Forest (8K plant species, 700+ bird species); RV's 62 ha is a rare fragment
+- [`PR24_land_restoration_paraguay`](./PR24_land_restoration_paraguay.md) — Reforestation plan + EU GREEN FORUM funding available; USD 1,500-3,500/ha for native restoration
 
 ## Top insights from this batch
 
@@ -56,10 +62,13 @@
 5. **Construction costs are 20-25% inflated.** The repo's $180-250K Phase 1 estimate is correct but at the upper end.
 6. **Insurance is a real gap.** PY market has limited eco-tourism capacity; expect 1.5-2x NL pricing.
 7. **Climate change is the biggest long-term risk.** +0.5-1°C warming, more extreme events, drought frequency increasing.
+8. **No direct competitors in cob/bamboo/quebrada/EU positioning.** 3-5 years of first-mover positioning runway.
+9. **Green Key certification is achievable in Y2.** Build compliance into Phase 1 design from start.
+10. **RV's 62 ha is a rare Atlantic Forest fragment.** Reforestation + biodiversity monitoring = EU-fundable.
 
 ## What this batch STILL doesn't answer
 
-The 21 new docs are **synthesized from public web sources** (Wikipedia, government sites, PY news). They have:
+The 24 new docs are **synthesized from public web sources** (Wikipedia, government sites, PY news). They have:
 
 | Type | Available | Not Available |
 |---|---|---|
@@ -73,10 +82,16 @@ For the missing data: **Wes's W0.1-W1.2 actions (attorney call + PY site visit) 
 
 ## Effort summary
 
-- **21 research docs**
-- **~85 KB total content** (avg ~4 KB each)
-- **~30 minutes** research time (mostly direct URL fetches + synthesis)
+- **24 research docs**
+- **~95 KB total content** (avg ~4 KB each)
+- **~45 minutes** research time (mostly direct URL fetches + synthesis)
 - **0 external dependencies** (all from public sources)
+
+## Cross-references
+
+- **Synthesis doc:** [`docs/research/strategy/RV_STRATEGIC_SYNTHESIS.md`](./RV_STRATEGIC_SYNTHESIS.md) — 5 strategic decisions + 30-day action plan
+- **Weekly actions:** [`docs/operations/WEEKLY_ACTIONS.md`](../../operations/WEEKLY_ACTIONS.md) — operational checklist for Ivan + Kiki
+- **Gap analysis:** [`docs/research/strategy/RESEARCH_GAP_ANALYSIS_2026-07-04.md`](./RESEARCH_GAP_ANALYSIS_2026-07-04.md) — what's done, what's partial
 
 ---
 
