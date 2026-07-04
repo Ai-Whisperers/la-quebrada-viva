@@ -2,7 +2,7 @@
 
 Full-repo navigation. Auto-generated structural sweep (`git ls-files`, `wc -l`, `du -sh`).
 
-This file is the cold-start map: tells a reader what the repo holds, where the load-bearing code lives, what the docs are, and what to be careful about. For Wes-facing nav, read [`WES_INDEX.md`](docs/WES_INDEX.md). For escritura-day operational order, read [`docs/INDEX.md`](docs/INDEX.md). For module architecture, read [`ARCHITECTURE.md`](ARCHITECTURE.md). For build invariants, read [`CLAUDE.md`](CLAUDE.md).
+This file is the cold-start map: tells a reader what the repo holds, where the load-bearing code lives, what the docs are, and what to be careful about. For Wes-facing nav, read [`WES_INDEX.md`](docs/wes/WES_INDEX.md). For escritura-day operational order, read [`docs/INDEX.md`](docs/INDEX.md). For module architecture, read [`ARCHITECTURE.md`](ARCHITECTURE.md). For build invariants, read [`CLAUDE.md`](CLAUDE.md).
 
 ## 1. What this project is
 

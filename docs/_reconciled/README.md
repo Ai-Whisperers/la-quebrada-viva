@@ -75,7 +75,7 @@ This directory is updated by Erebus as decisions get made. When a decision in `O
 
 ## Related
 
-- **Wes one-page index:** [`../WES_INDEX.md`](../WES_INDEX.md) — if you're Wes, start there.
-- **Post-escritura NOW:** [`../POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md) — 5 hard gates + 12 soft gates, ranked.
-- **Critique for Wes:** [`../CRITIQUE_FOR_WES.md`](../CRITIQUE_FOR_WES.md) — honest read on what works / what's broken.
-- **109-idea catalog:** [`../ideas/INDEX.md`](../ideas/INDEX.md) — the brainstorm catalog (63 ✓ reviewed, 46 ○ auto-fill).
+- **Wes one-page index:** [`../WES_INDEX.md`](../wes/WES_INDEX.md) — if you're Wes, start there.
+- **Post-escritura NOW:** [`../POST_ESCRITURA_NOW.md`](../state/POST_ESCRITURA_NOW.md) — 5 hard gates + 12 soft gates, ranked.
+- **Critique for Wes:** [`../CRITIQUE_FOR_WES.md`](../wes/CRITIQUE_FOR_WES.md) — honest read on what works / what's broken.
+- **109-idea catalog:** [`../ideas/INDEX.md`](../ideas/_meta/INDEX.md) — the brainstorm catalog (63 ✓ reviewed, 46 ○ auto-fill).

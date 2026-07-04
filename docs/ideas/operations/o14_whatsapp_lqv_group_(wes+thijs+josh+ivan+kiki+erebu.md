@@ -51,52 +51,10 @@ group created + invite sent
 
 **This idea depends on / is informed by:**
 
-- [`O12`](../operations/o12_iterative_research_methodology_(idea_->_topics_->_.md) — methodology
-
-
-
-## Risks & failure modes
-
-_No specific risks identified beyond standard category risks. Add as they emerge._
-
-## Cost / time estimate
-
-Varies by role. Typical PY rural wages: Gs. 1.5-3M/month ($200-400 USD). Accountant fee: $500-2000 per task. Insurance broker: 0% upfront (fee on policy).
-
-## Done = shipped
-
-**Acceptance criteria (measurable):**
-
-- group created + invite sent
-- Document the deliverable's location/path in this file
-- Update the **Status** field above to `shipped`
-- Add a 1-line entry to the Changelog below
-- For research-type ideas: link the deliverable doc + note 1 key finding
-
-## Recommended next action
-
-1. **Wes: contact person directly** (this is Wes-action, not AI research)
-2. **Erebus: draft the agenda/questions** for the meeting if needed
-3. **Wes: log outcome + flip status** after the meeting
-
-## Priority & status meaning
-
-**Priority:** **Needed for Phase 1 (months 1-9 post-escritura) or the first 30 days of post-escritura work.**
-
-**Status:** Active work in progress by Erebus or the team.
-
-## Sources & references
-
-- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
-- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
-- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
-- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
-- [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`O12`](o12_iterative_research_methodology_(idea_->_topics_->_.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog
 
 - 2026-06-30: Idea created from consolidated session review (initial scaffold)
 - 2026-06-30: Rich content pass — What/Why/Context/Research/Dependencies/Risks/Cost/Done/Action sections populated
+../../research/strategy/RESEARCH_GAPS.md

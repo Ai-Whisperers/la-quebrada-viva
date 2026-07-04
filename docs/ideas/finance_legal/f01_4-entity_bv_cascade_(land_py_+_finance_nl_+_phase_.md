@@ -108,7 +108,7 @@ NL+PY accountant: $500-2000 per consultation. NL BV set-up: ~€150 + ongoing ad
 - [INDEX.md](../../INDEX.md) — master catalog
 - [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
 - [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- Related project docs: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md]../../research/strategy/RESEARCH_GAPS.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

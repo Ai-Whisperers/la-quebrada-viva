@@ -49,46 +49,10 @@ _Suggested addition — see [SUGGESTED.md](../SUGGESTED.md) for context. Researc
 **This idea depends on / is informed by:**
 
 - [`C10`](../construction/c10_well_vs_stream_potable_water_decision.md) — well vs stream
-- [`C05`](../construction/c05_water_purification_(concrete-chemical_vs_natural_w.md) — water purification
-
-
-
-## Risks & failure modes
-
-_No specific risks identified beyond standard category risks. Add as they emerge._
-
-## Cost / time estimate
-
-$2000-5000 (hydrology consultant + water testing)
-
-## Done = shipped
-
-90-day water autonomy under 1-in-10-year drought conditions
-
-## Recommended next action
-
-1. **Wes: review this suggestion** — accept / defer / reject with 1-line reason
-2. **If accepted**: confirm priority (currently marked P1) + sprint slot
-3. **Erebus: update status** in this file once Wes decides
-
-## Priority & status meaning
-
-**Priority:** **Needed for Phase 1 (months 1-9 post-escritura) or the first 30 days of post-escritura work.**
-
-**Status:** Scoped and queued. Not yet started.
-
-## Sources & references
-
-- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
-- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
-- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
-- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
-- [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`C05`](../construction/c05_water_purification_(concrete-chemical_vs_natural_w.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog
 
 - 2026-06-30: Idea created from consolidated session review (initial scaffold)
 - 2026-06-30: Rich content pass — What/Why/Context/Research/Dependencies/Risks/Cost/Done/Action sections populated
+../../research/strategy/RESEARCH_GAPS.md

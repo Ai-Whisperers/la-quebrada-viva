@@ -1,93 +1,113 @@
 # docs/ — index
 
-Single navigation entrypoint into the doc-mesh. Maintained additively; section ordering reflects what a cold-start session should read first.
-
-## Tier -1 (2026-07-03) — post-restructure pointers
-
-> **If you (or your stakeholder) is **Wes**, open [`WES_INDEX.md`([../WES_INDEX.md]) instead.**
-> **If you're looking for **what blocks Phase 1 right now**, open [`POST_ESCRITURA_NOW.md`([../POST_ESCRITURA_NOW.md]).**
-> **If you want to know **what's wrong with this repo**, read [`CRITIQUE_FOR_WES.md`([../CRITIQUE_FOR_WES.md]) (Wes-facing) or [`audit/CRITIQUE_V2_ADDENDUM.md`](./audit/CRITIQUE_V2_ADDENDUM.md) (dev-facing).
+> **Single navigation entrypoint.** What every `docs/` subdir contains,
+> organized by who reads it.
 >
-> Wes-facing stakeholder briefs live in [`people/`](./people/) (WES_ACTIONS, ATTORNEY_BRIEF, SONJA_QUESTIONNAIRE, 4ENTITY_BV_CASCADE, the two one-pagers, CONTACTS, SITE_VISIT_BRIEF, DECISIONS_LOG).
->
-> Closed-session + historical docs live in [`_archive/`](./_archive/) (see `_archive/MANIFEST.md` for the index):
-> - `_archive/2026-06-30_session/` — 10 closed-session docs (WES_TODO family, IMPLEMENTATION_* family, STATUS_REPORT, etc.)
-> - `_archive/2026-06-30_session/patches/` — 2 patch files (already applied)
-> - `_archive/2026-06-30_session/MANIFEST.md` — explains what was superseded by what
-> - `_archive/MASTER_BRIEF_cob_house_v1_2026-06-11.md` — pre-Wes-share cob-house master brief
-> - `_archive/MASTER_TODO_escritura_week_2026-06-25.md` — the 31 KB escritura-week master-TODO
-> - `_archive/DECISIONS_LOG_escritura_week_2026-06.md` — escritura-week decision log
-> - `_archive/GAPS_ANALYSIS_2026-06-04.md` — pre-Wes-share gap analysis
-> - `_archive/IDEAS_CATALOG_PATCH_PLAN_2026-06-30.md` — patch plan (Quality-marking addressed half; rest deferred)
-> - `_archive/T_PLUS_1_DEBRIEF_2026-06-28.md`, `_archive/PR_BACK_TO_BASE_workflow_note.md`, `_archive/REPO_STRUCTURE_2026-06-30.md` — one-offs
+> **Last updated:** 2026-07-04 (post-reorg pass)
 
 ---
 
-## Tier 0 — escritura-critical (read first if today is 2026-06-2X)
+## Top-level rules
 
-- [`MASTER_BRIEF.md`](./MASTER_BRIEF.md) — project North Star, scope boundaries, owner.
-- [`CLIENT.md`](./CLIENT.md) — Wesley van de Camp (75 %) + Thijs (25 %). Decision-maker, communication preferences.
-- [`contract_summary.md`](./contract_summary.md) — boleto 2026-04-28 quick-reference + glossary. Companion to the boleto PDF.
-- [`CLOSING_DAY_PREP.md`](./CLOSING_DAY_PREP.md) — T-7 / T-5 / T-2 / signing-day / T+30 actionable checklist (legal side).
-- [`MORNING_RUNBOOK_2026-06-27.md`](./MORNING_RUNBOOK_2026-06-27.md) — signing-day mechanical runbook (laptop side, 07:00 → 10:00 -03).
-- [`CONTINGENCIES.md`](./CONTINGENCIES.md) — C1–C10 risk register, pre-decided playbook, standing principles.
-- [`ROLLBACK_RUNBOOK.md`](./ROLLBACK_RUNBOOK.md) — errata trigger / mandatory-vs-discretionary procedure / postponement protocol.
-- [`../dist/print_pack_2026-06-27/INTEGRITY.md`](../dist/print_pack_2026-06-27/INTEGRITY.md) — canonical artefact pins (deck SHA, bundle SHA, 28 pp, source commit).
-- [`../dist/print_pack_2026-06-27/audit_log.txt`](../dist/print_pack_2026-06-27/audit_log.txt) — stale-token sweep log.
-- [`../dist/print_pack_2026-06-27/WALLET_CARD.txt`](../dist/print_pack_2026-06-27/WALLET_CARD.txt) — pocket-size SHA + cifras + logística card (print on entry).
-- [`../dist/print_pack_2026-06-27/BUNDLE_README.txt`](../dist/print_pack_2026-06-27/BUNDLE_README.txt) — bundle integrity / verification commands / contents map (ships with USB).
-
-## Tier 1 — supporting deliverables
-
-- [`wesley_brief_onepager.md`([../wesley_brief_onepager.md]) — one-page brief.
-- [`wesley_deliverable_bundle.md`](./wesley_deliverable_bundle.md) — what ships to Wesley + structure.
-- [`escritura_deck/escritura_deck.md`](./escritura_deck/escritura_deck.md) — escritura deck source (PDF: `docs/escritura_deck/escritura_deck_v6.pdf`).
-- [`boq/boq_rollup.md`](./boq/boq_rollup.md) — Bill of Quantities rollup, 175 items, USD primary + PYG @ TC 7300.
-- [`finance/fx.json`](./finance/fx.json) — BCP USD/PYG ref rate + `as_of` date (refresh on T-0 ~07:00).
-
-## Tier 2 — email drafts + distribution
-
-- [`email_drafts/pena_es.md`](./email_drafts/pena_es.md) — Escribana Peña, primary recipient.
-- [`email_drafts/wesley_en.md`](./email_drafts/wesley_en.md) — Wesley, English.
-- [`email_drafts/thijs_es.md`](./email_drafts/thijs_es.md) — Thijs, Spanish.
-- [`email_drafts/burgos_es.md`](./email_drafts/burgos_es.md) — Burgos, Spanish.
-- [`email_drafts/SHARE_LINKS.md`](./email_drafts/SHARE_LINKS.md) — Drive primary + WeTransfer + USB fallbacks + pinned hashes.
-- [`email_drafts/errata_template_es.md`](./email_drafts/errata_template_es.md) — last-minute v-final-2 errata draft.
-- [`email_drafts/sent_archive/.gitkeep`](./email_drafts/sent_archive/.gitkeep) — naming convention for actually-delivered emails.
-
-## Tier 3 — engineering + research provenance
-
-- [`ARCHITECTURE.md`([../ARCHITECTURE.md]) — `lqv/` module layout + RNG order invariant + sub-render-first standing rule.
-- [`asset_plan.md`](./asset_plan.md) — per-asset / per-typology / per-amenity plan.
-- [`sub_render_strategy.md`](./sub_render_strategy.md) — 31-target sub-render queue + driver template + RNG derivation.
-- [`_archive/MANIFEST.md`](./_archive/MANIFEST.md) — index of archived critiques + tiered fix-plans (Tier-0 landed; carry-forward items live in `DEFERRED_BUGS.md` + TaskList #34–#50).
-- [`PROVENANCE.md`([../PROVENANCE.md]) — license + URL + SHA-256 + bbox + retrieval date for ALOS / COP30 / Sentinel-2 / GEDI / OSM / SRTM / NASADEM.
-- [`site_data/satdata_brief.md`](./site_data/satdata_brief.md) — S1–S4 satellite render-pipeline reader.
-- [`research/README.md`](./research/README.md) — research synthesis (5 sub-reports, ~80 repos).
-- [`RESEARCH_GAPS.md`](./RESEARCH_GAPS.md) — open research gaps + tiered close plan.
-- [`cultural_notes.md`](./cultural_notes.md) — Paraguayan cultural authenticity sweep.
-
-## Tier 4 — license + credits
-
-- [`../LICENSE_BUNDLE.md`](../LICENSE_BUNDLE.md) — bundled-asset license summary (CC0 + CC-BY 4.0 only gate).
-- [`../LICENSES/README.md`](../LICENSES/README.md) — per-asset license file index.
-- [`../CREDITS.md`](../CREDITS.md) — per-asset credits.
-- [`license_obligations.md`](./license_obligations.md) — what must be attributed where.
-
-## Tier 5 — session + status
-
-- [`..//STATUS.md`([../STATUS.md]) — canonical state document. §11 is the T-10 sweep block.
-- [`SESSION_LOG.md`](./SESSION_LOG.md) — continuation-arc tick log.
-- [`DECISIONS.md`](./DECISIONS.md) — append-only durable-judgement log (boleto Cl. NOVENA, render parallelism, sub-render-first, etc).
-- [`POSTMORTEM_TEMPLATE.md`](./POSTMORTEM_TEMPLATE.md) — escritura postmortem skeleton (fill T+1).
-- [`../MEMORY.md`](../MEMORY.md) — auto-memory index (machine-local; not on origin).
-
-## Tier 6 — house + landscape spec (research-tier; load when working subscene drivers)
-
-- [`floor_plan.md`](./floor_plan.md), [`section_view.md`](./section_view.md), [`build_sequence.md`](./build_sequence.md), [`bom.md`](./bom.md), [`energy_budget.md`](./energy_budget.md), [`housing_park_phasing.md`](./housing_park_phasing.md), [`photographic_references.md`](./photographic_references.md), [`external_assets.md`](./external_assets.md), [`site_data_spike.md`](./site_data_spike.md).
+- **No more than 10 files at any single level.** Subdirs grouped by
+  purpose (see below).
+- **`_underscore` prefix** = internal/historical (don't read unless you're
+  auditing or researching the past).
+- **Data dirs** (raster tiles, satellite imagery) get a more permissive
+  10-file rule because each raster is a discrete dataset — not a doc.
 
 ---
 
-**Reading order on cold start, T-10 → T-0**: MASTER_BRIEF → CLIENT → contract_summary → CLOSING_DAY_PREP → MORNING_RUNBOOK → CONTINGENCIES → INTEGRITY.md → audit_log.txt → SHARE_LINKS → 4 email drafts. That's the escritura-critical chain in priority order.
+## Read this first (cold-start order)
 
-*Maintained by Ivan / AI Whisperers. Last updated 2026-06-17 (T-10 to escritura).*
+1. [`README.md`](../README.md) — repo root, 5-min Wes-friendly nav
+2. [`WES_INDEX.md`](./wes/WES_INDEX.md) — the 10-doc Wes reading stack
+3. [`POST_ESCRITURA_NOW.md`](./state/POST_ESCRITURA_NOW.md) — what blocks
+   Fase 1 right now (5 hard gates + 12 soft gates)
+4. [`STATUS.md`](../STATUS.md) — canonical current state
+
+---
+
+## Who reads what (the 24 subdirs)
+
+### Wes-facing (read first if you're Wes)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`wes/`](./wes/) | The 10-doc Wes reading stack: WES_INDEX, WES_FAQ, WES_GLOSSARY, WES_WARNINGS, WES_HOW_WE_WORK, WES_NEXT_30_DAYS, CRITIQUE_FOR_WES, + bundle/inventory | 10 |
+| [`people/`](./people/) | All stakeholder briefs, split by who | 12 (in 3 subdirs) |
+| [`legal/`](./legal/) | CLIENT.md, CLOSING_DAY_PREP.md, contract_summary.md | 3 |
+
+### Project state (read for situational awareness)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`state/`](./state/) | The canonical "where are we" docs: TIMELINE, MASTER_BRIEF, DECISIONS, POST_ESCRITURA_NOW, SESSION_LOG, MCP_STATUS, master_plan, etc. | 10 |
+| [`research/`](./research/) | Strategy + research synthesis (split into strategy/ paraguay_context/ satellite_research/ + 4 existing subdirs) | 132 |
+| [`audit/`](./audit/) | Repo health audits, before/after metrics, restructure playbooks | 9 |
+| [`_reconciled/`](./_reconciled/) | The post-Wes-share merged view (split into business/ buildings/ land/) | 11 |
+
+### Operations (runbooks, procedures)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`operations/`](./operations/) | ARCHIVE_RUNBOOK, ROLLBACK_RUNBOOK, MORNING_RUNBOOK, CONTINGENCIES, POSTMORTEM_TEMPLATE, DEFERRED_BUGS | 6 |
+
+### Technical specs (how things work)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`specs/`](./specs/) | Render pipeline (8 files), house/cob specs (5), tourism spec (1), assets + license (2) | 16 (in 4 subdirs) |
+| [`reference/`](./reference/) | AIW brand style, photographic references, terrain pivot, etc. | 7 |
+
+### Comms + outreach (external-facing)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`comms/`](./comms/) | Outreach (OCTAVA_VENDOR_TRACKER), guides (api_access), prompt templates | 5 |
+| [`email_drafts/`](./email_drafts/) | Sent + draft emails | 7 |
+| [`escritura_deck/`](./escritura_deck/) | The escritura deck PDFs (v6 is canonical) | 6 |
+| [`boq/`](./boq/) | Bill of quantities | 3 |
+| [`finance/`](./finance/) | Financial tracking | 1 |
+| [`satellite/`](./satellite/) | Satellite data overview | 1 |
+
+### Assets + render artefacts (large binaries)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`audios/`](./audios/) | 5 audio transcripts (Wes recordings) + drafts + final | 27 |
+| [`ideas/`](./ideas/) | 109 idea brainstorm catalog (63 ✓ reviewed + 46 in _archive) | 123 |
+| [`render_catalogue/`](./render_catalogue/) | 18 final PNGs + by_asset/ + contact_sheets/ | 108 |
+| [`references/`](./references/) | Wes's original WhatsApp photos (2026-06-11) | 41 |
+
+### Data + GIS (technical, mostly machine-readable)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`site_data/`](./site_data/) | GIS / satellite / climate / biodiversity data, 30+ subdirs each by data type | 547 |
+| [`site_data_2026-06-13_snapshot/`](./site_data_2026-06-13_snapshot/) | Frozen pre-Wes-share data snapshot (gitignored) | 455 (local only) |
+| [`site_data_monday/`](./site_data_monday/) | Frozen 2026-06-13 Monday deliverable (gitignored) | 266 (local only) |
+
+### Historical (don't read unless auditing)
+
+| Subdir | What's in it | Files |
+|---|---|---|
+| [`_archive/`](./_archive/) | All closed-session + superseded docs, split by date | 33 |
+
+---
+
+## Reorg history (2026-07-04)
+
+This reorg pass:
+- **66 → 2 files at docs/ root** (CHANGELOG.md + INDEX.md only)
+- **Created 8 new subdirs** at docs/ level (wes, state, operations, specs, research, legal, comms, reference)
+- **Split 6 over-10 dirs** into sub-subdirs: specs/, research/, _archive/, _reconciled/, people/, ideas/
+- **Reorganized 8 site_data/ subdirs** (chelsa, mod16, hansen_gfc, jrc_gsw, mapbiomas, extended_aoi, flora, soilgrids) by data type/year
+- **17 subdirs that previously violated the 10-file rule** → all comply now
+
+See git log for the specific commits (this was a single atomic
+reorg + content-fix pass on 2026-07-04).
+
+---
+
+*Maintained by Erebus (AI Whisperers). Updated 2026-07-04.*

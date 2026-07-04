@@ -35,7 +35,7 @@ milestone in TIMELINE.md
 
 ## Full picture — context, constraints, history
 
-**Project-level anchor.** This is one of the top-level framing decisions for RV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md).
+**Project-level anchor.** This is one of the top-level framing decisions for RV. Wes's vision for the project crystallized during the 2026-06-10 mega-session and was further refined in the 2026-06-30 recordings. See: [HOUSING_PARK_CONCEPT.md](../../research/strategy/HOUSING_PARK_CONCEPT.md), [EUROPEAN../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdAN_TOUR../../_reconciled/MASTER_BRIEF.md_BRIEF.md](../../MASTER_BRIEF.md).
 
 ## What we know already (research summary)
 
@@ -99,7 +99,7 @@ $0 (framing work, no external cost)
 - [INDEX.md](../../INDEX.md) — master catalog
 - [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
 - [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- Rela../../research/strategy/HOUSING_PARK_CONCEPT.mdRK_CONCEPT.m../../specs/tourism/EUROPEAN_TOURISM_SPEC.mdmd), [E../../_reconciled/MASTER_BRIEF.mdmd](../../../../research/strategy/RESEARCH_GAPS.mdmd), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog
 

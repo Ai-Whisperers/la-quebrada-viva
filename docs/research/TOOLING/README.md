@@ -24,7 +24,7 @@
 - [`../METHODS/`](../METHODS/) — how to do research (routing tables, sprint plans)
 - [`../SOURCES/`](../SOURCES/) — what to research (catalogs of repos, data sources, vendor targets)
 - [`../RESULTS/`](../RESULTS/) — the 107+ answered research results
-- [`../README.md`](../README.md) — synthesis index, the single best entry-point
+- [`../README.md`](../../../README.md) — synthesis index, the single best entry-point
 
 ---
 

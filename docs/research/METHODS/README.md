@@ -24,7 +24,7 @@
 - [`../SOURCES/`](../SOURCES/) — what to research (catalogs of repos, data sources, vendor targets)
 - [`../TOOLING/`](../TOOLING/) — the actual tooling (Blender+GIS, asset pipelines, materials)
 - [`../RESULTS/`](../RESULTS/) — the 107+ answered research results
-- [`../README.md`](../README.md) — synthesis index, the single best entry-point
+- [`../README.md`](../../../README.md) — synthesis index, the single best entry-point
 
 ---
 

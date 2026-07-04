@@ -3,7 +3,7 @@
 > **⚠️ NAME STATUS — provisional pending Wes's W0.6 decision**
 > The repo content has been renamed from "La Quebrada Viva" → "Riverstone Valley"
 > as Wes's **first instinct** (audio E: "Stolen from Yellowstone, it's Riverstone Valley. Boom. Boom. Boom.").
-> However, Wes has **not formally decided** yet — see [`docs/people/PROJECT_NAME_CANDIDATES.md`](docs/people/PROJECT_NAME_CANDIDATES.md)
+> However, Wes has **not formally decided** yet — see [`docs/people/PROJECT_NAME_CANDIDATES.md`](docs/people/wes/PROJECT_NAME_CANDIDATES.md)
 > for 100 candidates and 3 top recommendations (Erebus's pick: **Villa del Cielo**).
 >
 > **What's safe to use "Riverstone Valley" for:** internal repo, marketing copy, email, code comments.
@@ -16,24 +16,24 @@
 
 ## 👋 If you're Wesley — start here
 
-Open **[`docs/WES_INDEX.md`](docs/WES_INDEX.md)** — it's the one page
+Open **[`docs/WES_INDEX.md`](docs/wes/WES_INDEX.md)** — it's the one page
 built for you. 5-min read. Then read in this order:
 
-1. [`docs/WES_FAQ.md`](docs/WES_FAQ.md) — common questions (10 min)
-2. [`docs/WES_GLOSSARY.md`](docs/WES_GLOSSARY.md) — vocabulary, NL/ES/EN
-3. [`docs/WES_NEXT_30_DAYS.md`](docs/WES_NEXT_30_DAYS.md) — your calendar
-4. [`docs/WES_WARNINGS.md`](docs/WES_WARNINGS.md) — things that might surprise you
-5. [`docs/WES_HOW_WE_WORK.md`](docs/WES_HOW_WE_WORK.md) — how AI Whisperers + Wes collaborate
+1. [`docs/WES_FAQ.md`](docs/wes/WES_FAQ.md) — common questions (10 min)
+2. [`docs/WES_GLOSSARY.md`](docs/wes/WES_GLOSSARY.md) — vocabulary, NL/ES/EN
+3. [`docs/WES_NEXT_30_DAYS.md`](docs/wes/WES_NEXT_30_DAYS.md) — your calendar
+4. [`docs/WES_WARNINGS.md`](docs/wes/WES_WARNINGS.md) — things that might surprise you
+5. [`docs/WES_HOW_WE_WORK.md`](docs/wes/WES_HOW_WE_WORK.md) — how AI Whisperers + Wes collaborate
 
-Then the 5 things-only-you-can-do this week in **[`docs/people/WES_ACTIONS.md`](docs/people/WES_ACTIONS.md)**.
+Then the 5 things-only-you-can-do this week in **[`docs/people/WES_ACTIONS.md`](docs/people/wes/WES_ACTIONS.md)**.
 
-If you want to know what's blocking Phase 1 right now: **[`docs/POST_ESCRITURA_NOW.md`](docs/POST_ESCRITURA_NOW.md)**.
+If you want to know what's blocking Phase 1 right now: **[`docs/POST_ESCRITURA_NOW.md`](docs/state/POST_ESCRITURA_NOW.md)**.
 
 ## 👋 If you're Ivan / Kiki / Erebus — start here
 
 Cold-start docs (open in this order):
 
-- [`docs/POST_ESCRITURA_NOW.md`](docs/POST_ESCRITURA_NOW.md) — what's blocking Phase 1, post-escritura
+- [`docs/POST_ESCRITURA_NOW.md`](docs/state/POST_ESCRITURA_NOW.md) — what's blocking Phase 1, post-escritura
 - [`STATUS.md`](STATUS.md) — canonical current state
 - [`CLAUDE.md`](CLAUDE.md) — operating instructions for AI sessions
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) — `lqv/` package map + fragility notes
@@ -65,8 +65,8 @@ Open in this order when picking up the project from scratch:
 - [`CLAUDE.md`](CLAUDE.md) — operating instructions for AI sessions (document map, 10 design rules, code invariants)
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) — `lqv/` package map + fragility / positional-coupling notes
 - [`docs/INDEX.md`](docs/INDEX.md) — `docs/` directory navigator
-- [`docs/MASTER_TODO.md`](docs/MASTER_TODO.md) — multi-phase TODO across P0–P4 + cross-cutting tracks
-- [`docs/DEFERRED_BUGS.md`](docs/DEFERRED_BUGS.md) — known-but-deferred issues with reproducers
+- [`docs/MASTER_TODO.md`](docs/state/MASTER_TODO.md) — multi-phase TODO across P0–P4 + cross-cutting tracks
+- [`docs/DEFERRED_BUGS.md`](docs/operations/DEFERRED_BUGS.md) — known-but-deferred issues with reproducers
 
 ## Quick run
 

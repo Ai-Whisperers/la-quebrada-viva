@@ -32,7 +32,7 @@ renders: simple casings, pitched roof, kitchen, bathroom. Dutch-quality low-budg
 
 ## Full picture — context, constraints, history
 
-**House typologies — the 3 size tiers.** Wes specified sizes during the 2026-06-30 v2 recording (evening session). These are the product ladder (Type A = high margin, Type C = volume). See [HOUSE_IMAGERY_SHOTLIST.md](../../HOUSE_IMAGERY_SHOTLIST.md) for the 384-final plan.
+**House typologies — the 3 size tiers.** Wes specified sizes during the 2026-06-30 v2 recording (evening session). These are the product ladder (Type A = high margin, Type C = volume). See [HOUSE_IMAGERY_SHOTLIST.md](../../specs/render/HOUSE_IMAGERY_SHOTLIST.md) for the 384-final plan.
 
 ## What we know already (research summary)
 
@@ -92,7 +92,7 @@ Type A (30-40m² romantic): ~$22k build. Type B (40-80m² family): ~$30k. Type C
 - [INDEX.md](../../INDEX.md) — master catalog
 - [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
 - [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- Related project docs: [HOUSING_PARK../../research/strategy/HOUSING_PARK_CONCEPT.mdRK_CONCEPT.m../../specs/tourism/EUROPEAN_TOURISM_SPEC.md(../../../../_reconciled/MASTER_BRIEF.md.md), [MAS../../research/strategy/RESEARCH_GAPS.mdSTER_BRIEF.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

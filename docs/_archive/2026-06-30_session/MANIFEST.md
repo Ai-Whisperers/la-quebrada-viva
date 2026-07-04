@@ -9,16 +9,16 @@
 
 | File | Was | Now superseded by |
 |---|---|---|
-| `WES_TODO.md` (468L) | Running research+decisions+actions TODO | [`docs/people/WES_ACTIONS.md`](../people/WES_ACTIONS.md) + [`../WES_INDEX.md`](../WES_INDEX.md) |
-| `WES_TODO_UPDATE.md` (204L) | Status log of WES_TODO | [`../POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md) |
-| `WES_5_THIS_WEEK.md` (126L) | "5 things this week" consolidated | [`../POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md) §Hard Gates |
-| `PRIORITIES_NEXT.md` (114L) | Critical items (now superseded) | [`../POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md) |
-| `CRITICAL_PATH.md` (204L) | Visual dep graph | [`../POST_ESCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md) |
+| `WES_TODO.md` (468L) | Running research+decisions+actions TODO | [`docs/people/WES_ACTIONS.md`](../../people/wes/WES_ACTIONS.md) + [`../WES_INDE../../wes/WES_INDEX.mdNDEX.md) |
+| `WES_TODO_UPDATE.md` (204L) | Status log of WES_TODO | [`../POST_ESCRI../../state/POST_ESCRITURA_NOW.mdCRITURA_NOW.md) |
+| `WES_5_THIS_WEEK.md` (126L) | "5 things this week" consolidated | [`../P../../state/POST_ESCRITURA_NOW.md./POST_ESCRITURA_NOW.md) §Hard Gates |
+| `PRIORITIES_NEXT.md` (114L) | Critical items (now superseded)../../state/POST_ESCRITURA_NOW.mdOW.md`](../../state/POST_ESCRITURA_NOW.md) |
+| `CRITICAL_PATH.md` (204L) | Visual ../../state/POST_ESCRITURA_NOW.mdCRITURA_NOW.md`](../POST_ESCRITURA_NOW.md) |
 | `STATUS_REPORT.md` (217L) | Pre-2026-06-30 implementation summary | `../../STATUS.md` |
 | `IMPLEMENTATION_COMPLETE.md` (196L) | Pre-2026-06-30 final summary | `../../STATUS.md` |
 | `IMPLEMENTATION_PROGRESS.md` (268L) | Pre-2026-06-30 running log | `../../STATUS.md` |
 | `FINAL_SUMMARY.md` (181L) | Pre-2026-06-30 final summary | `../../STATUS.md` |
-| `COMPREHENSIVE_REMAINING_RESEARCH.md` (123L) | 37 gaps + 30 "prepare-ahead" items | [`../RESEARCH_GAPS.md`](../RESEARCH_GAPS.md) + [`../research/RESULTS/`](../research/RESULTS/) |
+| `COMPREHENSIVE_REMAINING_RESEARCH.md` (123L) | 37 gaps + 3../../research/strategy/RESEARCH_GAPS.mdtems | [`../RESEARCH_G../../research/strategy/RESEARCH_GAPS.mdH_GAPS.md) + [`../research/RESULTS/`](../research/RESULTS/) |
 
 ## Why archived
 

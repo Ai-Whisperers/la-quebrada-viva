@@ -51,53 +51,10 @@ eco_pool render subscene
 
 **This idea depends on / is informed by:**
 
-- [`C05`](../construction/c05_water_purification_(concrete-chemical_vs_natural_w.md) — water purification
-- [`A03`](../amenities/a03_weddings_&_ceremonies_venue.md) — events
-
-
-
-## Risks & failure modes
-
-_No specific risks identified beyond standard category risks. Add as they emerge._
-
-## Cost / time estimate
-
-Varies by amenity. Wellness pool: $5-15k. Weddings venue upgrade: $20-50k. Restaurant: $100-300k Phase 3.
-
-## Done = shipped
-
-**Acceptance criteria (measurable):**
-
-- eco_pool render subscene
-- Document the deliverable's location/path in this file
-- Update the **Status** field above to `shipped`
-- Add a 1-line entry to the Changelog below
-- For research-type ideas: link the deliverable doc + note 1 key finding
-
-## Recommended next action
-
-1. **Wes: confirm Phase placement** (Phase 1/2/3 per the 2030 roadmap)
-2. **Erebus: research reference properties** (Awasi, Chaa Creek, San Bernardino Estancia comparables)
-3. **Wes: decide if concept art or build-spec needed first**
-
-## Priority & status meaning
-
-**Priority:** **Phase 2 (months 9-18) or longer-term buildout.** Important but not blocking.
-
-**Status:** Scoped and queued. Not yet started.
-
-## Sources & references
-
-- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
-- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
-- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
-- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
-- [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`C05`](a03_weddings_&_ceremonies_venue.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog
 
 - 2026-06-30: Idea created from consolidated session review (initial scaffold)
 - 2026-06-30: Rich content pass — What/Why/Context/Research/Dependencies/Risks/Cost/Done/Action sections populated
+../../research/strategy/RESEARCH_GAPS.md

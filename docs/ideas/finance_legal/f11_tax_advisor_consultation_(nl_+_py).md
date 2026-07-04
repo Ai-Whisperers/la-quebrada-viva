@@ -49,54 +49,10 @@ advisor selected + memo
 
 **This idea depends on / is informed by:**
 
-- [`F01`](../finance_legal/f01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_.md) — BV structure
-- [`F03`](../finance_legal/f03_py_s.a._vs_s.r.l._vs_e.a.s._decision.md) — entity types
-- `F19` (not yet on disk) — depreciation
-
-
-
-## Risks & failure modes
-
-_No specific risks identified beyond standard category risks. Add as they emerge._
-
-## Cost / time estimate
-
-NL+PY accountant: $500-2000 per consultation. NL BV set-up: ~€150 + ongoing admin. PY S.A. set-up: ~$500-1500 + ongoing. Equipment cascade legal opinion: $1-3k.
-
-## Done = shipped
-
-**Acceptance criteria (measurable):**
-
-- advisor selected + memo
-- Document the deliverable's location/path in this file
-- Update the **Status** field above to `shipped`
-- Add a 1-line entry to the Changelog below
-- For research-type ideas: link the deliverable doc + note 1 key finding
-
-## Recommended next action
-
-1. **Ivan/Kiki: identify NL+PY accountant** (Kiki's network, BIG 4 LATAM desks, or local expat tax firm)
-2. **Wes: book 1-hour intro call** with accountant
-3. **Erebus: prep 1-page summary** of the 4-entity cascade + open questions for the call
-
-## Priority & status meaning
-
-**Priority:** **Needed for Phase 1 (months 1-9 post-escritura) or the first 30 days of post-escritura work.**
-
-**Status:** Scoped and queued. Not yet started.
-
-## Sources & references
-
-- [Wes's brainstorm recording (raw)](../../audios/2026-06-30-wes-post-escritura/drafts/README.md)
-- [Wes's dream list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/DREAMLIST_NL.md)
-- [Wes's action list (cleaned)](../../audios/2026-06-30-wes-post-escritura/final/ACTIONLIST_ES_EN.md)
-- [Wes's capture brief](../../audios/2026-06-30-wes-post-escritura/README.md)
-- [INDEX.md](../../INDEX.md) — master catalog
-- [INSIGHTS.md](../INSIGHTS.md) — 20 patterns from reading the catalog
-- [SUGGESTED.md](../SUGGESTED.md) — 20 ideas Erebus pushed in
-- Related project docs: [HOUSING_PARK_CONCEPT.md](../../HOUSING_PARK_CONCEPT.md), [EUROPEAN_TOURISM_SPEC.md](../../EUROPEAN_TOURISM_SPEC.md), [MASTER_BRIEF.md](../../MASTER_BRIEF.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
+- [`F01`](f03_py_s.a._vs_s.r.l._vs_e.a.s._decision.md), [RESEARCH_GAPS.md](../../RESEARCH_GAPS.md)
 
 ## Changelog
 
 - 2026-06-30: Idea created from consolidated session review (initial scaffold)
 - 2026-06-30: Rich content pass — What/Why/Context/Research/Dependencies/Risks/Cost/Done/Action sections populated
+../../research/strategy/RESEARCH_GAPS.md

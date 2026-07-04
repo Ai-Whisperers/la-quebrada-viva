@@ -71,7 +71,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Note on Ivan's RV 13 typologies:** Ivan's prior render pipeline (`lqv/typologies/`) contains 13 typology build files (cob, bottle, clay_terracotta, italian_stone, hobbit, boomhut, container, etc.) which were built as **concept art** during the 18-final-render sprint. These are NOT a commitment to 13 specific built structures. They serve as visual reference for Wes to choose from. Some (cob, boomhut) overlap with the 10-type plan. Some (hobbit, container, clay_terracotta) are not in the current 10-type plan. Decision needed: keep them as concept art only, or retire.
 
-**See:** [`CABIN_CATALOG.md`](CABIN_CATALOG.md) for full per-type detail with build cost calculations, materials, and design notes.
+**See:** [`CABIN_CATALOG.md`](buildings/CABIN_CATALOG.md) for full per-type detail with build cost calculations, materials, and design notes.
 
 ---
 
@@ -143,7 +143,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Note:** these roles are 4-5x more staff than the RV catalog estimated (~7 workers for Phase 1). The full Phase 1 buildout is operationally heavier than the cob-house-only concept.
 
-**See:** [`FINANCIAL_MODEL.md`](FINANCIAL_MODEL.md) for the full breakdown.
+**See:** [`FINANCIAL_MODEL.md`](business/FINANCIAL_MODEL.md) for the full breakdown.
 
 ---
 
@@ -179,7 +179,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
   - Tractors, dump trucks, flatbed trailers: PY market is competitive
 - **Power tools** → mix (RV render pipeline needs high-spec; build site can use mid-range)
 
-**See:** [`EQUIPMENT_STRATEGY.md`](EQUIPMENT_STRATEGY.md) for the full 10-category equipment comparison tool.
+**See:** [`EQUIPMENT_STRATEGY.md`](buildings/EQUIPMENT_STRATEGY.md) for the full 10-category equipment comparison tool.
 
 ---
 
@@ -198,7 +198,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Ivan's 3DGS pipeline is relevant here** — the 3D terrain model in phase 1 can be built from Wes's 5 phone videos + ALOS DEM + Sentinel-2. This is the **"inmeten terrein"** work that Ivan already partially completed (per `docs/ideas/site_specifics/`).
 
-**See:** [`INFRASTRUCTURE_8_PHASES.md`](INFRASTRUCTURE_8_PHASES.md) for the full per-phase scope.
+**See:** [`INFRASTRUCTURE_8_PHASES.md`](buildings/INFRASTRUCTURE_8_PHASES.md) for the full per-phase scope.
 
 ---
 
@@ -234,7 +234,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Ivan's NL prices doc has pricing for 13 of these categories** (cement, sand, gravel, bricks, iron, etc.) — see `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`. This can be **merged into the master template** to start filling in real numbers.
 
-**See:** [`MATERIALS_PRICE_TEMPLATE.md`](MATERIALS_PRICE_TEMPLATE.md) for the full 14-sheet master with Ivan's existing prices filled in where available.
+**See:** [`MATERIALS_PRICE_TEMPLATE.md`](business/MATERIALS_PRICE_TEMPLATE.md) for the full 14-sheet master with Ivan's existing prices filled in where available.
 
 ---
 
@@ -248,7 +248,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 
 **Entertainment:** campfire evenings with live music, live music at lounge, lounge parties, live football screening, jungle cinema, romantic private dinner by creek, floating breakfast, hammock zones, yoga platforms
 
-**See:** [`ACTIVITIES_25_PLUS.md`](ACTIVITIES_25_PLUS.md) for the full per-activity detail with cost estimate + revenue model.
+**See:** [`ACTIVITIES_25_PLUS.md`](buildings/ACTIVITIES_25_PLUS.md) for the full per-activity detail with cost estimate + revenue model.
 
 ---
 

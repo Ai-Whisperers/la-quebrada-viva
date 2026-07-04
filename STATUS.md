@@ -134,7 +134,7 @@ See `docs/HOUSING_PARK_CONCEPT.md` (the menu of possibilities) and `docs/EUROPEA
 
 ### 4.1 Pre-closing (now → 27 Jun 2026) — highest priority
 
-For the day-by-day signing logistics, see [`docs/CLOSING_DAY_PREP.md`](docs/CLOSING_DAY_PREP.md) (T-7 / T-5 / T-2 / signing-day / T+30 checklist with risk register).
+For the day-by-day signing logistics, see [`docs/CLOSING_DAY_PREP.md`](docs/legal/CLOSING_DAY_PREP.md) (T-7 / T-5 / T-2 / signing-day / T+30 checklist with risk register).
 
 These are the Tier 1 items from `docs/RESEARCH_GAPS.md` that block the most decisions:
 
