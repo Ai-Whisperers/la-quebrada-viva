@@ -1,0 +1,3519 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0261813,
+          -25.6099145
+        ]
+      },
+      "properties": {
+        "lon": -57.0261813,
+        "lat": -25.6099145,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0261261,
+          -25.6099914
+        ]
+      },
+      "properties": {
+        "lon": -57.0261261,
+        "lat": -25.6099914,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0255732,
+          -25.608754
+        ]
+      },
+      "properties": {
+        "lon": -57.0255732,
+        "lat": -25.608754,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0341386,
+          -25.606805
+        ]
+      },
+      "properties": {
+        "lon": -57.0341386,
+        "lat": -25.606805,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0294132,
+          -25.6044545
+        ]
+      },
+      "properties": {
+        "lon": -57.0294132,
+        "lat": -25.6044545,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0335105,
+          -25.6033469
+        ]
+      },
+      "properties": {
+        "lon": -57.0335105,
+        "lat": -25.6033469,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0274267,
+          -25.6066623
+        ]
+      },
+      "properties": {
+        "lon": -57.0274267,
+        "lat": -25.6066623,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0276911,
+          -25.6120103
+        ]
+      },
+      "properties": {
+        "lon": -57.0276911,
+        "lat": -25.6120103,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0329011,
+          -25.6066678
+        ]
+      },
+      "properties": {
+        "lon": -57.0329011,
+        "lat": -25.6066678,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.029212,
+          -25.6143749
+        ]
+      },
+      "properties": {
+        "lon": -57.029212,
+        "lat": -25.6143749,
+        "style_id": "#26",
+        "name": "",
+        "cat": 26,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.033588,
+          -25.6113051
+        ]
+      },
+      "properties": {
+        "lon": -57.033588,
+        "lat": -25.6113051,
+        "style_id": "#28",
+        "name": "",
+        "cat": 28,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "gate",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0344871,
+          -25.6051039
+        ]
+      },
+      "properties": {
+        "lon": -57.0344871,
+        "lat": -25.6051039,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0287129,
+          -25.6118537
+        ]
+      },
+      "properties": {
+        "lon": -57.0287129,
+        "lat": -25.6118537,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0296353,
+          -25.6073985
+        ]
+      },
+      "properties": {
+        "lon": -57.0296353,
+        "lat": -25.6073985,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0281265,
+          -25.6120102
+        ]
+      },
+      "properties": {
+        "lon": -57.0281265,
+        "lat": -25.6120102,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0274567,
+          -25.6081121
+        ]
+      },
+      "properties": {
+        "lon": -57.0274567,
+        "lat": -25.6081121,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0327786,
+          -25.6027899
+        ]
+      },
+      "properties": {
+        "lon": -57.0327786,
+        "lat": -25.6027899,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0300967,
+          -25.6156994
+        ]
+      },
+      "properties": {
+        "lon": -57.0300967,
+        "lat": -25.6156994,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "GPS-hoogte: \u2191 163 m",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0263979,
+          -25.6074104
+        ]
+      },
+      "properties": {
+        "lon": -57.0263979,
+        "lat": -25.6074104,
+        "style_id": "#72",
+        "name": "",
+        "cat": 72,
+        "desc": "GPS-hoogte: \u2191 274 m",
+        "type": "waterfall",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0363034,
+          -25.6082958
+        ]
+      },
+      "properties": {
+        "lon": -57.0363034,
+        "lat": -25.6082958,
+        "style_id": "#118",
+        "name": "",
+        "cat": 118,
+        "desc": "Escobar-district, Ministerie van Paraguari, Regi\u00f3n Oriental",
+        "type": "border",
+        "category": "gps_marker"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03569444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0000",
+        "lon": -57.03569444442729,
+        "lat": -25.615138888904486,
+        "canopy_height_m": 13.2,
+        "estimated_dbh_cm": 29.7,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 184.0,
+        "aspect": 45.0,
+        "sun_exposure": "NE (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03152777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0001",
+        "lon": -57.03152777776062,
+        "lat": -25.615138888904486,
+        "canopy_height_m": 14.8,
+        "estimated_dbh_cm": 34.4,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 158.0,
+        "aspect": 180.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0002",
+        "lon": -57.01986111109396,
+        "lat": -25.615138888904486,
+        "canopy_height_m": 12.6,
+        "estimated_dbh_cm": 27.7,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 242.0,
+        "aspect": 223.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.9,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0003",
+        "lon": -57.018749999982845,
+        "lat": -25.615138888904486,
+        "canopy_height_m": 14.2,
+        "estimated_dbh_cm": 32.6,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 255.0,
+        "aspect": 203.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.7,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015416666649514,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0004",
+        "lon": -57.015416666649514,
+        "lat": -25.615138888904486,
+        "canopy_height_m": 11.8,
+        "estimated_dbh_cm": 25.4,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 297.0,
+        "aspect": 236.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.6,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04013888887174,
+          -25.616250000015597
+        ]
+      },
+      "properties": {
+        "tree_id": "T0005",
+        "lon": -57.04013888887174,
+        "lat": -25.616250000015597,
+        "canopy_height_m": 12.6,
+        "estimated_dbh_cm": 27.9,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 229.0,
+        "aspect": 61.0,
+        "sun_exposure": "NE (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.6,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.616527777793376
+        ]
+      },
+      "properties": {
+        "tree_id": "T0006",
+        "lon": -57.02541666664951,
+        "lat": -25.616527777793376,
+        "canopy_height_m": 14.8,
+        "estimated_dbh_cm": 34.5,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 173.0,
+        "aspect": 203.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.8,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04486111109396,
+          -25.616805555571155
+        ]
+      },
+      "properties": {
+        "tree_id": "T0007",
+        "lon": -57.04486111109396,
+        "lat": -25.616805555571155,
+        "canopy_height_m": 11.3,
+        "estimated_dbh_cm": 24.0,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 238.0,
+        "aspect": 163.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.8,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.029027777760625,
+          -25.616805555571155
+        ]
+      },
+      "properties": {
+        "tree_id": "T0008",
+        "lon": -57.029027777760625,
+        "lat": -25.616805555571155,
+        "canopy_height_m": 16.6,
+        "estimated_dbh_cm": 43.0,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 166.0,
+        "aspect": 149.0,
+        "sun_exposure": "SE (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.617083333348933
+        ]
+      },
+      "properties": {
+        "tree_id": "T0009",
+        "lon": -57.015972222205065,
+        "lat": -25.617083333348933,
+        "canopy_height_m": 15.9,
+        "estimated_dbh_cm": 39.5,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 265.0,
+        "aspect": 211.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.617638888904487
+        ]
+      },
+      "properties": {
+        "tree_id": "T0010",
+        "lon": -57.01902777776062,
+        "lat": -25.617638888904487,
+        "canopy_height_m": 17.1,
+        "estimated_dbh_cm": 45.4,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 212.0,
+        "aspect": 225.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.7,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03986111109396,
+          -25.617916666682266
+        ]
+      },
+      "properties": {
+        "tree_id": "T0011",
+        "lon": -57.03986111109396,
+        "lat": -25.617916666682266,
+        "canopy_height_m": 11.9,
+        "estimated_dbh_cm": 25.7,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 253.0,
+        "aspect": 16.0,
+        "sun_exposure": "N (full)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.0,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.035138888871735,
+          -25.618194444460045
+        ]
+      },
+      "properties": {
+        "tree_id": "T0012",
+        "lon": -57.035138888871735,
+        "lat": -25.618194444460045,
+        "canopy_height_m": 12.9,
+        "estimated_dbh_cm": 28.7,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 186.0,
+        "aspect": 106.0,
+        "sun_exposure": "E (morning)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02874999998285,
+          -25.61847222223782
+        ]
+      },
+      "properties": {
+        "tree_id": "T0013",
+        "lon": -57.02874999998285,
+        "lat": -25.61847222223782,
+        "canopy_height_m": 19.5,
+        "estimated_dbh_cm": 57.3,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 167.0,
+        "aspect": 261.0,
+        "sun_exposure": "W (afternoon)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.7,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.61847222223782
+        ]
+      },
+      "properties": {
+        "tree_id": "T0014",
+        "lon": -57.02541666664951,
+        "lat": -25.61847222223782,
+        "canopy_height_m": 19.5,
+        "estimated_dbh_cm": 57.6,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 157.0,
+        "aspect": 202.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0168055555384,
+          -25.61847222223782
+        ]
+      },
+      "properties": {
+        "tree_id": "T0015",
+        "lon": -57.0168055555384,
+        "lat": -25.61847222223782,
+        "canopy_height_m": 15.8,
+        "estimated_dbh_cm": 38.9,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 255.0,
+        "aspect": 268.0,
+        "sun_exposure": "W (afternoon)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02097222220507,
+          -25.619305555571156
+        ]
+      },
+      "properties": {
+        "tree_id": "T0016",
+        "lon": -57.02097222220507,
+        "lat": -25.619305555571156,
+        "canopy_height_m": 13.7,
+        "estimated_dbh_cm": 31.2,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 208.0,
+        "aspect": 335.0,
+        "sun_exposure": "NW (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.0,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01708333331618,
+          -25.61986111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0017",
+        "lon": -57.01708333331618,
+        "lat": -25.61986111112671,
+        "canopy_height_m": 14.9,
+        "estimated_dbh_cm": 34.6,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 284.0,
+        "aspect": 302.0,
+        "sun_exposure": "NW (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.7,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.035138888871735,
+          -25.620694444460042
+        ]
+      },
+      "properties": {
+        "tree_id": "T0018",
+        "lon": -57.035138888871735,
+        "lat": -25.620694444460042,
+        "canopy_height_m": 17.9,
+        "estimated_dbh_cm": 49.6,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 188.0,
+        "aspect": 160.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.7,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02208333331618,
+          -25.620694444460042
+        ]
+      },
+      "properties": {
+        "tree_id": "T0019",
+        "lon": -57.02208333331618,
+        "lat": -25.620694444460042,
+        "canopy_height_m": 18.7,
+        "estimated_dbh_cm": 53.4,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 242.0,
+        "aspect": 210.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.9,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03958333331618,
+          -25.62152777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0020",
+        "lon": -57.03958333331618,
+        "lat": -25.62152777779338,
+        "canopy_height_m": 14.0,
+        "estimated_dbh_cm": 32.1,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 194.0,
+        "aspect": 180.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01652777776062,
+          -25.62152777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0021",
+        "lon": -57.01652777776062,
+        "lat": -25.62152777779338,
+        "canopy_height_m": 15.1,
+        "estimated_dbh_cm": 35.4,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 351.0,
+        "aspect": 207.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04097222220507,
+          -25.621805555571154
+        ]
+      },
+      "properties": {
+        "tree_id": "T0022",
+        "lon": -57.04097222220507,
+        "lat": -25.621805555571154,
+        "canopy_height_m": 11.5,
+        "estimated_dbh_cm": 24.4,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 195.0,
+        "aspect": 162.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03736111109396,
+          -25.621805555571154
+        ]
+      },
+      "properties": {
+        "tree_id": "T0023",
+        "lon": -57.03736111109396,
+        "lat": -25.621805555571154,
+        "canopy_height_m": 15.3,
+        "estimated_dbh_cm": 36.3,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 177.0,
+        "aspect": 177.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04319444442729,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0024",
+        "lon": -57.04319444442729,
+        "lat": -25.62236111112671,
+        "canopy_height_m": 13.9,
+        "estimated_dbh_cm": 31.7,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 199.0,
+        "aspect": 197.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.6,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02513888887174,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0025",
+        "lon": -57.02513888887174,
+        "lat": -25.62236111112671,
+        "canopy_height_m": 15.9,
+        "estimated_dbh_cm": 39.5,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 158.0,
+        "aspect": 225.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0026",
+        "lon": -57.01958333331618,
+        "lat": -25.62236111112671,
+        "canopy_height_m": 19.5,
+        "estimated_dbh_cm": 57.6,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 261.0,
+        "aspect": 238.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03597222220507,
+          -25.62263888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0027",
+        "lon": -57.03597222220507,
+        "lat": -25.62263888890449,
+        "canopy_height_m": 18.5,
+        "estimated_dbh_cm": 52.7,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 163.0,
+        "aspect": 198.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.017361111093955,
+          -25.622916666682265
+        ]
+      },
+      "properties": {
+        "tree_id": "T0028",
+        "lon": -57.017361111093955,
+        "lat": -25.622916666682265,
+        "canopy_height_m": 16.5,
+        "estimated_dbh_cm": 42.4,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 343.0,
+        "aspect": 270.0,
+        "sun_exposure": "W (afternoon)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.031805555538405,
+          -25.623194444460044
+        ]
+      },
+      "properties": {
+        "tree_id": "T0029",
+        "lon": -57.031805555538405,
+        "lat": -25.623194444460044,
+        "canopy_height_m": 12.6,
+        "estimated_dbh_cm": 27.9,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 145.0,
+        "aspect": 149.0,
+        "sun_exposure": "SE (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03541666664952,
+          -25.624027777793376
+        ]
+      },
+      "properties": {
+        "tree_id": "T0030",
+        "lon": -57.03541666664952,
+        "lat": -25.624027777793376,
+        "canopy_height_m": 11.8,
+        "estimated_dbh_cm": 25.3,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 156.0,
+        "aspect": 342.0,
+        "sun_exposure": "N (full)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02958333331618,
+          -25.624583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0031",
+        "lon": -57.02958333331618,
+        "lat": -25.624583333348934,
+        "canopy_height_m": 14.0,
+        "estimated_dbh_cm": 31.9,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 139.0,
+        "aspect": 180.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.624583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0032",
+        "lon": -57.01958333331618,
+        "lat": -25.624583333348934,
+        "canopy_height_m": 16.1,
+        "estimated_dbh_cm": 40.5,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 266.0,
+        "aspect": 270.0,
+        "sun_exposure": "W (afternoon)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 2.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01513888887173,
+          -25.624583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0033",
+        "lon": -57.01513888887173,
+        "lat": -25.624583333348934,
+        "canopy_height_m": 12.8,
+        "estimated_dbh_cm": 28.5,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 267.0,
+        "aspect": 132.0,
+        "sun_exposure": "SE (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01763888887174,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "tree_id": "T0034",
+        "lon": -57.01763888887174,
+        "lat": -25.625138888904488,
+        "canopy_height_m": 17.5,
+        "estimated_dbh_cm": 47.7,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 310.0,
+        "aspect": 201.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 1.9,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024861111093955,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "tree_id": "T0035",
+        "lon": -57.024861111093955,
+        "lat": -25.625416666682266,
+        "canopy_height_m": 12.6,
+        "estimated_dbh_cm": 27.7,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 154.0,
+        "aspect": 288.0,
+        "sun_exposure": "W (afternoon)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.037916666649515,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "tree_id": "T0036",
+        "lon": -57.037916666649515,
+        "lat": -25.625694444460045,
+        "canopy_height_m": 14.4,
+        "estimated_dbh_cm": 33.3,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 171.0,
+        "aspect": 104.0,
+        "sun_exposure": "E (morning)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03708333331618,
+          -25.625972222237824
+        ]
+      },
+      "properties": {
+        "tree_id": "T0037",
+        "lon": -57.03708333331618,
+        "lat": -25.625972222237824,
+        "canopy_height_m": 15.2,
+        "estimated_dbh_cm": 36.0,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 167.0,
+        "aspect": 0.0,
+        "sun_exposure": "N (full)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01708333331618,
+          -25.626527777793378
+        ]
+      },
+      "properties": {
+        "tree_id": "T0038",
+        "lon": -57.01708333331618,
+        "lat": -25.626527777793378,
+        "canopy_height_m": 13.2,
+        "estimated_dbh_cm": 29.5,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 245.0,
+        "aspect": 204.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 2.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0368055555384,
+          -25.627083333348935
+        ]
+      },
+      "properties": {
+        "tree_id": "T0039",
+        "lon": -57.0368055555384,
+        "lat": -25.627083333348935,
+        "canopy_height_m": 14.9,
+        "estimated_dbh_cm": 34.6,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 175.0,
+        "aspect": 63.0,
+        "sun_exposure": "NE (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.042083333316185,
+          -25.62736111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0040",
+        "lon": -57.042083333316185,
+        "lat": -25.62736111112671,
+        "canopy_height_m": 14.2,
+        "estimated_dbh_cm": 32.6,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 183.0,
+        "aspect": 207.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04458333331618,
+          -25.62902777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0041",
+        "lon": -57.04458333331618,
+        "lat": -25.62902777779338,
+        "canopy_height_m": 16.1,
+        "estimated_dbh_cm": 40.4,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 166.0,
+        "aspect": 270.0,
+        "sun_exposure": "W (afternoon)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.033194444427295,
+          -25.62986111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0042",
+        "lon": -57.033194444427295,
+        "lat": -25.62986111112671,
+        "canopy_height_m": 17.3,
+        "estimated_dbh_cm": 46.7,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 161.0,
+        "aspect": 304.0,
+        "sun_exposure": "NW (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.027638888871735,
+          -25.63013888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0043",
+        "lon": -57.027638888871735,
+        "lat": -25.63013888890449,
+        "canopy_height_m": 16.6,
+        "estimated_dbh_cm": 43.2,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 135.0,
+        "aspect": 297.0,
+        "sun_exposure": "NW (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04097222220507,
+          -25.631805555571155
+        ]
+      },
+      "properties": {
+        "tree_id": "T0044",
+        "lon": -57.04097222220507,
+        "lat": -25.631805555571155,
+        "canopy_height_m": 12.2,
+        "estimated_dbh_cm": 26.5,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 149.0,
+        "aspect": 231.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03208333331618,
+          -25.632083333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0045",
+        "lon": -57.03208333331618,
+        "lat": -25.632083333348934,
+        "canopy_height_m": 16.6,
+        "estimated_dbh_cm": 43.2,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 149.0,
+        "aspect": 315.0,
+        "sun_exposure": "NW (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04374999998285,
+          -25.634583333348935
+        ]
+      },
+      "properties": {
+        "tree_id": "T0046",
+        "lon": -57.04374999998285,
+        "lat": -25.634583333348935,
+        "canopy_height_m": 12.1,
+        "estimated_dbh_cm": 26.2,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 152.0,
+        "aspect": 0.0,
+        "sun_exposure": "N (full)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.0,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.035138888871735,
+          -25.635694444460047
+        ]
+      },
+      "properties": {
+        "tree_id": "T0047",
+        "lon": -57.035138888871735,
+        "lat": -25.635694444460047,
+        "canopy_height_m": 16.0,
+        "estimated_dbh_cm": 39.8,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 150.0,
+        "aspect": 225.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.1,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03736111109396,
+          -25.635972222237825
+        ]
+      },
+      "properties": {
+        "tree_id": "T0048",
+        "lon": -57.03736111109396,
+        "lat": -25.635972222237825,
+        "canopy_height_m": 16.9,
+        "estimated_dbh_cm": 44.3,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 145.0,
+        "aspect": 236.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.4,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03458333331618,
+          -25.637083333348937
+        ]
+      },
+      "properties": {
+        "tree_id": "T0049",
+        "lon": -57.03458333331618,
+        "lat": -25.637083333348937,
+        "canopy_height_m": 18.4,
+        "estimated_dbh_cm": 52.0,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 146.0,
+        "aspect": 103.0,
+        "sun_exposure": "E (morning)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02319444442729,
+          -25.63763888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0050",
+        "lon": -57.02319444442729,
+        "lat": -25.63763888890449,
+        "canopy_height_m": 14.8,
+        "estimated_dbh_cm": 34.2,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 146.0,
+        "aspect": 131.0,
+        "sun_exposure": "SE (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.040694444427295,
+          -25.63930555557116
+        ]
+      },
+      "properties": {
+        "tree_id": "T0051",
+        "lon": -57.040694444427295,
+        "lat": -25.63930555557116,
+        "canopy_height_m": 10.0,
+        "estimated_dbh_cm": 19.9,
+        "species_category": "Understory (palm/ing\u00e1)",
+        "elevation_m": 146.0,
+        "aspect": 189.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.3,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0218055555384,
+          -25.63930555557116
+        ]
+      },
+      "properties": {
+        "tree_id": "T0052",
+        "lon": -57.0218055555384,
+        "lat": -25.63930555557116,
+        "canopy_height_m": 13.0,
+        "estimated_dbh_cm": 29.1,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 144.0,
+        "aspect": 225.0,
+        "sun_exposure": "SW (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01513888887173,
+          -25.639583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0053",
+        "lon": -57.01513888887173,
+        "lat": -25.639583333348934,
+        "canopy_height_m": 11.6,
+        "estimated_dbh_cm": 24.7,
+        "species_category": "Subcanopy (various native hardwoods)",
+        "elevation_m": 150.0,
+        "aspect": 297.0,
+        "sun_exposure": "NW (good)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.2,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.037916666649515,
+          -25.639861111126713
+        ]
+      },
+      "properties": {
+        "tree_id": "T0054",
+        "lon": -57.037916666649515,
+        "lat": -25.639861111126713,
+        "canopy_height_m": 15.6,
+        "estimated_dbh_cm": 38.0,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 151.0,
+        "aspect": 157.0,
+        "sun_exposure": "SE (partial)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.8,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03597222220507,
+          -25.64013888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0055",
+        "lon": -57.03597222220507,
+        "lat": -25.64013888890449,
+        "canopy_height_m": 17.2,
+        "estimated_dbh_cm": 46.2,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 136.0,
+        "aspect": 108.0,
+        "sun_exposure": "E (morning)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.64152777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0056",
+        "lon": -57.02041666664951,
+        "lat": -25.64152777779338,
+        "canopy_height_m": 15.4,
+        "estimated_dbh_cm": 36.8,
+        "species_category": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 143.0,
+        "aspect": 193.0,
+        "sun_exposure": "S (low)",
+        "tree_cover_2000_pct": 0.0,
+        "slope_pct": 0.5,
+        "category": "tree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03708333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0000",
+        "lon": -57.03708333331618,
+        "lat": -25.615138888904486,
+        "elevation_m": 187.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0268055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0001",
+        "lon": -57.0268055555384,
+        "lat": -25.615138888904486,
+        "elevation_m": 179.0,
+        "slope_pct": 0.9,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02652777776063,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0002",
+        "lon": -57.02652777776063,
+        "lat": -25.615138888904486,
+        "elevation_m": 184.0,
+        "slope_pct": 0.8,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.026249999982845,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0003",
+        "lon": -57.026249999982845,
+        "lat": -25.615138888904486,
+        "elevation_m": 190.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02597222220507,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0004",
+        "lon": -57.02597222220507,
+        "lat": -25.615138888904486,
+        "elevation_m": 193.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02569444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0005",
+        "lon": -57.02569444442729,
+        "lat": -25.615138888904486,
+        "elevation_m": 193.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0006",
+        "lon": -57.02541666664951,
+        "lat": -25.615138888904486,
+        "elevation_m": 191.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02513888887174,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0007",
+        "lon": -57.02513888887174,
+        "lat": -25.615138888904486,
+        "elevation_m": 192.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024861111093955,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0008",
+        "lon": -57.024861111093955,
+        "lat": -25.615138888904486,
+        "elevation_m": 193.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02458333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0009",
+        "lon": -57.02458333331618,
+        "lat": -25.615138888904486,
+        "elevation_m": 194.0,
+        "slope_pct": 0.3,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024305555538405,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0010",
+        "lon": -57.024305555538405,
+        "lat": -25.615138888904486,
+        "elevation_m": 197.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02402777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0011",
+        "lon": -57.02402777776062,
+        "lat": -25.615138888904486,
+        "elevation_m": 199.0,
+        "slope_pct": 0.3,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02374999998285,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0012",
+        "lon": -57.02374999998285,
+        "lat": -25.615138888904486,
+        "elevation_m": 203.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.023472222205065,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0013",
+        "lon": -57.023472222205065,
+        "lat": -25.615138888904486,
+        "elevation_m": 205.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02319444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0014",
+        "lon": -57.02319444442729,
+        "lat": -25.615138888904486,
+        "elevation_m": 209.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.022916666649515,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0015",
+        "lon": -57.022916666649515,
+        "lat": -25.615138888904486,
+        "elevation_m": 209.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02263888887173,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0016",
+        "lon": -57.02263888887173,
+        "lat": -25.615138888904486,
+        "elevation_m": 211.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02236111109396,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0017",
+        "lon": -57.02236111109396,
+        "lat": -25.615138888904486,
+        "elevation_m": 215.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02208333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0018",
+        "lon": -57.02208333331618,
+        "lat": -25.615138888904486,
+        "elevation_m": 219.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0218055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0019",
+        "lon": -57.0218055555384,
+        "lat": -25.615138888904486,
+        "elevation_m": 220.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.021527777760625,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0020",
+        "lon": -57.021527777760625,
+        "lat": -25.615138888904486,
+        "elevation_m": 222.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02124999998284,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0021",
+        "lon": -57.02124999998284,
+        "lat": -25.615138888904486,
+        "elevation_m": 228.0,
+        "slope_pct": 1.0,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02097222220507,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0022",
+        "lon": -57.02097222220507,
+        "lat": -25.615138888904486,
+        "elevation_m": 233.0,
+        "slope_pct": 1.1,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02069444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0023",
+        "lon": -57.02069444442729,
+        "lat": -25.615138888904486,
+        "elevation_m": 234.0,
+        "slope_pct": 0.8,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0024",
+        "lon": -57.02041666664951,
+        "lat": -25.615138888904486,
+        "elevation_m": 231.0,
+        "slope_pct": 0.3,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.020138888871735,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0025",
+        "lon": -57.020138888871735,
+        "lat": -25.615138888904486,
+        "elevation_m": 234.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0026",
+        "lon": -57.01986111109396,
+        "lat": -25.615138888904486,
+        "elevation_m": 242.0,
+        "slope_pct": 0.9,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0027",
+        "lon": -57.01958333331618,
+        "lat": -25.615138888904486,
+        "elevation_m": 245.0,
+        "slope_pct": 0.8,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0193055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0028",
+        "lon": -57.0193055555384,
+        "lat": -25.615138888904486,
+        "elevation_m": 247.0,
+        "slope_pct": 1.0,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0029",
+        "lon": -57.01902777776062,
+        "lat": -25.615138888904486,
+        "elevation_m": 253.0,
+        "slope_pct": 1.1,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0030",
+        "lon": -57.018749999982845,
+        "lat": -25.615138888904486,
+        "elevation_m": 255.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01847222220507,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0031",
+        "lon": -57.01847222220507,
+        "lat": -25.615138888904486,
+        "elevation_m": 258.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01819444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0032",
+        "lon": -57.01819444442729,
+        "lat": -25.615138888904486,
+        "elevation_m": 257.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01791666664951,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0033",
+        "lon": -57.01791666664951,
+        "lat": -25.615138888904486,
+        "elevation_m": 261.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01763888887174,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0034",
+        "lon": -57.01763888887174,
+        "lat": -25.615138888904486,
+        "elevation_m": 262.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.017361111093955,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0035",
+        "lon": -57.017361111093955,
+        "lat": -25.615138888904486,
+        "elevation_m": 264.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01708333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0036",
+        "lon": -57.01708333331618,
+        "lat": -25.615138888904486,
+        "elevation_m": 270.0,
+        "slope_pct": 0.9,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0168055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0037",
+        "lon": -57.0168055555384,
+        "lat": -25.615138888904486,
+        "elevation_m": 274.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01652777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0038",
+        "lon": -57.01652777776062,
+        "lat": -25.615138888904486,
+        "elevation_m": 276.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01624999998285,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0039",
+        "lon": -57.01624999998285,
+        "lat": -25.615138888904486,
+        "elevation_m": 283.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0040",
+        "lon": -57.015972222205065,
+        "lat": -25.615138888904486,
+        "elevation_m": 288.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01569444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0041",
+        "lon": -57.01569444442729,
+        "lat": -25.615138888904486,
+        "elevation_m": 290.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015416666649514,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0042",
+        "lon": -57.015416666649514,
+        "lat": -25.615138888904486,
+        "elevation_m": 297.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01513888887173,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "feature_id": "R0043",
+        "lon": -57.01513888887173,
+        "lat": -25.615138888904486,
+        "elevation_m": 299.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03708333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0044",
+        "lon": -57.03708333331618,
+        "lat": -25.615416666682265,
+        "elevation_m": 188.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0368055555384,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0045",
+        "lon": -57.0368055555384,
+        "lat": -25.615416666682265,
+        "elevation_m": 194.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02652777776063,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0046",
+        "lon": -57.02652777776063,
+        "lat": -25.615416666682265,
+        "elevation_m": 179.0,
+        "slope_pct": 0.9,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.026249999982845,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0047",
+        "lon": -57.026249999982845,
+        "lat": -25.615416666682265,
+        "elevation_m": 185.0,
+        "slope_pct": 0.8,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02597222220507,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0048",
+        "lon": -57.02597222220507,
+        "lat": -25.615416666682265,
+        "elevation_m": 188.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02569444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0049",
+        "lon": -57.02569444442729,
+        "lat": -25.615416666682265,
+        "elevation_m": 187.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0050",
+        "lon": -57.02541666664951,
+        "lat": -25.615416666682265,
+        "elevation_m": 189.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02513888887174,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0051",
+        "lon": -57.02513888887174,
+        "lat": -25.615416666682265,
+        "elevation_m": 190.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024861111093955,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0052",
+        "lon": -57.024861111093955,
+        "lat": -25.615416666682265,
+        "elevation_m": 190.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02458333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0053",
+        "lon": -57.02458333331618,
+        "lat": -25.615416666682265,
+        "elevation_m": 192.0,
+        "slope_pct": 0.3,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024305555538405,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0054",
+        "lon": -57.024305555538405,
+        "lat": -25.615416666682265,
+        "elevation_m": 194.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02402777776062,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0055",
+        "lon": -57.02402777776062,
+        "lat": -25.615416666682265,
+        "elevation_m": 199.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02374999998285,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0056",
+        "lon": -57.02374999998285,
+        "lat": -25.615416666682265,
+        "elevation_m": 200.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.023472222205065,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0057",
+        "lon": -57.023472222205065,
+        "lat": -25.615416666682265,
+        "elevation_m": 201.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02319444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0058",
+        "lon": -57.02319444442729,
+        "lat": -25.615416666682265,
+        "elevation_m": 206.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.022916666649515,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0059",
+        "lon": -57.022916666649515,
+        "lat": -25.615416666682265,
+        "elevation_m": 208.0,
+        "slope_pct": 0.3,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02263888887173,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0060",
+        "lon": -57.02263888887173,
+        "lat": -25.615416666682265,
+        "elevation_m": 209.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02236111109396,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0061",
+        "lon": -57.02236111109396,
+        "lat": -25.615416666682265,
+        "elevation_m": 212.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02208333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0062",
+        "lon": -57.02208333331618,
+        "lat": -25.615416666682265,
+        "elevation_m": 216.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0218055555384,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0063",
+        "lon": -57.0218055555384,
+        "lat": -25.615416666682265,
+        "elevation_m": 219.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.021527777760625,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0064",
+        "lon": -57.021527777760625,
+        "lat": -25.615416666682265,
+        "elevation_m": 220.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02124999998284,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0065",
+        "lon": -57.02124999998284,
+        "lat": -25.615416666682265,
+        "elevation_m": 221.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02097222220507,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0066",
+        "lon": -57.02097222220507,
+        "lat": -25.615416666682265,
+        "elevation_m": 224.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02069444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0067",
+        "lon": -57.02069444442729,
+        "lat": -25.615416666682265,
+        "elevation_m": 227.0,
+        "slope_pct": 0.6,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0068",
+        "lon": -57.02041666664951,
+        "lat": -25.615416666682265,
+        "elevation_m": 228.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.020138888871735,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0069",
+        "lon": -57.020138888871735,
+        "lat": -25.615416666682265,
+        "elevation_m": 232.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0070",
+        "lon": -57.01986111109396,
+        "lat": -25.615416666682265,
+        "elevation_m": 236.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0071",
+        "lon": -57.01958333331618,
+        "lat": -25.615416666682265,
+        "elevation_m": 238.0,
+        "slope_pct": 0.8,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0193055555384,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0072",
+        "lon": -57.0193055555384,
+        "lat": -25.615416666682265,
+        "elevation_m": 239.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0073",
+        "lon": -57.01902777776062,
+        "lat": -25.615416666682265,
+        "elevation_m": 244.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0074",
+        "lon": -57.018749999982845,
+        "lat": -25.615416666682265,
+        "elevation_m": 249.0,
+        "slope_pct": 0.7,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01847222220507,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0075",
+        "lon": -57.01847222220507,
+        "lat": -25.615416666682265,
+        "elevation_m": 254.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01819444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0076",
+        "lon": -57.01819444442729,
+        "lat": -25.615416666682265,
+        "elevation_m": 254.0,
+        "slope_pct": 0.4,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01791666664951,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0077",
+        "lon": -57.01791666664951,
+        "lat": -25.615416666682265,
+        "elevation_m": 258.0,
+        "slope_pct": 0.5,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01763888887174,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0078",
+        "lon": -57.01763888887174,
+        "lat": -25.615416666682265,
+        "elevation_m": 262.0,
+        "slope_pct": 0.3,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.017361111093955,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "feature_id": "R0079",
+        "lon": -57.017361111093955,
+        "lat": -25.615416666682265,
+        "elevation_m": 262.0,
+        "slope_pct": 0.2,
+        "rock_score": 1.0,
+        "rock_type_guess": "Outcrop",
+        "tree_cover_pct": 0,
+        "category": "rock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03013888887173,
+          -25.62902777779338
+        ]
+      },
+      "properties": {
+        "zone_id": "B1",
+        "centroid_lon": -57.03013888887173,
+        "centroid_lat": -25.62902777779338,
+        "area_m2": 5472000.0,
+        "area_ha": 547.2,
+        "elevation_m": 135.0,
+        "avg_slope_pct": 0.3,
+        "aspect_deg": 72.0,
+        "avg_tree_cover_pct": 0.0,
+        "category": "buildable_zone"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02986111109396,
+          -25.624027777793376
+        ]
+      },
+      "properties": {
+        "zone_id": "B2",
+        "centroid_lon": -57.02986111109396,
+        "centroid_lat": -25.624027777793376,
+        "area_m2": 8100.0,
+        "area_ha": 0.81,
+        "elevation_m": 140.0,
+        "avg_slope_pct": 0.3,
+        "aspect_deg": 342.0,
+        "avg_tree_cover_pct": 0.0,
+        "category": "buildable_zone"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03013888887173,
+          -25.6312500000156
+        ]
+      },
+      "properties": {
+        "zone_id": "B8",
+        "centroid_lon": -57.03013888887173,
+        "centroid_lat": -25.6312500000156,
+        "area_m2": 5400.0,
+        "area_ha": 0.54,
+        "elevation_m": 138.0,
+        "avg_slope_pct": 0.4,
+        "aspect_deg": 278.0,
+        "avg_tree_cover_pct": 0.0,
+        "category": "buildable_zone"
+      }
+    }
+  ]
+}
