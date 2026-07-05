@@ -1883,6 +1883,98 @@ try {
   if (localStorage.getItem('lqv-sidebar-collapsed') === '1') setSidebarCollapsed(true);
 } catch (e) {}
 
+// Keyboard shortcut: `[` toggles collapse, `F` toggles fullscreen.
+// Escape exits fullscreen automatically (browser native).
+window.addEventListener('keydown', (e) => {
+  // Don't trigger when user is typing in an input/textarea
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+  if (e.key === '[') {
+    e.preventDefault();
+    setSidebarCollapsed(!_sb.classList.contains('collapsed'));
+  } else if (e.key === 'f' || e.key === 'F') {
+    e.preventDefault();
+    toggleFullscreen();
+  }
+});
+
+// ════════════════════════════════════════════════════════════════
+// FULLSCREEN MODE — fills the viewport with just the map.
+// Uses the Fullscreen API when available, falls back to a CSS class
+// overlay if the user denies or the API is missing.
+// ════════════════════════════════════════════════════════════════
+function enterFullscreen() {
+  const el = document.documentElement;
+  const go = (enabled) => {
+    document.body.classList.toggle('fullscreen-mode', enabled);
+    const btn = document.getElementById('fullscreen-btn');
+    if (btn) {
+      btn.textContent = enabled ? '⛶ Exit fullscreen' : '⛶ Fullscreen';
+      btn.title = enabled ? 'Exit fullscreen (Esc or F)'
+                          : 'Fullscreen (F)';
+    }
+    if (enabled) {
+      // Floating hint
+      const hint = document.createElement('div');
+      hint.className = 'fs-hint';
+      hint.textContent = 'Press F or Esc to exit fullscreen';
+      document.body.appendChild(hint);
+      setTimeout(() => hint.remove(), 2600);
+    }
+    // Leaflet needs to recompute container size
+    setTimeout(() => { try { map.invalidateSize(); } catch (e) {} }, 200);
+  };
+  if (document.fullscreenEnabled && el.requestFullscreen) {
+    el.requestFullscreen().then(() => go(true)).catch(() => {
+      // User denied or browser blocked — fall back to CSS overlay
+      go(true);
+    });
+  } else {
+    go(true);
+  }
+}
+
+function exitFullscreen() {
+  const go = () => {
+    document.body.classList.remove('fullscreen-mode');
+    const btn = document.getElementById('fullscreen-btn');
+    if (btn) {
+      btn.textContent = '⛶ Fullscreen';
+      btn.title = 'Fullscreen (F)';
+    }
+    setTimeout(() => { try { map.invalidateSize(); } catch (e) {} }, 200);
+  };
+  if (document.fullscreenElement && document.exitFullscreen) {
+    document.exitFullscreen().then(go).catch(go);
+  } else {
+    go();
+  }
+}
+
+function toggleFullscreen() {
+  const isFs = document.body.classList.contains('fullscreen-mode')
+               || document.fullscreenElement;
+  if (isFs) exitFullscreen();
+  else enterFullscreen();
+}
+
+// React to native fullscreen change (F11, Esc, browser controls)
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) {
+    document.body.classList.remove('fullscreen-mode');
+    const btn = document.getElementById('fullscreen-btn');
+    if (btn) { btn.textContent = '⛶ Fullscreen'; btn.title = 'Fullscreen (F)'; }
+    setTimeout(() => { try { map.invalidateSize(); } catch (e) {} }, 200);
+  } else {
+    document.body.classList.add('fullscreen-mode');
+    setTimeout(() => { try { map.invalidateSize(); } catch (e) {} }, 200);
+  }
+});
+
+// Wire up the button
+const _fsBtn = document.getElementById('fullscreen-btn');
+if (_fsBtn) _fsBtn.onclick = toggleFullscreen;
+
 // P2-4: Share view button — copy current URL with state hash to clipboard.
 document.getElementById('share-view').onclick = async () => {
   try {

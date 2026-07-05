@@ -5,7 +5,7 @@
 //   - cache-first for shell HTML/JS/CSS
 //   - cache OSM/Esri tiles with LRU eviction (max 1500 tiles)
 
-const VERSION = 'v21';
+const VERSION = 'v22';
 const RASTER_CACHE = `lqv-rasters-${VERSION}`;
 const GEOJSON_CACHE = `lqv-geojson-${VERSION}`;
 const SHELL_CACHE   = `lqv-shell-${VERSION}`;
@@ -31,6 +31,9 @@ const GEOJSON_PATHS = [
   '/data/water_combined_10km.geojson',
   '/data/surface_water_10km.geojson',
   '/data/hand_10km.geojson',
+  '/data/hand_10km.png',
+  '/data/local_quebradas_10km.geojson',
+  '/data/ndvi_canopy_10km.png',
   '/data/mapbiomas_2023_10km.geojson',
   '/data/hansen_loss_10km.geojson',
   '/data/hansen_gain_10km.geojson',

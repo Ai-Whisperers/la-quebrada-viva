@@ -108,6 +108,50 @@
   }
   .sidebar-collapse:hover { background: var(--gold); color: white; border-color: var(--gold-dark); }
   aside.sidebar.collapsed .sidebar-collapse { right: 8px; transform: rotate(180deg); }
+
+  /* ═══════════════════════════════════════════════════════════════
+     FULLSCREEN MODE
+     When document.body has .fullscreen-mode, hide everything that
+     isn't the map. Click anywhere or press Esc to exit.
+     ═══════════════════════════════════════════════════════════════ */
+  body.fullscreen-mode header.topbar,
+  body.fullscreen-mode aside.sidebar,
+  body.fullscreen-mode .drawer-toggle,
+  body.fullscreen-mode .drawer-backdrop,
+  body.fullscreen-mode .elev-hud .elev-hud-header,
+  body.fullscreen-mode #forest-timeline,
+  body.fullscreen-mode .north-arrow { display: none !important; }
+  body.fullscreen-mode .layout {
+    grid-template-columns: 1fr !important;
+    height: 100vh !important;
+  }
+  body.fullscreen-mode .map-wrap { height: 100vh !important; }
+  /* In fullscreen, the fullscreen button lives in the top-right corner
+     of the map itself. */
+  body.fullscreen-mode #fullscreen-btn {
+    position: fixed; top: 12px; right: 12px; z-index: 1100;
+    background: rgba(28,25,23,0.88); color: white;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 4px;
+    padding: 8px 14px; font-size: 0.85rem; cursor: pointer;
+    backdrop-filter: blur(4px);
+  }
+  body.fullscreen-mode #fullscreen-btn:hover {
+    background: rgba(196,155,60,0.95);
+  }
+  /* Floating exit hint shown for 2.5 s when entering fullscreen */
+  .fs-hint {
+    position: fixed; top: 60px; left: 50%; transform: translateX(-50%);
+    z-index: 1101; background: rgba(28,25,23,0.85); color: white;
+    padding: 10px 18px; border-radius: 6px; font-size: 0.84rem;
+    backdrop-filter: blur(4px); animation: fs-fade 2.5s ease forwards;
+  }
+  @keyframes fs-fade {
+    0% { opacity: 0; transform: translate(-50%, -10px); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, -10px); }
+  }
+
   @media (max-width: 900px) {
     .sidebar-collapse { display: none; }
     aside.sidebar.collapsed { width: 320px; min-width: 320px; }
@@ -282,6 +326,16 @@
   #forest-timeline-text {
     font-size: 0.72rem; color: var(--muted); margin-top: 4px;
     font-style: italic;
+  }
+
+  /* Keyboard shortcut list */
+  .kb-list { padding-left: 0; list-style: none; margin: 6px 0 0; }
+  .kb-list li { padding: 3px 0; color: var(--muted); }
+  .kb-list kbd {
+    background: rgba(28,25,23,0.08); border: 1px solid var(--line);
+    border-bottom-width: 2px; border-radius: 3px;
+    padding: 1px 6px; font-family: ui-monospace, monospace; font-size: 0.72rem;
+    color: var(--ink); display: inline-block; min-width: 22px; text-align: center;
   }
 
   .north-arrow {
@@ -871,6 +925,7 @@
         <button id="measure-btn">📏 Measure</button>
         <button id="share-view" title="Copy current URL to clipboard">🔗 Share view</button>
         <button id="annotate-btn" title="Click on map to drop a pin with a note">📌 Annotate</button>
+        <button id="fullscreen-btn" title="Fullscreen map (press Esc to exit)" class="fullscreen-btn">⛶ Fullscreen</button>
       </div>
       <p id="annotate-hint" class="help" style="display:none; margin-top: 6px; color: var(--gold-dark); font-size: 0.78rem;">
         Click anywhere on the map to drop a pin. Type a note, then press Enter or click outside to save.
@@ -941,6 +996,13 @@
         <div id="forest-timeline-chart"></div>
         <div id="forest-timeline-text"></div>
       </div>
+
+      <h4>Keyboard shortcuts</h4>
+      <ul class="help kb-list" style="font-size: 0.76rem;">
+        <li><kbd>[</kbd> — Collapse / expand sidebar</li>
+        <li><kbd>F</kbd> — Fullscreen mode (Esc to exit)</li>
+        <li><kbd>+</kbd> / <kbd>−</kbd> — Zoom in / out</li>
+      </ul>
     </div>
 
   </aside>
