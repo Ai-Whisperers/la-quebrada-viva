@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+<defs>
+  <filter id="stream-shadow" x="-50%" y="-50%" width="200%" height="200%">
+    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".6"/>
+  </filter>
+  <linearGradient id="stream-gradient" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#60a5fa"/>
+    <stop offset="100%" stop-color="#3b82f6"/>
+  </linearGradient>
+</defs>
+<path d="M 397,289 L 413,326" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 397,289 L 413,326" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<path d="M 580,252 L 563,289 L 547,326 L 530,363 L 513,400 L 497,437 L 480,474 L 497,511 L 513,548 L 530,585 L 547,622" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 580,252 L 563,289 L 547,326 L 530,363 L 513,400 L 497,437 L 480,474 L 497,511 L 513,548 L 530,585 L 547,622" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="497" cy="437" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="497" y="441" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S02</text>
+<path d="M 747,252 L 747,289 L 730,326 L 714,363 L 714,400 L 714,437 L 714,474 L 714,511 L 714,548 L 730,585 L 747,622 L 747,659 L 747,696 L 747,733 L 747,770 L 747,807 L 747,844 L 747,881 L 764,918 L 780,955 L 780,992" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 747,252 L 747,289 L 730,326 L 714,363 L 714,400 L 714,437 L 714,474 L 714,511 L 714,548 L 730,585 L 747,622 L 747,659 L 747,696 L 747,733 L 747,770 L 747,807 L 747,844 L 747,881 L 764,918 L 780,955 L 780,992" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="747" cy="622" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="747" y="626" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S03</text>
+<path d="M 430,252 L 413,289" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 430,252 L 413,289" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<path d="M 997,289 L 997,326 L 980,363 L 964,400 L 964,437 L 964,474 L 964,511 L 947,548 L 947,585 L 947,622 L 930,659 L 930,696 L 914,733 L 914,770 L 897,807 L 897,844 L 897,881 L 880,918 L 880,955 L 864,992 L 864,1029 L 864,1066 L 864,1103 L 847,1140 L 847,1177 L 864,1177" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 997,289 L 997,326 L 980,363 L 964,400 L 964,437 L 964,474 L 964,511 L 947,548 L 947,585 L 947,622 L 930,659 L 930,696 L 914,733 L 914,770 L 897,807 L 897,844 L 897,881 L 880,918 L 880,955 L 864,992 L 864,1029 L 864,1066 L 864,1103 L 847,1140 L 847,1177 L 864,1177" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="914" cy="770" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="914" y="774" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S05</text>
+<path d="M 630,252 L 630,289 L 647,326 L 647,363 L 647,400 L 664,437 L 664,474 L 647,511 L 647,548 L 630,585 L 630,622 L 613,659 L 613,696 L 630,733 L 647,770 L 664,770 L 680,807 L 680,844 L 697,881" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 630,252 L 630,289 L 647,326 L 647,363 L 647,400 L 664,437 L 664,474 L 647,511 L 647,548 L 630,585 L 630,622 L 613,659 L 613,696 L 630,733 L 647,770 L 664,770 L 680,807 L 680,844 L 697,881" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="630" cy="585" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="630" y="589" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S06</text>
+<path d="M 997,696 L 980,733 L 980,770 L 964,807 L 964,844 L 964,881 L 947,918 L 930,955 L 930,992 L 914,1029 L 914,1066 L 897,1103 L 880,1140" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 997,696 L 980,733 L 980,770 L 964,807 L 964,844 L 964,881 L 947,918 L 930,955 L 930,992 L 914,1029 L 914,1066 L 897,1103 L 880,1140" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="947" cy="918" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="947" y="922" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S07</text>
+<path d="M 880,252 L 864,289 L 864,326 L 864,363 L 864,400 L 864,437 L 847,474 L 830,511 L 814,511 L 797,548 L 780,585 L 764,622 L 764,659" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 880,252 L 864,289 L 864,326 L 864,363 L 864,400 L 864,437 L 847,474 L 830,511 L 814,511 L 797,548 L 780,585 L 764,622 L 764,659" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="847" cy="474" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="847" y="478" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S08</text>
+<path d="M 997,474 L 980,511 L 964,548" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 997,474 L 980,511 L 964,548" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<path d="M 513,363 L 497,400 L 480,437" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 513,363 L 497,400 L 480,437" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<path d="M 797,437 L 780,474 L 764,511 L 747,548 L 747,585" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 797,437 L 780,474 L 764,511 L 747,548 L 747,585" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="764" cy="511" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="764" y="515" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S11</text>
+<path d="M 997,992 L 980,1029 L 964,1066 L 947,1103 L 930,1140 L 914,1177 L 897,1214 L 880,1214" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 997,992 L 980,1029 L 964,1066 L 947,1103 L 930,1140 L 914,1177 L 897,1214 L 880,1214" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="930" cy="1140" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="930" y="1144" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S12</text>
+<path d="M 397,881 L 413,881 L 430,881 L 447,881 L 463,881 L 480,881 L 497,844 L 513,844 L 530,844 L 547,881 L 563,918 L 580,955 L 597,992 L 613,1029 L 630,1066 L 647,1029 L 664,992 L 680,992 L 697,1029 L 714,1066 L 730,1066 L 747,1066 L 747,1103 L 747,1140 L 730,1177 L 730,1214 L 730,1251" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 397,881 L 413,881 L 430,881 L 447,881 L 463,881 L 480,881 L 497,844 L 513,844 L 530,844 L 547,881 L 563,918 L 580,955 L 597,992 L 613,1029 L 630,1066 L 647,1029 L 664,992 L 680,992 L 697,1029 L 714,1066 L 730,1066 L 747,1066 L 747,1103 L 747,1140 L 730,1177 L 730,1214 L 730,1251" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<circle cx="613" cy="1029" r="11" fill="#000" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+<text x="613" y="1033" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">S13</text>
+<path d="M 797,918 L 797,955" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 797,918 L 797,955" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<path d="M 814,1177 L 814,1214 L 814,1251" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="url(#stream-shadow)"/>
+<path d="M 814,1177 L 814,1214 L 814,1251" stroke="#60a5fa" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+<text x="20" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#fff">LQV Stream Network (DEM-derived)</text>
+<text x="20" y="62" font-family="Arial, sans-serif" font-size="13" fill="#9ca3af">15 segments · Sn01-Sn15 labeled · 1km × 1km extent</text>
+<rect x="20" y="1090" width="380" height="100" rx="8" fill="#000" fill-opacity="0.7" stroke="#374151" stroke-width="1"/>
+<text x="34" y="1115" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">Stream classification</text>
+<line x1="34" y1="1140" x2="64" y2="1140" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+<text x="74" y="1144" font-family="Arial, sans-serif" font-size="12" fill="#fff">main quebrada (3+ endpoints)</text>
+<line x1="34" y1="1162" x2="64" y2="1162" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+<text x="74" y="1166" font-family="Arial, sans-serif" font-size="12" fill="#fff">tributary (DEM flow-accum)</text>
+<text x="34" y="1186" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">↻ 5 of 15 segments inside LQV polygon</text>
+</svg>
