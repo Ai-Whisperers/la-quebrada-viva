@@ -180,3 +180,5 @@ docs/site_data_2026-06-13_snapshot/
 # 20km OSM pull — regenerable via scripts/fetch_osm_20km.py (~30s)
 docs/site_data/osm_20km/
 splats/exports/web/data/osm_20km/
+splats/exports/web/data/dem_streams_20km_input.tif
+splats/exports/big_data_excluded_from_deploy/

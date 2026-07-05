@@ -280,6 +280,36 @@
     </div>
 
     <div class="sidebar-section">
+      <h3>Surface water (audited) <span class="status-pill" style="background:#ecfeff;color:#0e7490;">JRC + OSM + DEM</span></h3>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="surface-water" checked />
+        <span class="swatch" style="background: #0ea5e9;"></span>
+        <span class="name">All OSM water polygons + waterways (<span data-count="surface-water">—</span>, audited) — <b>click any wetland for its audit verdict</b></span>
+        <a class="download" href="./data/surface_water_20km.geojson" download title="Download audited surface water">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="jrc-water" />
+        <span class="swatch" style="background: #0369a1; border: 1px dashed white;"></span>
+        <span class="name">JRC standalone water bodies (3 detected)</span>
+        <input type="range" class="opacity" data-opacity="jrc-water" min="0.2" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/lqv_jrc_waterbodies_20km.geojson" download title="Download">↓</a>
+      </label>
+      <p class="help" style="margin-top: 6px; font-size: 0.78rem;">
+        <strong>Surface water audit</strong> cross-checks each OSM water feature against:
+        <br>
+        · <strong>JRC Global Surface Water</strong> (1984–2024 occurrence — pixels detected as water in 40 years of Landsat)
+        <br>
+        · <strong>Copernicus GLO-30 DEM</strong> (slope + elevation — wetlands sit in flat depressions)
+        <br>
+        · <strong>OSM waterways</strong> (within 200 m of a tagged stream?)
+        <br>
+        Verdict shown on click: ✓ verified (JRC ≥ 20% + flat), ~ seasonal (10–20%), ? ambiguous, ✗ likely-mis-tagged (JRC < 5% AND steep slope).
+        <br><br>
+        <strong>For the Escobar 20 km box</strong>: only 3 persistent waterbodies detected by JRC (no large natural lakes — Atlantic Forest catchments are steep and well drained). Most OSM <code>water=stream</code> polygons are point-depictions of small streams, not lakes.
+      </p>
+    </div>
+
+    <div class="sidebar-section">
       <h3>Legacy polygons <span class="status-pill" style="background:#fff7ed;color:#9a3412;">off by default</span></h3>
       <label class="layer-row">
         <input type="checkbox" data-layer="escobar-legacy" />
@@ -1016,6 +1046,90 @@ updateParcelLabel();
     loadLQVLayer('buildings',  './data/osm_20km/buildings.geojson',  buildingStyle),
     loadLQVLayer('landuse',    './data/osm_20km/landuse.geojson',    landuseStyle),
   ]);
+
+  // 2b. Surface water 20 km (audited OSM polygons + waterways)
+  // Each polygon has an audit_class set by scripts/audit_wetlands_20km.py:
+  //   verified_lake, verified_wetland, seasonal_wetland, in_stream_pool,
+  //   river_polygon, ambiguous, likely_mis-tagged, river, stream_water, ditch, canal
+  const waterStyle = (feature) => {
+    const cls = feature.properties?.audit_class || 'ambiguous';
+    const color = feature.properties?.audit_color || '#3b82f6';
+    return {
+      color: color,
+      weight: 2,
+      opacity: 0.95,
+      fillOpacity: cls === 'likely_mis-tagged' ? 0.25 :
+                  cls === 'ambiguous' ? 0.3 :
+                  cls.startsWith('verified') ? 0.7 :
+                  cls === 'seasonal_wetland' ? 0.6 :
+                  cls === 'in_stream_pool' ? 0.65 : 0.45,
+      fillColor: color,
+      dashArray: cls === 'likely_mis-tagged' ? '2 4' :
+                 cls === 'ambiguous' ? '3 3' : null,
+    };
+  };
+  const auditedWater = await F('./data/surface_water_20km.geojson');
+  if (auditedWater && auditedWater.features) {
+    data['surface-water'] = auditedWater;
+    setLayerCount('surface-water', auditedWater.features.length);
+    totalFeatures += auditedWater.features.length;
+    layers['surface-water'] = L.geoJSON(auditedWater, {
+      style: waterStyle,
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        const cls = p.audit_class || '?';
+        const jrc = p.audit_jrc_occurrence_mean;
+        const cls_emoji = {
+          'verified_lake':     '✓',
+          'verified_wetland':  '✓',
+          'seasonal_wetland':  '~',
+          'in_stream_pool':    '≈',
+          'river_polygon':     'R',
+          'river':             'R',
+          'stream_water':      'r',
+          'ambiguous':         '?',
+          'likely_mis-tagged': '✗',
+        }[cls] || '·';
+        const jrcText = (jrc != null && !Number.isNaN(jrc))
+            ? `${jrc.toFixed(0)}% JRC occurrence` : 'no JRC sample';
+        const html = `<strong>${cls_emoji} ${cls.replace(/_/g,' ')}</strong><br>` +
+                     `${p.audit_class || ''}<br>` +
+                     `OSM tags: natural=${p.natural || '—'}, water=${p.water || '—'}, wetland=${p.wetland || '—'}<br>` +
+                     `${jrcText} · area ≈ ${((p.audit_area_m2 || 0)/10000).toFixed(2)} ha<br>` +
+                     `Slope ≈ ${p.audit_dem_slope_proxy_deg ?? '?'}° · ` +
+                     `DEM ${p.audit_dem_elev_min_m ?? '?'}-${p.audit_dem_elev_max_m ?? '?'} m<br>` +
+                     (p.audit_centroid_near_waterway ? 'Within 200 m of an OSM waterway ✓' : '');
+        lyr.bindTooltip(html, { sticky: true, direction: 'top', className: 'lqv-tooltip' });
+      },
+    });
+  }
+
+  // 2c. JRC verified water bodies (only what satellite actually sees)
+  const jrcWater = await F('./data/lqv_jrc_waterbodies_20km.geojson');
+  if (jrcWater && jrcWater.features && jrcWater.features.length) {
+    data['jrc-water'] = jrcWater;
+    setLayerCount('jrc-water', jrcWater.features.length);
+    totalFeatures += jrcWater.features.length;
+    layers['jrc-water'] = L.geoJSON(jrcWater, {
+      style: (feature) => ({
+        color: feature.properties.audit_color || '#0ea5e9',
+        weight: 1,
+        fillColor: feature.properties.audit_color || '#0ea5e9',
+        fillOpacity: 0.7,
+        opacity: 0.95,
+      }),
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        lyr.bindTooltip(
+          `<strong>${p.audit_class} waterbody</strong><br>` +
+          `${p.audit_jrc_occurrence_mean}% JRC occurrence (1984-2024)<br>` +
+          `Area: ${p.audit_area_ha} ha<br>` +
+          `${p.name || ''}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
+    });
+  }
 
   // 3. Places (with permanent labels)
   const places = await F('./data/osm_20km/places.geojson');
