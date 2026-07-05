@@ -264,19 +264,44 @@
         <a class="download" href="./data/client_gps/client_gps_features.geojson" download title="Download named features">↓</a>
       </label>
       <label class="layer-row">
-        <input type="checkbox" data-layer="canopy" />
+        <input type="checkbox" data-layer="canopy-20km" checked />
         <span class="swatch" style="background: #4ade80;"></span>
-        <span class="name">NDVI canopy classes</span>
-        <input type="range" class="opacity" data-opacity="canopy" min="0.1" max="1" step="0.05" value="0.5" />
-        <a class="download" href="./data/canopy_classes.geojson" download title="Download">↓</a>
+        <span class="name"><strong>NDVI canopy 20 km</strong> &mdash; Sentinel-2 L2A, 4 classes covering <i>all of Escobar</i> (<span data-count="canopy-20km">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="canopy-20km" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/ndvi_canopy_20km.geojson" download title="Download NDVI polygons">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="canopy-legacy" />
+        <span class="swatch" style="background: #84cc16;"></span>
+        <span class="name">NDVI canopy (property only, ~62 ha)</span>
+        <input type="range" class="opacity" data-opacity="canopy-legacy" min="0.1" max="1" step="0.05" value="0.5" />
+        <a class="download" href="./data/canopy_classes.geojson" download title="legacy property-scale NDVI">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="streams-20km" checked />
+        <span class="swatch" style="background: #60a5fa;"></span>
+        <span class="name"><strong>DEM quebrada streams 20 km</strong> &mdash; Copernicus GLO-30 + D8 + flow accum covering <i>all of Escobar</i> (<span data-count="streams-20km">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="streams-20km" min="0.2" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/dem_streams_20km.geojson" download title="Download DEM streams">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="streams" />
-        <span class="swatch" style="background: #60a5fa;"></span>
-        <span class="name">DEM quebrada streams</span>
+        <span class="swatch" style="background: #93c5fd;"></span>
+        <span class="name">DEM quebrada streams (legacy, ~62 ha)</span>
         <input type="range" class="opacity" data-opacity="streams" min="0.2" max="1" step="0.05" value="0.85" />
-        <a class="download" href="./data/hydrography_dem_v2.geojson" download title="Download">↓</a>
+        <a class="download" href="./data/hydrography_dem_v2.geojson" download title="legacy">↓</a>
       </label>
+      <p class="help" style="margin-top:6px; font-size:0.78rem;">
+        <strong>DEM quebrada streams 20 km</strong> are computed from the
+        Copernicus GLO-30 (30 m DEM) using D8 flow direction and a
+        flow-accumulation-threshold scheme:
+        <br>· <span style="color:#1d4ed8">▬▬</span> <strong>main rivers</strong>
+            — ≥ 500 cells (~ 16 km² catchment) — 42 segments
+        <br>· <span style="color:#3b82f6">▬</span> <strong>tributaries</strong>
+            — 200–500 cells — 328 segments
+        <br>· <span style="color:#93c5fd">▭</span> <strong>headwaters</strong>
+            — 80–200 cells (≥ 2.6 km² upstream) — 1342 segments
+      </p>
     </div>
 
     <div class="sidebar-section">
@@ -965,8 +990,8 @@ updateParcelLabel();
   await loadLQVPolygons('escobar-legacy', './data/client_gps/escobar_polygon_legacy.geojson');
   await loadLQVPolygons('aoi62-legacy',  './data/client_gps/aoi_62_extended_legacy.geojson');
 
-  // 4. NDVI canopy (LQV-internal data)
-  await loadLQVLayer('canopy',  './data/canopy_classes.geojson', () => null);  // styled inline below
+  // 4. NDVI canopy loading now lives in section 7 below (canopy-20km +
+  //    canopy-legacy) — they're styled inline with the full 20km dataset.
 
   // 5. WALKING PATH — Wes's actual trail captured via Guru Maps, two sessions
   const wpath = await F('./data/client_gps/client_gps_walking_path.geojson');
@@ -1010,25 +1035,72 @@ updateParcelLabel();
     });
   }
 
-  // Canopy has its own per-class style
-  if (data.canopy) {
-    layers.canopy = L.geoJSON(data.canopy, {
-      style: (feature) => {
-        const cls = feature.properties.class || feature.properties.ndvi_class || 0;
-        const colors = ['#86efac', '#4ade80', '#16a34a', '#14532d'];
-        const opa   = [0.35, 0.4, 0.45, 0.5];
-        return { color: colors[cls] || '#4ade80', fillColor: colors[cls] || '#4ade80', fillOpacity: opa[cls] || 0.4, weight: 0.5 };
-      },
+  // 7. Canopy (4-class NDVI polygons — one style for each, fills only)
+  //    Two versions: 20 km (full Escobar) and legacy property-only.
+  const canopyStyle = (feature) => {
+    const p = feature.properties || {};
+    const cls = (p.class ?? p.ndvi_class ?? 0);
+    const color = p.color || p.fill_color || ['#a16207','#84cc16','#22c55e','#14532d'][Math.min(3, cls)];
+    const fillOpacity = (() => {
+      const c = Number(cls);
+      return [0.35, 0.4, 0.45, 0.55][Math.min(3, c)] || 0.4;
+    })();
+    return { color, fillColor: color, fillOpacity, weight: 0.5 };
+  };
+  const canopy20 = await F('./data/ndvi_canopy_20km.geojson');
+  if (canopy20 && canopy20.features && canopy20.features.length) {
+    data['canopy-20km'] = canopy20;
+    setLayerCount('canopy-20km', canopy20.features.length);
+    layers['canopy-20km'] = L.geoJSON(canopy20, {
+      style: canopyStyle,
       onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
     });
   }
+  const canopyLegacy = await F('./data/canopy_classes.geojson');
+  if (canopyLegacy && canopyLegacy.features && canopyLegacy.features.length) {
+    data['canopy-legacy'] = canopyLegacy;
+    setLayerCount('canopy-legacy', canopyLegacy.features.length);
+    layers['canopy-legacy'] = L.geoJSON(canopyLegacy, {
+      style: canopyStyle,
+      onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+    });
+  }
+  // Legacy `canopy` key: point `data.canopy` at the legacy layer for any
+  // code path that still references it (e.g. layer-count fallback).
+  data.canopy = canopyLegacy || canopy20;
 
-  // Streams (typed)
-  const streams = await F('./data/hydrography_dem_v2.geojson');
-  if (streams && streams.features) {
-    data.streams = streams;
-    setLayerCount('streams', streams.features.length);
-    layers.streams = L.geoJSON(streams, {
+  // 8. Streams (full 20 km DEM quebrada network + legacy property-scale)
+  const streamStyle = (feature) => {
+    const cls = feature.properties.class || '';
+    if (cls === 'main')         return { color: '#1d4ed8', weight: 3,   opacity: 0.95 };
+    if (cls === 'tributary')    return { color: '#3b82f6', weight: 2,   opacity: 0.85 };
+    if (cls === 'headwater')    return { color: '#93c5fd', weight: 1.4, opacity: 0.75 };
+    return { color: '#3b82f6', weight: 2, opacity: 0.85 };
+  };
+  const streams20 = await F('./data/dem_streams_20km.geojson');
+  if (streams20 && streams20.features && streams20.features.length) {
+    data['streams-20km'] = streams20;
+    setLayerCount('streams-20km', streams20.features.length);
+    layers['streams-20km'] = L.geoJSON(streams20, {
+      style: streamStyle,
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        lyr.bindTooltip(
+          `<strong>${p.class}</strong> quebrada stream<br>` +
+          `catchment ${p.catchment_km2} km² (${p.accumulation_cells} cells @ 180 m)<br>` +
+          `${p.vertex_count} vertices<br>` +
+          `${p.source || ''}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
+    });
+  }
+  // Streams (legacy — property-scale only)
+  const streamsLegacy = await F('./data/hydrography_dem_v2.geojson');
+  if (streamsLegacy && streamsLegacy.features) {
+    data.streams = streamsLegacy;
+    setLayerCount('streams', streamsLegacy.features.length);
+    layers.streams = L.geoJSON(streamsLegacy, {
       style: (feature) => {
         const cls = feature.properties.class || feature.properties.type || '';
         if (cls === 'main' || cls === 'main_channel') return { color: '#1d4ed8', weight: 3.5, opacity: 0.95 };
