@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 <style>
   :root {
     --ink: #1c1917;
@@ -17,11 +19,6 @@
     --gold-dark: #9c7728;
     --line: #d6cfc1;
     --muted: #78716c;
-    --accent-water: #2563eb;
-    --accent-roads: #f59e0b;
-    --accent-forest: #15803d;
-    --accent-towns: #be185d;
-    --accent-parcel: #c89b3c;
     --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.04);
   }
   * { box-sizing: border-box; }
@@ -33,17 +30,33 @@
   header.topbar {
     display: flex; align-items: center; justify-content: space-between;
     padding: 12px 24px; background: white; border-bottom: 1px solid var(--line);
-    position: sticky; top: 0; z-index: 1000;
+    position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow);
   }
-  header.topbar .brand { display: flex; align-items: baseline; gap: 12px; }
+  header.topbar .brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   header.topbar .brand h1 { font-size: 1.4rem; line-height: 1; }
   header.topbar .brand .sub { color: var(--muted); font-size: 0.85rem; }
+  header.topbar .brand .stats { color: var(--gold-dark); font-size: 0.78rem; font-weight: 500; }
   header.topbar nav a { margin-left: 16px; text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.9rem; }
   header.topbar nav a:hover { color: var(--gold-dark); }
 
+  /* Mobile drawer toggle */
+  .drawer-toggle {
+    display: none;
+    background: var(--ink); color: white; border: 0; padding: 6px 12px;
+    border-radius: 6px; font-family: inherit; font-size: 0.85rem; cursor: pointer;
+    position: fixed; bottom: 12px; left: 12px; z-index: 1100;
+    box-shadow: var(--shadow);
+  }
+  @media (max-width: 900px) {
+    .drawer-toggle { display: block; }
+    aside.sidebar { position: fixed; top: 56px; left: -340px; height: calc(100vh - 56px); width: 320px; z-index: 1050; transition: left 0.25s ease; box-shadow: var(--shadow); }
+    aside.sidebar.open { left: 0; }
+    .layout { grid-template-columns: 1fr; }
+    .map-wrap { grid-column: 1; }
+  }
+
   /* Layout: map + sidebar */
   .layout { display: grid; grid-template-columns: 320px 1fr; height: calc(100vh - 56px); }
-  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; min-height: calc(100vh - 56px); } }
 
   aside.sidebar {
     background: white; border-right: 1px solid var(--line);
@@ -63,43 +76,39 @@
   .layer-row .count { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
   .layer-row .download { color: var(--gold-dark); text-decoration: none; font-size: 0.75rem; opacity: 0.7; }
   .layer-row .download:hover { opacity: 1; text-decoration: underline; }
+  .layer-row .opacity {
+    width: 60px; cursor: pointer; accent-color: var(--gold-dark);
+    vertical-align: middle; margin: 0 4px;
+  }
 
   /* Map area */
   .map-wrap { position: relative; }
   #map { width: 100%; height: 100%; min-height: 70vh; background: #1a1a1a; }
 
-  /* Legend overlay */
-  .map-info {
-    position: absolute; bottom: 12px; left: 12px; z-index: 500;
-    background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px;
-    box-shadow: var(--shadow); font-size: 0.85rem; max-width: 360px;
+  /* North arrow — bigger, more visible */
+  .north-arrow {
+    position: absolute; top: 12px; right: 12px; z-index: 500;
+    width: 56px; height: 56px;
+    background: rgba(255,255,255,0.96); border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--gold);
   }
-  .map-info .row { display: flex; align-items: center; gap: 8px; padding: 2px 0; }
-  .map-info .swatch { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
-  .map-info .scale-line { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.78rem; }
-
-  /* Top-right attribution + zoom */
-  .leaflet-control-attribution { font-size: 0.7rem !important; }
+  .north-arrow svg { width: 36px; height: 36px; }
+  .north-arrow::after {
+    content: 'N'; position: absolute; top: -2px; left: 50%; transform: translate(-50%, -50%);
+    background: var(--ink); color: white; padding: 1px 6px; border-radius: 8px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+  }
 
   /* Loading state */
   .loading-banner {
-    position: absolute; top: 12px; right: 12px; z-index: 500;
+    position: absolute; bottom: 12px; right: 12px; z-index: 500;
     background: rgba(28,25,23,0.9); color: white; padding: 8px 14px; border-radius: 6px;
     font-size: 0.85rem; box-shadow: var(--shadow);
     transition: opacity 0.4s ease;
   }
   .loading-banner.hidden { opacity: 0; pointer-events: none; }
-
-  /* Basemap toggle (top-left of map) */
-  .basemap-toggle {
-    position: absolute; top: 12px; left: 12px; z-index: 500;
-    background: white; padding: 4px; border-radius: 6px; box-shadow: var(--shadow);
-    display: flex; gap: 2px;
-  }
-  .basemap-toggle button {
-    background: transparent; border: 0; padding: 6px 10px; font-size: 0.8rem; cursor: pointer; border-radius: 4px; font-family: inherit;
-  }
-  .basemap-toggle button.active { background: var(--ink); color: white; }
 
   /* Action buttons */
   .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
@@ -112,12 +121,77 @@
   /* Status pill */
   .status-pill {
     display: inline-block; padding: 3px 10px; border-radius: 999px;
-    background: var(--cream); color: var(--muted); font-size: 0.75rem; font-weight: 500;
+    background: var(--cream); color: var(--muted); font-size: 0.72rem; font-weight: 500;
   }
   .status-pill.live { background: #dcfce7; color: #15803d; }
 
   /* Help text */
   .help { color: var(--muted); font-size: 0.82rem; line-height: 1.4; }
+
+  /* Property focus pulse */
+  @keyframes lqv-pulse {
+    0%   { transform: scale(1); opacity: 0.9; }
+    70%  { transform: scale(2.4); opacity: 0; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  @keyframes lqv-pulse-inner {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.08); }
+  }
+  .lqv-parcel-marker {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #c89b3c; border: 3px solid white; box-shadow: 0 0 0 2px rgba(0,0,0,0.4);
+    position: relative; animation: lqv-pulse-inner 2.4s ease-in-out infinite;
+  }
+  .lqv-parcel-marker::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 50%;
+    background: #c89b3c; animation: lqv-pulse 2.4s ease-out infinite; z-index: -1;
+  }
+
+  /* Permanent leaflet labels */
+  .leaflet-tooltip.permanent {
+    background: rgba(28,25,23,0.92); color: white; border: 0;
+    padding: 3px 8px; font-size: 11px; font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4); border-radius: 3px;
+    white-space: nowrap; letter-spacing: 0.02em;
+  }
+  /* Property parcel label is distinct (gold background) */
+  .leaflet-tooltip.parcel-label,
+  .leaflet-tooltip.permanent:has(strong),
+  .leaflet-tooltip.permanent.parcel {
+    background: var(--gold);
+    color: #1c1917;
+    font-weight: 700;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    font-size: 12px;
+  }
+  .leaflet-tooltip.permanent::before { display: none; }
+  .lqv-tooltip {
+    background: rgba(28,25,23,0.92); color: white; border: 0;
+    padding: 3px 7px; font-size: 11px; font-weight: 500;
+  }
+  .lqv-tooltip::before { border-right-color: rgba(28,25,23,0.92); }
+
+  /* Marker cluster custom */
+  .marker-cluster-small  { background-color: rgba(190, 24, 93, 0.6); }
+  .marker-cluster-small div  { background-color: rgba(190, 24, 93, 0.85); color: white; }
+  .marker-cluster-medium { background-color: rgba(245, 158, 11, 0.6); }
+  .marker-cluster-medium div { background-color: rgba(245, 158, 11, 0.85); color: white; }
+  .marker-cluster-large  { background-color: rgba(239, 68, 68, 0.6); }
+  .marker-cluster-large div  { background-color: rgba(239, 68, 68, 0.85); color: white; }
+
+  /* Measurement widget */
+  .measure-widget {
+    background: white; padding: 6px; border-radius: 6px;
+    box-shadow: var(--shadow);
+  }
+  .measure-widget a {
+    background: #fff; display: block; width: 28px; height: 28px;
+    line-height: 28px; text-align: center; color: var(--ink);
+    text-decoration: none; border-radius: 4px; font-size: 14px; font-weight: 600;
+  }
+  .measure-widget a:hover { background: var(--gold); color: white; }
 </style>
 </head>
 <body>
@@ -125,19 +199,22 @@
 <header class="topbar">
   <div class="brand">
     <h1>La Quebrada Viva</h1>
-    <span class="sub">20 km context map · toggleable data layers</span>
+    <span class="sub">20 km context map</span>
+    <span class="stats" id="total-stat">— features</span>
+    <span class="stats" id="distance-stat" style="color: var(--muted); font-weight: 400; margin-left: 8px;"></span>
   </div>
   <nav>
-    <a href="./index.html">← Back to walkthrough</a>
+    <a href="./index.html">← Walkthrough</a>
     <a href="./analysis-2026-07-04.html">Full analysis</a>
     <a href="https://github.com/Ai-Whisperers/la-quebrada-viva">Repo</a>
   </nav>
 </header>
 
+<button class="drawer-toggle" id="drawer-toggle">☰ Layers</button>
+
 <div class="layout">
 
-  <!-- Sidebar with layer toggles -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
 
     <div class="sidebar-section">
       <h3>Basemap</h3>
@@ -149,31 +226,34 @@
     </div>
 
     <div class="sidebar-section">
-      <h3>LQV site layers <span class="status-pill live">● live</span></h3>
+      <h3>LQV site <span class="status-pill live">● live</span></h3>
 
       <label class="layer-row">
         <input type="checkbox" data-layer="parcel" checked />
-        <span class="swatch" style="background: var(--accent-parcel);"></span>
+        <span class="swatch" style="background: var(--gold);"></span>
         <span class="name">Property polygon (62 ha)</span>
-        <a class="download" href="./data/rv_boundary.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="parcel" min="0.2" max="1" step="0.05" value="0.5" />
+        <a class="download" href="./data/rv_boundary.geojson" download title="Download GeoJSON">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="canopy" />
         <span class="swatch" style="background: #4ade80;"></span>
         <span class="name">NDVI canopy classes</span>
-        <a class="download" href="./data/canopy_classes.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="canopy" min="0.1" max="1" step="0.05" value="0.5" />
+        <a class="download" href="./data/canopy_classes.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="streams" />
         <span class="swatch" style="background: #60a5fa;"></span>
-        <span class="name">DEM streams (quebrada)</span>
-        <a class="download" href="./data/hydrography_dem_v2.geojson" download>↓</a>
+        <span class="name">DEM quebrada streams</span>
+        <input type="range" class="opacity" data-opacity="streams" min="0.2" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/hydrography_dem_v2.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="aoi62" />
-        <span class="swatch" style="background: rgba(200,155,60,0.2); border: 1.5px dashed #c89b3c;"></span>
-        <span class="name">Extended AOI (62 ha cluster)</span>
-        <a class="download" href="./data/aoi_62ha_extended.geojson" download>↓</a>
+        <span class="swatch" style="background: transparent; border: 1.5px dashed var(--gold);"></span>
+        <span class="name">Extended AOI</span>
+        <a class="download" href="./data/aoi_62ha_extended.geojson" download title="Download">↓</a>
       </label>
     </div>
 
@@ -182,59 +262,65 @@
 
       <label class="layer-row">
         <input type="checkbox" data-layer="roads" checked />
-        <span class="swatch" style="background: var(--accent-roads);"></span>
+        <span class="swatch" style="background: var(--gold);"></span>
         <span class="name">Roads &amp; tracks</span>
         <span class="count" data-count="roads">—</span>
-        <a class="download" href="./data/osm_20km/roads.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="roads" min="0.3" max="1" step="0.05" value="0.95" />
+        <a class="download" href="./data/osm_20km/roads.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="water" checked />
-        <span class="swatch" style="background: var(--accent-water);"></span>
-        <span class="name">Water bodies (lakes, reservoirs, wetlands)</span>
+        <span class="swatch" style="background: #2563eb;"></span>
+        <span class="name">Water bodies</span>
         <span class="count" data-count="water">—</span>
-        <a class="download" href="./data/osm_20km/water.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="water" min="0.2" max="1" step="0.05" value="0.5" />
+        <a class="download" href="./data/osm_20km/water.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="waterways" checked />
         <span class="swatch" style="background: #60a5fa;"></span>
-        <span class="name">Streams &amp; rivers (lines)</span>
+        <span class="name">Streams &amp; rivers</span>
         <span class="count" data-count="waterways">—</span>
-        <a class="download" href="./data/osm_20km/waterways.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="waterways" min="0.3" max="1" step="0.05" value="0.8" />
+        <a class="download" href="./data/osm_20km/waterways.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="trees" />
-        <span class="swatch" style="background: var(--accent-forest);"></span>
-        <span class="name">Forest, woodland, trees</span>
+        <span class="swatch" style="background: #15803d;"></span>
+        <span class="name">Forest / woodland</span>
         <span class="count" data-count="trees">—</span>
-        <a class="download" href="./data/osm_20km/trees.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="trees" min="0.2" max="1" step="0.05" value="0.4" />
+        <a class="download" href="./data/osm_20km/trees.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="buildings" />
         <span class="swatch" style="background: #a3a3a3;"></span>
         <span class="name">Buildings</span>
         <span class="count" data-count="buildings">—</span>
-        <a class="download" href="./data/osm_20km/buildings.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="buildings" min="0.3" max="1" step="0.05" value="0.6" />
+        <a class="download" href="./data/osm_20km/buildings.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="places" checked />
-        <span class="swatch" style="background: var(--accent-towns);"></span>
+        <span class="swatch" style="background: #be185d;"></span>
         <span class="name">Towns &amp; villages</span>
         <span class="count" data-count="places">—</span>
-        <a class="download" href="./data/osm_20km/places.geojson" download>↓</a>
+        <a class="download" href="./data/osm_20km/places.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="pois" />
-        <span class="swatch" style="background: #c084fc;"></span>
-        <span class="name">POIs (hotels, restaurants, schools…)</span>
+        <span class="swatch" style="background: #a855f7;"></span>
+        <span class="name">POIs</span>
         <span class="count" data-count="pois">—</span>
-        <a class="download" href="./data/osm_20km/pois.geojson" download>↓</a>
+        <a class="download" href="./data/osm_20km/pois.geojson" download title="Download">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="landuse" />
-        <span class="swatch" style="background: #fde68a;"></span>
-        <span class="name">Land use (residential, farmland…)</span>
+        <span class="swatch" style="background: #fcd34d;"></span>
+        <span class="name">Land use polygons</span>
         <span class="count" data-count="landuse">—</span>
-        <a class="download" href="./data/osm_20km/landuse.geojson" download>↓</a>
+        <input type="range" class="opacity" data-opacity="landuse" min="0.2" max="0.6" step="0.05" value="0.35" />
+        <a class="download" href="./data/osm_20km/landuse.geojson" download title="Download">↓</a>
       </label>
     </div>
 
@@ -243,97 +329,88 @@
       <div class="actions">
         <button id="zoom-fit">Fit 20 km</button>
         <button id="zoom-parcel">Zoom to parcel</button>
-        <button id="show-all">Show all layers</button>
+        <button id="measure-btn">📏 Measure</button>
+        <button id="show-all">Show all</button>
         <button id="hide-all">Hide overlays</button>
       </div>
       <p class="help" style="margin-top: 10px;">
-        Click a swatch in the legend to highlight its layer.
-        Hover a road, town or stream for its name.
+        <strong>Click a checkbox</strong> to toggle · drag the slider to set opacity.
+        Hover a road, town or stream for context. Click the parcel pulse to recenter.
+        <br><br>
+        Press <kbd>M</kbd> to measure distance · <kbd>L</kbd> for label declutter toggle.
       </p>
     </div>
 
     <div class="sidebar-section">
-      <h3>About this map</h3>
+      <h3>About</h3>
       <p class="help">
-        All OpenStreetMap data was pulled fresh on 2026-07-05 via the Overpass API
-        for a 40 × 40 km box centred on the LQV polygon (-57.0355, -25.6073).
-        <br><br>
-        <strong>30,086 features</strong> across 8 categories.
-        Rural Paraguay is sparsely mapped — these counts are a lower bound.
-        <br><br>
-        The DEM-derived quebrada streams (<em>blue lines</em> inside the polygon)
-        come from Copernicus GLO-30 elevation, not OSM.
+        30,086 OpenStreetMap features pulled 2026-07-05 via Overpass for a
+        40 × 40 km box centred on the LQV polygon (-57.0355, -25.6073).
+        The DEM quebrada streams come from Copernicus GLO-30, not OSM.
+        Towns use permanent labels at z ≥ 11; roads z ≥ 13.
       </p>
     </div>
 
   </aside>
 
-  <!-- Map -->
   <div class="map-wrap">
     <div id="map"></div>
-    <div class="basemap-toggle" style="display:none"><!-- placeholder --></div>
-    <div class="loading-banner" id="loading">Loading 20 km data…</div>
-    <div class="map-info" id="legend">
-      <div class="row"><span class="swatch" style="background: var(--accent-parcel);"></span> LQV parcel (62 ha)</div>
-      <div class="row"><span class="swatch" style="background: var(--accent-roads);"></span> Roads &amp; tracks</div>
-      <div class="row"><span class="swatch" style="background: var(--accent-water);"></span> Water bodies</div>
-      <div class="row"><span class="swatch" style="background: #60a5fa;"></span> Streams &amp; rivers</div>
-      <div class="row"><span class="swatch" style="background: var(--accent-forest);"></span> Forest / woodland</div>
-      <div class="row"><span class="swatch" style="background: var(--accent-towns);"></span> Towns &amp; villages</div>
-      <div class="row"><span class="swatch" style="background: #c084fc;"></span> Points of interest</div>
-      <div class="scale-line" id="scale-line">Scale: — · drag to pan · scroll to zoom</div>
+    <div class="north-arrow" id="north-arrow">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2 L8 14 L12 11 L16 14 Z" fill="#dc2626" stroke="#7f1d1d" stroke-width="1"/>
+        <path d="M12 22 L8 10 L12 13 L16 10 Z" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+        <text x="12" y="9" text-anchor="middle" font-size="6" font-weight="bold" fill="#1c1917">N</text>
+      </svg>
     </div>
+    <div class="loading-banner" id="loading">Loading 20 km data…</div>
   </div>
 
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 // ==============================================
-// LQV 20km context map — Leaflet, toggleable layers
+// LQV 20km context map — Leaflet, toggleable layers,
+// permanent labels, marker cluster, parcel pulse
 // ==============================================
 
 const F = (p) => fetch(p).then(r => r.ok ? r.json() : null).catch(e => { console.warn('fetch failed', p, e); return null; });
 
-// Canonical LQV centroid
 const LON = -57.035502;
 const LAT = -25.607336;
 const CENTER = [LAT, LON];
 
-// 20km radius bbox (S,W,N,E = -25.787, -57.232, -25.427, -56.839)
 const BBOX_20KM = [
-  [-25.787336, -57.231502],  // SW
-  [-25.427336, -56.839502]   // NE
+  [-25.787336, -57.231502],
+  [-25.427336, -56.839502]
 ];
 
 // ---- Map init ----
 const map = L.map('map', {
   center: CENTER,
-  zoom: 12,  // shows entire 20km context
+  zoom: 11,
   zoomControl: true,
-  preferCanvas: true,   // critical for 30k features
+  preferCanvas: true,
   worldCopyJump: false,
+  // Auto-declutter overlapping labels at low zooms
+  // (Leaflet 1.9 only declutters canvas renderers — that's OK, we use canvas)
+});
+
+// Fix default Leaflet icon path (broken with bundlers / CDN)
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl:       'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl:     'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
 // Basemaps
-const baseEsri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 19,
-  attribution: 'Esri World Imagery'
-});
-const baseTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 19,
-  attribution: 'Esri Topographic'
-});
-const baseOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '© OpenStreetMap contributors'
-});
+const baseEsri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Esri World Imagery' });
+const baseTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Esri Topographic' });
+const baseOSM  = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' });
 
 let currentBase = baseEsri.addTo(map);
-
-document.getElementById('basemap-esri').onclick = () => switchBase(baseEsri, 'basemap-esri');
-document.getElementById('basemap-topo').onclick = () => switchBase(baseTopo, 'basemap-topo');
-document.getElementById('basemap-osm').onclick = () => switchBase(baseOSM, 'basemap-osm');
 
 function switchBase(layer, btnId) {
   map.removeLayer(currentBase);
@@ -342,256 +419,606 @@ function switchBase(layer, btnId) {
     document.getElementById(id).classList.toggle('active', id === btnId);
   });
 }
+document.getElementById('basemap-esri').onclick = () => switchBase(baseEsri, 'basemap-esri');
+document.getElementById('basemap-topo').onclick = () => switchBase(baseTopo, 'basemap-topo');
+document.getElementById('basemap-osm').onclick  = () => switchBase(baseOSM,  'basemap-osm');
 
-// Fit to 20km bbox
 map.fitBounds(BBOX_20KM, { padding: [20, 20] });
-
-// ---- Scale line ----
 L.control.scale({ imperial: false, position: 'bottomright' }).addTo(map);
 
-// ---- Layer container ----
-const layers = {};   // name → Leaflet layer
-const data = {};     // name → GeoJSON FeatureCollection
+// ---- Layers ----
+const layers = {};   // name → Leaflet layer (or cluster group)
+const data   = {};   // name → GeoJSON FeatureCollection
+const labels = {};   // name → array of { lyr, opts } for permanent tooltips
 
-// ---- Helpers ----
+let totalFeatures = 0;
+
+// ---- Styles ----
 function roadStyle(feature) {
   const h = feature.properties.highway || '';
   const map_ = {
-    trunk:        { color: '#dc2626', weight: 3.5, opacity: 0.95 },
-    primary:      { color: '#ea580c', weight: 3,   opacity: 0.95 },
-    secondary:    { color: '#f59e0b', weight: 2.5, opacity: 0.9 },
-    tertiary:     { color: '#fbbf24', weight: 2,   opacity: 0.9 },
-    residential:  { color: '#fef3c7', weight: 1.5, opacity: 0.85 },
-    unclassified: { color: '#d6d3d1', weight: 1.2, opacity: 0.8 },
-    service:      { color: '#e7e5e4', weight: 1,   opacity: 0.7 },
-    track:        { color: '#a8a29e', weight: 1,   opacity: 0.6, dashArray: '4 3' },
-    path:         { color: '#a8a29e', weight: 0.8, opacity: 0.5, dashArray: '2 3' },
-    footway:      { color: '#a8a29e', weight: 0.6, opacity: 0.4, dashArray: '1 3' },
+    trunk:        { color: '#dc2626', weight: 4,   opacity: 0.95, dashArray: null },
+    primary:      { color: '#ea580c', weight: 3.5, opacity: 0.95, dashArray: null },
+    secondary:    { color: '#f59e0b', weight: 3,   opacity: 0.95, dashArray: null },
+    tertiary:     { color: '#facc15', weight: 2.5, opacity: 0.95, dashArray: null },
+    residential:  { color: '#fef3c7', weight: 1.6, opacity: 0.9,  dashArray: null },
+    unclassified: { color: '#d6d3d1', weight: 1.4, opacity: 0.85, dashArray: null },
+    service:      { color: '#e7e5e4', weight: 1,   opacity: 0.75, dashArray: null },
+    track:        { color: '#a8a29e', weight: 1.2, opacity: 0.7,  dashArray: '5 3' },
+    path:         { color: '#a8a29e', weight: 0.8, opacity: 0.55, dashArray: '2 3' },
+    footway:      { color: '#a8a29e', weight: 0.6, opacity: 0.4,  dashArray: '1 3' },
+    raceway:      { color: '#7e22ce', weight: 2,   opacity: 0.85, dashArray: null },
+    living_street:{ color: '#e7e5e4', weight: 1.2, opacity: 0.7,  dashArray: null },
   };
   return map_[h] || { color: '#fbbf24', weight: 1.2, opacity: 0.7 };
 }
 
 function landuseStyle(feature) {
   const lu = feature.properties.landuse || feature.properties.landcover || '';
-  const map_ = {
-    forest:        { color: '#15803d', fillColor: '#15803d', fillOpacity: 0.18 },
-    residential:   { color: '#fbbf24', fillColor: '#fde68a', fillOpacity: 0.25 },
-    commercial:    { color: '#c084fc', fillColor: '#e9d5ff', fillOpacity: 0.3 },
-    industrial:    { color: '#6b7280', fillColor: '#d1d5db', fillOpacity: 0.3 },
-    farmland:      { color: '#a16207', fillColor: '#fde68a', fillOpacity: 0.2 },
-    farmyard:      { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.25 },
-    orchard:       { color: '#65a30d', fillColor: '#bef264', fillOpacity: 0.25 },
-    meadow:        { color: '#84cc16', fillColor: '#d9f99d', fillOpacity: 0.25 },
-    grass:         { color: '#84cc16', fillColor: '#d9f99d', fillOpacity: 0.2 },
-    vineyard:      { color: '#7e22ce', fillColor: '#e9d5ff', fillOpacity: 0.25 },
-    plant_nursery: { color: '#16a34a', fillColor: '#86efac', fillOpacity: 0.25 },
-    cemetery:      { color: '#404040', fillColor: '#a3a3a3', fillOpacity: 0.3 },
-    quarry:        { color: '#52525b', fillColor: '#a1a1aa', fillOpacity: 0.3 },
-    railway:       { color: '#1f2937', fillColor: '#6b7280', fillOpacity: 0.2 },
-    reservoir:     { color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.25 },
+  const m = {
+    forest:        { color: '#15803d', fillColor: '#15803d', fillOpacity: 0.22 },
+    residential:   { color: '#d97706', fillColor: '#fde68a', fillOpacity: 0.35 },
+    commercial:    { color: '#7c3aed', fillColor: '#ddd6fe', fillOpacity: 0.4 },
+    industrial:    { color: '#4b5563', fillColor: '#d1d5db', fillOpacity: 0.4 },
+    farmland:      { color: '#854d0e', fillColor: '#fef3c7', fillOpacity: 0.25 },
+    farmyard:      { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.3 },
+    orchard:       { color: '#65a30d', fillColor: '#bef264', fillOpacity: 0.3 },
+    meadow:        { color: '#65a30d', fillColor: '#d9f99d', fillOpacity: 0.3 },
+    grass:         { color: '#65a30d', fillColor: '#d9f99d', fillOpacity: 0.25 },
+    vineyard:      { color: '#7e22ce', fillColor: '#e9d5ff', fillOpacity: 0.3 },
+    plant_nursery: { color: '#16a34a', fillColor: '#86efac', fillOpacity: 0.3 },
+    cemetery:      { color: '#404040', fillColor: '#a3a3a3', fillOpacity: 0.4 },
+    quarry:        { color: '#52525b', fillColor: '#a1a1aa', fillOpacity: 0.4 },
+    railway:       { color: '#1f2937', fillColor: '#6b7280', fillOpacity: 0.3 },
+    reservoir:     { color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.3 },
   };
-  return map_[lu] || { color: '#fcd34d', fillColor: '#fef3c7', fillOpacity: 0.15, weight: 1 };
+  return m[lu] || { color: '#fcd34d', fillColor: '#fef3c7', fillOpacity: 0.18, weight: 1 };
 }
 
 function treesStyle(feature) {
   const t = feature.properties.natural || feature.properties.landuse || feature.properties.landcover || '';
-  const map_ = {
-    wood:     { color: '#14532d', fillColor: '#15803d', fillOpacity: 0.35 },
-    forest:   { color: '#14532d', fillColor: '#16a34a', fillOpacity: 0.4 },
-    tree_row: { color: '#16a34a', fillColor: '#22c55e', fillOpacity: 0.5 },
-    trees:    { color: '#166534', fillColor: '#22c55e', fillOpacity: 0.4 },
-    tree:     { color: '#16a34a', weight: 0, fillOpacity: 0 },
-    orchard:  { color: '#65a30d', fillColor: '#bef264', fillOpacity: 0.3 },
-    farmland: { color: '#a16207', fillColor: '#fde68a', fillOpacity: 0.2 },
-    meadow:   { color: '#84cc16', fillColor: '#d9f99d', fillOpacity: 0.25 },
+  const m = {
+    wood:     { color: '#14532d', fillColor: '#15803d', fillOpacity: 0.35, weight: 0.5 },
+    forest:   { color: '#14532d', fillColor: '#16a34a', fillOpacity: 0.45, weight: 0.5 },
+    tree_row: { color: '#16a34a', weight: 2, opacity: 0.7, dashArray: '4 2' },
+    trees:    { color: '#166534', fillColor: '#22c55e', fillOpacity: 0.4, weight: 0.5 },
+    orchard:  { color: '#65a30d', fillColor: '#bef264', fillOpacity: 0.3, weight: 0.5 },
+    farmland: { color: '#854d0e', fillColor: '#fef3c7', fillOpacity: 0.2, weight: 0.5 },
+    meadow:   { color: '#65a30d', fillColor: '#d9f99d', fillOpacity: 0.25, weight: 0.5 },
   };
-  if (t === 'tree') {
-    return { color: '#16a34a', radius: 2, fillColor: '#16a34a', fillOpacity: 0.7, weight: 0 };
+  if (feature.geometry.type === 'Point') {
+    return { color: '#16a34a', radius: 2.5, fillColor: '#16a34a', fillOpacity: 0.8, weight: 0 };
   }
-  return map_[t] || { color: '#16a34a', fillColor: '#22c55e', fillOpacity: 0.3 };
+  return m[t] || { color: '#16a34a', fillColor: '#22c55e', fillOpacity: 0.3, weight: 0.5 };
 }
 
 function placeStyle(feature) {
   const p = feature.properties.place || '';
-  const map_ = {
-    city:      { radius: 12, color: '#be185d', fillColor: '#f472b6', weight: 2, fillOpacity: 0.9 },
-    town:      { radius: 9,  color: '#be185d', fillColor: '#f9a8d4', weight: 2, fillOpacity: 0.85 },
-    village:   { radius: 7,  color: '#be185d', fillColor: '#fbcfe8', weight: 1.5, fillOpacity: 0.8 },
-    hamlet:    { radius: 5,  color: '#9d174d', fillColor: '#fce7f3', weight: 1, fillOpacity: 0.7 },
-    suburb:    { radius: 6,  color: '#a21caf', fillColor: '#f5d0fe', weight: 1, fillOpacity: 0.7 },
-    neighbourhood: { radius: 6, color: '#a21caf', fillColor: '#f5d0fe', weight: 1, fillOpacity: 0.7 },
-    locality:  { radius: 4,  color: '#9d174d', fillColor: '#fbcfe8', weight: 1, fillOpacity: 0.6 },
+  const m = {
+    city:      { radius: 14, color: '#9d174d', fillColor: '#f9a8d4', weight: 2.5, fillOpacity: 0.9 },
+    town:      { radius: 11, color: '#9d174d', fillColor: '#fbcfe8', weight: 2,   fillOpacity: 0.9 },
+    village:   { radius: 8,  color: '#be185d', fillColor: '#fce7f3', weight: 1.5, fillOpacity: 0.85 },
+    hamlet:    { radius: 6,  color: '#9d174d', fillColor: '#fce7f3', weight: 1,   fillOpacity: 0.7 },
+    suburb:    { radius: 7,  color: '#a21caf', fillColor: '#f5d0fe', weight: 1.5, fillOpacity: 0.85 },
+    neighbourhood: { radius: 7, color: '#a21caf', fillColor: '#f5d0fe', weight: 1.5, fillOpacity: 0.85 },
+    locality:  { radius: 5,  color: '#9d174d', fillColor: '#fbcfe8', weight: 1,   fillOpacity: 0.6 },
     isolated_dwelling: { radius: 4, color: '#9d174d', fillColor: '#fce7f3', weight: 1, fillOpacity: 0.6 },
-    farm:      { radius: 4,  color: '#9d174d', fillColor: '#fce7f3', weight: 1, fillOpacity: 0.6 },
+    farm:      { radius: 5,  color: '#9d174d', fillColor: '#fce7f3', weight: 1,   fillOpacity: 0.7 },
   };
-  return map_[p] || { radius: 5, color: '#9d174d', fillColor: '#fbcfe8', weight: 1, fillOpacity: 0.7 };
+  return m[p] || { radius: 5, color: '#9d174d', fillColor: '#fbcfe8', weight: 1, fillOpacity: 0.7 };
 }
 
 function buildingStyle(feature) {
   const b = feature.properties.building || '';
-  const map_ = {
-    commercial: { color: '#7c3aed', fillColor: '#c4b5fd', fillOpacity: 0.55 },
-    industrial: { color: '#374151', fillColor: '#9ca3af', fillOpacity: 0.55 },
-    school:     { color: '#1d4ed8', fillColor: '#93c5fd', fillOpacity: 0.55 },
-    university: { color: '#1e40af', fillColor: '#bfdbfe', fillOpacity: 0.55 },
-    barn:       { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.5 },
-    cowshed:    { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.5 },
-    residential:{ color: '#78716c', fillColor: '#e7e5e4', fillOpacity: 0.5 },
-    house:      { color: '#78716c', fillColor: '#e7e5e4', fillOpacity: 0.5 },
+  const m = {
+    commercial: { color: '#6d28d9', fillColor: '#c4b5fd', fillOpacity: 0.6 },
+    industrial: { color: '#1f2937', fillColor: '#9ca3af', fillOpacity: 0.6 },
+    school:     { color: '#1d4ed8', fillColor: '#93c5fd', fillOpacity: 0.65 },
+    university: { color: '#1e40af', fillColor: '#bfdbfe', fillOpacity: 0.65 },
+    barn:       { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.55 },
+    cowshed:    { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.55 },
+    sty:        { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.55 },
+    residential:{ color: '#78716c', fillColor: '#e7e5e4', fillOpacity: 0.55 },
+    house:      { color: '#78716c', fillColor: '#e7e5e4', fillOpacity: 0.55 },
   };
-  return map_[b] || { color: '#78716c', fillColor: '#d6d3d1', fillOpacity: 0.45, weight: 0.5 };
+  return m[b] || { color: '#78716c', fillColor: '#d6d3d1', fillOpacity: 0.5, weight: 0.5 };
 }
 
-function waterStyle() { return { color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.5, weight: 1 }; }
+function waterStyle()      { return { color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.55, weight: 1 }; }
 function waterwaysStyle(feature) {
   const w = feature.properties.waterway || '';
-  const map_ = {
-    river: { color: '#1e40af', weight: 3.5, opacity: 0.9 },
-    stream: { color: '#3b82f6', weight: 2, opacity: 0.85 },
-    ditch: { color: '#60a5fa', weight: 1.2, opacity: 0.7 },
-    drain: { color: '#60a5fa', weight: 1.2, opacity: 0.7 },
-    tidal_channel: { color: '#3b82f6', weight: 1.5, opacity: 0.8 },
+  const m = {
+    river: { color: '#1e3a8a', weight: 4,   opacity: 0.95 },
+    stream: { color: '#3b82f6', weight: 2.5, opacity: 0.85 },
+    ditch: { color: '#60a5fa', weight: 1.4, opacity: 0.7, dashArray: '3 2' },
+    drain: { color: '#60a5fa', weight: 1.4, opacity: 0.7, dashArray: '3 2' },
+    tidal_channel: { color: '#1e40af', weight: 2, opacity: 0.85 },
     dam:   { color: '#1e3a8a', weight: 3, opacity: 0.9 },
   };
-  return map_[w] || { color: '#3b82f6', weight: 1.5, opacity: 0.8 };
+  return m[w] || { color: '#3b82f6', weight: 1.5, opacity: 0.8 };
 }
 
 function poisStyle(feature) {
-  const t = feature.properties.amenity || feature.properties.tourism || feature.properties.shop || feature.properties.leisure || '';
-  const isAcc = ['hospital','police','bank','school','university','pharmacy','fuel','place_of_worship'].includes(t);
-  return isAcc
-    ? { radius: 6, color: '#7e22ce', fillColor: '#e9d5ff', weight: 1.5, fillOpacity: 0.9 }
-    : { radius: 4, color: '#a855f7', fillColor: '#f3e8ff', weight: 1, fillOpacity: 0.85 };
+  const a = feature.properties.amenity;
+  const t = feature.properties.tourism;
+  const s = feature.properties.shop;
+  const l = feature.properties.leisure;
+  const c = a || t || s || l || '';
+  const type = c.split('_')[0];
+  // Distinct symbol per category — using SVG divIcons with emoji
+  const sym = {
+    hospital:           { icon: '🏥', color: '#dc2626' },
+    police:             { icon: '🚓', color: '#1e40af' },
+    school:             { icon: '🎓', color: '#1d4ed8' },
+    university:         { icon: '🎓', color: '#1e40af' },
+    fuel:               { icon: '⛽', color: '#f59e0b' },
+    restaurant:         { icon: '🍴', color: '#dc2626' },
+    cafe:               { icon: '☕', color: '#92400e' },
+    pharmacy:           { icon: '💊', color: '#16a34a' },
+    bank:               { icon: '🏦', color: '#0891b2' },
+    place_of_worship:   { icon: '⛪', color: '#7c3aed' },
+    hotel:              { icon: '🏨', color: '#db2777' },
+    guest_house:        { icon: '🏨', color: '#db2777' },
+    camp_site:          { icon: '⛺', color: '#15803d' },
+    viewpoint:          { icon: '🌄', color: '#0d9488' },
+    attraction:         { icon: '⭐', color: '#ca8a04' },
+    parking:            { icon: '🅿️', color: '#64748b' },
+    pitch:              { icon: '⚽', color: '#16a34a' },
+    park:               { icon: '🌳', color: '#16a34a' },
+    shop:               { icon: '🛒', color: '#7c3aed' },
+    default:            { icon: '•',   color: '#a855f7' },
+  }[type] || { icon: '•', color: '#a855f7' };
+  return sym;
 }
 
 // ---- Layer loaders ----
-async function loadLQVLayer(name, src, styleFn, geomType) {
+async function loadLQVLayer(name, src, styleFn, options = {}) {
   const fc = await F(src);
-  if (!fc || !fc.features) return;
+  if (!fc || !fc.features) return 0;
   data[name] = fc;
-  document.querySelector(`[data-count="${name}"]`)?.replaceChildren(document.createTextNode(fc.features.length.toLocaleString()));
-  const layer = L.geoJSON(fc, {
+  totalFeatures += fc.features.length;
+  setLayerCount(name, fc.features.length);
+  const layerOpts = {
     style: styleFn,
-    pointToLayer: (feature, latlng) => {
-      const s = styleFn(feature);
-      return L.circleMarker(latlng, s);
-    },
-    onEachFeature: (feature, lyr) => {
-      const p = feature.properties || {};
-      const label = p.name || p.highway || p.waterway || p.place || p.amenity || p.natural || p.landuse || p.building || '';
-      const detailParts = [];
-      if (p['addr:street']) detailParts.push(p['addr:street']);
-      if (p['addr:city']) detailParts.push(p['addr:city']);
-      if (label) lyr.bindTooltip(label, { sticky: true, direction: 'top', className: 'lqv-tip' });
-      if (Object.keys(p).length) {
-        lyr.bindPopup(`<strong>${label || name}</strong><br><pre style="margin:6px 0;font-size:11px;max-height:200px;overflow:auto;">${escape(JSON.stringify(p, null, 0).slice(0, 400))}</pre>`);
-      }
-    }
+    pointToLayer: (feature, latlng) => L.circleMarker(latlng, styleFn(feature)),
+    onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+  };
+  const layer = L.geoJSON(fc, layerOpts);
+  layers[name] = layer;
+  return fc.features.length;
+}
+
+async function loadLQVPolygons(name, src) {
+  // Same as loadLQVLayer but specifically for parcels (no label declutter)
+  const fc = await F(src);
+  if (!fc || !fc.features) return 0;
+  data[name] = fc;
+  setLayerCount(name, fc.features.length);
+  const layer = L.geoJSON(fc, {
+    style: (f) => parcelStyle(f, name),
+    onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
   });
   layers[name] = layer;
+  return fc.features.length;
 }
 
-async function loadParcel() {
-  const fc = await F('./data/rv_boundary.geojson');
-  if (!fc || !fc.features) return;
-  data.parcel = fc;
-  const layer = L.geoJSON(fc, {
-    style: { color: '#c89b3c', weight: 3, fillColor: '#c89b3c', fillOpacity: 0.05, dashArray: '6 4' },
-    onEachFeature: (feature, lyr) => {
-      lyr.bindPopup('<strong>La Quebrada Viva</strong><br>62.0 ha · 8-vertex polygon<br>Wesley van de Camp escritura 2026-06-27');
-    }
-  });
-  layers.parcel = layer.addTo(map);
-  layers.parcel.bringToFront();
+function parcelStyle(f, name) {
+  if (name === 'parcel') return { color: '#c89b3c', weight: 3.5, fillColor: '#c89b3c', fillOpacity: 0.08, dashArray: '6 4' };
+  if (name === 'aoi62')  return { color: '#c89b3c', weight: 2, fillColor: 'transparent', fillOpacity: 0, dashArray: '8 5' };
+  return { color: '#999', weight: 1 };
 }
 
-async function loadCanopy() {
-  const fc = await F('./data/canopy_classes.geojson');
-  if (!fc || !fc.features) return;
-  data.canopy = fc;
-  const layer = L.geoJSON(fc, {
-    style: (feature) => {
-      const cls = feature.properties.class || feature.properties.ndvi_class || 0;
-      const colors = ['#86efac', '#4ade80', '#16a34a', '#14532d'];
-      const opa = [0.35, 0.4, 0.45, 0.5];
-      return { color: colors[cls] || '#4ade80', fillColor: colors[cls] || '#4ade80', fillOpacity: opa[cls] || 0.4, weight: 0.5 };
-    }
-  });
-  layers.canopy = layer;
+function bindInfoPopup(feature, lyr) {
+  const p = feature.properties || {};
+  const label = p.name || p.highway || p.waterway || p.place || p.amenity || p.natural || p.landuse || p.building || 'feature';
+  if (label && label !== 'feature') lyr.bindTooltip(label, { sticky: true, direction: 'top', className: 'lqv-tooltip' });
+  if (Object.keys(p).length) {
+    lyr.bindPopup(`<strong>${escape(label)}</strong><br><pre style="margin:6px 0;font-size:11px;max-height:200px;overflow:auto;">${escape(JSON.stringify(p, null, 0).slice(0, 600))}</pre>`);
+  }
 }
 
-async function loadStreams() {
-  const fc = await F('./data/hydrography_dem_v2.geojson');
-  if (!fc || !fc.features) return;
-  data.streams = fc;
-  const layer = L.geoJSON(fc, {
-    style: (feature) => {
-      const cls = feature.properties.class || feature.properties.type || '';
-      if (cls === 'main' || cls === 'main_channel') return { color: '#1d4ed8', weight: 3, opacity: 0.9 };
-      return { color: '#3b82f6', weight: 1.8, opacity: 0.75 };
-    }
-  });
-  layers.streams = layer;
+function setLayerCount(name, n) {
+  const el = document.querySelector(`[data-count="${name}"]`);
+  if (el) el.textContent = n.toLocaleString();
 }
 
-async function loadAOI62() {
-  const fc = await F('./data/aoi_62ha_extended.geojson');
-  if (!fc || !fc.features) return;
-  data.aoi62 = fc;
-  const layer = L.geoJSON(fc, {
-    style: { color: '#c89b3c', weight: 2, fillColor: 'transparent', fillOpacity: 0, dashArray: '8 5' }
-  });
-  layers.aoi62 = layer;
+// ---- Permanent label rendering ----
+// Use Leaflet permanent tooltips so cities, towns and labeled features are
+// always readable. Hide below a zoom threshold to avoid clutter at country-level.
+function addPermanentLabels(name, fc, predicate, opts = {}) {
+  const minZoom = opts.minZoom ?? 10;
+  const maxLabels = opts.maxLabels ?? 200;
+  let n = 0;
+  const stops = [];
+  for (const f of fc.features) {
+    if (n >= maxLabels) break;
+    if (!predicate(f)) continue;
+    const pt = centroid(f);
+    if (!pt) continue;
+    const label = (f.properties?.name || '').trim();
+    if (!label) continue;
+    const tooltip = L.tooltip({
+      permanent: true,
+      direction: opts.direction || 'right',
+      className: 'permanent',
+      offset: opts.offset || [8, 0],
+    })
+      .setLatLng(pt)
+      .setContent(label);
+    stops.push({ tooltip, minZoom });
+    n++;
+  }
+  if (stops.length) {
+    labels[name] = (labels[name] || []).concat(stops);
+    // Add to map and toggle by zoom
+    const update = () => {
+      const z = map.getZoom();
+      stops.forEach(({ tooltip }) => {
+        const visible = z >= minZoom && (layers[name] && map.hasLayer(layers[name]));
+        const onMap  = map.hasLayer(tooltip);
+        if (visible && !onMap) tooltip.addTo(map);
+        else if (!visible && onMap) map.removeLayer(tooltip);
+      });
+    };
+    map.on('zoomend', update);
+    map.on('layeradd layerremove', update);
+    update();
+  }
+}
+
+function centroid(f) {
+  const g = f.geometry;
+  if (!g) return null;
+  if (g.type === 'Point') return [g.coordinates[1], g.coordinates[0]];
+  // For polygons/lines use a simple bbox-centroid (good enough at country scale)
+  let sx=0, sy=0, n=0;
+  const push = (c) => { if (Array.isArray(c[0])) c.forEach(push); else { sx+=c[0]; sy+=c[1]; n++; } };
+  if (g.type === 'Polygon')  g.coordinates.forEach(push);
+  else if (g.type === 'MultiPolygon') g.coordinates.forEach(p => p.forEach(push));
+  else if (g.type === 'LineString')  push(g.coordinates);
+  else if (g.type === 'MultiLineString') g.coordinates.forEach(push);
+  if (n === 0) return null;
+  return [sy/n, sx/n];
 }
 
 function escape(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+// ---- Custom POI div icons ----
+function poiDivIcon(feature, latlng) {
+  const sym = poisStyle(feature);
+  const html = `<div style="
+      width:22px;height:22px;border-radius:50%;
+      background:${sym.color};border:2px solid white;
+      box-shadow:0 1px 3px rgba(0,0,0,0.4);
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;color:white;line-height:1;
+    ">${sym.icon}</div>`;
+  return L.marker(latlng, { icon: L.divIcon({ html, className: '', iconSize: [22,22], iconAnchor: [11,11] }) });
+}
+
+// ---- Property parcel pulse (Leaflet-based, zoom-aware size) ----
+const parcelPulse = L.circleMarker(CENTER, {
+  radius: 18,
+  color: '#c89b3c',
+  fillColor: '#fcd34d',
+  fillOpacity: 0.3,
+  weight: 3,
+  opacity: 0.95,
+});
+// Outer expanding ring (renders as a separate pulse animation)
+const parcelRing = L.circleMarker(CENTER, {
+  radius: 24,
+  color: '#c89b3c',
+  fillColor: '#c89b3c',
+  fillOpacity: 0,
+  weight: 2,
+  opacity: 0.7,
+});
+let parcelPulseAnim = 0;
+function pulseAnim() {
+  parcelPulseAnim += 1;
+  const t = (parcelPulseAnim % 80) / 80;
+  const sinT = Math.sin(t * Math.PI * 2);
+  // Inner pulse (subtle)
+  parcelPulse.setStyle({ radius: 16 + sinT * 4, fillOpacity: 0.35 + sinT * 0.15 });
+  // Outer ring (1-cycle expansion + fade)
+  const ringT = (parcelPulseAnim % 100) / 100;
+  parcelRing.setStyle({ radius: 20 + ringT * 60, opacity: (1 - ringT) * 0.55, weight: 2 + ringT });
+  requestAnimationFrame(pulseAnim);
+}
+pulseAnim();
+
+parcelPulse.bindTooltip(`<strong>La Quebrada Viva</strong><br>62 ha · Paraguay · click to zoom`, {
+  permanent: false, direction: 'top', offset: [0, -10], className: 'lqv-tooltip',
+});
+parcelPulse.on('click', () => map.flyTo(CENTER, 16, { duration: 1.2 }));
+parcelPulse.addTo(map);
+parcelRing.addTo(map);
+
+// Inner solid core dot
+const parcelCore = L.circleMarker(CENTER, {
+  radius: 7,
+  color: 'white',
+  fillColor: '#c89b3c',
+  fillOpacity: 1,
+  weight: 2,
+});
+parcelCore.addTo(map);
+
+// "Your property" callout label (permanent, only visible at z ≥ 10)
+const parcelLabel = L.tooltip({
+  permanent: true, direction: 'right', offset: [26, 0], className: 'parcel permanent',
+}).setLatLng(CENTER).setContent('★ La Quebrada Viva');
+function updateParcelLabel() {
+  const z = map.getZoom();
+  if (z >= 10 && !map.hasLayer(parcelLabel)) parcelLabel.addTo(map);
+  else if (z < 10 && map.hasLayer(parcelLabel)) map.removeLayer(parcelLabel);
+}
+map.on('zoomend', updateParcelLabel);
+updateParcelLabel();
+
 // ---- Boot ----
 (async function boot() {
-  await loadParcel();
-  await loadCanopy();
-  await loadStreams();
-  await loadAOI62();
+  // 1. Loading UI for the smallest-cost layers first
+  await loadLQVPolygons('parcel', './data/rv_boundary.geojson');
+  await loadLQVPolygons('aoi62', './data/aoi_62ha_extended.geojson');
+  await loadLQVLayer('canopy',  './data/canopy_classes.geojson', () => null);  // styled inline below
 
-  // OSM 20km layers
-  await Promise.all([
+  // Canopy has its own per-class style
+  if (data.canopy) {
+    layers.canopy = L.geoJSON(data.canopy, {
+      style: (feature) => {
+        const cls = feature.properties.class || feature.properties.ndvi_class || 0;
+        const colors = ['#86efac', '#4ade80', '#16a34a', '#14532d'];
+        const opa   = [0.35, 0.4, 0.45, 0.5];
+        return { color: colors[cls] || '#4ade80', fillColor: colors[cls] || '#4ade80', fillOpacity: opa[cls] || 0.4, weight: 0.5 };
+      },
+      onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+    });
+  }
+
+  // Streams (typed)
+  const streams = await F('./data/hydrography_dem_v2.geojson');
+  if (streams && streams.features) {
+    data.streams = streams;
+    setLayerCount('streams', streams.features.length);
+    layers.streams = L.geoJSON(streams, {
+      style: (feature) => {
+        const cls = feature.properties.class || feature.properties.type || '';
+        if (cls === 'main' || cls === 'main_channel') return { color: '#1d4ed8', weight: 3.5, opacity: 0.95 };
+        return { color: '#3b82f6', weight: 2, opacity: 0.8 };
+      },
+    });
+  }
+
+  // 2. OSM 20km layers
+  const counts = await Promise.all([
     loadLQVLayer('roads',      './data/osm_20km/roads.geojson',      roadStyle),
     loadLQVLayer('water',      './data/osm_20km/water.geojson',      waterStyle),
     loadLQVLayer('waterways',  './data/osm_20km/waterways.geojson',  waterwaysStyle),
     loadLQVLayer('trees',      './data/osm_20km/trees.geojson',      treesStyle),
     loadLQVLayer('buildings',  './data/osm_20km/buildings.geojson',  buildingStyle),
-    loadLQVLayer('places',     './data/osm_20km/places.geojson',     placeStyle),
-    loadLQVLayer('pois',       './data/osm_20km/pois.geojson',       poisStyle),
     loadLQVLayer('landuse',    './data/osm_20km/landuse.geojson',    landuseStyle),
   ]);
 
-  // Default-on layers (already in checkbox checked state)
-  ['roads','water','waterways','places'].forEach(n => {
-    if (layers[n]) layers[n].addTo(map);
+  // 3. Places (with permanent labels)
+  const places = await F('./data/osm_20km/places.geojson');
+  if (places && places.features) {
+    data.places = places;
+    setLayerCount('places', places.features.length);
+    totalFeatures += places.features.length;
+    layers.places = L.geoJSON(places, {
+      pointToLayer: (feature, latlng) => L.circleMarker(latlng, placeStyle(feature)),
+      onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+    });
+    // Permanent labels for city + town + suburb at z >= 11; villages at z >= 13
+    const all = places.features.filter(f => (f.properties.name || '').trim() && f.properties.place !== 'city_block');
+    const seen = new Set();
+    const uniq = [];
+    for (const f of all) {
+      const n = f.properties.name.trim();
+      if (!seen.has(n)) { seen.add(n); uniq.push(f); }
+    }
+    // rank by importance: city > town > suburb > village > neighbourhood > hamlet
+    const rank = { city: 0, town: 1, suburb: 2, neighbourhood: 3, village: 4, hamlet: 5, locality: 6, isolated_dwelling: 7, farm: 8 };
+    uniq.sort((a, b) => (rank[a.properties.place] ?? 9) - (rank[b.properties.place] ?? 9));
+    const big   = uniq.filter(f => ['city','town','suburb','neighbourhood'].includes(f.properties.place));
+    const small = uniq.filter(f => !['city','town','suburb','neighbourhood'].includes(f.properties.place));
+    addPermanentLabels('places', { features: big },   () => true, { minZoom: 11, maxLabels: 50, direction: 'right', offset: [10, 0] });
+    addPermanentLabels('places', { features: small }, () => true, { minZoom: 14, maxLabels: 50, direction: 'right', offset: [10, 0] });
+  }
+
+  // 4. POIs as cluster group (avoids 18,252 individual point icons)
+  const pois = await F('./data/osm_20km/pois.geojson');
+  if (pois && pois.features) {
+    data.pois = pois;
+    setLayerCount('pois', pois.features.length);
+    totalFeatures += pois.features.length;
+    const cluster = L.markerClusterGroup({
+      maxClusterRadius: 50,
+      showCoverageOnHover: false,
+      spiderfyOnMaxZoom: true,
+      disableClusteringAtZoom: 16,
+    });
+    pois.features.forEach(f => {
+      const g = f.geometry;
+      if (!g || g.type !== 'Point') return;
+      const m = poiDivIcon(f, [g.coordinates[1], g.coordinates[0]]);
+      bindInfoPopup(f, m);
+      cluster.addLayer(m);
+    });
+    layers.pois = cluster;
+  }
+
+  // 5. Add permanent labels for major rivers / roads visible at z >= 13
+  if (data.waterways) {
+    const rivers = data.waterways.features
+      .filter(f => (f.properties.waterway === 'river' || f.properties.waterway === 'stream') && (f.properties.name || '').trim());
+    if (rivers.length) {
+      const stops = [];
+      rivers.forEach(f => {
+        // label at the line's mid-point
+        const g = f.geometry;
+        let coords;
+        if (g.type === 'LineString') coords = g.coordinates;
+        else if (g.type === 'MultiLineString') coords = g.coordinates.flat();
+        if (!coords || !coords.length) return;
+        const mid = coords[Math.floor(coords.length/2)];
+        const label = f.properties.name.trim();
+        const t = L.tooltip({ permanent: true, direction: 'top', className: 'permanent', offset: [0, -4] })
+          .setLatLng([mid[1], mid[0]]).setContent(label);
+        stops.push({ tooltip: t, minZoom: 13 });
+      });
+      labels.waterways = stops;
+      const update = () => {
+        const z = map.getZoom();
+        const visible = z >= 13 && map.hasLayer(layers.waterways);
+        stops.forEach(({ tooltip }) => {
+          const onMap = map.hasLayer(tooltip);
+          if (visible && !onMap) tooltip.addTo(map);
+          else if (!visible && onMap) map.removeLayer(tooltip);
+        });
+      };
+      map.on('zoomend', update);
+      map.on('layeradd layerremove', update);
+      update();
+    }
+  }
+  if (data.roads) {
+    // Show road refs/names at z>=12 (already a pretty close-in zoom)
+    const major = data.roads.features
+      .filter(f => ['trunk','primary','secondary'].includes(f.properties.highway) && (f.properties.name || f.properties.ref))
+      .slice(0, 80);
+    if (major.length) {
+      const stops = [];
+      major.forEach(f => {
+        const g = f.geometry;
+        let coords;
+        if (g.type === 'LineString') coords = g.coordinates;
+        else if (g.type === 'MultiLineString') coords = g.coordinates.flat();
+        if (!coords || !coords.length) return;
+        const mid = coords[Math.floor(coords.length/2)];
+        const label = f.properties.ref || f.properties.name;
+        const t = L.tooltip({ permanent: true, direction: 'top', className: 'permanent', offset: [0, -6], opacity: 0.9 })
+          .setLatLng([mid[1], mid[0]]).setContent(label);
+        stops.push({ tooltip: t, minZoom: 12 });
+      });
+      labels.roads = stops;
+      const update = () => {
+        const z = map.getZoom();
+        const visible = z >= 12 && map.hasLayer(layers.roads);
+        stops.forEach(({ tooltip }) => {
+          const onMap = map.hasLayer(tooltip);
+          if (visible && !onMap) tooltip.addTo(map);
+          else if (!visible && onMap) map.removeLayer(tooltip);
+        });
+      };
+      map.on('zoomend', update);
+      map.on('layeradd layerremove', update);
+      update();
+    }
+  }
+
+  // 6. Default-on layers
+  ['roads','water','waterways','places','parcel'].forEach(n => {
+    if (layers[n] && !map.hasLayer(layers[n])) {
+      layers[n].addTo(map);
+    }
   });
 
-  // Re-fit so the whole 20km context is visible
-  map.fitBounds(BBOX_20KM, { padding: [20, 20] });
+  // 7. Bring parcel layer to front (pulse + core added above)
+  if (layers.parcel) {
+    layers.parcel.bringToFront();
+  }
+  // Re-order: pulse below core but above parcel
+  parcelPulse.bringToFront();
+  parcelCore.bringToFront();
 
-  // Hide loading banner
-  setTimeout(() => document.getElementById('loading').classList.add('hidden'), 600);
+  // 8. Re-fit to 20km bbox
+  map.fitBounds(BBOX_20KM, { padding: [30, 30] });
 
-  // Update scale legend
-  setTimeout(() => {
-    const centre = map.getCenter();
-    const zoom = map.getZoom();
-    document.getElementById('scale-line').innerHTML =
-      `Zoom ${zoom} · centre ${centre.lat.toFixed(3)}, ${centre.lng.toFixed(3)} · drag to pan · scroll to zoom`;
-  }, 800);
+  // 9. Apply initial opacities from sliders (the init loop already wired inputs)
+  document.querySelectorAll('[data-opacity]').forEach(slider => {
+    applyOpacity(slider.dataset.opacity, parseFloat(slider.value));
+  });
+
+  // 10. Loading banner off + total stat
+  setTimeout(() => document.getElementById('loading').classList.add('hidden'), 400);
+  const stat = document.getElementById('total-stat');
+  if (stat) stat.textContent = totalFeatures.toLocaleString() + ' features';
+
+  // 11. Distance from parcel to nearest town + road on label level
+  const d = (a, b) => Math.sqrt((a[0]-b[0])**2 + (a[1]-b[1])**2);
+  function km(a, b) {
+    const R = 6371;
+    const p1 = a[0]*Math.PI/180, p2 = b[0]*Math.PI/180;
+    const dp = (b[0]-a[0])*Math.PI/180, dl = (b[1]-a[1])*Math.PI/180;
+    const x = Math.sin(dp/2)**2 + Math.cos(p1)*Math.cos(p2)*Math.sin(dl/2)**2;
+    return 2*R*Math.asin(Math.sqrt(x));
+  }
+  let nearestT = null, nearestT_km = Infinity;
+  if (data.places) {
+    for (const f of data.places.features) {
+      const p = f.properties.place;
+      if (!['city','town','village'].includes(p)) continue;
+      const g = f.geometry;
+      if (g.type !== 'Point') continue;
+      const dist = km(CENTER, [g.coordinates[1], g.coordinates[0]]);
+      if (dist < nearestT_km) { nearestT_km = dist; nearestT = f.properties.name; }
+    }
+  }
+  let nearestR = null, nearestR_km = Infinity;
+  if (data.roads) {
+    for (const f of data.roads.features) {
+      const h = f.properties.highway;
+      if (!['trunk','primary','secondary','tertiary'].includes(h)) continue;
+      const g = f.geometry;
+      let coords = g.type === 'LineString' ? g.coordinates : g.coordinates.flat();
+      // sample mid-point to avoid full polyline
+      const mid = coords[Math.floor(coords.length/2)];
+      const dist = km(CENTER, [mid[1], mid[0]]);
+      if (dist < nearestR_km) { nearestR_km = dist; nearestR = f.properties.ref || f.properties.name || f.properties.highway; }
+    }
+  }
+  const dEl = document.getElementById('distance-stat');
+  if (dEl && (nearestT || nearestR)) {
+    dEl.innerHTML = ` · ${nearestT ? `<b>${nearestT}</b> ${nearestT_km.toFixed(1)} km` : ''}${nearestR ? ` · paved road ${nearestR_km.toFixed(1)} km` : ''}`;
+  }
 })();
+
+// ---- Opacity applier ----
+function applyOpacity(name, opacity) {
+  const lyr = layers[name];
+  if (!lyr) return;
+  try {
+    if (lyr.setStyle) lyr.setStyle(f => ({ ...roadStyle(f), opacity: (roadStyle(f).opacity ?? 0.9) * opacity }));
+    else if (lyr.setOpacity) lyr.setOpacity(opacity);
+  } catch (e) {
+    // Layer doesn't take a fill-opacity (e.g. layer groups / clusters); set on each child
+    lyr.eachLayer(sub => {
+      if (sub.setOpacity) sub.setOpacity(opacity);
+    });
+  }
+}
+
+// Slider click should not toggle parent checkbox — the <label> nesting
+// would otherwise toggle the row's checkbox when the user grabs the slider.
+document.querySelectorAll('[data-opacity]').forEach(slider => {
+  slider.addEventListener('mousedown', e => e.stopPropagation());
+  slider.addEventListener('click',     e => e.stopPropagation());
+  slider.addEventListener('input',     e => {
+    e.stopPropagation();
+    applyOpacity(slider.dataset.opacity, parseFloat(slider.value));
+  });
+});
 
 // ---- Toggle handlers ----
 document.querySelectorAll('[data-layer]').forEach(cb => {
   cb.addEventListener('change', e => {
     const name = cb.dataset.layer;
-    const lyr = layers[name];
+    const lyr  = layers[name];
     if (!lyr) return;
     if (cb.checked) {
       lyr.addTo(map);
@@ -599,41 +1026,98 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
     } else {
       map.removeLayer(lyr);
     }
+    // Also cancel checkbox toggle if event came from slider click
+    if (e && e.target?.type === 'range') {
+      e.preventDefault();
+    }
+    updateURLHash();
   });
 });
+
+// ---- Measure tool (simple polyline ruler) ----
+let measureMode = false;
+let measurePoints = [];
+let measureLine = null;
+let measureMarkers = [];
+function clearMeasure() {
+  if (measureLine) { map.removeLayer(measureLine); measureLine = null; }
+  measureMarkers.forEach(m => map.removeLayer(m));
+  measureMarkers = [];
+}
+document.getElementById('measure-btn').onclick = () => {
+  measureMode = !measureMode;
+  document.getElementById('measure-btn').style.background = measureMode ? 'var(--gold)' : '';
+  document.getElementById('measure-btn').style.color      = measureMode ? 'white' : '';
+  if (!measureMode) clearMeasure();
+  measurePoints = [];
+};
+map.on('click', e => {
+  if (!measureMode) return;
+  measurePoints.push(e.latlng);
+  const mk = L.circleMarker(e.latlng, { radius: 4, color: '#c89b3c', fillColor: '#c89b3c', fillOpacity: 1 }).addTo(map);
+  measureMarkers.push(mk);
+  if (measurePoints.length >= 2) {
+    if (measureLine) map.removeLayer(measureLine);
+    const fmt = (m) => m < 1000 ? `${m.toFixed(0)} m` : `${(m/1000).toFixed(2)} km`;
+    measureLine = L.polyline(measurePoints, { color: '#c89b3c', weight: 3, dashArray: '6 4' }).addTo(map);
+    let total = 0;
+    for (let i = 1; i < measurePoints.length; i++) total += measurePoints[i-1].distanceTo(measurePoints[i]);
+    measureLine.bindTooltip(`Total: ${fmt(total)}`, { sticky: true, direction: 'center', className: 'lqv-tooltip' });
+  }
+});
+
+// ---- Keyboard shortcuts ----
+window.addEventListener('keydown', e => {
+  if (e.key === 'm' || e.key === 'M') document.getElementById('measure-btn').click();
+});
+
+// ---- Mobile drawer ----
+document.getElementById('drawer-toggle').onclick = () => {
+  document.getElementById('sidebar').classList.toggle('open');
+};
 
 // ---- Action buttons ----
 document.getElementById('zoom-fit').onclick = () => map.fitBounds(BBOX_20KM, { padding: [20, 20] });
 document.getElementById('zoom-parcel').onclick = () => {
-  if (data.parcel) {
-    map.fitBounds(layers.parcel.getBounds(), { padding: [40, 40], maxZoom: 16 });
-  }
+  if (data.parcel) map.fitBounds(layers.parcel.getBounds(), { padding: [60, 60], maxZoom: 16 });
 };
 document.getElementById('show-all').onclick = () => {
   document.querySelectorAll('[data-layer]').forEach(cb => {
-    if (!cb.checked) {
-      cb.checked = true;
-      cb.dispatchEvent(new Event('change'));
-    }
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new Event('change')); }
   });
 };
 document.getElementById('hide-all').onclick = () => {
   document.querySelectorAll('[data-layer]').forEach(cb => {
-    // keep parcel & roads on by default
     if (['parcel','roads','water','waterways','places'].includes(cb.dataset.layer)) return;
-    if (cb.checked) {
-      cb.checked = false;
-      cb.dispatchEvent(new Event('change'));
-    }
+    if (cb.checked) { cb.checked = false; cb.dispatchEvent(new Event('change')); }
   });
 };
 
-// Update scale legend when map moves
-map.on('moveend zoomend', () => {
+// ---- Shareable URL state (#z=12&l=roads,water,places) ----
+function updateURLHash() {
+  const z = map.getZoom();
   const c = map.getCenter();
-  document.getElementById('scale-line').innerHTML =
-    `Zoom ${map.getZoom()} · centre ${c.lat.toFixed(3)}, ${c.lng.toFixed(3)} · drag to pan · scroll to zoom`;
-});
+  const on = [];
+  document.querySelectorAll('[data-layer]:checked').forEach(cb => on.push(cb.dataset.layer));
+  const hash = `#z=${z}&lat=${c.lat.toFixed(4)}&lon=${c.lng.toFixed(4)}&l=${on.join(',')}`;
+  history.replaceState(null, '', hash);
+}
+map.on('moveend zoomend', updateURLHash);
+const initialHash = window.location.hash.slice(1);
+if (initialHash) {
+  const params = new URLSearchParams(initialHash);
+  const z = parseFloat(params.get('z') || '11');
+  const lat = parseFloat(params.get('lat') || LAT);
+  const lon = parseFloat(params.get('lon') || LON);
+  if (z && Number.isFinite(z)) map.setView([lat, lon], z);
+  if (params.get('l')) {
+    const wanted = new Set(params.get('l').split(','));
+    document.querySelectorAll('[data-layer]').forEach(cb => {
+      const want = wanted.has(cb.dataset.layer);
+      if (cb.checked !== want) { cb.checked = want; cb.dispatchEvent(new Event('change')); }
+    });
+  }
+}
 </script>
 </body>
 </html>
