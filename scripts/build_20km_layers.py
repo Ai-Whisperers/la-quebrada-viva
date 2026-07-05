@@ -539,6 +539,44 @@ def extract_streams(dem, acc, fdir, transform,
     return feats
 
 
+def extract_flow_arrows(streams, transform):
+    """Drop a small point feature every ~50 vertices along main_rivers and
+    ~80 along tributaries, capped at ~1500 total markers, so the viewer
+    can render arrowheads pointing in the direction of flow without
+    overloading Leaflet with 30,000 divIcons."""
+    feats = []
+    for s in streams:
+        coords = s["geometry"]["coordinates"]
+        cls = s["properties"]["class"]
+        if cls == "main":
+            step = 50
+        elif cls == "tributary":
+            step = 80
+        else:
+            continue  # skip creek and rill
+        for i in range(0, len(coords) - 2, step):
+            x1, y1 = coords[i]
+            x2, y2 = coords[i + 1]
+            # Skip degenerate (zero-length) segments
+            if abs(x1 - x2) < 1e-9 and abs(y1 - y2) < 1e-9:
+                continue
+            feats.append({
+                "type": "Feature",
+                "properties": {
+                    "category": "flow_arrow",
+                    "class": cls,
+                    "from": [x1, y1],
+                    "to": [x2, y2],
+                },
+                "geometry": {"type": "Point", "coordinates": coords[i]},
+            })
+            if len(feats) >= 1500:
+                break
+        if len(feats) >= 1500:
+            break
+    return feats
+
+
 def main():
     log("=" * 60)
     log("Building 20 km NDVI canopy + DEM streams")
@@ -583,6 +621,25 @@ def main():
                                 threshold_cells=thr, label=label)
         log(f"  {label}: {len(feats)} segments")
         all_feats.extend(feats)
+    arrow_feats = extract_flow_arrows(all_feats, new_transform)
+    log(f"  flow arrows: {len(arrow_feats)} segments")
+
+    arrow_path = OUT / "dem_streams_arrows_20km.geojson"
+    fc_arrows = {
+        "type": "FeatureCollection",
+        "name": "dem_streams_arrows_20km",
+        "metadata": {
+            "source": "Derived from dem_streams_20km.geojson",
+            "purpose": "Point markers every ~1.5 km along main_rivers and "
+                       "tributaries so the viewer can render arrowheads "
+                       "pointing in the direction of flow.",
+            "feature_count": len(arrow_feats),
+            "generated_utc": datetime.utcnow().isoformat() + "Z",
+        },
+        "features": arrow_feats,
+    }
+    arrow_path.write_text(json.dumps(fc_arrows, separators=(",", ":")))
+    log(f"  wrote {arrow_path}  ({len(arrow_feats)} arrows)")
 
     fc = {
         "type": "FeatureCollection",
@@ -592,8 +649,8 @@ def main():
             "bbox": list(BBOX),
             "pixel_resolution_m": 180,
             "thresholds": {
-                "main_rivers_cells": 2000, "tributaries_cells": 500,
-                "headwaters_cells": 100,
+                "main_rivers_cells": 500, "tributaries_cells": 200,
+                "headwaters_cells": 80,
             },
             "feature_count": len(all_feats),
             "generated_utc": datetime.utcnow().isoformat() + "Z",

@@ -325,6 +325,20 @@
         <input type="range" class="opacity" data-opacity="combined-water" min="0.2" max="1" step="0.05" value="0.7" />
         <a class="download" href="./data/water_combined_20km.geojson" download title="Download combined water">↓</a>
       </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="flow-arrows" />
+        <span class="swatch" style="background: #1d4ed8; clip-path: polygon(0% 50%, 50% 0%, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);"></span>
+        <span class="name"><strong>Flow direction arrows</strong> &mdash; DEM-derived &mdash; shows which way water flows
+          (<span data-count="flow-arrows">—</span> markers)</span>
+        <input type="range" class="opacity" data-opacity="flow-arrows" min="0.2" max="1" step="0.05" value="0.95" />
+        <a class="download" href="./data/dem_streams_arrows_20km.geojson" download title="Download flow arrows">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="hillshade" />
+        <span class="swatch" style="background: linear-gradient(45deg, #444 25%, #aaa 25% 50%, #444 50% 75%, #aaa 75%);"></span>
+        <span class="name"><strong>Hillshade backdrop</strong> &mdash; shaded relief from DEM &mdash; shows ridges &amp; valleys</span>
+        <input type="range" class="opacity" data-opacity="hillshade" min="0.2" max="0.9" step="0.05" value="0.5" />
+      </label>
       <p class="help" style="margin-top:6px; font-size:0.78rem;">
         <strong>DEM quebrada network</strong> is computed from the Copernicus
         GLO-30 (30 m DEM) using D8 flow direction + flow-accumulation.
@@ -1202,21 +1216,108 @@ updateParcelLabel();
     });
   }
 
+  // 9b. Flow direction arrows: Point features every ~50 vertices along
+  // main_rivers and tributaries. We use canvas via a custom renderer
+  // (L.canvas()) so 1500 markers render fast. Each marker is a triangle
+  // rendered with rotation based on flow direction.
+  const flowArrows = await F('./data/dem_streams_arrows_20km.geojson');
+  if (flowArrows && flowArrows.features && flowArrows.features.length) {
+    data['flow-arrows'] = flowArrows;
+    setLayerCount('flow-arrows', flowArrows.features.length);
+    // Pre-compute every arrow's pixel location & rotation once, then
+    // paint onto the map's overlay pane at draw time.
+    const arrows = flowArrows.features.map((f) => {
+      const p = f.properties || {};
+      const [lon, lat] = f.geometry.coordinates;
+      const [lon1, lat1] = p.from || [lon, lat];
+      const [lon2, lat2] = p.to   || [lon, lat];
+      const angle = (Math.atan2(lat2 - lat1, lon2 - lon1) * 180 / Math.PI);
+      const cls = p.class || 'tributary';
+      return { lat, lon, angle, cls };
+    });
+    const arrowRenderer = L.canvas({ padding: 0.5 });
+    layers['flow-arrows'] = L.layerGroup();
+    arrows.forEach(a => {
+      const isMain = a.cls === 'main';
+      const color = isMain ? '#0c4a6e' : '#1d4ed8';
+      const m = L.marker([a.lat, a.lon], {
+        icon: L.divIcon({
+          html: `<svg width="${isMain ? 16 : 11}" height="${isMain ? 16 : 11}" viewBox="-50 -50 100 100" style="transform: rotate(${a.angle.toFixed(1)}deg);">
+            <polygon points="-30,-10 30,0 -30,10 -22,0" fill="${color}" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+          </svg>`,
+          className: 'flow-arrow-icon',
+          iconSize: [isMain ? 16 : 11, isMain ? 16 : 11],
+          iconAnchor: [isMain ? 8 : 5.5, isMain ? 8 : 5.5],
+        }),
+        renderer: arrowRenderer,
+        keyboard: false,
+      });
+      m.bindTooltip('↓ flow direction', { sticky: true, direction: 'top', className: 'lqv-tooltip' });
+      m.addTo(layers['flow-arrows']);
+    });
+  }
+
+  // 9c. Hillshade backdrop: JPEG image overlay derived from the DEM.
+  // Stored as a JPEG (1.94 MB) under 25 MB cap. Bounds fetched from
+  // hillshade_bounds.json (1-pixel offset from BBOX corners).
+  try {
+    const r = await fetch('./data/hillshade_bounds.json');
+    if (!r.ok) throw new Error(`bounds HTTP ${r.status}`);
+    const hsBounds = await r.json();
+    layers['hillshade'] = L.imageOverlay(
+      './data/hillshade_20km.jpg',
+      [
+        [hsBounds.min_lat, hsBounds.min_lon],
+        [hsBounds.max_lat, hsBounds.max_lon],
+      ],
+      { opacity: 0.5, interactive: false, className: 'hillshade' },
+    );
+    data['hillshade'] = { bounds: hsBounds };
+  } catch (err) {
+    console.warn('hillshade load failed:', err);
+  }
+
   // 2. OSM 20km layers
-  const counts = await Promise.all([
-    loadLQVLayer('roads',      './data/osm_20km/roads.geojson',      roadStyle),
-    loadLQVLayer('water',      './data/osm_20km/water.geojson',      waterStyle),
-    loadLQVLayer('waterways',  './data/osm_20km/waterways.geojson',  waterwaysStyle),
-    loadLQVLayer('trees',      './data/osm_20km/trees.geojson',      treesStyle),
-    loadLQVLayer('buildings',  './data/osm_20km/buildings.geojson',  buildingStyle),
-    loadLQVLayer('landuse',    './data/osm_20km/landuse.geojson',    landuseStyle),
-  ]);
+  // The OSM pulls cover thousands of features each; wrap in try/catch
+  // so a single fetch failure doesn't stop the rest of the boot.
+  // We use Promise.allSettled so we get the count of every layer that
+  // loaded, even if some failed.
+  let counts = [0, 0, 0, 0, 0, 0];
+  try {
+    const settled = await Promise.allSettled([
+      loadLQVLayer('roads',      './data/osm_20km/roads.geojson',      roadStyle),
+      loadLQVLayer('water',      './data/osm_20km/water.geojson',      waterStyle),
+      loadLQVLayer('waterways',  './data/osm_20km/waterways.geojson',  waterwaysStyle),
+      loadLQVLayer('trees',      './data/osm_20km/trees.geojson',      treesStyle),
+      loadLQVLayer('buildings',  './data/osm_20km/buildings.geojson',  buildingStyle),
+      loadLQVLayer('landuse',    './data/osm_20km/landuse.geojson',    landuseStyle),
+    ]);
+    counts = settled.map(s => s.status === 'fulfilled' ? s.value : 0);
+    const failed = settled.filter(s => s.status === 'rejected');
+    failed.forEach((f, i) => console.warn(
+      `OSM 20 km load ${i} failed:`, f.reason
+    ));
+    console.log(`OSM 20 km loaded: roads=${counts[0]}  water=${counts[1]}  `
+       + `waterways=${counts[2]}  trees=${counts[3]}  `
+       + `buildings=${counts[4]}  landuse=${counts[5]}`);
+  } catch (err) {
+    console.warn('OSM 20 km block failed:', err);
+  }
+  // Belt and suspenders: re-emit the count for every layer that
+  // did manage to load. Some style callbacks may throw during the
+  // .addTo() phase and silently drop the layer; this ensures the
+  // sidebar count is visible regardless.
+  for (const k of ['roads','water','waterways','trees','buildings','landuse']) {
+    if (data[k] && data[k].features) {
+      setLayerCount(k, data[k].features.length);
+    }
+  }
 
   // 2b. Surface water 20 km (audited OSM polygons + waterways)
   // Each polygon has an audit_class set by scripts/audit_wetlands_20km.py:
   //   verified_lake, verified_wetland, seasonal_wetland, in_stream_pool,
   //   river_polygon, ambiguous, likely_mis-tagged, river, stream_water, ditch, canal
-  const waterStyle = (feature) => {
+  const auditedWaterStyle = (feature) => {
     const cls = feature.properties?.audit_class || 'ambiguous';
     const color = feature.properties?.audit_color || '#3b82f6';
     return {
@@ -1239,7 +1340,7 @@ updateParcelLabel();
     setLayerCount('surface-water', auditedWater.features.length);
     totalFeatures += auditedWater.features.length;
     layers['surface-water'] = L.geoJSON(auditedWater, {
-      style: waterStyle,
+      style: auditedWaterStyle,
       onEachFeature: (feature, lyr) => {
         const p = feature.properties || {};
         const cls = p.audit_class || '?';
@@ -1429,8 +1530,18 @@ updateParcelLabel();
   parcelPulse.bringToFront();
   parcelCore.bringToFront();
 
+  // 7b. Hillshade sits below everything (over satellite tiles but under
+  // all vector overlays).
+  if (layers.hillshade && map.hasLayer(layers.hillshade)) {
+    layers.hillshade.bringToBack();
+  }
+
   // 8. Re-fit to 20km bbox
   map.fitBounds(BBOX_20KM, { padding: [30, 30] });
+
+  // 9. Hide the loading banner once all data is rendered
+  const lb = document.getElementById('loading');
+  if (lb) lb.classList.add('hidden');
 
   // 9. Apply initial opacities from sliders (the init loop already wired inputs)
   document.querySelectorAll('[data-opacity]').forEach(slider => {
@@ -1681,11 +1792,40 @@ if (initialHash) {
   const lon = parseFloat(params.get('lon') || LON);
   if (z && Number.isFinite(z)) map.setView([lat, lon], z);
   if (params.get('l')) {
-    const wanted = new Set(params.get('l').split(','));
-    document.querySelectorAll('[data-layer]').forEach(cb => {
-      const want = wanted.has(cb.dataset.layer);
-      if (cb.checked !== want) { cb.checked = want; cb.dispatchEvent(new Event('change')); }
-    });
+    // Defer layer toggles until boot() finishes — at script-load time
+    // `layers[name]` doesn't exist yet, so handlers silently no-op.
+    const wantedList = params.get('l').split(',');
+    (function applyWhenReady() {
+      // We need both the boot() promise (if it exists) and the layer
+      // registry. The simplest signal: poll until all data layers exist.
+      const desired = new Set(wantedList);
+      let tries = 0;
+      const tryApply = () => {
+        tries += 1;
+        let allReady = true;
+        desired.forEach(name => {
+          if (!layers[name]) allReady = false;
+        });
+        if (allReady || tries > 80) {           // 80 * 100 ms = 8 s cap
+          desired.forEach(name => {
+            const cb = document.querySelector(`[data-layer="${name}"]`);
+            if (cb && cb.checked) {
+              if (layers[name] && !map.hasLayer(layers[name])) {
+                layers[name].addTo(map);
+              }
+            } else if (cb) {
+              cb.checked = true;
+              if (layers[name] && !map.hasLayer(layers[name])) {
+                layers[name].addTo(map);
+              }
+            }
+          });
+          return;
+        }
+        setTimeout(tryApply, 100);
+      };
+      tryApply();
+    })();
   }
 }
 </script>
