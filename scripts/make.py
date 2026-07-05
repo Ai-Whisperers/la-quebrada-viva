@@ -40,6 +40,8 @@ STEPS = [
     ("fetch_osm_10km.py",           60,  "Pull OSM Overpass"),
     ("build_10km_layers.py",        240, "DEM streams + NDVI canopy + flow arrows"),
     ("build_hillshade.py",          30,  "Hillshade raster"),
+    ("build_topology_hillshade.py", 5,   "Parcel-scale 5m hillshade"),
+    ("build_parcel_contours_5m.py", 30,  "Parcel-scale 5m contours (topology tier-1)"),
     ("build_dem_contours.py",       30,  "DEM contours + colour-relief"),
     ("build_10km_fullcover.py",     60,  "MapBiomas + Hansen loss/gain"),
     ("build_woodland_merged.py",    30,  "Woodland merged (4 sources)"),

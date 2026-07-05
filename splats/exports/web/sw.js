@@ -5,15 +5,18 @@
 //   - cache-first for shell HTML/JS/CSS
 //   - cache OSM/Esri tiles with LRU eviction (max 1500 tiles)
 
-const VERSION = 'v22';
+const VERSION = 'v23';
 const RASTER_CACHE = `lqv-rasters-${VERSION}`;
 const GEOJSON_CACHE = `lqv-geojson-${VERSION}`;
 const SHELL_CACHE   = `lqv-shell-${VERSION}`;
 const TILE_CACHE    = `lqv-tiles-${VERSION}`;
 const TILE_MAX = 1500;
+const RASTER_EXTENSIONS = ['.jpg', '.png', '.jpeg'];
 
 const RASTER_PATHS = [
   '/data/hillshade_10km.jpg',
+  '/data/hillshade_parcel.jpg',
+  '/data/hillshade_parcel_bounds.json',
   '/data/dem_color_relief_10km.jpg',
   '/data/ndvi_canopy_10km.png',
   '/data/hand_10km.png',
@@ -28,6 +31,7 @@ const GEOJSON_PATHS = [
   '/data/dem_streams_10km.geojson',
   '/data/dem_streams_arrows_10km.geojson',
   '/data/dem_contours_10km.geojson',
+  '/data/dem_contours_parcel_5m.geojson',
   '/data/water_combined_10km.geojson',
   '/data/surface_water_10km.geojson',
   '/data/hand_10km.geojson',

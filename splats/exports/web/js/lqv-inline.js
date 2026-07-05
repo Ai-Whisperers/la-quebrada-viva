@@ -540,6 +540,35 @@ const REGIONAL_LAYERS = ['mapbiomas', 'hansen-loss', 'hansen-gain',
                           'woodland-merged', 'osm-buildings', 'osm-landuse',
                           'places', 'pois'];
 const REGIONAL_OPACITY = { default: 1.0, dimmed: 0.3 };
+
+// P-topology: high-resolution parcel-scale hillshade (5m) for z>=15
+// Loaded lazily on first zoom-in. Provides terrain detail that the
+// 30m main hillshade loses at parcel zoom.
+let _parcelHillshade = null;
+function getParcelHillshade() {
+  if (_parcelHillshade !== null) return _parcelHillshade;
+  try {
+    // Inline fetch via sync XMLHttpRequest (avoid async in zoom callback).
+    // Actually we'll use a cached promise instead.
+  } catch (e) {}
+  return null;
+}
+async function loadParcelHillshade() {
+  if (_parcelHillshade) return _parcelHillshade;
+  try {
+    const r = await fetch('./data/hillshade_parcel_bounds.json');
+    const bounds = await r.json();
+    _parcelHillshade = L.imageOverlay(
+      './data/hillshade_parcel.jpg',
+      [[bounds.min_lat, bounds.min_lon], [bounds.max_lat, bounds.max_lon]],
+      { opacity: 0.65, interactive: false, className: 'parcel-hillshade' },
+    );
+  } catch (e) {
+    console.warn('parcel hillshade load failed:', e);
+    _parcelHillshade = false;
+  }
+  return _parcelHillshade;
+}
 function applyParcelZoomRule() {
   const z = map.getZoom();
   const dim = z >= 14;
@@ -549,6 +578,18 @@ function applyParcelZoomRule() {
     // Don't change visibility — just opacity. Users can still see the data.
     lyr.setStyle({ opacity: dim ? 0.4 : 1.0, fillOpacity: dim ? 0.18 : lyr.options.fillOpacity || 0.55 });
   });
+  // P-topology: show high-resolution 5m hillshade only at z>=15
+  if (z >= 15) {
+    if (_parcelHillshade === null || _parcelHillshade === false) {
+      loadParcelHillshade().then(overlay => {
+        if (overlay && !map.hasLayer(overlay)) overlay.addTo(map);
+      });
+    } else if (_parcelHillshade && !map.hasLayer(_parcelHillshade)) {
+      _parcelHillshade.addTo(map);
+    }
+  } else {
+    if (_parcelHillshade && map.hasLayer(_parcelHillshade)) map.removeLayer(_parcelHillshade);
+  }
 }
 map.on('zoomend', applyParcelZoomRule);
 
@@ -977,7 +1018,27 @@ map.on('mousemove', (e) => {
       },
       onEachFeature: (feature, lyr) => {
         lyr.bindTooltip(`${feature.properties.elev_label} contour`, {
-          sticky: true, direction: 'top', className: 'lqv-tooltip',
+          sticky: true, direction: 'top', className: 'lqv-tooltip'
+        });
+      },
+    });
+  }
+
+  // 9e-bis. Parcel-scale 5m contours (P-topology) — denser contours at
+  // parcel zoom, derived from the fused 5m tier-1 topology DEM.
+  const parcelContoursFc = await F('./data/dem_contours_parcel_5m.geojson');
+  if (parcelContoursFc && parcelContoursFc.features) {
+    data['contours-parcel'] = parcelContoursFc;
+    setLayerCount('contours-parcel', parcelContoursFc.features.length);
+    layers['contours-parcel'] = L.geoJSON(parcelContoursFc, {
+      style: (feature) => ({
+        color: feature.properties.color || '#0284c7',
+        weight: feature.properties.weight || 0.8,
+        opacity: 0.85,
+      }),
+      onEachFeature: (feature, lyr) => {
+        lyr.bindTooltip(`${feature.properties.elev_label} (5 m parcel topo)`, {
+          sticky: true, direction: 'top', className: 'lqv-tooltip'
         });
       },
     });
@@ -1519,9 +1580,11 @@ const LEGEND_DATA = {
   'gps-corners': { swatch: '#fef3c7;border:1.5px solid var(--gold)', name: 'GPS corners', kind: 'point' },
   'gps-features': { swatch: '#1d4ed8', name: 'Named features', kind: 'point' },
   'hillshade': { swatch: 'linear-gradient(45deg,#444 25%,#aaa 25% 50%,#444 50% 75%,#aaa 75%)', name: 'Hillshade backdrop', kind: 'raster' },
+  'hillshade-parcel': { swatch: 'linear-gradient(135deg,#3a3a3a,#888 60%,#3a3a3a)', name: 'Hillshade (parcel-scale, 5m topology)', kind: 'raster' },
   'ndvi-backdrop': { swatch: 'linear-gradient(to right,#a16207 25%,#84cc16 25% 50%,#22c55e 50% 75%,#14532d 75%)', name: 'NDVI continuous backdrop', kind: 'raster' },
   'color-relief': { swatch: 'linear-gradient(to right,#94c864 0%,#c2c068 50%,#914530 100%)', name: 'Elevation colour-relief', kind: 'raster' },
   'contours': { swatch: 'linear-gradient(to right,#f0f9ff 11%,#38bdf8 33%,#0284c7 55%,#0c4a6e 100%)', name: 'Elevation contours (50 m)', kind: 'line' },
+  'contours-parcel': { swatch: 'linear-gradient(to right,#7dd3fc 25%,#0284c7 50%,#0c4a6e 100%)', name: 'Parcel contours (5 m topo)', kind: 'line' },
   'local-quebrada': { swatch: '#1d4ed8', name: 'LQV quebrada (ground-truth)', kind: 'line' },
   'streams-10km': { swatch: 'linear-gradient(to right,#0c4a6e 0 35%,#3b82f6 35% 60%,#93c5fd 60% 100%)', name: 'DEM quebrada streams', kind: 'line' },
   'flow-arrows': { swatch: '#1d4ed8', name: 'Flow direction arrows', kind: 'point' },
