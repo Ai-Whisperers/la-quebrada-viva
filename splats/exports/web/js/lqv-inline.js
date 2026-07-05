@@ -242,6 +242,17 @@ async function loadLQVPolygons(name, src) {
   // P0-3: stash the parcel feature for coverage computation
   if (name === 'parcel' && fc.features[0]) {
     parcelFeature = fc.features[0];
+    // P0-3 fix: retroactively compute coverage for already-loaded layers.
+    // Without this, layers that loaded before the parcel polygon (which
+    // happens because parcel loads first but the OSM cluster Promise.allSettled
+    // resolves layers while parcel is mid-fetch) end up with 0 inside counts.
+    setTimeout(() => {
+      for (const [layerName, layerData] of Object.entries(data)) {
+        if (layerName === 'parcel' || parcelInsideCounts[layerName] !== undefined) continue;
+        computeParcelCoverage(layerName, layerData);
+      }
+      updateCoverageMatrix();
+    }, 100);
   }
   const layer = L.geoJSON(fc, {
     style: (f) => parcelStyle(f, name),
@@ -279,21 +290,92 @@ function setLayerCount(name, n) {
 // append "· X inside" to the layer name. Computed once on boot,
 // refreshed when the parcel polygon is loaded.
 const parcelInsideCounts = {};
+
+// Cheap bbox of GeoJSON geometry: returns [minLon, minLat, maxLon, maxLat]
+function bbox_of_geom(g) {
+  let minLon = Infinity, minLat = Infinity, maxLon = -Infinity, maxLat = -Infinity;
+  function walk(coords) {
+    if (typeof coords[0] === 'number') {
+      const [lon, lat] = coords;
+      if (lon < minLon) minLon = lon;
+      if (lat < minLat) minLat = lat;
+      if (lon > maxLon) maxLon = lon;
+      if (lat > maxLat) maxLat = lat;
+    } else {
+      for (const c of coords) walk(c);
+    }
+  }
+  walk(g.coordinates);
+  return [minLon, minLat, maxLon, maxLat];
+}
+function bboxes_overlap(a, b) {
+  // bboxes: [minLon, minLat, maxLon, maxLat]
+  return !(b[2] < a[0] || b[0] > a[2] || b[3] < a[1] || b[1] > a[3]);
+}
+// Point-in-polygon ray-casting for the parcel polygon (single ring or
+// multi-polygon). For the parcel-check we use bbox then precise test.
+function pip(lon, lat, polygon) {
+  // Ray casting: for each edge of the polygon, check if it crosses
+  // the horizontal line at lat to the right of the point.
+  let inside = false;
+  const ring = polygon.type === 'Polygon' ? polygon.coordinates[0]
+             : polygon.type === 'MultiPolygon' ? null // fallback
+             : null;
+  if (!ring) return null; // tell caller to fall back to bbox-only
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0], yi = ring[i][1];
+    const xj = ring[j][0], yj = ring[j][1];
+    const intersect = ((yi > lat) !== (yj > lat))
+      && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi);
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+function point_in_parcel(lon, lat) {
+  // Use the dominant polygon (first ring) of the parcel Feature
+  if (!parcelFeature || !parcelFeature.geometry) return null;
+  const g = parcelFeature.geometry;
+  if (g.type === 'Polygon') return pip(lon, lat, g);
+  if (g.type === 'MultiPolygon') {
+    for (const poly of g.coordinates) {
+      const r = pip(lon, lat, { type: 'Polygon', coordinates: poly });
+      if (r) return true;
+    }
+    return false;
+  }
+  return null;
+}
+
 function computeParcelCoverage(layerName, fc) {
   if (!fc || !fc.features || !parcelFeature) return 0;
-  const parcel = parcelFeature.geometry;
+  const parcelBbox = bbox_of_geom(parcelFeature.geometry);
   let inside = 0;
   for (const f of fc.features) {
     if (!f.geometry) continue;
-    const g = L.geoJSON(f).getLayers()[0];
-    if (g && parcel.intersects(g.toGeoJSON().geometry)) {
-      inside += 1;
-    }
+    const g = f.geometry;
+    let counted = false;
+    try {
+      const gt = g.type;
+      if (gt === 'Point') {
+        const [lon, lat] = g.coordinates;
+        const r = point_in_parcel(lon, lat);
+        if (r === true) counted = true;
+        else if (r === null) {
+          // MultiPolygon parcel: fall back to bbox envelope (false positives OK)
+          const pb = [lon - 1e-4, lat - 1e-4, lon + 1e-4, lat + 1e-4];
+          if (bboxes_overlap(parcelBbox, pb)) counted = true;
+        }
+      } else if (gt === 'Polygon' || gt === 'MultiPolygon' ||
+                 gt === 'LineString' || gt === 'MultiLineString') {
+        const bbox = bbox_of_geom(g);
+        if (bboxes_overlap(parcelBbox, bbox)) counted = true;
+      }
+    } catch (e) {}
+    if (counted) inside += 1;
   }
   parcelInsideCounts[layerName] = inside;
   const el = document.querySelector(`[data-count="${layerName}"]`);
   if (el && el.parentElement && el.parentElement.tagName === 'SPAN') {
-    // Add a small "· X inside parcel" badge next to the layer name
     let badge = el.parentElement.querySelector('.coverage-badge');
     if (!badge) {
       badge = document.createElement('span');
