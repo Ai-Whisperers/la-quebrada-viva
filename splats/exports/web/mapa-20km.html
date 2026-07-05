@@ -148,6 +148,20 @@
     background: #c89b3c; animation: lqv-pulse 2.4s ease-out infinite; z-index: -1;
   }
 
+  /* Guru Maps bookmark-style pins (orange border pin from the live share) */
+  .leaflet-marker-icon.guru-pin,
+  .leaflet-marker-icon.guru-pin-feature {
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.45));
+    transition: transform 0.15s ease;
+    cursor: pointer;
+  }
+  .leaflet-marker-icon.guru-pin:hover {
+    transform: scale(1.18) translateY(-2px);
+  }
+  .leaflet-marker-icon.guru-pin-feature:hover {
+    transform: scale(1.10) translateY(-3px);
+  }
+
   /* Permanent leaflet labels */
   .leaflet-tooltip.permanent {
     background: rgba(28,25,23,0.92); color: white; border: 0;
@@ -417,6 +431,12 @@
         <strong>Legacy polygons</strong> (old KML subset + 62 ha AOI buffer)
         kept for reference, off by default. They correspond to a smaller
         30.9 ha interior buildable area, NOT the full GPS-walked parcel.
+        <br><br>
+        <strong>Icons</strong> courtesy of <a href="https://gurumaps.app/"
+        target="_blank" rel="noopener">Guru Maps</a> — the same
+        bookmark pins Wes uses in his iOS app appear here so the map
+        reads identically to his phone view. Tap any corner pin to zoom
+        to it.
       </p>
     </div>
 
@@ -845,16 +865,38 @@ updateParcelLabel();
   await loadLQVPolygons('parcel', './data/client_gps/client_gps_polygon.geojson');
 
   // 2. The 17 individual corner points + 3 named features
+  // Uses the official Guru Maps bookmark icons (orange border pins) so
+  // the GPS-walked corners visually match the Guru Maps share exactly.
+  const GURU_ICONS = {
+    '118': './data/icons/gurumaps/BookmarkStyle_118.png',  // border — orange
+    '26':  './data/icons/gurumaps/BookmarkStyle_26.png',   // waterfall — red
+    '28':  './data/icons/gurumaps/BookmarkStyle_28.png',   // gate — blue
+    '72':  './data/icons/gurumaps/BookmarkStyle_72.png',   // high point — green
+  };
   const corners = await F('./data/client_gps/client_gps_corners.geojson');
   if (corners && corners.features) {
     data['gps-corners'] = corners;
     setLayerCount('gps-corners', corners.features.length);
     totalFeatures += corners.features.length;
+    const cornerIcon = L.icon({
+      iconUrl:    GURU_ICONS['118'],
+      iconSize:   [37, 37],     // matches Guru Maps rendering exactly
+      iconAnchor: [18, 37],     // bottom-center tip of the pin
+      popupAnchor: [0, -37],
+      className: 'guru-pin',
+    });
     layers['gps-corners'] = L.geoJSON(corners, {
-      pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
-        radius: 5, color: '#c89b3c', fillColor: '#fef3c7', weight: 1.5, fillOpacity: 1,
-      }),
-      onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+      pointToLayer: (feature, latlng) => {
+        const m = L.marker(latlng, { icon: cornerIcon, zIndexOffset: 200 });
+        m.on('click', () => map.flyTo(latlng, 17, { duration: 0.6 }));
+        return m;
+      },
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        const ts = p.captured_at ? p.captured_at.replace('T', ' ').replace(/\.\d+Z$/, ' UTC') : '?';
+        const label = `${p.name || 'Corner'} · ${p.walk_session || '?'}<br>${ts}`;
+        lyr.bindTooltip(label, { sticky: true, direction: 'top', className: 'lqv-tooltip' });
+      },
     });
   }
   const featuresGps = await F('./data/client_gps/client_gps_features.geojson');
@@ -864,17 +906,28 @@ updateParcelLabel();
     totalFeatures += featuresGps.features.length;
     layers['gps-features'] = L.geoJSON(featuresGps, {
       pointToLayer: (feature, latlng) => {
-        const p = feature.properties;
-        const html = `<div style="
-            width:32px;height:32px;border-radius:50%;
-            background:${p.color};border:3px solid white;
-            box-shadow:0 2px 6px rgba(0,0,0,0.4);
-            display:flex;align-items:center;justify-content:center;
-            font-size:16px;color:white;font-weight:bold;
-          ">${p.symbol}</div>`;
-        return L.marker(latlng, { icon: L.divIcon({ html, className: '', iconSize: [32,32], iconAnchor: [16,16] }), zIndexOffset: 500 });
+        const cat = String(feature.properties.icon_cat || feature.properties.symbol || 118);
+        const url = GURU_ICONS[cat] || GURU_ICONS['118'];
+        const icon = L.icon({
+          iconUrl: url,
+          iconSize: [44, 44],
+          iconAnchor: [22, 44],
+          popupAnchor: [0, -44],
+          className: 'guru-pin-feature',
+        });
+        return L.marker(latlng, { icon, zIndexOffset: 600 });
       },
-      onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        const elev = p.altitude_m ? ` · ${p.altitude_m} m elevation` : '';
+        const ts = p.captured_at ? p.captured_at.replace('T', ' ').replace(/\.\d+Z$/, ' UTC') : '?';
+        const inside = p.inside_polygon === false ? 'outside polygon' : 'inside polygon';
+        lyr.bindTooltip(
+          `<strong>${p.name || 'Feature'}</strong>${elev}<br>` +
+          `${p.feature_kind || '?'} · ${inside}<br>${ts}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
     });
   }
 

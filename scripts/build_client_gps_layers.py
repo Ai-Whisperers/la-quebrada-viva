@@ -359,6 +359,12 @@ for f in specials:
         "fill_color": style["fill"],
         "icon": style["icon"],
         "symbol": style["symbol"],
+        # Map the Guru Maps bookmark style id (the real icon class).
+        # 118 = border (orange), 26 = waterfall (red), 28 = gate (blue),
+        # 72 = high point (green). The viewer reads `icon_cat` to pick
+        # the right BookmarkStyle_*.png file from
+        # ./data/icons/gurumaps/.
+        "icon_cat": cat,
         "altitude_m": altitude_m,
         "lon": round(c[0], 7),
         "lat": round(c[1], 7),
