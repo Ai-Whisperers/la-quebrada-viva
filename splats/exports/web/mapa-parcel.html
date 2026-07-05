@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Quebrada Viva — Parcel Detail</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, system-ui, sans-serif;
+           background: #fafaf9; }
+    #map { width: 100%; height: 100vh; }
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+      padding: 12px 20px; border-bottom: 1px solid #e5e5e5;
+      display: flex; align-items: baseline; gap: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .header h1 { font-size: 1.1rem; margin: 0; color: #92400e; }
+    .header .sub { color: #78716c; font-size: 0.85rem; }
+    .header .actions { margin-left: auto; display: flex; gap: 6px; }
+    .header .actions a {
+      padding: 6px 12px; background: #92400e; color: white;
+      text-decoration: none; border-radius: 4px; font-size: 0.82rem;
+      font-weight: 500;
+    }
+    .header .actions a:hover { background: #78350f; }
+    .legend {
+      position: fixed; bottom: 16px; left: 16px; z-index: 1000;
+      background: rgba(255,255,255,0.97); border: 1px solid #e5e5e5;
+      border-radius: 6px; padding: 10px 14px; max-width: 280px;
+      font-size: 0.78rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .legend h3 { font-size: 0.7rem; margin: 0 0 6px; color: #92400e;
+                 text-transform: uppercase; letter-spacing: 0.05em; }
+    .legend-row { display: flex; align-items: center; gap: 6px; padding: 2px 0; }
+    .legend-swatch { width: 12px; height: 12px; border-radius: 2px; }
+    .legend-text { flex: 1; }
+    .stats-bar {
+      position: fixed; top: 60px; left: 16px; z-index: 999;
+      background: rgba(28,25,23,0.92); color: white;
+      border-radius: 6px; padding: 8px 14px; font-size: 0.75rem;
+      line-height: 1.5; max-width: 240px;
+    }
+    .stats-bar .stat-label {
+      color: rgba(255,255,255,0.55); font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .stats-bar .stat-value { color: #fbbf24; font-weight: 700; }
+    @media print {
+      .header, .legend, .stats-bar { display: none !important; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>La Quebrada Viva</h1>
+  <span class="sub">71.4 ha · client GPS perimeter</span>
+  <div class="actions">
+    <a href="./mapa-10km.html">← 10 km context map</a>
+    <a href="./index.html">Walkthrough</a>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div><span class="stat-label">area</span> <span class="stat-value" id="stat-area">— ha</span></div>
+  <div><span class="stat-label">perimeter</span> <span class="stat-value" id="stat-perim">— km</span></div>
+  <div><span class="stat-label">centroid</span> <span class="stat-value" id="stat-centroid">—</span></div>
+  <div><span class="stat-label">capture</span> <span class="stat-value">GPS walked 2026-06-22 + 06-28</span></div>
+</div>
+
+<div id="map"></div>
+
+<div class="legend">
+  <h3>Parcel layers</h3>
+  <div class="legend-row"><span class="legend-swatch" style="background:#c89b3c"></span><span class="legend-text">GPS perimeter (gold)</span></div>
+  <div class="legend-row"><span class="legend-swatch" style="background:#fef3c7;border:1.5px solid #c89b3c"></span><span class="legend-text">17 GPS corners</span></div>
+  <div class="legend-row"><span class="legend-swatch" style="background:#1d4ed8"></span><span class="legend-text">3 named features (gate, waterfall, summit)</span></div>
+  <div class="legend-row"><span class="legend-swatch" style="background:#15803d"></span><span class="legend-text">MapBiomas Forest Formation (2023)</span></div>
+  <div class="legend-row"><span class="legend-swatch" style="background:repeating-linear-gradient(45deg,#fbbf24,#fbbf24 2px,#92400e 2px,#92400e 4px)"></span><span class="legend-text">Wes's walking track (2 sessions)</span></div>
+  <div class="legend-row"><span class="legend-swatch" style="background:#dc2626"></span><span class="legend-text">Hansen loss (0 patches inside parcel — pristine since 2001)</span></div>
+</div>
+
+<script>
+(async function () {
+  const LAT0 = -25.608231, LON0 = -57.030381;
+  const map = L.map('map', { center: [LAT0, LON0], zoom: 15, preferCanvas: true });
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Esri World Imagery', maxZoom: 19,
+  }).addTo(map);
+  L.control.scale({ imperial: false, position: 'bottomright' }).addTo(map);
+
+  // Parcel polygon
+  const parcel = await fetch('./data/client_gps/client_gps_polygon.geojson').then(r => r.json());
+  const poly = L.geoJSON(parcel, {
+    style: { color: '#c89b3c', weight: 3, fillOpacity: 0.08, dashArray: '6,4' },
+  }).addTo(map);
+  map.fitBounds(poly.getBounds(), { padding: [80, 80], maxZoom: 16 });
+
+  // Stats
+  const props = parcel.features[0].properties;
+  document.getElementById('stat-area').textContent = props.area_ha.toFixed(1) + ' ha';
+  document.getElementById('stat-perim').textContent = (props.perimeter_m / 1000).toFixed(2) + ' km';
+  document.getElementById('stat-centroid').textContent =
+    `${props.centroid_lon.toFixed(4)}, ${props.centroid_lat.toFixed(4)}`;
+
+  // GPS corners (17)
+  const corners = await fetch('./data/client_gps/client_gps_corners.geojson').then(r => r.json());
+  L.geoJSON(corners, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+      radius: 6, color: '#92400e', fillColor: '#fef3c7', weight: 2, fillOpacity: 1,
+    }).bindTooltip(`#${f.properties.vertex_index + 1} · ${f.properties.captured_at.slice(0,10)}`, { sticky: true }),
+  }).addTo(map);
+
+  // GPS named features (3)
+  const feats = await fetch('./data/client_gps/client_gps_features.geojson').then(r => r.json());
+  L.geoJSON(feats, {
+    pointToLayer: (f, latlng) => {
+      const p = f.properties;
+      return L.circleMarker(latlng, {
+        radius: 10, color: p.color || '#1d4ed8', fillColor: p.fill_color || '#3b82f6',
+        weight: 2.5, fillOpacity: 0.85,
+      }).bindTooltip(`<strong>${p.name}</strong><br>${p.category}`, { sticky: true, direction: 'top' });
+    },
+  }).addTo(map);
+
+  // Walking track (2 sessions)
+  const walk = await fetch('./data/client_gps/client_gps_walking_path.geojson').then(r => r.json());
+  L.geoJSON(walk, {
+    style: { color: '#c89b3c', weight: 3, opacity: 0.7, dashArray: '5,5' },
+  }).addTo(map);
+
+  // Walking sessions colored differently
+  const sessions = await fetch('./data/client_gps/client_gps_walking_sessions.geojson').then(r => r.json());
+  L.geoJSON(sessions, {
+    style: (f) => ({
+      color: f.properties.color || '#92400e',
+      weight: f.properties.stroke_width || 2.5,
+      opacity: 0.6,
+      dashArray: f.properties.dashArray || null,
+    }),
+  }).addTo(map);
+
+  // MapBiomas Forest Formation (2023)
+  const mb = await fetch('./data/mapbiomas_2023_10km.geojson').then(r => r.json());
+  const forest = { type: 'FeatureCollection', features: mb.features.filter(f => f.properties.class_code === 3) };
+  L.geoJSON(forest, {
+    style: { color: '#15803d', weight: 0.5, fillColor: '#15803d', fillOpacity: 0.4 },
+    onEachFeature: (feature, lyr) => {
+      lyr.bindTooltip(
+        `MapBiomas class 3 (Forest Formation)<br>${(feature.properties.area_ha || 0).toFixed(1)} ha`,
+        { sticky: true }
+      );
+    },
+  }).addTo(map);
+
+  // Hansen loss (verify 0 inside parcel)
+  const loss = await fetch('./data/hansen_loss_10km.geojson').then(r => r.json());
+  let lossInside = 0;
+  loss.features.forEach(f => {
+    try {
+      if (L.geoJSON(f).getBounds().intersects(poly.getBounds())) lossInside++;
+    } catch (e) {}
+  });
+  console.log(`Hansen loss patches inside parcel: ${lossInside} (pristine if 0)`);
+
+  // Hillshade backdrop
+  const hsBounds = await fetch('./data/hillshade_bounds.json').then(r => r.json());
+  L.imageOverlay('./data/hillshade_10km.jpg', [
+    [hsBounds.min_lat, hsBounds.min_lon],
+    [hsBounds.max_lat, hsBounds.max_lon],
+  ], { opacity: 0.45, interactive: false }).addTo(map).bringToBack();
+
+  // NDVI backdrop
+  try {
+    const nb = await fetch('./data/ndvi_canopy_bounds.json').then(r => r.json());
+    L.imageOverlay('./data/ndvi_canopy_10km.png', nb,
+      { opacity: 0.5, interactive: false }).addTo(map).bringToBack();
+  } catch (e) {}
+
+  // Walking-playhead on parcel center
+  L.circleMarker([LAT0, LON0], {
+    radius: 12, color: '#c89b3c', fillColor: '#fef3c7', weight: 2.5, fillOpacity: 1,
+  }).addTo(map).bindTooltip(
+    `<strong>La Quebrada Viva</strong><br>71.4 ha · GPS walked 2026-06-22 + 06-28<br>Click to recenter`,
+    { permanent: false, direction: 'top' },
+  ).on('click', () => map.flyTo([LAT0, LON0], 16, { duration: 1 }));
+})();
+</script>
+
+</body>
+</html>

@@ -222,6 +222,8 @@ async function loadLQVLayer(name, src, styleFn, options = {}) {
   data[name] = fc;
   totalFeatures += fc.features.length;
   setLayerCount(name, fc.features.length);
+  // P0-3: parcel coverage (skip the parcel itself)
+  if (name !== 'parcel') computeParcelCoverage(name, fc);
   const layerOpts = {
     style: styleFn,
     pointToLayer: (feature, latlng) => L.circleMarker(latlng, styleFn(feature)),
@@ -233,11 +235,14 @@ async function loadLQVLayer(name, src, styleFn, options = {}) {
 }
 
 async function loadLQVPolygons(name, src) {
-  // Same as loadLQVLayer but specifically for parcels (no label declutter)
   const fc = await F(src);
   if (!fc || !fc.features) return 0;
   data[name] = fc;
   setLayerCount(name, fc.features.length);
+  // P0-3: stash the parcel feature for coverage computation
+  if (name === 'parcel' && fc.features[0]) {
+    parcelFeature = fc.features[0];
+  }
   const layer = L.geoJSON(fc, {
     style: (f) => parcelStyle(f, name),
     onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
@@ -268,6 +273,42 @@ function bindInfoPopup(feature, lyr) {
 function setLayerCount(name, n) {
   const el = document.querySelector(`[data-count="${name}"]`);
   if (el) el.textContent = n.toLocaleString();
+}
+
+// P0-3: Coverage indicator — count features inside the LQV parcel and
+// append "· X inside" to the layer name. Computed once on boot,
+// refreshed when the parcel polygon is loaded.
+const parcelInsideCounts = {};
+function computeParcelCoverage(layerName, fc) {
+  if (!fc || !fc.features || !parcelFeature) return 0;
+  const parcel = parcelFeature.geometry;
+  let inside = 0;
+  for (const f of fc.features) {
+    if (!f.geometry) continue;
+    const g = L.geoJSON(f).getLayers()[0];
+    if (g && parcel.intersects(g.toGeoJSON().geometry)) {
+      inside += 1;
+    }
+  }
+  parcelInsideCounts[layerName] = inside;
+  const el = document.querySelector(`[data-count="${layerName}"]`);
+  if (el && el.parentElement && el.parentElement.tagName === 'SPAN') {
+    // Add a small "· X inside parcel" badge next to the layer name
+    let badge = el.parentElement.querySelector('.coverage-badge');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.className = 'coverage-badge';
+      el.parentElement.appendChild(badge);
+    }
+    if (inside > 0) {
+      badge.textContent = ` · ${inside.toLocaleString()} inside parcel`;
+      badge.classList.add('coverage-on');
+    } else {
+      badge.textContent = ` · 0 inside parcel`;
+      badge.classList.remove('coverage-on');
+    }
+  }
+  return inside;
 }
 
 // ---- Permanent label rendering ----
@@ -385,6 +426,9 @@ parcelPulse.on('click', () => map.flyTo(CENTER, 16, { duration: 1.2 }));
 parcelPulse.addTo(map);
 parcelRing.addTo(map);
 
+// P0-3: parcelFeature for coverage computation — set after parcel loads
+let parcelFeature = null;
+
 // Inner solid core dot
 const parcelCore = L.circleMarker(CENTER, {
   radius: 7,
@@ -406,6 +450,77 @@ function updateParcelLabel() {
 }
 map.on('zoomend', updateParcelLabel);
 updateParcelLabel();
+
+// P0-5: at z>=14 (parcel-zoom), dim coarse regional layers to 30% opacity
+// so the parcel-scale detail (quebrada, GPS path, contour, NDVI) reads clearly.
+// At z<=13, restore full opacity.
+const REGIONAL_LAYERS = ['mapbiomas', 'hansen-loss', 'hansen-gain',
+                          'woodland-merged', 'osm-buildings', 'osm-landuse',
+                          'places', 'pois'];
+const REGIONAL_OPACITY = { default: 1.0, dimmed: 0.3 };
+function applyParcelZoomRule() {
+  const z = map.getZoom();
+  const dim = z >= 14;
+  REGIONAL_LAYERS.forEach(name => {
+    const lyr = layers[name];
+    if (!lyr) return;
+    // Don't change visibility — just opacity. Users can still see the data.
+    lyr.setStyle({ opacity: dim ? 0.4 : 1.0, fillOpacity: dim ? 0.18 : lyr.options.fillOpacity || 0.55 });
+  });
+}
+map.on('zoomend', applyParcelZoomRule);
+
+// P1-6: cursor elevation/slope/aspect HUD. Loads elevation_grid.json (270 KB).
+let elevGrid = null;
+(async function loadElevGrid() {
+  try {
+    const r = await fetch('./data/elevation_grid.json');
+    const j = await r.json();
+    // Convert to typed arrays for fast sampling
+    j.dem = new Uint16Array(j.dem);
+    j.slope = new Uint16Array(j.slope);
+    j.aspect = new Uint16Array(j.aspect);
+    elevGrid = j;
+    document.getElementById('elev-hud').style.display = 'block';
+    console.log(`elev grid loaded: ${j.width}x${j.height} = ${j.dem.length} pixels`);
+  } catch (e) {
+    console.warn('elev grid load failed:', e);
+  }
+})();
+const ASPECT_DIRS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+function aspectName(a) {
+  return ASPECT_DIRS[Math.floor((a + 22.5) / 45) % 8];
+}
+function sampleElevGrid(lon, lat) {
+  if (!elevGrid) return null;
+  const [minLon, minLat, maxLon, maxLat] = elevGrid.bounds;
+  if (lon < minLon || lon > maxLon || lat < minLat || lat > maxLat) return null;
+  const W = elevGrid.width;
+  const H = elevGrid.height;
+  const col = Math.floor((lon - minLon) / (maxLon - minLon) * W);
+  const row = Math.floor((maxLat - lat) / (maxLat - minLat) * H);
+  const idx = row * W + col;
+  return {
+    elev: elevGrid.dem[idx],
+    slope: elevGrid.slope[idx] / 10,   // decoded: 1 decimal precision
+    aspect: elevGrid.aspect[idx],
+  };
+}
+map.on('mousemove', (e) => {
+  const { lat, lng } = e.latlng;
+  document.getElementById('hud-lon').textContent = lng.toFixed(5);
+  document.getElementById('hud-lat').textContent = lat.toFixed(5);
+  const s = sampleElevGrid(lng, lat);
+  if (s) {
+    document.getElementById('hud-elev').textContent = `${s.elev.toFixed(0)} m`;
+    document.getElementById('hud-slope').textContent = `${s.slope.toFixed(1)}%`;
+    document.getElementById('hud-aspect').textContent = `${s.aspect.toFixed(0)}° ${aspectName(s.aspect)}`;
+  } else {
+    document.getElementById('hud-elev').textContent = '—';
+    document.getElementById('hud-slope').textContent = '—';
+    document.getElementById('hud-aspect').textContent = '—';
+  }
+});
 
 // ---- Boot ----
 (async function boot() {
@@ -625,6 +740,32 @@ updateParcelLabel();
     if (cls === 'headwater')    return { color: '#93c5fd', weight: 1.4, opacity: 0.75 };
     return { color: '#3b82f6', weight: 2, opacity: 0.85 };
   };
+  // P1-2: Local Quebrada polyline (ground-truth, GPS-derived)
+  const localQ = await F('./data/local_quebradas_10km.geojson');
+  if (localQ && localQ.features) {
+    data['local-quebrada'] = localQ;
+    setLayerCount('local-quebrada', localQ.features.length);
+    layers['local-quebrada'] = L.geoJSON(localQ, {
+      style: (feature) => ({
+        color: feature.properties.color || '#1d4ed8',
+        weight: feature.properties.stroke_width || 4,
+        opacity: 0.9,
+        dashArray: '6,4',
+      }),
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        lyr.bindTooltip(
+          `<strong>${p.name || 'LQV quebrada'}</strong><br>` +
+          `${(p.length_m || 0).toFixed(0)} m long<br>` +
+          `elev ${p.elev_min_m || '?'}-${p.elev_max_m || '?'} m<br>` +
+          `<small>${p.description || ''}</small><br>` +
+          `<small style="color:#9ca3af">captured ${p.captured_dates || ''} by ${p.captured_by || ''}</small>`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
+    });
+  }
+
   const streams20 = await F('./data/dem_streams_10km.geojson');
   if (streams20 && streams20.features && streams20.features.length) {
     data['streams-10km'] = streams20;
@@ -688,6 +829,22 @@ updateParcelLabel();
 
   // 9c. Hillshade backdrop: JPEG image overlay derived from the DEM.
   // Stored as a JPEG (1.94 MB) under 25 MB cap. Bounds fetched from
+  // 9d-bis. NDVI backdrop (continuous NDVI raster from MapBiomas-derived polygons).
+  try {
+    const r = await fetch('./data/ndvi_canopy_bounds.json');
+    if (!r.ok) throw new Error(`ndvi bounds HTTP ${r.status}`);
+    const ndviBounds = await r.json();
+    layers['ndvi-backdrop'] = L.imageOverlay(
+      './data/ndvi_canopy_10km.png',
+      ndviBounds,
+      { opacity: 0.55, interactive: false, className: 'ndvi-backdrop' },
+    );
+    data['ndvi-backdrop'] = { bounds: ndviBounds };
+    setLayerCount('ndvi-backdrop', 1);
+  } catch (err) {
+    console.warn('NDVI backdrop load failed:', err);
+  }
+
   // hillshade_bounds.json (1-pixel offset from BBOX corners).
   try {
     const r = await fetch('./data/hillshade_bounds.json');
@@ -786,30 +943,13 @@ updateParcelLabel();
       },
       onEachFeature: (feature, lyr) => {
         try {
-          const area = (L.GeometryUtil && L.GeometryUtil.geodesicArea) ?
-            L.GeometryUtil.geodesicArea(lyr.getLatLngs ? lyr.getLatLngs() : []) : 0;
-          // For polygons we have feature.geometry.coordinates[0]
-          const coords = feature.geometry.coordinates;
-          let pts = [];
-          if (feature.geometry.type === 'Polygon') pts = coords[0];
-          else if (feature.geometry.type === 'MultiPolygon') {
-            pts = coords[0][0];
-          }
-          // Approximate area via shoelace for the lon/lat polygon (very rough)
-          let areaHa = 0;
-          if (pts.length > 2) {
-            let a = 0;
-            for (let i = 0; i < pts.length - 1; i++) {
-              a += (pts[i][0] * pts[i+1][1] - pts[i+1][0] * pts[i][1]);
-            }
-            const cLat = pts.reduce((s,p) => s+p[1],0) / pts.length;
-            const m = 111320 * Math.cos(cLat * Math.PI/180);
-            areaHa = Math.abs(a/2) * 111320 * m / 10000;
-          }
+          // P0-4: use pre-computed area_ha (proper WGS84 geodesic) instead
+          // of runtime shoelace approximation. pyproj.Geod used at build time.
+          const areaHa = feature.properties.area_ha || 0;
           lyr.bindTooltip(
             `<strong>Forest loss (deforestation)</strong><br>` +
             `~${areaHa.toFixed(1)} ha clearcut<br>` +
-            `${pts.length} vertices · Hansen v1.12 2001-2024`,
+            `Hansen v1.12 2001-2024`,
             { sticky: true, direction: 'top', className: 'lqv-tooltip' }
           );
         } catch (e) {
@@ -831,20 +971,8 @@ updateParcelLabel();
       },
       onEachFeature: (feature, lyr) => {
         try {
-          const coords = feature.geometry.coordinates;
-          let pts = [];
-          if (feature.geometry.type === 'Polygon') pts = coords[0];
-          else if (feature.geometry.type === 'MultiPolygon') pts = coords[0][0];
-          let areaHa = 0;
-          if (pts.length > 2) {
-            let a = 0;
-            for (let i = 0; i < pts.length - 1; i++) {
-              a += (pts[i][0] * pts[i+1][1] - pts[i+1][0] * pts[i][1]);
-            }
-            const cLat = pts.reduce((s,p) => s+p[1],0) / pts.length;
-            const m = 111320 * Math.cos(cLat * Math.PI/180);
-            areaHa = Math.abs(a/2) * 111320 * m / 10000;
-          }
+          // P0-4: use pre-computed area_ha (proper WGS84 geodesic).
+          const areaHa = feature.properties.area_ha || 0;
           lyr.bindTooltip(
             `<strong>Forest gain (regrowth)</strong><br>` +
             `~${areaHa.toFixed(1)} ha<br>` +
@@ -979,6 +1107,32 @@ updateParcelLabel();
                      `DEM ${p.audit_dem_elev_min_m ?? '?'}-${p.audit_dem_elev_max_m ?? '?'} m<br>` +
                      (p.audit_centroid_near_waterway ? 'Within 200 m of an OSM waterway ✓' : '');
         lyr.bindTooltip(html, { sticky: true, direction: 'top', className: 'lqv-tooltip' });
+      },
+    });
+  }
+
+  // 2c-bis. HAND floodplain layer (P1-1) — DEM-derived wetland mapper.
+  const handFc = await F('./data/hand_10km.geojson');
+  if (handFc && handFc.features) {
+    data['hand'] = handFc;
+    setLayerCount('hand', handFc.features.length);
+    totalFeatures += handFc.features.length;
+    layers['hand'] = L.geoJSON(handFc, {
+      style: (feature) => ({
+        color: feature.properties.color || '#67e8f9',
+        fillColor: feature.properties.color || '#67e8f9',
+        fillOpacity: 0.45,
+        weight: 0.4,
+      }),
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        lyr.bindTooltip(
+          `<strong>HAND ${p.hand_low_m}-${p.hand_high_m} m</strong><br>` +
+          `${p.name || ''}<br>` +
+          `${(p.area_ha || 0).toFixed(2)} ha<br>` +
+          `<small>${p.description || ''}</small>`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
       },
     });
   }
@@ -1148,6 +1302,9 @@ updateParcelLabel();
   if (layers.hillshade && map.hasLayer(layers.hillshade)) {
     layers.hillshade.bringToBack();
   }
+  if (layers['ndvi-backdrop'] && map.hasLayer(layers['ndvi-backdrop'])) {
+    layers['ndvi-backdrop'].bringToBack();
+  }
 
   // 8. Re-fit to 10km bbox
   map.fitBounds(BBOX_10KM, { padding: [30, 30] });
@@ -1218,6 +1375,11 @@ function applyOpacity(name, opacity) {
       if (sub.setOpacity) sub.setOpacity(opacity);
     });
   }
+  // P2-6: persist opacity to localStorage
+  try {
+    const k = 'lqv-opacity-' + name;
+    localStorage.setItem(k, String(opacity));
+  } catch (e) {}
 }
 
 // Slider click should not toggle parent checkbox — the <label> nesting
@@ -1230,6 +1392,20 @@ document.querySelectorAll('[data-opacity]').forEach(slider => {
     applyOpacity(slider.dataset.opacity, parseFloat(slider.value));
   });
 });
+
+// P2-6: restore opacities from localStorage on boot
+function restoreOpacities() {
+  document.querySelectorAll('[data-opacity]').forEach(slider => {
+    try {
+      const v = localStorage.getItem('lqv-opacity-' + slider.dataset.opacity);
+      if (v !== null && Number.isFinite(parseFloat(v))) {
+        slider.value = v;
+        applyOpacity(slider.dataset.opacity, parseFloat(v));
+      }
+    } catch (e) {}
+  });
+}
+setTimeout(restoreOpacities, 2000);
 
 // ---- Sidebar search filter ----
 document.getElementById('layer-search').addEventListener('input', e => {
@@ -1261,13 +1437,26 @@ const LEGEND_DATA = {
   'gps-corners': { swatch: '#fef3c7;border:1.5px solid var(--gold)', name: 'GPS corners', kind: 'point' },
   'gps-features': { swatch: '#1d4ed8', name: 'Named features', kind: 'point' },
   'hillshade': { swatch: 'linear-gradient(45deg,#444 25%,#aaa 25% 50%,#444 50% 75%,#aaa 75%)', name: 'Hillshade backdrop', kind: 'raster' },
+  'ndvi-backdrop': { swatch: 'linear-gradient(to right,#a16207 25%,#84cc16 25% 50%,#22c55e 50% 75%,#14532d 75%)', name: 'NDVI continuous backdrop', kind: 'raster' },
   'color-relief': { swatch: 'linear-gradient(to right,#94c864 0%,#c2c068 50%,#914530 100%)', name: 'Elevation colour-relief', kind: 'raster' },
   'contours': { swatch: 'linear-gradient(to right,#f0f9ff 11%,#38bdf8 33%,#0284c7 55%,#0c4a6e 100%)', name: 'Elevation contours (50 m)', kind: 'line' },
+  'local-quebrada': { swatch: '#1d4ed8', name: 'LQV quebrada (ground-truth)', kind: 'line' },
   'streams-10km': { swatch: 'linear-gradient(to right,#0c4a6e 0 35%,#3b82f6 35% 60%,#93c5fd 60% 100%)', name: 'DEM quebrada streams', kind: 'line' },
   'flow-arrows': { swatch: '#1d4ed8', name: 'Flow direction arrows', kind: 'point' },
   'waterways': { swatch: '#60a5fa', name: 'OSM streams & rivers', kind: 'line' },
   'water': { swatch: '#2563eb', name: 'OSM water polygons', kind: 'polygon' },
   'surface-water': { swatch: '#0ea5e9', name: 'Audited wetlands', kind: 'polygon' },
+  'hand': {
+    swatch: 'gradient', kind: 'polygon',
+    sections: [
+      { title: 'HAND floodplain (DEM-derived)', rows: [
+        { swatch: '#0ea5e9', name: '0–1 m floodplain' },
+        { swatch: '#22d3ee', name: '1–5 m riparian wetland' },
+        { swatch: '#67e8f9', name: '5–15 m hillslope wetland' },
+        { swatch: '#e2e8f0', name: '>15 m upland' },
+      ]}
+    ]
+  },
   'jrc-water': { swatch: '#0369a1;border:1px dashed white', name: 'JRC waterbodies', kind: 'polygon' },
   'combined-water': { swatch: 'linear-gradient(to right,#0c4a6e 0 30%,#0ea5e9 30% 50%,#a78bfa 50% 70%,#f87171 70% 100%)', name: 'Combined water (4 sources)', kind: 'mixed' },
   'canopy-10km': {
@@ -1375,8 +1564,76 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
 });
 
 // Initial legend render after boot
-window.addEventListener('load', () => setTimeout(updateMapLegend, 1500));
+window.addEventListener('load', () => setTimeout(() => {
+  updateMapLegend();
+  // P2-5: set print date in topbar
+  const tb = document.querySelector('header.topbar');
+  if (tb) tb.dataset.printDate = new Date().toISOString().slice(0, 10);
+}, 1500));
 setInterval(updateMapLegend, 5000);  // refresh counts as data loads
+
+// P2-1: Property coverage matrix in About section
+function updateCoverageMatrix() {
+  const tbody = document.getElementById('coverage-matrix-body');
+  if (!tbody) return;
+  const rows = [];
+  Object.keys(parcelInsideCounts).forEach(name => {
+    const fc = data[name];
+    if (!fc) return;
+    const total = (fc.features || []).length;
+    const inside = parcelInsideCounts[name] || 0;
+    rows.push({ name, total, inside });
+  });
+  rows.sort((a, b) => b.inside - a.inside);
+  if (rows.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="3" style="color: var(--muted); font-style: italic;">No layers loaded yet.</td></tr>';
+    return;
+  }
+  let html = '';
+  rows.forEach(r => {
+    const cls = r.inside > 0 ? 'has-coverage' : '';
+    html += `<tr class="${cls}"><td>${r.name}</td><td>${r.total.toLocaleString()}</td><td>${r.inside.toLocaleString()}</td></tr>`;
+  });
+  tbody.innerHTML = html;
+}
+setTimeout(updateCoverageMatrix, 4000);
+setInterval(updateCoverageMatrix, 8000);
+
+// P2-7: Forest-change timeline chart (MapBiomas 1985 → 2023)
+(async function renderForestTimeline() {
+  try {
+    const r = await fetch('./data/mapbiomas_forest_timeline.json');
+    const tl = await r.json();
+    const chart = document.getElementById('forest-timeline-chart');
+    const text = document.getElementById('forest-timeline-text');
+    if (!chart || !text || !tl.years) return;
+    const W = chart.clientWidth || 280;
+    const H = 88;
+    const PAD = 20;
+    const years = tl.years;
+    const xs = years.map((_, i) => PAD + (W - 2*PAD) * i / (years.length - 1));
+    const maxArea = Math.max(...tl.forest_area_ha);
+    const minArea = Math.min(...tl.forest_area_ha);
+    const ys = tl.forest_area_ha.map(v => H - PAD - (H - 2*PAD) * (v - minArea) / (maxArea - minArea || 1));
+    const path = xs.map((x, i) => `${i===0?'M':'L'}${x},${ys[i]}`).join(' ');
+    const area = `${path} L${xs[xs.length-1]},${H-PAD} L${xs[0]},${H-PAD} Z`;
+    let svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+    svg += `<path d="${area}" fill="rgba(21,128,61,0.18)" />`;
+    svg += `<path d="${path}" stroke="#15803d" stroke-width="2" fill="none" />`;
+    xs.forEach((x, i) => {
+      svg += `<circle cx="${x}" cy="${ys[i]}" r="2.5" fill="#15803d" />`;
+      svg += `<text x="${x}" y="${H-4}" font-size="8" text-anchor="middle" fill="#666">${years[i]}</text>`;
+    });
+    // Y-axis labels
+    svg += `<text x="${W-2}" y="10" font-size="8" text-anchor="end" fill="#666">${(maxArea/1000).toFixed(1)}k ha</text>`;
+    svg += `<text x="${W-2}" y="${H-PAD}" font-size="8" text-anchor="end" fill="#666">${(minArea/1000).toFixed(1)}k ha</text>`;
+    svg += `</svg>`;
+    chart.innerHTML = svg;
+    text.innerHTML = `Forest area ${tl.forest_area_ha[0].toLocaleString()} → ${tl.forest_area_ha[tl.forest_area_ha.length-1].toLocaleString()} ha (${tl.change_pct >= 0 ? '+' : ''}${tl.change_pct}%) · parcel stable at ~${tl.parcel_inside_ha[0].toFixed(0)} ha`;
+  } catch (e) {
+    console.warn('forest timeline load failed:', e);
+  }
+})();
 
 // ---- Measure tool (simple polyline ruler) ----
 let measureMode = false;
@@ -1413,12 +1670,29 @@ map.on('click', e => {
 // ---- Keyboard shortcuts ----
 window.addEventListener('keydown', e => {
   if (e.key === 'm' || e.key === 'M') document.getElementById('measure-btn').click();
+  if (e.key === '[' && document.getElementById('sidebar-collapse')) document.getElementById('sidebar-collapse').click();
+  // number keys 1-6 = presets
+  if (e.key === '1') applyPreset('all');
+  if (e.key === '2') applyPreset('none');
+  if (e.key === '3') applyPreset('property');
+  if (e.key === '4') applyPreset('water');
+  if (e.key === '5') applyPreset('forest');
+  if (e.key === '6') applyPreset('terrain');
 });
 
 // ---- Mobile drawer ----
-document.getElementById('drawer-toggle').onclick = () => {
-  document.getElementById('sidebar').classList.toggle('open');
-};
+function toggleDrawer(open) {
+  const sb = document.getElementById('sidebar');
+  const bd = document.getElementById('drawer-backdrop');
+  if (open === undefined) {
+    open = !sb.classList.contains('open');
+  }
+  sb.classList.toggle('open', open);
+  if (bd) bd.classList.toggle('visible', open);
+}
+document.getElementById('drawer-toggle').onclick = () => toggleDrawer();
+const _backdrop = document.getElementById('drawer-backdrop');
+if (_backdrop) _backdrop.onclick = () => toggleDrawer(false);
 
 // ---- WALKING-PATH REPLAY (time scrubber) ----
 // Build a virtual "playhead" dot that travels along Wes's path so you can
@@ -1473,8 +1747,11 @@ document.getElementById('replay-btn').onclick = () => {
   if (!fc) { alert('Walking path not loaded yet — wait a moment and try again.'); return; }
   if (!replayMarker) rebuildReplay();
   replayPlaying = !replayPlaying;
-  document.getElementById('replay-btn').textContent = replayPlaying ? '⏸ Pause' : '▶ Replay walk';
-  document.getElementById('replay-btn').style.background = replayPlaying ? 'var(--gold)' : '';
+  const btn = document.getElementById('replay-btn');
+  const durMs = getReplayRealDurationMs();
+  const durMin = Math.round(durMs / 60000);
+  btn.textContent = replayPlaying ? '⏸ Pause' : `▶ Replay walk (~${durMin} min)`;
+  btn.style.background = replayPlaying ? 'var(--gold)' : '';
   if (replayPlaying) replayStep();
 };
 
@@ -1492,6 +1769,21 @@ function replayStep() {
   replayReq = requestAnimationFrame(replayStep);
 }
 
+// P2-3: replay duration estimate based on real timestamps.
+// We compute the wall-clock duration of Wes's actual walk and use
+// it to pace the playback (1 second of replay = ~N seconds of wall time).
+function getReplayRealDurationMs() {
+  const fc = data['gps-walking-path'];
+  if (!fc || !fc.features[0]) return 60000;
+  const ts = fc.features[0].properties.timestamps || [];
+  if (ts.length < 2) return 60000;
+  try {
+    const a = new Date(ts[0]).getTime();
+    const b = new Date(ts[ts.length-1]).getTime();
+    return Math.max(5000, b - a);
+  } catch (e) { return 60000; }
+}
+
 document.getElementById('replay-time').addEventListener('input', e => {
   replayT = parseFloat(e.target.value);
   if (replayMarker) updateReplay(replayT);
@@ -1502,17 +1794,168 @@ document.getElementById('zoom-fit').onclick = () => map.fitBounds(BBOX_10KM, { p
 document.getElementById('zoom-parcel').onclick = () => {
   if (data.parcel) map.fitBounds(layers.parcel.getBounds(), { padding: [60, 60], maxZoom: 16 });
 };
-document.getElementById('show-all').onclick = () => {
-  document.querySelectorAll('[data-layer]').forEach(cb => {
-    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new Event('change')); }
-  });
+
+// ════════════════════════════════════════════════════════════════
+// PRESET BAR — turn on a coordinated set of layers in one click
+// ════════════════════════════════════════════════════════════════
+//
+// "all" = every layer on; "none" = everything off; "property/water/forest/
+// terrain/context" = only layers whose data-preset-group includes that token.
+//
+// Why: with 30+ layers the user wanted "one select-all button + easy presets"
+// so they can swap context in one click (e.g. "I want to see the water story").
+//
+// Active preset gets the .active highlight on its button so the user knows
+// what's on. The "all" / "none" buttons are intentionally separate from
+// the contextual presets so a user can pick a meaningful subset without
+// having to wade through the full list.
+const PRESET_GROUPS = {
+  all:      null, // special-cased below
+  none:     [],   // special-cased below
+  property: ['property'],
+  water:    ['water'],
+  forest:   ['forest'],
+  terrain:  ['terrain'],
+  context:  ['context'],
 };
-document.getElementById('hide-all').onclick = () => {
-  document.querySelectorAll('[data-layer]').forEach(cb => {
-    if (['parcel','gps-corners','gps-features','roads','water','waterways','places'].includes(cb.dataset.layer)) return;
-    if (cb.checked) { cb.checked = false; cb.dispatchEvent(new Event('change')); }
+
+// Layers that are part of "context" but should stay ON when "context" preset
+// is selected (these give the map its bones — basemap context, parcel outline).
+const PROPERTY_KEEP_ON = new Set(['parcel']);
+
+// Layers that are "housekeeping" and should NEVER be turned off by the
+// "none" preset (the parcel is the center of the map; without it the
+// viewer becomes meaningless).
+function applyPreset(name) {
+  const cbAll = Array.from(document.querySelectorAll('input[type=checkbox][data-layer]'));
+  // Compute target state per layer
+  let toCheck, toUncheck;
+  if (name === 'all') {
+    toCheck = cbAll.map(cb => cb);
+    toUncheck = [];
+  } else if (name === 'none') {
+    toCheck = [];
+    toUncheck = cbAll.filter(cb => !PROPERTY_KEEP_ON.has(cb.dataset.layer));
+  } else {
+    const groups = PRESET_GROUPS[name] || [];
+    toCheck = cbAll.filter(cb => {
+      const g = (cb.closest('.layer-row')?.dataset.presetGroup || '').split(',');
+      return g.some(x => groups.includes(x));
+    });
+    toUncheck = cbAll.filter(cb => {
+      if (PROPERTY_KEEP_ON.has(cb.dataset.layer)) return false;
+      const g = (cb.closest('.layer-row')?.dataset.presetGroup || '').split(',');
+      return !g.some(x => groups.includes(x));
+    });
+  }
+  // Apply
+  toCheck.forEach(cb => { if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new Event('change')); } });
+  toUncheck.forEach(cb => { if (cb.checked) { cb.checked = false; cb.dispatchEvent(new Event('change')); } });
+  // Update button highlight
+  document.querySelectorAll('.preset-btn[data-preset]').forEach(b => {
+    b.classList.toggle('active', b.dataset.preset === name);
   });
+}
+document.querySelectorAll('.preset-btn[data-preset]').forEach(btn => {
+  btn.onclick = () => applyPreset(btn.dataset.preset);
+});
+// Default highlight = "Property" (what loads by default has parcel on).
+applyPreset('property');
+
+// ════════════════════════════════════════════════════════════════
+// SIDEBAR COLLAPSE — desktop rail mode (saves 296 px for the map)
+// ════════════════════════════════════════════════════════════════
+const _sb = document.getElementById('sidebar');
+const _layout = document.querySelector('.layout');
+const _collapseBtn = document.getElementById('sidebar-collapse');
+function setSidebarCollapsed(collapsed) {
+  _sb.classList.toggle('collapsed', collapsed);
+  if (_layout) _layout.style.gridTemplateColumns = collapsed ? '44px 1fr' : '';
+  if (_collapseBtn) _collapseBtn.textContent = collapsed ? '›' : '‹';
+  if (_collapseBtn) _collapseBtn.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+  try { localStorage.setItem('lqv-sidebar-collapsed', collapsed ? '1' : '0'); } catch (e) {}
+  // Invalidate Leaflet size so tiles re-flow into the new map width
+  setTimeout(() => map.invalidateSize(), 240);
+}
+if (_collapseBtn) _collapseBtn.onclick = () => setSidebarCollapsed(!_sb.classList.contains('collapsed'));
+// Restore collapsed state
+try {
+  if (localStorage.getItem('lqv-sidebar-collapsed') === '1') setSidebarCollapsed(true);
+} catch (e) {}
+
+// P2-4: Share view button — copy current URL with state hash to clipboard.
+document.getElementById('share-view').onclick = async () => {
+  try {
+    updateURLHash();
+    const url = window.location.href;
+    await navigator.clipboard.writeText(url);
+    const btn = document.getElementById('share-view');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.style.background = 'var(--gold)';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 1500);
+  } catch (e) {
+    prompt('Copy this URL:', window.location.href);
+  }
 };
+
+// P2-8: Annotations layer — user-drawn notes persisted to localStorage.
+const ANNOT_KEY = 'lqv-annotations';
+function loadAnnotations() {
+  try { return JSON.parse(localStorage.getItem(ANNOT_KEY) || '[]'); } catch { return []; }
+}
+function saveAnnotations(arr) {
+  try { localStorage.setItem(ANNOT_KEY, JSON.stringify(arr)); } catch {}
+}
+const annotLayer = L.layerGroup();
+let annotMode = false;
+function renderAnnotations() {
+  annotLayer.clearLayers();
+  const arr = loadAnnotations();
+  arr.forEach((a, i) => {
+    const m = L.marker([a.lat, a.lon], {
+      icon: L.divIcon({
+        className: 'annot-pin',
+        html: `<div style="background:#fcd34d;border:2px solid #92400e;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#451a03;box-shadow:0 2px 4px rgba(0,0,0,0.3);">${i+1}</div>`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 12],
+      }),
+    }).addTo(annotLayer);
+    if (a.note) m.bindTooltip(`#${i+1} · ${a.note}`, { sticky: true });
+    m.on('contextmenu', () => {
+      if (confirm(`Delete annotation #${i+1} "${a.note}"?`)) {
+        const all = loadAnnotations().filter((_, j) => j !== i);
+        saveAnnotations(all);
+        renderAnnotations();
+      }
+    });
+  });
+}
+document.getElementById('annotate-btn').onclick = () => {
+  annotMode = !annotMode;
+  const btn = document.getElementById('annotate-btn');
+  const hint = document.getElementById('annotate-hint');
+  btn.style.background = annotMode ? 'var(--gold)' : '';
+  btn.style.color = annotMode ? 'white' : '';
+  hint.style.display = annotMode ? 'block' : 'none';
+  if (annotMode && !map.hasLayer(annotLayer)) annotLayer.addTo(map);
+  if (!annotMode && map.hasLayer(annotLayer)) map.removeLayer(annotLayer);
+};
+map.on('click', (e) => {
+  if (!annotMode) return;
+  const note = prompt('Note for this annotation (or leave empty):', '');
+  if (note === null) return; // cancelled
+  const arr = loadAnnotations();
+  arr.push({
+    lat: e.latlng.lat,
+    lon: e.latlng.lng,
+    note: note || '(no note)',
+    created_at: new Date().toISOString(),
+  });
+  saveAnnotations(arr);
+  renderAnnotations();
+  if (!map.hasLayer(annotLayer)) annotLayer.addTo(map);
+});
 
 // ---- Shareable URL state (#z=12&l=roads,water,places) ----
 function updateURLHash() {

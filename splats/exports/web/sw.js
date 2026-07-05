@@ -1,29 +1,36 @@
-// LQV 10 km viewer — service worker for offline rasters + last-fetched layers.
-// Strategy: cache-first for rasters (hillshade, color-relief),
-// stale-while-revalidate for GeoJSONs. Skip tiles from tile.openstreetmap.org.
+// LQV 10 km viewer — service worker.
+// Strategy:
+//   - cache-first for rasters (hillshade, color-relief, NDVI backdrop, HAND)
+//   - stale-while-revalidate for GeoJSONs
+//   - cache-first for shell HTML/JS/CSS
+//   - cache OSM/Esri tiles with LRU eviction (max 1500 tiles)
 
-const VERSION = 'v19';
+const VERSION = 'v21';
 const RASTER_CACHE = `lqv-rasters-${VERSION}`;
 const GEOJSON_CACHE = `lqv-geojson-${VERSION}`;
 const SHELL_CACHE   = `lqv-shell-${VERSION}`;
+const TILE_CACHE    = `lqv-tiles-${VERSION}`;
+const TILE_MAX = 1500;
 
-const RASTER_EXTENSIONS = ['.jpg', '.png', '.jpeg'];
 const RASTER_PATHS = [
   '/data/hillshade_10km.jpg',
   '/data/dem_color_relief_10km.jpg',
+  '/data/ndvi_canopy_10km.png',
+  '/data/hand_10km.png',
 ];
 
-// Pre-cache the GeoJSON file URLs we expect.
 const GEOJSON_PATHS = [
   '/data/client_gps/client_gps_polygon.geojson',
   '/data/client_gps/client_gps_corners.geojson',
   '/data/client_gps/client_gps_features.geojson',
+  '/data/local_quebradas_10km.geojson',
   '/data/ndvi_canopy_10km.geojson',
   '/data/dem_streams_10km.geojson',
   '/data/dem_streams_arrows_10km.geojson',
   '/data/dem_contours_10km.geojson',
   '/data/water_combined_10km.geojson',
   '/data/surface_water_10km.geojson',
+  '/data/hand_10km.geojson',
   '/data/mapbiomas_2023_10km.geojson',
   '/data/hansen_loss_10km.geojson',
   '/data/hansen_gain_10km.geojson',
@@ -39,11 +46,19 @@ const GEOJSON_PATHS = [
   '/data/osm_10km/landuse.geojson',
   '/data/hillshade_bounds.json',
   '/data/dem_color_relief_bounds.json',
+  '/data/ndvi_canopy_bounds.json',
 ];
 
 const SHELL_PATHS = [
   '/mapa-10km.html',
   '/js/lqv-inline.js',
+  '/404.html',
+];
+
+const TILE_HOSTS = [
+  'tile.openstreetmap.org',
+  'server.arcgisonline.com',
+  'services.arcgisonline.com',
 ];
 
 self.addEventListener('install', event => {
@@ -69,9 +84,16 @@ self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  if (url.origin !== self.location.origin) return;  // skip OSM tiles
 
-  // Raster (JPG/PNG): cache-first, fall back to network
+  // Tiles from map providers
+  if (TILE_HOSTS.includes(url.hostname)) {
+    event.respondWith(cacheFirst(TILE_CACHE, req, TILE_MAX));
+    return;
+  }
+
+  if (url.origin !== self.location.origin) return;  // skip other external
+
+  // Raster (JPG/PNG): cache-first
   if (RASTER_EXTENSIONS.some(ext => url.pathname.endsWith(ext))) {
     event.respondWith(cacheFirst(RASTER_CACHE, req));
     return;
@@ -81,21 +103,25 @@ self.addEventListener('fetch', event => {
     event.respondWith(staleWhileRevalidate(GEOJSON_CACHE, req));
     return;
   }
-  // Shell: cache-first for HTML/JS
-  if (url.pathname.endsWith('.html') || url.pathname.endsWith('.js')) {
+  // Shell: cache-first
+  if (url.pathname.endsWith('.html') || url.pathname.endsWith('.js')
+      || url.pathname.endsWith('.css')) {
     event.respondWith(cacheFirst(SHELL_CACHE, req));
     return;
   }
   // Other: network only
 });
 
-async function cacheFirst(cacheName, req) {
+async function cacheFirst(cacheName, req, maxEntries) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(req);
   if (cached) return cached;
   try {
     const resp = await fetch(req);
-    if (resp.ok) cache.put(req, resp.clone());
+    if (resp.ok) {
+      cache.put(req, resp.clone());
+      if (maxEntries) await trimCache(cache, maxEntries);
+    }
     return resp;
   } catch (e) {
     return new Response('Offline', { status: 503 });
@@ -110,4 +136,14 @@ async function staleWhileRevalidate(cacheName, req) {
     return resp;
   }).catch(() => cached);
   return cached || fetchPromise;
+}
+
+// LRU eviction for tile cache (keep last maxEntries).
+async function trimCache(cache, maxEntries) {
+  const keys = await cache.keys();
+  if (keys.length <= maxEntries) return;
+  const toDelete = keys.length - maxEntries;
+  for (let i = 0; i < toDelete; i++) {
+    await cache.delete(keys[i]);
+  }
 }

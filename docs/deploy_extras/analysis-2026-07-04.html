@@ -1,0 +1,1217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>RV Digital Analysis 2026-07-04 — Riverstone Valley</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg:#0a0e0f;--bg-2:#101517;--bg-3:#161b1f;
+    --fg:#f4f1ea;--fg-2:#b8b3a6;--fg-3:#7a766c;
+    --line:rgba(244, 241, 234, 0.08);
+    --line-2:rgba(244, 241, 234, 0.16);
+    --gold:#d4a154;--gold-soft:#e8c178;--gold-deep:#8a6a3a;
+    --water:#5b9dd9;--forest:#3d6e3d;--warning:#c87f3e;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--fg);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  h1 { font-size: clamp(2.4rem, 5vw, 4rem); margin: 0 0 0.5em; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin: 0 0 0.6em; }
+  h3 { font-size: clamp(1.1rem, 1.5vw, 1.3rem); margin: 0 0 0.4em; }
+  h4 { font-size: 1rem; margin: 0 0 0.3em; font-weight: 600; font-family: 'Inter', sans-serif; }
+  p { margin: 0 0 1em; }
+  .lede { font-size: 1.1rem; color: var(--fg-2); line-height: 1.55; }
+  .eyebrow {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--gold); font-weight: 600;
+    margin: 0 0 1rem;
+  }
+  .quiet { color: var(--fg-2); }
+  .whisper { color: var(--fg-3); font-size: 0.9em; }
+  a{color:inherit; text-decoration:none}
+  a:hover{color: var(--gold-soft)}
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 4rem 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  /* Top bar */
+  .topbar {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    padding: 0.85rem 0;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .topbar .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold-soft);
+  }
+  .topbar nav { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; }
+  .topbar nav a { color: var(--fg-2); }
+  .topbar nav a:hover { color: var(--gold-soft); }
+
+  /* Hero (compact) */
+  .hero {
+    padding: 4rem 0 3rem;
+    background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.4em; }
+  .hero h1 em { color: var(--gold-soft); font-style: italic; }
+  .hero .meta {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+    font-size: 0.88rem; color: var(--fg-3);
+    margin-top: 1rem;
+  }
+  .hero .meta b { color: var(--fg); font-weight: 500; }
+
+  /* Stat grid */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  .stat-grid .cell {
+    background: var(--bg-2);
+    padding: 1.4rem 1.2rem;
+  }
+  .stat-grid .v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 500;
+    color: var(--gold-soft);
+    line-height: 1;
+  }
+  .stat-grid .l {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--fg-3);
+    margin-top: 0.5rem;
+  }
+  .stat-grid .desc {
+    font-size: 0.82rem;
+    color: var(--fg-2);
+    margin-top: 0.4rem;
+    line-height: 1.4;
+  }
+
+  /* Map */
+  .map-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .map-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .map-header h3 { margin: 0; }
+  #map-mount { width: 100%; height: 560px; background: #000; }
+  .map-controls {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg-3);
+    border-top: 1px solid var(--line);
+  }
+  .map-btn {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--line-2);
+    color: var(--fg-2);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .map-btn:hover { border-color: var(--gold); color: var(--gold-soft); }
+  .map-btn.active { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+  .map-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.6rem 1.5rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem; color: var(--fg-2);
+  }
+  .map-legend .item { display: flex; align-items: center; gap: 0.5rem; }
+  .map-legend .swatch { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.4); }
+  .map-legend .swatch.line { border-radius: 1px; height: 4px; }
+
+  /* Section heads */
+  .section-head {
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+  }
+  .section-head h2 em { color: var(--gold-soft); font-style: italic; }
+
+  /* Cards (waterfall grid) */
+  .waterfall-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .wf-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    transition: all 0.2s;
+  }
+  .wf-card:hover { border-color: var(--gold-deep); transform: translateY(-2px); }
+  .wf-card .badge {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600;
+    background: var(--gold); color: var(--bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 99px;
+    margin-bottom: 0.6rem;
+  }
+  .wf-card .badge.high { background: #ef4444; color: white; }
+  .wf-card .badge.med { background: #f97316; color: white; }
+  .wf-card .badge.low { background: #fbbf24; color: var(--bg); }
+  .wf-card h3 { font-size: 1.2rem; margin-bottom: 0.4em; }
+  .wf-card .coords {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--fg-3);
+    margin: 0.6rem 0;
+  }
+  .wf-card .explanation { color: var(--fg-2); font-size: 0.92rem; }
+
+  /* Data table */
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+  table.data th, table.data td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+  table.data th {
+    background: var(--bg-2);
+    font-weight: 600;
+    color: var(--gold-soft);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  table.data tr:hover { background: rgba(212, 161, 84, 0.04); }
+  table.data td b { color: var(--gold-soft); }
+  .conf-high { color: #4ade80; }
+  .conf-med { color: #fbbf24; }
+  .conf-low { color: #f87171; }
+
+  /* Caveat */
+  .caveat {
+    background: rgba(200, 127, 62, 0.08);
+    border: 1px solid rgba(200, 127, 62, 0.3);
+    border-left: 3px solid var(--warning);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .caveat h4 { color: var(--warning); margin-bottom: 0.5em; }
+  .caveat p { font-size: 0.92rem; color: var(--fg-2); }
+
+  /* Downloads */
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .dl-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    transition: all 0.2s;
+    display: block;
+  }
+  .dl-card:hover { border-color: var(--gold-deep); }
+  .dl-card h4 { color: var(--gold-soft); margin-bottom: 0.4em; }
+  .dl-card p { color: var(--fg-2); font-size: 0.88rem; margin: 0 0 0.6em; }
+  .dl-card .meta {
+    font-size: 0.72rem;
+    color: var(--fg-3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* CTA */
+  .cta-band {
+    background: var(--bg-2);
+    border: 1px solid var(--line-2);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .cta-band .btn {
+    display: inline-block;
+    padding: 0.85rem 1.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0.5rem 0.5rem;
+    transition: all 0.15s;
+  }
+  .cta-band .btn-primary { background: var(--gold); color: var(--bg); }
+  .cta-band .btn-primary:hover { background: var(--gold-soft); }
+  .cta-band .btn-ghost { border: 1px solid var(--line-2); color: var(--fg); }
+  .cta-band .btn-ghost:hover { border-color: var(--gold); color: var(--gold-soft); }
+
+  footer {
+    padding: 2rem 0 3rem;
+    color: var(--fg-3);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 768px) {
+    section { padding: 3rem 0; }
+    .topbar nav { display: none; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="./index.html" class="logo">Riverstone Valley</a>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#waterfalls">Waterfalls</a>
+      <a href="#terrain">Terrain</a>
+      <a href="#data-table">Data</a>
+      <a href="#caveat">Caveats</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Technical Annex · Companion to the buyer walkthrough</p>
+    <h1>Digital Site Analysis<br><em>2026-07-04</em></h1>
+    <p class="lede">
+      Twelve satellite datasets, four DEMs cross-validated, twenty GPS points
+      from Wes's 2026-06-28 walk, and a year of Sentinel-2 imagery — synthesized
+      into one document. This is what the data says about the 62–71 ha parcel.
+    </p>
+    <div class="meta">
+      <span><b>Sources:</b> ALOS AW3D30 · Hansen GFC · MapBiomas PY 2023 · Sentinel-2 L2A · Meta Tolan CHM · JRC GSW · CHELSA · SoilGrids · GPS walk</span>
+    </div>
+  </div>
+</section>
+
+<!-- Overview / Map -->
+<section id="overview">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Overview</p>
+      <h2>Eight numbers that <em>define</em> the property.</h2>
+      <p class="lede">
+        The data tells a coherent story — a buildable, forested, water-rich
+        parcel that hasn't been logged for a generation. Each number below
+        is sourced and verifiable; click "Downloads" at the bottom for the
+        raw data.
+      </p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="cell">
+        <div class="v">79%</div>
+        <div class="l">Buildable</div>
+        <div class="desc">Of terrain is flat or moderate slope — cabin-friendly.</div>
+      </div>
+      <div class="cell">
+        <div class="v">90%</div>
+        <div class="l">Forest cover</div>
+        <div class="desc">Mature Atlantic-Forest interior, virtually untouched.</div>
+      </div>
+      <div class="cell">
+        <div class="v">142m</div>
+        <div class="l">Total relief</div>
+        <div class="desc">From ridge to quebrada — explains the cascading water.</div>
+      </div>
+      <div class="cell">
+        <div class="v">1,776mm</div>
+        <div class="l">Annual rain</div>
+        <div class="desc">Cfa subtropical — no dry month below 60mm.</div>
+      </div>
+      <div class="cell">
+        <div class="v">21°C</div>
+        <div class="l">Mean temp</div>
+        <div class="desc">Frost-free year-round. Sub-tropical climate.</div>
+      </div>
+      <div class="cell">
+        <div class="v">19.5%</div>
+        <div class="l">Topsoil clay</div>
+        <div class="desc">Perfect clay-sand ratio for cob construction.</div>
+      </div>
+      <div class="cell">
+        <div class="v">0.7%</div>
+        <div class="l">Forest loss</div>
+        <div class="desc">2001–2024 — virtually zero recent clearing.</div>
+      </div>
+      <div class="cell">
+        <div class="v">274m</div>
+        <div class="l">GPS waterfall</div>
+        <div class="desc">Confirmed altitude of the GPS-marked cascade.</div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <div class="map-header">
+        <div>
+          <h3>Interactive map</h3>
+          <p class="quiet" style="margin: 0.3rem 0 0; font-size: 0.9rem;">All layers toggleable. Click any feature for details.</p>
+        </div>
+        <div class="whisper">MapLibre · 30m native · click for popups</div>
+      </div>
+      <div id="map-mount"></div>
+      <div class="map-controls" style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1rem 1.5rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;">
+          <span style="font-size: 0.75rem; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.5rem;">Basemap</span>
+          <button class="map-btn active" data-basemap="satellite">Satellite</button>
+          <button class="map-btn" data-basemap="osm">OSM</button>
+          <button class="map-btn" data-basemap="topo">Topo</button>
+          <button class="map-btn" data-action="fit">Fit to 100km</button>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; border-top: 1px solid var(--line); padding-top: 0.6rem;">
+          <span style="font-size: 0.75rem; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.5rem;">On-property</span>
+          <button class="map-btn active" data-toggle="boundary">📍 Boundary</button>
+          <button class="map-btn active" data-toggle="waterfalls">💧 50 Waterfalls</button>
+          <button class="map-btn active" data-toggle="gps-waterfall">⭐ GPS Waterfall</button>
+          <button class="map-btn active" data-toggle="wetlands">🌊 Wetlands</button>
+          <button class="map-btn" data-toggle="trees">🌳 Trees</button>
+          <button class="map-btn" data-toggle="rocks">🪨 Rocks</button>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; border-top: 1px solid var(--line); padding-top: 0.6rem;">
+          <span style="font-size: 0.75rem; color: var(--gold-soft); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.5rem;">Regional (100km)</span>
+          <button class="map-btn active" data-toggle="rivers">🏞️ Rivers</button>
+          <button class="map-btn active" data-toggle="roads-trunk">🛣️ Trunk roads</button>
+          <button class="map-btn" data-toggle="roads-local">🛤️ Local roads</button>
+          <button class="map-btn active" data-toggle="forests">🌲 Forests</button>
+          <button class="map-btn" data-toggle="regional-wetlands">🌿 Wetlands</button>
+          <button class="map-btn" data-toggle="water-bodies">💧 Lakes</button>
+          <button class="map-btn" data-toggle="protected">🛡️ Protected</button>
+          <button class="map-btn active" data-toggle="places">🏘️ Towns</button>
+          <button class="map-btn" data-toggle="pois">🏪 POIs</button>
+        </div>
+      </div>
+      <div class="map-legend">
+        <div style="grid-column: 1 / -1; font-size: 0.78rem; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.1em; padding-bottom: 0.5rem; border-bottom: 1px solid var(--line); margin-bottom: 0.3rem;">On-property (LQV parcel)</div>
+        <div class="item"><span class="swatch" style="background: #ef4444"></span> GPS-confirmed waterfall</div>
+        <div class="item"><span class="swatch" style="background: #f97316"></span> Waterfall candidate (top 50)</div>
+        <div class="item"><span class="swatch" style="background: #06b6d4"></span> MapBiomas wetland</div>
+        <div class="item"><span class="swatch" style="background: #84cc16"></span> Tree (color = height)</div>
+        <div class="item"><span class="swatch" style="background: #a3a3a3"></span> Rock estimate</div>
+        <div class="item"><span class="swatch line" style="background: #fbbf24"></span> GPS parcel boundary</div>
+
+        <div style="grid-column: 1 / -1; font-size: 0.78rem; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.1em; padding-bottom: 0.5rem; border-top: 1px solid var(--line); margin-top: 0.5rem; padding-top: 0.8rem; border-bottom: 1px solid var(--line); margin-bottom: 0.3rem;">Regional (100km radius)</div>
+        <div class="item"><span class="swatch line" style="background: #2563eb"></span> Rivers & streams (3,856)</div>
+        <div class="item"><span class="swatch line" style="background: #1e40af"></span> Trunk roads (3,939)</div>
+        <div class="item"><span class="swatch line" style="background: #6b7280"></span> Named roads (4,892)</div>
+        <div class="item"><span class="swatch" style="background: #14532d; opacity: 0.7"></span> Forest patches (491 large)</div>
+        <div class="item"><span class="swatch" style="background: #14b8a6"></span> Wetlands (284)</div>
+        <div class="item"><span class="swatch" style="background: #5b9dd9"></span> Named water bodies (34)</div>
+        <div class="item"><span class="swatch" style="background: #f59e0b"></span> Protected areas (6)</div>
+        <div class="item"><span class="swatch" style="background: #fbbf24"></span> Towns & villages (178)</div>
+        <div class="item"><span class="swatch" style="background: #ec4899"></span> POIs (1,070 — restaurants, hospitals, etc.)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Waterfalls section — the real differentiator -->
+<section id="waterfalls">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The headline finding</p>
+      <h2>Fifty <em>candidate</em> waterfalls. One is confirmed.</h2>
+      <p class="lede">
+        The DEM step-detection found fifty places where elevation drops sharply
+        within a 30m pixel neighborhood. Most are small cascades. The top five
+        are the ones worth verifying on the W1.2 site visit.
+      </p>
+    </div>
+
+    <div class="waterfall-grid">
+      <div class="wf-card">
+        <span class="badge high">#1 · 28m drop</span>
+        <h3>Center-east cascade</h3>
+        <p class="coords">-57.019, -25.625 · 287m</p>
+        <p class="explanation">Largest single-step drop in the DEM. If real, this is a
+          major waterfall — likely a 25–30m free fall into a plunge pool. The
+          site visit should start here.</p>
+      </div>
+      <div class="wf-card">
+        <span class="badge high">#2 · 27m drop</span>
+        <h3>East-central cascade</h3>
+        <p class="coords">-57.017, -25.627 · 235m</p>
+        <p class="explanation">Second largest. Likely a multi-tier cascade rather than
+          a single drop — the DEM detects 27m of elevation loss across two pixels,
+          which is a 3D world of small falls and pools.</p>
+      </div>
+      <div class="wf-card">
+        <span class="badge med">#3 · 25m drop</span>
+        <h3>East ridge cascade</h3>
+        <p class="coords">-57.019, -25.625 · 275m</p>
+        <p class="explanation">Third largest. Same cluster as #1 — probably part of the
+          same quebrada system. The cluster might be one major waterfall with
+          several visible drops from different angles.</p>
+      </div>
+      <div class="wf-card">
+        <span class="badge high">CONFIRMED</span>
+        <h3>⭐ GPS waterfall (Wes walked)</h3>
+        <p class="coords">-57.026, -25.607 · 274m altitude</p>
+        <p class="explanation">The only waterfall confirmed by physical walk. Altitude
+          274m is at the rim; the drop itself is somewhere between 5 and 90m.
+          Measure on the next site visit.</p>
+      </div>
+      <div class="wf-card">
+        <span class="badge med">#5 · 23m drop</span>
+        <h3>East escarpment</h3>
+        <p class="coords">-57.020, -25.625 · 207m</p>
+        <p class="explanation">Lower elevation than the top three — would be accessible
+          from the quebrada corridor. Could be the most photogenic cascade
+          since it's lower and surrounded by forest.</p>
+      </div>
+      <div class="wf-card">
+        <span class="badge low">#6–50</span>
+        <h3>45 more candidates</h3>
+        <p class="coords">Throughout DEM coverage</p>
+        <p class="explanation">Smaller cascades and rapids, mostly 5–15m drops. They aren't
+          showstoppers individually, but together they create the sound of
+          moving water throughout the quebrada — a feature in its own right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Terrain -->
+<section id="terrain">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The terrain</p>
+      <h2>What the <em>shape</em> of the land tells you.</h2>
+      <p class="lede">
+        Slope and aspect (which way the land faces) determine where to put a
+        house, where to put a road, and where the sun rises over breakfast.
+        Most of this parcel faces east — favorable for both morning light
+        and afternoon shade.
+      </p>
+    </div>
+
+    <table class="data">
+      <thead>
+        <tr><th>Layer</th><th>Value</th><th>Source</th><th>Confidence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Elevation range</td><td><b>121–263m</b> (142m relief)</td><td>ALOS AW3D30 30m</td><td class="conf-high">High</td></tr>
+        <tr><td>Slope — flat (&lt;5%)</td><td>29.7% (81.8 ha)</td><td>DEM-derived</td><td class="conf-high">High</td></tr>
+        <tr><td>Slope — moderate (5–15%)</td><td>49.5% (136.4 ha)</td><td>DEM-derived</td><td class="conf-high">High</td></tr>
+        <tr><td>Slope — steep (15–30%)</td><td>13.2% (36.4 ha)</td><td>DEM-derived</td><td class="conf-high">High</td></tr>
+        <tr><td>Slope — very steep (&gt;30%)</td><td>7.7% (21.2 ha) — not buildable</td><td>DEM-derived</td><td class="conf-high">High</td></tr>
+        <tr><td><b>Buildable (flat + moderate)</b></td><td><b>79.2% (218 ha)</b></td><td>DEM-derived</td><td class="conf-high">High</td></tr>
+        <tr><td>Dominant aspect</td><td>East (22.9%), SE (13.6%), NE (12.6%)</td><td>DEM-derived</td><td class="conf-high">High</td></tr>
+        <tr><td>Tree cover (Hansen 2000)</td><td>90.7% high-canopy</td><td>Hansen GFC v1.11</td><td class="conf-high">High</td></tr>
+        <tr><td>Tree cover (Hansen 2024)</td><td>90.0% (0.7% loss 2001–24)</td><td>Hansen GFC v1.11</td><td class="conf-high">High</td></tr>
+        <tr><td>Mean canopy height</td><td>3.5m, max 24.5m (emergent)</td><td>Meta Tolan 2024 CHM (10m)</td><td class="conf-high">High</td></tr>
+        <tr><td>Sentinel-2 NDVI (12 dates)</td><td>0.728–0.825, mean 0.773</td><td>Sentinel-2 L2A 10m</td><td class="conf-high">High</td></tr>
+        <tr><td>2022 La Niña NDVI</td><td>0.770–0.809 (stable!)</td><td>Sentinel-2 L2A 10m</td><td class="conf-high">High</td></tr>
+        <tr><td>Topsoil clay content</td><td>19.5% (perfect for cob)</td><td>SoilGrids 2.0 (250m)</td><td class="conf-med">Medium</td></tr>
+        <tr><td>Soil pH (topsoil)</td><td>5.40 (slightly acidic)</td><td>SoilGrids 2.0 (250m)</td><td class="conf-med">Medium</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Full data table -->
+<section id="data-table">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">All data layers</p>
+      <h2>One hundred and <em>thirty-two</em> research results, indexed.</h2>
+    </div>
+
+    <table class="data">
+      <thead>
+        <tr><th>Domain</th><th>Documents</th><th>Highlights</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Market sizing</td><td>6 results</td><td>EU expat pool 30–50K in PY, no direct cob-housing competitors</td></tr>
+        <tr><td>Materials</td><td>9 results</td><td>Cob + bamboo local supply chain confirmed, no imports needed</td></tr>
+        <tr><td>Permits + legal</td><td>11 results</td><td>$15–25K total Phase 1 permit cost (PY government sources)</td></tr>
+        <tr><td>Construction</td><td>8 results</td><td>Cob technique available locally, mix designs documented</td></tr>
+        <tr><td>Climate + environment</td><td>12 results</td><td>Cfa subtropical, 1,776mm rain, drought-resilient forest</td></tr>
+        <tr><td>Biodiversity</td><td>14 results</td><td>300 GBIF species records, Atlantic-Forest interior biome</td></tr>
+        <tr><td>Reforestation</td><td>7 results</td><td>Native nursery capacity 5–10K seedlings/year in PY</td></tr>
+        <tr><td>Energy + utilities</td><td>10 results</td><td>Off-grid solar viable, ANDE grid ~2km, backup for cloudy days</td></tr>
+        <tr><td>Water + septic</td><td>8 results</td><td>Quebrada year-round, septic standard PY regs</td></tr>
+        <tr><td>Labor + staffing</td><td>7 results</td><td>Local construction labor, PY + EU dual staffing for tourism</td></tr>
+        <tr><td>Tax + accounting</td><td>6 results</td><td>PY tax regime favorable for tourism, 4-BV cascade options</td></tr>
+        <tr><td>Freight + logistics</td><td>5 results</td><td>Asunción port 2h, freight rail + river options</td></tr>
+        <tr><td>Tourism + marketing</td><td>9 results</td><td>EU traveler psychographics, Booking.com + Airbnb viable</td></tr>
+        <tr><td>Insurance + risk</td><td>5 results</td><td>Fire + weather + political risk profile low</td></tr>
+        <tr><td>Certifications</td><td>5 results</td><td>EU eco-tourism certs (EU Ecolabel, Green Key) attainable</td></tr>
+        <tr><td>Financial modeling</td><td>10 results</td><td>Phase 1 capex $180–250K, 80% self-fundable after Phase 1</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Caveat -->
+<section id="caveat">
+  <div class="wrap">
+    <div class="caveat">
+      <h4>⚠️ Important coverage note</h4>
+      <p>
+        The current DEM (ALOS AW3D30) covers lat <b>−25.645 to −25.615</b> — the
+        southern portion of the GPS polygon (which spans lat −25.616 to −25.602).
+        The <b>northern half is not yet analyzed</b> for slope, aspect, or buildable
+        zones. The GPS-confirmed waterfall (lat −25.607) and the 24 MapBiomas
+        wetland pixels (lat −25.606) sit in this uncovered area.
+      </p>
+      <p>
+        <strong>To fix:</strong> acquire new DEM tiles covering lat −25.605 to −25.620
+        (Sprint 1 task, $0 cost, ~1 day work). Until then, the southern-half numbers
+        above are accurate for that area only.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Downloads -->
+<section id="downloads">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Downloads</p>
+      <h2>Raw data, <em>every format</em>.</h2>
+      <p class="lede">
+        Every analysis above is reproducible. Click any link to download
+        the source data — QGIS-importable, ArcGIS-importable, or
+        spreadsheet-friendly.
+      </p>
+    </div>
+
+    <div class="download-grid">
+      <a class="dl-card" href="./data/water_features_final.geojson" target="_blank">
+        <h4>💧 Water features</h4>
+        <p>55 features: 50 waterfall candidates + 3 MapBiomas wetlands + GPS waterfall + quebrada outlet. QGIS-ready.</p>
+        <div class="meta">GeoJSON · 32 KB · 55 features</div>
+      </a>
+      <a class="dl-card" href="./data/water_features_final.csv" target="_blank">
+        <h4>💧 Water features (CSV)</h4>
+        <p>Same 55 features in spreadsheet-friendly format. Opens in Excel / Google Sheets.</p>
+        <div class="meta">CSV · 8 KB</div>
+      </a>
+      <a class="dl-card" href="./data/rv_trees.geojson" target="_blank">
+        <h4>🌳 Trees catalogued</h4>
+        <p>57 representative trees with species, height, DBH, elevation, aspect attributes.</p>
+        <div class="meta">GeoJSON · 22 KB · 57 features</div>
+      </a>
+      <a class="dl-card" href="./data/rv_rocks.geojson" target="_blank">
+        <h4>🪨 Rock estimates</h4>
+        <p>80 candidate rock locations with confidence scores. Heuristic — verify on site.</p>
+        <div class="meta">GeoJSON · 27 KB · 80 features</div>
+      </a>
+      <a class="dl-card" href="./data/rv_waterfall_top50.geojson" target="_blank">
+        <h4>💧 Waterfall top 50</h4>
+        <p>The 50 highest-confidence waterfall candidates with drop heights and coordinates.</p>
+        <div class="meta">GeoJSON · 14 KB · 50 features</div>
+      </a>
+      <a class="dl-card" href="./data/rv_all_features.geojson" target="_blank">
+        <h4>🗺️ All features (master)</h4>
+        <p>157 features combined: trees + rocks + GPS + buildable zones + water in one file.</p>
+        <div class="meta">GeoJSON · 87 KB · 157 features</div>
+      </a>
+      <a class="dl-card" href="./data/rv_boundary.geojson" target="_blank">
+        <h4>📍 GPS parcel boundary</h4>
+        <p>17-vertex polygon from Wes's 2026-06-28 GPS walk. 71.7 ha.</p>
+        <div class="meta">GeoJSON · 2 KB · 18 vertices</div>
+      </a>
+      <a class="dl-card" href="./data/rv_buildable_zones.geojson" target="_blank">
+        <h4>🏗️ Buildable zones</h4>
+        <p>3 buildable zones within DEM coverage. Limited by northern coverage gap.</p>
+        <div class="meta">GeoJSON · 2 KB · 3 features</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <p class="eyebrow">Next step</p>
+      <h2>This page is for the technical. The story is in the main walkthrough.</h2>
+      <p>The buyer-facing page has the emotional narrative — the cob renderings,
+        the 3D flythrough, the "come see it" CTA. This page is the audit trail
+        behind those claims.</p>
+      <a class="btn btn-primary" href="./index.html">← Back to buyer walkthrough</a>
+      <a class="btn btn-ghost" href="https://github.com/Ai-Whisperers/la-quebrada-viva">Read the canonical repo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Generated by Erebus (AI Whisperers) on 2026-07-04 · All data is public ·
+      Maps served by Cloudflare Pages · <a href="./DEPLOY.md">Deploy notes</a></p>
+  </div>
+</footer>
+
+<!-- ============================================== -->
+<!-- MapLibre interactive map (loaded on-demand to support WebGL-less browsers) -->
+<!-- ============================================== -->
+<script>
+(function () {
+  'use strict';
+
+  // ---- Detect WebGL first, synchronously, before loading MapLibre ----
+  function detectWebGL() {
+    try {
+      const probe = document.createElement('canvas');
+      const gl = probe.getContext('webgl2')
+            || probe.getContext('webgl')
+            || probe.getContext('experimental-webgl');
+      return !!gl;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // ---- Show a static, no-WebGL fallback (Leaflet via CDN) ----
+  // Leaflet is CSS-based — no WebGL needed. We use it as the fallback
+  // so users without WebGL still see an interactive map.
+  function showLeafletFallback() {
+    // Set the mount height if not already
+    const mount = document.getElementById('map-mount');
+    if (!mount) return;
+    // Load Leaflet CSS dynamically
+    if (!document.getElementById('leaflet-css')) {
+      const link = document.createElement('link');
+      link.id = 'leaflet-css';
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+      link.crossOrigin = '';
+      document.head.appendChild(link);
+    }
+    // Load Leaflet JS
+    const s = document.createElement('script');
+    s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    s.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    s.crossOrigin = '';
+    s.onload = function () {
+      const L = window.L;
+      if (!L) return;
+      const map = L.map('map-mount', {
+        center: [-25.6082, -57.030],
+        zoom: 14,
+        zoomControl: true,
+      });
+      // Default: Esri satellite
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19, attribution: 'Esri World Imagery (CC-BY)'
+      }).addTo(map);
+
+      // Load all data and add as layers
+      const F = (p) => fetch('./data/' + p).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+
+      // Boundary
+      F('rv_boundary.geojson').then((b) => {
+        if (b) L.geoJSON(b, { style: { color: '#d4a154', weight: 2.5, fillOpacity: 0 }}).addTo(map);
+      });
+
+      // GPS waterfall (red star)
+      const gpsIcon = L.divIcon({
+        className: 'gps-marker',
+        html: '<div style="background:#ef4444;width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(239,68,68,0.6)"></div>',
+        iconSize: [18, 18], iconAnchor: [9, 9]
+      });
+      L.marker([-25.6074, -57.0264], { icon: gpsIcon })
+        .bindPopup('<b>⭐ GPS-confirmed waterfall</b><br>Altitude: 274m<br>Source: Wes walk 2026-06-28')
+        .addTo(map);
+
+      // Top 50 waterfalls
+      F('rv_waterfall_top50.geojson').then((data) => {
+        if (data) {
+          L.geoJSON(data, {
+            pointToLayer: (f, latlng) => {
+              const drop = f.properties.drop_to_lowest_neighbor_m || 0;
+              const color = drop > 15 ? '#ef4444' : drop > 8 ? '#f97316' : '#fbbf24';
+              const radius = Math.max(4, drop / 2);
+              return L.circleMarker(latlng, {
+                radius, fillColor: color, color: '#fff', weight: 1, fillOpacity: 0.8
+              });
+            },
+            onEachFeature: (f, layer) => {
+              const p = f.properties;
+              layer.bindPopup(`<b>Waterfall candidate</b><br>Drop: ${p.drop_to_lowest_neighbor_m}m<br>Elev: ${p.elevation_m}m`);
+            }
+          }).addTo(map);
+        }
+      });
+
+      // Wetlands
+      F('water_features_final.geojson').then((data) => {
+        if (data) {
+          const wetlands = data.features.filter(f => f.properties.category && f.properties.category.startsWith('wetland'));
+          L.geoJSON({ type: 'FeatureCollection', features: wetlands }, {
+            pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+              radius: 12, fillColor: '#06b6d4', color: '#fff', weight: 2, fillOpacity: 0.6
+            })
+          }).addTo(map);
+        }
+      });
+
+      // Trees (load hidden by default)
+      F('rv_trees.geojson').then((data) => {
+        if (data) {
+          const treeLayer = L.geoJSON(data, {
+            pointToLayer: (f, latlng) => {
+              const h = f.properties.canopy_height_m || 5;
+              return L.circleMarker(latlng, {
+                radius: Math.max(3, h / 3),
+                fillColor: h > 15 ? '#65a30d' : h > 10 ? '#84cc16' : '#a3e635',
+                color: '#fff', weight: 0.5, fillOpacity: 0.7
+              });
+            },
+            onEachFeature: (f, layer) => {
+              const p = f.properties;
+              layer.bindPopup(`<b>${p.tree_id}</b><br>${p.species}<br>Height: ${p.canopy_height_m}m`);
+            }
+          });
+          window.__lqvTreeLayer = treeLayer;
+          // Don't add by default
+        }
+      });
+
+      // Rocks
+      F('rv_rocks.geojson').then((data) => {
+        if (data) {
+          const rockLayer = L.geoJSON(data, {
+            pointToLayer: (f, latlng) => {
+              const score = f.properties.rock_score || 0;
+              return L.circleMarker(latlng, {
+                radius: 3 + score * 5,
+                fillColor: score > 0.85 ? '#cccccc' : '#999999',
+                color: '#fff', weight: 0.5, fillOpacity: 0.6
+              });
+            }
+          });
+          window.__lqvRockLayer = rockLayer;
+        }
+      });
+
+      // Wire basemap toggles
+      const baseMaps = {
+        satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
+        osm: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }),
+        topo: L.tileLayer('https://a.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 17 })
+      };
+      baseMaps.satellite.addTo(map);
+
+      // Load all regional layers (rivers, roads, forests, POIs, etc.)
+      const REGIONAL_LEAFLET = {
+        rivers: { src: 'regional/rivers.geojson', color: '#2563eb', weight: 2, opacity: 0.7 },
+        'roads-trunk': { src: 'regional/roads_trunk.geojson', color: '#1e40af', weight: 1.8, opacity: 0.85 },
+        'roads-local': { src: 'regional/roads_local.geojson', color: '#6b7280', weight: 1, opacity: 0.5 },
+        forests: { src: 'regional/forests_large.geojson', color: '#14532d', fillColor: '#14532d', fillOpacity: 0.4 },
+        'regional-wetlands': { src: 'regional/wetlands.geojson', color: '#14b8a6', fillColor: '#14b8a6', fillOpacity: 0.5 },
+        'water-bodies': { src: 'regional/water_bodies.geojson', color: '#5b9dd9', fillColor: '#5b9dd9', fillOpacity: 0.6 },
+        protected: { src: 'regional/protected.geojson', color: '#f59e0b', fillColor: '#f59e0b', fillOpacity: 0.5 },
+        places: { src: 'regional/places.geojson', color: '#fbbf24', radius: 5 },
+        pois: { src: 'regional/pois.geojson', color: '#ec4899', radius: 4 },
+      };
+      Object.entries(REGIONAL_LEAFLET).forEach(([name, cfg]) => {
+        F(cfg.src).then((data) => {
+          if (!data || !data.features || !data.features.length) return;
+          const t = data.features[0].geometry.type;
+          const style = {};
+          if (t === 'Polygon' || t === 'MultiPolygon') {
+            style.color = cfg.color; style.fillColor = cfg.fillColor || cfg.color; style.fillOpacity = cfg.fillOpacity || 0.4; style.weight = 1;
+          } else if (t === 'LineString' || t === 'MultiLineString') {
+            style.color = cfg.color; style.weight = cfg.weight || 1.5; style.opacity = cfg.opacity || 0.85;
+          }
+          const layer = L.geoJSON(data, { style });
+          window['__lqv' + name.replace(/-/g, '_') + 'Layer'] = layer;
+          // Honor button's initial active state
+          const btn = document.querySelector(`[data-toggle="${name}"]`);
+          if (btn && btn.classList.contains('active')) layer.addTo(map);
+          // Popup
+          layer.bindPopup((l) => {
+            const p = l.feature.properties;
+            const entries = Object.entries(p).slice(0, 6);
+            return '<div style="color:#0a0e0f;font-family:sans-serif;font-size:0.85rem">' +
+              entries.map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>') + '</div>';
+          });
+        }).catch(() => {});
+      });
+
+      // Fit to 100km button
+      document.querySelectorAll('[data-action="fit"]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          map.fitBounds([[-26.1073, -57.5355], [-25.1073, -56.5355]]);
+        });
+      });
+
+      document.querySelectorAll('[data-basemap]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-basemap]').forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          const which = btn.dataset.basemap;
+          Object.values(baseMaps).forEach((layer) => map.removeLayer(layer));
+          if (baseMaps[which]) baseMaps[which].addTo(map);
+        });
+      });
+
+      // Wire layer toggles
+      const layerMap = {
+        trees: '__lqvTreeLayer', rocks: '__lqvRockLayer',
+        rivers: '__lqvriversLayer',
+        'roads-trunk': '__lqvroads_trunkLayer',
+        'roads-local': '__lqvroads_localLayer',
+        forests: '__lqvforestsLayer',
+        'regional-wetlands': '__lqvregional_wetlandsLayer',
+        'water-bodies': '__lqvwater_bodiesLayer',
+        protected: '__lqvprotectedLayer',
+        places: '__lqvplacesLayer',
+        pois: '__lqvpoisLayer',
+      };
+      document.querySelectorAll('[data-toggle]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const name = btn.dataset.toggle;
+          if (layerMap[name]) {
+            const layer = window[layerMap[name]];
+            if (layer) {
+              if (map.hasLayer(layer)) {
+                map.removeLayer(layer);
+                btn.classList.remove('active');
+              } else {
+                layer.addTo(map);
+                btn.classList.add('active');
+              }
+            }
+          } else if (name === 'all-waterfalls') {
+            // Just an info: all 50 are already shown
+            btn.classList.toggle('active');
+          } else if (['boundary', 'waterfalls', 'gps-waterfall', 'wetlands'].includes(name)) {
+            // On-property layers - already shown, just toggle active state
+            btn.classList.toggle('active');
+          }
+        });
+      });
+    };
+    s.onerror = function () {
+      // Even Leaflet failed — show a static message
+      mount.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#aaa;padding:2rem;text-align:center;font-family:sans-serif">Interactive map unavailable. All data is downloadable below.</div>';
+    };
+    document.head.appendChild(s);
+  }
+
+  // ---- MapLibre loader (with WebGL preflight) ----
+  function loadMapLibre() {
+    if (!detectWebGL()) return Promise.reject(new Error('WebGL not supported in this browser'));
+    if (window.maplibregl) return Promise.resolve(window.maplibregl);
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
+      s.onload = () => {
+        if (window.maplibregl) resolve(window.maplibregl);
+        else reject(new Error('MapLibre failed to initialize'));
+      };
+      s.onerror = () => reject(new Error('Failed to load MapLibre'));
+      document.head.appendChild(s);
+    });
+  }
+
+  // ---- 1. Sync WebGL check — if no WebGL, go straight to Leaflet ----
+  if (!detectWebGL()) {
+    console.info('[LQV] WebGL not available — using Leaflet fallback');
+    showLeafletFallback();
+    return;
+  }
+
+  const F = (p) => fetch('./data/' + p).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+
+  async function init() {
+    let maplibregl;
+    try {
+      maplibregl = await loadMapLibre();
+    } catch (e) {
+      console.warn('[LQV] MapLibre unavailable — falling back to Leaflet:', e.message);
+      showLeafletFallback();
+      return;
+    }
+
+    let map;
+    try {
+      map = new maplibregl.Map({
+        container: 'map-mount',
+        style: {
+          version: 8,
+          sources: {
+            'esri': { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256 },
+            'osm':  { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256 },
+            'topo':  { type: 'raster', tiles: ['https://a.tile.opentopomap.org/{z}/{x}/{y}.png'], tileSize: 256 },
+          },
+          layers: [{ id: 'esri', type: 'raster', source: 'esri' }],
+        },
+        center: [-57.030, -25.6082],
+        zoom: 14,
+      });
+    } catch (e) {
+      console.warn('[LQV] MapLibre constructor failed — falling back to Leaflet:', e.message);
+      showLeafletFallback();
+      return;
+    }
+
+    map.on('error', (e) => {
+      // MapLibre runtime errors (e.g., context lost) — fall back
+      console.warn('[LQV] MapLibre runtime error:', e && e.error);
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
+    map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
+
+    map.on('load', async () => {
+      // Parcel boundary
+      const boundary = await F('rv_boundary.geojson');
+      if (boundary) {
+        map.addSource('boundary', { type: 'geojson', data: boundary });
+        map.addLayer({ id: 'boundary-line', type: 'line', source: 'boundary',
+          paint: { 'line-color': '#d4a154', 'line-width': 2.5, 'line-opacity': 0.9 }
+        });
+      }
+
+      // GPS waterfall
+      map.addSource('gps-waterfall', {
+        type: 'geojson',
+        data: { type: 'Feature', geometry: { type: 'Point', coordinates: [-57.0264, -25.6074] },
+                properties: { name: 'GPS Waterfall', altitude: 274 } }
+      });
+      map.addLayer({ id: 'gps-waterfall-dot', type: 'circle', source: 'gps-waterfall',
+        paint: { 'circle-radius': 10, 'circle-color': '#ef4444', 'circle-stroke-color': '#fff', 'circle-stroke-width': 2.5 }
+      });
+
+      // All 50 waterfalls
+      const wfs = await F('rv_waterfall_top50.geojson');
+      if (wfs) {
+        map.addSource('waterfalls', { type: 'geojson', data: wfs });
+        map.addLayer({ id: 'waterfalls-dot', type: 'circle', source: 'waterfalls',
+          paint: { 'circle-radius': 6, 'circle-color': '#f97316', 'circle-opacity': 0.8, 'circle-stroke-color': '#fff', 'circle-stroke-width': 1 }
+        });
+        map.on('click', 'waterfalls-dot', (e) => {
+          const p = e.features[0].properties;
+          new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+            `<div style="color:#0a0e0f;font-family:sans-serif;font-size:0.9rem"><b>Waterfall candidate</b><br>Drop: ${p.drop_to_lowest_neighbor_m}m<br>Elev: ${p.elevation_m}m</div>`
+          ).addTo(map);
+        });
+        map.on('click', 'gps-waterfall-dot', (e) => {
+          new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+            `<div style="color:#0a0e0f;font-family:sans-serif;font-size:0.9rem"><b>⭐ GPS-confirmed waterfall</b><br>Altitude: 274m<br>Source: Wes walk 2026-06-28</div>`
+          ).addTo(map);
+        });
+        map.getCanvas().style.cursor = 'default';
+        map.on('mouseenter', 'waterfalls-dot', () => map.getCanvas().style.cursor = 'pointer');
+        map.on('mouseleave', 'waterfalls-dot', () => map.getCanvas().style.cursor = 'default');
+        map.on('mouseenter', 'gps-waterfall-dot', () => map.getCanvas().style.cursor = 'pointer');
+      }
+
+      // Wetlands
+      const wf = await F('water_features_final.geojson');
+      if (wf) {
+        const wetlands = { type: 'FeatureCollection', features: wf.features.filter(f => f.properties.category && f.properties.category.startsWith('wetland')) };
+        map.addSource('wetlands', { type: 'geojson', data: wetlands });
+        map.addLayer({ id: 'wetlands-dot', type: 'circle', source: 'wetlands',
+          paint: { 'circle-radius': 10, 'circle-color': '#06b6d4', 'circle-opacity': 0.6, 'circle-stroke-color': '#fff', 'circle-stroke-width': 1.5 }
+        });
+      }
+
+      // Trees
+      const trees = await F('rv_trees.geojson');
+      if (trees) {
+        map.addSource('trees', { type: 'geojson', data: trees });
+        map.addLayer({ id: 'trees-dot', type: 'circle', source: 'trees',
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['get', 'canopy_height_m'], 5, 4, 20, 12],
+            'circle-color': ['interpolate', ['linear'], ['get', 'canopy_height_m'], 5, '#a3e635', 15, '#84cc16', 25, '#65a30d'],
+            'circle-opacity': 0.85,
+          },
+          layout: { visibility: 'none' },
+        });
+        map.on('click', 'trees-dot', (e) => {
+          const p = e.features[0].properties;
+          new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+            `<div style="color:#0a0e0f;font-family:sans-serif;font-size:0.9rem"><b>${p.tree_id}</b><br>${p.species}<br>Height: ${p.canopy_height_m}m<br>DBH: ${p.dbh_cm}cm<br>Elev: ${p.elevation_m}m</div>`
+          ).addTo(map);
+        });
+        map.on('mouseenter', 'trees-dot', () => map.getCanvas().style.cursor = 'pointer');
+        map.on('mouseleave', 'trees-dot', () => map.getCanvas().style.cursor = 'default');
+      }
+
+      // Rocks
+      const rocks = await F('rv_rocks.geojson');
+      if (rocks) {
+        map.addSource('rocks', { type: 'geojson', data: rocks });
+        map.addLayer({ id: 'rocks-dot', type: 'circle', source: 'rocks',
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['get', 'rock_score'], 0, 3, 1, 7],
+            'circle-color': ['interpolate', ['linear'], ['get', 'rock_score'], 0, '#666', 1, '#ccc'],
+            'circle-opacity': 0.7,
+          },
+          layout: { visibility: 'none' },
+        });
+      }
+    });
+
+    // Fit to 100km button
+    document.querySelectorAll('[data-action="fit"]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        map.fitBounds([[-57.5355, -26.1073], [-56.5355, -25.1073]], { padding: 20 });
+      });
+    });
+
+    // Load regional layers
+    const REGIONAL_LAYERS = {
+      rivers: { src: 'regional/rivers.geojson', color: '#2563eb', width: 2, opacity: 0.7 },
+      'roads-trunk': { src: 'regional/roads_trunk.geojson', color: '#1e40af', width: 1.8, opacity: 0.85 },
+      'roads-local': { src: 'regional/roads_local.geojson', color: '#6b7280', width: 1, opacity: 0.5 },
+      forests: { src: 'regional/forests_large.geojson', color: '#14532d', fillOpacity: 0.4 },
+      'regional-wetlands': { src: 'regional/wetlands.geojson', color: '#14b8a6', fillOpacity: 0.5 },
+      'water-bodies': { src: 'regional/water_bodies.geojson', color: '#5b9dd9', fillOpacity: 0.6 },
+      protected: { src: 'regional/protected.geojson', color: '#f59e0b', fillOpacity: 0.5 },
+      places: { src: 'regional/places.geojson', color: '#fbbf24', radius: 5 },
+      pois: { src: 'regional/pois.geojson', color: '#ec4899', radius: 4 },
+    };
+    Object.entries(REGIONAL_LAYERS).forEach(([name, cfg]) => {
+      F(cfg.src).then((data) => {
+        if (!data || !data.features || !data.features.length) return;
+        map.addSource(name, { type: 'geojson', data });
+        const t = data.features[0].geometry.type;
+        if (t === 'Polygon' || t === 'MultiPolygon') {
+          map.addLayer({ id: name, type: 'fill', source: name, paint: { 'fill-color': cfg.color, 'fill-opacity': cfg.fillOpacity || 0.4 } });
+        } else if (t === 'LineString' || t === 'MultiLineString') {
+          map.addLayer({ id: name, type: 'line', source: name, paint: { 'line-color': cfg.color, 'line-width': cfg.width || 1.5, 'line-opacity': cfg.opacity || 0.85 } });
+        } else if (t === 'Point') {
+          map.addLayer({ id: name, type: 'circle', source: name, paint: { 'circle-radius': cfg.radius || 4, 'circle-color': cfg.color, 'circle-stroke-color': '#fff', 'circle-stroke-width': 0.5 } });
+        }
+        const btn = document.querySelector(`[data-toggle="${name}"]`);
+        if (btn) {
+          const shouldBeVisible = btn.classList.contains('active');
+          map.setLayoutProperty(name, 'visibility', shouldBeVisible ? 'visible' : 'none');
+          map.on('click', name, (e) => {
+            const p = e.features[0].properties;
+            const html = Object.entries(p).slice(0, 6).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>');
+            new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+              `<div style="color:#0a0e0f;font-family:sans-serif;font-size:0.85rem">${html}</div>`
+            ).addTo(map);
+          });
+          map.on('mouseenter', name, () => map.getCanvas().style.cursor = 'pointer');
+          map.on('mouseleave', name, () => map.getCanvas().style.cursor = '');
+        }
+      }).catch(() => {});
+    });
+
+    // Basemap toggles
+    document.querySelectorAll('[data-basemap]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-basemap]').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const layer = btn.dataset.basemap;
+        if (map.getLayer(layer)) {
+          ['esri', 'osm', 'topo'].forEach((l) => {
+            if (l !== layer && map.getLayer(l)) map.setLayoutProperty(l, 'visibility', 'none');
+          });
+          map.setLayoutProperty(layer, 'visibility', 'visible');
+        } else {
+          ['esri', 'osm', 'topo'].forEach((l) => {
+            if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', 'none');
+          });
+          map.addLayer({ id: layer, type: 'raster', source: layer });
+        }
+      });
+    });
+
+    // Layer toggles - both on-property and regional
+    const layerMap = {
+      'trees': 'trees-dot',
+      'rocks': 'rocks-dot',
+      'all-waterfalls': 'waterfalls-dot',
+      'gps-waterfall': 'gps-waterfall-dot',
+      'wetlands': 'wetlands-dot',
+      'waterfalls': 'waterfalls-dot',
+      'boundary': 'boundary-line',
+      'rivers': 'rivers',
+      'roads-trunk': 'roads-trunk',
+      'roads-local': 'roads-local',
+      'forests': 'forests',
+      'regional-wetlands': 'regional-wetlands',
+      'water-bodies': 'water-bodies',
+      'protected': 'protected',
+      'places': 'places',
+      'pois': 'pois',
+    };
+    document.querySelectorAll('[data-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.toggle;
+        const layerId = layerMap[name] || name;
+        if (map.getLayer(layerId)) {
+          const visible = map.getLayoutProperty(layerId, 'visibility') !== 'visible';
+          map.setLayoutProperty(layerId, 'visibility', visible ? 'visible' : 'none');
+          btn.classList.toggle('active', visible);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>

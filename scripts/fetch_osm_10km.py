@@ -157,7 +157,9 @@ QUERIES: dict[str, str] = {
     ),
     # Waterways (lines: streams, rivers, drains)
     "waterways": (
-        f"(way[\"waterway\"]({BBOX[0]},{BBOX[1]},{BBOX[2]},{BBOX[3]}););"
+        f"(way[\"waterway\"]({BBOX[0]},{BBOX[1]},{BBOX[2]},{BBOX[3]});"
+        f"way[\"natural\"=\"stream\"]({BBOX[0]},{BBOX[1]},{BBOX[2]},{BBOX[3]});"
+        f"way[\"intermittent\"](\"yes\")[\"waterway\"]({BBOX[0]},{BBOX[1]},{BBOX[2]},{BBOX[3]}););"
     ),
     # Trees (points) + forest/wood polygons + landcover tree-related
     "trees": (

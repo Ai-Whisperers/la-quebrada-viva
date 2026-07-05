@@ -623,9 +623,13 @@ def main():
         f"median={int(np.median(acc[valid_mask]))}")
 
     all_feats = []
-    for thr, label in [(500, "main_rivers ≥ 500 cells"),    # ≥ 16 km²
-                        (200,  "tributaries ≥ 200 cells"),   # ≥ 6 km²
-                        (80,   "headwaters ≥ 80 cells")]:    # ≥ 2.6 km²
+    # P0-1: lowered headwater threshold from 80 → 8 cells so parcel-scale
+    # quebradas (~0.1-0.5 km² catchment) are included.
+    # Old: ≥80 cells (≥2.6 km²) — missed the LQV quebrada entirely.
+    # New: ≥500 (main), ≥80 (tributary), ≥8 (headwater, ~0.26 km²).
+    for thr, label in [(500, "main_rivers ≥ 500 cells"),    # ≥ 16.2 km²
+                        (80,  "tributaries ≥ 80 cells"),     # ≥ 2.6 km²
+                        (8,   "headwaters ≥ 8 cells")]:      # ≥ 0.26 km² (was 80)
         feats = extract_streams(dem_filled, acc, fdir, new_transform,
                                 threshold_cells=thr, label=label)
         log(f"  {label}: {len(feats)} segments")
