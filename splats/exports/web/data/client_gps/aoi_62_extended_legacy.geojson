@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "name": "aoi_62_extended_legacy",
+  "metadata": {
+    "source": "Wes's KML buffer",
+    "note": "62 ha cluster outline \u2014 buffer around the KML polygon for visualisation. Replaced conceptually by the GPS polygon."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aoi_62ha_extended_bbox",
+        "role": "acquisition_bbox_v2",
+        "covers_polygon": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.045,
+              -25.645
+            ],
+            [
+              -57.015,
+              -25.645
+            ],
+            [
+              -57.015,
+              -25.595
+            ],
+            [
+              -57.045,
+              -25.595
+            ],
+            [
+              -57.045,
+              -25.645
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

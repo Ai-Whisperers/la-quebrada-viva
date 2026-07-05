@@ -1,0 +1,78 @@
+{
+  "type": "FeatureCollection",
+  "name": "client_gps_features",
+  "metadata": {
+    "source": "Wesley van de Camp GPS walk via Guru Maps",
+    "category": "named_feature",
+    "count": 3,
+    "note": "Special features captured in addition to the perimeter walk: gate (entrance), waterfall (the quebrada), high point (highest place on the property)."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Waterfall (quebrada)",
+        "category": "named_feature",
+        "feature_kind": "waterfall",
+        "color": "#dc2626",
+        "icon": "\ud83d\udca7",
+        "symbol": "W",
+        "altitude_m": null,
+        "lon": -57.029212,
+        "lat": -25.6143749,
+        "inside_polygon": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.029212,
+          -25.6143749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Property gate (entrance)",
+        "category": "named_feature",
+        "feature_kind": "gate",
+        "color": "#1d4ed8",
+        "icon": "\ud83d\udeaa",
+        "symbol": "G",
+        "altitude_m": null,
+        "lon": -57.033588,
+        "lat": -25.6113051,
+        "inside_polygon": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.033588,
+          -25.6113051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "High point (274 m, NE ridge)",
+        "category": "named_feature",
+        "feature_kind": "high_point",
+        "color": "#15803d",
+        "icon": "\u26f0\ufe0f",
+        "symbol": "HP",
+        "altitude_m": null,
+        "lon": -57.0263979,
+        "lat": -25.6074104,
+        "inside_polygon": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0263979,
+          -25.6074104
+        ]
+      }
+    }
+  ]
+}

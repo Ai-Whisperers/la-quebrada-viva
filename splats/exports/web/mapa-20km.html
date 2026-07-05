@@ -226,14 +226,28 @@
     </div>
 
     <div class="sidebar-section">
-      <h3>LQV site <span class="status-pill live">● live</span></h3>
+      <h3>LQV · client GPS perimeter <span class="status-pill live">● live</span></h3>
 
       <label class="layer-row">
         <input type="checkbox" data-layer="parcel" checked />
         <span class="swatch" style="background: var(--gold);"></span>
-        <span class="name">Property polygon (62 ha)</span>
-        <input type="range" class="opacity" data-opacity="parcel" min="0.2" max="1" step="0.05" value="0.5" />
-        <a class="download" href="./data/rv_boundary.geojson" download title="Download GeoJSON">↓</a>
+        <span class="name">GPS-walked perimeter · <b>71.4 ha</b></span>
+        <input type="range" class="opacity" data-opacity="parcel" min="0.2" max="1" step="0.05" value="0.18" />
+        <a class="download" href="./data/client_gps/client_gps_polygon.geojson" download title="Download client GPS polygon">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-corners" checked />
+        <span class="swatch" style="background: #fef3c7; border: 1.5px solid var(--gold);"></span>
+        <span class="name">GPS corners (17 walked)</span>
+        <span class="count" data-count="gps-corners">—</span>
+        <a class="download" href="./data/client_gps/client_gps_corners.geojson" download title="Download corner points">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-features" checked />
+        <span class="swatch" style="background: #1d4ed8;"></span>
+        <span class="name">GPS features (gate, waterfall, summit)</span>
+        <span class="count" data-count="gps-features">—</span>
+        <a class="download" href="./data/client_gps/client_gps_features.geojson" download title="Download named features">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="canopy" />
@@ -249,11 +263,21 @@
         <input type="range" class="opacity" data-opacity="streams" min="0.2" max="1" step="0.05" value="0.85" />
         <a class="download" href="./data/hydrography_dem_v2.geojson" download title="Download">↓</a>
       </label>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Legacy polygons <span class="status-pill" style="background:#fff7ed;color:#9a3412;">off by default</span></h3>
       <label class="layer-row">
-        <input type="checkbox" data-layer="aoi62" />
-        <span class="swatch" style="background: transparent; border: 1.5px dashed var(--gold);"></span>
-        <span class="name">Extended AOI</span>
-        <a class="download" href="./data/aoi_62ha_extended.geojson" download title="Download">↓</a>
+        <input type="checkbox" data-layer="escobar-legacy" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #94a3b8;"></span>
+        <span class="name">Old KML polygon · <b>30.9 ha</b> subset</span>
+        <a class="download" href="./data/client_gps/escobar_polygon_legacy.geojson" download title="Download">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="aoi62-legacy" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #a8a29e;"></span>
+        <span class="name">62 ha AOI buffer</span>
+        <a class="download" href="./data/client_gps/aoi_62_extended_legacy.geojson" download title="Download">↓</a>
       </label>
     </div>
 
@@ -344,10 +368,19 @@
     <div class="sidebar-section">
       <h3>About</h3>
       <p class="help">
-        30,086 OpenStreetMap features pulled 2026-07-05 via Overpass for a
-        40 × 40 km box centred on the LQV polygon (-57.0355, -25.6073).
-        The DEM quebrada streams come from Copernicus GLO-30, not OSM.
-        Towns use permanent labels at z ≥ 11; roads z ≥ 13.
+        <strong>Property perimeter</strong> from Wesley's on-the-ground
+        GPS walk (Guru Maps iOS, 2026-06-22 + 2026-06-28): <b>17 corner
+        points</b>, walked in order, 4.26 km perimeter, 71.37 ha projected.
+        Handheld GPS accuracy ±3-5 m per point — not survey-grade.
+        <br><br>
+        <strong>OSM context</strong>: 30,086 features pulled 2026-07-05
+        via Overpass for a 40 × 40 km box centred on the GPS centroid
+        (-57.0304, -25.6082). Towns labelled at z ≥ 11, roads z ≥ 12,
+        river names z ≥ 13.
+        <br><br>
+        <strong>Legacy polygons</strong> (old KML subset + 62 ha AOI buffer)
+        kept for reference, off by default. They correspond to a smaller
+        30.9 ha interior buildable area, NOT the full GPS-walked parcel.
       </p>
     </div>
 
@@ -371,19 +404,26 @@
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 // ==============================================
-// LQV 20km context map — Leaflet, toggleable layers,
-// permanent labels, marker cluster, parcel pulse
+// LQV 20km context map — uses CLIENT-PROVIDED GPS
+// perimeter (Guru Maps walk 2026-06-22 + 2026-06-28)
 // ==============================================
 
 const F = (p) => fetch(p).then(r => r.ok ? r.json() : null).catch(e => { console.warn('fetch failed', p, e); return null; });
 
-const LON = -57.035502;
-const LAT = -25.607336;
+// Centroid of the CLIENT-PROVIDED GPS polygon (17 pts walked on-site)
+// supersedes the older 8-vertex KML polygon — see README in client_gps/
+// Computed from docs/site_data/property_gps_walk_2026-06-28/guru_maps_geojson.json
+//   vertices = 17   area = 71.37 ha   perimeter = 4.26 km
+//   bbox = lon -57.036..-57.026,  lat -25.616..-25.603
+//   centroid = -57.030381, -25.608231
+const LON = -57.030381;
+const LAT = -25.608231;
 const CENTER = [LAT, LON];
 
+// 20km radius bbox is still relative to the GPS centroid
 const BBOX_20KM = [
-  [-25.787336, -57.231502],
-  [-25.427336, -56.839502]
+  [LAT - 0.18, LON - 0.196],
+  [LAT + 0.18, LON + 0.196],
 ];
 
 // ---- Map init ----
@@ -603,8 +643,12 @@ async function loadLQVPolygons(name, src) {
 }
 
 function parcelStyle(f, name) {
-  if (name === 'parcel') return { color: '#c89b3c', weight: 3.5, fillColor: '#c89b3c', fillOpacity: 0.08, dashArray: '6 4' };
-  if (name === 'aoi62')  return { color: '#c89b3c', weight: 2, fillColor: 'transparent', fillOpacity: 0, dashArray: '8 5' };
+  if (name === 'parcel')
+    return { color: '#c89b3c', weight: 4, fillColor: '#fcd34d', fillOpacity: 0.18, dashArray: '8 4' };
+  if (name === 'aoi62-legacy')
+    return { color: '#a8a29e', weight: 1, fillColor: 'transparent', fillOpacity: 0, dashArray: '3 4', opacity: 0.5 };
+  if (name === 'escobar-legacy')
+    return { color: '#94a3b8', weight: 1.5, fillColor: '#94a3b8', fillOpacity: 0.05, dashArray: '2 3', opacity: 0.6 };
   return { color: '#999', weight: 1 };
 }
 
@@ -730,7 +774,7 @@ function pulseAnim() {
 }
 pulseAnim();
 
-parcelPulse.bindTooltip(`<strong>La Quebrada Viva</strong><br>62 ha · Paraguay · click to zoom`, {
+parcelPulse.bindTooltip(`<strong>La Quebrada Viva</strong><br>71.4 ha · GPS walked 2026-06-28 · click to zoom`, {
   permanent: false, direction: 'top', offset: [0, -10], className: 'lqv-tooltip',
 });
 parcelPulse.on('click', () => map.flyTo(CENTER, 16, { duration: 1.2 }));
@@ -761,9 +805,48 @@ updateParcelLabel();
 
 // ---- Boot ----
 (async function boot() {
-  // 1. Loading UI for the smallest-cost layers first
-  await loadLQVPolygons('parcel', './data/rv_boundary.geojson');
-  await loadLQVPolygons('aoi62', './data/aoi_62ha_extended.geojson');
+  // 1. CLIENT-PROVIDED GPS perimeter polygon (71.37 ha, 17 corners walked 2026-06-22+28)
+  await loadLQVPolygons('parcel', './data/client_gps/client_gps_polygon.geojson');
+
+  // 2. The 17 individual corner points + 3 named features
+  const corners = await F('./data/client_gps/client_gps_corners.geojson');
+  if (corners && corners.features) {
+    data['gps-corners'] = corners;
+    setLayerCount('gps-corners', corners.features.length);
+    totalFeatures += corners.features.length;
+    layers['gps-corners'] = L.geoJSON(corners, {
+      pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+        radius: 5, color: '#c89b3c', fillColor: '#fef3c7', weight: 1.5, fillOpacity: 1,
+      }),
+      onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+    });
+  }
+  const featuresGps = await F('./data/client_gps/client_gps_features.geojson');
+  if (featuresGps && featuresGps.features) {
+    data['gps-features'] = featuresGps;
+    setLayerCount('gps-features', featuresGps.features.length);
+    totalFeatures += featuresGps.features.length;
+    layers['gps-features'] = L.geoJSON(featuresGps, {
+      pointToLayer: (feature, latlng) => {
+        const p = feature.properties;
+        const html = `<div style="
+            width:32px;height:32px;border-radius:50%;
+            background:${p.color};border:3px solid white;
+            box-shadow:0 2px 6px rgba(0,0,0,0.4);
+            display:flex;align-items:center;justify-content:center;
+            font-size:16px;color:white;font-weight:bold;
+          ">${p.symbol}</div>`;
+        return L.marker(latlng, { icon: L.divIcon({ html, className: '', iconSize: [32,32], iconAnchor: [16,16] }), zIndexOffset: 500 });
+      },
+      onEachFeature: (feature, lyr) => bindInfoPopup(feature, lyr),
+    });
+  }
+
+  // 3. LEGACY polygons — off by default (KML subset + AOI buffer)
+  await loadLQVPolygons('escobar-legacy', './data/client_gps/escobar_polygon_legacy.geojson');
+  await loadLQVPolygons('aoi62-legacy',  './data/client_gps/aoi_62_extended_legacy.geojson');
+
+  // 4. NDVI canopy (LQV-internal data)
   await loadLQVLayer('canopy',  './data/canopy_classes.geojson', () => null);  // styled inline below
 
   // Canopy has its own per-class style
@@ -921,8 +1004,8 @@ updateParcelLabel();
     }
   }
 
-  // 6. Default-on layers
-  ['roads','water','waterways','places','parcel'].forEach(n => {
+  // 7. Default-on layers — the GPS polygon + corners + features are now ON by default
+  ['parcel','gps-corners','gps-features','roads','water','waterways','places'].forEach(n => {
     if (layers[n] && !map.hasLayer(layers[n])) {
       layers[n].addTo(map);
     }
@@ -1088,7 +1171,7 @@ document.getElementById('show-all').onclick = () => {
 };
 document.getElementById('hide-all').onclick = () => {
   document.querySelectorAll('[data-layer]').forEach(cb => {
-    if (['parcel','roads','water','waterways','places'].includes(cb.dataset.layer)) return;
+    if (['parcel','gps-corners','gps-features','roads','water','waterways','places'].includes(cb.dataset.layer)) return;
     if (cb.checked) { cb.checked = false; cb.dispatchEvent(new Event('change')); }
   });
 };

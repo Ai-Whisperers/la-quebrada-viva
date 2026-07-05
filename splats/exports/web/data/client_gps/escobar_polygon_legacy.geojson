@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "name": "escobar_polygon_legacy",
+  "metadata": {
+    "source": "Wesley van de Camp KML via Google Earth Pro",
+    "received_utc": "2026-06-28",
+    "note": "8-vertex polygon shared with the post-escritura site-knowledge package. 30.9 ha projected \u2014 appears to be an INTERIOR buildable subset of the full GPS-walk polygon, NOT the full perimeter. Kept for historical reference.",
+    "replaced_by": "client_gps_polygon.geojson (the on-the-ground walking perimeter)"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "escobar property",
+        "vertex_count": 8,
+        "area_ha_projected_utm21s": 30.915,
+        "centroid_lon": -57.035502,
+        "centroid_lat": -25.607336,
+        "bbox_min_lon": -57.03844,
+        "bbox_min_lat": -25.61172,
+        "bbox_max_lon": -57.02929,
+        "bbox_max_lat": -25.60506
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.03637021853214,
+              -25.60575193424224
+            ],
+            [
+              -57.03766177687186,
+              -25.60507992566541
+            ],
+            [
+              -57.0384413425057,
+              -25.60542966650984
+            ],
+            [
+              -57.0378125949861,
+              -25.60748932019079
+            ],
+            [
+              -57.03562604243069,
+              -25.60874729114579
+            ],
+            [
+              -57.03356778815589,
+              -25.61172442024565
+            ],
+            [
+              -57.02928817334298,
+              -25.60940767642553
+            ],
+            [
+              -57.03524517073321,
+              -25.60505513824413
+            ],
+            [
+              -57.03637021853214,
+              -25.60575193424224
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "escobar wes",
+        "kind": "interior_reference_pin",
+        "elev_m_amsl": 166.336
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03365675409436,
+          -25.61138883666841,
+          166.3359794125154
+        ]
+      }
+    }
+  ]
+}

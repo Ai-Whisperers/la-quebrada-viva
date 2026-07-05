@@ -1,0 +1,319 @@
+{
+  "type": "FeatureCollection",
+  "name": "client_gps_corners",
+  "metadata": {
+    "source": "Wesley van de Camp GPS walk via Guru Maps",
+    "category": "border_corner",
+    "count": 17,
+    "captured_dates": "2026-06-22 + 2026-06-28",
+    "note": "Each point corresponds to a corner Wes marked while walking the perimeter. Walking-order preserved."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P1",
+        "category": "border_corner",
+        "vertex_index": 1,
+        "original_id": 19,
+        "lon": -57.0363034,
+        "lat": -25.6082958
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0363034,
+          -25.6082958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P2",
+        "category": "border_corner",
+        "vertex_index": 2,
+        "original_id": 17,
+        "lon": -57.0300967,
+        "lat": -25.6156994
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0300967,
+          -25.6156994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P3",
+        "category": "border_corner",
+        "vertex_index": 3,
+        "original_id": 12,
+        "lon": -57.0287129,
+        "lat": -25.6118537
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0287129,
+          -25.6118537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P4",
+        "category": "border_corner",
+        "vertex_index": 4,
+        "original_id": 14,
+        "lon": -57.0281265,
+        "lat": -25.6120102
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0281265,
+          -25.6120102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P5",
+        "category": "border_corner",
+        "vertex_index": 5,
+        "original_id": 7,
+        "lon": -57.0276911,
+        "lat": -25.6120103
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0276911,
+          -25.6120103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P6",
+        "category": "border_corner",
+        "vertex_index": 6,
+        "original_id": 1,
+        "lon": -57.0261261,
+        "lat": -25.6099914
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0261261,
+          -25.6099914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P7",
+        "category": "border_corner",
+        "vertex_index": 7,
+        "original_id": 0,
+        "lon": -57.0261813,
+        "lat": -25.6099145
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0261813,
+          -25.6099145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P8",
+        "category": "border_corner",
+        "vertex_index": 8,
+        "original_id": 2,
+        "lon": -57.0255732,
+        "lat": -25.608754
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0255732,
+          -25.608754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P9",
+        "category": "border_corner",
+        "vertex_index": 9,
+        "original_id": 15,
+        "lon": -57.0274567,
+        "lat": -25.6081121
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0274567,
+          -25.6081121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P10",
+        "category": "border_corner",
+        "vertex_index": 10,
+        "original_id": 6,
+        "lon": -57.0274267,
+        "lat": -25.6066623
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0274267,
+          -25.6066623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P11",
+        "category": "border_corner",
+        "vertex_index": 11,
+        "original_id": 13,
+        "lon": -57.0296353,
+        "lat": -25.6073985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0296353,
+          -25.6073985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P12",
+        "category": "border_corner",
+        "vertex_index": 12,
+        "original_id": 4,
+        "lon": -57.0294132,
+        "lat": -25.6044545
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0294132,
+          -25.6044545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P13",
+        "category": "border_corner",
+        "vertex_index": 13,
+        "original_id": 16,
+        "lon": -57.0327786,
+        "lat": -25.6027899
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0327786,
+          -25.6027899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P14",
+        "category": "border_corner",
+        "vertex_index": 14,
+        "original_id": 5,
+        "lon": -57.0335105,
+        "lat": -25.6033469
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0335105,
+          -25.6033469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P15",
+        "category": "border_corner",
+        "vertex_index": 15,
+        "original_id": 11,
+        "lon": -57.0344871,
+        "lat": -25.6051039
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0344871,
+          -25.6051039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P16",
+        "category": "border_corner",
+        "vertex_index": 16,
+        "original_id": 8,
+        "lon": -57.0329011,
+        "lat": -25.6066678
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0329011,
+          -25.6066678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corner P17",
+        "category": "border_corner",
+        "vertex_index": 17,
+        "original_id": 3,
+        "lon": -57.0341386,
+        "lat": -25.606805
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0341386,
+          -25.606805
+        ]
+      }
+    }
+  ]
+}
