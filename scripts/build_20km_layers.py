@@ -42,11 +42,17 @@ BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)  # S, W, N, E
 STAC_BBOX = (BBOX[1], BBOX[0], BBOX[3], BBOX[2])
 
 NDVI_BINS = [
-    (0.0, 0.30,  0, "Bare soil / non-vegetation", "#a16207"),
-    (0.30, 0.60, 1, "Sparse vegetation",           "#84cc16"),
-    (0.60, 0.80, 2, "Open canopy",                 "#22c55e"),
-    (0.80, 1.01, 3, "Dense canopy",                "#14532d"),
+    (0.0, 0.25, 0, "Bare / grassland",   "#a16207", "Bare soil, dry grass or row crops — no woody vegetation."),
+    (0.25, 0.45, 1, "Sparse woody",      "#84cc16", "Scattered trees, woodland edges, agroforestry — visible canopy not closed."),
+    (0.45, 0.60, 2, "Open forest",        "#22c55e", "Open canopy forest such as the LQV parcel — partial cover."),
+    (0.60, 1.01, 3, "Dense forest",      "#14532d", "Tightly closed canopy (e.g. riparian gallery forests along streams)."),
 ]
+CLASS_INFO = {
+    0: "Distinct man-made and very-sparse landscape. Look for roads, fields, exposed rock.",
+    1: "Inhabited countryside with trees scattered around fields and roads.",
+    2: "Forest that is open (you can see ground between tree crowns) — typical Atlantic Forest highland in Paraguay.",
+    3: "Tightly closed canopy — gallery forest along quebradas, deep ravines.",
+}
 
 
 def log(msg):
@@ -244,7 +250,7 @@ def polygonise_ndvi(ndvi: np.ndarray, transform, crs) -> int:
     tf_crop = new_transform * rasterio.Affine.translation(c0, r0)
 
     features = []
-    for (lo, hi, code, label, color) in NDVI_BINS:
+    for (lo, hi, code, label, color, desc) in NDVI_BINS:
         n = 0
         for geom, val in rio_shapes(cls_crop.astype(np.int32),
                                     mask=(cls_crop == code),
@@ -267,6 +273,7 @@ def polygonise_ndvi(ndvi: np.ndarray, transform, crs) -> int:
                         "name": label,
                         "color": color,
                         "fill_color": color,
+                        "description": desc,
                         "source": "Sentinel-2 L2A NDVI 4-class polygonised",
                     },
                     "geometry": mapping(g_simple),
@@ -288,8 +295,9 @@ def polygonise_ndvi(ndvi: np.ndarray, transform, crs) -> int:
             "source": "Sentinel-2 L2A NDVI, polygonised at 30 m (3× downsampled)",
             "bbox": list(BBOX),
             "classes": [
-                {"low": lo, "high": hi, "code": code, "name": label, "color": color}
-                for (lo, hi, code, label, color) in NDVI_BINS
+                {"low": lo, "high": hi, "code": code,
+                 "name": label, "color": color, "description": desc}
+                for (lo, hi, code, label, color, desc) in NDVI_BINS
             ],
             "feature_count": len(features),
             "generated_utc": datetime.utcnow().isoformat() + "Z",
@@ -503,9 +511,13 @@ def extract_streams(dem, acc, fdir, transform,
         last = path[-1]
         mouth_acc = int(acc[last[0], last[1]])
         cath_km2 = mouth_acc * cell_km2
-        if cath_km2 >= 100: cls = "main"
-        elif cath_km2 >= 10: cls = "tributary"
-        else:                cls = "headwater"
+        # Classification tuned for the LQV 20 km box: even the largest
+        # stream catchments in this region sit in the 10-50 km² range,
+        # not 100 km². Use ≥ 25 km² as the threshold for "main river".
+        if   cath_km2 >= 25:  cls = "main"
+        elif cath_km2 >= 5:   cls = "tributary"
+        elif cath_km2 >= 1:   cls = "creek"
+        else:                 cls = "rill"
         for v in path[1:]:
             seen_mouth.add(v)
         feats.append({

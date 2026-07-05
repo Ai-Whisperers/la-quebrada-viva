@@ -72,6 +72,9 @@
   .layer-row:last-child { border-bottom: 0; }
   .layer-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--gold-dark); cursor: pointer; flex-shrink: 0; }
   .layer-row .swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.15); }
+  .legend-table { border-collapse: collapse; }
+  .legend-table td { padding: 2px 8px 2px 4px; vertical-align: middle; }
+  .legend-table td:first-child { width: 36px; }
   .layer-row .name { flex: 1; cursor: pointer; }
   .layer-row .count { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
   .layer-row .download { color: var(--gold-dark); text-decoration: none; font-size: 0.75rem; opacity: 0.7; }
@@ -263,24 +266,48 @@
         <span class="count" data-count="gps-features">—</span>
         <a class="download" href="./data/client_gps/client_gps_features.geojson" download title="Download named features">↓</a>
       </label>
+    <div class="sidebar-section">
+      <h3>Canopy &mdash; NDVI (Sentinel-2) <span class="status-pill" style="background:#f0fdf4;color:#14532d;">all of Escobar</span></h3>
       <label class="layer-row">
         <input type="checkbox" data-layer="canopy-20km" checked />
-        <span class="swatch" style="background: #4ade80;"></span>
-        <span class="name"><strong>NDVI canopy 20 km</strong> &mdash; Sentinel-2 L2A, 4 classes covering <i>all of Escobar</i> (<span data-count="canopy-20km">—</span>)</span>
+        <span class="swatch" style="background: linear-gradient(to right,#a16207 25%, #84cc16 25% 50%, #22c55e 50% 75%, #14532d 75%);"></span>
+        <span class="name"><strong>NDVI canopy 20 km</strong> &mdash;
+          4 classes covering <em>all of Escobar</em>:
+          <span data-count="canopy-20km">—</span> polygons
+          &middot; ~3,000 Sentinel-2 L2A polygons</span>
         <input type="range" class="opacity" data-opacity="canopy-20km" min="0.1" max="1" step="0.05" value="0.55" />
         <a class="download" href="./data/ndvi_canopy_20km.geojson" download title="Download NDVI polygons">↓</a>
       </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="canopy-legacy" />
         <span class="swatch" style="background: #84cc16;"></span>
-        <span class="name">NDVI canopy (property only, ~62 ha)</span>
+        <span class="name">NDVI canopy (property only, ~62 ha) &mdash; legacy</span>
         <input type="range" class="opacity" data-opacity="canopy-legacy" min="0.1" max="1" step="0.05" value="0.5" />
         <a class="download" href="./data/canopy_classes.geojson" download title="legacy property-scale NDVI">↓</a>
       </label>
+      <table class="legend-table" style="margin-top: 6px; font-size: 0.78rem;">
+        <tr><td><span style="background:#a16207;color:#fff;padding:0 6px">0</span></td><td>Bare / grassland &lt; 0.25</td></tr>
+        <tr><td><span style="background:#84cc16;color:#000;padding:0 6px">1</span></td><td>Sparse woody 0.25–0.45</td></tr>
+        <tr><td><span style="background:#22c55e;color:#000;padding:0 6px">2</span></td><td>Open forest 0.45–0.60 <em>(typical LQV)</em></td></tr>
+        <tr><td><span style="background:#14532d;color:#fff;padding:0 6px">3</span></td><td>Dense forest &gt; 0.60</td></tr>
+      </table>
+      <p class="help" style="margin-top:6px; font-size:0.78rem;">
+        <strong>NDVI 20 km</strong> uses Sentinel-2 L2A (mosaic of 2 MGRS
+        tiles over the 40 km box, cloud &lt; 20%). The bins are tuned
+        for <strong>Paraguayan Atlantic Forest</strong> where NDVI maxes
+        out near 0.68 — so the “dense forest” bin is real but rare
+        (gallery forests along quebradas).
+      </p>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Creeks &amp; streams &mdash; DEM quebrada network <span class="status-pill" style="background:#eff6ff;color:#1d4ed8;">all of Escobar</span></h3>
       <label class="layer-row">
         <input type="checkbox" data-layer="streams-20km" checked />
-        <span class="swatch" style="background: #60a5fa;"></span>
-        <span class="name"><strong>DEM quebrada streams 20 km</strong> &mdash; Copernicus GLO-30 + D8 + flow accum covering <i>all of Escobar</i> (<span data-count="streams-20km">—</span>)</span>
+        <span class="swatch" style="background: linear-gradient(to right,#0c4a6e 0 35%, #3b82f6 35% 60%, #93c5fd 60% 100%);"></span>
+        <span class="name"><strong>DEM quebrada streams 20 km</strong> &mdash;
+          Copernicus GLO-30 + D8 + flow-accum &mdash; all of Escobar:
+          <span data-count="streams-20km">—</span> segments</span>
         <input type="range" class="opacity" data-opacity="streams-20km" min="0.2" max="1" step="0.05" value="0.85" />
         <a class="download" href="./data/dem_streams_20km.geojson" download title="Download DEM streams">↓</a>
       </label>
@@ -289,23 +316,34 @@
         <span class="swatch" style="background: #93c5fd;"></span>
         <span class="name">DEM quebrada streams (legacy, ~62 ha)</span>
         <input type="range" class="opacity" data-opacity="streams" min="0.2" max="1" step="0.05" value="0.85" />
-        <a class="download" href="./data/hydrography_dem_v2.geojson" download title="legacy">↓</a>
+        <a class="download" href="./data/hydrography_dem_v2.geojson" download title="legacy property-scale">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="combined-water" checked />
+        <span class="swatch" style="background: linear-gradient(to right,#0c4a6e 0 30%, #0ea5e9 30% 50%, #a78bfa 50% 70%, #f87171 70% 100%);"></span>
+        <span class="name"><strong>COMBINED water + creeks</strong> &mdash; OSM waterways + DEM streams + OSM polygons + JRC water bodies &mdash; <span data-count="combined-water">—</span> features</span>
+        <input type="range" class="opacity" data-opacity="combined-water" min="0.2" max="1" step="0.05" value="0.7" />
+        <a class="download" href="./data/water_combined_20km.geojson" download title="Download combined water">↓</a>
       </label>
       <p class="help" style="margin-top:6px; font-size:0.78rem;">
-        <strong>DEM quebrada streams 20 km</strong> are computed from the
-        Copernicus GLO-30 (30 m DEM) using D8 flow direction and a
-        flow-accumulation-threshold scheme:
-        <br>· <span style="color:#1d4ed8">▬▬</span> <strong>main rivers</strong>
-            — ≥ 500 cells (~ 16 km² catchment) — 42 segments
-        <br>· <span style="color:#3b82f6">▬</span> <strong>tributaries</strong>
-            — 200–500 cells — 328 segments
-        <br>· <span style="color:#93c5fd">▭</span> <strong>headwaters</strong>
-            — 80–200 cells (≥ 2.6 km² upstream) — 1342 segments
+        <strong>DEM quebrada network</strong> is computed from the Copernicus
+        GLO-30 (30 m DEM) using D8 flow direction + flow-accumulation.
+        Threshold classification matches the LQV region's catchments:
+        <br>· <span style="color:#0c4a6e">▬▬</span> <strong>Main rivers</strong> &mdash; ≥ 25 km² catchment (42 segments)
+        <br>· <span style="color:#3b82f6">▬</span> <strong>Tributaries</strong> &mdash; 5–25 km² (328 segments)
+        <br>· <span style="color:#93c5fd">▭</span> <strong>Creeks</strong> &mdash; 1–5 km² (1342 segments)
+      </p>
+      <p class="help" style="margin-top:6px; font-size:0.78rem;">
+        <strong>OSM waterways</strong> (476 stream + 75 ditch + 12 tidal + 5 river + 2 dam lines)
+        are the OSM mapper ground truth for drainage in the box; the
+        combined layer overlays them on the model-derived DEM streams
+        so you can sanity-check which low-flow lines the model misses
+        and which stream polygons OSM got right.
       </p>
     </div>
 
     <div class="sidebar-section">
-      <h3>Surface water (audited) <span class="status-pill" style="background:#ecfeff;color:#0e7490;">JRC + OSM + DEM</span></h3>
+      <h3>Water features &mdash; polygons <span class="status-pill" style="background:#ecfeff;color:#0e7490;">JRC + OSM + DEM</span></h3>
       <label class="layer-row">
         <input type="checkbox" data-layer="surface-water" checked />
         <span class="swatch" style="background: #0ea5e9;"></span>
@@ -1068,6 +1106,61 @@ updateParcelLabel();
   // Legacy `canopy` key: point `data.canopy` at the legacy layer for any
   // code path that still references it (e.g. layer-count fallback).
   data.canopy = canopyLegacy || canopy20;
+
+  // 9. COMBINED water (4 sources merged with shared taxonomy in
+  //    family_taxonomy, ready for both lines + polygons).
+  const combinedWater = await F('./data/water_combined_20km.geojson');
+  if (combinedWater && combinedWater.features && combinedWater.features.length) {
+    const taxonomy = (combinedWater.metadata && combinedWater.metadata.family_taxonomy) || {};
+    data['combined-water'] = combinedWater;
+    setLayerCount('combined-water', combinedWater.features.length);
+    layers['combined-water'] = L.geoJSON(combinedWater, {
+      style: (feature) => {
+        const p = feature.properties || {};
+        const gtype = feature.geometry.type;
+        if (gtype === 'LineString' || gtype === 'MultiLineString') {
+          // Pump up the widths on the combined layer so the named rivers
+          // and OSM-mapped drainage linework read crisply at the 20 km zoom.
+          const cls = p.category || '';
+          const extraWidth = {
+            main_river: 4.5, river: 3.5, tributary: 2.5,
+            creek: 2, stream: 2, rill: 1.4,
+            tidal_channel: 1.5, canal: 1.4, ditch: 1, dam: 1,
+          }[cls] ?? 1.5;
+          return {
+            color: p.color || '#0c4a6e',
+            weight: extraWidth,
+            opacity: 0.95,
+            lineCap: 'round',
+          };
+        }
+        return {
+          color: p.color || '#0ea5e9',
+          weight: 1,
+          fillColor: p.color || '#0ea5e9',
+          fillOpacity: p.fill_opacity ?? 0.45,
+        };
+      },
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        const fam = (p.audit_class_label || p.class_label || p.category || '').replace(/_/g, ' ');
+        lyr.bindTooltip(
+          `<strong>${fam}</strong><br>` +
+          `Source: ${p.source || '?'}<br>` +
+          (p.feature_id ? `id: ${p.feature_id}<br>` : '') +
+          (p.catchment_km2 ? `catchment: ${p.catchment_km2} km²<br>` : '') +
+          (p.audit_jrc_occurrence_mean !== undefined && p.audit_jrc_occurrence_mean !== null
+              && !isNaN(parseFloat(p.audit_jrc_occurrence_mean))
+              ? `JRC occurrence: ${p.audit_jrc_occurrence_mean}%<br>` : '') +
+          (p.audit_dem_elev_min_m !== undefined && p.audit_dem_elev_min_m !== null
+              && !isNaN(parseFloat(p.audit_dem_elev_min_m))
+              ? `DEM elev: ${p.audit_dem_elev_min_m}–${p.audit_dem_elev_max_m} m<br>` : '') +
+          (p.audit_centroid_near_waterway ? 'within 200 m of a waterway<br>' : ''),
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
+    });
+  }
 
   // 8. Streams (full 20 km DEM quebrada network + legacy property-scale)
   const streamStyle = (feature) => {
