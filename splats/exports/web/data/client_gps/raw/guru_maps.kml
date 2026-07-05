@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gom="https://gurumaps.app/kml/v1">
+ <Document>
+  <atom:author>
+   <atom:name>Guru Maps</atom:name>
+  </atom:author>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T12:32:31.305Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0261813706,-25.6099145918,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T12:31:21.887Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0261261866,-25.6099914511,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T12:36:37.303Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0255732563,-25.6087540837,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T13:44:45.350Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.034138656,-25.6068050873,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T13:11:25.453Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0294132533,-25.6044545051,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T13:24:53.440Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0335105981,-25.6033469446,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T12:48:14.770Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0274267809,-25.6066623631,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-22T16:01:25.771Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0276911603,-25.6120103953,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T13:40:04.726Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0329011385,-25.6066678041,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-22T15:47:02.305Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_26</styleUrl>
+   <Point><coordinates>-57.0292120047,-25.6143749095,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T12:05:12.295Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_28</styleUrl>
+   <Point><coordinates>-57.033588057,-25.6113051039,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T13:49:49.209Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0344871959,-25.6051039058,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-22T16:13:43.648Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0287129111,-25.6118537983,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T13:01:30.760Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0296353385,-25.6073985572,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-22T16:08:42.620Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0281265065,-25.6120102407,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T12:54:03.950Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0274567114,-25.6081121609,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T13:21:18.145Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0327786221,-25.6027899153,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>GPS-hoogte: ↑ 163 m</description>
+   <gx:TimeStamp>2026-06-22T15:37:23.526Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0300967,-25.6156994,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>GPS-hoogte: ↑ 274 m</description>
+   <gx:TimeStamp>2026-06-28T12:41:42.762Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_72</styleUrl>
+   <Point><coordinates>-57.0263979,-25.6074104,0.0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+   <description>Escobar-district, Ministerie van Paraguari, Región Oriental</description>
+   <gx:TimeStamp>2026-06-28T14:18:30.622Z</gx:TimeStamp>
+   <styleUrl>#BookmarkStyle_118</styleUrl>
+   <Point><coordinates>-57.0363034358,-25.6082958017,0.0</coordinates></Point>
+  </Placemark>
+  <Style id="BookmarkStyle_26">
+   <IconStyle>
+    <Icon>
+     <href>http://shared.gurumaps.app/s/img/bookmark/BookmarkStyle_26.png</href>
+    </Icon>
+   </IconStyle>
+  </Style>
+  <Style id="BookmarkStyle_28">
+   <IconStyle>
+    <Icon>
+     <href>http://shared.gurumaps.app/s/img/bookmark/BookmarkStyle_28.png</href>
+    </Icon>
+   </IconStyle>
+  </Style>
+  <Style id="BookmarkStyle_72">
+   <IconStyle>
+    <Icon>
+     <href>http://shared.gurumaps.app/s/img/bookmark/BookmarkStyle_72.png</href>
+    </Icon>
+   </IconStyle>
+  </Style>
+  <Style id="BookmarkStyle_118">
+   <IconStyle>
+    <Icon>
+     <href>http://shared.gurumaps.app/s/img/bookmark/BookmarkStyle_118.png</href>
+    </Icon>
+   </IconStyle>
+  </Style>
+ </Document>
+</kml>

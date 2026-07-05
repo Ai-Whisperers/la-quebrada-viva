@@ -282,6 +282,35 @@
     </div>
 
     <div class="sidebar-section">
+      <h3>Walking path <span class="status-pill" style="background:#fce7f3;color:#be185d;">+ timestamps</span></h3>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-walking-path" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #f59e0b;"></span>
+        <span class="name">Wes's walking track (20 GPS pts)</span>
+        <input type="range" class="opacity" data-opacity="gps-walking-path" min="0.3" max="1" step="0.05" value="0.9" />
+        <a class="download" href="./data/client_gps/client_gps_walking_path.geojson" download title="Download walking path GeoJSON">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-sessions" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #a855f7;"></span>
+        <span class="name">By session (2 walks, distinct colors)</span>
+        <input type="range" class="opacity" data-opacity="gps-sessions" min="0.3" max="1" step="0.05" value="0.9" />
+        <a class="download" href="./data/client_gps/client_gps_walking_sessions.geojson" download title="Download per-session polylines">↓</a>
+      </label>
+      <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
+        <button id="replay-btn" style="flex: 1;">▶ Replay walk</button>
+        <span id="replay-status" style="color: var(--muted); font-size: 0.78rem;"></span>
+      </div>
+      <input type="range" id="replay-time" min="0" max="100" value="0" step="1" style="width: 100%; accent-color: var(--gold-dark); margin-top: 6px; cursor: pointer;" />
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        <strong>2 walks</strong>: 2026-06-22 (5 pts, 36 min) + 2026-06-28 (15 pts, 2h 13min).
+        <br>
+        <strong>Span</strong>: 2026-06-22 15:37 → 2026-06-28 14:18 UTC. Click <em>Replay</em> to watch
+        Wes build the perimeter in time-order. Drag the slider to scrub.
+      </p>
+    </div>
+
+    <div class="sidebar-section">
       <h3>20 km OSM context <span class="status-pill live">● live</span></h3>
 
       <label class="layer-row">
@@ -372,6 +401,13 @@
         GPS walk (Guru Maps iOS, 2026-06-22 + 2026-06-28): <b>17 corner
         points</b>, walked in order, 4.26 km perimeter, 71.37 ha projected.
         Handheld GPS accuracy ±3-5 m per point — not survey-grade.
+        <br><br>
+        <strong>Timestamps</strong> recovered from the
+        <a href="https://shared.gurumaps.app/5f349095-4c7b-49cd-8d8d-0e0acb7e3f8e.html"
+           target="_blank" rel="noopener">live Guru Maps share</a>
+        (KML · 20 timestamps). Two sessions: 5 pts on 06-22 (north ridge),
+        15 pts on 06-28 (full perimeter). Hit <em>▶ Replay walk</em> in the
+        sidebar to watch the perimeter being captured in time-order.
         <br><br>
         <strong>OSM context</strong>: 30,086 features pulled 2026-07-05
         via Overpass for a 40 × 40 km box centred on the GPS centroid
@@ -849,6 +885,48 @@ updateParcelLabel();
   // 4. NDVI canopy (LQV-internal data)
   await loadLQVLayer('canopy',  './data/canopy_classes.geojson', () => null);  // styled inline below
 
+  // 5. WALKING PATH — Wes's actual trail captured via Guru Maps, two sessions
+  const wpath = await F('./data/client_gps/client_gps_walking_path.geojson');
+  if (wpath && wpath.features && wpath.features.length) {
+    data['gps-walking-path'] = wpath;
+    setLayerCount('gps-walking-path', wpath.features[0].geometry.coordinates.length);
+    layers['gps-walking-path'] = L.geoJSON(wpath, {
+      style: {
+        color: '#f59e0b', weight: 3, opacity: 0.9, dashArray: '8 5',
+        lineCap: 'round', lineJoin: 'round',
+      },
+      onEachFeature: (feature, lyr) => {
+        const ts = (feature.properties?.timestamps || []);
+        lyr.bindTooltip(
+          `Wesley's walking path · ${ts.length} waypoints<br>` +
+          `${ts[0] || '?'} → ${ts[ts.length-1] || '?'}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' },
+        );
+      },
+    });
+  }
+
+  // 6. PER-SESSION walking paths (two distinct colored polylines)
+  const wsess = await F('./data/client_gps/client_gps_walking_sessions.geojson');
+  if (wsess && wsess.features && wsess.features.length) {
+    data['gps-sessions'] = wsess;
+    layers['gps-sessions'] = L.geoJSON(wsess, {
+      style: (feature) => ({
+        color: feature.properties.color || '#a855f7',
+        weight: feature.properties.stroke_width || 3,
+        opacity: 0.9,
+        dashArray: feature.properties.dashArray || null,
+        lineCap: 'round',
+      }),
+      onEachFeature: (feature, lyr) => {
+        lyr.bindTooltip(
+          `${feature.properties.name}<br>${feature.properties.point_count} GPS points · ${feature.properties.session_date}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' },
+        );
+      },
+    });
+  }
+
   // Canopy has its own per-class style
   if (data.canopy) {
     layers.canopy = L.geoJSON(data.canopy, {
@@ -1158,6 +1236,83 @@ window.addEventListener('keydown', e => {
 document.getElementById('drawer-toggle').onclick = () => {
   document.getElementById('sidebar').classList.toggle('open');
 };
+
+// ---- WALKING-PATH REPLAY (time scrubber) ----
+// Build a virtual "playhead" dot that travels along Wes's path so you can
+// see the perimeter being captured in time order. Uses the
+// client_gps_walking_path GeoJSON (timestamps ISO8601).
+let replayMarker = null;
+let replayLine = null;
+let replayPlaying = false;
+let replayT = 0;
+let replayReq = null;
+
+function rebuildReplay() {
+  if (replayMarker) { map.removeLayer(replayMarker); replayMarker = null; }
+  if (replayLine)  { map.removeLayer(replayLine);  replayLine  = null; }
+  const fc = data['gps-walking-path'];
+  if (!fc || !fc.features.length) return;
+  const feature = fc.features[0];
+  const coords = feature.geometry.coordinates;
+  const timestamps = feature.properties.timestamps || [];
+  replayLine = L.polyline(coords.map(c => [c[1], c[0]]), {
+    color: '#c89b3c', weight: 2.5, opacity: 0.6, dashArray: '4 4',
+  }).addTo(map);
+  replayMarker = L.circleMarker(coords[0].slice().reverse(), {
+    radius: 8, color: '#c89b3c', fillColor: '#fef3c7', weight: 2.5, fillOpacity: 1,
+  }).addTo(map).bindTooltip('Walk start', { permanent: false, direction: 'top', className: 'lqv-tooltip' });
+}
+
+function updateReplay(t) {
+  const fc = data['gps-walking-path'];
+  if (!fc || !replayMarker) return;
+  const coords = fc.features[0].geometry.coordinates;
+  const timestamps = fc.features[0].properties.timestamps || [];
+  if (!coords.length) return;
+  const n = Math.max(1, coords.length - 1);
+  const idx = Math.min(Math.floor((t / 100) * n), coords.length - 1);
+  const [lon, lat] = coords[idx];
+  replayMarker.setLatLng([lat, lon]);
+  // Truncate the polyline to the current point
+  if (replayLine) {
+    const upTo = coords.slice(0, idx + 1).map(c => [c[1], c[0]]);
+    replayLine.setLatLngs(upTo);
+  }
+  const lbl = timestamps[idx] ? new Date(timestamps[idx]).toUTCString().slice(0, 22) : '';
+  if (replayMarker.getTooltip()) replayMarker.getTooltip().setContent(`#${idx+1}/${coords.length} · ${lbl}`);
+  // Highlight the corner if it coincides with a GPS corner feature
+  const status = document.getElementById('replay-status');
+  if (status) status.textContent = lbl ? `#${idx+1}/${coords.length} · ${lbl}` : `#${idx+1}/${coords.length}`;
+}
+
+document.getElementById('replay-btn').onclick = () => {
+  const fc = data['gps-walking-path'];
+  if (!fc) { alert('Walking path not loaded yet — wait a moment and try again.'); return; }
+  if (!replayMarker) rebuildReplay();
+  replayPlaying = !replayPlaying;
+  document.getElementById('replay-btn').textContent = replayPlaying ? '⏸ Pause' : '▶ Replay walk';
+  document.getElementById('replay-btn').style.background = replayPlaying ? 'var(--gold)' : '';
+  if (replayPlaying) replayStep();
+};
+
+function replayStep() {
+  if (!replayPlaying) return;
+  replayT = Math.min(100, replayT + 0.6);
+  document.getElementById('replay-time').value = replayT;
+  updateReplay(replayT);
+  if (replayT >= 100) {
+    replayPlaying = false;
+    document.getElementById('replay-btn').textContent = '▶ Replay walk';
+    document.getElementById('replay-btn').style.background = '';
+    return;
+  }
+  replayReq = requestAnimationFrame(replayStep);
+}
+
+document.getElementById('replay-time').addEventListener('input', e => {
+  replayT = parseFloat(e.target.value);
+  if (replayMarker) updateReplay(replayT);
+});
 
 // ---- Action buttons ----
 document.getElementById('zoom-fit').onclick = () => map.fitBounds(BBOX_20KM, { padding: [20, 20] });

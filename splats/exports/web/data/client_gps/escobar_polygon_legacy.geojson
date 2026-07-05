@@ -4,7 +4,7 @@
   "metadata": {
     "source": "Wesley van de Camp KML via Google Earth Pro",
     "received_utc": "2026-06-28",
-    "note": "8-vertex polygon shared with the post-escritura site-knowledge package. 30.9 ha projected \u2014 appears to be an INTERIOR buildable subset of the full GPS-walk polygon, NOT the full perimeter. Kept for historical reference.",
+    "note": "8-vertex polygon shared with the post-escritura site-knowledge package. 30.9 ha projected \u2014 appears to be an INTERIOR buildable subset of the full GPS-walk polygon, NOT the full perimeter.",
     "replaced_by": "client_gps_polygon.geojson (the on-the-ground walking perimeter)"
   },
   "features": [

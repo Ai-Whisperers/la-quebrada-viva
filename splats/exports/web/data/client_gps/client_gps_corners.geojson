@@ -3,10 +3,14 @@
   "name": "client_gps_corners",
   "metadata": {
     "source": "Wesley van de Camp GPS walk via Guru Maps",
+    "source_url": "https://shared.gurumaps.app/5f349095-4c7b-49cd-8d8d-0e0acb7e3f8e.html",
     "category": "border_corner",
     "count": 17,
     "captured_dates": "2026-06-22 + 2026-06-28",
-    "note": "Each point corresponds to a corner Wes marked while walking the perimeter. Walking-order preserved."
+    "walk_session_breakdown": {
+      "2026-06-22": 4,
+      "2026-06-28": 13
+    }
   },
   "features": [
     {
@@ -17,7 +21,9 @@
         "vertex_index": 1,
         "original_id": 19,
         "lon": -57.0363034,
-        "lat": -25.6082958
+        "lat": -25.6082958,
+        "captured_at": "2026-06-28T14:18:30.622Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -35,7 +41,9 @@
         "vertex_index": 2,
         "original_id": 17,
         "lon": -57.0300967,
-        "lat": -25.6156994
+        "lat": -25.6156994,
+        "captured_at": "2026-06-22T15:37:23.526Z",
+        "walk_session": "2026-06-22"
       },
       "geometry": {
         "type": "Point",
@@ -53,7 +61,9 @@
         "vertex_index": 3,
         "original_id": 12,
         "lon": -57.0287129,
-        "lat": -25.6118537
+        "lat": -25.6118537,
+        "captured_at": "2026-06-22T16:13:43.648Z",
+        "walk_session": "2026-06-22"
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +81,9 @@
         "vertex_index": 4,
         "original_id": 14,
         "lon": -57.0281265,
-        "lat": -25.6120102
+        "lat": -25.6120102,
+        "captured_at": "2026-06-22T16:08:42.620Z",
+        "walk_session": "2026-06-22"
       },
       "geometry": {
         "type": "Point",
@@ -89,7 +101,9 @@
         "vertex_index": 5,
         "original_id": 7,
         "lon": -57.0276911,
-        "lat": -25.6120103
+        "lat": -25.6120103,
+        "captured_at": "2026-06-22T16:01:25.771Z",
+        "walk_session": "2026-06-22"
       },
       "geometry": {
         "type": "Point",
@@ -107,7 +121,9 @@
         "vertex_index": 6,
         "original_id": 1,
         "lon": -57.0261261,
-        "lat": -25.6099914
+        "lat": -25.6099914,
+        "captured_at": "2026-06-28T12:31:21.887Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -125,7 +141,9 @@
         "vertex_index": 7,
         "original_id": 0,
         "lon": -57.0261813,
-        "lat": -25.6099145
+        "lat": -25.6099145,
+        "captured_at": "2026-06-28T12:32:31.305Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -143,7 +161,9 @@
         "vertex_index": 8,
         "original_id": 2,
         "lon": -57.0255732,
-        "lat": -25.608754
+        "lat": -25.608754,
+        "captured_at": "2026-06-28T12:36:37.303Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -161,7 +181,9 @@
         "vertex_index": 9,
         "original_id": 15,
         "lon": -57.0274567,
-        "lat": -25.6081121
+        "lat": -25.6081121,
+        "captured_at": "2026-06-28T12:54:03.950Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -179,7 +201,9 @@
         "vertex_index": 10,
         "original_id": 6,
         "lon": -57.0274267,
-        "lat": -25.6066623
+        "lat": -25.6066623,
+        "captured_at": "2026-06-28T12:48:14.770Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -197,7 +221,9 @@
         "vertex_index": 11,
         "original_id": 13,
         "lon": -57.0296353,
-        "lat": -25.6073985
+        "lat": -25.6073985,
+        "captured_at": "2026-06-28T13:01:30.760Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -215,7 +241,9 @@
         "vertex_index": 12,
         "original_id": 4,
         "lon": -57.0294132,
-        "lat": -25.6044545
+        "lat": -25.6044545,
+        "captured_at": "2026-06-28T13:11:25.453Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -233,7 +261,9 @@
         "vertex_index": 13,
         "original_id": 16,
         "lon": -57.0327786,
-        "lat": -25.6027899
+        "lat": -25.6027899,
+        "captured_at": "2026-06-28T13:21:18.145Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -251,7 +281,9 @@
         "vertex_index": 14,
         "original_id": 5,
         "lon": -57.0335105,
-        "lat": -25.6033469
+        "lat": -25.6033469,
+        "captured_at": "2026-06-28T13:24:53.440Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -269,7 +301,9 @@
         "vertex_index": 15,
         "original_id": 11,
         "lon": -57.0344871,
-        "lat": -25.6051039
+        "lat": -25.6051039,
+        "captured_at": "2026-06-28T13:49:49.209Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -287,7 +321,9 @@
         "vertex_index": 16,
         "original_id": 8,
         "lon": -57.0329011,
-        "lat": -25.6066678
+        "lat": -25.6066678,
+        "captured_at": "2026-06-28T13:40:04.726Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",
@@ -305,7 +341,9 @@
         "vertex_index": 17,
         "original_id": 3,
         "lon": -57.0341386,
-        "lat": -25.606805
+        "lat": -25.606805,
+        "captured_at": "2026-06-28T13:44:45.350Z",
+        "walk_session": "2026-06-28"
       },
       "geometry": {
         "type": "Point",

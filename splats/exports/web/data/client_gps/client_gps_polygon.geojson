@@ -3,14 +3,14 @@
   "name": "client_gps_polygon",
   "metadata": {
     "source": "Wesley van de Camp GPS walk via Guru Maps iOS",
+    "source_url": "https://shared.gurumaps.app/5f349095-4c7b-49cd-8d8d-0e0acb7e3f8e.html",
     "received_utc": "2026-06-28",
     "walk_dates": [
       "2026-06-22",
       "2026-06-28"
     ],
-    "source_file": "docs/site_data/property_gps_walk_2026-06-28/guru_maps_geojson.json",
     "method": "17 handheld GPS points captured while walking the property perimeter",
-    "accuracy_note": "Handheld iPhone GPS accuracy \u00b13-5 m per point. Survey-grade boundary NOT done \u2014 this is a real-world GPS walk, not a cadastre.",
+    "accuracy_note": "Handheld iPhone GPS accuracy \u00b13-5 m per point. Survey-grade boundary NOT done.",
     "area_m2": 713695.0,
     "area_ha": 71.37,
     "perimeter_m": 4262.0,
@@ -29,6 +29,7 @@
         "captured_by": "Wesley van de Camp",
         "captured_with": "Guru Maps iOS app",
         "captured_dates": "2026-06-22 + 2026-06-28",
+        "source_url": "https://shared.gurumaps.app/5f349095-4c7b-49cd-8d8d-0e0acb7e3f8e.html",
         "area_m2": 713695.0,
         "area_ha": 71.37,
         "perimeter_m": 4262.0,

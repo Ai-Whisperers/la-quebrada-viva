@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "name": "client_gps_walking_sessions",
+  "metadata": {
+    "source": "Wesley van de Camp GPS walk via Guru Maps GPX",
+    "category": "walking_session",
+    "note": "Two separate walks: 2026-06-22 (5 points, north side) + 2026-06-28 (15 points, full perimeter)."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "First walk (2026-06-22) \u2014 northern corner & high point",
+        "session_date": "2026-06-22",
+        "color": "#a855f7",
+        "dashArray": "6 4",
+        "stroke_width": 3,
+        "category": "walking_session",
+        "point_count": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -57.0300967,
+            -25.6156994
+          ],
+          [
+            -57.029212,
+            -25.6143749
+          ],
+          [
+            -57.0276911,
+            -25.6120103
+          ],
+          [
+            -57.0281265,
+            -25.6120102
+          ],
+          [
+            -57.0287129,
+            -25.6118537
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Main perimeter walk (2026-06-28)",
+        "session_date": "2026-06-28",
+        "color": "#f59e0b",
+        "dashArray": "8 4",
+        "stroke_width": 3,
+        "category": "walking_session",
+        "point_count": 15
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -57.033588,
+            -25.6113051
+          ],
+          [
+            -57.0261261,
+            -25.6099914
+          ],
+          [
+            -57.0261813,
+            -25.6099145
+          ],
+          [
+            -57.0255732,
+            -25.608754
+          ],
+          [
+            -57.0263979,
+            -25.6074104
+          ],
+          [
+            -57.0274267,
+            -25.6066623
+          ],
+          [
+            -57.0274567,
+            -25.6081121
+          ],
+          [
+            -57.0296353,
+            -25.6073985
+          ],
+          [
+            -57.0294132,
+            -25.6044545
+          ],
+          [
+            -57.0327786,
+            -25.6027899
+          ],
+          [
+            -57.0335105,
+            -25.6033469
+          ],
+          [
+            -57.0329011,
+            -25.6066678
+          ],
+          [
+            -57.0341386,
+            -25.606805
+          ],
+          [
+            -57.0344871,
+            -25.6051039
+          ],
+          [
+            -57.0363034,
+            -25.6082958
+          ]
+        ]
+      }
+    }
+  ]
+}
