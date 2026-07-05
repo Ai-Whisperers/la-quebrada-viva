@@ -364,9 +364,9 @@
       </label>
 
       <label class="layer-row">
-        <input type="checkbox" data-layer="flow-arrows" />
+        <input type="checkbox" data-layer="flow-arrows" checked />
         <span class="swatch" style="background: #1d4ed8; clip-path: polygon(0% 50%, 50% 0%, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);"></span>
-        <span class="name">Flow arrows · which way water runs (<span data-count="flow-arrows">—</span>)</span>
+        <span class="name"><strong>Flow arrows</strong> · which way water runs (<span data-count="flow-arrows">—</span>)</span>
         <input type="range" class="opacity" data-opacity="flow-arrows" min="0.2" max="1" step="0.05" value="0.95" />
         <a class="download" href="./data/dem_streams_arrows_20km.geojson" download title="Download flow arrows">↓</a>
       </label>
@@ -436,8 +436,8 @@
 
       <label class="layer-row">
         <input type="checkbox" data-layer="mapbiomas" />
-        <span class="swatch" style="background: linear-gradient(to right, #16a34a 0% 30%, #bef264 30% 50%, #fbbf24 50% 70%, #f97316 70% 85%, #94a3b8 85% 100%);"></span>
-        <span class="name"><strong>MapBiomas 2023 land cover</strong> · 7 classes (<span data-count="mapbiomas">—</span>)</span>
+        <span class="swatch" style="background: linear-gradient(to right, #15803d 0% 25%, #0d9488 25% 35%, #a16207 35% 40%, #06b6d4 40% 50%, #bef264 50% 70%, #fbbf24 70% 80%, #ea580c 80% 90%, #94a3b8 90% 95%, #0284c7 95% 100%);"></span>
+        <span class="name"><strong>MapBiomas 2023 land cover</strong> · 9 classes (<span data-count="mapbiomas">—</span>)</span>
         <input type="range" class="opacity" data-opacity="mapbiomas" min="0.1" max="1" step="0.05" value="0.55" />
         <a class="download" href="./data/mapbiomas_2023_20km.geojson" download title="Download">↓</a>
       </label>
@@ -463,6 +463,21 @@
         <tr><td><span style="background:#84cc16;color:#000;padding:0 6px">1</span></td><td>NDVI 0.25–0.45 — sparse woody</td></tr>
         <tr><td><span style="background:#22c55e;color:#000;padding:0 6px">2</span></td><td>NDVI 0.45–0.60 — open forest <em>(typical LQV)</em></td></tr>
         <tr><td><span style="background:#14532d;color:#fff;padding:0 6px">3</span></td><td>NDVI &gt; 0.60 — dense forest</td></tr>
+      </table>
+
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        <strong>MapBiomas classes</strong> (10 observed in the 20 km box):
+      </p>
+      <table class="legend-table" style="margin-top: 4px; font-size: 0.76rem;">
+        <tr><td><span style="background:#15803d;color:#fff;padding:0 6px">3</span></td><td>Forest Formation — upland Atlantic Forest</td></tr>
+        <tr><td><span style="background:#0d9488;color:#fff;padding:0 6px">6</span></td><td>Flooded Forest — gallery along rivers</td></tr>
+        <tr><td><span style="background:#a16207;color:#fff;padding:0 6px">9</span></td><td>Forest Plantation — palm or managed woody</td></tr>
+        <tr><td><span style="background:#06b6d4;color:#000;padding:0 6px">11</span></td><td>Wetland — saturated soils / standing water</td></tr>
+        <tr><td><span style="background:#bef264;color:#000;padding:0 6px">12</span></td><td>Grassland — herbaceous cover, savanna-like</td></tr>
+        <tr><td><span style="background:#fbbf24;color:#000;padding:0 6px">15</span></td><td>Pasture — managed grazing</td></tr>
+        <tr><td><span style="background:#ea580c;color:#fff;padding:0 6px">18</span></td><td>Agriculture — row crops / tilled</td></tr>
+        <tr><td><span style="background:#94a3b8;color:#000;padding:0 6px">22</span></td><td>Non-vegetated Area — bare soil / road</td></tr>
+        <tr><td><span style="background:#0284c7;color:#fff;padding:0 6px">26</span></td><td>Water — open water (river / lake)</td></tr>
       </table>
 
       <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
@@ -1260,14 +1275,15 @@ updateParcelLabel();
     arrows.forEach(a => {
       const isMain = a.cls === 'main';
       const color = isMain ? '#0c4a6e' : '#1d4ed8';
+      const size = isMain ? 28 : 22;
       const m = L.marker([a.lat, a.lon], {
         icon: L.divIcon({
-          html: `<svg width="${isMain ? 16 : 11}" height="${isMain ? 16 : 11}" viewBox="-50 -50 100 100" style="transform: rotate(${a.angle.toFixed(1)}deg);">
-            <polygon points="-30,-10 30,0 -30,10 -22,0" fill="${color}" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+          html: `<svg width="${size}" height="${size}" viewBox="-50 -50 100 100" style="transform: rotate(${a.angle.toFixed(1)}deg); filter: drop-shadow(0 0 2px rgba(255,255,255,0.9));">
+            <polygon points="-32,-14 32,0 -32,14 -22,0" fill="${color}" stroke="white" stroke-width="6" stroke-linejoin="round"/>
           </svg>`,
           className: 'flow-arrow-icon',
-          iconSize: [isMain ? 16 : 11, isMain ? 16 : 11],
-          iconAnchor: [isMain ? 8 : 5.5, isMain ? 8 : 5.5],
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
         }),
         renderer: arrowRenderer,
         keyboard: false,
@@ -1356,8 +1372,9 @@ updateParcelLabel();
         lyr.bindTooltip(
           `<strong>${p.name || 'land cover'}</strong><br>` +
           `MapBiomas class ${p.class_code}<br>` +
-          `${p.pixel_count || 0} pixels (${Math.round((p.pixel_count || 0) * 0.09 * 100)/100} ha)<br>` +
-          `${p.source || ''}`,
+          `${(p.area_ha || 0).toLocaleString()} ha (${p.pixel_count || 0} px)<br>` +
+          `<small>${p.description || ''}</small><br>` +
+          `<small>${p.source || ''}</small>`,
           { sticky: true, direction: 'top', className: 'lqv-tooltip' }
         );
       },
@@ -1375,11 +1392,36 @@ updateParcelLabel();
         fillOpacity: 0.55,
       },
       onEachFeature: (feature, lyr) => {
-        lyr.bindTooltip(
-          `<strong>Forest loss</strong> (Hansen GFC v1.12)<br>` +
-          `${feature.properties.source || ''}`,
-          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
-        );
+        try {
+          const area = (L.GeometryUtil && L.GeometryUtil.geodesicArea) ?
+            L.GeometryUtil.geodesicArea(lyr.getLatLngs ? lyr.getLatLngs() : []) : 0;
+          // For polygons we have feature.geometry.coordinates[0]
+          const coords = feature.geometry.coordinates;
+          let pts = [];
+          if (feature.geometry.type === 'Polygon') pts = coords[0];
+          else if (feature.geometry.type === 'MultiPolygon') {
+            pts = coords[0][0];
+          }
+          // Approximate area via shoelace for the lon/lat polygon (very rough)
+          let areaHa = 0;
+          if (pts.length > 2) {
+            let a = 0;
+            for (let i = 0; i < pts.length - 1; i++) {
+              a += (pts[i][0] * pts[i+1][1] - pts[i+1][0] * pts[i][1]);
+            }
+            const cLat = pts.reduce((s,p) => s+p[1],0) / pts.length;
+            const m = 111320 * Math.cos(cLat * Math.PI/180);
+            areaHa = Math.abs(a/2) * 111320 * m / 10000;
+          }
+          lyr.bindTooltip(
+            `<strong>Forest loss (deforestation)</strong><br>` +
+            `~${areaHa.toFixed(1)} ha clearcut<br>` +
+            `${pts.length} vertices · Hansen v1.12 2001-2024`,
+            { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+          );
+        } catch (e) {
+          lyr.bindTooltip(`Forest loss (Hansen GFC v1.12)`, { sticky: true });
+        }
       },
     });
   }
@@ -1395,11 +1437,30 @@ updateParcelLabel();
         fillOpacity: 0.55,
       },
       onEachFeature: (feature, lyr) => {
-        lyr.bindTooltip(
-          `<strong>Forest gain</strong> (Hansen GFC v1.12)<br>` +
-          `${feature.properties.source || ''}`,
-          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
-        );
+        try {
+          const coords = feature.geometry.coordinates;
+          let pts = [];
+          if (feature.geometry.type === 'Polygon') pts = coords[0];
+          else if (feature.geometry.type === 'MultiPolygon') pts = coords[0][0];
+          let areaHa = 0;
+          if (pts.length > 2) {
+            let a = 0;
+            for (let i = 0; i < pts.length - 1; i++) {
+              a += (pts[i][0] * pts[i+1][1] - pts[i+1][0] * pts[i][1]);
+            }
+            const cLat = pts.reduce((s,p) => s+p[1],0) / pts.length;
+            const m = 111320 * Math.cos(cLat * Math.PI/180);
+            areaHa = Math.abs(a/2) * 111320 * m / 10000;
+          }
+          lyr.bindTooltip(
+            `<strong>Forest gain (regrowth)</strong><br>` +
+            `~${areaHa.toFixed(1)} ha<br>` +
+            `Hansen v1.12 gain band 2000-2012`,
+            { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+          );
+        } catch (e) {
+          lyr.bindTooltip(`Forest gain (Hansen GFC v1.12)`, { sticky: true });
+        }
       },
     });
   }

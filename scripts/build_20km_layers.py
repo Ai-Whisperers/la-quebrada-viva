@@ -520,6 +520,15 @@ def extract_streams(dem, acc, fdir, transform,
         else:                 cls = "rill"
         for v in path[1:]:
             seen_mouth.add(v)
+        # Drop degenerate LineStrings — those with <2 distinct points
+        # (rasterio polygons fed to .shapes can yield MultiLineStrings
+        # where one component is a single Point, breaking Leaflet)
+        unique_pts = []
+        for pt in coords:
+            if not unique_pts or pt[0] != unique_pts[-1][0] or pt[1] != unique_pts[-1][1]:
+                unique_pts.append(pt)
+        if len(unique_pts) < 2:
+            continue
         feats.append({
             "type": "Feature",
             "properties": {

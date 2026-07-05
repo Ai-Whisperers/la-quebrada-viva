@@ -28,31 +28,45 @@ OUT = ROOT / "splats/exports/web/data"
 BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)  # S, W, N, E
 
 # MapBiomas Paraguay Collection 2 (2023) — class codes observed in
-# this region. Source: MapBiomas Paraguay legend, brief in
-# docs/site_data/mapbiomas_paraguay/_briefs/mapbiomas_paraguay_brief.md
+# this region. Source: docs/site_data/mapbiomas_paraguay/_summaries/
+# class_timeseries.csv (ground-truth counts for the 50 km AOI).
+# Color palette tuned for visual distinctness on the satellite basemap.
 MAPBIOMAS_LEGEND = {
-    1:  ("Forest Plantation",        "#7e22ce"),
-    3:  ("Forest Formation",         "#16a34a"),  # dense upland forest
-    4:  ("Savanna Formation",        "#facc15"),
-    5:  ("Mangrove",                 "#365314"),
-    6:  ("Flooded Forest",           "#0d9488"),  # gallery forests along rivers
-    9:  ("Forest Plantation (palm)", "#a16207"),
-    10: ("Grassland",                "#a3e635"),
-    11: ("Wetland",                  "#06b6d4"),
-    12: ("Grassland (other)",        "#bef264"),
-    14: ("Farming / Agriculture",    "#f97316"),
-    15: ("Pasture",                  "#fbbf24"),
-    18: ("Agriculture (other)",      "#ea580c"),
-    21: ("Mosaic of Agriculture",    "#fde68a"),
-    22: ("Non-vegetated",            "#94a3b8"),
-    24: ("Urban / Built",            "#475569"),
-    25: ("Other (built)",            "#334155"),
-    29: ("Rocky Outcrop",            "#1e293b"),
-    30: ("Mining",                   "#1e1b4b"),
-    33: ("Water Bodies",             "#0284c7"),
-    39: ("Soybean",                  "#c2410c"),
-    41: ("Other Crops",              "#fb7185"),
-    50: ("Pasture (annual)",         "#fcd34d"),
+    1:  ("Forest Plantation (general)",  "#7e22ce"),  # not in AOI but possible
+    3:  ("Forest Formation",             "#15803d"),  # dense upland forest — DARK GREEN
+    4:  ("Savanna Formation",            "#eab308"),  # not in AOI
+    5:  ("Mangrove",                     "#365314"),  # not in AOI (no coast)
+    6:  ("Flooded Forest",               "#0d9488"),  # gallery forests along rivers
+    9:  ("Forest Plantation",            "#a16207"),  # palm plantations (visible in AOI)
+    10: ("Grassland (annual)",            "#84cc16"),
+    11: ("Wetland",                      "#06b6d4"),  # cyan
+    12: ("Grassland",                    "#bef264"),  # LIGHT GREEN (MapBiomas default)
+    14: ("Farming (annual)",              "#f97316"),  # not in AOI
+    15: ("Pasture",                      "#fbbf24"),  # amber
+    18: ("Agriculture",                   "#ea580c"),  # dark orange
+    21: ("Mosaic of Agriculture",        "#fde68a"),
+    22: ("Non-vegetated Area",           "#94a3b8"),  # grey
+    24: ("Urban / Built",                "#475569"),
+    25: ("Other (built)",                "#334155"),
+    26: ("Water",                        "#0284c7"),  # dark blue (was: Soybean — WRONG, this is Water per MapBiomas Paraguay C2)
+    29: ("Rocky Outcrop",                "#1e293b"),
+    30: ("Mining",                       "#1e1b4b"),
+    33: ("Water Bodies",                 "#0284c7"),  # alt water class (not in AOI)
+    39: ("Soybean",                      "#c2410c"),  # the actual soybean code
+    41: ("Other Crops",                  "#fb7185"),
+    50: ("Pasture (annual)",              "#fcd34d"),
+}
+# Class metadata — describes each class's meaning for the viewer tooltip
+CLASS_DESCRIPTIONS = {
+    3:  "Dense upland forest — closed canopy Atlantic Forest mosaic.",
+    6:  "Gallery forest along quebradas — frequently inundated riparian trees.",
+    9:  "Forest Plantation (e.g. palm) — managed woody monoculture.",
+    11: "Wetland — standing water or saturated soils visible in Landsat.",
+    12: "Grassland — non-managed herbaceous cover, savanna-like.",
+    15: "Pasture — managed grazing land for cattle ranching.",
+    18: "Agriculture — row crops or tilled farmland.",
+    22: "Non-vegetated Area — bare soil, rock outcrop, road.",
+    26: "Water — open standing water body (river, lake, reservoir).",
 }
 
 
@@ -78,11 +92,13 @@ def crop_to_20km(src_path):
 def polygonise_categorical(arr, tf, min_pixels=20):
     """Polygonise a categorical raster, simplifying each polygon for
     web delivery. Returns GeoJSON-ready list of features."""
+    from shapely.validation import make_valid
     out = []
     for code in np.unique(arr):
         if code == 0:
             continue
         label, color = MAPBIOMAS_LEGEND.get(int(code), (f"class {code}", "#9ca3af"))
+        desc = CLASS_DESCRIPTIONS.get(int(code), "")
         mask = (arr == code)
         if mask.sum() < min_pixels:
             continue
@@ -93,13 +109,26 @@ def polygonise_categorical(arr, tf, min_pixels=20):
                 g = shape(geom)
                 if g.is_empty:
                     continue
-                if g.area < 5e-7:
+                # Repair self-intersections (rasterio polygons often produce
+                # malformed MultiPolygons that fail Leaflet rendering)
+                if not g.is_valid:
+                    g = make_valid(g)
+                # Drop degenerate fragments
+                if g.is_empty or g.area < 5e-7:
                     continue
-                # Stronger simplification — keep visual fidelity at z=10-12
-                # but drop enough vertices to stay under 25 MB total file size
                 g_simple = g.simplify(0.0003, preserve_topology=True)
                 if g_simple.is_empty:
                     continue
+                # Compute ha via shapely area (degree² × ha conversion)
+                # Sample centroid latitude for more accurate ha
+                try:
+                    c_lat = g_simple.centroid.y
+                    import math
+                    deg_lat_m = 111320
+                    deg_lon_m = 111320 * math.cos(math.radians(c_lat))
+                    area_ha = (g_simple.area * deg_lat_m * deg_lon_m) / 10000
+                except Exception:
+                    area_ha = 0
                 out.append({
                     "type": "Feature",
                     "properties": {
@@ -107,8 +136,11 @@ def polygonise_categorical(arr, tf, min_pixels=20):
                         "class_code": int(code),
                         "name": label,
                         "color": color,
+                        "description": desc,
                         "pixel_count": int(mask.sum()),
+                        "area_ha": round(area_ha, 2),
                         "source": "MapBiomas Paraguay Collection 2 (2023)",
+                        "license": "CC-BY-SA-4.0",
                     },
                     "geometry": mapping(g_simple),
                 })
@@ -152,6 +184,7 @@ def build_mapbiomas():
 def build_hansen_layer(src_name, output_name, threshold, label, color,
                        mask_complement=None):
     """Build a Hansen GFC layer as polygons."""
+    from shapely.validation import make_valid
     src = ROOT / f"docs/site_data/hansen_gfc/{src_name}/{src_name}_aoi_50km.tif"
     log(f"Hansen {src_name} — {label}")
     arr, tf = crop_to_20km(str(src))
@@ -174,7 +207,11 @@ def build_hansen_layer(src_name, output_name, threshold, label, color,
             g = shape(geom)
             if g.is_empty or g.area < 1e-8:
                 continue
+            if not g.is_valid:
+                g = make_valid(g)
             g_simple = g.simplify(0.0001, preserve_topology=True)
+            if g_simple.is_empty:
+                continue
             feats.append({
                 "type": "Feature",
                 "properties": {
@@ -227,6 +264,7 @@ def main():
     lossyear_src = ROOT / "docs/site_data/hansen_gfc/loss/lossyear_aoi_50km.tif"
     datamask_src = ROOT / "docs/site_data/hansen_gfc/datamask/datamask_aoi_50km.tif"
     log("Hansen loss (any year 2001-2023)")
+    from shapely.validation import make_valid
     arr_loss, tf_loss = crop_to_20km(str(loss_src))
     arr_year, _      = crop_to_20km(str(lossyear_src))
     arr_mask, _      = crop_to_20km(str(datamask_src))
@@ -243,7 +281,11 @@ def main():
                     g = shape(geom)
                     if g.is_empty or g.area < 1e-8:
                         continue
+                    if not g.is_valid:
+                        g = make_valid(g)
                     g_simple = g.simplify(0.0001, preserve_topology=True)
+                    if g_simple.is_empty:
+                        continue
                     feats.append({
                         "type": "Feature",
                         "properties": {
@@ -288,7 +330,11 @@ def main():
                     g = shape(geom)
                     if g.is_empty or g.area < 1e-8:
                         continue
+                    if not g.is_valid:
+                        g = make_valid(g)
                     g_simple = g.simplify(0.0001, preserve_topology=True)
+                    if g_simple.is_empty:
+                        continue
                     feats.append({
                         "type": "Feature",
                         "properties": {
