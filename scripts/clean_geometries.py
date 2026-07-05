@@ -64,8 +64,12 @@ def clean_geom(g, allow_points=False):
         components = [clipped]
     elif gtype == "MultiPoint" and allow_points:
         components = [c for c in clipped.geoms]
-    elif gtype == "Polygon" and allow_points:
-        components = [clipped]
+    elif gtype == "Polygon":
+        # Polygons are kept only when allow_points=True (i.e., for
+        # woodland/forest files that contain both lines and polygons).
+        # Otherwise (waterways, roads, contour) we drop them.
+        if allow_points and clipped.area > 0:
+            components = [clipped]
     elif gtype == "MultiPolygon" and allow_points:
         components = [c for c in clipped.geoms if c.geom_type == "Polygon"
                       and c.area > 0]
@@ -74,7 +78,8 @@ def clean_geom(g, allow_points=False):
             if c.geom_type == "LineString" and len(c.coords) >= 2:
                 components.append(c)
             elif allow_points and c.geom_type in ("Point", "Polygon"):
-                components.append(c)
+                if c.geom_type != "Polygon" or c.area > 0:
+                    components.append(c)
     if not components:
         return None, False
     if len(components) == 1:

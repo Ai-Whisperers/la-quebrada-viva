@@ -511,11 +511,18 @@
       </label>
 
       <label class="layer-row">
+        <input type="checkbox" data-layer="woodland-merged" checked />
+        <span class="swatch" style="background: linear-gradient(to right, #15803d 0% 25%, #0d9488 25% 35%, #365314 35% 70%, #166534 70% 90%, #22c55e 90% 100%);"></span>
+        <span class="name"><strong>Woodland &amp; forest merged</strong> · MapBiomas + Hansen + OSM · <span data-count="woodland-merged">—</span> polygons</span>
+        <input type="range" class="opacity" data-opacity="woodland-merged" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/woodland_merged_20km.geojson" download title="Download merged woodland">↓</a>
+      </label>
+      <label class="layer-row">
         <input type="checkbox" data-layer="trees" />
         <span class="swatch" style="background: #15803d;"></span>
-        <span class="name">Forest / woodland polygons · <span data-count="trees">—</span></span>
+        <span class="name">OSM tags only (4,709 mixed) · includes farms, orchards</span>
         <input type="range" class="opacity" data-opacity="trees" min="0.2" max="1" step="0.05" value="0.4" />
-        <a class="download" href="./data/osm_20km/trees.geojson" download title="Download">↓</a>
+        <a class="download" href="./data/osm_20km/trees.geojson" download title="Download raw OSM tags">↓</a>
       </label>
 
       <label class="layer-row">
@@ -1461,6 +1468,38 @@ updateParcelLabel();
         } catch (e) {
           lyr.bindTooltip(`Forest gain (Hansen GFC v1.12)`, { sticky: true });
         }
+      },
+    });
+  }
+
+  // 9i. Woodland & forest merged: 18,714 polygons from 4 sources
+  // (MapBiomas classes 3+6, Hansen ≥30% and ≥75%, OSM wood filtered).
+  // Colour by source for transparency.
+  const woodlandFc = await F('./data/woodland_merged_20km.geojson');
+  if (woodlandFc && woodlandFc.features && woodlandFc.features.length) {
+    data['woodland-merged'] = woodlandFc;
+    setLayerCount('woodland-merged', woodlandFc.features.length);
+    layers['woodland-merged'] = L.geoJSON(woodlandFc, {
+      style: (feature) => {
+        const p = feature.properties || {};
+        return {
+          color: p.color || '#15803d',
+          fillColor: p.color || '#15803d',
+          fillOpacity: 0.45,
+          weight: 0.4,
+          opacity: 0.8,
+        };
+      },
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        const descr = p.description || p.woodland_kind || 'woodland';
+        lyr.bindTooltip(
+          `<strong>${p.woodland_kind || 'woodland'}</strong><br>` +
+          `${p.area_ha ? p.area_ha.toLocaleString() + ' ha<br>' : ''}` +
+          `<small>${descr}</small><br>` +
+          `<small style="color:#9ca3af">${p.forest_source || ''}</small>`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
       },
     });
   }
