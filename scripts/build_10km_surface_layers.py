@@ -4,11 +4,11 @@ Mirrors the data style of the existing property-scale layers so the buyer
 walkthrough can compare LQV against the full 20 km context.
 
 Outputs (in splats/exports/web/data/):
-  ndvi_canopy_20km.geojson       - Sentinel-2 NDVI classified into 4 bins,
+  ndvi_canopy_10km.geojson       - Sentinel-2 NDVI classified into 4 bins,
                                    polygonised over the 40x40 km box
                                    (S,W,N,E) = (-25.787, -57.232,
                                                -25.427, -56.840)
-  dem_streams_20km.geojson       - Copernicus GLO-30 DEM, D8 flow direction
+  dem_streams_10km.geojson       - Copernicus GLO-30 DEM, D8 flow direction
                                    + accumulation, classified main/trib/head
 
 Inputs:
@@ -155,7 +155,7 @@ def polygonise_ndvi(ndvi_tif: Path, max_features: int = 5000) -> Path:
         cls[(ndvi >= lo) & (ndvi < hi)] = code
     cls[np.isnan(ndvi)] = 255
 
-    fc = {"type": "FeatureCollection", "name": "ndvi_canopy_20km", "features": []}
+    fc = {"type": "FeatureCollection", "name": "ndvi_canopy_10km", "features": []}
     feature_count = 0
     for (lo, hi, code, label, color, fill) in NDVI_BINS:
         n_polys = 0
@@ -201,14 +201,14 @@ def polygonise_ndvi(ndvi_tif: Path, max_features: int = 5000) -> Path:
         "pixel_resolution_m": 30,
         "generated_utc": datetime.utcnow().isoformat() + "Z",
     }
-    out_path = OUT / "ndvi_canopy_20km.geojson"
+    out_path = OUT / "ndvi_canopy_10km.geojson"
     out_path.write_text(json.dumps(fc, separators=(",", ":")))
     log(f"OK {out_path}  ({out_path.stat().st_size:,} bytes, {feature_count} polygons)")
     return out_path
 
 
 def build_canopy_layer() -> Path | None:
-    tif = OUT / "ndvi_canopy_20km.tif"
+    tif = OUT / "ndvi_canopy_10km.tif"
     try:
         if not tif.exists():
             fetch_sentinel2_ndvi(tif)
@@ -490,7 +490,7 @@ def streams_as_lines(dem, acc, transform, threshold=1000, min_seg_len=3):
 
     fc = {
         "type": "FeatureCollection",
-        "name": "dem_streams_20km",
+        "name": "dem_streams_10km",
         "metadata": {
             "source": "Copernicus GLO-30 DEM (AWS S3)",
             "bbox": BBOX,
@@ -501,14 +501,14 @@ def streams_as_lines(dem, acc, transform, threshold=1000, min_seg_len=3):
         },
         "features": features,
     }
-    out = OUT / "dem_streams_20km.geojson"
+    out = OUT / "dem_streams_10km.geojson"
     out.write_text(json.dumps(fc, separators=(",", ":")))
     log(f"OK {out}  ({out.stat().st_size:,} bytes, {len(features)} stream segments)")
     return out
 
 
 def build_streams_layer() -> Path | None:
-    dem_tif = OUT / "dem_streams_20km_input.tif"
+    dem_tif = OUT / "dem_streams_10km_input.tif"
     try:
         if not dem_tif.exists():
             fetch_cop30(dem_tif)
@@ -552,6 +552,163 @@ def build_streams_layer() -> Path | None:
         return None
 
 
+def build_hillshade(dem_tif: Path, out_tif: Path) -> Path:
+    """Build a Lambertian hillshade GeoTIFF from a DEM.
+
+    Uses the ESRI hillshade algorithm: each cell has a single sun azimuth
+    + altitude (default 315° NW, 45° above the horizon). The shaded
+    reflectance = cos(angle_to_sun). Values are 0-255 (uint8).
+
+    Output is reprojected to Web Mercator (EPSG:3857) at ~30 m resolution
+    so Leaflet shows it directly without on-the-fly reprojection.
+    """
+    from rasterio.enums import Resampling
+    log("computing hillshade from DEM…")
+    with rasterio.open(dem_tif) as r:
+        dem = r.read(1)
+        src_transform = r.transform
+        src_crs = r.crs
+
+    # Sun parameters
+    azimuth_deg = 315      # NW (sun coming from NW)
+    altitude_deg = 45      # 45° above horizon (mid-morning / mid-afternoon)
+    azimuth = math.radians(360 - azimuth_deg + 90)  # ESRI uses conv
+    altitude = math.radians(altitude_deg)
+    z_factor = 1.0         # no vertical exaggeration
+    cell_size = abs(src_transform.a)  # ~30 m at GLO-30
+
+    # Horn's method: compute gradient via 3x3 window
+    def safe_diff(a, b):
+        with np.errstate(invalid="ignore"):
+            return a - b
+    win = (8,)
+    # Pad DEM with one cell on each side (so corners have neighbours)
+    padded = np.pad(dem, 1, mode="edge")
+
+    # Compute slope + aspect via standard formulas (using padded indices)
+    # dZ/dX (E-W direction), dZ/dY (N-S, top to bottom)
+    dz_dx = (
+        (padded[2:, 2:] - padded[2:, :-2]) / (2 * cell_size) +
+        (padded[:-2, 2:] - padded[:-2, :-2]) / (2 * cell_size) +
+        2 * (padded[1:-1, 2:] - padded[1:-1, :-2]) / (6 * cell_size)
+    ) / 4
+    dz_dy = (
+        (padded[:-2, 2:] - padded[2:, 2:]) / (2 * cell_size) +
+        (padded[:-2, :-2] - padded[2:, :-2]) / (2 * cell_size) +
+        2 * (padded[:-2, 1:-1] - padded[2:, 1:-1]) / (6 * cell_size)
+    ) / 4
+    nan_mask = np.isnan(dem)
+    slope = np.arctan(z_factor * np.sqrt(dz_dx**2 + dz_dy**2))
+    aspect = np.arctan2(dz_dy, -dz_dx)
+    aspect = np.where(aspect < 0, 2 * math.pi + aspect, aspect)
+
+    shaded = (
+        np.cos(altitude) * np.cos(slope) +
+        np.sin(altitude) * np.sin(slope) * np.cos(azimuth - aspect)
+    )
+    shaded = np.clip(shaded, 0, 1)
+    hillshade = np.where(nan_mask, 0, (shaded * 255).astype(np.uint8))
+
+    # Reproject to Web Mercator for Leaflet
+    dst_crs = "EPSG:3857"
+    left, bottom, right, top = rasterio.transform.array_bounds(dem.shape[0], dem.shape[1], src_transform)
+    dst_transform, dst_w, dst_h = calculate_default_transform(
+        src_crs, dst_crs, hillshade.shape[1], hillshade.shape[0],
+        left, bottom, right, top,
+        resolution=30,
+    )
+    dst = np.zeros((dst_h, dst_w), dtype=np.uint8)
+    reproject(
+        source=hillshade,
+        destination=dst,
+        src_transform=src_transform,
+        src_crs=src_crs,
+        dst_transform=dst_transform,
+        dst_crs=dst_crs,
+        resampling=Resampling.bilinear,
+    )
+
+    with rasterio.open(
+        out_tif, "w", driver="GTiff",
+        height=dst_h, width=dst_w, count=1, dtype="uint8",
+        crs=dst_crs, transform=dst_transform, compress="lzw",
+    ) as out:
+        out.write(dst, 1)
+        out.update_tags(
+            source="Hillshade from Copernicus GLO-30 DEM",
+            sun_azimuth_deg=azimuth_deg,
+            sun_altitude_deg=altitude_deg,
+            generated=datetime.utcnow().isoformat() + "Z",
+        )
+    log(f"OK hillshade → {out_tif} ({dst.shape}, {out_tif.stat().st_size:,} bytes, Web Mercator 30m)")
+    return out_tif
+
+
+def build_contours(dem_tif: Path, out_geojson: Path, interval_m: int = 20) -> Path:
+    """Extract contour lines from the DEM at given vertical interval (m).
+
+    Uses marching-squares: for each elevation step, find the iso-elevation
+    line by bilinear interpolation between cells. Outputs GeoJSON LineStrings
+    in WGS84.
+    """
+    log(f"extracting contour lines at {interval_m} m intervals...")
+    with rasterio.open(dem_tif) as r:
+        dem = r.read(1)
+        transform = r.transform
+        crs = r.crs
+    valid = ~np.isnan(dem)
+
+    if not valid.any():
+        raise RuntimeError("No valid DEM cells")
+
+    elev_min = math.floor(float(np.nanmin(dem)) / interval_m) * interval_m
+    elev_max = math.ceil(float(np.nanmax(dem)) / interval_m) * interval_m
+    levels = list(range(int(elev_min), int(elev_max) + 1, interval_m))
+    log(f"  elevation {elev_min:.0f}-{elev_max:.0f} m → {len(levels)} levels")
+
+    # Marching squares: rasterio.features has no built-in contour so we use
+    # skimage (scikit-image), which is in the venv.
+    from skimage import measure
+
+    # Pad dem so contour edge cases work
+    features = []
+    for level in levels:
+        n_at = measure.find_contours(dem, level, mask=valid)
+        for contour in n_at:
+            if len(contour) < 3:
+                continue
+            # contour is an (N, 2) array of (row, col) coords
+            xs, ys = rio_xy(transform, contour[:, 1], contour[:, 0])
+            coords = [[x, y] for x, y in zip(xs, ys)]
+            features.append({
+                "type": "Feature",
+                "properties": {
+                    "category": "dem_contour",
+                    "elevation_m": float(level),
+                    "vertex_count": len(coords),
+                },
+                "geometry": {"type": "LineString", "coordinates": coords},
+            })
+        if level % 100 == 0:
+            log(f"    {level} m: {len(n_at)} lines")
+
+    fc = {
+        "type": "FeatureCollection",
+        "name": "dem_contours_10km",
+        "metadata": {
+            "source": "Copernicus GLO-30 DEM",
+            "contour_interval_m": interval_m,
+            "elevation_range_m": [float(elev_min), float(elev_max)],
+            "feature_count": len(features),
+            "generated_utc": datetime.utcnow().isoformat() + "Z",
+        },
+        "features": features,
+    }
+    out_geojson.write_text(json.dumps(fc, separators=(",", ":")))
+    log(f"OK contours → {out_geojson} ({len(features):,} lines, {out_geojson.stat().st_size/1024:.0f} KB)")
+    return out_geojson
+
+
 def main():
     print("=" * 60)
     print("Building 20 km-extent NDVI canopy + DEM streams")
@@ -559,11 +716,26 @@ def main():
     print("=" * 60)
     canopy_path = build_canopy_layer()
     streams_path = build_streams_layer()
+    # After streams: build hillshade + contours (visual terrain overlay)
+    hillshade_path = None
+    contours_path = None
+    dem_input = OUT / "dem_streams_10km_input.tif"
+    if dem_input.exists():
+        try:
+            hillshade_path = build_hillshade(dem_input, OUT / "lqv_10km_hillshade.tif")
+        except Exception as e:
+            log(f"HILLSHADE: failed ({e})")
+        try:
+            contours_path = build_contours(dem_input, OUT / "dem_contours_10km.geojson")
+        except Exception as e:
+            log(f"CONTOURS: failed ({e})")
     print()
     print("=" * 60)
     print("DONE")
-    print(f"  NDVI canopy 20km: {canopy_path or 'FAILED'}")
-    print(f"  DEM streams 20km: {streams_path or 'FAILED'}")
+    print(f"  NDVI canopy 20km:   {canopy_path or 'FAILED'}")
+    print(f"  DEM streams 20km:   {streams_path or 'FAILED'}")
+    print(f"  Hillshade:          {hillshade_path or 'FAILED'}")
+    print(f"  Contours:           {contours_path or 'FAILED'}")
     print("=" * 60)
 
 

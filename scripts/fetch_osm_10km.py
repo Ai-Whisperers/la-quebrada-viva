@@ -31,13 +31,13 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs" / "site_data" / "osm_20km"
+OUT = ROOT / "docs" / "site_data" / "osm_10km"
 OUT.mkdir(parents=True, exist_ok=True)
 
 # Canonical centroid (2026-06-28 KML-derived, reinforced by property_polygon.geojson)
 LON, LAT = -57.035502, -25.607336
 # Bbox: S,W,N,E. 20 km radius adds 0.180° lat and 0.196° lon at this latitude.
-BBOX = (LAT - 0.18, LON - 0.196, LAT + 0.18, LON + 0.196)
+BBOX = (LAT - 0.0898, LON - 0.0996, LAT + 0.0898, LON + 0.0996)
 
 OVERPASS_URLS = [
     "https://overpass-api.de/api/interpreter",

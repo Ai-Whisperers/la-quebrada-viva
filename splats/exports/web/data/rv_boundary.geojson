@@ -1,94 +1,52 @@
 {
   "type": "FeatureCollection",
+  "name": "escobar_property_polygon",
+  "description": "Wesley's hand-drawn Google Earth polygon over the LQV parcel, shared 2026-06-28 post-escritura. 8 vertices; 30.9 ha projected area; subset of the 62.57 ha legal total — represents the buildable northern Mbopicua cluster.",
+  "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},
+  "source": {
+    "origin": "Google Earth Pro KML export by Wesley van de Camp",
+    "received_utc": "2026-06-28",
+    "transcribed_by": "Claude Code session 588baf01"
+  },
   "features": [
     {
       "type": "Feature",
+      "properties": {
+        "name": "escobar property",
+        "vertex_count": 8,
+        "area_ha_projected_utm21s": 30.915,
+        "centroid_lon": -57.035502,
+        "centroid_lat": -25.607336,
+        "bbox_min_lon": -57.03844,
+        "bbox_min_lat": -25.61172,
+        "bbox_max_lon": -57.02929,
+        "bbox_max_lat": -25.60506
+      },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -57.0261813,
-              -25.6099145
-            ],
-            [
-              -57.0261261,
-              -25.6099914
-            ],
-            [
-              -57.0255732,
-              -25.608754
-            ],
-            [
-              -57.0341386,
-              -25.606805
-            ],
-            [
-              -57.0294132,
-              -25.6044545
-            ],
-            [
-              -57.0335105,
-              -25.6033469
-            ],
-            [
-              -57.0274267,
-              -25.6066623
-            ],
-            [
-              -57.0276911,
-              -25.6120103
-            ],
-            [
-              -57.0329011,
-              -25.6066678
-            ],
-            [
-              -57.029212,
-              -25.6143749
-            ],
-            [
-              -57.0344871,
-              -25.6051039
-            ],
-            [
-              -57.0287129,
-              -25.6118537
-            ],
-            [
-              -57.0296353,
-              -25.6073985
-            ],
-            [
-              -57.0281265,
-              -25.6120102
-            ],
-            [
-              -57.0274567,
-              -25.6081121
-            ],
-            [
-              -57.0327786,
-              -25.6027899
-            ],
-            [
-              -57.0300967,
-              -25.6156994
-            ],
-            [
-              -57.0363034,
-              -25.6082958
-            ],
-            [
-              -57.0261813,
-              -25.6099145
-            ]
-          ]
-        ]
-      },
+        "coordinates": [[
+          [-57.03637021853214, -25.60575193424224],
+          [-57.03766177687186, -25.60507992566541],
+          [-57.03844134250570, -25.60542966650984],
+          [-57.03781259498610, -25.60748932019079],
+          [-57.03562604243069, -25.60874729114579],
+          [-57.03356778815589, -25.61172442024565],
+          [-57.02928817334298, -25.60940767642553],
+          [-57.03524517073321, -25.60505513824413],
+          [-57.03637021853214, -25.60575193424224]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
-        "name": "RV Parcel Boundary (GPS walk 2026-06-28)",
-        "area_ha": 71.7
+        "name": "escobar wes",
+        "kind": "interior_reference_pin",
+        "elev_m_amsl": 166.336
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-57.03365675409436, -25.61138883666841, 166.3359794125154]
       }
     }
   ]

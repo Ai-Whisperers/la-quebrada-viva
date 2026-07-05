@@ -177,8 +177,8 @@ splats/exports/web/lqv-secrets/*
 docs/site_data_2026-06-13_snapshot/
 !docs/site_data_2026-06-13_snapshot/README.md
 
-# 20km OSM pull — regenerable via scripts/fetch_osm_20km.py (~30s)
-docs/site_data/osm_20km/
-splats/exports/web/data/osm_20km/
-splats/exports/web/data/dem_streams_20km_input.tif
+# 10km OSM pull — regenerable via scripts/fetch_osm_10km.py (~30s)
+docs/site_data/osm_10km/
+splats/exports/web/data/osm_10km/
+splats/exports/web/data/dem_streams_10km_input.tif
 splats/exports/big_data_excluded_from_deploy/

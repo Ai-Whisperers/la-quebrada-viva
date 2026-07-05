@@ -3,10 +3,10 @@ treecover over the LQV 20 km box. Both source rasters are already clipped
 to a 100 km AOI centered on LQV, so no external fetch is needed.
 
 Outputs to splats/exports/web/data/:
-  mapbiomas_2023_20km.geojson — 7-class land-cover polygons
-  hansen_loss_20km.geojson   — pixels with loss>0 since 2001
-  hansen_gain_20km.geojson   — pixels with gain=1 since 2000
-  hansen_treecover_30pct_20km.geojson — forest cover (≥30%) in 2000
+  mapbiomas_2023_10km.geojson — 7-class land-cover polygons
+  hansen_loss_10km.geojson   — pixels with loss>0 since 2001
+  hansen_gain_10km.geojson   — pixels with gain=1 since 2000
+  hansen_treecover_30pct_10km.geojson — forest cover (≥30%) in 2000
   hansen_treecover_change.geojson   — overlay combining loss/gain
 """
 import sys
@@ -25,7 +25,7 @@ ROOT = Path("/root/la-quebrada-viva")
 OUT = ROOT / "splats/exports/web/data"
 
 # 20 km box around LQV centroid (-57.030, -25.608)
-BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)  # S, W, N, E
+BBOX = (-25.698062, -57.129997, -25.518400, -56.930765)  # S, W, N, E
 
 # MapBiomas Paraguay Collection 2 (2023) — class codes observed in
 # this region. Source: docs/site_data/mapbiomas_paraguay/_summaries/
@@ -74,7 +74,7 @@ def log(m):
     print(f"[mb] {m}", file=sys.stderr, flush=True)
 
 
-def crop_to_20km(src_path):
+def crop_to_10km(src_path):
     """Return (cropped_array, cropped_transform)."""
     with rasterio.open(src_path) as ds:
         win = from_bounds(BBOX[1], BBOX[0], BBOX[3], BBOX[2], ds.transform)
@@ -153,7 +153,7 @@ def polygonise_categorical(arr, tf, min_pixels=20):
 def build_mapbiomas():
     log("MapBiomas Paraguay 2023 — 20 km box polygonise")
     src = ROOT / "docs/site_data/mapbiomas_paraguay/2023/mapbiomas_2023_aoi_50km.tif"
-    arr, tf = crop_to_20km(str(src))
+    arr, tf = crop_to_10km(str(src))
     if arr is None:
         log("  ⚠ no overlap with 20 km box")
         return
@@ -162,7 +162,7 @@ def build_mapbiomas():
     log(f"  → {len(feats)} polygons")
     fc = {
         "type": "FeatureCollection",
-        "name": "mapbiomas_2023_20km",
+        "name": "mapbiomas_2023_10km",
         "metadata": {
             "source": "MapBiomas Paraguay Collection 2 (2023) — GCS public bucket",
             "bbox": list(BBOX),
@@ -176,7 +176,7 @@ def build_mapbiomas():
         },
         "features": feats,
     }
-    out = OUT / "mapbiomas_2023_20km.geojson"
+    out = OUT / "mapbiomas_2023_10km.geojson"
     out.write_text(json.dumps(fc, separators=(",", ":")))
     log(f"  wrote {out} ({out.stat().st_size/1024/1024:.2f} MB)")
 
@@ -187,7 +187,7 @@ def build_hansen_layer(src_name, output_name, threshold, label, color,
     from shapely.validation import make_valid
     src = ROOT / f"docs/site_data/hansen_gfc/{src_name}/{src_name}_aoi_50km.tif"
     log(f"Hansen {src_name} — {label}")
-    arr, tf = crop_to_20km(str(src))
+    arr, tf = crop_to_10km(str(src))
     if arr is None:
         log("  ⚠ no overlap")
         return
@@ -254,7 +254,7 @@ def main():
     # Forest Formation class instead, which is categorical and
     # polygonises cleanly.
     build_hansen_layer(
-        "treecover2000", "hansen_treecover_30pct_20km",
+        "treecover2000", "hansen_treecover_30pct_10km",
         threshold=30, label="forest_cover_2000_pct",
         color="#14532d",   # dark green
     ) if False else None  # disabled — file too large
@@ -265,9 +265,9 @@ def main():
     datamask_src = ROOT / "docs/site_data/hansen_gfc/datamask/datamask_aoi_50km.tif"
     log("Hansen loss (any year 2001-2023)")
     from shapely.validation import make_valid
-    arr_loss, tf_loss = crop_to_20km(str(loss_src))
-    arr_year, _      = crop_to_20km(str(lossyear_src))
-    arr_mask, _      = crop_to_20km(str(datamask_src))
+    arr_loss, tf_loss = crop_to_10km(str(loss_src))
+    arr_year, _      = crop_to_10km(str(lossyear_src))
+    arr_mask, _      = crop_to_10km(str(datamask_src))
     if arr_loss is not None:
         mask = (arr_loss == 1) & (arr_year > 0) & (arr_mask == 1)
         n_px = int(mask.sum())
@@ -300,7 +300,7 @@ def main():
                     continue
         fc = {
             "type": "FeatureCollection",
-            "name": "hansen_loss_20km",
+            "name": "hansen_loss_10km",
             "metadata": {
                 "source": "Hansen GFC v1.12",
                 "bbox": list(BBOX),
@@ -311,12 +311,12 @@ def main():
             },
             "features": feats,
         }
-        out = OUT / "hansen_loss_20km.geojson"
+        out = OUT / "hansen_loss_10km.geojson"
         out.write_text(json.dumps(fc, separators=(",", ":")))
         log(f"  wrote {out} ({out.stat().st_size/1024/1024:.2f} MB)")
     # Gain
     log("Hansen gain (2000-2012)")
-    arr_gain, tf_gain = crop_to_20km(str(ROOT / "docs/site_data/hansen_gfc/gain/gain_aoi_50km.tif"))
+    arr_gain, tf_gain = crop_to_10km(str(ROOT / "docs/site_data/hansen_gfc/gain/gain_aoi_50km.tif"))
     if arr_gain is not None:
         mask = (arr_gain == 1)
         n_px = int(mask.sum())
@@ -349,7 +349,7 @@ def main():
                     continue
         fc = {
             "type": "FeatureCollection",
-            "name": "hansen_gain_20km",
+            "name": "hansen_gain_10km",
             "metadata": {
                 "source": "Hansen GFC v1.12",
                 "bbox": list(BBOX),
@@ -360,7 +360,7 @@ def main():
             },
             "features": feats,
         }
-        out = OUT / "hansen_gain_20km.geojson"
+        out = OUT / "hansen_gain_10km.geojson"
         out.write_text(json.dumps(fc, separators=(",", ":")))
         log(f"  wrote {out} ({out.stat().st_size/1024/1024:.2f} MB)")
 

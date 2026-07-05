@@ -34,15 +34,15 @@ OUT = ROOT / "splats/exports/web/data"
 OUT.mkdir(parents=True, exist_ok=True)
 
 # 20 km bbox (S,W,N,E)
-BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)
+BBOX = (-25.698062, -57.129997, -25.518400, -56.930765)
 CX = (BBOX[1] + BBOX[3]) / 2
 CY = (BBOX[0] + BBOX[2]) / 2
 
-WATER_GEOJSON = ROOT / "docs/site_data/osm_20km/water.geojson"
-WATERWAYS_GEOJSON = ROOT / "docs/site_data/osm_20km/waterways.geojson"
+WATER_GEOJSON = ROOT / "docs/site_data/osm_10km/water.geojson"
+WATERWAYS_GEOJSON = ROOT / "docs/site_data/osm_10km/waterways.geojson"
 JRC_OCC_PATH = ROOT / "docs/site_data/jrc_gsw/occurrence/occurrence_aoi_50km.tif"
-DEM_PATH = OUT / "dem_streams_20km_input.tif"
-OUT_PATH = OUT / "surface_water_20km.geojson"
+DEM_PATH = OUT / "dem_streams_10km_input.tif"
+OUT_PATH = OUT / "surface_water_10km.geojson"
 
 
 def log(msg):
@@ -431,7 +431,7 @@ for idx, f in enumerate(features_out):
 
 fc = {
     "type": "FeatureCollection",
-    "name": "surface_water_20km",
+    "name": "surface_water_10km",
     "metadata": {
         "schema_version": 2,
         "source_osm": "OpenStreetMap (Overpass API pull 2026-07-05)",

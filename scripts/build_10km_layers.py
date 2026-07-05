@@ -2,8 +2,8 @@
 
 Streamed end-to-end (no 122 MB DEM intermediate on disk — Cloudflare
 Pages has a 25 MB file-size cap). Emits two small GeoJSONs:
-  splats/exports/web/data/dem_streams_20km.geojson
-  splats/exports/web/data/ndvi_canopy_20km.geojson
+  splats/exports/web/data/dem_streams_10km.geojson
+  splats/exports/web/data/ndvi_canopy_10km.geojson
 
 Run order:
   1. Sentinel-2 L2A fetch via Planetary Computer → NDVI raster in memory
@@ -37,7 +37,7 @@ ROOT = Path("/root/la-quebrada-viva")
 OUT = ROOT / "splats/exports/web/data"
 OUT.mkdir(parents=True, exist_ok=True)
 
-BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)  # S, W, N, E
+BBOX = (-25.698062, -57.129997, -25.518400, -56.930765)  # S, W, N, E
 # STAC expects [W, S, E, N] (min_lon, min_lat, max_lon, max_lat)
 STAC_BBOX = (BBOX[1], BBOX[0], BBOX[3], BBOX[2])
 
@@ -290,7 +290,7 @@ def polygonise_ndvi(ndvi: np.ndarray, transform, crs) -> int:
 
     fc = {
         "type": "FeatureCollection",
-        "name": "ndvi_canopy_20km",
+        "name": "ndvi_canopy_10km",
         "metadata": {
             "source": "Sentinel-2 L2A NDVI, polygonised at 30 m (3× downsampled)",
             "bbox": list(BBOX),
@@ -304,7 +304,7 @@ def polygonise_ndvi(ndvi: np.ndarray, transform, crs) -> int:
         },
         "features": features,
     }
-    out_path = OUT / "ndvi_canopy_20km.geojson"
+    out_path = OUT / "ndvi_canopy_10km.geojson"
     out_path.write_text(json.dumps(fc, separators=(",", ":")))
     sz = out_path.stat().st_size
     log(f"wrote {out_path}  ({sz/1024:.0f} KB, {len(features)} polygons)")
@@ -633,12 +633,12 @@ def main():
     arrow_feats = extract_flow_arrows(all_feats, new_transform)
     log(f"  flow arrows: {len(arrow_feats)} segments")
 
-    arrow_path = OUT / "dem_streams_arrows_20km.geojson"
+    arrow_path = OUT / "dem_streams_arrows_10km.geojson"
     fc_arrows = {
         "type": "FeatureCollection",
-        "name": "dem_streams_arrows_20km",
+        "name": "dem_streams_arrows_10km",
         "metadata": {
-            "source": "Derived from dem_streams_20km.geojson",
+            "source": "Derived from dem_streams_10km.geojson",
             "purpose": "Point markers every ~1.5 km along main_rivers and "
                        "tributaries so the viewer can render arrowheads "
                        "pointing in the direction of flow.",
@@ -652,7 +652,7 @@ def main():
 
     fc = {
         "type": "FeatureCollection",
-        "name": "dem_streams_20km",
+        "name": "dem_streams_10km",
         "metadata": {
             "source": "Copernicus GLO-30 (AWS S3) + D8 flow accumulation",
             "bbox": list(BBOX),
@@ -666,7 +666,7 @@ def main():
         },
         "features": all_feats,
     }
-    out = OUT / "dem_streams_20km.geojson"
+    out = OUT / "dem_streams_10km.geojson"
     out.write_text(json.dumps(fc, separators=(",", ":")))
     log(f"  wrote {out}  ({out.stat().st_size/1024/1024:.2f} MB, "
         f"{len(all_feats)} stream segments)")

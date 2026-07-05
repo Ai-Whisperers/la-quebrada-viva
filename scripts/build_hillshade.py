@@ -2,7 +2,7 @@
 box, derived from Copernicus GLO-30 DEM.
 
 Outputs:
-  splats/exports/web/data/hillshade_20km.png  — 16-bit grayscale tile
+  splats/exports/web/data/hillshade_10km.png  — 16-bit grayscale tile
   splats/exports/web/data/hillshade_bounds.json — {min_lon, min_lat, max_lon, max_lat}
 """
 import sys
@@ -20,7 +20,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 BIG = ROOT / "splats/exports/big_data_excluded_from_deploy"
 BIG.mkdir(parents=True, exist_ok=True)
 
-BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)
+BBOX = (-25.698062, -57.129997, -25.518400, -56.930765)
 # Copernicus GLO-30 tiles for this bbox:
 TILES = [
     ("S26", "W058"),
@@ -108,7 +108,7 @@ def main():
     rgba[..., 1] = np.clip(rgba[..., 1] + arr * 1.0, 0, 255)
     rgba[..., 2] = np.clip(rgba[..., 2] + arr * 1.0, 0, 255)
     rgba[..., 3] = (arr.astype(np.float32) * 0.95).astype(np.uint8)
-    Image.fromarray(rgba, mode="RGBA").save(OUT / "hillshade_20km.png")
+    Image.fromarray(rgba, mode="RGBA").save(OUT / "hillshade_10km.png")
     # Save bounds for viewer
     import json
     (OUT / "hillshade_bounds.json").write_text(json.dumps({
@@ -118,7 +118,7 @@ def main():
         "max_lat": BBOX[2],
         "size": [new_w, new_h],
     }, indent=2))
-    print(f"wrote {OUT / 'hillshade_20km.png'} ({new_w}x{new_h}, RGBA)", file=sys.stderr)
+    print(f"wrote {OUT / 'hillshade_10km.png'} ({new_w}x{new_h}, RGBA)", file=sys.stderr)
 
 
 if __name__ == "__main__":

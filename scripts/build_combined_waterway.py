@@ -8,7 +8,7 @@ Sources (each uniquely tagged for traceability):
   4. OSM water polygons — audited into 11 categories
 
 Output:
-  splats/exports/web/data/water_combined_20km.geojson
+  splats/exports/web/data/water_combined_10km.geojson
     - Every feature carries properties.source = one of the above
     - Every feature carries properties.category = ... clean taxonomy
     - Polygons + LineStrings in the same file (the viewer styles them
@@ -105,7 +105,7 @@ def main():
     sources = Counter()
 
     # 1. OSM waterways (LineString)
-    audit = json.load(open(OUT / "surface_water_20km.geojson"))
+    audit = json.load(open(OUT / "surface_water_10km.geojson"))
     for f in audit["features"]:
         g = f["geometry"]
         if g["type"] not in ("LineString", "MultiLineString"):
@@ -128,7 +128,7 @@ def main():
         sources["osm_waterway"] += 1
 
     # 2. DEM quebrada streams (LineString)
-    dem_streams = json.load(open(OUT / "dem_streams_20km.geojson"))
+    dem_streams = json.load(open(OUT / "dem_streams_10km.geojson"))
     for f in dem_streams["features"]:
         g = f["geometry"]
         if g["type"] != "LineString":
@@ -154,7 +154,7 @@ def main():
         sources["dem_streams"] += 1
 
     # 3. JRC GSW water bodies (Polygon)
-    jrc = json.load(open(OUT / "lqv_jrc_waterbodies_20km.geojson"))
+    jrc = json.load(open(OUT / "lqv_jrc_waterbodies_10km.geojson"))
     for f in jrc["features"]:
         new_props = dict(f["properties"])
         audit_class = new_props.get("audit_class", "seasonal")
@@ -216,7 +216,7 @@ def main():
 
     fc = {
         "type": "FeatureCollection",
-        "name": "water_combined_20km",
+        "name": "water_combined_10km",
         "metadata": {
             "schema_version": 1,
             "bbox": list(audit["metadata"]["bbox"]),
@@ -227,7 +227,7 @@ def main():
         },
         "features": features,
     }
-    out_path = OUT / "water_combined_20km.geojson"
+    out_path = OUT / "water_combined_10km.geojson"
     out_path.write_text(json.dumps(fc, separators=(",", ":")))
     print(f"wrote {out_path}")
     print(f"  total: {len(features):,} features")

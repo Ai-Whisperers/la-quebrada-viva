@@ -1,5 +1,5 @@
 """Clean up LineString/MultiLineString geometries in the deployed GeoJSON
-files. The dem_streams_20km.geojson had 537 invalid geometries because
+files. The dem_streams_10km.geojson had 537 invalid geometries because
 the streaming tracing produced paths with the same start and end point
 (no movement), which shapely rejects.
 
@@ -14,24 +14,25 @@ from shapely.geometry import shape, mapping, LineString, MultiLineString
 from shapely.validation import make_valid
 from shapely.ops import unary_union
 
-BBOX = box_wsen = (-57.231502, -25.787336, -56.839502, -25.427336)  # W, S, E, N
+BBOX = box_wsen = (-57.129997, -25.698062, -56.930765, -25.518400)  # W, S, E, N
 from shapely.geometry import box
 BBOX_BOX = box(*BBOX)
 
 FILES = [
-    "dem_streams_20km.geojson",
-    "dem_streams_arrows_20km.geojson",
-    "dem_contours_20km.geojson",
-    "water_combined_20km.geojson",
-    "surface_water_20km.geojson",
-    "osm_20km/pois.geojson",
-    "osm_20km/trees.geojson",
-    "osm_20km/buildings.geojson",
-    "osm_20km/places.geojson",
-    "osm_20km/water.geojson",
-    "osm_20km/waterways.geojson",
-    "osm_20km/landuse.geojson",
-    "osm_20km/roads.geojson",
+    "dem_streams_10km.geojson",
+    "dem_streams_arrows_10km.geojson",
+    "dem_contours_10km.geojson",
+    "water_combined_10km.geojson",
+    "surface_water_10km.geojson",
+    "woodland_merged_10km.geojson",
+    "osm_10km/pois.geojson",
+    "osm_10km/trees.geojson",
+    "osm_10km/buildings.geojson",
+    "osm_10km/places.geojson",
+    "osm_10km/water.geojson",
+    "osm_10km/waterways.geojson",
+    "osm_10km/landuse.geojson",
+    "osm_10km/roads.geojson",
 ]
 
 ROOT = Path("/root/la-quebrada-viva/splats/exports/web/data")
@@ -126,11 +127,11 @@ def clean_file(path, allow_points=False):
 def main():
     # Line-only files (no Points)
     for name in [
-        "dem_streams_20km.geojson",
-        "dem_contours_20km.geojson",
-        "water_combined_20km.geojson",
-        "osm_20km/waterways.geojson",
-        "osm_20km/roads.geojson",
+        "dem_streams_10km.geojson",
+        "dem_contours_10km.geojson",
+        "water_combined_10km.geojson",
+        "osm_10km/waterways.geojson",
+        "osm_10km/roads.geojson",
     ]:
         p = ROOT / name
         if p.exists():
@@ -139,14 +140,14 @@ def main():
             print(f"  ! {p} not found")
     # Mixed files (Points allowed for arrows, POIs, etc.)
     for name in [
-        "dem_streams_arrows_20km.geojson",
-        "surface_water_20km.geojson",
-        "osm_20km/pois.geojson",
-        "osm_20km/trees.geojson",
-        "osm_20km/buildings.geojson",
-        "osm_20km/places.geojson",
-        "osm_20km/water.geojson",
-        "osm_20km/landuse.geojson",
+        "dem_streams_arrows_10km.geojson",
+        "surface_water_10km.geojson",
+        "osm_10km/pois.geojson",
+        "osm_10km/trees.geojson",
+        "osm_10km/buildings.geojson",
+        "osm_10km/places.geojson",
+        "osm_10km/water.geojson",
+        "osm_10km/landuse.geojson",
     ]:
         p = ROOT / name
         if p.exists():

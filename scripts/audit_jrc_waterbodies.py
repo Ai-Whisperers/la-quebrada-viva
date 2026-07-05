@@ -4,7 +4,7 @@ This produces a separate layer of REAL water bodies (those that JRC
 detected as standing water in 50%+ of years 1984-2024). Independent of
 OSM, this is what the satellite actually sees.
 
-Output: lqv_jrc_waterbodies_20km.geojson
+Output: lqv_jrc_waterbodies_10km.geojson
   - polygons = connected components of JRC ≥ 50% pixels (20+ ha lakes)
   - polygons = connected components of JRC ≥ 20% pixels (seasonal ponds/wetlands)
   - polygons = connected components of JRC ≥ 10% pixels (rarely wet)
@@ -36,7 +36,7 @@ THRESHOLDS = [
 ]
 
 # 20 km bbox
-BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)
+BBOX = (-25.698062, -57.129997, -25.518400, -56.930765)
 
 with rasterio.open(JRC) as r:
     jrc = r.read(1).astype(np.float32)
@@ -119,10 +119,10 @@ for thr, name, color, desc in THRESHOLDS:
             print(f'    sample: area={area_ha:.2f}ha mean_occ={mean_occ:.1f}%')
 
 print(f'\nTotal: {len(all_features)} JRC waterbody polygons')
-out_path = OUT / 'lqv_jrc_waterbodies_20km.geojson'
+out_path = OUT / 'lqv_jrc_waterbodies_10km.geojson'
 fc = {
     'type': 'FeatureCollection',
-    'name': 'jrc_waterbodies_20km',
+    'name': 'jrc_waterbodies_10km',
     'metadata': {
         'source': 'JRC Global Surface Water (occurrence, 1984-2024)',
         'bbox': BBOX,

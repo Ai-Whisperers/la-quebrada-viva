@@ -30,7 +30,7 @@ ROOT = Path("/root/la-quebrada-viva")
 OUT = ROOT / "splats/exports/web/data"
 
 # 20 km box (S, W, N, E)
-BBOX_S_W_N_E = (-25.787336, -57.231502, -25.427336, -56.839502)
+BBOX_S_W_N_E = (-25.698062, -57.129997, -25.518400, -56.930765)
 # STAC / rasterio bounds (W, S, E, N)
 BBOX_WSEN = (BBOX_S_W_N_E[1], BBOX_S_W_N_E[0], BBOX_S_W_N_E[3], BBOX_S_W_N_E[2])
 
@@ -39,7 +39,7 @@ def log(m):
     print(f"[merge_forest] {m}", file=sys.stderr, flush=True)
 
 
-def crop_to_20km(path):
+def crop_to_10km(path):
     """Return (arr, transform) cropped to the 20 km box."""
     with rasterio.open(str(path)) as ds:
         win = from_bounds(*BBOX_WSEN, ds.transform)
@@ -113,7 +113,7 @@ def main():
     # ---- 1. MapBiomas Forest Formation (3) + Flooded Forest (6) ----
     log("MapBiomas Forest + Gallery")
     src = ROOT / "docs/site_data/mapbiomas_paraguay/2023/mapbiomas_2023_aoi_50km.tif"
-    arr, tf = crop_to_20km(src)
+    arr, tf = crop_to_10km(src)
     if arr is not None:
         for code, label, color, descr in [
             (3, "Forest Formation (upland)", "#15803d",
@@ -165,7 +165,7 @@ def main():
     # ---- 2. Hansen GFC treecover2000 ≥ 30% (any year-2000 forest baseline) ----
     log("Hansen treecover2000 ≥30%")
     src = ROOT / "docs/site_data/hansen_gfc/treecover2000/treecover2000_aoi_50km.tif"
-    arr, tf = crop_to_20km(src)
+    arr, tf = crop_to_10km(src)
     if arr is not None:
         for thr in [30, 75]:
             color = "#365314" if thr >= 75 else "#166534"
@@ -180,7 +180,7 @@ def main():
 
     # ---- 3. OSM natural=wood (real mappers' woodland, NOT admin boundaries) ----
     log("OSM natural=wood (filtered to large polygons)")
-    src = OUT / "osm_20km/trees.geojson"
+    src = OUT / "osm_10km/trees.geojson"
     if src.exists():
         d = json.load(open(src))
         kept = 0
@@ -231,7 +231,7 @@ def main():
     # Write out
     fc = {
         "type": "FeatureCollection",
-        "name": "woodland_merged_20km",
+        "name": "woodland_merged_10km",
         "metadata": {
             "source": "Merged from MapBiomas Paraguay C2 (2023) + Hansen GFC v1.12 + OSM",
             "bbox": list(BBOX_S_W_N_E),
@@ -249,7 +249,7 @@ def main():
         },
         "features": all_feats,
     }
-    out = OUT / "woodland_merged_20km.geojson"
+    out = OUT / "woodland_merged_10km.geojson"
     out.write_text(json.dumps(fc, separators=(",", ":")))
     log(f"wrote {out} ({out.stat().st_size/1024/1024:.2f} MB)")
 

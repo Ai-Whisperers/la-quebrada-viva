@@ -1,8 +1,8 @@
 """Compute DEM contours every 25m elevation over the LQV 20 km box
 using Copernicus GLO-30 in memory.
 
-Output: splats/exports/web/data/dem_contours_20km.geojson
-        splats/exports/web/data/dem_hillshade_color_20km.jpg  (color relief)
+Output: splats/exports/web/data/dem_contours_10km.geojson
+        splats/exports/web/data/dem_hillshade_color_10km.jpg  (color relief)
 """
 import sys
 from pathlib import Path
@@ -19,7 +19,7 @@ from PIL import Image
 ROOT = Path("/root/la-quebrada-viva")
 OUT = ROOT / "splats/exports/web/data"
 
-BBOX = (-25.787336, -57.231502, -25.427336, -56.839502)
+BBOX = (-25.698062, -57.129997, -25.518400, -56.930765)
 
 URL_TEMPLATE = (
     "https://copernicus-dem-30m.s3.amazonaws.com/"
@@ -171,7 +171,7 @@ def color_relief(dem_crop, transform):
     new_h = int(img.height * new_w / img.width)
     img2 = img.resize((new_w, new_h), Image.LANCZOS)
     rgb = img2.convert("RGB")
-    out_jpg = OUT / "dem_color_relief_20km.jpg"
+    out_jpg = OUT / "dem_color_relief_10km.jpg"
     rgb.save(out_jpg, "JPEG", quality=80)
     log(f"  wrote {out_jpg} ({out_jpg.stat().st_size/1024/1024:.2f} MB)")
     # Save bounds JSON for viewer
@@ -189,7 +189,7 @@ def main():
     contours, dem_crop, transform = compute_contours()
     fc = {
         "type": "FeatureCollection",
-        "name": "dem_contours_20km",
+        "name": "dem_contours_10km",
         "metadata": {
             "source": "Copernicus GLO-30 DEM, scikit-image marching-squares",
             "bbox": list(BBOX),
@@ -200,7 +200,7 @@ def main():
         },
         "features": contours,
     }
-    out = OUT / "dem_contours_20km.geojson"
+    out = OUT / "dem_contours_10km.geojson"
     out.write_text(json.dumps(fc, separators=(",", ":")))
     log(f"wrote {out} ({out.stat().st_size/1024/1024:.2f} MB, {len(contours)} contour segments)")
     color_relief(dem_crop, transform)
