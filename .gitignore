@@ -176,3 +176,7 @@ splats/exports/web/lqv-secrets/*
 # README.md in the dir explains re-population paths.
 docs/site_data_2026-06-13_snapshot/
 !docs/site_data_2026-06-13_snapshot/README.md
+
+# 20km OSM pull — regenerable via scripts/fetch_osm_20km.py (~30s)
+docs/site_data/osm_20km/
+splats/exports/web/data/osm_20km/

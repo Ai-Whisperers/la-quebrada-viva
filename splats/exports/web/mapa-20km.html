@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LQV · 20 km Context Map — all roads, water, towns, land use</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root {
+    --ink: #1c1917;
+    --paper: #faf7f2;
+    --cream: #f5efe6;
+    --gold: #c89b3c;
+    --gold-dark: #9c7728;
+    --line: #d6cfc1;
+    --muted: #78716c;
+    --accent-water: #2563eb;
+    --accent-roads: #f59e0b;
+    --accent-forest: #15803d;
+    --accent-towns: #be185d;
+    --accent-parcel: #c89b3c;
+    --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.04);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-serif; color: var(--ink); background: var(--paper); }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; }
+  a { color: var(--gold-dark); }
+
+  /* Top bar */
+  header.topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 24px; background: white; border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 1000;
+  }
+  header.topbar .brand { display: flex; align-items: baseline; gap: 12px; }
+  header.topbar .brand h1 { font-size: 1.4rem; line-height: 1; }
+  header.topbar .brand .sub { color: var(--muted); font-size: 0.85rem; }
+  header.topbar nav a { margin-left: 16px; text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.9rem; }
+  header.topbar nav a:hover { color: var(--gold-dark); }
+
+  /* Layout: map + sidebar */
+  .layout { display: grid; grid-template-columns: 320px 1fr; height: calc(100vh - 56px); }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; min-height: calc(100vh - 56px); } }
+
+  aside.sidebar {
+    background: white; border-right: 1px solid var(--line);
+    overflow-y: auto; padding: 0;
+  }
+  .sidebar-section { border-bottom: 1px solid var(--line); padding: 14px 18px; }
+  .sidebar-section h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
+  .layer-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 0; font-size: 0.92rem;
+    border-bottom: 1px dashed rgba(0,0,0,0.05);
+  }
+  .layer-row:last-child { border-bottom: 0; }
+  .layer-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--gold-dark); cursor: pointer; flex-shrink: 0; }
+  .layer-row .swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.15); }
+  .layer-row .name { flex: 1; cursor: pointer; }
+  .layer-row .count { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+  .layer-row .download { color: var(--gold-dark); text-decoration: none; font-size: 0.75rem; opacity: 0.7; }
+  .layer-row .download:hover { opacity: 1; text-decoration: underline; }
+
+  /* Map area */
+  .map-wrap { position: relative; }
+  #map { width: 100%; height: 100%; min-height: 70vh; background: #1a1a1a; }
+
+  /* Legend overlay */
+  .map-info {
+    position: absolute; bottom: 12px; left: 12px; z-index: 500;
+    background: rgba(255,255,255,0.95); padding: 10px 14px; border-radius: 8px;
+    box-shadow: var(--shadow); font-size: 0.85rem; max-width: 360px;
+  }
+  .map-info .row { display: flex; align-items: center; gap: 8px; padding: 2px 0; }
+  .map-info .swatch { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+  .map-info .scale-line { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.78rem; }
+
+  /* Top-right attribution + zoom */
+  .leaflet-control-attribution { font-size: 0.7rem !important; }
+
+  /* Loading state */
+  .loading-banner {
+    position: absolute; top: 12px; right: 12px; z-index: 500;
+    background: rgba(28,25,23,0.9); color: white; padding: 8px 14px; border-radius: 6px;
+    font-size: 0.85rem; box-shadow: var(--shadow);
+    transition: opacity 0.4s ease;
+  }
+  .loading-banner.hidden { opacity: 0; pointer-events: none; }
+
+  /* Basemap toggle (top-left of map) */
+  .basemap-toggle {
+    position: absolute; top: 12px; left: 12px; z-index: 500;
+    background: white; padding: 4px; border-radius: 6px; box-shadow: var(--shadow);
+    display: flex; gap: 2px;
+  }
+  .basemap-toggle button {
+    background: transparent; border: 0; padding: 6px 10px; font-size: 0.8rem; cursor: pointer; border-radius: 4px; font-family: inherit;
+  }
+  .basemap-toggle button.active { background: var(--ink); color: white; }
+
+  /* Action buttons */
+  .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .actions button {
+    background: var(--cream); border: 1px solid var(--line); padding: 8px 12px; border-radius: 6px;
+    cursor: pointer; font-size: 0.85rem; font-family: inherit; color: var(--ink);
+  }
+  .actions button:hover { background: var(--gold); color: white; border-color: var(--gold-dark); }
+
+  /* Status pill */
+  .status-pill {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    background: var(--cream); color: var(--muted); font-size: 0.75rem; font-weight: 500;
+  }
+  .status-pill.live { background: #dcfce7; color: #15803d; }
+
+  /* Help text */
+  .help { color: var(--muted); font-size: 0.82rem; line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>La Quebrada Viva</h1>
+    <span class="sub">20 km context map · toggleable data layers</span>
+  </div>
+  <nav>
+    <a href="./index.html">← Back to walkthrough</a>
+    <a href="./analysis-2026-07-04.html">Full analysis</a>
+    <a href="https://github.com/Ai-Whisperers/la-quebrada-viva">Repo</a>
+  </nav>
+</header>
+
+<div class="layout">
+
+  <!-- Sidebar with layer toggles -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <h3>Basemap</h3>
+      <div class="actions">
+        <button id="basemap-esri" class="active">Satellite</button>
+        <button id="basemap-topo">Topographic</button>
+        <button id="basemap-osm">OpenStreetMap</button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>LQV site layers <span class="status-pill live">● live</span></h3>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="parcel" checked />
+        <span class="swatch" style="background: var(--accent-parcel);"></span>
+        <span class="name">Property polygon (62 ha)</span>
+        <a class="download" href="./data/rv_boundary.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="canopy" />
+        <span class="swatch" style="background: #4ade80;"></span>
+        <span class="name">NDVI canopy classes</span>
+        <a class="download" href="./data/canopy_classes.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="streams" />
+        <span class="swatch" style="background: #60a5fa;"></span>
+        <span class="name">DEM streams (quebrada)</span>
+        <a class="download" href="./data/hydrography_dem_v2.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="aoi62" />
+        <span class="swatch" style="background: rgba(200,155,60,0.2); border: 1.5px dashed #c89b3c;"></span>
+        <span class="name">Extended AOI (62 ha cluster)</span>
+        <a class="download" href="./data/aoi_62ha_extended.geojson" download>↓</a>
+      </label>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>20 km OSM context <span class="status-pill live">● live</span></h3>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="roads" checked />
+        <span class="swatch" style="background: var(--accent-roads);"></span>
+        <span class="name">Roads &amp; tracks</span>
+        <span class="count" data-count="roads">—</span>
+        <a class="download" href="./data/osm_20km/roads.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="water" checked />
+        <span class="swatch" style="background: var(--accent-water);"></span>
+        <span class="name">Water bodies (lakes, reservoirs, wetlands)</span>
+        <span class="count" data-count="water">—</span>
+        <a class="download" href="./data/osm_20km/water.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="waterways" checked />
+        <span class="swatch" style="background: #60a5fa;"></span>
+        <span class="name">Streams &amp; rivers (lines)</span>
+        <span class="count" data-count="waterways">—</span>
+        <a class="download" href="./data/osm_20km/waterways.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="trees" />
+        <span class="swatch" style="background: var(--accent-forest);"></span>
+        <span class="name">Forest, woodland, trees</span>
+        <span class="count" data-count="trees">—</span>
+        <a class="download" href="./data/osm_20km/trees.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="buildings" />
+        <span class="swatch" style="background: #a3a3a3;"></span>
+        <span class="name">Buildings</span>
+        <span class="count" data-count="buildings">—</span>
+        <a class="download" href="./data/osm_20km/buildings.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="places" checked />
+        <span class="swatch" style="background: var(--accent-towns);"></span>
+        <span class="name">Towns &amp; villages</span>
+        <span class="count" data-count="places">—</span>
+        <a class="download" href="./data/osm_20km/places.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="pois" />
+        <span class="swatch" style="background: #c084fc;"></span>
+        <span class="name">POIs (hotels, restaurants, schools…)</span>
+        <span class="count" data-count="pois">—</span>
+        <a class="download" href="./data/osm_20km/pois.geojson" download>↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="landuse" />
+        <span class="swatch" style="background: #fde68a;"></span>
+        <span class="name">Land use (residential, farmland…)</span>
+        <span class="count" data-count="landuse">—</span>
+        <a class="download" href="./data/osm_20km/landuse.geojson" download>↓</a>
+      </label>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Actions</h3>
+      <div class="actions">
+        <button id="zoom-fit">Fit 20 km</button>
+        <button id="zoom-parcel">Zoom to parcel</button>
+        <button id="show-all">Show all layers</button>
+        <button id="hide-all">Hide overlays</button>
+      </div>
+      <p class="help" style="margin-top: 10px;">
+        Click a swatch in the legend to highlight its layer.
+        Hover a road, town or stream for its name.
+      </p>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>About this map</h3>
+      <p class="help">
+        All OpenStreetMap data was pulled fresh on 2026-07-05 via the Overpass API
+        for a 40 × 40 km box centred on the LQV polygon (-57.0355, -25.6073).
+        <br><br>
+        <strong>30,086 features</strong> across 8 categories.
+        Rural Paraguay is sparsely mapped — these counts are a lower bound.
+        <br><br>
+        The DEM-derived quebrada streams (<em>blue lines</em> inside the polygon)
+        come from Copernicus GLO-30 elevation, not OSM.
+      </p>
+    </div>
+
+  </aside>
+
+  <!-- Map -->
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div class="basemap-toggle" style="display:none"><!-- placeholder --></div>
+    <div class="loading-banner" id="loading">Loading 20 km data…</div>
+    <div class="map-info" id="legend">
+      <div class="row"><span class="swatch" style="background: var(--accent-parcel);"></span> LQV parcel (62 ha)</div>
+      <div class="row"><span class="swatch" style="background: var(--accent-roads);"></span> Roads &amp; tracks</div>
+      <div class="row"><span class="swatch" style="background: var(--accent-water);"></span> Water bodies</div>
+      <div class="row"><span class="swatch" style="background: #60a5fa;"></span> Streams &amp; rivers</div>
+      <div class="row"><span class="swatch" style="background: var(--accent-forest);"></span> Forest / woodland</div>
+      <div class="row"><span class="swatch" style="background: var(--accent-towns);"></span> Towns &amp; villages</div>
+      <div class="row"><span class="swatch" style="background: #c084fc;"></span> Points of interest</div>
+      <div class="scale-line" id="scale-line">Scale: — · drag to pan · scroll to zoom</div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ==============================================
+// LQV 20km context map — Leaflet, toggleable layers
+// ==============================================
+
+const F = (p) => fetch(p).then(r => r.ok ? r.json() : null).catch(e => { console.warn('fetch failed', p, e); return null; });
+
+// Canonical LQV centroid
+const LON = -57.035502;
+const LAT = -25.607336;
+const CENTER = [LAT, LON];
+
+// 20km radius bbox (S,W,N,E = -25.787, -57.232, -25.427, -56.839)
+const BBOX_20KM = [
+  [-25.787336, -57.231502],  // SW
+  [-25.427336, -56.839502]   // NE
+];
+
+// ---- Map init ----
+const map = L.map('map', {
+  center: CENTER,
+  zoom: 12,  // shows entire 20km context
+  zoomControl: true,
+  preferCanvas: true,   // critical for 30k features
+  worldCopyJump: false,
+});
+
+// Basemaps
+const baseEsri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 19,
+  attribution: 'Esri World Imagery'
+});
+const baseTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 19,
+  attribution: 'Esri Topographic'
+});
+const baseOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '© OpenStreetMap contributors'
+});
+
+let currentBase = baseEsri.addTo(map);
+
+document.getElementById('basemap-esri').onclick = () => switchBase(baseEsri, 'basemap-esri');
+document.getElementById('basemap-topo').onclick = () => switchBase(baseTopo, 'basemap-topo');
+document.getElementById('basemap-osm').onclick = () => switchBase(baseOSM, 'basemap-osm');
+
+function switchBase(layer, btnId) {
+  map.removeLayer(currentBase);
+  currentBase = layer.addTo(map);
+  ['basemap-esri','basemap-topo','basemap-osm'].forEach(id => {
+    document.getElementById(id).classList.toggle('active', id === btnId);
+  });
+}
+
+// Fit to 20km bbox
+map.fitBounds(BBOX_20KM, { padding: [20, 20] });
+
+// ---- Scale line ----
+L.control.scale({ imperial: false, position: 'bottomright' }).addTo(map);
+
+// ---- Layer container ----
+const layers = {};   // name → Leaflet layer
+const data = {};     // name → GeoJSON FeatureCollection
+
+// ---- Helpers ----
+function roadStyle(feature) {
+  const h = feature.properties.highway || '';
+  const map_ = {
+    trunk:        { color: '#dc2626', weight: 3.5, opacity: 0.95 },
+    primary:      { color: '#ea580c', weight: 3,   opacity: 0.95 },
+    secondary:    { color: '#f59e0b', weight: 2.5, opacity: 0.9 },
+    tertiary:     { color: '#fbbf24', weight: 2,   opacity: 0.9 },
+    residential:  { color: '#fef3c7', weight: 1.5, opacity: 0.85 },
+    unclassified: { color: '#d6d3d1', weight: 1.2, opacity: 0.8 },
+    service:      { color: '#e7e5e4', weight: 1,   opacity: 0.7 },
+    track:        { color: '#a8a29e', weight: 1,   opacity: 0.6, dashArray: '4 3' },
+    path:         { color: '#a8a29e', weight: 0.8, opacity: 0.5, dashArray: '2 3' },
+    footway:      { color: '#a8a29e', weight: 0.6, opacity: 0.4, dashArray: '1 3' },
+  };
+  return map_[h] || { color: '#fbbf24', weight: 1.2, opacity: 0.7 };
+}
+
+function landuseStyle(feature) {
+  const lu = feature.properties.landuse || feature.properties.landcover || '';
+  const map_ = {
+    forest:        { color: '#15803d', fillColor: '#15803d', fillOpacity: 0.18 },
+    residential:   { color: '#fbbf24', fillColor: '#fde68a', fillOpacity: 0.25 },
+    commercial:    { color: '#c084fc', fillColor: '#e9d5ff', fillOpacity: 0.3 },
+    industrial:    { color: '#6b7280', fillColor: '#d1d5db', fillOpacity: 0.3 },
+    farmland:      { color: '#a16207', fillColor: '#fde68a', fillOpacity: 0.2 },
+    farmyard:      { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.25 },
+    orchard:       { color: '#65a30d', fillColor: '#bef264', fillOpacity: 0.25 },
+    meadow:        { color: '#84cc16', fillColor: '#d9f99d', fillOpacity: 0.25 },
+    grass:         { color: '#84cc16', fillColor: '#d9f99d', fillOpacity: 0.2 },
+    vineyard:      { color: '#7e22ce', fillColor: '#e9d5ff', fillOpacity: 0.25 },
+    plant_nursery: { color: '#16a34a', fillColor: '#86efac', fillOpacity: 0.25 },
+    cemetery:      { color: '#404040', fillColor: '#a3a3a3', fillOpacity: 0.3 },
+    quarry:        { color: '#52525b', fillColor: '#a1a1aa', fillOpacity: 0.3 },
+    railway:       { color: '#1f2937', fillColor: '#6b7280', fillOpacity: 0.2 },
+    reservoir:     { color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.25 },
+  };
+  return map_[lu] || { color: '#fcd34d', fillColor: '#fef3c7', fillOpacity: 0.15, weight: 1 };
+}
+
+function treesStyle(feature) {
+  const t = feature.properties.natural || feature.properties.landuse || feature.properties.landcover || '';
+  const map_ = {
+    wood:     { color: '#14532d', fillColor: '#15803d', fillOpacity: 0.35 },
+    forest:   { color: '#14532d', fillColor: '#16a34a', fillOpacity: 0.4 },
+    tree_row: { color: '#16a34a', fillColor: '#22c55e', fillOpacity: 0.5 },
+    trees:    { color: '#166534', fillColor: '#22c55e', fillOpacity: 0.4 },
+    tree:     { color: '#16a34a', weight: 0, fillOpacity: 0 },
+    orchard:  { color: '#65a30d', fillColor: '#bef264', fillOpacity: 0.3 },
+    farmland: { color: '#a16207', fillColor: '#fde68a', fillOpacity: 0.2 },
+    meadow:   { color: '#84cc16', fillColor: '#d9f99d', fillOpacity: 0.25 },
+  };
+  if (t === 'tree') {
+    return { color: '#16a34a', radius: 2, fillColor: '#16a34a', fillOpacity: 0.7, weight: 0 };
+  }
+  return map_[t] || { color: '#16a34a', fillColor: '#22c55e', fillOpacity: 0.3 };
+}
+
+function placeStyle(feature) {
+  const p = feature.properties.place || '';
+  const map_ = {
+    city:      { radius: 12, color: '#be185d', fillColor: '#f472b6', weight: 2, fillOpacity: 0.9 },
+    town:      { radius: 9,  color: '#be185d', fillColor: '#f9a8d4', weight: 2, fillOpacity: 0.85 },
+    village:   { radius: 7,  color: '#be185d', fillColor: '#fbcfe8', weight: 1.5, fillOpacity: 0.8 },
+    hamlet:    { radius: 5,  color: '#9d174d', fillColor: '#fce7f3', weight: 1, fillOpacity: 0.7 },
+    suburb:    { radius: 6,  color: '#a21caf', fillColor: '#f5d0fe', weight: 1, fillOpacity: 0.7 },
+    neighbourhood: { radius: 6, color: '#a21caf', fillColor: '#f5d0fe', weight: 1, fillOpacity: 0.7 },
+    locality:  { radius: 4,  color: '#9d174d', fillColor: '#fbcfe8', weight: 1, fillOpacity: 0.6 },
+    isolated_dwelling: { radius: 4, color: '#9d174d', fillColor: '#fce7f3', weight: 1, fillOpacity: 0.6 },
+    farm:      { radius: 4,  color: '#9d174d', fillColor: '#fce7f3', weight: 1, fillOpacity: 0.6 },
+  };
+  return map_[p] || { radius: 5, color: '#9d174d', fillColor: '#fbcfe8', weight: 1, fillOpacity: 0.7 };
+}
+
+function buildingStyle(feature) {
+  const b = feature.properties.building || '';
+  const map_ = {
+    commercial: { color: '#7c3aed', fillColor: '#c4b5fd', fillOpacity: 0.55 },
+    industrial: { color: '#374151', fillColor: '#9ca3af', fillOpacity: 0.55 },
+    school:     { color: '#1d4ed8', fillColor: '#93c5fd', fillOpacity: 0.55 },
+    university: { color: '#1e40af', fillColor: '#bfdbfe', fillOpacity: 0.55 },
+    barn:       { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.5 },
+    cowshed:    { color: '#854d0e', fillColor: '#fcd34d', fillOpacity: 0.5 },
+    residential:{ color: '#78716c', fillColor: '#e7e5e4', fillOpacity: 0.5 },
+    house:      { color: '#78716c', fillColor: '#e7e5e4', fillOpacity: 0.5 },
+  };
+  return map_[b] || { color: '#78716c', fillColor: '#d6d3d1', fillOpacity: 0.45, weight: 0.5 };
+}
+
+function waterStyle() { return { color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.5, weight: 1 }; }
+function waterwaysStyle(feature) {
+  const w = feature.properties.waterway || '';
+  const map_ = {
+    river: { color: '#1e40af', weight: 3.5, opacity: 0.9 },
+    stream: { color: '#3b82f6', weight: 2, opacity: 0.85 },
+    ditch: { color: '#60a5fa', weight: 1.2, opacity: 0.7 },
+    drain: { color: '#60a5fa', weight: 1.2, opacity: 0.7 },
+    tidal_channel: { color: '#3b82f6', weight: 1.5, opacity: 0.8 },
+    dam:   { color: '#1e3a8a', weight: 3, opacity: 0.9 },
+  };
+  return map_[w] || { color: '#3b82f6', weight: 1.5, opacity: 0.8 };
+}
+
+function poisStyle(feature) {
+  const t = feature.properties.amenity || feature.properties.tourism || feature.properties.shop || feature.properties.leisure || '';
+  const isAcc = ['hospital','police','bank','school','university','pharmacy','fuel','place_of_worship'].includes(t);
+  return isAcc
+    ? { radius: 6, color: '#7e22ce', fillColor: '#e9d5ff', weight: 1.5, fillOpacity: 0.9 }
+    : { radius: 4, color: '#a855f7', fillColor: '#f3e8ff', weight: 1, fillOpacity: 0.85 };
+}
+
+// ---- Layer loaders ----
+async function loadLQVLayer(name, src, styleFn, geomType) {
+  const fc = await F(src);
+  if (!fc || !fc.features) return;
+  data[name] = fc;
+  document.querySelector(`[data-count="${name}"]`)?.replaceChildren(document.createTextNode(fc.features.length.toLocaleString()));
+  const layer = L.geoJSON(fc, {
+    style: styleFn,
+    pointToLayer: (feature, latlng) => {
+      const s = styleFn(feature);
+      return L.circleMarker(latlng, s);
+    },
+    onEachFeature: (feature, lyr) => {
+      const p = feature.properties || {};
+      const label = p.name || p.highway || p.waterway || p.place || p.amenity || p.natural || p.landuse || p.building || '';
+      const detailParts = [];
+      if (p['addr:street']) detailParts.push(p['addr:street']);
+      if (p['addr:city']) detailParts.push(p['addr:city']);
+      if (label) lyr.bindTooltip(label, { sticky: true, direction: 'top', className: 'lqv-tip' });
+      if (Object.keys(p).length) {
+        lyr.bindPopup(`<strong>${label || name}</strong><br><pre style="margin:6px 0;font-size:11px;max-height:200px;overflow:auto;">${escape(JSON.stringify(p, null, 0).slice(0, 400))}</pre>`);
+      }
+    }
+  });
+  layers[name] = layer;
+}
+
+async function loadParcel() {
+  const fc = await F('./data/rv_boundary.geojson');
+  if (!fc || !fc.features) return;
+  data.parcel = fc;
+  const layer = L.geoJSON(fc, {
+    style: { color: '#c89b3c', weight: 3, fillColor: '#c89b3c', fillOpacity: 0.05, dashArray: '6 4' },
+    onEachFeature: (feature, lyr) => {
+      lyr.bindPopup('<strong>La Quebrada Viva</strong><br>62.0 ha · 8-vertex polygon<br>Wesley van de Camp escritura 2026-06-27');
+    }
+  });
+  layers.parcel = layer.addTo(map);
+  layers.parcel.bringToFront();
+}
+
+async function loadCanopy() {
+  const fc = await F('./data/canopy_classes.geojson');
+  if (!fc || !fc.features) return;
+  data.canopy = fc;
+  const layer = L.geoJSON(fc, {
+    style: (feature) => {
+      const cls = feature.properties.class || feature.properties.ndvi_class || 0;
+      const colors = ['#86efac', '#4ade80', '#16a34a', '#14532d'];
+      const opa = [0.35, 0.4, 0.45, 0.5];
+      return { color: colors[cls] || '#4ade80', fillColor: colors[cls] || '#4ade80', fillOpacity: opa[cls] || 0.4, weight: 0.5 };
+    }
+  });
+  layers.canopy = layer;
+}
+
+async function loadStreams() {
+  const fc = await F('./data/hydrography_dem_v2.geojson');
+  if (!fc || !fc.features) return;
+  data.streams = fc;
+  const layer = L.geoJSON(fc, {
+    style: (feature) => {
+      const cls = feature.properties.class || feature.properties.type || '';
+      if (cls === 'main' || cls === 'main_channel') return { color: '#1d4ed8', weight: 3, opacity: 0.9 };
+      return { color: '#3b82f6', weight: 1.8, opacity: 0.75 };
+    }
+  });
+  layers.streams = layer;
+}
+
+async function loadAOI62() {
+  const fc = await F('./data/aoi_62ha_extended.geojson');
+  if (!fc || !fc.features) return;
+  data.aoi62 = fc;
+  const layer = L.geoJSON(fc, {
+    style: { color: '#c89b3c', weight: 2, fillColor: 'transparent', fillOpacity: 0, dashArray: '8 5' }
+  });
+  layers.aoi62 = layer;
+}
+
+function escape(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// ---- Boot ----
+(async function boot() {
+  await loadParcel();
+  await loadCanopy();
+  await loadStreams();
+  await loadAOI62();
+
+  // OSM 20km layers
+  await Promise.all([
+    loadLQVLayer('roads',      './data/osm_20km/roads.geojson',      roadStyle),
+    loadLQVLayer('water',      './data/osm_20km/water.geojson',      waterStyle),
+    loadLQVLayer('waterways',  './data/osm_20km/waterways.geojson',  waterwaysStyle),
+    loadLQVLayer('trees',      './data/osm_20km/trees.geojson',      treesStyle),
+    loadLQVLayer('buildings',  './data/osm_20km/buildings.geojson',  buildingStyle),
+    loadLQVLayer('places',     './data/osm_20km/places.geojson',     placeStyle),
+    loadLQVLayer('pois',       './data/osm_20km/pois.geojson',       poisStyle),
+    loadLQVLayer('landuse',    './data/osm_20km/landuse.geojson',    landuseStyle),
+  ]);
+
+  // Default-on layers (already in checkbox checked state)
+  ['roads','water','waterways','places'].forEach(n => {
+    if (layers[n]) layers[n].addTo(map);
+  });
+
+  // Re-fit so the whole 20km context is visible
+  map.fitBounds(BBOX_20KM, { padding: [20, 20] });
+
+  // Hide loading banner
+  setTimeout(() => document.getElementById('loading').classList.add('hidden'), 600);
+
+  // Update scale legend
+  setTimeout(() => {
+    const centre = map.getCenter();
+    const zoom = map.getZoom();
+    document.getElementById('scale-line').innerHTML =
+      `Zoom ${zoom} · centre ${centre.lat.toFixed(3)}, ${centre.lng.toFixed(3)} · drag to pan · scroll to zoom`;
+  }, 800);
+})();
+
+// ---- Toggle handlers ----
+document.querySelectorAll('[data-layer]').forEach(cb => {
+  cb.addEventListener('change', e => {
+    const name = cb.dataset.layer;
+    const lyr = layers[name];
+    if (!lyr) return;
+    if (cb.checked) {
+      lyr.addTo(map);
+      if (name === 'parcel') lyr.bringToFront();
+    } else {
+      map.removeLayer(lyr);
+    }
+  });
+});
+
+// ---- Action buttons ----
+document.getElementById('zoom-fit').onclick = () => map.fitBounds(BBOX_20KM, { padding: [20, 20] });
+document.getElementById('zoom-parcel').onclick = () => {
+  if (data.parcel) {
+    map.fitBounds(layers.parcel.getBounds(), { padding: [40, 40], maxZoom: 16 });
+  }
+};
+document.getElementById('show-all').onclick = () => {
+  document.querySelectorAll('[data-layer]').forEach(cb => {
+    if (!cb.checked) {
+      cb.checked = true;
+      cb.dispatchEvent(new Event('change'));
+    }
+  });
+};
+document.getElementById('hide-all').onclick = () => {
+  document.querySelectorAll('[data-layer]').forEach(cb => {
+    // keep parcel & roads on by default
+    if (['parcel','roads','water','waterways','places'].includes(cb.dataset.layer)) return;
+    if (cb.checked) {
+      cb.checked = false;
+      cb.dispatchEvent(new Event('change'));
+    }
+  });
+};
+
+// Update scale legend when map moves
+map.on('moveend zoomend', () => {
+  const c = map.getCenter();
+  document.getElementById('scale-line').innerHTML =
+    `Zoom ${map.getZoom()} · centre ${c.lat.toFixed(3)}, ${c.lng.toFixed(3)} · drag to pan · scroll to zoom`;
+});
+</script>
+</body>
+</html>
