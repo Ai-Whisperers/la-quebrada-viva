@@ -339,6 +339,62 @@
         <span class="name"><strong>Hillshade backdrop</strong> &mdash; shaded relief from DEM &mdash; shows ridges &amp; valleys</span>
         <input type="range" class="opacity" data-opacity="hillshade" min="0.2" max="0.9" step="0.05" value="0.5" />
       </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="color-relief" />
+        <span class="swatch" style="background: linear-gradient(to right, #94c864 0%, #c2c068 50%, #914530 100%);"></span>
+        <span class="name"><strong>Elevation colour-relief</strong> &mdash; green lowlands → brown uplands</span>
+        <input type="range" class="opacity" data-opacity="color-relief" min="0.2" max="0.9" step="0.05" value="0.5" />
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="contours" />
+        <span class="swatch" style="background: linear-gradient(to right, #f0f9ff 11%, #38bdf8 33%, #0284c7 55%, #0c4a6e 100%);"></span>
+        <span class="name"><strong>Elevation contours</strong> &mdash; 50 m steps
+          (<span data-count="contours">—</span> segments)</span>
+        <input type="range" class="opacity" data-opacity="contours" min="0.3" max="1" step="0.05" value="0.8" />
+        <a class="download" href="./data/dem_contours_20km.geojson" download title="Download DEM contours">↓</a>
+      </label>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Land cover &amp; forest change <span class="status-pill" style="background:#fefce8;color:#854d0e;">MapBiomas · Hansen</span></h3>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="mapbiomas" />
+        <span class="swatch" style="background: linear-gradient(to right, #16a34a 0% 30%, #bef264 30% 50%, #fbbf24 50% 70%, #f97316 70% 85%, #94a3b8 85% 100%);"></span>
+        <span class="name"><strong>MapBiomas 2023 land cover</strong> &mdash; 7 classes, all of Escobar &mdash;
+          (<span data-count="mapbiomas">—</span> polygons)</span>
+        <input type="range" class="opacity" data-opacity="mapbiomas" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/mapbiomas_2023_20km.geojson" download title="Download land cover">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="hansen-loss" />
+        <span class="swatch" style="background: #dc2626;"></span>
+        <span class="name"><strong>Hansen forest loss</strong> &mdash; 2001-2024 deforestation
+          (<span data-count="hansen-loss">—</span> patches)</span>
+        <input type="range" class="opacity" data-opacity="hansen-loss" min="0.3" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/hansen_loss_20km.geojson" download title="Download forest loss">↓</a>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="hansen-gain" />
+        <span class="swatch" style="background: #22c55e;"></span>
+        <span class="name"><strong>Hansen forest gain</strong> &mdash; 2000-2012 regrowth
+          (<span data-count="hansen-gain">—</span> patches)</span>
+        <input type="range" class="opacity" data-opacity="hansen-gain" min="0.3" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/hansen_gain_20km.geojson" download title="Download forest gain">↓</a>
+      </label>
+      <p class="help" style="margin-top:6px; font-size:0.78rem;">
+        <strong>MapBiomas Paraguay Collection 2 (2023)</strong> is a 30 m
+        land-cover raster covering 100 km around LQV. The 7 most
+        common classes are polygonised: Forest Formation
+        (upland), Flooded Forest (gallery along quebradas),
+        Forest Plantation (palm), Wetland, Grassland, Pasture, and
+        Agriculture.
+        <br><strong>Hansen GFC v1.12</strong> covers global forest
+        loss / gain 2001-2024. The 20 km box has roughly
+        <span data-count="hansen-loss">—</span> deforestation patches and
+        <span data-count="hansen-gain">—</span> regrowth patches
+        (most patches are 30 m single-pixel fragments — only the
+        200 m<sup>2</sup>+ clusters are listed).
+      </p>
       <p class="help" style="margin-top:6px; font-size:0.78rem;">
         <strong>DEM quebrada network</strong> is computed from the Copernicus
         GLO-30 (30 m DEM) using D8 flow direction + flow-accumulation.
@@ -1275,6 +1331,113 @@ updateParcelLabel();
     data['hillshade'] = { bounds: hsBounds };
   } catch (err) {
     console.warn('hillshade load failed:', err);
+  }
+
+  // 9d. Elevation colour-relief (green lowland → brown upland).
+  try {
+    const r = await fetch('./data/dem_color_relief_bounds.json');
+    if (!r.ok) throw new Error(`relief bounds HTTP ${r.status}`);
+    const reliefBounds = await r.json();
+    layers['color-relief'] = L.imageOverlay(
+      './data/dem_color_relief_20km.jpg',
+      [
+        [reliefBounds.min_lat, reliefBounds.min_lon],
+        [reliefBounds.max_lat, reliefBounds.max_lon],
+      ],
+      { opacity: 0.5, interactive: false, className: 'relief' },
+    );
+    data['color-relief'] = { bounds: reliefBounds };
+  } catch (err) {
+    console.warn('color-relief load failed:', err);
+  }
+
+  // 9e. Elevation contours (LineString, 50 m steps).
+  const contoursFc = await F('./data/dem_contours_20km.geojson');
+  if (contoursFc && contoursFc.features && contoursFc.features.length) {
+    data['contours'] = contoursFc;
+    setLayerCount('contours', contoursFc.features.length);
+    layers['contours'] = L.geoJSON(contoursFc, {
+      style: (feature) => {
+        const elev = feature.properties.elev_m;
+        const color = feature.properties.color || '#0c4a6e';
+        const weight = (elev % 100) === 0 ? 1.6 : 0.8;   // every 100 m thicker
+        return { color, weight, opacity: 0.85 };
+      },
+      onEachFeature: (feature, lyr) => {
+        lyr.bindTooltip(`${feature.properties.elev_label} contour`, {
+          sticky: true, direction: 'top', className: 'lqv-tooltip',
+        });
+      },
+    });
+  }
+
+  // 9f. MapBiomas Paraguay 2023 land-cover (7-class polygons covering
+  // the 20 km box at 30 m resolution).
+  const mapbiomasFc = await F('./data/mapbiomas_2023_20km.geojson');
+  if (mapbiomasFc && mapbiomasFc.features && mapbiomasFc.features.length) {
+    data['mapbiomas'] = mapbiomasFc;
+    setLayerCount('mapbiomas', mapbiomasFc.features.length);
+    layers['mapbiomas'] = L.geoJSON(mapbiomasFc, {
+      style: (feature) => {
+        const p = feature.properties || {};
+        return {
+          color: p.color || '#16a34a',
+          fillColor: p.color || '#16a34a',
+          fillOpacity: 0.45,
+          weight: 0.4,
+        };
+      },
+      onEachFeature: (feature, lyr) => {
+        const p = feature.properties || {};
+        lyr.bindTooltip(
+          `<strong>${p.name || 'land cover'}</strong><br>` +
+          `MapBiomas class ${p.class_code}<br>` +
+          `${p.pixel_count || 0} pixels (${Math.round((p.pixel_count || 0) * 0.09 * 100)/100} ha)<br>` +
+          `${p.source || ''}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
+    });
+  }
+
+  // 9g. Hansen forest loss (red patches 2001-2024).
+  const lossFc = await F('./data/hansen_loss_20km.geojson');
+  if (lossFc && lossFc.features && lossFc.features.length) {
+    data['hansen-loss'] = lossFc;
+    setLayerCount('hansen-loss', lossFc.features.length);
+    layers['hansen-loss'] = L.geoJSON(lossFc, {
+      style: {
+        color: '#dc2626', weight: 0.8, fillColor: '#dc2626',
+        fillOpacity: 0.55,
+      },
+      onEachFeature: (feature, lyr) => {
+        lyr.bindTooltip(
+          `<strong>Forest loss</strong> (Hansen GFC v1.12)<br>` +
+          `${feature.properties.source || ''}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
+    });
+  }
+
+  // 9h. Hansen forest gain (green patches 2000-2012).
+  const gainFc = await F('./data/hansen_gain_20km.geojson');
+  if (gainFc && gainFc.features && gainFc.features.length) {
+    data['hansen-gain'] = gainFc;
+    setLayerCount('hansen-gain', gainFc.features.length);
+    layers['hansen-gain'] = L.geoJSON(gainFc, {
+      style: {
+        color: '#22c55e', weight: 0.8, fillColor: '#22c55e',
+        fillOpacity: 0.55,
+      },
+      onEachFeature: (feature, lyr) => {
+        lyr.bindTooltip(
+          `<strong>Forest gain</strong> (Hansen GFC v1.12)<br>` +
+          `${feature.properties.source || ''}`,
+          { sticky: true, direction: 'top', className: 'lqv-tooltip' }
+        );
+      },
+    });
   }
 
   // 2. OSM 20km layers
