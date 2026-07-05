@@ -63,11 +63,10 @@
     overflow-y: auto; padding: 0;
   }
   .sidebar-section { border-bottom: 1px solid var(--line); padding: 14px 18px; }
-  .sidebar-section h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
+  .sidebar-section h3 { font-family: 'Inter', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.10em; color: var(--gold-dark); margin: 0 0 10px 0; font-weight: 700; border-bottom: 1px solid rgba(180, 130, 50, 0.15); padding-bottom: 6px; }
   .layer-row {
-    display: flex; align-items: center; gap: 10px;
-    padding: 6px 0; font-size: 0.92rem;
-    border-bottom: 1px dashed rgba(0,0,0,0.05);
+    display: flex; align-items: center; gap: 8px; padding: 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
   }
   .layer-row:last-child { border-bottom: 0; }
   .layer-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--gold-dark); cursor: pointer; flex-shrink: 0; }
@@ -75,14 +74,16 @@
   .legend-table { border-collapse: collapse; }
   .legend-table td { padding: 2px 8px 2px 4px; vertical-align: middle; }
   .legend-table td:first-child { width: 36px; }
-  .layer-row .name { flex: 1; cursor: pointer; }
+  .layer-row .name { flex: 1; cursor: pointer; font-size: 0.85rem; line-height: 1.3; }
+  .layer-row .name small { color: var(--muted); }
   .layer-row .count { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
   .layer-row .download { color: var(--gold-dark); text-decoration: none; font-size: 0.75rem; opacity: 0.7; }
   .layer-row .download:hover { opacity: 1; text-decoration: underline; }
   .layer-row .opacity {
-    width: 60px; cursor: pointer; accent-color: var(--gold-dark);
-    vertical-align: middle; margin: 0 4px;
+    width: 60px; flex-shrink: 0; accent-color: var(--gold);
   }
+  .layer-row:has(input:checked) .name { color: var(--text); }
+  .layer-row:not(:has(input:checked)) .name { color: var(--muted); }
 
   /* Map area */
   .map-wrap { position: relative; }
@@ -231,8 +232,92 @@
 
 <div class="layout">
 
-  <aside class="sidebar" id="sidebar">
+<aside class="sidebar" id="sidebar">
 
+    <!-- ════════════════════════════════════════════════════════════════
+         1 · PROPERTY — what we own
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Property — what we own</h3>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="parcel" checked />
+        <span class="swatch" style="background: var(--gold);"></span>
+        <span class="name">GPS-walked perimeter · <b>71.4 ha</b></span>
+        <input type="range" class="opacity" data-opacity="parcel" min="0.2" max="1" step="0.05" value="0.18" />
+        <a class="download" href="./data/client_gps/client_gps_polygon.geojson" download title="Download GPS polygon">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-corners" checked />
+        <span class="swatch" style="background: #fef3c7; border: 1.5px solid var(--gold);"></span>
+        <span class="name">GPS corners · 17 walked</span>
+        <span class="count" data-count="gps-corners">—</span>
+        <a class="download" href="./data/client_gps/client_gps_corners.geojson" download title="Download corner points">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-features" checked />
+        <span class="swatch" style="background: #1d4ed8;"></span>
+        <span class="name">Named features · gate, waterfall, summit</span>
+        <span class="count" data-count="gps-features">—</span>
+        <a class="download" href="./data/client_gps/client_gps_features.geojson" download title="Download named features">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="escobar-legacy" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #94a3b8;"></span>
+        <span class="name"><small>Legacy: 30.9 ha KML subset</small></span>
+        <a class="download" href="./data/client_gps/escobar_polygon_legacy.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="aoi62-legacy" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #a8a29e;"></span>
+        <span class="name"><small>Legacy: 62 ha AOI buffer</small></span>
+        <a class="download" href="./data/client_gps/aoi_62_extended_legacy.geojson" download title="Download">↓</a>
+      </label>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         2 · WES'S WALK — the survey (the WOW demo)
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Wes's walk — captured in time order</h3>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-walking-path" checked />
+        <span class="swatch" style="background: transparent; border: 2px solid #f59e0b;"></span>
+        <span class="name"><strong>Walking track</strong> · 20 GPS pts + timestamps</span>
+        <input type="range" class="opacity" data-opacity="gps-walking-path" min="0.3" max="1" step="0.05" value="0.9" />
+        <a class="download" href="./data/client_gps/client_gps_walking_path.geojson" download title="Download walking track">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="gps-sessions" />
+        <span class="swatch" style="background: linear-gradient(to right, #a855f7 50%, #f59e0b 50%);"></span>
+        <span class="name"><small>By session: 06-22 purple, 06-28 orange</small></span>
+        <input type="range" class="opacity" data-opacity="gps-sessions" min="0.3" max="1" step="0.05" value="0.9" />
+        <a class="download" href="./data/client_gps/client_gps_walking_sessions.geojson" download title="Download per-session">↓</a>
+      </label>
+
+      <div style="margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+        <button id="replay-btn" style="flex: 1;">▶ Replay walk</button>
+        <span id="replay-status" style="color: var(--muted); font-size: 0.78rem;"></span>
+      </div>
+      <input type="range" id="replay-time" min="0" max="100" value="0" step="1"
+             style="width: 100%; accent-color: var(--gold-dark); margin-top: 6px; cursor: pointer;" />
+
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        <strong>2 walks</strong> · 06-22 (5 pts, 36 min) + 06-28 (15 pts, 2h 13 min).
+        <br><strong>Span</strong> · 06-22 15:37 → 06-28 14:18 UTC. Click <em>Replay</em> to watch the
+        perimeter built in time order. Drag the slider to scrub.
+      </p>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         3 · BASEMAP
+         ════════════════════════════════════════════════════════════════ -->
     <div class="sidebar-section">
       <h3>Basemap</h3>
       <div class="actions">
@@ -242,318 +327,209 @@
       </div>
     </div>
 
+    <!-- ════════════════════════════════════════════════════════════════
+         4 · WATER — all hydrology across the 20 km box
+         ════════════════════════════════════════════════════════════════ -->
     <div class="sidebar-section">
-      <h3>LQV · client GPS perimeter <span class="status-pill live">● live</span></h3>
+      <h3>Water — how it moves through the land</h3>
 
-      <label class="layer-row">
-        <input type="checkbox" data-layer="parcel" checked />
-        <span class="swatch" style="background: var(--gold);"></span>
-        <span class="name">GPS-walked perimeter · <b>71.4 ha</b></span>
-        <input type="range" class="opacity" data-opacity="parcel" min="0.2" max="1" step="0.05" value="0.18" />
-        <a class="download" href="./data/client_gps/client_gps_polygon.geojson" download title="Download client GPS polygon">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="gps-corners" checked />
-        <span class="swatch" style="background: #fef3c7; border: 1.5px solid var(--gold);"></span>
-        <span class="name">GPS corners (17 walked)</span>
-        <span class="count" data-count="gps-corners">—</span>
-        <a class="download" href="./data/client_gps/client_gps_corners.geojson" download title="Download corner points">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="gps-features" checked />
-        <span class="swatch" style="background: #1d4ed8;"></span>
-        <span class="name">GPS features (gate, waterfall, summit)</span>
-        <span class="count" data-count="gps-features">—</span>
-        <a class="download" href="./data/client_gps/client_gps_features.geojson" download title="Download named features">↓</a>
-      </label>
-    <div class="sidebar-section">
-      <h3>Canopy &mdash; NDVI (Sentinel-2) <span class="status-pill" style="background:#f0fdf4;color:#14532d;">all of Escobar</span></h3>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="canopy-20km" checked />
-        <span class="swatch" style="background: linear-gradient(to right,#a16207 25%, #84cc16 25% 50%, #22c55e 50% 75%, #14532d 75%);"></span>
-        <span class="name"><strong>NDVI canopy 20 km</strong> &mdash;
-          4 classes covering <em>all of Escobar</em>:
-          <span data-count="canopy-20km">—</span> polygons
-          &middot; ~3,000 Sentinel-2 L2A polygons</span>
-        <input type="range" class="opacity" data-opacity="canopy-20km" min="0.1" max="1" step="0.05" value="0.55" />
-        <a class="download" href="./data/ndvi_canopy_20km.geojson" download title="Download NDVI polygons">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="canopy-legacy" />
-        <span class="swatch" style="background: #84cc16;"></span>
-        <span class="name">NDVI canopy (property only, ~62 ha) &mdash; legacy</span>
-        <input type="range" class="opacity" data-opacity="canopy-legacy" min="0.1" max="1" step="0.05" value="0.5" />
-        <a class="download" href="./data/canopy_classes.geojson" download title="legacy property-scale NDVI">↓</a>
-      </label>
-      <table class="legend-table" style="margin-top: 6px; font-size: 0.78rem;">
-        <tr><td><span style="background:#a16207;color:#fff;padding:0 6px">0</span></td><td>Bare / grassland &lt; 0.25</td></tr>
-        <tr><td><span style="background:#84cc16;color:#000;padding:0 6px">1</span></td><td>Sparse woody 0.25–0.45</td></tr>
-        <tr><td><span style="background:#22c55e;color:#000;padding:0 6px">2</span></td><td>Open forest 0.45–0.60 <em>(typical LQV)</em></td></tr>
-        <tr><td><span style="background:#14532d;color:#fff;padding:0 6px">3</span></td><td>Dense forest &gt; 0.60</td></tr>
-      </table>
-      <p class="help" style="margin-top:6px; font-size:0.78rem;">
-        <strong>NDVI 20 km</strong> uses Sentinel-2 L2A (mosaic of 2 MGRS
-        tiles over the 40 km box, cloud &lt; 20%). The bins are tuned
-        for <strong>Paraguayan Atlantic Forest</strong> where NDVI maxes
-        out near 0.68 — so the “dense forest” bin is real but rare
-        (gallery forests along quebradas).
-      </p>
-    </div>
-
-    <div class="sidebar-section">
-      <h3>Creeks &amp; streams &mdash; DEM quebrada network <span class="status-pill" style="background:#eff6ff;color:#1d4ed8;">all of Escobar</span></h3>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="streams-20km" checked />
-        <span class="swatch" style="background: linear-gradient(to right,#0c4a6e 0 35%, #3b82f6 35% 60%, #93c5fd 60% 100%);"></span>
-        <span class="name"><strong>DEM quebrada streams 20 km</strong> &mdash;
-          Copernicus GLO-30 + D8 + flow-accum &mdash; all of Escobar:
-          <span data-count="streams-20km">—</span> segments</span>
-        <input type="range" class="opacity" data-opacity="streams-20km" min="0.2" max="1" step="0.05" value="0.85" />
-        <a class="download" href="./data/dem_streams_20km.geojson" download title="Download DEM streams">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="streams" />
-        <span class="swatch" style="background: #93c5fd;"></span>
-        <span class="name">DEM quebrada streams (legacy, ~62 ha)</span>
-        <input type="range" class="opacity" data-opacity="streams" min="0.2" max="1" step="0.05" value="0.85" />
-        <a class="download" href="./data/hydrography_dem_v2.geojson" download title="legacy property-scale">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="combined-water" checked />
-        <span class="swatch" style="background: linear-gradient(to right,#0c4a6e 0 30%, #0ea5e9 30% 50%, #a78bfa 50% 70%, #f87171 70% 100%);"></span>
-        <span class="name"><strong>COMBINED water + creeks</strong> &mdash; OSM waterways + DEM streams + OSM polygons + JRC water bodies &mdash; <span data-count="combined-water">—</span> features</span>
-        <input type="range" class="opacity" data-opacity="combined-water" min="0.2" max="1" step="0.05" value="0.7" />
-        <a class="download" href="./data/water_combined_20km.geojson" download title="Download combined water">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="flow-arrows" />
-        <span class="swatch" style="background: #1d4ed8; clip-path: polygon(0% 50%, 50% 0%, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);"></span>
-        <span class="name"><strong>Flow direction arrows</strong> &mdash; DEM-derived &mdash; shows which way water flows
-          (<span data-count="flow-arrows">—</span> markers)</span>
-        <input type="range" class="opacity" data-opacity="flow-arrows" min="0.2" max="1" step="0.05" value="0.95" />
-        <a class="download" href="./data/dem_streams_arrows_20km.geojson" download title="Download flow arrows">↓</a>
-      </label>
       <label class="layer-row">
         <input type="checkbox" data-layer="hillshade" />
         <span class="swatch" style="background: linear-gradient(45deg, #444 25%, #aaa 25% 50%, #444 50% 75%, #aaa 75%);"></span>
-        <span class="name"><strong>Hillshade backdrop</strong> &mdash; shaded relief from DEM &mdash; shows ridges &amp; valleys</span>
-        <input type="range" class="opacity" data-opacity="hillshade" min="0.2" max="0.9" step="0.05" value="0.5" />
+        <span class="name">Hillshade · why streams sit where they do</span>
+        <input type="range" class="opacity" data-opacity="hillshade" min="0.2" max="0.9" step="0.05" value="0.55" />
       </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="color-relief" />
-        <span class="swatch" style="background: linear-gradient(to right, #94c864 0%, #c2c068 50%, #914530 100%);"></span>
-        <span class="name"><strong>Elevation colour-relief</strong> &mdash; green lowlands → brown uplands</span>
-        <input type="range" class="opacity" data-opacity="color-relief" min="0.2" max="0.9" step="0.05" value="0.5" />
-      </label>
+
       <label class="layer-row">
         <input type="checkbox" data-layer="contours" />
         <span class="swatch" style="background: linear-gradient(to right, #f0f9ff 11%, #38bdf8 33%, #0284c7 55%, #0c4a6e 100%);"></span>
-        <span class="name"><strong>Elevation contours</strong> &mdash; 50 m steps
-          (<span data-count="contours">—</span> segments)</span>
+        <span class="name">Elevation contours · 50 m steps (<span data-count="contours">—</span>)</span>
         <input type="range" class="opacity" data-opacity="contours" min="0.3" max="1" step="0.05" value="0.8" />
-        <a class="download" href="./data/dem_contours_20km.geojson" download title="Download DEM contours">↓</a>
+        <a class="download" href="./data/dem_contours_20km.geojson" download title="Download contours">↓</a>
       </label>
-    </div>
 
-    <div class="sidebar-section">
-      <h3>Land cover &amp; forest change <span class="status-pill" style="background:#fefce8;color:#854d0e;">MapBiomas · Hansen</span></h3>
       <label class="layer-row">
-        <input type="checkbox" data-layer="mapbiomas" />
-        <span class="swatch" style="background: linear-gradient(to right, #16a34a 0% 30%, #bef264 30% 50%, #fbbf24 50% 70%, #f97316 70% 85%, #94a3b8 85% 100%);"></span>
-        <span class="name"><strong>MapBiomas 2023 land cover</strong> &mdash; 7 classes, all of Escobar &mdash;
-          (<span data-count="mapbiomas">—</span> polygons)</span>
-        <input type="range" class="opacity" data-opacity="mapbiomas" min="0.1" max="1" step="0.05" value="0.55" />
-        <a class="download" href="./data/mapbiomas_2023_20km.geojson" download title="Download land cover">↓</a>
+        <input type="checkbox" data-layer="color-relief" />
+        <span class="swatch" style="background: linear-gradient(to right, #94c864 0%, #c2c068 50%, #914530 100%);"></span>
+        <span class="name">Elevation colour-relief · green lowlands → brown uplands</span>
+        <input type="range" class="opacity" data-opacity="color-relief" min="0.2" max="0.9" step="0.05" value="0.5" />
       </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="hansen-loss" />
-        <span class="swatch" style="background: #dc2626;"></span>
-        <span class="name"><strong>Hansen forest loss</strong> &mdash; 2001-2024 deforestation
-          (<span data-count="hansen-loss">—</span> patches)</span>
-        <input type="range" class="opacity" data-opacity="hansen-loss" min="0.3" max="1" step="0.05" value="0.85" />
-        <a class="download" href="./data/hansen_loss_20km.geojson" download title="Download forest loss">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="hansen-gain" />
-        <span class="swatch" style="background: #22c55e;"></span>
-        <span class="name"><strong>Hansen forest gain</strong> &mdash; 2000-2012 regrowth
-          (<span data-count="hansen-gain">—</span> patches)</span>
-        <input type="range" class="opacity" data-opacity="hansen-gain" min="0.3" max="1" step="0.05" value="0.85" />
-        <a class="download" href="./data/hansen_gain_20km.geojson" download title="Download forest gain">↓</a>
-      </label>
-      <p class="help" style="margin-top:6px; font-size:0.78rem;">
-        <strong>MapBiomas Paraguay Collection 2 (2023)</strong> is a 30 m
-        land-cover raster covering 100 km around LQV. The 7 most
-        common classes are polygonised: Forest Formation
-        (upland), Flooded Forest (gallery along quebradas),
-        Forest Plantation (palm), Wetland, Grassland, Pasture, and
-        Agriculture.
-        <br><strong>Hansen GFC v1.12</strong> covers global forest
-        loss / gain 2001-2024. The 20 km box has roughly
-        <span data-count="hansen-loss">—</span> deforestation patches and
-        <span data-count="hansen-gain">—</span> regrowth patches
-        (most patches are 30 m single-pixel fragments — only the
-        200 m<sup>2</sup>+ clusters are listed).
-      </p>
-      <p class="help" style="margin-top:6px; font-size:0.78rem;">
-        <strong>DEM quebrada network</strong> is computed from the Copernicus
-        GLO-30 (30 m DEM) using D8 flow direction + flow-accumulation.
-        Threshold classification matches the LQV region's catchments:
-        <br>· <span style="color:#0c4a6e">▬▬</span> <strong>Main rivers</strong> &mdash; ≥ 25 km² catchment (42 segments)
-        <br>· <span style="color:#3b82f6">▬</span> <strong>Tributaries</strong> &mdash; 5–25 km² (328 segments)
-        <br>· <span style="color:#93c5fd">▭</span> <strong>Creeks</strong> &mdash; 1–5 km² (1342 segments)
-      </p>
-      <p class="help" style="margin-top:6px; font-size:0.78rem;">
-        <strong>OSM waterways</strong> (476 stream + 75 ditch + 12 tidal + 5 river + 2 dam lines)
-        are the OSM mapper ground truth for drainage in the box; the
-        combined layer overlays them on the model-derived DEM streams
-        so you can sanity-check which low-flow lines the model misses
-        and which stream polygons OSM got right.
-      </p>
-    </div>
 
-    <div class="sidebar-section">
-      <h3>Water features &mdash; polygons <span class="status-pill" style="background:#ecfeff;color:#0e7490;">JRC + OSM + DEM</span></h3>
+      <label class="layer-row">
+        <input type="checkbox" data-layer="streams-20km" checked />
+        <span class="swatch" style="background: linear-gradient(to right, #0c4a6e 0 35%, #3b82f6 35% 60%, #93c5fd 60% 100%);"></span>
+        <span class="name"><strong>DEM quebrada streams</strong> · model-derived (<span data-count="streams-20km">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="streams-20km" min="0.2" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/dem_streams_20km.geojson" download title="Download DEM streams">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="flow-arrows" />
+        <span class="swatch" style="background: #1d4ed8; clip-path: polygon(0% 50%, 50% 0%, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);"></span>
+        <span class="name">Flow arrows · which way water runs (<span data-count="flow-arrows">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="flow-arrows" min="0.2" max="1" step="0.05" value="0.95" />
+        <a class="download" href="./data/dem_streams_arrows_20km.geojson" download title="Download flow arrows">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="waterways" checked />
+        <span class="swatch" style="background: #60a5fa;"></span>
+        <span class="name"><strong>OSM waterways</strong> · mapper ground truth · <span data-count="waterways">—</span> lines</span>
+        <input type="range" class="opacity" data-opacity="waterways" min="0.3" max="1" step="0.05" value="0.8" />
+        <a class="download" href="./data/osm_20km/waterways.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="water" checked />
+        <span class="swatch" style="background: #2563eb;"></span>
+        <span class="name">OSM water polygons · lakes, ponds, reservoirs · <span data-count="water">—</span></span>
+        <input type="range" class="opacity" data-opacity="water" min="0.2" max="1" step="0.05" value="0.5" />
+        <a class="download" href="./data/osm_20km/water.geojson" download title="Download">↓</a>
+      </label>
+
       <label class="layer-row">
         <input type="checkbox" data-layer="surface-water" checked />
         <span class="swatch" style="background: #0ea5e9;"></span>
-        <span class="name">All OSM water polygons + waterways (<span data-count="surface-water">—</span>, audited) — <b>click any wetland for its audit verdict</b></span>
-        <a class="download" href="./data/surface_water_20km.geojson" download title="Download audited surface water">↓</a>
+        <span class="name">Audited wetlands · <span data-count="surface-water">—</span> polygons, click for verdict</span>
+        <a class="download" href="./data/surface_water_20km.geojson" download title="Download">↓</a>
       </label>
+
       <label class="layer-row">
         <input type="checkbox" data-layer="jrc-water" />
         <span class="swatch" style="background: #0369a1; border: 1px dashed white;"></span>
-        <span class="name">JRC standalone water bodies (3 detected)</span>
+        <span class="name"><small>JRC satellite-detected waterbodies · 3 confirmed</small></span>
         <input type="range" class="opacity" data-opacity="jrc-water" min="0.2" max="1" step="0.05" value="0.85" />
         <a class="download" href="./data/lqv_jrc_waterbodies_20km.geojson" download title="Download">↓</a>
       </label>
-      <p class="help" style="margin-top: 6px; font-size: 0.78rem;">
-        <strong>Surface water audit</strong> cross-checks each OSM water feature against:
-        <br>
-        · <strong>JRC Global Surface Water</strong> (1984–2024 occurrence — pixels detected as water in 40 years of Landsat)
-        <br>
-        · <strong>Copernicus GLO-30 DEM</strong> (slope + elevation — wetlands sit in flat depressions)
-        <br>
-        · <strong>OSM waterways</strong> (within 200 m of a tagged stream?)
-        <br>
-        Verdict shown on click: ✓ verified (JRC ≥ 20% + flat), ~ seasonal (10–20%), ? ambiguous, ✗ likely-mis-tagged (JRC < 5% AND steep slope).
-        <br><br>
-        <strong>For the Escobar 20 km box</strong>: only 3 persistent waterbodies detected by JRC (no large natural lakes — Atlantic Forest catchments are steep and well drained). Most OSM <code>water=stream</code> polygons are point-depictions of small streams, not lakes.
-      </p>
-    </div>
 
-    <div class="sidebar-section">
-      <h3>Legacy polygons <span class="status-pill" style="background:#fff7ed;color:#9a3412;">off by default</span></h3>
       <label class="layer-row">
-        <input type="checkbox" data-layer="escobar-legacy" />
-        <span class="swatch" style="background: transparent; border: 1.5px dashed #94a3b8;"></span>
-        <span class="name">Old KML polygon · <b>30.9 ha</b> subset</span>
-        <a class="download" href="./data/client_gps/escobar_polygon_legacy.geojson" download title="Download">↓</a>
+        <input type="checkbox" data-layer="combined-water" />
+        <span class="swatch" style="background: linear-gradient(to right, #0c4a6e 0 30%, #0ea5e9 30% 50%, #a78bfa 50% 70%, #f87171 70% 100%);"></span>
+        <span class="name"><small>Combined water (all 4 sources) · <span data-count="combined-water">—</span> features</small></span>
+        <input type="range" class="opacity" data-opacity="combined-water" min="0.2" max="1" step="0.05" value="0.7" />
+        <a class="download" href="./data/water_combined_20km.geojson" download title="Download">↓</a>
       </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="aoi62-legacy" />
-        <span class="swatch" style="background: transparent; border: 1.5px dashed #a8a29e;"></span>
-        <span class="name">62 ha AOI buffer</span>
-        <a class="download" href="./data/client_gps/aoi_62_extended_legacy.geojson" download title="Download">↓</a>
-      </label>
-    </div>
 
-    <div class="sidebar-section">
-      <h3>Walking path <span class="status-pill" style="background:#fce7f3;color:#be185d;">+ timestamps</span></h3>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="gps-walking-path" />
-        <span class="swatch" style="background: transparent; border: 1.5px dashed #f59e0b;"></span>
-        <span class="name">Wes's walking track (20 GPS pts)</span>
-        <input type="range" class="opacity" data-opacity="gps-walking-path" min="0.3" max="1" step="0.05" value="0.9" />
-        <a class="download" href="./data/client_gps/client_gps_walking_path.geojson" download title="Download walking path GeoJSON">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="gps-sessions" />
-        <span class="swatch" style="background: transparent; border: 1.5px dashed #a855f7;"></span>
-        <span class="name">By session (2 walks, distinct colors)</span>
-        <input type="range" class="opacity" data-opacity="gps-sessions" min="0.3" max="1" step="0.05" value="0.9" />
-        <a class="download" href="./data/client_gps/client_gps_walking_sessions.geojson" download title="Download per-session polylines">↓</a>
-      </label>
-      <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
-        <button id="replay-btn" style="flex: 1;">▶ Replay walk</button>
-        <span id="replay-status" style="color: var(--muted); font-size: 0.78rem;"></span>
-      </div>
-      <input type="range" id="replay-time" min="0" max="100" value="0" step="1" style="width: 100%; accent-color: var(--gold-dark); margin-top: 6px; cursor: pointer;" />
       <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
-        <strong>2 walks</strong>: 2026-06-22 (5 pts, 36 min) + 2026-06-28 (15 pts, 2h 13min).
-        <br>
-        <strong>Span</strong>: 2026-06-22 15:37 → 2026-06-28 14:18 UTC. Click <em>Replay</em> to watch
-        Wes build the perimeter in time-order. Drag the slider to scrub.
+        The <strong>DEM quebrada network</strong> is computed from Copernicus
+        GLO-30 (30 m) using D8 flow direction + flow-accumulation. Threshold
+        classification matches the LQV region's catchments: <strong>main rivers</strong>
+        ≥ 25 km² (42 segments) · <strong>tributaries</strong> 5–25 km² (328) ·
+        <strong>creeks</strong> 1–5 km² (1,342). Toggle <em>hillshade</em> + <em>streams-20km</em>
+        + <em>flow arrows</em> together to see the full story.
       </p>
     </div>
 
+    <!-- ════════════════════════════════════════════════════════════════
+         5 · LAND COVER + FOREST CHANGE
+         ════════════════════════════════════════════════════════════════ -->
     <div class="sidebar-section">
-      <h3>20 km OSM context <span class="status-pill live">● live</span></h3>
+      <h3>Land cover + forest change</h3>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="canopy-20km" />
+        <span class="swatch" style="background: linear-gradient(to right, #a16207 25%, #84cc16 25% 50%, #22c55e 50% 75%, #14532d 75%);"></span>
+        <span class="name"><strong>Sentinel-2 NDVI canopy</strong> · 4 classes (<span data-count="canopy-20km">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="canopy-20km" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/ndvi_canopy_20km.geojson" download title="Download NDVI">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="mapbiomas" />
+        <span class="swatch" style="background: linear-gradient(to right, #16a34a 0% 30%, #bef264 30% 50%, #fbbf24 50% 70%, #f97316 70% 85%, #94a3b8 85% 100%);"></span>
+        <span class="name"><strong>MapBiomas 2023 land cover</strong> · 7 classes (<span data-count="mapbiomas">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="mapbiomas" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/mapbiomas_2023_20km.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="hansen-loss" />
+        <span class="swatch" style="background: #dc2626;"></span>
+        <span class="name"><strong>Hansen forest loss</strong> · 2001–2024 (<span data-count="hansen-loss">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="hansen-loss" min="0.3" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/hansen_loss_20km.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="hansen-gain" />
+        <span class="swatch" style="background: #22c55e;"></span>
+        <span class="name"><small>Hansen forest gain · 2000–2012 (<span data-count="hansen-gain">—</span>)</small></span>
+        <input type="range" class="opacity" data-opacity="hansen-gain" min="0.3" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/hansen_gain_20km.geojson" download title="Download">↓</a>
+      </label>
+
+      <table class="legend-table" style="margin-top: 6px; font-size: 0.78rem;">
+        <tr><td><span style="background:#a16207;color:#fff;padding:0 6px">0</span></td><td>NDVI &lt; 0.25 — bare / grass</td></tr>
+        <tr><td><span style="background:#84cc16;color:#000;padding:0 6px">1</span></td><td>NDVI 0.25–0.45 — sparse woody</td></tr>
+        <tr><td><span style="background:#22c55e;color:#000;padding:0 6px">2</span></td><td>NDVI 0.45–0.60 — open forest <em>(typical LQV)</em></td></tr>
+        <tr><td><span style="background:#14532d;color:#fff;padding:0 6px">3</span></td><td>NDVI &gt; 0.60 — dense forest</td></tr>
+      </table>
+
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        <strong>Sentinel-2 NDVI</strong> (June 2026, cloud &lt; 20%) =
+        vegetation greenness. <strong>MapBiomas Paraguay Collection 2
+        (2023)</strong> = categorical land-cover at 30 m. <strong>Hansen
+        GFC v1.12</strong> = forest loss / gain 2001–2024. Each layer
+        covers the full 40 × 40 km box.
+      </p>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         6 · OSM CONTEXT — what's around us
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>OSM context · what's around us</h3>
 
       <label class="layer-row">
         <input type="checkbox" data-layer="roads" checked />
         <span class="swatch" style="background: var(--gold);"></span>
-        <span class="name">Roads &amp; tracks</span>
-        <span class="count" data-count="roads">—</span>
+        <span class="name">Roads &amp; tracks · <span data-count="roads">—</span></span>
         <input type="range" class="opacity" data-opacity="roads" min="0.3" max="1" step="0.05" value="0.95" />
         <a class="download" href="./data/osm_20km/roads.geojson" download title="Download">↓</a>
       </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="water" checked />
-        <span class="swatch" style="background: #2563eb;"></span>
-        <span class="name">Water bodies</span>
-        <span class="count" data-count="water">—</span>
-        <input type="range" class="opacity" data-opacity="water" min="0.2" max="1" step="0.05" value="0.5" />
-        <a class="download" href="./data/osm_20km/water.geojson" download title="Download">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="waterways" checked />
-        <span class="swatch" style="background: #60a5fa;"></span>
-        <span class="name">Streams &amp; rivers</span>
-        <span class="count" data-count="waterways">—</span>
-        <input type="range" class="opacity" data-opacity="waterways" min="0.3" max="1" step="0.05" value="0.8" />
-        <a class="download" href="./data/osm_20km/waterways.geojson" download title="Download">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="trees" />
-        <span class="swatch" style="background: #15803d;"></span>
-        <span class="name">Forest / woodland</span>
-        <span class="count" data-count="trees">—</span>
-        <input type="range" class="opacity" data-opacity="trees" min="0.2" max="1" step="0.05" value="0.4" />
-        <a class="download" href="./data/osm_20km/trees.geojson" download title="Download">↓</a>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" data-layer="buildings" />
-        <span class="swatch" style="background: #a3a3a3;"></span>
-        <span class="name">Buildings</span>
-        <span class="count" data-count="buildings">—</span>
-        <input type="range" class="opacity" data-opacity="buildings" min="0.3" max="1" step="0.05" value="0.6" />
-        <a class="download" href="./data/osm_20km/buildings.geojson" download title="Download">↓</a>
-      </label>
+
       <label class="layer-row">
         <input type="checkbox" data-layer="places" checked />
         <span class="swatch" style="background: #be185d;"></span>
-        <span class="name">Towns &amp; villages</span>
-        <span class="count" data-count="places">—</span>
+        <span class="name">Towns &amp; villages · <span data-count="places">—</span></span>
         <a class="download" href="./data/osm_20km/places.geojson" download title="Download">↓</a>
       </label>
+
       <label class="layer-row">
-        <input type="checkbox" data-layer="pois" />
-        <span class="swatch" style="background: #a855f7;"></span>
-        <span class="name">POIs</span>
-        <span class="count" data-count="pois">—</span>
-        <a class="download" href="./data/osm_20km/pois.geojson" download title="Download">↓</a>
+        <input type="checkbox" data-layer="trees" />
+        <span class="swatch" style="background: #15803d;"></span>
+        <span class="name">Forest / woodland polygons · <span data-count="trees">—</span></span>
+        <input type="range" class="opacity" data-opacity="trees" min="0.2" max="1" step="0.05" value="0.4" />
+        <a class="download" href="./data/osm_20km/trees.geojson" download title="Download">↓</a>
       </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="buildings" />
+        <span class="swatch" style="background: #a3a3a3;"></span>
+        <span class="name">Buildings · <span data-count="buildings">—</span></span>
+        <input type="range" class="opacity" data-opacity="buildings" min="0.3" max="1" step="0.05" value="0.6" />
+        <a class="download" href="./data/osm_20km/buildings.geojson" download title="Download">↓</a>
+      </label>
+
       <label class="layer-row">
         <input type="checkbox" data-layer="landuse" />
         <span class="swatch" style="background: #fcd34d;"></span>
-        <span class="name">Land use polygons</span>
-        <span class="count" data-count="landuse">—</span>
+        <span class="name">Land use polygons · <span data-count="landuse">—</span></span>
         <input type="range" class="opacity" data-opacity="landuse" min="0.2" max="0.6" step="0.05" value="0.35" />
         <a class="download" href="./data/osm_20km/landuse.geojson" download title="Download">↓</a>
       </label>
+
+      <label class="layer-row">
+        <input type="checkbox" data-layer="pois" />
+        <span class="swatch" style="background: #a855f7;"></span>
+        <span class="name">Points of interest · <span data-count="pois">—</span></span>
+        <a class="download" href="./data/osm_20km/pois.geojson" download title="Download">↓</a>
+      </label>
     </div>
 
+    <!-- ════════════════════════════════════════════════════════════════
+         7 · ACTIONS
+         ════════════════════════════════════════════════════════════════ -->
     <div class="sidebar-section">
       <h3>Actions</h3>
       <div class="actions">
@@ -565,46 +541,47 @@
       </div>
       <p class="help" style="margin-top: 10px;">
         <strong>Click a checkbox</strong> to toggle · drag the slider to set opacity.
-        Hover a road, town or stream for context. Click the parcel pulse to recenter.
+        Hover any feature for context. Click the parcel pulse to recenter.
         <br><br>
-        Press <kbd>M</kbd> to measure distance · <kbd>L</kbd> for label declutter toggle.
+        <kbd>M</kbd> measure distance · <kbd>L</kbd> label declutter.
       </p>
     </div>
 
+    <!-- ════════════════════════════════════════════════════════════════
+         8 · ABOUT
+         ════════════════════════════════════════════════════════════════ -->
     <div class="sidebar-section">
-      <h3>About</h3>
+      <h3>About this map</h3>
       <p class="help">
-        <strong>Property perimeter</strong> from Wesley's on-the-ground
-        GPS walk (Guru Maps iOS, 2026-06-22 + 2026-06-28): <b>17 corner
-        points</b>, walked in order, 4.26 km perimeter, 71.37 ha projected.
-        Handheld GPS accuracy ±3-5 m per point — not survey-grade.
+        <strong>Property perimeter</strong> from Wesley's on-the-ground GPS walk
+        (Guru Maps iOS, 06-22 + 06-28): <b>17 corners</b>, walked in order,
+        4.26 km perimeter, 71.4 ha projected. Handheld GPS accuracy ±3–5 m
+        per point — not survey-grade.
         <br><br>
         <strong>Timestamps</strong> recovered from the
         <a href="https://shared.gurumaps.app/5f349095-4c7b-49cd-8d8d-0e0acb7e3f8e.html"
-           target="_blank" rel="noopener">live Guru Maps share</a>
-        (KML · 20 timestamps). Two sessions: 5 pts on 06-22 (north ridge),
-        15 pts on 06-28 (full perimeter). Hit <em>▶ Replay walk</em> in the
-        sidebar to watch the perimeter being captured in time-order.
+           target="_blank" rel="noopener">live Guru Maps share</a> (KML · 20
+        timestamps). Two sessions: 5 pts on 06-22 (north ridge), 15 pts on
+        06-28 (full perimeter). Hit <em>▶ Replay walk</em> above to watch the
+        perimeter being captured in time order.
         <br><br>
-        <strong>OSM context</strong>: 30,086 features pulled 2026-07-05
-        via Overpass for a 40 × 40 km box centred on the GPS centroid
-        (-57.0304, -25.6082). Towns labelled at z ≥ 11, roads z ≥ 12,
-        river names z ≥ 13.
+        <strong>20 km box</strong> (-57.23 / -56.84 lon, -25.79 / -25.43 lat)
+        centred on the GPS centroid. Built from:
+        <br>· Sentinel-2 L2A NDVI (mosaic of 2 MGRS tiles)
+        <br>· Copernicus GLO-30 DEM + D8 flow accumulation
+        <br>· JRC Global Surface Water 1984–2024
+        <br>· MapBiomas Paraguay Collection 2 (2023)
+        <br>· Hansen GFC v1.12 forest loss / gain
+        <br>· OpenStreetMap Overpass (2026-07-05): 30,166 features
         <br><br>
-        <strong>Legacy polygons</strong> (old KML subset + 62 ha AOI buffer)
-        kept for reference, off by default. They correspond to a smaller
-        30.9 ha interior buildable area, NOT the full GPS-walked parcel.
-        <br><br>
-        <strong>Icons</strong> courtesy of <a href="https://gurumaps.app/"
-        target="_blank" rel="noopener">Guru Maps</a> — the same
-        bookmark pins Wes uses in his iOS app appear here so the map
-        reads identically to his phone view. Tap any corner pin to zoom
-        to it.
+        <strong>Icons</strong> courtesy of
+        <a href="https://gurumaps.app/" target="_blank" rel="noopener">Guru Maps</a>
+        — the same bookmark pins Wes uses in his iOS app appear here so the
+        map reads identically to his phone view.
       </p>
     </div>
 
   </aside>
-
   <div class="map-wrap">
     <div id="map"></div>
     <div class="north-arrow" id="north-arrow">
@@ -1255,19 +1232,6 @@ updateParcelLabel();
           `${p.source || ''}`,
           { sticky: true, direction: 'top', className: 'lqv-tooltip' }
         );
-      },
-    });
-  }
-  // Streams (legacy — property-scale only)
-  const streamsLegacy = await F('./data/hydrography_dem_v2.geojson');
-  if (streamsLegacy && streamsLegacy.features) {
-    data.streams = streamsLegacy;
-    setLayerCount('streams', streamsLegacy.features.length);
-    layers.streams = L.geoJSON(streamsLegacy, {
-      style: (feature) => {
-        const cls = feature.properties.class || feature.properties.type || '';
-        if (cls === 'main' || cls === 'main_channel') return { color: '#1d4ed8', weight: 3.5, opacity: 0.95 };
-        return { color: '#3b82f6', weight: 2, opacity: 0.8 };
       },
     });
   }
