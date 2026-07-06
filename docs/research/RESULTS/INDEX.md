@@ -116,6 +116,17 @@ These are the downstream deliverables that the research files build toward. Find
 
 **R-Items still pending** (not yet written): see `docs/research/strategy/RESEARCH_GAPS.md` — 21 R-items total (R02-R38 scattered, R39-R50 added post-escritura).
 
+### R-Items shipped this session (2026-07-06)
+
+| File | 1-line description |
+|---|---|
+| **`R05_air_access_EU_ASU_2026-07-06.md`** ⭐ | Air access EU → ASU. Air Europa only direct MAD-ASU weekly, 1-stop from AMS via MAD/GRU/EZE. AMS-ASU round-trip shoulder £1,243-1,341 |
+| **`R12_SENATUR_statistics_2026-07-06.md`** ⭐ | PY tourism: 2.23M visitors 2024 (+22%), 3.66M 2025 (+91%), $1.42B revenue. Source mix: AR 80%, BR 10%, EU <1% — whitespace opportunity |
+| **`R13_asuncion_expat_demographics_2026-07-06.md`** ⭐ | Expat community ~50-80K in PY, NL estimated 800-1,500. Villa Morra cluster + San Bernardino weekend retreat. No formal Dutch Chamber |
+| **`R21_crime_security_2026-07-06.md`** ⭐ | PY homicide 6.2/100K (US Level 1 advisory). Lower than BR/CO/UY/CL. Foreigners NOT specifically targeted. Rural Paraguarí very low crime |
+| **`R22_healthcare_expat_2026-07-06.md`** ⭐ | Top private hospitals: La Costa, San Roque, Bautista, Migone. Visit $15-50, appendectomy $1,340. Insurance $50-150/mo. Nearest to LQV: 90 min to Asunción |
+| **`R32_schooling_children_2026-07-06.md`** ⭐ | 4 international schools (ASA US, Goethe DE+IB, St Mary's UK, del Sol bilingual). Tuition $5-12K/yr. NL distance learning via NOA $1-3K/yr |
+
 ---
 
 ## M — Materials / Construction (18 files)
