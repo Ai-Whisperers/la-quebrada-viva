@@ -14,7 +14,9 @@
 > The repo is large (380+ docs, ~700 MB of source files). You don't need
 > to read most of it. Start here, then jump to the page you need.
 >
-> **Last updated:** 2026-07-03 (post-escritura, 6 days after signing).
+> **Last updated:** 2026-07-06 (post-audit, 9 days after signing).
+>
+> 👉 **NEW (2026-07-06): For the 1-page map + all 9 working research files, see [`docs/research/RESULTS/CHEATSHEET.md`](../research/RESULTS/CHEATSHEET.md). It's the fastest way to navigate the project.**
 
 ---
 
