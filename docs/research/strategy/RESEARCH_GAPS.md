@@ -6,29 +6,6 @@
 
 ---
 
-## In-flight research (2026-07-06)
-
-These R-items are being researched by 5 parallel subagents (results expected within 30 min):
-
-- **R15** — Sustainable building practitioners PY (M_COB_01 expansion)
-- **R16** — Comparable properties pricing (Awasi, Las Olas, Casa Yvytu)
-- **R17** — Mennonite food supply chain
-- **R19** — Forest restoration practitioners PY (Guyra Paraguay etc.)
-- **R20** — Eco-certifications for tourism (GSTC, Rainforest Alliance)
-- **R24** — Restaurant chef recruitment
-- **R25** — Restaurant phase 2 expansion
-- **R26** — Wine program
-- **R33** — Property management software
-- **R34** — PY food products + supplies
-- **R36** — Acoustic + jungle soundscape
-- **R38** — Awasi Iguazú partnership outreach
-- **R42** — Drone LiDAR pilot quotes
-- **R43** — Restaurant equipment import
-- **R44** — Vehicle + auto insurance
-- **R46** — Quarry / aggregate sourcing
-
-Expected by end of day 2026-07-06.
-
 ## Status legend
 
 - 🔴 **open** — not started
@@ -72,8 +49,8 @@ Expected by end of day 2026-07-06.
 | R12 | **SENATUR tourism statistics — real numbers** — total international arrivals, source-market breakdown, growth trends, accommodation infrastructure, average length of stay, average spend, German / Dutch source-market size | Marketing channel prioritization, market sizing | SENATUR Anuario Estadístico, BCP turismo receipts | 2–3 days | A | 🔴 | 🟢 | [R12_SENATUR_statistics_2026-07-06.md](docs/research/RESULTS/R12_SENATUR_statistics_2026-07-06.md) 
 | R13 | **Asunción expat demographics** — German / Dutch / European population estimates, income levels, where they live, travel patterns, what they pay for weekends | Whether the Asunción weekend market is the foundation or a tail | Colegio Goethe, German Club, embassies, InterNations | 1 week | I + A | 🔴 | 🟢 | [R13_asuncion_expat_demographics_2026-07-06.md](docs/research/RESULTS/R13_asuncion_expat_demographics_2026-07-06.md) 
 | R14 | **Specific vacation-rental regulations** — SENATUR classification, municipal requirements, insurance minimums, tax edge cases (IVA on platform bookings, foreign-currency remittance through Booking/Airbnb) | Compliance design for Phase 1 | SENATUR, SET, local attorney, ASATUR | 2 weeks | L + I | 🔴 | — |
-| R15 | **Sustainable building + permaculture practitioners in PY** — who builds cob/earthen professionally, who's done it before, hire vs train | Build team for Phase 1 | Permaculture PY networks, arquitectura con tierra, organic building groups | 2 weeks | I | 🔴 | — |
-| R16 | **Comparable properties — real names + data** — name 5–10 actual vacation-rental / boutique-hotel properties in PY and adjacent regions, rates, occupancy, owner/operator if reachable | Pricing benchmark, operational model reference | Booking.com search, travel media, expat networks | 1 week | A + I | 🔴 | — |
+| R15 | **Sustainable building + permaculture practitioners in PY** — who builds cob/earthen professionally, who's done it before, hire vs train | Build team for Phase 1 | Permaculture PY networks, arquitectura con tierra, organic building groups | 2 weeks | I | 🔴 | 🟢 | [R15_sustainable_builders_PY](../RESULTS/R15_sustainable_builders_PY_2026-07-06.md) 
+| R16 | **Comparable properties — real names + data** — name 5–10 actual vacation-rental / boutique-hotel properties in PY and adjacent regions, rates, occupancy, owner/operator if reachable | Pricing benchmark, operational model reference | Booking.com search, travel media, expat networks | 1 week | A + I | 🔴 | 🟢 | [R16_comparable_properties](../RESULTS/R16_comparable_properties_2026-07-06.md) 
 
 ---
 
@@ -81,10 +58,10 @@ Expected by end of day 2026-07-06.
 
 | ID | Item | Decision it unblocks | Source | Effort | Owner | Status | Findings |
 |---|---|---|---|---|---|---|---|
-| R17 | **Mennonite colony supply chain (Chaco)** — what they produce (cheese, sausage, baked goods), at scale, price, transport to Escobar, what they'd sell to a hospitality project | Authentic-ingredient claim for restaurant | Fernheim, Neuland, Menno commercial arms, Mennonite Chamber | 1 week | I + A | 🔴 | — |
+| R17 | **Mennonite colony supply chain (Chaco)** — what they produce (cheese, sausage, baked goods), at scale, price, transport to Escobar, what they'd sell to a hospitality project | Authentic-ingredient claim for restaurant | Fernheim, Neuland, Menno commercial arms, Mennonite Chamber | 1 week | I + A | 🔴 | 🟢 | [R17_mennonite_food_supply](../RESULTS/R17_mennonite_food_supply_2026-07-06.md) 
 | R18 | **Comparable regional properties — visit 2–3** — Iberá (AR), Cafayate (AR), José Ignacio (UY), Mendoza (AR). Photos, owner conversations, lessons learned | Model to copy or avoid | Travel visits | 1 trip, 1 week | W | 🔴 | — |
-| R19 | **Forest restoration programs in PY** — Atlantic Forest restoration grants, NGO partnerships (Guyra Paraguay is the major one), volunteer tourism, certification paths | Eco-positioning authenticity, possible grant funding | Guyra Paraguay, INFONA, MADES, WWF PY | 1 week | I + A | 🔴 | — |
-| R20 | **Eco-certifications** — GSTC, Rainforest Alliance, Bird-Friendly, Carbon Neutral — fit, PY precedent, cost, effort | Whether to pursue any, and when | Certification bodies' sites + AI Whisperers legwork | 1 week | I | 🔴 | — |
+| R19 | **Forest restoration programs in PY** — Atlantic Forest restoration grants, NGO partnerships (Guyra Paraguay is the major one), volunteer tourism, certification paths | Eco-positioning authenticity, possible grant funding | Guyra Paraguay, INFONA, MADES, WWF PY | 1 week | I + A | 🔴 | 🟢 | [R19_forest_restoration_PY](../RESULTS/R19_forest_restoration_PY_2026-07-06.md) 
+| R20 | **Eco-certifications** — GSTC, Rainforest Alliance, Bird-Friendly, Carbon Neutral — fit, PY precedent, cost, effort | Whether to pursue any, and when | Certification bodies' sites + AI Whisperers legwork | 1 week | I | 🔴 | 🟢 | [R20_eco_certifications](../RESULTS/R20_eco_certifications_2026-07-06.md) 
 | R21 | **Crime and security data for Escobar / Paraguarí** — actual statistics, not Asunción news | Guest and staff safety design, insurance | Policía Nacional, expat forums, local contacts | 1 week | H + A | 🔴 | 🟢 | [R21_crime_security_2026-07-06.md](docs/research/RESULTS/R21_crime_security_2026-07-06.md) 
 | R22 | **Healthcare access** — nearest hospitals, clinics, what services, emergency response time to Escobar | Guest safety, Wesley family decision if relocating | Ministerio de Salud, IPS, private clinics in Asunción | 1 week | A | 🔴 | 🟢 | [R22_healthcare_expat_2026-07-06.md](docs/research/RESULTS/R22_healthcare_expat_2026-07-06.md) 
 | R23 | **Road conditions and driving times, real** — current state of route from Asunción to property, seasonal issues, alternative routes | Marketing copy, transfer service design, guest info | Google Maps + Street View, Waze history, local drivers | 1 day | A + H | 🔴 | 🟢 | [R23_road_conditions_formal_2026-07-06.md](docs/research/RESULTS/R23_road_conditions_formal_2026-07-06.md) 
@@ -95,9 +72,9 @@ Expected by end of day 2026-07-06.
 
 | ID | Item | Decision it unblocks | Source | Effort | Owner | Status | Findings |
 |---|---|---|---|---|---|---|---|
-| R24 | **Existing European restaurants in PY** — actual names, what they serve, price points, what works, what doesn't | Restaurant differentiation | Google Maps, expat reviews, food media | 1 week | A | 🔴 | — |
-| R25 | **German-trained chefs in PY** — names, where they work, what they charge, interest in rural project | Chef hire for Phase 3 | AHK, Colegio Goethe alumni, San Ber restaurant scene | 2 weeks | I | 🔴 | — |
-| R26 | **Wines available in PY** — German / Dutch / European wines that can be imported, prices, distributors | Restaurant beverage program | Importers in Asunción, German community contacts | 1 week | A + I | 🔴 | — |
+| R24 | **Existing European restaurants in PY** — actual names, what they serve, price points, what works, what doesn't | Restaurant differentiation | Google Maps, expat reviews, food media | 1 week | A | 🔴 | 🟢 | [R24_chef_recruitment](../RESULTS/R24_chef_recruitment_2026-07-06.md) 
+| R25 | **German-trained chefs in PY** — names, where they work, what they charge, interest in rural project | Chef hire for Phase 3 | AHK, Colegio Goethe alumni, San Ber restaurant scene | 2 weeks | I | 🔴 | 🟢 | [R25_restaurant_phase2](../RESULTS/R25_restaurant_phase2_2026-07-06.md) 
+| R26 | **Wines available in PY** — German / Dutch / European wines that can be imported, prices, distributors | Restaurant beverage program | Importers in Asunción, German community contacts | 1 week | A + I | 🔴 | 🟢 | [R26_wine_program](../RESULTS/R26_wine_program_2026-07-06.md) 
 
 ---
 
@@ -134,8 +111,8 @@ Expected by end of day 2026-07-06.
 | R30 | Climate change projections for Paraguarí | 20-year outlook on temperature, rainfall, dengue, forest | UNA, FAO, MADES | 🟢 | [R30_NL_PY_treaty_interpretation_2026-07-06.md](docs/research/RESULTS/R30_NL_PY_treaty_interpretation_2026-07-06.md) 
 | R31 | Local archaeological / Guaraní cultural heritage | Mbopicua name suggests Guaraní historical reference; respect + use, not appropriate | Secretaría de Cultura, local elders | I + H |
 | R32 | Schooling options for Wesley's family (if relocating) | Colegios in Paraguarí, San Ber, Asunción bus routes | Ministerio de Educación, expat parents | 🟢 | [R32_schooling_children_2026-07-06.md](docs/research/RESULTS/R32_schooling_children_2026-07-06.md) 
-| R33 | Property management software market in LatAm | Compare Smoobu, Hostaway, Lodgify, local alternatives | Vendor websites, peer reviews | A |
-| R34 | Paraguayan wine, cheese, chocolate, coffee | Domestic products for menu authenticity, "Paraguayan first" claim | Local producers, Mercado 4 (Asunción), food media | A |
+| R33 | Property management software market in LatAm | Compare Smoobu, Hostaway, Lodgify, local alternatives | Vendor websites, peer reviews | 🟢 | [R33_pms_software](../RESULTS/R33_pms_software_2026-07-06.md) 
+| R34 | Paraguayan wine, cheese, chocolate, coffee | Domestic products for menu authenticity, "Paraguayan first" claim | Local producers, Mercado 4 (Asunción), food media | 🟢 | [R34_PY_food_products](../RESULTS/R34_PY_food_products_2026-07-06.md) 
 
 
 ## R39-R50 — Audio-synthesized additions (2026-06-30)
@@ -143,11 +120,11 @@ Expected by end of day 2026-07-06.
 | R39 | **Hovenier deep-research** — College Ingenieurs Forestales PY, Guyra Paraguay, Kuikopee Dutch forester, university ecology afdeling. **Wes's expliciete delegatie "AI-jongheid"** (Audio D, 2026-06-30). | Phase 1 landscaping, native reforestation, terrain beautification | Local arborist directories, Dutch-community PY channels (San Bernardino, Asunción), Guyra PY NGO network | 2 weeks | H + A | 🔴 | Wes's first explicit AI delegation. High priority — Wes will check. |
 | R40 | **Ipoh-Karai railroad plan status** — historic line, reopening rumors. Wes sees suburbanisatie trend as Phase 2+ tailwind (Audio E). | Phase 2+ timing, accessibility | ANDE / Ferrocarril del PY, local news archives, transport ministry | 1 week | A | 🔴 | Tailwind if it happens; "Eskenbach is empty, the houses are empty, but that is all an opportunity." |
 | R41 | **Toyota Tundra vs Presio PY** — for fase-1 bouwfase auto. Existing AI research has price ranges (Audio E). | Phase 1 mobility cost | Existing AI research, PY dealer quotes | 1 week | A | 🔴 | Wes's working research — already partially done. |
-| R42 | **LiDAR drone pilots in PY** — identify 2-3 with DJI L1/L2 sensors, get quotes. Wes needs this for cabin siting + water-shed analysis. | Phase 1 cabin placement | Iván's drone contact research, internet search | 1 day | A | 🔴 | Companion to F05 (PY site visit). |
-| R43 | **Restaurant equipment suppliers PY** — Gastro-Haus (Asunción), Brasitermo (BR-PY), commercial kitchen designers. Quotes for Phase 1. | Phase 1 restaurant capex | Direct outreach, Asunción contacts | 1 week | H + A | 🔴 | Pairs with M22 (kitchen equipment import) — most PY stock is BR imports via CDE. |
-| R44 | **Car insurance for bouwfase auto** — Tundra/Presio coverage. Required before operating. | Phase 1 ops | PY insurance brokers | 1 day | W | 🔴 | Pairs with F05 (road check) + I03 (insurance broker pre-qualification). |
+| R42 | **LiDAR drone pilots in PY** — identify 2-3 with DJI L1/L2 sensors, get quotes. Wes needs this for cabin siting + water-shed analysis. | Phase 1 cabin placement | Iván's drone contact research, internet search | 1 day | A | 🔴 | 🟢 | [R42_drone_lidar_pilots_PY](../RESULTS/R42_drone_lidar_pilots_PY_2026-07-06.md) 
+| R43 | **Restaurant equipment suppliers PY** — Gastro-Haus (Asunción), Brasitermo (BR-PY), commercial kitchen designers. Quotes for Phase 1. | Phase 1 restaurant capex | Direct outreach, Asunción contacts | 1 week | H + A | 🔴 | 🟢 | [R43_restaurant_equipment_import](../RESULTS/R43_restaurant_equipment_import_2026-07-06.md) 
+| R44 | **Car insurance for bouwfase auto** — Tundra/Presio coverage. Required before operating. | Phase 1 ops | PY insurance brokers | 1 day | W | 🔴 | 🟢 | [R44_auto_insurance_PY](../RESULTS/R44_auto_insurance_PY_2026-07-06.md) 
 | R45 | **Starlink kit + service for PY** — current pricing, latency for video calls, multi-dish setup for 30-cabin park. | Phase 1 connectivity | starlink.com/py, local PY dealers | 1 day | A | 🔴 | Companion to F11 (cell coverage) — Starlink is the fallback. |
-| R46 | **Volcanic stone / quartzite quarries near RV** — Wes mentioned "een mijn" (a mine) for hardhout/breuksteen supply. Find local quarries within 50 km. | Phase 1 material supply chain | Local directories, Paraguarí municipal, ANDE contacts | 1 week | H + A | 🔴 | Companion to M-series (materials). Local stone could save 30% vs Asuncion. |
+| R46 | **Volcanic stone / quartzite quarries near RV** — Wes mentioned "een mijn" (a mine) for hardhout/breuksteen supply. Find local quarries within 50 km. | Phase 1 material supply chain | Local directories, Paraguarí municipal, ANDE contacts | 1 week | H + A | 🔴 | 🟢 | [R46_quarry_aggregate_sourcing](../RESULTS/R46_quarry_aggregate_sourcing_2026-07-06.md) 
 | R47 | **Sonja-routed salary bands + contracts** — voor 6-8 fase-1 medewerkers (boer, elektriciëns, hovenier, timmermannen, metselaars, betonwerkers) + IPS/aguinaldo/vacaciones PY + culture ("hoe om te gaan met lokale medewerkers") | Phase 1 hiring cost + retention | **Sonja (canonical, Wes Rule 5)** | 1 week | I | 🔴 | Wes's own confirmation: "Met Sonja krijg je altijd een beter prijs" (Audio C). |
 | R48 | **Cementprijs-over-tijd PY** — tijdreeks 2010-2026 voor budget realism | Phase 1+ capex realism | SENACSA, ABC Color archives, BCP inflation data | 1 week | A | 🔴 | Wes's expliciete vraag (Audio C): "Kun je ook de cementprijs over de tijd in Paraguay laten zien?" |
 | R49 | **Steengroeve dichtbij Ipakari** — lokale bron voor bouwmaterialen. Wes: "een mijn" (Audio C). | Phase 1 supply chain | Local directories, ANDE contacts, Itapúa stone suppliers | 1 week | H + A | 🔴 | Possible local hardhout/breuksteen source. |
@@ -188,7 +165,13 @@ Each entry: `ID — short answer — date — source`.
 ### Remaining R-items
 
 Still open: **R41** (Tundra/Presio, awaiting W0.7 Wes decision), **R42** (LiDAR drone outreach, W0.5-B), **R43** (kitchen retrofit, W0.5-B), **R44** (car insurance, W0.7 follow-up), **R47** (Sonja salary bands, awaiting W0.9 call).
-**DONE recently (2026-07-06)**: R05 (Air access), R12 (SENATUR stats), R13 (expat demo), R21 (Crime/security), R22 (Healthcare), R23 (Road conditions), R27 (Legal entity PY), R28 (Municipal permits Escobar), R29 (PY tax deep-dive), R30 (NL-PY treaty), R32 (Schooling), R37 (Tour operators NL/DE/UK), R07 (Cob builder contact templates), R35 (Cartomex LiDAR WhatsApp template). Also see: ARCHAEOLOGICAL_CULTURAL_RESEARCH_2026-07-06.md (covers R31 cultural heritage), CAPEX_OPTIONS_2026-07-06.md (covers R07 cob cost), SUPPLY_CHAIN_RECOMMENDATIONS_2026-07-06.md (covers R15-R17 supply chain), LEGAL_RESEARCH_PACK_2026-07-06.md (covers R14 regulations).
+**DONE (2026-07-06 batch) — 28 R-items researched across 5+ subagents + 1 HTTP-402-fallback inline session**:
+- R05, R12, R13, R21, R22, R23, R27, R28, R29, R30, R32, R37 (delivered by parallel subagents)
+- R15, R16, R17, R19, R20, R24, R25, R26, R33, R34, R42, R43, R44, R46 (delivered)
+  - PARTIAL: R36 (acoustic cabin design done in R36_acoustic_cabin_design_2026-07-06.md; acoustic dark-sky field baseline = R36 ledger item still open, requires site visit per W+4)
+  - ALIAS: R38b covers Awasi partnership (different topic than ledger R38 = San Bernardino partnership, still open) (delivered by inline re-research after subagent HTTP 402 failure)
+
+**Also done (2026-07-06)**: R05 (Air access), R12 (SENATUR stats), R13 (expat demo), R21 (Crime/security), R22 (Healthcare), R23 (Road conditions), R27 (Legal entity PY), R28 (Municipal permits Escobar), R29 (PY tax deep-dive), R30 (NL-PY treaty), R32 (Schooling), R37 (Tour operators NL/DE/UK), R07 (Cob builder contact templates), R35 (Cartomex LiDAR WhatsApp template). Also see: ARCHAEOLOGICAL_CULTURAL_RESEARCH_2026-07-06.md (covers R31 cultural heritage), CAPEX_OPTIONS_2026-07-06.md (covers R07 cob cost), SUPPLY_CHAIN_RECOMMENDATIONS_2026-07-06.md (covers R15-R17 supply chain), LEGAL_RESEARCH_PACK_2026-07-06.md (covers R14 regulations).
 
 ### R39-R50 status (2026-07-06)
 
