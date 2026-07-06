@@ -35,6 +35,7 @@
 | 3 | **`docs/_reconciled/OPEN_DECISIONS.md`** | The 30 open decisions that block Phase 1 (each with a recommended default) |
 | 4 | **`docs/audios/2026-06-30-wes-post-escritura/final/KEY_POINTS.md`** | Your 20 bullet points from the 5 audio sessions (3 min read) |
 | 5 | **`docs/people/WES_ACTIONS.md`** | The 5 things only you can do this week |
+| 6 | **`docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md`** | Erebus audit (post-escritura state) — repo map, current issues, what to read first |
 
 ---
 
