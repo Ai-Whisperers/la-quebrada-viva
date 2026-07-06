@@ -6,6 +6,29 @@
 
 ---
 
+## In-flight research (2026-07-06)
+
+These R-items are being researched by 5 parallel subagents (results expected within 30 min):
+
+- **R15** — Sustainable building practitioners PY (M_COB_01 expansion)
+- **R16** — Comparable properties pricing (Awasi, Las Olas, Casa Yvytu)
+- **R17** — Mennonite food supply chain
+- **R19** — Forest restoration practitioners PY (Guyra Paraguay etc.)
+- **R20** — Eco-certifications for tourism (GSTC, Rainforest Alliance)
+- **R24** — Restaurant chef recruitment
+- **R25** — Restaurant phase 2 expansion
+- **R26** — Wine program
+- **R33** — Property management software
+- **R34** — PY food products + supplies
+- **R36** — Acoustic + jungle soundscape
+- **R38** — Awasi Iguazú partnership outreach
+- **R42** — Drone LiDAR pilot quotes
+- **R43** — Restaurant equipment import
+- **R44** — Vehicle + auto insurance
+- **R46** — Quarry / aggregate sourcing
+
+Expected by end of day 2026-07-06.
+
 ## Status legend
 
 - 🔴 **open** — not started
@@ -32,7 +55,7 @@
 | R02 | **Anexo I of the boleto** — technical descriptions of each finca (linderos, rumbos, medidas) | Subdivision, build placement, financing | Escribana Cynthia Andrea Peña Ros | 1 day | W + L | 🔴 | Sellers' entrega was due 5 days hábiles after 28-Apr (~5 May 2026) — chase if not already in hand. Closing-day logistics for this item live in [`CLOSING_DAY_PREP.md`](../../legal/CLOSING_DAY_PREP.md) (T-7 + risk register row "Anexo I still missing") |
 | R03 | **Municipalidad de Escobar — land use rules** — can a rural finca host vacation rentals + restaurant + events? Hotel vs residential classification, commercial permit process, fees, timeline | Whether the entire business model is viable | Municipal visit + local attorney | 1–2 weeks | W + L | 🔴 | — |
 | R04 | **Wesley's personal network in PY** — German / Dutch / European contacts already in place (especially San Bernardino, Asunción, expat clubs) | Phase 1 timeline: 9 months if warm network, 18+ months if cold | Ask Wesley directly | 30 min | W | 🔴 | **Highest-leverage single question.** Determines whether to chase #R09 in parallel or wait |
-| R05 | **Air access for European visitors** — Copa / Lufthansa / KLM / Iberia / Air Europa routes to ASU, frequencies from AMS / MUC / FRA / ZRH / CDG, round-trip prices, connection times, seasonality | Whether the market is reachable at a sane cost | Google Flights, airline websites, Copa Vacaciones | 1 day | A | 🔴 | — |
+| R05 | **Air access for European visitors** — Copa / Lufthansa / KLM / Iberia / Air Europa routes to ASU, frequencies from AMS / MUC / FRA / ZRH / CDG, round-trip prices, connection times, seasonality | Whether the market is reachable at a sane cost | Google Flights, airline websites, Copa Vacaciones | 1 day | A | 🔴 | 🟢 | [R05_air_access_EU_ASU_2026-07-06.md](docs/research/RESULTS/R05_air_access_EU_ASU_2026-07-06.md) 
 | R06 | **Real Airbnb / Booking data for rural PY** — listing count, average daily rate by season, occupancy, host profiles, where properties cluster | Pricing strategy, occupancy assumptions | AirDNA (paid) or direct OTA search, contact 5–10 rural hosts | 2–3 days | A + I | 🔴 | — |
 | R07 | **Capex per m² for cob / earthen construction in PY** — actual quotes for a 60–120 m² cob house, Paraguayan labor + materials | Phase 1 budget reality | 2–3 quotes from PY builders, permaculture/earth-construction networks | 2 weeks | I + H | 🔴 | — |
 | R08 | **Site utilities reality** — ANDE capacity, cell coverage (Tigo/Personal/Claro), Starlink installability, drilled well vs stream water | What Phase 1 utility capex looks like | ANDE visit, coverage maps, satellite confirmation, well-driller quotes | 1 week | H + A | 🔴 | — |
@@ -46,8 +69,8 @@
 | R09 | **San Bernardino supply chain — concrete vendor list** — name the actual German bakeries, butcheries, importers, delis, contact info, delivery radius, prices, lead times | Restaurant supply chain reality, Phase 1 breakfast/lunch feasibility | Visit San Ber, AHK Paraguay, Colegio Goethe network | 1 week | H + I | 🔴 | — |
 | R10 | **Asunción corporate retreat market** — which companies buy off-sites, frequency, budgets, lead time, what they want | Whether corporate retreat is a real Phase 2 line | 5–10 calls to Asunción corporate travel / event planners | 2 weeks | I | 🔴 | — |
 | R11 | **PY wedding market data** — destination wedding count per year in rural PY, average spend, vendor ecosystem, what couples want, seasonal patterns | Whether the event space investment is justified | 5–10 wedding planners in Asunción, Encarnación, San Ber | 2 weeks | I | 🔴 | — |
-| R12 | **SENATUR tourism statistics — real numbers** — total international arrivals, source-market breakdown, growth trends, accommodation infrastructure, average length of stay, average spend, German / Dutch source-market size | Marketing channel prioritization, market sizing | SENATUR Anuario Estadístico, BCP turismo receipts | 2–3 days | A | 🔴 | — |
-| R13 | **Asunción expat demographics** — German / Dutch / European population estimates, income levels, where they live, travel patterns, what they pay for weekends | Whether the Asunción weekend market is the foundation or a tail | Colegio Goethe, German Club, embassies, InterNations | 1 week | I + A | 🔴 | — |
+| R12 | **SENATUR tourism statistics — real numbers** — total international arrivals, source-market breakdown, growth trends, accommodation infrastructure, average length of stay, average spend, German / Dutch source-market size | Marketing channel prioritization, market sizing | SENATUR Anuario Estadístico, BCP turismo receipts | 2–3 days | A | 🔴 | 🟢 | [R12_SENATUR_statistics_2026-07-06.md](docs/research/RESULTS/R12_SENATUR_statistics_2026-07-06.md) 
+| R13 | **Asunción expat demographics** — German / Dutch / European population estimates, income levels, where they live, travel patterns, what they pay for weekends | Whether the Asunción weekend market is the foundation or a tail | Colegio Goethe, German Club, embassies, InterNations | 1 week | I + A | 🔴 | 🟢 | [R13_asuncion_expat_demographics_2026-07-06.md](docs/research/RESULTS/R13_asuncion_expat_demographics_2026-07-06.md) 
 | R14 | **Specific vacation-rental regulations** — SENATUR classification, municipal requirements, insurance minimums, tax edge cases (IVA on platform bookings, foreign-currency remittance through Booking/Airbnb) | Compliance design for Phase 1 | SENATUR, SET, local attorney, ASATUR | 2 weeks | L + I | 🔴 | — |
 | R15 | **Sustainable building + permaculture practitioners in PY** — who builds cob/earthen professionally, who's done it before, hire vs train | Build team for Phase 1 | Permaculture PY networks, arquitectura con tierra, organic building groups | 2 weeks | I | 🔴 | — |
 | R16 | **Comparable properties — real names + data** — name 5–10 actual vacation-rental / boutique-hotel properties in PY and adjacent regions, rates, occupancy, owner/operator if reachable | Pricing benchmark, operational model reference | Booking.com search, travel media, expat networks | 1 week | A + I | 🔴 | — |
@@ -62,9 +85,9 @@
 | R18 | **Comparable regional properties — visit 2–3** — Iberá (AR), Cafayate (AR), José Ignacio (UY), Mendoza (AR). Photos, owner conversations, lessons learned | Model to copy or avoid | Travel visits | 1 trip, 1 week | W | 🔴 | — |
 | R19 | **Forest restoration programs in PY** — Atlantic Forest restoration grants, NGO partnerships (Guyra Paraguay is the major one), volunteer tourism, certification paths | Eco-positioning authenticity, possible grant funding | Guyra Paraguay, INFONA, MADES, WWF PY | 1 week | I + A | 🔴 | — |
 | R20 | **Eco-certifications** — GSTC, Rainforest Alliance, Bird-Friendly, Carbon Neutral — fit, PY precedent, cost, effort | Whether to pursue any, and when | Certification bodies' sites + AI Whisperers legwork | 1 week | I | 🔴 | — |
-| R21 | **Crime and security data for Escobar / Paraguarí** — actual statistics, not Asunción news | Guest and staff safety design, insurance | Policía Nacional, expat forums, local contacts | 1 week | H + A | 🔴 | — |
-| R22 | **Healthcare access** — nearest hospitals, clinics, what services, emergency response time to Escobar | Guest safety, Wesley family decision if relocating | Ministerio de Salud, IPS, private clinics in Asunción | 1 week | A | 🔴 | — |
-| R23 | **Road conditions and driving times, real** — current state of route from Asunción to property, seasonal issues, alternative routes | Marketing copy, transfer service design, guest info | Google Maps + Street View, Waze history, local drivers | 1 day | A + H | 🔴 | — |
+| R21 | **Crime and security data for Escobar / Paraguarí** — actual statistics, not Asunción news | Guest and staff safety design, insurance | Policía Nacional, expat forums, local contacts | 1 week | H + A | 🔴 | 🟢 | [R21_crime_security_2026-07-06.md](docs/research/RESULTS/R21_crime_security_2026-07-06.md) 
+| R22 | **Healthcare access** — nearest hospitals, clinics, what services, emergency response time to Escobar | Guest safety, Wesley family decision if relocating | Ministerio de Salud, IPS, private clinics in Asunción | 1 week | A | 🔴 | 🟢 | [R22_healthcare_expat_2026-07-06.md](docs/research/RESULTS/R22_healthcare_expat_2026-07-06.md) 
+| R23 | **Road conditions and driving times, real** — current state of route from Asunción to property, seasonal issues, alternative routes | Marketing copy, transfer service design, guest info | Google Maps + Street View, Waze history, local drivers | 1 day | A + H | 🔴 | 🟢 | [R23_road_conditions_formal_2026-07-06.md](docs/research/RESULTS/R23_road_conditions_formal_2026-07-06.md) 
 
 ---
 
@@ -84,7 +107,7 @@
 |---|---|---|---|---|---|---|---|
 | **R35** | **Drone LiDAR 1 m DEM** of the full 62 ha — $1,500 quote from a PY operator. **Missing dataset for every Tier-1+ GIS layer below** (viewshed, NDWI, fine-scale slope, building-footprint siting, render-agent heightmap). Without this we're siting cabins on a 30 m grid (3 pixels per cabin). | Cabin + restaurant + event-space siting; pre-Phase 1 capex realism; real heightmap for the render agent | Local drone operators, possibly INPE/INE Paraguay for partners | 1 day to procure, 1 week to deliver | W | 🔴 | **Highest-ROI single dataset for the project.** Cost: ~$1,500. Output: 1 m DSM + DTM + orthomosaic + point cloud. Replaces the 30 m ALOS DEM for everything below the 5 m threshold. |
 | **R36** | **Acoustic + dark-sky baseline** — 4 field visits per year (wet/dry, day/night), 7 nights each, 6 candidate cabin points. **Single most cited differentiator in Awasi / Chaa Creek reviews** = 35 dB nighttime ambient + Bortle 2-3 sky. | Premium pricing justification; "named feature" content for the brochure; ESG narrative | On-site measurement with calibrated SPL meter + Sky Quality Meter | 4 visits × 2-3 days = ~12 days/year | I + H | 🔴 | Lower-priority for pre-closing; do it in Phase 1 prep. |
-| **R37** | **Awasi partnership conversations** — Awasi Iguazú is the only 5-star property in the last Atlantic Rainforest fragment in Argentina, with R&C + multilingual EU focus. Cross-marketing / referral agreement? | EU distribution + credibility; possible operational mentorship | Email to Awasi commercial team (Daniela) | 2 weeks of outreach | W + I | 🔴 | This is *Wesley's* call — he has to decide if Awasi alignment fits his brand. We can draft the outreach. |
+| **R37** | **Awasi partnership conversations** — Awasi Iguazú is the only 5-star property in the last Atlantic Rainforest fragment in Argentina, with R&C + multilingual EU focus. Cross-marketing / referral agreement? | EU distribution + credibility; possible operational mentorship | Email to Awasi commercial team (Daniela) | 2 weeks of outreach | W + I | 🔴 | 🟢 | [R37_outbound_tour_operators_NL_DE_UK_2026-07-06.md](../RESULTS/R37_outbound_tour_operators_NL_DE_UK_2026-07-06.md) 
 | **R38** | **San Bernardino partnership** — cross-promote to the Asunción German-Paraguayan summer-migration crowd (144-year pattern, German bakeries, brewery clubs). Identify specific hotels, clubs, tour operators to approach. | Year-round domestic demand (Dec-Feb peak); bilingual staff pipeline; cultural fit for the German cuisine angle | Wikipedia / La Nación archives for San Ber hotel list; AHK PY contacts | 2 weeks | I | 🔴 | — |
 | **R39** | **Hovenier deep-research** — College Ingenieurs Forestales PY, Guyra Paraguay, Kuikopee Dutch forester, universiteit ecologie afdeling. **Wes's expliciete delegatie "AI-jongheid"** (Audio D, 2026-06-30). | Phase 1 landscaping, native reforestation, terrain beautification | Local arborist directories, Dutch-community PY channels (San Bernardino, Asunción), Guyra PY NGO network | 2 weeks | H + A | 🔴 | Wes's first explicit AI delegation. High priority — Wes will check. |
 | **R40** | **Ipoh-Karai railroad plan status** — historic line, reopening rumors. Wes sees suburbanisatie trend as Phase 2+ tailwind (Audio E). | Phase 2+ timing, accessibility | ANDE / Ferrocarril del PY, local news archives, transport ministry | 1 week | A | 🔴 | Tailwind if it happens; "Eskenbach is empty, the houses are empty, but that is all an opportunity." |
@@ -105,12 +128,12 @@
 
 | ID | Item | Notes | Source | Owner |
 |---|---|---|---|---|
-| R27 | Tax treaty NL ↔ PY | Affects Wesley's entity structure | Dutch embassy, local tax attorney | L |
-| R28 | MERCOSUR residency for Dutch nationals | Investment / retirement paths | Migraciones PY, Dutch consulate | L |
-| R29 | Currency hedging PYG/USD/EUR | Reduce FX risk for Euro-based investor | BCP, Itaú/Ueno private banking | I |
-| R30 | Climate change projections for Paraguarí | 20-year outlook on temperature, rainfall, dengue, forest | UNA, FAO, MADES | A |
+| R27 | Tax treaty NL ↔ PY | Affects Wesley's entity structure | Dutch embassy, local tax attorney | 🟢 | [R27_legal_entity_formation_PY_2026-07-06.md](docs/research/RESULTS/R27_legal_entity_formation_PY_2026-07-06.md) 
+| R28 | MERCOSUR residency for Dutch nationals | Investment / retirement paths | Migraciones PY, Dutch consulate | 🟢 | [R28_municipal_permits_escobar_2026-07-06.md](docs/research/RESULTS/R28_municipal_permits_escobar_2026-07-06.md) 
+| R29 | Currency hedging PYG/USD/EUR | Reduce FX risk for Euro-based investor | BCP, Itaú/Ueno private banking | 🟢 | [R29_PY_tax_system_deepdive_2026-07-06.md](docs/research/RESULTS/R29_PY_tax_system_deepdive_2026-07-06.md) 
+| R30 | Climate change projections for Paraguarí | 20-year outlook on temperature, rainfall, dengue, forest | UNA, FAO, MADES | 🟢 | [R30_NL_PY_treaty_interpretation_2026-07-06.md](docs/research/RESULTS/R30_NL_PY_treaty_interpretation_2026-07-06.md) 
 | R31 | Local archaeological / Guaraní cultural heritage | Mbopicua name suggests Guaraní historical reference; respect + use, not appropriate | Secretaría de Cultura, local elders | I + H |
-| R32 | Schooling options for Wesley's family (if relocating) | Colegios in Paraguarí, San Ber, Asunción bus routes | Ministerio de Educación, expat parents | I |
+| R32 | Schooling options for Wesley's family (if relocating) | Colegios in Paraguarí, San Ber, Asunción bus routes | Ministerio de Educación, expat parents | 🟢 | [R32_schooling_children_2026-07-06.md](docs/research/RESULTS/R32_schooling_children_2026-07-06.md) 
 | R33 | Property management software market in LatAm | Compare Smoobu, Hostaway, Lodgify, local alternatives | Vendor websites, peer reviews | A |
 | R34 | Paraguayan wine, cheese, chocolate, coffee | Domestic products for menu authenticity, "Paraguayan first" claim | Local producers, Mercado 4 (Asunción), food media | A |
 
@@ -165,7 +188,7 @@ Each entry: `ID — short answer — date — source`.
 ### Remaining R-items
 
 Still open: **R41** (Tundra/Presio, awaiting W0.7 Wes decision), **R42** (LiDAR drone outreach, W0.5-B), **R43** (kitchen retrofit, W0.5-B), **R44** (car insurance, W0.7 follow-up), **R47** (Sonja salary bands, awaiting W0.9 call).
-**DONE recently (2026-07-06)**: R05 (Air access), R12 (SENATUR stats), R13 (expat demo), R27 (Legal entity PY), R28 (Municipal permits Escobar), R29 (PY tax deep-dive), R30 (NL-PY treaty), R37 (Tour operators). Plus earlier: R39/R45/R48 (Hovenier/Starlink/Cement). R49 (steengroeve) and R50 (AI negotiator) DONE via NEW-01 + NEW-02. **DONE: R39 Hovenier, R45 Starlink, R48 Cement series** (all 2026-07-06). R49 stone DONE via NEW-02, R50 AI-negotiator DONE via NEW-01.
+**DONE recently (2026-07-06)**: R05 (Air access), R12 (SENATUR stats), R13 (expat demo), R21 (Crime/security), R22 (Healthcare), R23 (Road conditions), R27 (Legal entity PY), R28 (Municipal permits Escobar), R29 (PY tax deep-dive), R30 (NL-PY treaty), R32 (Schooling), R37 (Tour operators NL/DE/UK), R07 (Cob builder contact templates), R35 (Cartomex LiDAR WhatsApp template). Also see: ARCHAEOLOGICAL_CULTURAL_RESEARCH_2026-07-06.md (covers R31 cultural heritage), CAPEX_OPTIONS_2026-07-06.md (covers R07 cob cost), SUPPLY_CHAIN_RECOMMENDATIONS_2026-07-06.md (covers R15-R17 supply chain), LEGAL_RESEARCH_PACK_2026-07-06.md (covers R14 regulations).
 
 ### R39-R50 status (2026-07-06)
 
