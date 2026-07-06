@@ -164,7 +164,8 @@ Each entry: `ID — short answer — date — source`.
 
 ### Remaining R-items
 
-Still open: **R41** (Tundra/Presio, awaiting W0.7 Wes decision), **R42-R46** (Sprint-1 hout/cob/bev/vloer/verf DONE — R43-46 are related/completed), **R47** (Sonja salary bands, awaiting W0.9 call). **DONE: R39 Hovenier, R45 Starlink, R48 Cement series** (all 2026-07-06). R49 stone DONE via NEW-02, R50 AI-negotiator DONE via NEW-01.
+Still open: **R41** (Tundra/Presio, awaiting W0.7 Wes decision), **R42** (LiDAR drone outreach, W0.5-B), **R43** (kitchen retrofit, W0.5-B), **R44** (car insurance, W0.7 follow-up), **R47** (Sonja salary bands, awaiting W0.9 call).
+**DONE recently (2026-07-06)**: R05 (Air access), R12 (SENATUR stats), R13 (expat demo), R27 (Legal entity PY), R28 (Municipal permits Escobar), R29 (PY tax deep-dive), R30 (NL-PY treaty), R37 (Tour operators). Plus earlier: R39/R45/R48 (Hovenier/Starlink/Cement). R49 (steengroeve) and R50 (AI negotiator) DONE via NEW-01 + NEW-02. **DONE: R39 Hovenier, R45 Starlink, R48 Cement series** (all 2026-07-06). R49 stone DONE via NEW-02, R50 AI-negotiator DONE via NEW-01.
 
 ### R39-R50 status (2026-07-06)
 
