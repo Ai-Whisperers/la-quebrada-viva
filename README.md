@@ -17,7 +17,11 @@
 ## 👋 If you're Wesley — start here
 
 Open **[`docs/wes/WES_INDEX.md`](docs/wes/WES_INDEX.md)** — it's the one page
-built for you. 5-min read. Then read in this order:
+built for you. 5-min read.
+
+**👉 NEW (2026-07-06): For the 1-page map of all 9 working files (capex, supply chain, legal, archaeology, BOQ, financial model), see [`docs/research/RESULTS/CHEATSHEET.md`](docs/research/RESULTS/CHEATSHEET.md). It's the fastest way to navigate the project.**
+
+Then read in this order:
 
 1. [`docs/wes/WES_FAQ.md`](docs/wes/WES_FAQ.md) — common questions (10 min)
 2. [`docs/wes/WES_GLOSSARY.md`](docs/wes/WES_GLOSSARY.md) — vocabulary, NL/ES/EN
