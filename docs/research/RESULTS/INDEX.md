@@ -48,10 +48,30 @@
 | File | What it answers |
 |---|---|
 | **`CAPEX_OPTIONS_2026-07-06.md`** ⭐ | Full capex matrix for Phase 1 (5-cabin baseline + 8 Wes-decisions with Budget/Mid/Premium options + recommended picks) |
+| `CAPEX_QUICK_REFERENCE.md` ⭐ | 1-page capex matrix for fast scanning (€216K recommended Phase 1 construction) |
 | **`DRONE_LIDAR_PRICING_2026-07-06.md`** ⭐ | Drone LiDAR service pricing (US/PY/PE/CO) + equipment capex + side-business ROI for the LQV R35 LiDAR job |
+| `DRONE_LIDAR_QUICK_REFERENCE.md` ⭐ | 1-page drone LiDAR analysis for fast scanning (HIRE vs BUY decision) |
+| `INDEX.md` ⭐ | This file — master catalog of all 151 research files |
 | `ARCHAEOLOGICAL_CULTURAL_RESEARCH_2026-07-06.md` | Archaeological + cultural background of the Escobar/Paraguarí area |
 | `LEGAL_RESEARCH_PACK_2026-07-06.md` | 4-BV cascade legal analysis (NL BV → PY branch → financing) |
 | `SUPPLY_CHAIN_RECOMMENDATIONS_2026-07-06.md` | Vendor master list (16 categories) for Phase 1 procurement |
+
+---
+
+## 🔗 COMPANION DOCS (not in RESULTS/ but part of the same workflow)
+
+These are the downstream deliverables that the research files build toward. Find them in their respective folders:
+
+| Companion file | Where | What it is |
+|---|---|---|
+| **`docs/_reconciled/business/FINANCIAL_MODEL_2026-07-06.xlsx`** ⭐ | `_reconciled/business/` | **The working financial model** — 10 sheets, 3-scenario toggle, 4-BV structure, sensitivity matrix, 40 source citations. What Wes opens when he wants to test "what if ADR goes to €300" or "what if I delay Phase 2 by 6 months" |
+| **`docs/_reconciled/business/FINANCIAL_MODEL.md`** | `_reconciled/business/` | The canonical Phase 1 model (€5.5M baseline, Wes 2026-06-30 data) — the markdown narrative companion to the xlsx |
+| **`docs/boq/BOQ_Phase1_2026-07-06.csv`** ⭐ | `docs/boq/` | **Bill of quantities** — 103 line items, 17 categories, primary vendor per line. This is what builders + vendors quote against |
+| `docs/boq/BOQ_Phase1_2026-07-06.md` | `docs/boq/` | Human-readable BOQ with category subtotals + vendor master list |
+| `docs/wes/SESSION_DIGEST_2026-07-06_CAPEX_LIDAR.md` | `docs/wes/` | 5-min session digest for Wes — what was done this session, immediate actions |
+| `docs/wes/WES_INDEX.md` | `docs/wes/` | Wes's master reading-stack index (now updated to point to all of the above) |
+| `docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md` | `docs/wes/` | Erebus audit + action punch list (6 jul) |
+| `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` | `docs/people/stakeholders/` | 1-page brief for the HG-1 attorney call |
 
 ---
 
@@ -417,11 +437,21 @@
 
 | Decision | Key files (in priority order) |
 |---|---|
-| **Hire or buy drone LiDAR** | `DRONE_LIDAR_PRICING_2026-07-06.md` ⭐ → `W05_drone_lidar_pilots.md` |
-| **Phase 1 construction budget** | `CAPEX_OPTIONS_2026-07-06.md` ⭐ → `2026-06-30_construction_prices_paraguay_nl.md` → individual M-files |
+| **Hire or buy drone LiDAR** | `DRONE_LIDAR_QUICK_REFERENCE.md` ⭐ → `DRONE_LIDAR_PRICING_2026-07-06.md` → `W05_drone_lidar_pilots.md` |
+| **Phase 1 construction budget** | `CAPEX_QUICK_REFERENCE.md` ⭐ → `CAPEX_OPTIONS_2026-07-06.md` → `2026-06-30_construction_prices_paraguay_nl.md` → individual M-files |
 | **Restaurant equipment** | `M22_M43_restaurant_suppliers_corrected.md` → `M22_kitchen_equipment_import.md` → `FT10_chef_partnership.md` |
 | **Solar + battery** | `F09_solar_pv.md` ⭐ → `F10_lifepo4_battery.md` ⭐ → `F19_generator_sizing.md` |
 | **NL ↔ PY tax position** | `L19_tax_treaty.md` → `L05_NL_BV_threshold_70k.md` → `L33_wes_personal_tax.md` |
+
+## 🎯 Quick links for the FINANCIAL modeling workflow
+
+| Task | Key files (in priority order) |
+|---|---|
+| **Run a what-if scenario (ADR, occupancy, expansion timing)** | `_reconciled/business/FINANCIAL_MODEL_2026-07-06.xlsx` ⭐ (10 sheets, interactive) |
+| **See the markdown narrative of the model** | `_reconciled/business/FINANCIAL_MODEL.md` |
+| **Get a vendor to quote Phase 1 construction** | `docs/boq/BOQ_Phase1_2026-07-06.csv` ⭐ (103 line items, vendor per line) |
+| **See the BOQ in human-readable form** | `docs/boq/BOQ_Phase1_2026-07-06.md` |
+| **Understand the 4-BV legal structure modeled** | `LEGAL_RESEARCH_PACK_2026-07-06.md` → `L06_PY_entity_types.md` → `WP01_partnership_agreement.md` |
 
 ---
 
