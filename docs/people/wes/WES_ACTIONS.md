@@ -161,6 +161,7 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 - `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` — 2-page datasheet — attach as PDF
 - `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` — ES WhatsApp for PY brokers
 - `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` — EN WhatsApp for international brokers
+- `../../research/RESULTS/PRICE_GAP_MASTER.md` — 95-item price-gap inventory (~40% vendor-priced, ~45% range-only, ~15% blind). Pairs with this outreach — broker quotes fill the gaps.
 
 **Reference:** `docs/research/RESULTS/insurance_fire_bundle.md` (Sprint 0 research, already done) + `docs/research/RESULTS/R01_fire_safety_plan.md`.
 
