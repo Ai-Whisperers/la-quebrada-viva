@@ -1,0 +1,974 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03569444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0000",
+        "canopy_height_m": 13.2,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 184.0,
+        "dbh_cm": 29.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03152777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0001",
+        "canopy_height_m": 14.8,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 158.0,
+        "dbh_cm": 34.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0002",
+        "canopy_height_m": 12.6,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 242.0,
+        "dbh_cm": 27.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0003",
+        "canopy_height_m": 14.2,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 255.0,
+        "dbh_cm": 32.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015416666649514,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "tree_id": "T0004",
+        "canopy_height_m": 11.8,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 297.0,
+        "dbh_cm": 25.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04013888887174,
+          -25.616250000015597
+        ]
+      },
+      "properties": {
+        "tree_id": "T0005",
+        "canopy_height_m": 12.6,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 229.0,
+        "dbh_cm": 27.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.616527777793376
+        ]
+      },
+      "properties": {
+        "tree_id": "T0006",
+        "canopy_height_m": 14.8,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 173.0,
+        "dbh_cm": 34.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04486111109396,
+          -25.616805555571155
+        ]
+      },
+      "properties": {
+        "tree_id": "T0007",
+        "canopy_height_m": 11.3,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 238.0,
+        "dbh_cm": 24.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.029027777760625,
+          -25.616805555571155
+        ]
+      },
+      "properties": {
+        "tree_id": "T0008",
+        "canopy_height_m": 16.6,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 166.0,
+        "dbh_cm": 43.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.617083333348933
+        ]
+      },
+      "properties": {
+        "tree_id": "T0009",
+        "canopy_height_m": 15.9,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 265.0,
+        "dbh_cm": 39.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.617638888904487
+        ]
+      },
+      "properties": {
+        "tree_id": "T0010",
+        "canopy_height_m": 17.1,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 212.0,
+        "dbh_cm": 45.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03986111109396,
+          -25.617916666682266
+        ]
+      },
+      "properties": {
+        "tree_id": "T0011",
+        "canopy_height_m": 11.9,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 253.0,
+        "dbh_cm": 25.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.035138888871735,
+          -25.618194444460045
+        ]
+      },
+      "properties": {
+        "tree_id": "T0012",
+        "canopy_height_m": 12.9,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 186.0,
+        "dbh_cm": 28.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02874999998285,
+          -25.61847222223782
+        ]
+      },
+      "properties": {
+        "tree_id": "T0013",
+        "canopy_height_m": 19.5,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 167.0,
+        "dbh_cm": 57.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.61847222223782
+        ]
+      },
+      "properties": {
+        "tree_id": "T0014",
+        "canopy_height_m": 19.5,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 157.0,
+        "dbh_cm": 57.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0168055555384,
+          -25.61847222223782
+        ]
+      },
+      "properties": {
+        "tree_id": "T0015",
+        "canopy_height_m": 15.8,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 255.0,
+        "dbh_cm": 38.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02097222220507,
+          -25.619305555571156
+        ]
+      },
+      "properties": {
+        "tree_id": "T0016",
+        "canopy_height_m": 13.7,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 208.0,
+        "dbh_cm": 31.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01708333331618,
+          -25.61986111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0017",
+        "canopy_height_m": 14.9,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 284.0,
+        "dbh_cm": 34.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.035138888871735,
+          -25.620694444460042
+        ]
+      },
+      "properties": {
+        "tree_id": "T0018",
+        "canopy_height_m": 17.9,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 188.0,
+        "dbh_cm": 49.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02208333331618,
+          -25.620694444460042
+        ]
+      },
+      "properties": {
+        "tree_id": "T0019",
+        "canopy_height_m": 18.7,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 242.0,
+        "dbh_cm": 53.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03958333331618,
+          -25.62152777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0020",
+        "canopy_height_m": 14.0,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 194.0,
+        "dbh_cm": 32.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01652777776062,
+          -25.62152777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0021",
+        "canopy_height_m": 15.1,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 351.0,
+        "dbh_cm": 35.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04097222220507,
+          -25.621805555571154
+        ]
+      },
+      "properties": {
+        "tree_id": "T0022",
+        "canopy_height_m": 11.5,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 195.0,
+        "dbh_cm": 24.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03736111109396,
+          -25.621805555571154
+        ]
+      },
+      "properties": {
+        "tree_id": "T0023",
+        "canopy_height_m": 15.3,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 177.0,
+        "dbh_cm": 36.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04319444442729,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0024",
+        "canopy_height_m": 13.9,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 199.0,
+        "dbh_cm": 31.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02513888887174,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0025",
+        "canopy_height_m": 15.9,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 158.0,
+        "dbh_cm": 39.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.62236111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0026",
+        "canopy_height_m": 19.5,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 261.0,
+        "dbh_cm": 57.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03597222220507,
+          -25.62263888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0027",
+        "canopy_height_m": 18.5,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 163.0,
+        "dbh_cm": 52.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.017361111093955,
+          -25.622916666682265
+        ]
+      },
+      "properties": {
+        "tree_id": "T0028",
+        "canopy_height_m": 16.5,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 343.0,
+        "dbh_cm": 42.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.031805555538405,
+          -25.623194444460044
+        ]
+      },
+      "properties": {
+        "tree_id": "T0029",
+        "canopy_height_m": 12.6,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 145.0,
+        "dbh_cm": 27.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03541666664952,
+          -25.624027777793376
+        ]
+      },
+      "properties": {
+        "tree_id": "T0030",
+        "canopy_height_m": 11.8,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 156.0,
+        "dbh_cm": 25.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02958333331618,
+          -25.624583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0031",
+        "canopy_height_m": 14.0,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 139.0,
+        "dbh_cm": 31.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.624583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0032",
+        "canopy_height_m": 16.1,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 266.0,
+        "dbh_cm": 40.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01513888887173,
+          -25.624583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0033",
+        "canopy_height_m": 12.8,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 267.0,
+        "dbh_cm": 28.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01763888887174,
+          -25.625138888904488
+        ]
+      },
+      "properties": {
+        "tree_id": "T0034",
+        "canopy_height_m": 17.5,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 310.0,
+        "dbh_cm": 47.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024861111093955,
+          -25.625416666682266
+        ]
+      },
+      "properties": {
+        "tree_id": "T0035",
+        "canopy_height_m": 12.6,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 154.0,
+        "dbh_cm": 27.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.037916666649515,
+          -25.625694444460045
+        ]
+      },
+      "properties": {
+        "tree_id": "T0036",
+        "canopy_height_m": 14.4,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 171.0,
+        "dbh_cm": 33.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03708333331618,
+          -25.625972222237824
+        ]
+      },
+      "properties": {
+        "tree_id": "T0037",
+        "canopy_height_m": 15.2,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 167.0,
+        "dbh_cm": 36.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01708333331618,
+          -25.626527777793378
+        ]
+      },
+      "properties": {
+        "tree_id": "T0038",
+        "canopy_height_m": 13.2,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 245.0,
+        "dbh_cm": 29.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0368055555384,
+          -25.627083333348935
+        ]
+      },
+      "properties": {
+        "tree_id": "T0039",
+        "canopy_height_m": 14.9,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 175.0,
+        "dbh_cm": 34.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.042083333316185,
+          -25.62736111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0040",
+        "canopy_height_m": 14.2,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 183.0,
+        "dbh_cm": 32.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04458333331618,
+          -25.62902777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0041",
+        "canopy_height_m": 16.1,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 166.0,
+        "dbh_cm": 40.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.033194444427295,
+          -25.62986111112671
+        ]
+      },
+      "properties": {
+        "tree_id": "T0042",
+        "canopy_height_m": 17.3,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 161.0,
+        "dbh_cm": 46.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.027638888871735,
+          -25.63013888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0043",
+        "canopy_height_m": 16.6,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 135.0,
+        "dbh_cm": 43.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04097222220507,
+          -25.631805555571155
+        ]
+      },
+      "properties": {
+        "tree_id": "T0044",
+        "canopy_height_m": 12.2,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 149.0,
+        "dbh_cm": 26.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03208333331618,
+          -25.632083333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0045",
+        "canopy_height_m": 16.6,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 149.0,
+        "dbh_cm": 43.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04374999998285,
+          -25.634583333348935
+        ]
+      },
+      "properties": {
+        "tree_id": "T0046",
+        "canopy_height_m": 12.1,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 152.0,
+        "dbh_cm": 26.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.035138888871735,
+          -25.635694444460047
+        ]
+      },
+      "properties": {
+        "tree_id": "T0047",
+        "canopy_height_m": 16.0,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 150.0,
+        "dbh_cm": 39.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03736111109396,
+          -25.635972222237825
+        ]
+      },
+      "properties": {
+        "tree_id": "T0048",
+        "canopy_height_m": 16.9,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 145.0,
+        "dbh_cm": 44.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03458333331618,
+          -25.637083333348937
+        ]
+      },
+      "properties": {
+        "tree_id": "T0049",
+        "canopy_height_m": 18.4,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 146.0,
+        "dbh_cm": 52.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02319444442729,
+          -25.63763888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0050",
+        "canopy_height_m": 14.8,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 146.0,
+        "dbh_cm": 34.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.040694444427295,
+          -25.63930555557116
+        ]
+      },
+      "properties": {
+        "tree_id": "T0051",
+        "canopy_height_m": 10.0,
+        "species": "Understory (palm/ing\u00e1)",
+        "elevation_m": 146.0,
+        "dbh_cm": 19.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0218055555384,
+          -25.63930555557116
+        ]
+      },
+      "properties": {
+        "tree_id": "T0052",
+        "canopy_height_m": 13.0,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 144.0,
+        "dbh_cm": 29.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01513888887173,
+          -25.639583333348934
+        ]
+      },
+      "properties": {
+        "tree_id": "T0053",
+        "canopy_height_m": 11.6,
+        "species": "Subcanopy (various native hardwoods)",
+        "elevation_m": 150.0,
+        "dbh_cm": 24.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.037916666649515,
+          -25.639861111126713
+        ]
+      },
+      "properties": {
+        "tree_id": "T0054",
+        "canopy_height_m": 15.6,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 151.0,
+        "dbh_cm": 38.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03597222220507,
+          -25.64013888890449
+        ]
+      },
+      "properties": {
+        "tree_id": "T0055",
+        "canopy_height_m": 17.2,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 136.0,
+        "dbh_cm": 46.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.64152777779338
+        ]
+      },
+      "properties": {
+        "tree_id": "T0056",
+        "canopy_height_m": 15.4,
+        "species": "Mature canopy (Yvyra pyt\u00e1/Petereby)",
+        "elevation_m": 143.0,
+        "dbh_cm": 36.8
+      }
+    }
+  ]
+}

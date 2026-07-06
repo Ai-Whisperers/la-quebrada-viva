@@ -1,0 +1,1285 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03708333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0000",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 187.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0268055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0001",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 179.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02652777776063,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0002",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 184.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.026249999982845,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0003",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 190.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02597222220507,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0004",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 193.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02569444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0005",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 193.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0006",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 191.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02513888887174,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0007",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 192.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024861111093955,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0008",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 193.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02458333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0009",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 194.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024305555538405,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0010",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 197.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02402777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0011",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 199.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02374999998285,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0012",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 203.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.023472222205065,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0013",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 205.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02319444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0014",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 209.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.022916666649515,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0015",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 209.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02263888887173,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0016",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 211.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02236111109396,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0017",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 215.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02208333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0018",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 219.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0218055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0019",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 220.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.021527777760625,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0020",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 222.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02124999998284,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0021",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 228.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02097222220507,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0022",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 233.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02069444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0023",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 234.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0024",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 231.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.020138888871735,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0025",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 234.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0026",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 242.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0027",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 245.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0193055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0028",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 247.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0029",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 253.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0030",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 255.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01847222220507,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0031",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 258.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01819444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0032",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 257.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01791666664951,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0033",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 261.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01763888887174,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0034",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 262.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.017361111093955,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0035",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 264.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01708333331618,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0036",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 270.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0168055555384,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0037",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 274.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01652777776062,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0038",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 276.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01624999998285,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0039",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 283.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015972222205065,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0040",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 288.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01569444442729,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0041",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 290.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.015416666649514,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0042",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 297.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01513888887173,
+          -25.615138888904486
+        ]
+      },
+      "properties": {
+        "rock_id": "R0043",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 299.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03708333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0044",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 188.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0368055555384,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0045",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 194.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02652777776063,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0046",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 179.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.026249999982845,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0047",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 185.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02597222220507,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0048",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 188.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02569444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0049",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 187.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02541666664951,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0050",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 189.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02513888887174,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0051",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 190.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024861111093955,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0052",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 190.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02458333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0053",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 192.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.024305555538405,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0054",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 194.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02402777776062,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0055",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 199.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02374999998285,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0056",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.023472222205065,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0057",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 201.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02319444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0058",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 206.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.022916666649515,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0059",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 208.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02263888887173,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0060",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 209.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02236111109396,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0061",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 212.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02208333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0062",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 216.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0218055555384,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0063",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 219.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.021527777760625,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0064",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 220.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02124999998284,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0065",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 221.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02097222220507,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0066",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 224.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02069444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0067",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 227.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02041666664951,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0068",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 228.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.020138888871735,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0069",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 232.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01986111109396,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0070",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 236.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01958333331618,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0071",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 238.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0193055555384,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0072",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 239.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01902777776062,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0073",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 244.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.018749999982845,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0074",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 249.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01847222220507,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0075",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 254.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01819444442729,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0076",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 254.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01791666664951,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0077",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 258.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.01763888887174,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0078",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 262.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.017361111093955,
+          -25.615416666682265
+        ]
+      },
+      "properties": {
+        "rock_id": "R0079",
+        "rock_score": 1.0,
+        "rock_type": "Outcrop",
+        "elevation_m": 262.0
+      }
+    }
+  ]
+}
