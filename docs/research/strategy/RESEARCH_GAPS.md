@@ -152,6 +152,9 @@ Each entry: `ID — short answer — date — source`.
 
 - **NEW-01** — AI as PY vendor price-negotiator (comm-channel matrix, 10 named vendors, $300-700 savings estimated) — 2026-07-06 — `docs/research/RESULTS/NEW01_ai_price_negotiator.md`
 - **NEW-02** — Steengroeve (Paraguarí): 3 named quarries (Piribebuy, Sapucai, Itá), sandstone $35-50/m³ vs itacurubí $45-65/m³ landed to Escobar — 2026-07-06 — `docs/research/RESULTS/NEW02_steengroeve_paraguari.md`
+- **R39 (Hovenier)** — Wes's audio D "AI-jongheid" research: 5 named PY arborists, 10-species native reforestation matrix, Phase 1 mix €10,500 all-in — 2026-07-06 — `docs/research/RESULTS/R39_hovenier_2026.md`
+- **R45 (Starlink 2026)** — Refresh of F12_starlink.md: 4-tier pricing matrix, NL→LQV latency 180-220ms, hybrid 2-kit + mesh architecture $200-250/mo — 2026-07-06 — `docs/research/RESULTS/R45_starlink_2026.md`
+- **R48 (Cement time-series)** — PY cement 2010-2026 nominal PYG 22k→57k + +62% real growth; event correlations (COVID 2020, fiscal crisis 2024) — 2026-07-06 — `docs/research/RESULTS/R48_cement_time_series.md`
 - **NEW-03** — PY rail/river freight: Ipoh-Karai rumor VERIFIED NO PUBLIC PLAN FOUND; Hidrovía river freight viable for CDE→Asunción bulk (~$1.5k-3k saving for Phase 1) — 2026-07-06 — `docs/research/RESULTS/NEW03_py_rail_river_freight.md`
 - **M_WOOD_01** — Structureel hout: 4-species matrix (eucalyptus Itapúa $45-60/m³, lapacho $105-200, pine SKIP, bamboo $26-40). Phase 1 mix 60/25/15 = $880-1,215 — 2026-07-06 — `docs/research/RESULTS/M_WOOD_01_structureel_hout.md`
 - **M_COB_01** — Cob wall materialen: 4 PY cob-trained builders named, $1,680/cabin material; 50% cheaper than fired brick; lime-plaster required for PY humidity — 2026-07-06 — `docs/research/RESULTS/M_COB_01_cob_earthen_materialen.md`
@@ -161,20 +164,20 @@ Each entry: `ID — short answer — date — source`.
 
 ### Remaining R-items
 
-Still open: **R39** (Hovenier, awaiting Kuikopee contact via W0.9 Sonja), **R41** (Tundra/Presio, awaiting W0.7 Wes decision), **R42-R46** (Sprint-1 hout/cob/bev/vloer/verf DONE — R43-46 are related/completed), **R47** (Sonja salary bands, awaiting W0.9 call), **R48** (cement time series, separate follow-up needed), **R49** stone DONE via NEW-02, **R50** AI-negotiator DONE via NEW-01.
+Still open: **R41** (Tundra/Presio, awaiting W0.7 Wes decision), **R42-R46** (Sprint-1 hout/cob/bev/vloer/verf DONE — R43-46 are related/completed), **R47** (Sonja salary bands, awaiting W0.9 call). **DONE: R39 Hovenier, R45 Starlink, R48 Cement series** (all 2026-07-06). R49 stone DONE via NEW-02, R50 AI-negotiator DONE via NEW-01.
 
 ### R39-R50 status (2026-07-06)
 
-- **R39** 🔴 → awaiting W0.9 Sonja call for Kuikopee contact
+- **R39** 🟢 DONE → see `R39_hovenier_2026.md` (5 named arborists + 10-species mix mapped; Kuikopee specific Dutch contact remains W0.9 follow-up)
 - **R40** 🔴 → Ipoh-Karai rumor VERIFIED no public plan (NEW-03). Tailwind-watch.
 - **R41** 🔴 → W0.7 Wes finalizes between Hilux SRV used (~$30k) vs Tundra SR5 (~$50k) — see AH01/AH02/AH03
 - **R42** 🔴 → drone pilot outreach (W0.5-B)
 - **R43** 🔴 → restaurant kitchen (W0.5-B Phase 1 kitchen fire-up)
 - **R44** 🔴 → car insurance (W0.5-A bundling)
-- **R45** 🔴 → Starlink kit (W0.5-B site visit prep)
+- **R45** 🟢 DONE → see `R45_starlink_2026.md` (4-tier pricing; recommend 1 Standard kit + 4G backup @ ~$200-250/mo)
 - **R46** 🟢 DONE → NEW-02 (steengroeve)
 - **R47** 🔴 → Sonja call (W0.9)
-- **R48** 🔴 → cement 2010-2026 series (TBD)
+- **R48** 🟢 DONE → see `R48_cement_time_series.md` (nominal PYG 22k→57k 2010-2026, +62% real growth)
 - **R49** 🟢 DONE → NEW-02
 - **R50** 🟢 DONE → NEW-01
 
