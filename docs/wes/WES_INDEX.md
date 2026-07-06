@@ -36,6 +36,10 @@
 | 4 | **`docs/audios/2026-06-30-wes-post-escritura/final/KEY_POINTS.md`** | Your 20 bullet points from the 5 audio sessions (3 min read) |
 | 5 | **`docs/people/WES_ACTIONS.md`** | The 5 things only you can do this week |
 | 6 | **`docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md`** | Erebus audit (post-escritura state) — repo map, current issues, what to read first |
+| 7 | **`docs/wes/SESSION_DIGEST_2026-07-06_CAPEX_LIDAR.md`** 🆕 | 5-min digest of today's capex + drone LiDAR research |
+| 8 | **`docs/research/RESULTS/CAPEX_QUICK_REFERENCE.md`** 🆕 | 1-page capex matrix for Phase 1 (€216K recommended) |
+| 9 | **`docs/research/RESULTS/DRONE_LIDAR_QUICK_REFERENCE.md`** 🆕 | 1-page drone LiDAR pricing + side business analysis |
+| 10 | **`docs/research/RESULTS/INDEX.md`** 🆕 | Master catalog of all 151 research files (organized by topic prefix) |
 
 ---
 
