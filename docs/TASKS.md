@@ -3,6 +3,8 @@
 Grounded in the v19 audit. Prioritized by user-visible impact.
 Status legend: ☐ todo · ◐ in-progress · ☑ done · ✕ blocked/cancelled
 
+> **⚠️ 2026-07-06 update (Erebus):** `splats/exports/web/mapa-10km.html` was renamed to `splats/exports/web/mapa.html` with a radius picker (parcel / 5 / 10 / 20 / 30 km). Old URLs (`mapa-10km.html`, `mapa-20km.html`) → meta-refresh redirect to `mapa.html` (and `?r=20`). All task locations below should be updated when accessed. Refactor rationale: single source of truth for the map viewer, with the radius-as-a-setting rather than two separate files.
+
 ---
 
 ## P0 — critical (visible to user today, actually broken)

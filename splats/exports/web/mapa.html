@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LQV · Context Map — parcel / 5 / 10 / 20 / 30 km radius</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<style>
+  :root {
+    --ink: #1c1917;
+    --paper: #faf7f2;
+    --cream: #f5efe6;
+    --gold: #c89b3c;
+    --gold-dark: #9c7728;
+    --line: #d6cfc1;
+    --muted: #78716c;
+    --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.04);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-serif; color: var(--ink); background: var(--paper); }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; }
+  a { color: var(--gold-dark); }
+
+  /* Top bar */
+  header.topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 24px; background: white; border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow);
+  }
+  header.topbar .brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  header.topbar .brand h1 { font-size: 1.4rem; line-height: 1; }
+  header.topbar .brand .sub { color: var(--muted); font-size: 0.85rem; }
+  header.topbar .brand .stats { color: var(--gold-dark); font-size: 0.78rem; font-weight: 500; }
+  header.topbar nav a { margin-left: 16px; text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.9rem; }
+  header.topbar nav a:hover { color: var(--gold-dark); }
+
+  /* Mobile drawer toggle */
+  .drawer-toggle {
+    display: none;
+    background: var(--ink); color: white; border: 0; padding: 6px 12px;
+    border-radius: 6px; font-family: inherit; font-size: 0.85rem; cursor: pointer;
+    position: fixed; bottom: 12px; left: 12px; z-index: 1100;
+    box-shadow: var(--shadow);
+  }
+  @media (max-width: 900px) {
+    .drawer-toggle { display: block; }
+    /* P2-2: drawer polish — add backdrop, larger touch targets */
+    aside.sidebar {
+      position: fixed; top: 56px; left: -340px; height: calc(100vh - 56px);
+      width: 320px; max-width: 90vw; z-index: 1050;
+      transition: left 0.25s ease; box-shadow: var(--shadow);
+    }
+    aside.sidebar.open { left: 0; }
+    .layout { grid-template-columns: 1fr; }
+    .map-wrap { grid-column: 1; }
+    /* Backdrop overlay when drawer is open */
+    .drawer-backdrop {
+      display: none; position: fixed; inset: 56px 0 0 0;
+      background: rgba(0,0,0,0.4); z-index: 1040;
+    }
+    .drawer-backdrop.visible { display: block; }
+    /* Bigger touch targets in the sidebar */
+    .layer-row { min-height: 36px; padding: 8px 0; }
+    .layer-row input[type="range"] { min-height: 36px; }
+    /* Hide some controls that don't fit on mobile */
+    .map-legend { max-width: 240px; font-size: 0.7rem; }
+  }
+
+  /* Layout: map + sidebar — collapsible on desktop */
+  .layout { display: grid; grid-template-columns: 340px 1fr; height: calc(100vh - 56px); transition: grid-template-columns 0.22s ease; }
+
+  aside.sidebar {
+    background: white; border-right: 1px solid var(--line);
+    overflow-y: auto; overflow-x: hidden; padding: 0;
+    position: relative;
+  }
+  /* Desktop collapse — sidebar shrinks to a 44 px rail with vertical text */
+  aside.sidebar.collapsed { width: 44px; min-width: 44px; max-width: 44px; overflow: hidden; }
+  aside.sidebar.collapsed .sidebar-search,
+  aside.sidebar.collapsed .preset-bar,
+  aside.sidebar.collapsed .sidebar-section,
+  aside.sidebar.collapsed .sidebar-actions,
+  aside.sidebar.collapsed .sidebar-header-title { display: none !important; }
+  aside.sidebar.collapsed .sidebar-rail { display: flex; }
+  aside.sidebar.collapsed .sidebar-rail .rail-label { display: block; }
+  .sidebar-rail { display: none; position: sticky; top: 0; z-index: 5;
+    flex-direction: column; align-items: center; padding: 14px 0;
+    background: white; border-bottom: 1px solid var(--line);
+    width: 44px; height: 100%; }
+  .sidebar-rail .rail-label {
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-family: 'Cormorant Garamond', serif; font-size: 0.95rem;
+    color: var(--gold-dark); letter-spacing: 0.08em; margin-top: 8px; display: none;
+  }
+  /* Collapse button — visible on desktop, hidden on mobile */
+  .sidebar-collapse {
+    position: absolute; top: 8px; right: 8px; z-index: 20;
+    background: rgba(255,255,255,0.9); border: 1px solid var(--line);
+    border-radius: 4px; width: 28px; height: 28px;
+    cursor: pointer; color: var(--muted); font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+  .sidebar-collapse:hover { background: var(--gold); color: white; border-color: var(--gold-dark); }
+  aside.sidebar.collapsed .sidebar-collapse { right: 8px; transform: rotate(180deg); }
+
+  /* ═══════════════════════════════════════════════════════════════
+     FULLSCREEN MODE
+     When document.body has .fullscreen-mode, hide everything that
+     isn't the map. Click anywhere or press Esc to exit.
+     ═══════════════════════════════════════════════════════════════ */
+  body.fullscreen-mode header.topbar,
+  body.fullscreen-mode aside.sidebar,
+  body.fullscreen-mode .drawer-toggle,
+  body.fullscreen-mode .drawer-backdrop,
+  body.fullscreen-mode .elev-hud .elev-hud-header,
+  body.fullscreen-mode #forest-timeline,
+  body.fullscreen-mode .north-arrow { display: none !important; }
+  body.fullscreen-mode .layout {
+    grid-template-columns: 1fr !important;
+    height: 100vh !important;
+  }
+  body.fullscreen-mode .map-wrap { height: 100vh !important; }
+  /* In fullscreen, the fullscreen button lives in the top-right corner
+     of the map itself. */
+  body.fullscreen-mode #fullscreen-btn {
+    position: fixed; top: 12px; right: 12px; z-index: 1100;
+    background: rgba(28,25,23,0.88); color: white;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 4px;
+    padding: 8px 14px; font-size: 0.85rem; cursor: pointer;
+    backdrop-filter: blur(4px);
+  }
+  body.fullscreen-mode #fullscreen-btn:hover {
+    background: rgba(196,155,60,0.95);
+  }
+  /* Floating exit hint shown for 2.5 s when entering fullscreen */
+  .fs-hint {
+    position: fixed; top: 60px; left: 50%; transform: translateX(-50%);
+    z-index: 1101; background: rgba(28,25,23,0.85); color: white;
+    padding: 10px 18px; border-radius: 6px; font-size: 0.84rem;
+    backdrop-filter: blur(4px); animation: fs-fade 2.5s ease forwards;
+  }
+  @keyframes fs-fade {
+    0% { opacity: 0; transform: translate(-50%, -10px); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, -10px); }
+  }
+
+  @media (max-width: 900px) {
+    .sidebar-collapse { display: none; }
+    aside.sidebar.collapsed { width: 320px; min-width: 320px; }
+    aside.sidebar.collapsed .sidebar-rail { display: none !important; }
+  }
+
+  /* Preset bar — prominent at the top of the sidebar */
+  .preset-bar {
+    padding: 12px 18px 14px;
+    border-bottom: 2px solid var(--gold);
+    background: linear-gradient(180deg, #fdfaf3 0%, white 100%);
+  }
+  .preset-bar-title {
+    font-family: 'Inter', sans-serif; font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.10em;
+    color: var(--gold-dark); font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .preset-bar-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;
+  }
+  .preset-bar-row.full { grid-template-columns: 1fr 1fr; }
+  .preset-btn {
+    padding: 7px 6px; border-radius: 5px;
+    border: 1px solid var(--line); background: white;
+    color: var(--ink); font-family: inherit; font-size: 0.78rem;
+    font-weight: 600; cursor: pointer; transition: all 0.12s ease;
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+  }
+  .preset-btn:hover { border-color: var(--gold-dark); color: var(--gold-dark); }
+  .preset-btn.active { background: var(--gold); color: white; border-color: var(--gold-dark); }
+  .preset-btn.full-width { grid-column: 1 / -1; }
+  .preset-btn.primary { background: var(--ink); color: white; border-color: var(--ink); }
+  .preset-btn.primary:hover { background: var(--gold); border-color: var(--gold-dark); }
+  .preset-btn .icon { font-size: 0.95rem; }
+
+  .sidebar-section { border-bottom: 1px solid var(--line); padding: 16px 18px 18px; }
+  .sidebar-section:first-of-type { padding-top: 14px; }
+  .sidebar-search {
+    padding: 14px 18px; border-bottom: 1px solid var(--line);
+    background: linear-gradient(to bottom, rgba(180,130,50,0.04), transparent);
+    position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px);
+    background-color: rgba(255,255,255,0.94);
+  }
+  .sidebar-search input[type=search] {
+    width: 100%; padding: 7px 10px;
+    border: 1px solid var(--line); border-radius: 4px;
+    font-family: inherit; font-size: 0.85rem; color: var(--text);
+    background: white; outline: none;
+  }
+  .sidebar-search input[type=search]:focus {
+    border-color: var(--gold-dark); box-shadow: 0 0 0 3px rgba(180,130,50,0.15);
+  }
+  .sidebar-search input[type=search]::placeholder {
+    color: var(--muted); font-size: 0.78rem;
+  }
+  .search-count {
+    display: block; margin-top: 5px; font-size: 0.72rem; color: var(--muted);
+    min-height: 1em;
+  }
+  .layer-row.hidden { display: none; }
+  .sidebar-section.empty-section { display: none; }
+  .sidebar-section h3 {
+    font-family: 'Inter', sans-serif; font-size: 0.72rem;
+    text-transform: uppercase; letter-spacing: 0.10em; color: var(--gold-dark);
+    margin: 0 0 12px 0; font-weight: 700;
+    border-bottom: 1px solid rgba(180, 130, 50, 0.15); padding-bottom: 8px;
+  }
+  .sidebar-section h3 .badge {
+    float: right; background: rgba(180,130,50,0.12); color: var(--gold-dark);
+    padding: 1px 7px; border-radius: 10px; font-size: 0.66rem;
+    font-weight: 600; letter-spacing: 0;
+  }
+  .layer-row {
+    display: flex; align-items: center; gap: 8px; padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .layer-row:last-child { border-bottom: 0; }
+  .layer-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--gold-dark); cursor: pointer; flex-shrink: 0; }
+  .layer-row .swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.15); }
+  .legend-table { border-collapse: collapse; }
+  .legend-table td { padding: 2px 8px 2px 4px; vertical-align: middle; }
+  .legend-table td:first-child { width: 36px; }
+  .layer-row .name { flex: 1; cursor: pointer; font-size: 0.85rem; line-height: 1.3; }
+  .layer-row .name small { color: var(--muted); }
+  .layer-row .count { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+  .layer-row .download { color: var(--gold-dark); text-decoration: none; font-size: 0.75rem; opacity: 0.7; }
+  .layer-row .download:hover { opacity: 1; text-decoration: underline; }
+  .layer-row .opacity {
+    width: 60px; flex-shrink: 0; accent-color: var(--gold);
+  }
+  .layer-row:has(input:checked) .name { color: var(--text); }
+  .layer-row:not(:has(input:checked)) .name { color: var(--muted); }
+
+  /* Map area */
+  .map-wrap { position: relative; }
+  #map { width: 100%; height: 100%; min-height: 70vh; background: #1a1a1a; }
+
+  /* North arrow — bigger, more visible */
+  .map-legend {
+    position: absolute; right: 12px; bottom: 56px; z-index: 500;
+    background: rgba(255,255,255,0.96); border: 1px solid var(--line);
+    border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 8px 12px; min-width: 220px; max-width: 320px;
+    font-family: 'Inter', sans-serif; pointer-events: auto;
+    transition: all 0.2s ease;
+  }
+  .map-legend.hidden { display: none; }
+  .map-legend-title {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--gold-dark); font-weight: 700; margin-bottom: 6px;
+    border-bottom: 1px solid rgba(180,130,50,0.18); padding-bottom: 4px;
+  }
+  .map-legend-body { font-size: 0.78rem; color: var(--text); }
+  .map-legend-empty { color: var(--muted); font-style: italic; }
+  .map-legend-section { margin-top: 8px; }
+  .map-legend-section:first-child { margin-top: 0; }
+  .map-legend-section-title {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--muted); font-weight: 600; margin-bottom: 4px;
+  }
+  .map-legend-row {
+    display: flex; align-items: center; gap: 6px; padding: 1px 0;
+  }
+  .map-legend-swatch {
+    width: 14px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+  .map-legend-text { flex: 1; }
+  .map-legend-count { color: var(--muted); font-size: 0.72rem; }
+  .map-legend-controls {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line);
+  }
+  .map-legend-toggle {
+    background: none; border: 0; color: var(--gold-dark);
+    font-size: 0.7rem; cursor: pointer; padding: 2px 4px;
+  }
+  .map-legend-toggle:hover { text-decoration: underline; }
+
+  /* P0-3: Coverage indicator badge */
+  .coverage-badge {
+    font-size: 0.68rem; color: var(--muted);
+    margin-left: 4px; font-weight: 500;
+  }
+  .coverage-badge.coverage-on { color: var(--gold-dark); font-weight: 700; }
+
+  /* P2-1: Coverage matrix in About section */
+  .coverage-matrix {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.72rem; margin-top: 6px;
+  }
+  .coverage-matrix th {
+    background: rgba(180,130,50,0.10); padding: 4px 6px;
+    text-align: left; border-bottom: 1px solid var(--line);
+    color: var(--gold-dark); font-weight: 600;
+  }
+  .coverage-matrix td {
+    padding: 3px 6px; border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .coverage-matrix tr.has-coverage td:last-child {
+    color: var(--gold-dark); font-weight: 700;
+  }
+
+  /* P2-7: Forest-change timeline chart */
+  #forest-timeline-chart {
+    height: 100px; margin-top: 8px;
+    background: rgba(180,130,50,0.04); border-radius: 4px;
+    padding: 6px; position: relative;
+  }
+  #forest-timeline-chart svg { width: 100%; height: 100%; display: block; }
+  #forest-timeline-text {
+    font-size: 0.72rem; color: var(--muted); margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* Keyboard shortcut list */
+  .kb-list { padding-left: 0; list-style: none; margin: 6px 0 0; }
+  .kb-list li { padding: 3px 0; color: var(--muted); }
+  .kb-list kbd {
+    background: rgba(28,25,23,0.08); border: 1px solid var(--line);
+    border-bottom-width: 2px; border-radius: 3px;
+    padding: 1px 6px; font-family: ui-monospace, monospace; font-size: 0.72rem;
+    color: var(--ink); display: inline-block; min-width: 22px; text-align: center;
+  }
+
+  .north-arrow {
+    position: absolute; top: 12px; right: 12px; z-index: 500;
+    width: 56px; height: 56px;
+    background: rgba(255,255,255,0.96); border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--gold);
+  }
+  .north-arrow svg { width: 36px; height: 36px; }
+  .north-arrow::after {
+    content: 'N'; position: absolute; top: -2px; left: 50%; transform: translate(-50%, -50%);
+    background: var(--ink); color: white; padding: 1px 6px; border-radius: 8px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+  }
+
+  /* Loading state */
+  .loading-banner {
+    position: absolute; bottom: 12px; right: 12px; z-index: 500;
+    background: rgba(28,25,23,0.9); color: white; padding: 8px 14px; border-radius: 6px;
+    font-size: 0.85rem; box-shadow: var(--shadow);
+    transition: opacity 0.4s ease;
+  }
+  .loading-banner.hidden { opacity: 0; pointer-events: none; }
+
+  /* P1-6: Cursor elevation/slope/aspect HUD */
+  .elev-hud {
+    position: absolute; left: 12px; bottom: 56px; z-index: 500;
+    background: rgba(28,25,23,0.92); color: white;
+    border-radius: 6px; padding: 8px 12px;
+    font-family: 'Inter', sans-serif; font-size: 0.74rem;
+    line-height: 1.5; min-width: 160px;
+    backdrop-filter: blur(4px);
+  }
+  .elev-hud-row { display: flex; justify-content: space-between; gap: 12px; }
+  .elev-hud-label {
+    color: rgba(255,255,255,0.55); font-size: 0.65rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  #hud-elev { color: var(--gold); font-weight: 700; }
+
+  /* Action buttons */
+  .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .actions button {
+    background: var(--cream); border: 1px solid var(--line); padding: 8px 12px; border-radius: 6px;
+    cursor: pointer; font-size: 0.85rem; font-family: inherit; color: var(--ink);
+  }
+  .actions button:hover { background: var(--gold); color: white; border-color: var(--gold-dark); }
+
+  /* Status pill */
+  .status-pill {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    background: var(--cream); color: var(--muted); font-size: 0.72rem; font-weight: 500;
+  }
+  .status-pill.live { background: #dcfce7; color: #15803d; }
+
+  /* Help text */
+  .help { color: var(--muted); font-size: 0.82rem; line-height: 1.4; }
+
+  /* Property focus pulse */
+  @keyframes lqv-pulse {
+    0%   { transform: scale(1); opacity: 0.9; }
+    70%  { transform: scale(2.4); opacity: 0; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  @keyframes lqv-pulse-inner {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.08); }
+  }
+  .lqv-parcel-marker {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #c89b3c; border: 3px solid white; box-shadow: 0 0 0 2px rgba(0,0,0,0.4);
+    position: relative; animation: lqv-pulse-inner 2.4s ease-in-out infinite;
+  }
+  .lqv-parcel-marker::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 50%;
+    background: #c89b3c; animation: lqv-pulse 2.4s ease-out infinite; z-index: -1;
+  }
+
+  /* Guru Maps bookmark-style pins (orange border pin from the live share) */
+  .leaflet-marker-icon.guru-pin,
+  .leaflet-marker-icon.guru-pin-feature {
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.45));
+    transition: transform 0.15s ease;
+    cursor: pointer;
+  }
+  .leaflet-marker-icon.guru-pin:hover {
+    transform: scale(1.18) translateY(-2px);
+  }
+  .leaflet-marker-icon.guru-pin-feature:hover {
+    transform: scale(1.10) translateY(-3px);
+  }
+
+  /* Permanent leaflet labels */
+  .leaflet-tooltip.permanent {
+    background: rgba(28,25,23,0.92); color: white; border: 0;
+    padding: 3px 8px; font-size: 11px; font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4); border-radius: 3px;
+    white-space: nowrap; letter-spacing: 0.02em;
+  }
+  /* Property parcel label is distinct (gold background) */
+  .leaflet-tooltip.parcel-label,
+  .leaflet-tooltip.permanent:has(strong),
+  .leaflet-tooltip.permanent.parcel {
+    background: var(--gold);
+    color: #1c1917;
+    font-weight: 700;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    font-size: 12px;
+  }
+  .leaflet-tooltip.permanent::before { display: none; }
+  .lqv-tooltip {
+    background: rgba(28,25,23,0.92); color: white; border: 0;
+    padding: 3px 7px; font-size: 11px; font-weight: 500;
+  }
+  .lqv-tooltip::before { border-right-color: rgba(28,25,23,0.92); }
+
+  /* Marker cluster custom */
+  .marker-cluster-small  { background-color: rgba(190, 24, 93, 0.6); }
+  .marker-cluster-small div  { background-color: rgba(190, 24, 93, 0.85); color: white; }
+  .marker-cluster-medium { background-color: rgba(245, 158, 11, 0.6); }
+  .marker-cluster-medium div { background-color: rgba(245, 158, 11, 0.85); color: white; }
+  .marker-cluster-large  { background-color: rgba(239, 68, 68, 0.6); }
+  .marker-cluster-large div  { background-color: rgba(239, 68, 68, 0.85); color: white; }
+
+  /* Measurement widget */
+  .measure-widget {
+    background: white; padding: 6px; border-radius: 6px;
+    box-shadow: var(--shadow);
+  }
+  .measure-widget a {
+    background: #fff; display: block; width: 28px; height: 28px;
+    line-height: 28px; text-align: center; color: var(--ink);
+    text-decoration: none; border-radius: 4px; font-size: 14px; font-weight: 600;
+  }
+  .measure-widget a:hover { background: var(--gold); color: white; }
+
+  /* P2-5: Print-friendly view */
+  @media print {
+    aside.sidebar,
+    .drawer-toggle,
+    .drawer-backdrop,
+    .north-arrow,
+    .elev-hud,
+    .map-legend,
+    .loading-banner,
+    .leaflet-control-zoom,
+    .leaflet-control-scale,
+    .leaflet-control-attribution { display: none !important; }
+    .layout { grid-template-columns: 1fr !important; height: auto !important; }
+    .map-wrap { height: 100vh !important; }
+    header.topbar { background: white !important; color: black !important;
+      border-bottom: 2px solid #333 !important; }
+    header.topbar h1, header.topbar span { color: black !important; }
+    body { background: white !important; }
+    @page { size: A3 landscape; margin: 1cm; }
+    /* Show a print-only header with the property info */
+    header.topbar::after {
+      content: "Printed: " attr(data-print-date);
+      display: block; color: #333; font-size: 0.7rem;
+      margin-top: 4px; font-weight: 400;
+    }
+  }
+
+    /* Radius picker — sits between topbar and sidebar */
+    .radius-picker {
+      display: flex; align-items: center; gap: 12px;
+      padding: 8px 18px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.84rem;
+    }
+    .radius-picker label { color: var(--muted); font-weight: 500; }
+    .radius-picker .radius-buttons { display: flex; gap: 4px; }
+    .radius-picker button {
+      background: var(--bg-2); color: var(--fg-2);
+      border: 1px solid var(--line);
+      padding: 4px 11px; border-radius: 4px;
+      font: inherit; cursor: pointer;
+    }
+    .radius-picker button:hover { background: var(--bg-3); color: var(--fg); }
+    .radius-picker button.active {
+      background: var(--gold); color: var(--ink);
+      border-color: var(--gold-soft);
+      font-weight: 600;
+    }
+    .radius-picker .radius-info { color: var(--muted); font-size: 0.78rem; }
+
+</style>
+</head>
+<body>
+
+<header class="topbar" data-print-date="">
+  <div class="brand">
+    <h1>La Quebrada Viva</h1>
+    <span class="sub" id="topbar-sub">10 km context map — change radius above</span>
+    <span class="stats" id="total-stat">— features</span>
+    <span class="stats" id="distance-stat" style="color: var(--muted); font-weight: 400; margin-left: 8px;"></span>
+  </div>
+  <nav>
+    <a href="./index.html">← Walkthrough</a>
+    <a href="./analysis-2026-07-04.html">Full analysis</a>
+    <a href="https://github.com/Ai-Whisperers/la-quebrada-viva">Repo</a>
+  </nav>
+</header>
+
+
+<div class="radius-picker" role="radiogroup" aria-label="Map view radius">
+  <label>Map radius:</label>
+  <div class="radius-buttons" id="radius-buttons">
+    <button type="button" data-radius="parcel" role="radio">Parcel</button>
+    <button type="button" data-radius="5" role="radio">5 km</button>
+    <button type="button" data-radius="10" role="radio" class="active" aria-checked="true">10 km</button>
+    <button type="button" data-radius="20" role="radio">20 km</button>
+    <button type="button" data-radius="30" role="radio">30 km</button>
+  </div>
+  <span class="radius-info" id="radius-info">Showing 10 km context — pre-loaded layers in this box.</span>
+</div>
+
+<button class="drawer-toggle" id="drawer-toggle">☰ Layers</button>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+
+    <!-- Desktop sidebar collapse button -->
+    <button class="sidebar-collapse" id="sidebar-collapse" title="Collapse sidebar">‹</button>
+
+    <!-- Collapsed-state rail -->
+    <div class="sidebar-rail" id="sidebar-rail">
+      <span class="rail-label">La Quebrada Viva</span>
+    </div>
+
+    <!-- Search filter -->
+    <div class="sidebar-search">
+      <input type="search" id="layer-search" placeholder="🔍 Filter layers (try 'forest', 'water', 'MapBiomas'…)"
+             autocomplete="off" />
+      <span class="search-count" id="search-count"></span>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PRESETS — turn on the right layers in one click
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="preset-bar">
+      <div class="preset-bar-title">⚡ Quick view presets</div>
+      <div class="preset-bar-row">
+        <button class="preset-btn primary full-width" id="preset-all" data-preset="all">
+          <span class="icon">✓</span> Turn ALL layers on
+        </button>
+      </div>
+      <div class="preset-bar-row">
+        <button class="preset-btn" id="preset-none" data-preset="none">
+          <span class="icon">✕</span> None
+        </button>
+        <button class="preset-btn" id="preset-property" data-preset="property">
+          <span class="icon">🏠</span> Property
+        </button>
+      </div>
+      <div class="preset-bar-row">
+        <button class="preset-btn" id="preset-water" data-preset="water">
+          <span class="icon">💧</span> Water story
+        </button>
+        <button class="preset-btn" id="preset-forest" data-preset="forest">
+          <span class="icon">🌳</span> Forest story
+        </button>
+      </div>
+      <div class="preset-bar-row">
+        <button class="preset-btn" id="preset-terrain" data-preset="terrain">
+          <span class="icon">⛰</span> Terrain
+        </button>
+        <button class="preset-btn" id="preset-context" data-preset="context">
+          <span class="icon">🗺</span> Context
+        </button>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         1 · PROPERTY — what we own
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Property — what we own <span class="badge" data-section-count="property">5</span></h3>
+
+      <label class="layer-row" data-preset-group="property">
+        <input type="checkbox" data-layer="parcel" checked />
+        <span class="swatch" style="background: var(--gold);"></span>
+        <span class="name">GPS-walked perimeter · <b>71.4 ha</b></span>
+        <input type="range" class="opacity" data-opacity="parcel" min="0.2" max="1" step="0.05" value="0.18" />
+        <a class="download" href="./data/client_gps/client_gps_polygon.geojson" download title="Download GPS polygon">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="property">
+        <input type="checkbox" data-layer="gps-corners" checked />
+        <span class="swatch" style="background: #fef3c7; border: 1.5px solid var(--gold);"></span>
+        <span class="name">GPS corners · 17 walked</span>
+        <span class="count" data-count="gps-corners">—</span>
+        <a class="download" href="./data/client_gps/client_gps_corners.geojson" download title="Download corner points">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="property">
+        <input type="checkbox" data-layer="gps-features" checked />
+        <span class="swatch" style="background: #1d4ed8;"></span>
+        <span class="name">Named features · gate, waterfall, summit</span>
+        <span class="count" data-count="gps-features">—</span>
+        <a class="download" href="./data/client_gps/client_gps_features.geojson" download title="Download named features">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="property,legacy">
+        <input type="checkbox" data-layer="escobar-legacy" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #94a3b8;"></span>
+        <span class="name"><small>Legacy: 30.9 ha KML subset</small></span>
+        <a class="download" href="./data/client_gps/escobar_polygon_legacy.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="property,legacy">
+        <input type="checkbox" data-layer="aoi62-legacy" />
+        <span class="swatch" style="background: transparent; border: 1.5px dashed #a8a29e;"></span>
+        <span class="name"><small>Legacy: 62 ha AOI buffer</small></span>
+        <a class="download" href="./data/client_gps/aoi_62_extended_legacy.geojson" download title="Download">↓</a>
+      </label>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         2 · WES'S WALK — the survey (the WOW demo)
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Wes's walk — captured in time order <span class="badge" data-section-count="walk">2</span></h3>
+
+      <label class="layer-row" data-preset-group="property">
+        <input type="checkbox" data-layer="gps-walking-path" checked />
+        <span class="swatch" style="background: transparent; border: 2px solid #f59e0b;"></span>
+        <span class="name"><strong>Walking track</strong> · 20 GPS pts + timestamps</span>
+        <input type="range" class="opacity" data-opacity="gps-walking-path" min="0.3" max="1" step="0.05" value="0.9" />
+        <a class="download" href="./data/client_gps/client_gps_walking_path.geojson" download title="Download walking track">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="property">
+        <input type="checkbox" data-layer="gps-sessions" />
+        <span class="swatch" style="background: linear-gradient(to right, #a855f7 50%, #f59e0b 50%);"></span>
+        <span class="name"><small>By session: 06-22 purple, 06-28 orange</small></span>
+        <input type="range" class="opacity" data-opacity="gps-sessions" min="0.3" max="1" step="0.05" value="0.9" />
+        <a class="download" href="./data/client_gps/client_gps_walking_sessions.geojson" download title="Download per-session">↓</a>
+      </label>
+
+      <div style="margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+        <button id="replay-btn" style="flex: 1;">▶ Replay walk</button>
+        <span id="replay-status" style="color: var(--muted); font-size: 0.78rem;"></span>
+      </div>
+      <input type="range" id="replay-time" min="0" max="100" value="0" step="1"
+             style="width: 100%; accent-color: var(--gold-dark); margin-top: 6px; cursor: pointer;" />
+
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        <strong>2 walks</strong> · 06-22 (5 pts, 36 min) + 06-28 (15 pts, 2h 13 min).
+        <br><strong>Span</strong> · 06-22 15:37 → 06-28 14:18 UTC. Click <em>Replay</em> to watch the
+        perimeter built in time order. Drag the slider to scrub.
+      </p>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         3 · BASEMAP
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Basemap</h3>
+      <div class="actions">
+        <button id="basemap-esri" class="active">Satellite</button>
+        <button id="basemap-topo">Topographic</button>
+        <button id="basemap-osm">OpenStreetMap</button>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         4 · WATER — all hydrology across the 10 km box
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Water — how it moves through the land <span class="badge" data-section-count="water">13</span></h3>
+
+      <label class="layer-row" data-preset-group="water,terrain">
+        <input type="checkbox" data-layer="hillshade" />
+        <span class="swatch" style="background: linear-gradient(45deg, #444 25%, #aaa 25% 50%, #444 50% 75%, #aaa 75%);"></span>
+        <span class="name">Hillshade · why streams sit where they do</span>
+        <input type="range" class="opacity" data-opacity="hillshade" min="0.2" max="0.9" step="0.05" value="0.55" />
+      </label>
+
+      <label class="layer-row" data-preset-group="water,terrain">
+        <input type="checkbox" data-layer="contours" />
+        <span class="swatch" style="background: linear-gradient(to right, #f0f9ff 11%, #38bdf8 33%, #0284c7 55%, #0c4a6e 100%);"></span>
+        <span class="name">Elevation contours · 50 m steps · 10 km box (<span data-count="contours">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="contours" min="0.3" max="1" step="0.05" value="0.8" />
+        <a class="download" href="./data/dem_contours_10km.geojson" download title="Download 10 km contours">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="parcel,terrain">
+        <input type="checkbox" data-layer="contours-parcel" checked />
+        <span class="swatch" style="background: linear-gradient(to right, #7dd3fc 0 25%, #0284c7 25% 50%, #0c4a6e 50%);"></span>
+        <span class="name">Parcel contours · <strong>5 m steps</strong> · 5m fused topology DEM (<span data-count="contours-parcel">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="contours-parcel" min="0.3" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/dem_contours_parcel_5m.geojson" download title="Download 5m parcel contours">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="parcel,terrain">
+        <input type="checkbox" data-layer="hillshade-parcel" checked />
+        <span class="swatch" style="background: linear-gradient(45deg,#444 25%,#aaa 25% 50%,#444 50% 75%,#aaa 75%);"></span>
+        <span class="name">Parcel-scale hillshade · 5m topology DEM · auto-shows at z≥15</span>
+      </label>
+
+      <label class="layer-row" data-preset-group="water,terrain">
+        <input type="checkbox" data-layer="color-relief" />
+        <span class="swatch" style="background: linear-gradient(to right, #94c864 0%, #c2c068 50%, #914530 100%);"></span>
+        <span class="name">Elevation colour-relief · green lowlands → brown uplands</span>
+        <input type="range" class="opacity" data-opacity="color-relief" min="0.2" max="0.9" step="0.05" value="0.5" />
+      </label>
+
+      <label class="layer-row" data-preset-group="water,terrain">
+        <input type="checkbox" data-layer="local-quebrada" checked />
+        <span class="swatch" style="background: #1d4ed8;"></span>
+        <span class="name"><strong>LQV quebrada</strong> · ground-truth from GPS walk · 1.2 km · <span data-count="local-quebrada">—</span></span>
+        <a class="download" href="./data/local_quebradas_10km.geojson" download title="Download local quebrada">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water,terrain">
+        <input type="checkbox" data-layer="streams-10km" checked />
+        <span class="swatch" style="background: linear-gradient(to right, #0c4a6e 0 35%, #3b82f6 35% 60%, #93c5fd 60% 100%);"></span>
+        <span class="name">DEM quebrada streams · model-derived (<span data-count="streams-10km">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="streams-10km" min="0.2" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/dem_streams_10km.geojson" download title="Download DEM streams">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water,terrain">
+        <input type="checkbox" data-layer="flow-arrows" checked />
+        <span class="swatch" style="background: #1d4ed8; clip-path: polygon(0% 50%, 50% 0%, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);"></span>
+        <span class="name"><strong>Flow arrows</strong> · which way water runs (<span data-count="flow-arrows">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="flow-arrows" min="0.2" max="1" step="0.05" value="0.95" />
+        <a class="download" href="./data/dem_streams_arrows_10km.geojson" download title="Download flow arrows">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water">
+        <input type="checkbox" data-layer="waterways" checked />
+        <span class="swatch" style="background: #60a5fa;"></span>
+        <span class="name"><strong>OSM waterways</strong> · mapper ground truth · <span data-count="waterways">—</span> lines</span>
+        <input type="range" class="opacity" data-opacity="waterways" min="0.3" max="1" step="0.05" value="0.8" />
+        <a class="download" href="./data/osm_10km/waterways.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water">
+        <input type="checkbox" data-layer="water" checked />
+        <span class="swatch" style="background: #2563eb;"></span>
+        <span class="name">OSM water polygons · lakes, ponds, reservoirs · <span data-count="water">—</span></span>
+        <input type="range" class="opacity" data-opacity="water" min="0.2" max="1" step="0.05" value="0.5" />
+        <a class="download" href="./data/osm_10km/water.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water">
+        <input type="checkbox" data-layer="surface-water" checked />
+        <span class="swatch" style="background: #0ea5e9;"></span>
+        <span class="name">Audited wetlands · <span data-count="surface-water">—</span> polygons, click for verdict</span>
+        <a class="download" href="./data/surface_water_10km.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water,terrain">
+        <input type="checkbox" data-layer="hand" />
+        <span class="swatch" style="background: linear-gradient(to right, #0ea5e9 0 25%, #22d3ee 25% 50%, #67e8f9 50% 75%, #e2e8f0 75%);"></span>
+        <span class="name">HAND floodplain (P1-1) · <span data-count="hand">—</span> polygons · DEM-derived</span>
+        <input type="range" class="opacity" data-opacity="hand" min="0.1" max="1" step="0.05" value="0.6" />
+        <a class="download" href="./data/hand_10km.geojson" download title="Download HAND">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water">
+        <input type="checkbox" data-layer="jrc-water" />
+        <span class="swatch" style="background: #0369a1; border: 1px dashed white;"></span>
+        <span class="name"><small>JRC satellite-detected waterbodies · 3 confirmed</small></span>
+        <input type="range" class="opacity" data-opacity="jrc-water" min="0.2" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/lqv_jrc_waterbodies_10km.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="water">
+        <input type="checkbox" data-layer="combined-water" />
+        <span class="swatch" style="background: linear-gradient(to right, #0c4a6e 0 30%, #0ea5e9 30% 50%, #a78bfa 50% 70%, #f87171 70% 100%);"></span>
+        <span class="name"><small>Combined water (all 4 sources) · <span data-count="combined-water">—</span> features</small></span>
+        <input type="range" class="opacity" data-opacity="combined-water" min="0.2" max="1" step="0.05" value="0.7" />
+        <a class="download" href="./data/water_combined_10km.geojson" download title="Download">↓</a>
+      </label>
+
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        The <strong>DEM quebrada network</strong> is computed from Copernicus
+        GLO-30 (30 m) using D8 flow direction + flow-accumulation. Threshold
+        classification matches the LQV region's catchments: <strong>main rivers</strong>
+        ≥ 25 km² (42 segments) · <strong>tributaries</strong> 5–25 km² (328) ·
+        <strong>creeks</strong> 1–5 km² (1,342). Toggle <em>hillshade</em> + <em>streams-10km</em>
+        + <em>flow arrows</em> together to see the full story.
+      </p>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         5 · LAND COVER + FOREST CHANGE
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Land cover + forest change <span class="badge" data-section-count="forest">6</span></h3>
+
+      <label class="layer-row" data-preset-group="forest">
+        <input type="checkbox" data-layer="ndvi-backdrop" checked />
+        <span class="swatch" style="background: linear-gradient(to right, #a16207 0 25%, #84cc16 25% 50%, #22c55e 50% 75%, #14532d 75%);"></span>
+        <span class="name">NDVI continuous backdrop · parcel-scale forest visibility</span>
+        <input type="range" class="opacity" data-opacity="ndvi-backdrop" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/ndvi_canopy_10km.png" download title="Download NDVI raster">↓</a>
+      </label>
+      <label class="layer-row" data-preset-group="forest">
+        <input type="checkbox" data-layer="canopy-10km" />
+        <span class="swatch" style="background: linear-gradient(to right, #a16207 25%, #84cc16 25% 50%, #22c55e 50% 75%, #14532d 75%);"></span>
+        <span class="name"><strong>Sentinel-2 NDVI polygons</strong> · 4 classes (<span data-count="canopy-10km">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="canopy-10km" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/ndvi_canopy_10km.geojson" download title="Download NDVI">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="forest">
+        <input type="checkbox" data-layer="mapbiomas" />
+        <span class="swatch" style="background: linear-gradient(to right, #15803d 0% 25%, #0d9488 25% 35%, #a16207 35% 40%, #06b6d4 40% 50%, #bef264 50% 70%, #fbbf24 70% 80%, #ea580c 80% 90%, #94a3b8 90% 95%, #0284c7 95% 100%);"></span>
+        <span class="name"><strong>MapBiomas 2023 land cover</strong> · 9 classes (<span data-count="mapbiomas">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="mapbiomas" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/mapbiomas_2023_10km.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="forest">
+        <input type="checkbox" data-layer="hansen-loss" />
+        <span class="swatch" style="background: #dc2626;"></span>
+        <span class="name"><strong>Hansen forest loss</strong> · 2001–2024 (<span data-count="hansen-loss">—</span>)</span>
+        <input type="range" class="opacity" data-opacity="hansen-loss" min="0.3" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/hansen_loss_10km.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="forest">
+        <input type="checkbox" data-layer="hansen-gain" />
+        <span class="swatch" style="background: #22c55e;"></span>
+        <span class="name"><small>Hansen forest gain · 2000–2012 (<span data-count="hansen-gain">—</span>)</small></span>
+        <input type="range" class="opacity" data-opacity="hansen-gain" min="0.3" max="1" step="0.05" value="0.85" />
+        <a class="download" href="./data/hansen_gain_10km.geojson" download title="Download">↓</a>
+      </label>
+
+      <table class="legend-table" style="margin-top: 6px; font-size: 0.78rem;">
+        <tr><td><span style="background:#a16207;color:#fff;padding:0 6px">0</span></td><td>NDVI &lt; 0.25 — bare / grass</td></tr>
+        <tr><td><span style="background:#84cc16;color:#000;padding:0 6px">1</span></td><td>NDVI 0.25–0.45 — sparse woody</td></tr>
+        <tr><td><span style="background:#22c55e;color:#000;padding:0 6px">2</span></td><td>NDVI 0.45–0.60 — open forest <em>(typical LQV)</em></td></tr>
+        <tr><td><span style="background:#14532d;color:#fff;padding:0 6px">3</span></td><td>NDVI &gt; 0.60 — dense forest</td></tr>
+      </table>
+
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        <strong>MapBiomas classes</strong> (10 observed in the 10 km box):
+      </p>
+      <table class="legend-table" style="margin-top: 4px; font-size: 0.76rem;">
+        <tr><td><span style="background:#15803d;color:#fff;padding:0 6px">3</span></td><td>Forest Formation — upland Atlantic Forest</td></tr>
+        <tr><td><span style="background:#0d9488;color:#fff;padding:0 6px">6</span></td><td>Flooded Forest — gallery along rivers</td></tr>
+        <tr><td><span style="background:#a16207;color:#fff;padding:0 6px">9</span></td><td>Forest Plantation — palm or managed woody</td></tr>
+        <tr><td><span style="background:#06b6d4;color:#000;padding:0 6px">11</span></td><td>Wetland — saturated soils / standing water</td></tr>
+        <tr><td><span style="background:#bef264;color:#000;padding:0 6px">12</span></td><td>Grassland — herbaceous cover, savanna-like</td></tr>
+        <tr><td><span style="background:#fbbf24;color:#000;padding:0 6px">15</span></td><td>Pasture — managed grazing</td></tr>
+        <tr><td><span style="background:#ea580c;color:#fff;padding:0 6px">18</span></td><td>Agriculture — row crops / tilled</td></tr>
+        <tr><td><span style="background:#94a3b8;color:#000;padding:0 6px">22</span></td><td>Non-vegetated Area — bare soil / road</td></tr>
+        <tr><td><span style="background:#0284c7;color:#fff;padding:0 6px">26</span></td><td>Water — open water (river / lake)</td></tr>
+      </table>
+
+      <p class="help" style="margin-top: 8px; font-size: 0.78rem;">
+        <strong>Sentinel-2 NDVI</strong> (June 2026, cloud &lt; 20%) =
+        vegetation greenness. <strong>MapBiomas Paraguay Collection 2
+        (2023)</strong> = categorical land-cover at 30 m. <strong>Hansen
+        GFC v1.12</strong> = forest loss / gain 2001–2024. Each layer
+        covers the full 40 × 40 km box.
+      </p>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         6 · OSM CONTEXT — what's around us
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>OSM context · what's around us <span class="badge" data-section-count="context">6</span></h3>
+
+      <label class="layer-row" data-preset-group="context">
+        <input type="checkbox" data-layer="roads" checked />
+        <span class="swatch" style="background: var(--gold);"></span>
+        <span class="name">Roads &amp; tracks · <span data-count="roads">—</span></span>
+        <input type="range" class="opacity" data-opacity="roads" min="0.3" max="1" step="0.05" value="0.95" />
+        <a class="download" href="./data/osm_10km/roads.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="context">
+        <input type="checkbox" data-layer="places" checked />
+        <span class="swatch" style="background: #be185d;"></span>
+        <span class="name">Towns &amp; villages · <span data-count="places">—</span></span>
+        <a class="download" href="./data/osm_10km/places.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="forest">
+        <input type="checkbox" data-layer="woodland-merged" checked />
+        <span class="swatch" style="background: linear-gradient(to right, #15803d 0% 25%, #0d9488 25% 35%, #365314 35% 70%, #166534 70% 90%, #22c55e 90% 100%);"></span>
+        <span class="name"><strong>Woodland &amp; forest merged</strong> · MapBiomas + Hansen + OSM · <span data-count="woodland-merged">—</span> polygons</span>
+        <input type="range" class="opacity" data-opacity="woodland-merged" min="0.1" max="1" step="0.05" value="0.55" />
+        <a class="download" href="./data/woodland_merged_10km.geojson" download title="Download merged woodland">↓</a>
+      </label>
+      <label class="layer-row" data-preset-group="forest">
+        <input type="checkbox" data-layer="trees" />
+        <span class="swatch" style="background: #15803d;"></span>
+        <span class="name">OSM tags only (4,709 mixed) · includes farms, orchards</span>
+        <input type="range" class="opacity" data-opacity="trees" min="0.2" max="1" step="0.05" value="0.4" />
+        <a class="download" href="./data/osm_10km/trees.geojson" download title="Download raw OSM tags">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="context">
+        <input type="checkbox" data-layer="buildings" />
+        <span class="swatch" style="background: #a3a3a3;"></span>
+        <span class="name">Buildings · <span data-count="buildings">—</span></span>
+        <input type="range" class="opacity" data-opacity="buildings" min="0.3" max="1" step="0.05" value="0.6" />
+        <a class="download" href="./data/osm_10km/buildings.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="context">
+        <input type="checkbox" data-layer="landuse" />
+        <span class="swatch" style="background: #fcd34d;"></span>
+        <span class="name">Land use polygons · <span data-count="landuse">—</span></span>
+        <input type="range" class="opacity" data-opacity="landuse" min="0.2" max="0.6" step="0.05" value="0.35" />
+        <a class="download" href="./data/osm_10km/landuse.geojson" download title="Download">↓</a>
+      </label>
+
+      <label class="layer-row" data-preset-group="context">
+        <input type="checkbox" data-layer="pois" />
+        <span class="swatch" style="background: #a855f7;"></span>
+        <span class="name">Points of interest · <span data-count="pois">—</span></span>
+        <a class="download" href="./data/osm_10km/pois.geojson" download title="Download">↓</a>
+      </label>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         7 · ACTIONS
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>Actions</h3>
+      <div class="actions">
+        <button id="zoom-fit">Fit 10 km</button>
+        <button id="zoom-parcel">Zoom to parcel</button>
+        <button id="measure-btn">📏 Measure</button>
+        <button id="share-view" title="Copy current URL to clipboard">🔗 Share view</button>
+        <button id="annotate-btn" title="Click on map to drop a pin with a note">📌 Annotate</button>
+        <button id="fullscreen-btn" title="Fullscreen map (press Esc to exit)" class="fullscreen-btn">⛶ Fullscreen</button>
+      </div>
+      <p id="annotate-hint" class="help" style="display:none; margin-top: 6px; color: var(--gold-dark); font-size: 0.78rem;">
+        Click anywhere on the map to drop a pin. Type a note, then press Enter or click outside to save.
+      </p>
+      <p class="help" style="margin-top: 10px;">
+        <strong>Tip:</strong> use the <em>⚡ Quick view presets</em> at the top
+        of the sidebar to turn on a coordinated set of layers in one click.
+        <br><br>
+        <strong>Click a checkbox</strong> to toggle · drag the slider to set opacity.
+        Hover any feature for context. Click the parcel pulse to recenter.
+        <br><br>
+        <kbd>M</kbd> measure distance · <kbd>L</kbd> label declutter · <kbd>[</kbd> collapse sidebar.
+      </p>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         8 · ABOUT
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <h3>About this map</h3>
+      <p class="help">
+        <strong>Property perimeter</strong> from Wesley's on-the-ground GPS walk
+        (Guru Maps iOS, 06-22 + 06-28): <b>17 corners</b>, walked in order,
+        4.26 km perimeter, 71.4 ha projected. Handheld GPS accuracy ±3–5 m
+        per point — not survey-grade.
+        <br><br>
+        <strong>Timestamps</strong> recovered from the
+        <a href="https://shared.gurumaps.app/5f349095-4c7b-49cd-8d8d-0e0acb7e3f8e.html"
+           target="_blank" rel="noopener">live Guru Maps share</a> (KML · 20
+        timestamps). Two sessions: 5 pts on 06-22 (north ridge), 15 pts on
+        06-28 (full perimeter). Hit <em>▶ Replay walk</em> above to watch the
+        perimeter being captured in time order.
+        <br><br>
+        <strong>10 km box</strong> (-57.13 / -56.93 lon, -25.70 / -25.52 lat)
+        centred on the GPS centroid. Built from:
+        <br>· Sentinel-2 L2A NDVI (mosaic of 2 MGRS tiles)
+        <br>· Copernicus GLO-30 DEM + D8 flow accumulation
+        <br>· JRC Global Surface Water 1984–2024
+        <br>· MapBiomas Paraguay Collection 2 (2023)
+        <br>· Hansen GFC v1.12 forest loss / gain
+        <br>· OpenStreetMap Overpass (2026-07-05): 30,166 features
+        <br><br>
+        <strong>Icons</strong> courtesy of
+        <a href="https://gurumaps.app/" target="_blank" rel="noopener">Guru Maps</a>
+        — the same bookmark pins Wes uses in his iOS app appear here so the
+        map reads identically to his phone view.
+      </p>
+
+      <h4>Property coverage matrix</h4>
+      <p class="help" style="font-size: 0.74rem;">
+        For each layer, how many features intersect the LQV parcel (the
+        71.4 ha ground-truth polygon). Hover a layer in the sidebar to see
+        the count.
+      </p>
+      <table class="coverage-matrix" id="coverage-matrix">
+        <thead><tr><th>Layer</th><th>Total</th><th>Inside</th></tr></thead>
+        <tbody id="coverage-matrix-body">
+          <tr><td colspan="3" style="color: var(--muted); font-style: italic;">Computing…</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Forest change 1985 → 2023</h4>
+      <p class="help" style="font-size: 0.74rem;">
+        MapBiomas Collection 2 forest area (classes 3 + 6) inside the 10 km box
+        over time. The LQV parcel itself has been stable forest for 39 years.
+      </p>
+      <div id="forest-timeline">
+        <div id="forest-timeline-chart"></div>
+        <div id="forest-timeline-text"></div>
+      </div>
+
+      <h4>Keyboard shortcuts</h4>
+      <ul class="help kb-list" style="font-size: 0.76rem;">
+        <li><kbd>[</kbd> — Collapse / expand sidebar</li>
+        <li><kbd>F</kbd> — Fullscreen mode (Esc to exit)</li>
+        <li><kbd>+</kbd> / <kbd>−</kbd> — Zoom in / out</li>
+      </ul>
+    </div>
+
+  </aside>
+  <div class="map-wrap">
+    <div id="map"></div>
+
+    <div class="map-legend" id="map-legend">
+      <div class="map-legend-title">Active layers</div>
+      <div class="map-legend-body" id="map-legend-body">
+        <div class="map-legend-empty">Hover a layer in the sidebar to see its legend.</div>
+      </div>
+    </div>
+
+    <div class="north-arrow" id="north-arrow">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2 L8 14 L12 11 L16 14 Z" fill="#dc2626" stroke="#7f1d1d" stroke-width="1"/>
+        <path d="M12 22 L8 10 L12 13 L16 10 Z" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+        <text x="12" y="9" text-anchor="middle" font-size="6" font-weight="bold" fill="#1c1917">N</text>
+      </svg>
+    </div>
+    <div class="loading-banner" id="loading">Loading 10 km data…</div>
+
+    <!-- P1-6: Cursor elevation/slope/aspect HUD -->
+    <div class="elev-hud" id="elev-hud" style="display:none">
+      <div class="elev-hud-row"><span class="elev-hud-label">lon</span> <span id="hud-lon">—</span></div>
+      <div class="elev-hud-row"><span class="elev-hud-label">lat</span> <span id="hud-lat">—</span></div>
+      <div class="elev-hud-row"><span class="elev-hud-label">elev</span> <span id="hud-elev">—</span></div>
+      <div class="elev-hud-row"><span class="elev-hud-label">slope</span> <span id="hud-slope">—</span></div>
+      <div class="elev-hud-row"><span class="elev-hud-label">aspect</span> <span id="hud-aspect">—</span></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="./js/lqv-inline.js"></script>
+<script>
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+</script>
+
+<script>
+// === Radius picker: parcel / 5 / 10 / 20 / 30 km ===
+// Single source of truth: a RADIUS value (km) or 'parcel'.
+(function () {
+  'use strict';
+
+  // Centroid — must match js/lqv-inline.js (LQV-10km)
+  const LAT = -25.608231;
+  const LON = -57.030381;
+  // 10 km at lat -25.6 ≈ 0.0898° lat × 0.0996° lon
+  const DEG_PER_KM_LAT = 0.00898; // ~1.0/111.32
+  const DEG_PER_KM_LON = 0.00996; // 1.0/(111.32 * cos(-25.6 * π/180))
+
+  const RADIUS_DESCRIPTIONS = {
+    parcel: 'Showing parcel-scale (5 m contours). Detail view of the 62 ha polygon.',
+    5:      'Showing 5 km context — towns + immediate roads + nearby water.',
+    10:     'Showing 10 km context — pre-loaded layers in this box.',
+    20:     'Showing 20 km context — wider regional view, layers snap to 10 km data extent.',
+    30:     'Showing 30 km context — Asunción visibility + GBIF biodiversity data (extends to 30 km only).'
+  };
+
+  function bboxForKm(radiusKm) {
+    const dLat = radiusKm * DEG_PER_KM_LAT;
+    const dLon = radiusKm * DEG_PER_KM_LON;
+    return [
+      [LAT - dLat, LON - dLon],
+      [LAT + dLat, LON + dLon]
+    ];
+  }
+
+  function parcelBbox() {
+    // ~62 ha parcel: ~800 m x 800 m → 0.0072°
+    return [
+      [LAT - 0.0040, LON - 0.0046],  // ~445m each side
+      [LAT + 0.0040, LON + 0.0046]
+    ];
+  }
+
+  function setRadius(value) {
+    let bbox, zoom, label;
+    if (value === 'parcel') {
+      bbox = parcelBbox();
+      zoom = 16;
+      label = 'Parcel';
+    } else {
+      const r = Number(value);
+      bbox = bboxForKm(r);
+      // Heuristic zoom:
+      //   5 km → zoom 14
+      //  10 km → zoom 13  (default)
+      //  20 km → zoom 11
+      //  30 km → zoom 10
+      zoom = ({5:14, 10:13, 20:11, 30:10})[r] || 13;
+      label = r + ' km';
+    }
+    // For parcel, also load dem_contours_parcel_5m.geojson if missing
+    if (value === 'parcel') ensureParcelContoursLoaded();
+    window.LQVmap.fitBounds(bbox, { padding: [40, 40], maxZoom: zoom, animate: true });
+    document.getElementById('radius-info').textContent = RADIUS_DESCRIPTIONS[value];
+    document.getElementById('topbar-sub').textContent = label + ' context map — change radius above';
+    document.querySelectorAll('#radius-buttons button').forEach(b => {
+      const active = b.dataset.radius === String(value);
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-checked', String(active));
+    });
+    // Persist to URL so a refresh keeps the radius
+    const u = new URL(window.location.href);
+    u.searchParams.set('r', value);
+    history.replaceState(null, '', u);
+  }
+
+  function ensureParcelContoursLoaded() {
+    // Add parcel-scale contour overlay if not already on the map.
+    if (window._lqvParcelContoursLoaded) return;
+    window._lqvParcelContoursLoaded = true;
+    fetch('./data/dem_contours_parcel_5m.geojson')
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d) return;
+        const layer = L.geoJSON(d, {
+          style: { color: '#7a5a3a', weight: 1.2, opacity: 0.7, fill: false }
+        });
+        layer.addTo(window.LQVmap);
+        layer._lqvTag = 'parcel-contours';
+      })
+      .catch(() => {});
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // The base map lives in window.LQVmap (set by lqv-inline.js)
+    // We wait until it's defined (it is, per the inline boot script).
+    // Pick up ?r= from URL if present, else default 10
+    const init = new URLSearchParams(window.location.search).get('r') || '10';
+    document.querySelectorAll('#radius-buttons button').forEach(b => {
+      b.addEventListener('click', () => setRadius(b.dataset.radius));
+    });
+    // Wait for map init before applying radius (lqv-inline.js defers until DOMContentLoaded too).
+    window.LQVmapReady = new Promise(res => {
+      if (window.LQVmap && window.LQVmap._loaded) res();
+      else {
+        const itv = setInterval(() => {
+          if (window.LQVmap) { clearInterval(itv); res(); }
+        }, 30);
+      }
+    });
+    window.LQVmapReady.then(() => setRadius(init));
+  });
+})();
+</script>
+
+</body>
+</html>

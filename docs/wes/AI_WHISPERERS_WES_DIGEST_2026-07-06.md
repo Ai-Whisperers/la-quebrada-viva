@@ -11,7 +11,7 @@
 
 | Issue from this audit | Status | Resolution |
 |---|---|---|
-| Problem 1: `mapa-20km.html` 404 | **DEPLOY FIXED** at 2026-07-06 15:45 UTC | The file was actually renamed to `mapa-10km.html` at commit `620a647`. Live `lqv-walkthrough.pages.dev` now serves v19 viewer (parcel-scale contours, 8-section sidebar, ~70k features). The drift root cause was the cron pulling from a stale mirror at `~/.hermes/lqv-splat/exports/web/`. Resynced from canonical `/root/la-quebrada-viva/splats/exports/web/`. `lqv-pages-redeploy.sh` re-run with success. |
+| Problem 1: `mapa-20km.html` 404 | **DEPLOY FIXED + FILE REFACTORED** at 2026-07-06 15:45 UTC (deploy) + 2026-07-06 16:05 UTC (rename + radius picker) | The old `mapa-20km.html` URL was a phantom — only `mapa-10km.html` existed (since commit `620a647`). Drift root cause was cron pulling from the stale mirror. Now: file renamed to `splats/exports/web/mapa.html` with a built-in radius picker (parcel / 5 / 10 / 20 / 30 km). `mapa-10km.html` + `mapa-20km.html` are now meta-refresh redirects to `mapa.html` (and `mapa.html?r=20`). URL `lqv-walkthrough.pages.dev/mapa.html` is the canonical single page. |
 | Problem 2: 109-idea catalog placeholder content | **PARTIALLY FIXED** | Per the 2026-07-03 restructure pass + this audit, ~30 load-bearing ideas marked ✓ reviewed; rest archived in `docs/ideas/_archive/2026-06-30_autofill/`. Quality = sufficient for Phase 1 decisions. |
 | Problem 3: Renaming provisional | **STILL OPEN — awaiting W0.6** | Wes has not picked a name. The `git revert` path remains viable. |
 
