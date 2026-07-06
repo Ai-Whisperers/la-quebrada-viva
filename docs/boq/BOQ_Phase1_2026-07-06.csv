@@ -1,0 +1,133 @@
+# BILL OF QUANTITIES — Phase 1 (5 cabins + restaurant + pool) — Riverstone Valley (LQV)
+# Generated 2026-07-06 by Erebus
+# Source: CAPEX_OPTIONS_2026-07-06.md + SUPPLY_CHAIN_RECOMMENDATIONS_2026-07-06.md
+"# Currency: EUR canonical | FX: 1 EUR = 1.07 USD = 8,025 PYG"
+# This is the working file — vendors quote against this
+
+Category,Item,Qty,Unit,Unit cost (EUR),Line total (EUR),Vendor (PRIMARY),Source,Notes
+Foundation,Excavation 0.6m × 0.6m × 14m³ per cabin,70,m³,28.00,1960.00,Local excavator,CAPEX_OPTIONS §B.3,Piribebuy stone + labor
+Foundation,Stone fill (rubble trench),40,m³,47.00,1880.00,Sapucai quarry,"NEW02, CAPEX_OPTIONS §D.3","Gs. 45K/m³, 8 m³/cabin × 5"
+Foundation,Concrete piers (sloped areas),4,piers,800.00,3200.00,Acero del Paraguay,"M04, CAPEX_OPTIONS §B.3","2 cabins on slope, 2 piers each"
+Foundation,Rebar 12mm for piers,0.5,ton,720.00,360.00,Acero del Paraguay,M04,$720/ton
+Foundation,Concrete for piers (C25),2,m³,120.00,240.00,Concret-Mix Asu,M04,Gs. 580/kg cement
+Cabin Walls,Cob-trained builder labor (4 × 60 days),1200,builder-days,35.00,42000.00,Encarnación cob team (M_COB_01),"M_COB_01, CAPEX_OPTIONS §B.1",4 builders × 60 days × $40/day
+Cabin Walls,Cob material (subsoil + clay + sand),175,m³,33.00,5775.00,Local site,M_COB_01,"35 m³/cabin × 5, $9,600/cabin labor + material"
+Cabin Walls,Lime plaster (exterior + interior),5000,kg,1.70,8500.00,Asu ferretería,M_COB_01,"1,000 kg/cabin interior + exterior"
+Cabin Walls,Lime for plaster,1500,kg,1.80,2700.00,Asu ferretería,M_COB_01,300 kg/cabin
+Cabin Walls,Sand for plaster,25,m³,28.00,700.00,Local rivers,M_COB_01,5 m³/cabin
+Cabin Walls,"Earthen floor (lime-stabilized, optional)",350,m²,12.00,4200.00,Local artisan,M_COB_01,70 m²/cabin × 5
+Timber Frame,"Eucalyptus beams (200×100×4m, structural)",75,units,95.00,7125.00,Itapúa plantation (M_WOOD_01),"M_WOOD_01, CAPEX_OPTIONS §B.1",15 units/cabin × 5
+Timber Frame,Eucalyptus studs (50×100×3m),250,units,22.00,5500.00,Itapúa plantation,M_WOOD_01,50 units/cabin × 5
+Timber Frame,Eucalyptus rafters (50×150×4m),75,units,38.00,2850.00,Itapúa plantation,M_WOOD_01,15 units/cabin × 5
+Timber Frame,Eucalyptus planks (decking 25×150×3m),350,m²,35.00,12250.00,Itapúa plantation,M_VLOER_01,70 m²/cabin × 5
+Timber Frame,"Bamboo poles (decorative, non-structural)",80,units,15.00,1200.00,Caaguazú cooperative,"PR04, M_WOOD_01",16 units/cabin × 5
+Roofing,Galv. metal trapezoidal 0.5mm,490,m²,4.20,2058.00,Techos del Paraguay (Asu),"M_VERF_01, CAPEX_OPTIONS §B.2",5 cabins × 70 m² × 1.4 slope
+Roofing,Ridge cap + flashing,75,m,9.00,675.00,Techos del Paraguay,M_VERF_01,15 m/cabin × 5
+Roofing,Roofing screws + washers,2000,units,0.15,300.00,CDE-import (M_BEV_01),M_BEV_01,400/cabin × 5
+Roofing,Gutter + downspout (PVC),100,m,4.50,450.00,Asu ferretería,local market,20 m/cabin × 5
+Roofing,Insulation (sheep wool or wood fiber),350,m²,12.00,4200.00,local supplier,sustainable building,70 m²/cabin × 5
+Windows+Doors,"Aluminum windows (standard, 1.2×1.2m)",35,units,220.00,7700.00,Alumiconfort Asu,"M05, CAPEX_OPTIONS §A.5",7 windows/cabin × 5
+Windows+Doors,Aluminum large-format panels (2×2m),5,units,600.00,3000.00,CDE-import (Alcoa/Pechiney),M05,1 large panel/cabin × 5
+Windows+Doors,Glass for large panels (tempered),20,m²,95.00,1900.00,Vidrios del Paraguay,M05,4 m²/cabin × 5
+Windows+Doors,Eucalyptus exterior doors (solid),15,units,280.00,4200.00,Local carpentry,M_WOOD_01,3 doors/cabin × 5
+Windows+Doors,Eucalyptus interior doors,20,units,150.00,3000.00,Local carpentry,M_WOOD_01,4 doors/cabin × 5
+Windows+Doors,Locks + handles (BR-import),35,sets,35.00,1225.00,CDE-import,M09,7 sets/cabin × 5
+Flooring,Polished concrete (bathroom + kitchen),200,m²,32.00,6400.00,Local artisan,M_VLOER_01,40 m²/cabin × 5
+Flooring,Eucalyptus plank (living area),150,m²,45.00,6750.00,Itapúa plantation,M_VLOER_01,30 m²/cabin × 5
+Flooring,Quarry tile (entry + bathroom wall),50,m²,50.00,2500.00,Piribebuy sandstone,"M_VLOER_01, NEW02",10 m²/cabin × 5
+Flooring,Lime plaster accent wall,60,m²,20.00,1200.00,Local artisan,"M_COB_01, M_VLOER_01",12 m²/cabin × 5
+Septic+Water,Septic tank 3000L (per cabin),5,units,1800.00,9000.00,INAA-permitted installer (M08),"M08, CAPEX_OPTIONS §B.6","$5,500/cabin install"
+Septic+Water,Reed-bed plants + install,5,systems,2700.00,13500.00,INAA-permitted installer (M08),M08,"$4,500/cabin material + plant"
+Septic+Water,INAA permit (one-time),1,permit,1500.00,1500.00,INAA,F14,4-6 wk process
+Septic+Water,"Drilled well (80 m, electric pump)",1,well,7500.00,7500.00,Local pozo,"F15, CAPEX_OPTIONS §B.5","$9,200 well + pump"
+Septic+Water,Quebrada intake + sand filter,1,system,3500.00,3500.00,Local ingeniero,"F14, CAPEX_OPTIONS §B.5","$4,000 quebrada + filter"
+Septic+Water,UV water filter,1,unit,600.00,600.00,Local ferretería,F15,final disinfection
+Septic+Water,Water storage tank (5000L),1,tank,1200.00,1200.00,Asu ferretería,F15,cistern + backup
+Septic+Water,PVC piping + fittings,200,m,12.00,2400.00,Ferretería Imperial,local market,40 m/cabin × 5
+Solar+Electric,PV panels 8kW/cabin (5 × 8kW = 40kW total),40,kW,540.00,21600.00,Jinko Solar via Asu (F09),"F09, CAPEX_OPTIONS §B.4","$4,500/cabin × 5 + install"
+Solar+Electric,LiFePO4 battery 30 kWh/cabin,5,units,3400.00,17000.00,Pylontech via Asu (F10),F10,"$3,800/cabin × 5"
+Solar+Electric,Hybrid inverter Victron MultiPlus-II 48/5000,5,units,1800.00,9000.00,Victron via Asu,F09,per-cabin inverter
+Solar+Electric,"Wiring, BOS, combiner boxes",5,systems,1500.00,7500.00,Local electrician,F09,per-cabin install kit
+Solar+Electric,Cummins 50 kVA generator (emergency),1,unit,17000.00,17000.00,Cummins Asu,"F19, CAPEX_OPTIONS §A.11","silent, emergency backup only"
+Solar+Electric,Starlink kit (Standard),1,kit,560.00,560.00,Starlink.com.py,"F12, SUPPLY_CHAIN §A.12",1 kit for Phase 1 (5 cabins share)
+Solar+Electric,Interior wiring (per cabin),5,cabins,800.00,4000.00,Local electrician,local market,~€800/cabin
+Solar+Electric,LED lighting (per cabin),5,cabins,350.00,1750.00,Local electrician,local market,eco LED kit
+Solar+Electric,Outlets + switches,100,units,4.00,400.00,Ferretería Imperial,local market,20/cabin × 5
+Plumbing,PEX piping + manifolds,200,m,8.00,1600.00,Ferretería Imperial,local market,40 m/cabin × 5
+Plumbing,"Fixtures (toilet, sink, shower)",5,sets,450.00,2250.00,Asu ferretería,local market,eco-grade fixtures
+Plumbing,Hot water (heat pump or solar thermal),5,units,950.00,4750.00,Asu,F09 supplement,per-cabin water heater
+Plumbing,Greywater diverter,5,units,80.00,400.00,Local ferretería,M08 supplement,eco greywater system
+Kitchen,Gastro-Haus commercial stove (6-burner + oven),1,unit,4500.00,4500.00,Gastro-Haus Asu,"M22, SUPPLY_CHAIN §A.9",restaurant kitchen
+Kitchen,Brasitermo commercial prep table,1,unit,2200.00,2200.00,Brasitermo Asu,M22,stainless
+Kitchen,Commercial refrigerator (double door),1,unit,3200.00,3200.00,Gastro-Haus / used market,M22,used or new
+Kitchen,Commercial freezer,1,unit,2400.00,2400.00,Gastro-Haus,M22,separate freezer
+Kitchen,Range hood + exhaust,1,system,1800.00,1800.00,Gastro-Haus,M22,commercial grade
+Kitchen,"Smallware (pots, pans, utensils)",1,lot,4500.00,4500.00,Brasitermo + used market,M22,60-cover restaurant setup
+Kitchen,Tableware (60 covers),1,lot,3200.00,3200.00,Brasitermo,M22,"plates, glasses, cutlery"
+Kitchen,Coffee machine (commercial espresso),1,unit,1800.00,1800.00,Gastro-Haus,M22,for breakfast + bar
+Kitchen,Ice maker,1,unit,1100.00,1100.00,Gastro-Haus,M22,commercial
+Kitchen,Cabin minikitchen (per cabin),5,cabins,1800.00,9000.00,Brasitermo + local,M22,small fridge + 2-burner + sink
+Kitchen,Bar equipment (60-cover),1,lot,2200.00,2200.00,Brasitermo,M22,bar setup
+Furniture,"Bed frame (king + 2 single, per cabin)",5,cabins,800.00,4000.00,Local carpentry (eucalyptus),M_WOOD_01,per cabin
+Furniture,"Mattress (organic, premium)",10,units,600.00,6000.00,CDE-import or Asu,eco-grade,2/cabin × 5
+Furniture,"Linen (sheets, towels, pillows)",5,cabins,1200.00,6000.00,Asu + imported,eco-grade,"organic, per cabin"
+Furniture,"Cushions, throws, decor",5,cabins,600.00,3000.00,Mbyá + local artisans,eco-positioning,support Mbyá craft
+Furniture,Restaurant tables (60 covers),1,lot,3500.00,3500.00,Local carpentry,M_WOOD_01,20 tables × 3 covers
+Furniture,Restaurant chairs,60,units,85.00,5100.00,Local,M_WOOD_01,"stackable, durable"
+Furniture,Reception desk,1,unit,800.00,800.00,Local carpentry,M_WOOD_01,rustic wood
+Paint+Finish,Sherwin-Williams exterior paint (intumescent),150,L,13.00,1950.00,Sherwin-Williams PY,"M_VERF_01, SUPPLY_CHAIN §A.14",30 L/cabin × 5
+Paint+Finish,Inca interior paint,100,L,11.00,1100.00,Sherwin-Williams dealer,M_VERF_01,20 L/cabin × 5
+Paint+Finish,Hidrolack waterproofing (wet areas),40,L,16.00,640.00,Sherwin-Williams dealer,M_VERF_01,8 L/cabin × 5
+Paint+Finish,Primer + sealant,50,L,14.00,700.00,Sherwin-Williams dealer,M_VERF_01,undercoat
+Paint+Finish,Wood stain + oil (eucalyptus),50,L,18.00,900.00,Asu,M_VERF_01,timber protection
+Fasteners,"Structural screws (CDE-import, 40-50% saving)",1,lot,2400.00,2400.00,CDE-import (M_BEV_01),"M_BEV_01, SUPPLY_CHAIN §A.15",30-cabin equivalent upfront
+Fasteners,Bolts + anchors,1,lot,800.00,800.00,CDE-import,M_BEV_01,structural
+Fasteners,Nails + brads (various),1,lot,350.00,350.00,Asu ferretería,M_BEV_01,carpentry
+Fasteners,Hinges + handles (BR-import),1,lot,1500.00,1500.00,CDE-import,M_BEV_01,all doors
+Fasteners,Electrical fittings + boxes,1,lot,800.00,800.00,Ferretería Imperial,local market,per cabin
+Pool+Wellness,"Natural pool (Phase 1 plunge, 25m²)",1,pool,12000.00,12000.00,Local specialist,D6_wellness_pool.md,"natural filtration, no chemicals"
+Pool+Wellness,"Sauna (wood-fired, basic)",1,unit,6500.00,6500.00,CDE-import or Asu,D6,cedar wood
+Pool+Wellness,Cold plunge (1.5m²),1,unit,1800.00,1800.00,Local,D6,eco
+Pool+Wellness,Yoga deck (40m² eucalyptus),1,deck,2200.00,2200.00,Local carpentry,M_WOOD_01,raised platform
+Site Infra,F05 road upgrade (1.5 km gravel),1500,m,12.00,18000.00,Municipalidad de Escobar,"F05, CAPEX_OPTIONS §E.6","€18,000 + RP4 coordination"
+Site Infra,"Internal paths (gravel, 200 m)",200,m,6.00,1200.00,Local,F05,path between cabins
+Site Infra,"Parking area (gravel, 200 m²)",200,m²,8.00,1600.00,Local,F05,gravel base
+Site Infra,"Perimeter fencing (5-strand, 1.5 km)",1500,m,7.00,10500.00,Local ferretería,CAPEX_OPTIONS §E.7,"€11,000 perimeter"
+Site Infra,Signage (entrance + cabin numbers),1,lot,1500.00,1500.00,Local,CAPEX_OPTIONS §E.8,eco design
+Site Infra,Tool shed + storage building,1,unit,4500.00,4500.00,Local carpenter,M_WOOD_01,"40 m², secure"
+Site Infra,Generator shed,1,unit,1800.00,1800.00,Local carpenter,M_WOOD_01,sound-dampened enclosure
+Site Infra,Waste management shed,1,unit,2200.00,2200.00,Local carpenter,M_WOOD_01,recycling + compost
+Site Infra,Garden/landscaping initial,1,lot,6000.00,6000.00,Local + Mbyá,eco-positioning,"native plants, Mbyá consultation"
+Permits+Fees,Architecture fees (full design),1,lot,22000.00,22000.00,Local architect,CAPEX_OPTIONS §E.9,PY architect
+Permits+Fees,Construction permit (Municipalidad),1,permit,3000.00,3000.00,Municipalidad de Escobar,"PR07, CAPEX_OPTIONS §E.1",2-4 month
+Permits+Fees,SENATUR classification (rural),1,permit,2000.00,2000.00,SENATUR,L21,1-2 month
+Permits+Fees,Health/sanitation permit,1,permit,1500.00,1500.00,Ministerio de Salud,PR18,restaurant kitchen
+Permits+Fees,Environmental impact study (MADES),1,study,4500.00,4500.00,PY EIA consultant,"PR07, CAPEX_OPTIONS §E.5",3-6 month
+Permits+Fees,Escribana fees (escritura + RUC setup),1,lot,4000.00,4000.00,Escribana,CAPEX_OPTIONS §E.9,one-time
+Permits+Fees,"Contador (annual, BV setup)",1,lot,2500.00,2500.00,Local contador,CAPEX_OPTIONS §E.9,year-1 setup
+Permits+Fees,Insurance first-year premium,1,year,6500.00,6500.00,WTW broker,"SX03, IR01","$6,950 forest fire + liability"
+Permits+Fees,"Opening inventory (consumables, F&B, signage)",1,lot,4000.00,4000.00,Mercado 4 + others,CAPEX_OPTIONS §E.10,F&B + retail + consumables
+Contingency,10% of total Phase 1 buildout,1,lot,18500.00,18500.00,n/a,CAPEX_OPTIONS §C recommended,buffer for unknowns
+
+# SUBTOTALS BY CATEGORY
+Cabin Walls,,,,,63875.00,,,
+Contingency,,,,,18500.00,,,
+Fasteners,,,,,5850.00,,,
+Flooring,,,,,16850.00,,,
+Foundation,,,,,7640.00,,,
+Furniture,,,,,28400.00,,,
+Kitchen,,,,,35900.00,,,
+Paint+Finish,,,,,5290.00,,,
+Permits+Fees,,,,,50000.00,,,
+Plumbing,,,,,9000.00,,,
+Pool+Wellness,,,,,22500.00,,,
+Roofing,,,,,7683.00,,,
+Septic+Water,,,,,39200.00,,,
+Site Infra,,,,,47300.00,,,
+Solar+Electric,,,,,78810.00,,,
+Timber Frame,,,,,28925.00,,,
+Windows+Doors,,,,,21025.00,,,
+
+# GRAND TOTAL (Phase 1 construction) — pre-contingency,,,,,486748.00,,,
+# +10% contingency,,,,,48674.80,,,
+# GRAND TOTAL — with contingency,,,,,535422.80,,,
