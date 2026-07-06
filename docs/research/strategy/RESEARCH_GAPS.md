@@ -135,9 +135,48 @@
 
 ## Findings log
 
-*(Filled in as items are completed. Each entry: `R## — short answer — date — source`.)*
+Each entry: `ID — short answer — date — source`.
 
-Empty for now. Add as work happens.
+### Sprint 0 (2026-06-30) — 8 items DONE before escritura
+
+- **F09** — Solar PV sizing for Phase 1 (8 kW system, $4-5k USD, 25-yr life) — 2026-06-30 — `docs/research/RESULTS/F09_solar_pv.md`
+- **F11** — Cell coverage at LQV site (Tigo/Personal all patchy in valleys, Starlink primary fallback) — 2026-06-30 — `docs/research/RESULTS/F11_cell_coverage.md`
+- **F12** — Starlink PY kit ~$600 + $80/mo, multi-dish 30-cabin park ~$10k upfront + $1.5k/mo — 2026-06-30 — `docs/research/RESULTS/F12_starlink.md`
+- **L05** — NL BV > IB threshold ~€70k confirmed for 2026; BV structurally better for RV — 2026-06-30 — `docs/research/RESULTS/L05_NL_BV_threshold_70k.md`
+- **M04** — Cement CVE-40 ~Gs. 480-580/kg = $65-80/ton PY wholesale; rebar ~$720/ton — 2026-06-30 — `docs/research/RESULTS/M04_cement_rebar_pricing.md`
+- **M05** — Aluminum/glass: imported BR via CDE cheaper than PY-fab for large format; PY OK for windows <1.2m² — 2026-06-30 — `docs/research/RESULTS/M05_aluminum_glass.md`
+- **M08** — Septic + reed-bed design Gs. 4-8M install for 5 cabins; pysa 4-ha fleet covered by INAA general permit — 2026-06-30 — `docs/research/RESULTS/M08_septic_reed_bed.md`
+- **M22** — Kitchen equipment: PY domestic ~25% over BR; BR-import via CDE = best value after 4-wk customs; specialized items 6-12 wk — 2026-06-30 — `docs/research/RESULTS/M22_kitchen_equipment_import.md`
+
+### Sprint 1 + NEW (2026-07-06, post-audit by Erebus) — 8 items DONE
+
+- **NEW-01** — AI as PY vendor price-negotiator (comm-channel matrix, 10 named vendors, $300-700 savings estimated) — 2026-07-06 — `docs/research/RESULTS/NEW01_ai_price_negotiator.md`
+- **NEW-02** — Steengroeve (Paraguarí): 3 named quarries (Piribebuy, Sapucai, Itá), sandstone $35-50/m³ vs itacurubí $45-65/m³ landed to Escobar — 2026-07-06 — `docs/research/RESULTS/NEW02_steengroeve_paraguari.md`
+- **NEW-03** — PY rail/river freight: Ipoh-Karai rumor VERIFIED NO PUBLIC PLAN FOUND; Hidrovía river freight viable for CDE→Asunción bulk (~$1.5k-3k saving for Phase 1) — 2026-07-06 — `docs/research/RESULTS/NEW03_py_rail_river_freight.md`
+- **M_WOOD_01** — Structureel hout: 4-species matrix (eucalyptus Itapúa $45-60/m³, lapacho $105-200, pine SKIP, bamboo $26-40). Phase 1 mix 60/25/15 = $880-1,215 — 2026-07-06 — `docs/research/RESULTS/M_WOOD_01_structureel_hout.md`
+- **M_COB_01** — Cob wall materialen: 4 PY cob-trained builders named, $1,680/cabin material; 50% cheaper than fired brick; lime-plaster required for PY humidity — 2026-07-06 — `docs/research/RESULTS/M_COB_01_cob_earthen_materialen.md`
+- **M_BEV_01** — Bevestigingsmateriaal: CDE-import 40-50% cheaper than local ferretería for structural fasteners; Phase 1 ~$2,400 — 2026-07-06 — `docs/research/RESULTS/M_BEV_01_bevestigingsmateriaal.md`
+- **M_VLOER_01** — Vloeren: 6-material matrix, mixed per-cabin-type approach $10,030 for 290 m² — 2026-07-06 — `docs/research/RESULTS/M_VLOER_01_vloeren.md`
+- **M_VERF_01** — Exterior paint: 8 PY-brand landscape, substrate-specific recommendations; Phase 1 budget $4,410 + $440/yr maintenance — 2026-07-06 — `docs/research/RESULTS/M_VERF_01_verf_exterior.md`
+
+### Remaining R-items
+
+Still open: **R39** (Hovenier, awaiting Kuikopee contact via W0.9 Sonja), **R41** (Tundra/Presio, awaiting W0.7 Wes decision), **R42-R46** (Sprint-1 hout/cob/bev/vloer/verf DONE — R43-46 are related/completed), **R47** (Sonja salary bands, awaiting W0.9 call), **R48** (cement time series, separate follow-up needed), **R49** stone DONE via NEW-02, **R50** AI-negotiator DONE via NEW-01.
+
+### R39-R50 status (2026-07-06)
+
+- **R39** 🔴 → awaiting W0.9 Sonja call for Kuikopee contact
+- **R40** 🔴 → Ipoh-Karai rumor VERIFIED no public plan (NEW-03). Tailwind-watch.
+- **R41** 🔴 → W0.7 Wes finalizes between Hilux SRV used (~$30k) vs Tundra SR5 (~$50k) — see AH01/AH02/AH03
+- **R42** 🔴 → drone pilot outreach (W0.5-B)
+- **R43** 🔴 → restaurant kitchen (W0.5-B Phase 1 kitchen fire-up)
+- **R44** 🔴 → car insurance (W0.5-A bundling)
+- **R45** 🔴 → Starlink kit (W0.5-B site visit prep)
+- **R46** 🟢 DONE → NEW-02 (steengroeve)
+- **R47** 🔴 → Sonja call (W0.9)
+- **R48** 🔴 → cement 2010-2026 series (TBD)
+- **R49** 🟢 DONE → NEW-02
+- **R50** 🟢 DONE → NEW-01
 
 ---
 

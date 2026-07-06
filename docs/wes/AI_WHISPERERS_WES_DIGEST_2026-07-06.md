@@ -7,6 +7,20 @@
 
 ---
 
+## ✅ Update 2026-07-06 (Erebus, post-publishing this digest)
+
+| Issue from this audit | Status | Resolution |
+|---|---|---|
+| Problem 1: `mapa-20km.html` 404 | **DEPLOY FIXED** at 2026-07-06 15:45 UTC | The file was actually renamed to `mapa-10km.html` at commit `620a647`. Live `lqv-walkthrough.pages.dev` now serves v19 viewer (parcel-scale contours, 8-section sidebar, ~70k features). The drift root cause was the cron pulling from a stale mirror at `~/.hermes/lqv-splat/exports/web/`. Resynced from canonical `/root/la-quebrada-viva/splats/exports/web/`. `lqv-pages-redeploy.sh` re-run with success. |
+| Problem 2: 109-idea catalog placeholder content | **PARTIALLY FIXED** | Per the 2026-07-03 restructure pass + this audit, ~30 load-bearing ideas marked ✓ reviewed; rest archived in `docs/ideas/_archive/2026-06-30_autofill/`. Quality = sufficient for Phase 1 decisions. |
+| Problem 3: Renaming provisional | **STILL OPEN — awaiting W0.6** | Wes has not picked a name. The `git revert` path remains viable. |
+
+**8 research files shipped (Sprint-1 + 3 NEW):** see `docs/research/RESULTS/NEW01-03_*.md` + `M_WOOD_01_*.md` + `M_COB_01_*.md` + `M_BEV_01_*.md` + `M_VLOER_01_*.md` + `M_VERF_01_*.md`. Total ~55 KB.
+
+**6 stakeholder files shipped:** `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` (1-page print version) + `INSURANCE_BROKER_OUTREACH.md` + `INSURANCE_PROPERTY_DATASHEET.md` + `WHATSAPP_OUTREACH_TEMPLATE_ES.md` + `WHATSAPP_OUTREACH_TEMPLATE_EN.md` + renumbered `WES_ACTIONS.md` (W0.5-A insurance / W0.5-B LiDAR / W0.8 attorney / W0.9 Sonja).
+
+---
+
 ## What the repo actually has (1-page map)
 
 | Layer | Status | Where |
