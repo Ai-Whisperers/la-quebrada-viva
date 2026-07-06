@@ -547,18 +547,12 @@ const REGIONAL_LAYERS = ['mapbiomas', 'hansen-loss', 'hansen-gain',
                           'places', 'pois'];
 const REGIONAL_OPACITY = { default: 1.0, dimmed: 0.3 };
 
-// P-topology: high-resolution parcel-scale hillshade (5m) for z>=15
-// Loaded lazily on first zoom-in. Provides terrain detail that the
-// 30m main hillshade loses at parcel zoom.
+// P-topology: high-resolution parcel-scale hillshade (5m).
+// Loaded lazily and registered as `layers['hillshade-parcel']` so the
+// sidebar checkbox can toggle it like any other raster layer.
+// (Previously auto-shown at z>=15; now fully user-controlled — the
+// dimming of regional layers at z>=14 is preserved below.)
 let _parcelHillshade = null;
-function getParcelHillshade() {
-  if (_parcelHillshade !== null) return _parcelHillshade;
-  try {
-    // Inline fetch via sync XMLHttpRequest (avoid async in zoom callback).
-    // Actually we'll use a cached promise instead.
-  } catch (e) {}
-  return null;
-}
 async function loadParcelHillshade() {
   if (_parcelHillshade) return _parcelHillshade;
   try {
@@ -569,12 +563,24 @@ async function loadParcelHillshade() {
       [[bounds.min_lat, bounds.min_lon], [bounds.max_lat, bounds.max_lon]],
       { opacity: 0.65, interactive: false, className: 'parcel-hillshade' },
     );
+    // Register so the [data-layer="hillshade-parcel"] checkbox can find it.
+    layers['hillshade-parcel'] = _parcelHillshade;
+    // If the checkbox is checked at boot, add it now.
+    const cb = document.querySelector('input[type=checkbox][data-layer="hillshade-parcel"]');
+    if (cb && cb.checked && !map.hasLayer(_parcelHillshade)) {
+      _parcelHillshade.addTo(map);
+      _parcelHillshade.bringToBack();
+    }
   } catch (e) {
     console.warn('parcel hillshade load failed:', e);
     _parcelHillshade = false;
   }
   return _parcelHillshade;
 }
+
+// Eagerly load at boot (parcel hillshade is only ~80 KB).
+loadParcelHillshade();
+
 function applyParcelZoomRule() {
   const z = map.getZoom();
   const dim = z >= 14;
@@ -584,18 +590,6 @@ function applyParcelZoomRule() {
     // Don't change visibility — just opacity. Users can still see the data.
     lyr.setStyle({ opacity: dim ? 0.4 : 1.0, fillOpacity: dim ? 0.18 : lyr.options.fillOpacity || 0.55 });
   });
-  // P-topology: show high-resolution 5m hillshade only at z>=15
-  if (z >= 15) {
-    if (_parcelHillshade === null || _parcelHillshade === false) {
-      loadParcelHillshade().then(overlay => {
-        if (overlay && !map.hasLayer(overlay)) overlay.addTo(map);
-      });
-    } else if (_parcelHillshade && !map.hasLayer(_parcelHillshade)) {
-      _parcelHillshade.addTo(map);
-    }
-  } else {
-    if (_parcelHillshade && map.hasLayer(_parcelHillshade)) map.removeLayer(_parcelHillshade);
-  }
 }
 map.on('zoomend', applyParcelZoomRule);
 
@@ -990,6 +984,47 @@ map.on('mousemove', (e) => {
     data['hillshade'] = { bounds: hsBounds };
   } catch (err) {
     console.warn('hillshade load failed:', err);
+  }
+
+  // 9b. Escobar-wide hillshade (district-scale, ~25×36 km, 30 m DEM).
+  // Distinct from the 10km box hillshade: this covers the full Escobar
+  // District so users can read landscape context before zooming in.
+  try {
+    const r = await fetch('./data/hillshade_escobar_bounds.json');
+    if (!r.ok) throw new Error(`escobar bounds HTTP ${r.status}`);
+    const escBounds = await r.json();
+    layers['hillshade-escobar'] = L.imageOverlay(
+      './data/hillshade_escobar.jpg',
+      [
+        [escBounds.min_lat, escBounds.min_lon],
+        [escBounds.max_lat, escBounds.max_lon],
+      ],
+      { opacity: 0.5, interactive: false, className: 'hillshade-escobar' },
+    );
+    data['hillshade-escobar'] = { bounds: escBounds };
+    console.info(`[LQV] Escobar hillshade loaded: ${escBounds.max_lat - escBounds.min_lat}° lat × ${escBounds.max_lon - escBounds.min_lon}° lon`);
+  } catch (err) {
+    console.warn('hillshade-escobar load failed:', err);
+  }
+
+  // 9c. Escobar-wide elevation color-relief (district-scale terrain ramp).
+  // Same data source as hillshade-escobar but coloured by elevation,
+  // useful as a backdrop when no satellite view is desired.
+  try {
+    const r = await fetch('./data/color_relief_escobar_bounds.json');
+    if (!r.ok) throw new Error(`escobar-relief bounds HTTP ${r.status}`);
+    const escReliefBounds = await r.json();
+    layers['color-relief-escobar'] = L.imageOverlay(
+      './data/color_relief_escobar.jpg',
+      [
+        [escReliefBounds.min_lat, escReliefBounds.min_lon],
+        [escReliefBounds.max_lat, escReliefBounds.max_lon],
+      ],
+      { opacity: 0.55, interactive: false, className: 'relief-escobar' },
+    );
+    data['color-relief-escobar'] = { bounds: escReliefBounds };
+  } catch (err) {
+    console.warn('color-relief-escobar load failed:', err);
   }
 
   // 9d. Elevation colour-relief (green lowland → brown upland).
@@ -1694,6 +1729,15 @@ function updateMapLegend() {
 }
 
 // ---- Toggle handlers ----
+// Image-overlay rasters (hillshade / relief / NDVI / Escobar-wide)
+// need to sit BEHIND vector layers (polygons, lines, markers) but ABOVE
+// the basemap tiles. We handle this by tagging them with a className
+// during creation and bringing them to back on toggle-on.
+const RASTER_LAYERS = new Set([
+  'hillshade', 'hillshade-parcel', 'hillshade-escobar',
+  'color-relief', 'color-relief-escobar',
+  'ndvi-backdrop',
+]);
 document.querySelectorAll('[data-layer]').forEach(cb => {
   cb.addEventListener('change', e => {
     const name = cb.dataset.layer;
@@ -1701,7 +1745,20 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
     if (!lyr) return;
     if (cb.checked) {
       lyr.addTo(map);
+      // Rasters go behind vectors; the parcel always stays on top.
+      if (RASTER_LAYERS.has(name)) {
+        lyr.bringToBack();
+      }
       if (name === 'parcel') lyr.bringToFront();
+      // Hillshades stack — newer (Escobar) sits below parcel-scale.
+      // bringToBack on the oldest first so the layering is correct.
+      ['hillshade-escobar', 'color-relief-escobar', 'ndvi-backdrop',
+       'hillshade', 'color-relief', 'hillshade-parcel'].forEach(n => {
+        const l = layers[n];
+        if (l && map.hasLayer(l)) l.bringToBack();
+      });
+      // Bring parcel back to front after raster bring-to-back
+      if (layers.parcel) layers.parcel.bringToFront();
     } else {
       map.removeLayer(lyr);
     }
@@ -1829,6 +1886,12 @@ window.addEventListener('keydown', e => {
   if (e.key === '4') applyPreset('water');
   if (e.key === '5') applyPreset('forest');
   if (e.key === '6') applyPreset('terrain');
+  if (e.key === '7') applyPreset('context');
+  // shift-1 .. shift-5 = toggle all/none in a sidebar section
+  if (e.shiftKey && e.key === '!') applySectionToggle('property', true);
+  if (e.shiftKey && e.key === '@') applySectionToggle('terrain', true);
+  if (e.shiftKey && e.key === '#') applySectionToggle('forest', true);
+  if (e.shiftKey && e.key === '$') applySectionToggle('osm', true);
 });
 
 // ---- Mobile drawer ----
@@ -2012,6 +2075,39 @@ document.querySelectorAll('.preset-btn[data-preset]').forEach(btn => {
 });
 // Default highlight = "Property" (what loads by default has parcel on).
 applyPreset('property');
+
+// ---- Per-section toggle (the "All" / "None" pill buttons in each sidebar
+// section). They flip every layer-row that has `data-section="X"` to on or
+// off. The `data-section` attribute on each .layer-row is what links rows
+// to their parent section.
+function applySectionToggle(sectionId, state /* true|false */) {
+  const cbs = document.querySelectorAll(
+    `input[type=checkbox][data-layer]`
+  );
+  let touched = 0;
+  cbs.forEach(cb => {
+    const row = cb.closest('.layer-row');
+    if (!row || row.dataset.section !== sectionId) return;
+    // Don't auto-toggle the parcel layer off in the "property" section — it's
+    // the centre of the map and going blank is disorienting.
+    if (!state && cb.dataset.layer === 'parcel') return;
+    if (cb.checked !== state) {
+      cb.checked = state;
+      cb.dispatchEvent(new Event('change'));
+      touched++;
+    }
+  });
+  return touched;
+}
+document.querySelectorAll('.sidebar-section[data-section]').forEach(sec => {
+  const sid = sec.dataset.section;
+  sec.querySelectorAll('.section-toggle-on').forEach(btn => {
+    btn.addEventListener('click', () => applySectionToggle(sid, true));
+  });
+  sec.querySelectorAll('.section-toggle-off').forEach(btn => {
+    btn.addEventListener('click', () => applySectionToggle(sid, false));
+  });
+});
 
 // ════════════════════════════════════════════════════════════════
 // SIDEBAR COLLAPSE — desktop rail mode (saves 296 px for the map)
