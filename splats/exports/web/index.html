@@ -867,10 +867,12 @@
 <div id="maplibre-mount" style="display:none"></div>
 
 <!-- ============================================== -->
-<!-- SCRIPTS — Cesium 3D (MapLibre 2D moved to /mapa unified viewer) -->
+<!-- SCRIPTS — The MapLibre-based 2D viewer was moved to /mapa in 2026-07.
+     lqv-map.js is now an init stub that gracefully no-ops when WebGL is
+     unavailable. cesium-token.js is generated at deploy time when
+     LQV_CESIUM_TOKEN is in the env (see data/DEPLOY.md for the recipe).
+     For now, no 3D mount — the gold CTA card points buyers at /mapa instead. -->
 <!-- ============================================== -->
-<script src="./lqv-secrets/cesium-token.js"></script>
-
 <script src="./lqv-map.js"></script>
 
 </body>
