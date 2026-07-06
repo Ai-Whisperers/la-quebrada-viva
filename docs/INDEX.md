@@ -3,7 +3,26 @@
 > **Single navigation entrypoint.** What every `docs/` subdir contains,
 > organized by who reads it.
 >
-> **Last updated:** 2026-07-04 (post-reorg pass)
+> **Last updated:** 2026-07-06 (Erebus post-audit update — see §delta below)
+
+---
+
+## 2026-07-06 delta (Erebus)
+
+What changed in this directory in this session:
+
+- `docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md` — new operator-facing audit + action punch list (~12 KB)
+- `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` — print-ready A4 attorney brief (replaces some 24-Q-folder-only references)
+- `docs/people/stakeholders/INSURANCE_BROKER_OUTREACH.md` — broker outreach playbook
+- `docs/people/stakeholders/INSURANCE_PROPERTY_DATASHEET.md` — PHI-safe broker datasheet
+- `docs/people/stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` + `..._EN.md` — outreach templates
+- `docs/people/wes/WES_ACTIONS.md` — renumbered to W0.5-A/W0.5-B/W0.8/W0.9 (preserves original W0.1-W0.7 alongside)
+- `docs/research/RESULTS/NEW01-03_*.md` (3) — NEW-tier research: AI negotiator, steengroeve, river freight
+- `docs/research/RESULTS/M_WOOD/COB/BEV/VLOER/VERF_01_*.md` (5) — Sprint-1 materials
+- `docs/research/RESULTS/PRICE_GAP_MASTER.md` — 95-item price-gap inventory
+- `docs/research/RESULTS/PRICE_INTELLIGENCE_MASTER.md` — scaffold for 6-category deep scrape (sections 1-6 placeholders, awaiting next-batch dispatch with delegation routing fix)
+
+Net change in this session: +11 files (~57 KB markdown), 0 deletes, 1 doc rewrite (M_VERF_01 v1 → v2 with verified ASTM citations + PR06 climate anchor). No broken cross-references after the W0.x reconcile at `d4fc5e2`.
 
 ---
 
@@ -35,7 +54,7 @@
 | Subdir | What's in it | Files |
 |---|---|---|
 | [`wes/`](./wes/) | The 10-doc Wes reading stack: WES_INDEX, WES_FAQ, WES_GLOSSARY, WES_WARNINGS, WES_HOW_WE_WORK, WES_NEXT_30_DAYS, CRITIQUE_FOR_WES, + bundle/inventory | 10 |
-| [`people/`](./people/) | All stakeholder briefs, split by who | 12 (in 3 subdirs) |
+| [`people/`](./people/) | All stakeholder briefs, split by who (now includes 5 insurance + 1 attorney-pack files in stakeholders/ as of 2026-07-06) | 17 (in 3 subdirs) |
 | [`legal/`](./legal/) | CLIENT.md, CLOSING_DAY_PREP.md, contract_summary.md | 3 |
 
 ### Project state (read for situational awareness)
@@ -43,7 +62,7 @@
 | Subdir | What's in it | Files |
 |---|---|---|
 | [`state/`](./state/) | The canonical "where are we" docs: TIMELINE, MASTER_BRIEF, DECISIONS, POST_ESCRITURA_NOW, SESSION_LOG, MCP_STATUS, master_plan, etc. | 10 |
-| [`research/`](./research/) | Strategy + research synthesis (split into strategy/ paraguay_context/ satellite_research/ + 4 existing subdirs) | 132 |
+| [`research/`](./research/) | Strategy + research synthesis (split into strategy/ paraguay_context/ satellite_research/ + 4 existing subdirs) | 141 |
 | [`audit/`](./audit/) | Repo health audits, before/after metrics, restructure playbooks | 9 |
 | [`_reconciled/`](./_reconciled/) | The post-Wes-share merged view (split into business/ buildings/ land/) | 11 |
 
