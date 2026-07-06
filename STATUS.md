@@ -1,7 +1,16 @@
 # STATUS — Riverstone Valley + Escobar Housing Park
 
-> Canonical state document. Last updated 2026-07-03 (post-restructure pass).
+> Canonical state document. Last updated **2026-07-06** (Erebus audit + Wes-facing docs shipped).
 > The project is now **dual scope**: (a) the original 18-final Blender render matrix for the Riverstone Valley cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
+>
+> **2026-07-06 update (Erebus post-audit):**
+> - Repo audit confirmed ~380+ docs (~2,888 files total), 18 photoreal Cycles finals byte-frozen at `85e86aa`, 109-idea brainstorm catalog with 63 ✓ reviewed.
+> - Shipped Wes-facing audit + action list at `docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md`.
+> - Shipped 6 stakeholder files: `ATTORNEY_BRIEF_1PAGE.md`, `INSURANCE_BROKER_OUTREACH.md`, `INSURANCE_PROPERTY_DATASHEET.md`, `WHATSAPP_OUTREACH_TEMPLATE_ES.md`, `WHATSAPP_OUTREACH_TEMPLATE_EN.md` (in `docs/people/stakeholders/`).
+> - Shipped 8 research files: NEW01/02/03 (AI negotiator, steengroeve, river freight), M-wood-01, M-cob-01, M-bev-01, M-vloer-01, M-verf-01 in `docs/research/RESULTS/`.
+> - Renumbered + reconciled `WES_ACTIONS.md` (W0.5-A insurance, W0.5-B LiDAR, W0.6 name, W0.7 Tundra/Presio, W0.8 attorney, W0.9 Sonja — supersedes partial-renumbered old W0.x in some existing files).
+> - Fixed live deploy drift at `lqv-walkthrough.pages.dev/` (was showing stale v17 viewer; now serves v19 HEAD).
+> - Patched `/root/.hermes/config.yaml` delegation routing: `deepseek-chat` → `openrouter/google/gemma-4-31b-it:free` (DeepSeek account empty; backup at `config.yaml.bak-pre-deepseek402-20260706`). Future subagent dispatches ship successfully.
 >
 > **2026-07-03 update (restructure pass):** Repo reorganized. 264 MB pre-Wes snapshot gitignored. MapBiomas compressed from 83 → 19 files (40 MB saved). Property_map v1/v2 consolidated. 109 idea files quality-marked (63 ✓ reviewed, 46 ○ auto-fill). New top-level nav: `docs/wes/WES_INDEX.md` (one-page for Wes), `docs/state/POST_ESCRITURA_NOW.md` (5 hard gates). README rewired with Wes-track cold-start. See `docs/audit/RESTRUCTURE_PLAN.md` + `docs/wes/CRITIQUE_FOR_WES.md`. Net repo: 696 MB → ~390 MB tracked.
 >
