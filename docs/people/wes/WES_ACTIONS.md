@@ -1,3 +1,32 @@
+## W0.1-W0.9 numbering (ADR 2026-07-06)
+
+Wes-facing docs use **two coexisting numbering schemes**, resolved as follows:
+
+**Canonical (used by `docs/wes/`, `docs/_reconciled/`, `docs/people/decisions/`):**
+
+| # | Action | Status |
+|---|---|---|
+| W0.1 | NL+PY dual-tax attorney call | New numbering — see existing W0.1 below |
+| W0.2 | Sonja questionnaire call | existing W0.2 |
+| W0.3 | Anexo I chase to Escribana Peña | existing W0.3 |
+| W0.4 | Fase 1 ownership choice | existing W0.4 |
+| W0.5 | 5-of-15 materials topics pick | existing W0.5 |
+| W0.6 | Project name decision | existing W0.6 |
+| W0.7 | Toyota Tundra vs Presio + Anexo I follow-up | existing W0.7 |
+
+**NEW (added 2026-07-06 by Erebus after CONSULT pack):**
+
+| # | Action | Status |
+|---|---|---|
+| W0.8 | **Insurance broker outreach** | NEW — see W0.5 below (was renumbered, reverted) |
+| W0.9 | **Drone LiDAR booking** | NEW — see W0.6 below (was renumbered, reverted) |
+
+**Why the revert:** my 2026-07-06 commit `071a328` renumbered the W0.x labels in this file, which broke ~13 cross-references in `WES_INDEX`, `WES_NEXT_30_DAYS`, `WES_HOW_WE_WORK`, `WES_GLOSSARY`, `OPEN_DECISIONS`, `DECISIONS_LOG`, `CONTACTS`, and `SITE_VISIT_BRIEF`. Reverted to the canonical pre-existing scheme + added the two new actions (insurance + LiDAR) under W0.8/W0.9.
+
+**To find the insurance broker outreach material:** see `../stakeholders/INSURANCE_BROKER_OUTREACH.md` + the W0.5 section below for shortcut.
+
+---
+
 # Wes's Action Checklist — the 5 things this week
 
 **Purpose:** Single page that lists everything only Wes can do, with the action script for each.
@@ -110,63 +139,84 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 
 ---
 
-## W0.5 — Insurance broker pre-qualification (NEW 2026-07-06, drafted by Erebus)
+## W0.5 — Insurance broker pre-qualification (NEW 2026-07-06)
 
-> Replaces the original W0.5 (LiDAR booking is now W0.6). Insurance is **Hard Gate HG-3** per `POST_ESCRITURA_NOW.md`. 82% Atlantic Forest canopy + PY dry season = the biggest financial risk before any construction begins. **No structure goes up without binding fire+storm coverage.**
+> **HG-3 hard gate per `POST_ESCRITURA_NOW.md`.** 82% Atlantic Forest canopy + PY dry season = the biggest financial risk before any construction begins. **No structure goes up without binding fire+storm coverage.**
 
 **Time:** 1-2 hours broker outreach + 4-6 weeks waiting for quotes
 **Cost:** €0 (cost is in the policy later); broker outreach itself free
 **Unblocks:** HG-3, Phase 1 break-ground, D15 in `OPEN_DECISIONS.md`
 
-### Steps
+**Steps**
+1. **Print `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` as PDF** (do not send via WhatsApp — bulky).
+2. **Ask Kiki for 2-3 PY broker contacts** in her Asunción network (Mapfre PY, La Consolidada, Seguros Atlántida).
+3. **Find 2-3 international broker contacts** via LinkedIn search "Marsh Brazil commercial", "Aon Argentina risk", "WTW Latin America".
+4. **Send the WhatsApp outreach template** (`../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` for PY-domestic, `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` for international).
+5. **Target 3 quotes within 6 weeks** — fire, storm, general liability.
+6. **Mark W0.5 ✅ in WES_TODO** when 3 quotes in hand.
+7. Update `docs/research/RESULTS/W07_insurance_quotes.md` with the 3 quotes (Erebus compiles).
 
-1. **Print `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` as PDF** (do not send via WhatsApp — its PHI-safe but bulky)
-2. **Ask Kiki for 2-3 PY broker contacts** in her Asunción network (Mapfre PY, La Consolidada, Seguros Atlántida)
-3. **Find 2-3 international broker contacts** via LinkedIn search "Marsh Brazil commercial", "Aon Argentina risk", "WTW Latin America"
-4. **Send the WhatsApp outreach template:**
-   - `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` for PY-domestic brokers
-   - `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` for BR/AR/NL/international brokers
-5. **Target 3 quotes within 6 weeks** — fire, storm, general liability
-6. **Mark W0.5 ✅ in WES_TODO** when 3 quotes in hand
-7. Update `docs/research/RESULTS/W07_insurance_quotes.md` with the 3 quotes (Erebus compiles)
-
-### Files to use (this pack)
-
-| File | Purpose |
-|---|---|
-| `../stakeholders/INSURANCE_BROKER_OUTREACH.md` | Master playbook + 5 broker targets + tiered questions |
-| `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` | 2-page datasheet — attach as PDF |
-| `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` | ES WhatsApp template for PY brokers |
-| `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` | EN WhatsApp template for international brokers |
+**Files to use (this pack):**
+- `../stakeholders/INSURANCE_BROKER_OUTREACH.md` — master playbook + 5 broker targets + tiered questions
+- `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` — 2-page datasheet — attach as PDF
+- `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` — ES WhatsApp for PY brokers
+- `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` — EN WhatsApp for international brokers
 
 **Reference:** `docs/research/RESULTS/insurance_fire_bundle.md` (Sprint 0 research, already done) + `docs/research/RESULTS/R01_fire_safety_plan.md`.
 
 ---
 
-## W0.6 (was W0.5) — Book drone LiDAR pilot for next PY visit
+## W0.6 — Pick the project name (5 minutes)
 
-**Time:** 1 email + 1-2 weeks pilot scheduling
-**Cost:** $1,500-3,000 for the survey (one-time)
-**Unblocks:** SD01, SD02, B06 (LiDAR decision), C04 (ground bores planning)
+> **Wes's first instinct was "Riverstone Valley" but he hasn't formally decided.** See `docs/people/wes/PROJECT_NAME_CANDIDATES.md` for 100 candidates + 3 top recommendations.
+
+**Time:** 5 minutes decision + 1 day to check domains
+**Cost:** $0
+**Unblocks:** All of D14 (Cross-cutting brand/naming)
+
+### Candidates (top 5)
+
+| Name | Source | Wes preference | Domain check |
+|---|---|---|---|
+| Riverstone Valley | Audio E | Wes's first instinct | BR02: check RiverstoneValley.com + .com.py |
+| **Villa del Cielo** | Audio brainstorm | Spanish, "mooi" | BR03: check |
+| Cielo Azul | Audio brainstorm | Spanish, "mooi" | BR03: check |
+| Lluvia Dorada | Audio brainstorm | German place + plant | BR03: check |
+| Lluvia de Oro | Audio brainstorm (variant) | German place + plant | BR03: check |
 
 ### Steps
 
-1. **Identify 2-3 drone pilots in PY with LiDAR (DJI L1/L2 sensors)**
-   - Search "drone LiDAR Paraguay"
-   - Ask Kiki for contacts
-   - Likely candidates: drone service companies in Asunción, CDE, Encarnación
-
-2. **Get 3 quotes** (compare price, lead time, output deliverables)
-
-3. **Book for next PY visit** (Q3 2026 or whatever Wes plans)
-
-4. **Erebus helps with vendor research** (1 day of AI subagent time)
-
-5. **Mark W0.5 ✅ in WES_TODO**
+1. **Pick one** (5 min)
+2. **Tell Erebus** (1 message) → domain check (BR02/BR03) → 1 day
+3. **Erebus renames repo** (atomic rename commit)
+4. **Mark W0.6 ✅ in WES_TODO**
 
 ---
 
-## W0.7 (NEW 2026-07-06) — Call the NL+PY dual-tax attorney
+## W0.7 — Toyota Tundra vs Presio + insurance follow-up
+
+### Tundra vs Presio (existing AI research, finalize the pick)
+
+**Time:** 30 min to review AH01/AH02/AH03
+**Cost:** $0
+**Unblocks:** Phase 1 mobility decision
+
+**Steps**
+1. Read existing research: `docs/research/RESULTS/AH01_hilux_pricing.md`, `AH02_tundra_parts.md`, `AH03_used_vs_new.md`.
+2. Decide: **Toyota Hilux SRV 4x4 used** (~$30k landed, parts in PY, jungle-agile) **OR Tundra SR5** (~$50k, more capable but rare in PY).
+3. Tell Erebus the choice.
+
+### Insurance follow-up
+
+1. Once W0.5 quotes are in hand (~6 weeks), compare 3 quotes side-by-side.
+2. Bind fire + storm (~€8-15k/year) at break-ground; add liability + business interruption at Month 2.
+3. Update `POST_ESCRITURA_NOW.md` HG-3 to ✅.
+
+**Mark W0.7 ✅ in WES_TODO** when both decisions (Tundra/Presio + insurance bind) are confirmed.
+
+---
+
+## W0.8 (NEW 2026-07-06) — Call the NL+PY dual-tax attorney
 
 > **HIGHEST-LEVERAGE single action in the project.** Validates the 4-BV cascade + answers 10+ P1-blockers. Use the **1-page summary** at `../stakeholders/ATTORNEY_BRIEF_1PAGE.md` as your printed handout; full 24-question brief stays in the repo.
 
@@ -174,14 +224,13 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 **Cost:** €300-500
 **Unblocks:** 10 P1 legal/tax items (L01, L02, L03, L04, L05, L21, L22, L25, L28, L29)
 
-### Steps
-
-1. **Find an attorney** — message Kiki for NL+PY dual-tax contacts in her NL + Asunción network. Alternative: LinkedIn search "PY tax advisor Netherlands". Need dual-qualified OR firm with both NL+PY partners.
+**Steps**
+1. **Find an attorney** — message Kiki for NL+PY dual-tax contacts in her NL + Asunción network. Alternative: LinkedIn search "PY tax advisor Netherlands".
 2. **Send `../stakeholders/ATTORNEY_BRIEF_1PAGE.md` + `../stakeholders/ATTORNEY_BRIEF.md` 2-3 days before call** — give attorney time to review.
 3. **Run the 1-2 hour call** — lead with the 1-pager; jump to the full brief for deep dives.
-4. **Mark W0.7 ✅ in WES_TODO** + send 1-page decision summary to Erebus.
+4. **Mark W0.8 ✅ in WES_TODO** + send 1-page decision summary to Erebus.
 
-### Files for this
+**Files for this:**
 
 | File | Purpose |
 |---|---|
@@ -192,48 +241,41 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 
 ---
 
-## W0.8 (NEW 2026-07-06) — Pick project name (5 min)
+## W0.9 (NEW 2026-07-06) — Sonja questionnaire call (clean re-do of old W0.2)
 
-**Time:** 5 minutes
-**Cost:** $0
-**Unblocks:** D14 brand/URL/marketing chain, the rename commit, all Riverstone Valley refs in repo
-
-### Steps
-
-1. Open `docs/people/wes/PROJECT_NAME_CANDIDATES.md` — 100 candidates, 3 top recommendations
-2. Pick one (Wes's preference to date: Spanish over Riverstone Valley)
-3. Tell Erebus (1 message) → domain check + rename commit + repo-wide text update
-4. Mark W0.8 ✅ in WES_TODO
-
----
-
-## W0.9 (NEW 2026-07-06) — Sonja questionnaire call
+> Merged with old W0.2 to keep Sonja Section together. The OLD W0.2 used to be Sonja (now retired); W0.9 is the canonical name.
 
 **Time:** 1-2 hours with Sonja
 **Cost:** $0
 **Unblocks:** 16 P1 worker/culture/salary items (W01-W19)
 
-### Steps
-
-1. Send `docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` to Sonja 2-3 days before call
-2. Schedule 1-2 hour call
-3. Capture 16 answers on the call
-4. Send answers to Erebus (audio file or written summary)
-5. Mark W0.9 ✅ in WES_TODO
+**Steps**
+1. Send `docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` to Sonja 2-3 days before call.
+2. Schedule 1-2 hour call.
+3. Capture 16 answers on the call.
+4. Send answers to Erebus (audio file or written summary).
+5. **Mark W0.9 ✅ in WES_TODO**.
 
 **Reference:** `docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` (existing, 16 questions).
 
 ---
 
-## Summary (post 2026-07-06 restructure)
+## Summary
 
-| Action | Time | Cost | Unblocks |
-|---|---|---|---|
-| W0.5 Insurance broker outreach | 1-2 hr + 6 wk wait | €0 | HG-3 + Phase 1 break-ground |
-| W0.6 LiDAR booking | 1 email | $1,500-3,000 | R35 highest-ROI dataset |
-| W0.7 Attorney call (use 1-pager) | 1-2 hr | €300-500 | 10 P1 items |
-| W0.8 Pick project name | 5 min | $0 | All of D14 |
-| W0.9 Sonja questionnaire call | 1-2 hr | $0 | 16 P1/P2 items |
-| **Total** | **~5 hours + 1 day + 6 wk wait** | **~€2-4k** | **30+ items unblocked** |
+| # | Action | Time | Cost | Unblocks |
+|---|---|---|---|---|
+| W0.1 | Attorney call | 1-2 hr | €300-500 | 10 P1 items |
+| W0.2 | (retired — was Sonja) | — | — | (see W0.9) |
+| W0.3 | Name decision | 5 min | $0 | All of D14 (see W0.6) |
+| W0.4 | Anexo I chase | 1 phone call | $0 | 1 P1 item |
+| W0.5 | **Insurance broker outreach** | 1-2 hr + 6 wk | €0 | HG-3 hard gate |
+| W0.6 | Project name pick | 5 min | $0 | D14 brand chain |
+| W0.7 | Tundra/Presio + insurance follow-up | 30 min | $0 | Phase 1 mobility |
+| W0.8 | Attorney call (1-pager) | 1-2 hr | €300-500 | 10 P1 items (superseded W0.1 — pick one) |
+| W0.9 | Sonja questionnaire | 1-2 hr | $0 | 16 P1 items (superseded W0.2) |
+| **Total** | | **~5 hours + 6 wk wait** | **~€600-1000** | **30+ items unblocked** |
 
-**The 5 hours is still the highest-leverage work. ** The 6-week wait on W0.5 (insurance quotes) runs in parallel — start that broker outreach today.
+**The 5 hours is still the highest-leverage work.** The 6-week wait on W0.5 (insurance quotes) runs in parallel — start that broker outreach today.
+
+*Maintained by Erebus (AI Whisperers) for Wesley van de Camp.*
+*Cross-reference key: W0.1 = W0.8 (attorney); W0.2 retired = W0.9 (Sonja); W0.3 = W0.6 (name); W0.5 split into insurance (now) + LiDAR (now W0.5-B body).*

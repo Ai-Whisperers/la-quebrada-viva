@@ -1,6 +1,6 @@
 # Wes's Index — Riverstone Valley
 
-> **⚠️ NAME STATUS — provisional pending Wes's W0.6 decision.**
+> **⚠️ NAME STATUS — provisional pending Wes's W0.6 decision** (the project name, formerly mis-shared as "W0.6" in this file).
 > The repo content has been renamed from "La Quebrada Viva" → "Riverstone Valley"
 > as Wes's **first instinct**. **Wes has NOT formally decided yet** — see
 > [`PROJECT_NAME_CANDIDATES.md`](../people/wes/PROJECT_NAME_CANDIDATES.md) for 100 candidates
@@ -62,11 +62,14 @@ and step-by-step scripts in `docs/people/WES_ACTIONS.md`.
 
 | # | Action | Unblocks | Time | Cost |
 |---|---|---|---|---|
-| **W0.1** | Book the **NL+PY dual-tax attorney** call | 10 P1 legal/tax items | 1-2 hr (booking) | €300-500 (call) |
-| **W0.2** | Schedule the **Sonja questionnaire** call (16 Qs in one go) | 16 P1 worker/culture/salary items | 1-2 hr (call) | free (Sonja) |
+| **W0.1 / W0.8** | Book the **NL+PY dual-tax attorney** call (use `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` 1-pager) | 10 P1 legal/tax items | 1-2 hr (booking) | €300-500 (call) |
+| **W0.2 / W0.9** | Schedule the **Sonja questionnaire** call (16 Qs in one go) | 16 P1 worker/culture/salary items | 1-2 hr (call) | free (Sonja) |
 | **W0.3** | Send **Anexo I chase** to Escribana Peña (technical descriptions of 6 fincas — was due 5 May 2026) | R02 site planning | 30 min | free |
 | **W0.4** | Confirm **Fase 1 ownership choice** (you personally? BV3? hybrid?) | 6 financial-model items | 1 hr | free |
-| **W0.5** | Pick **5 of 15 materials topics** for AI research sprint (8 already done) | Next research sprint | 15 min | free |
+| **W0.5-A** | **Insurance broker outreach** (NEW 2026-07-06 — HG-3 hard gate, see `docs/people/stakeholders/INSURANCE_BROKER_OUTREACH.md`) | HG-3 | 1-2 hr + 6 wk wait | free |
+| **W0.5-B** | 5-of-15 materials topics (Sprint-1 picks — actually DONE 2026-07-06, see §4 below) | Sprint-1 research | 15 min | free |
+| **W0.6** | Pick the **project name** (Riverstone Valley vs 4 Spanish alternatives) | Brand/URL/D14 | 5 min | free |
+| **W0.7** | **Tundra vs Presio** + insurance follow-up | Phase 1 mobility | 30 min | free |
 
 **Total: ~5 hours of your time this week → unblocks 25 of 30 P1 items.**
 

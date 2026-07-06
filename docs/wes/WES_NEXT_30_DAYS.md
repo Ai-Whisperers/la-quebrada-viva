@@ -66,9 +66,10 @@
 ## Week 3 — 2026-07-20 to 2026-07-26
 
 ### Monday 2026-07-20
-- **You:** insurance broker outreach (W0.7) — 3 quotes: Marsh, Aon, Mapfre PY
+- **You:** insurance broker outreach (W0.5-A) — 3 quotes: Marsh, Aon, Mapfre PY (use `docs/people/stakeholders/INSURANCE_BROKER_OUTREACH.md`)
 - **AI:** commit insurance outreach plan; identify PY brokers via Brave search
 - **Sonja:** continue worker salary research (R50)
+- **AI:** Sprint-1 materials research follows up on 5-of-15 picks (already DONE 2026-07-06 — see `docs/research/RESULTS/M_*` x5)
 
 ### Tuesday 2026-07-21
 - **You:** name decision (W0.6) — pick from Riverstone Valley / Villa del Cielo / Cielo Azul / Lluvia Dorada
@@ -76,7 +77,7 @@
 
 ### Wednesday 2026-07-22
 - **AI:** Sprint 1 research begins — 5-of-15 materials topics (W0.5 picks from Week 1)
-- **AI:** LiDAR drone pilot outreach (R42) — 3 quotes (W0.5)
+- **AI:** LiDAR drone pilot outreach (R42) — 3 quotes (W0.5-B, see `AH01/AH02/AH03`)
 
 ### Thursday 2026-07-23
 - **AI:** Sprint 1 progress digest
@@ -85,7 +86,7 @@
 ### Friday 2026-07-24
 - **You:** site visit planning (if PY trip in next 4-6 weeks) — message Sonja about logistics
 
-**End of Week 3 target:** W0.5 ✅ (Sprint 1 in progress), W0.6 ✅ (name locked), W0.7 ✅ (insurance + car), R42 ✅ (LiDAR quotes).
+**End of Week 3 target:** W0.5-A ✅ (insurance broker outreach sent), W0.5-B ✅ (Sprint-1 + LiDAR in progress), W0.6 ✅ (name locked), W0.7 ✅ (Tundra/Presio decided), R42 ✅ (LiDAR quotes in).
 
 ---
 
