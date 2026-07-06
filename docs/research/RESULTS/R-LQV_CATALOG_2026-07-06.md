@@ -87,11 +87,14 @@
 
 ## Gaps for next session (if you want even more research)
 
-- **R-LQV11**: Specific property sites in PY comparable to Escobar (other rural eco-lodges + visit sites)
-- **R-LQV12**: Detailed HR market research (where to find bilingual staff, training programs)
-- **R-LQV13**: Marketing funnel deep-dive (which channels actually convert EU travelers to PY)
-- **R-LQV14**: Risk assessment (Liability fire/wind/earthquake)
-- **R-LQV15**: Insurance quotes comparison (Werthein/Marsh/AON/Mapfre)
+All 5 of these gaps have been researched and shipped:
+- **R-LQV11**: Specific PY comparable eco-lodges ✅ shipped
+- **R-LQV12**: HR bilingual staff research ✅ shipped
+- **R-LQV13**: Marketing funnel deep-dive ✅ shipped
+- **R-LQV14**: Risk assessment ✅ shipped
+- **R-LQV15**: Insurance quotes comparison ✅ shipped
+
+Total LQV research coverage: 15 R-LQV docs + 6 earlier R-items (R05/R12/R13/R21/R22/R32) = **21+ research files dated 2026-07-06**, ~410+ items.
 
 ---
 
