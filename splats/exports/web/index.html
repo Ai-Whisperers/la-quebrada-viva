@@ -283,6 +283,71 @@
   .map-legend .item { display: flex; align-items: center; gap: 0.5rem; }
   .map-legend .swatch { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
 
+  /* Map CTA card — replaces the previously-embedded 12-layer MapLibre viewer
+     in the Layers section. Points the buyer at the unified /mapa viewer
+     with multiple radius options. */
+  .map-cta {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    margin: 2rem 0 0;
+    padding: 1.6rem 1.8rem;
+    background: linear-gradient(135deg, rgba(212,161,84,0.10) 0%, rgba(212,161,84,0.02) 100%);
+    border: 1px solid rgba(212,161,84,0.40);
+    border-radius: 10px;
+    text-decoration: none; color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .map-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    border-color: var(--gold);
+  }
+  .map-cta-icon {
+    font-size: 2.4rem; line-height: 1;
+    padding: 6px 10px 0 0;
+    flex-shrink: 0;
+  }
+  .map-cta-body { flex: 1; min-width: 0; }
+  .map-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 500;
+    color: var(--gold-soft);
+    margin-bottom: 0.4rem;
+  }
+  .map-cta-desc {
+    color: var(--fg-2);
+    font-size: 0.95rem; line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+  .map-cta-actions {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .map-cta-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-3);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--fg-2);
+    font-size: 0.84rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+  }
+  .map-cta-btn:hover {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+  }
+  .map-cta-btn.map-cta-primary {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+  }
+  .map-cta-btn.map-cta-primary:hover {
+    background: var(--gold-soft);
+    border-color: var(--gold-soft);
+  }
+
   /* === QUOTE / PULL === */
   .pull {
     border-left: 3px solid var(--gold);
@@ -641,41 +706,31 @@
       <p class="lede">
         Below is the same viewer the project's technical team uses to plan
         cabin placement. The data behind every layer is downloadable — click
-        any link to get the GeoJSON. Need the broader 20&nbsp;km context
-        (all roads, water, towns, land use, forest)? Use the dedicated
-        <a href="./mapa-20km.html"><strong>20&nbsp;km context map</strong></a>.
+        any link to get the GeoJSON. Need the broader context
+        (roads, water, towns, land use, forest)? Use the unified
+        <a href="./mapa"><strong>interactive map</strong></a>
+        with the radius picker (Parcel / 5 / 10 / 20 / 30 km).
       </p>
     </div>
 
-    <div class="map-card">
-      <div class="map-header">
-        <div>
-          <h3>Real-time data layers</h3>
-          <p class="quiet" style="margin: 0.3rem 0 0; font-size: 0.9rem;">MapLibre · 12 layers · drag to pan · scroll to zoom</p>
+    <a class="map-cta" href="./mapa" data-cta="parcel">
+      <div class="map-cta-icon">🗺️</div>
+      <div class="map-cta-body">
+        <div class="map-cta-title">Open the full interactive map</div>
+        <div class="map-cta-desc">
+          The page below is the same one the project's technical team uses to plan cabin placement.
+          All 33 layers are toggleable — satellite, DEM contours, quebrada streams, flow arrows,
+          MapBiomas land cover, Hansen forest loss/gain, HAND floodplain, woodland merged (4 sources),
+          GPS-walked perimeter, named features. Click any feature for details.
         </div>
-        <div class="meta-row">
-          <span>📊 12 layers</span>
-          <span>📍 71.7 ha polygon</span>
-          <span>🗺️ 30m native</span>
+        <div class="map-cta-actions">
+          <span class="map-cta-btn map-cta-primary">Open parcel-zoom view →</span>
+          <a class="map-cta-btn" href="./mapa?r=10">10 km context</a>
+          <a class="map-cta-btn" href="./mapa?r=20">20 km context</a>
+          <a class="map-cta-btn" href="./mapa?r=30">30 km context</a>
         </div>
       </div>
-      <div id="maplibre-mount"></div>
-      <div class="map-controls">
-        <button class="map-btn active" data-basemap="hybrid">Hybrid</button>
-        <button class="map-btn" data-basemap="aerial">Aerial</button>
-        <button class="map-btn" data-basemap="topo">Topographic</button>
-      </div>
-      <div class="map-legend">
-        <div class="item"><span class="swatch" style="background: #86efac"></span> Sparse NDVI</div>
-        <div class="item"><span class="swatch" style="background: #4ade80"></span> Open NDVI</div>
-        <div class="item"><span class="swatch" style="background: #16a34a"></span> Medium NDVI</div>
-        <div class="item"><span class="swatch" style="background: #14532d"></span> Dense NDVI</div>
-        <div class="item"><span class="swatch" style="background: #60a5fa"></span> Stream / quebrada</div>
-        <div class="item"><span class="swatch" style="background: #3b82f6"></span> Open water</div>
-        <div class="item"><span class="swatch" style="background: #fbbf24"></span> Road</div>
-        <div class="item"><span class="swatch" style="background: #f472b6"></span> GBIF observation</div>
-      </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -806,8 +861,13 @@
   </div>
 </footer>
 
+<!-- Hidden stub mounts — kept so lqv-map.js (MapLibre/Cesium loader) doesn't
+     throw on missing elements. MapLibre UI was replaced with the .map-cta card
+     above; Cesium mount is rendered. -->
+<div id="maplibre-mount" style="display:none"></div>
+
 <!-- ============================================== -->
-<!-- SCRIPTS — Cesium 3D + MapLibre 2D -->
+<!-- SCRIPTS — Cesium 3D (MapLibre 2D moved to /mapa unified viewer) -->
 <!-- ============================================== -->
 <script src="./lqv-secrets/cesium-token.js"></script>
 

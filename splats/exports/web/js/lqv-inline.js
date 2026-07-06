@@ -41,6 +41,12 @@ const map = L.map('map', {
   // (Leaflet 1.9 only declutters canvas renderers — that's OK, we use canvas)
 });
 
+// Expose the Leaflet map instance globally so the radius picker in mapa.html
+// (and any future external control surface) can call fitBounds / invalidateSize.
+// Done here (inside the IIFE, after `map` is defined) because `map` is a const
+// local to this scope — an assignment before the IIFE would write `undefined`.
+window.LQVmap = map;
+
 // Fix default Leaflet icon path (broken with bundlers / CDN)
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({

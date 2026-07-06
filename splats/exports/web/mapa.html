@@ -1198,7 +1198,10 @@
     });
     // Wait for map init before applying radius (lqv-inline.js defers until DOMContentLoaded too).
     window.LQVmapReady = new Promise(res => {
-      if (window.LQVmap && window.LQVmap._loaded) res();
+      // lqv-inline.js exposes window.LQVmap once Leaflet `const map` is created.
+      // The Leaflet map's tiles start loading on construction; we just need the
+      // instance reference, not a "_loaded" flag (which Leaflet doesn't set).
+      if (window.LQVmap) res();
       else {
         const itv = setInterval(() => {
           if (window.LQVmap) { clearInterval(itv); res(); }

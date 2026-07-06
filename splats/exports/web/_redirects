@@ -1,0 +1,14 @@
+# Cloudflare Pages redirect rules — kept here as the single source of truth.
+# Anything not matched falls through to file serving.
+
+# Old map URLs → unified viewer
+/mapa-10km            /mapa            301
+/mapa-10km.html       /mapa            301
+/mapa-20km            /mapa?r=20       301
+/mapa-20km.html       /mapa?r=20       301
+
+# /mapa-parcel was a "buyer email" variant; consolidated into the unified viewer.
+/mapa-parcel          /mapa?r=parcel   301
+/mapa-parcel.html     /mapa?r=parcel   301
+
+# Root → walkthrough landing (no redirect; index.html is served)
