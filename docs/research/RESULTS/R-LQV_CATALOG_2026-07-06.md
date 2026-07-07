@@ -96,6 +96,51 @@ All 5 of these gaps have been researched and shipped:
 
 Total LQV research coverage: 15 R-LQV docs + 6 earlier R-items (R05/R12/R13/R21/R22/R32) = **21+ research files dated 2026-07-06**, ~410+ items.
 
+### R-LQV16 — Italian Arched Concrete-Stone Bridge (DIY, 6-8 ton load)
+- **Items**: 12 (engineering physics, 12-week construction sequence, materials, pitfalls)
+- **File**: `docs/research/RESULTS/R-LQV16_italian_arched_bridge_2026-07-06.md`
+- **Key insight**: DIY feasible for $4.5-7.5K all-in with cob crew; 12 weeks build time; Piribebuy sandstone for Italian look
+
+### R-LQV17 — Small Dams + Picket Dam Alternative (3 dams, quick open/close)
+- **Items**: 10 (4 dam types compared, picket dam spec + costs, integration with existing concrete)
+- **File**: `docs/research/RESULTS/R-LQV17_small_dams_picket_2026-07-06.md`
+- **Key insight**: Picket dam = $700-1,150 per dam DIY, 30-60 sec open/close; reuse existing basins as anchors
+
+### R-LQV18 — Termites in PY: Biology + Prevention + Rescue + Biological Control
+- **Items**: 14 (4 termite species, 4-layer prevention, rescue diagnostic ladder, biological deterrents)
+- **File**: `docs/research/RESULTS/R-LQV18_termites_2026-07-06.md`
+- **Key insight**: $200-400/cabin prevention setup; can't eradicate but can manage; stainless steel collars + sand barriers + beneficial nematodes
+
+### R-LQV19 — Leafcutter Ants (Atta + Acromyrmex): Biological Control + Tree Protection
+- **Items**: 12 (4 species, 5-tier biological strategy, tree protection plan, list of trap crops)
+- **File**: `docs/research/RESULTS/R-LQV19_leafcutter_ants_2026-07-06.md`
+- **Key insight**: No chemical control — Beauveria bassiana + diversion planting + coffee ground barriers; $100-150/year per important tree
+
+### R-LQV20 — Natural Stone in PY + Region: Flagstone Types, Suppliers, Italian-Style Options
+- **Items**: 16 (4 PY stone types, Italian equivalents, 11 named suppliers, Phase 1 budget)
+- **File**: `docs/research/RESULTS/R-LQV20_natural_stone_flagstone_2026-07-06.md`
+- **Key insight**: 4 PY stones within 100 km, $6.5-12.5K Phase 1 stone; Itá granite = Pietra Serena substitute; Piribebuy sandstone = Italian arenisca
+
+---
+
+## Updated coverage (post R-LQV16-20 batch)
+
+**Total LQV research: 20 R-LQV docs + 6 earlier R-items = 26 research files dated 2026-07-06, ~480+ items.**
+
+New topics added by this batch (Wes's brainstorm 2026-07-06 22:34):
+- Italian arched bridge engineering + DIY cost
+- Picket dam design + integration with existing concrete basins
+- Neotropical termite biology + biological control spectrum
+- Leafcutter ant (Atta/Acromyrmex) management without chemicals
+- PY natural stone supply chain + Italian aesthetic equivalents
+
+Cross-refs with existing R-items:
+- R-LQV16 uses R46 materials + R-LQV02 cob crew
+- R-LQV17 uses R46 stone + existing site concrete
+- R-LQV18 protects R-LQV02 cob cabins + R39 important trees
+- R-LQV19 protects R39 reforestation species mix
+- R-LQV20 unifies with R46 stone aesthetic + R-LQV16 bridge material
+
 ---
 
 *Catalog maintained by Erebus (AI Whisperers) · 2026-07-06 · 10 batches × ~14 items = ~140 items researched for LQV*
