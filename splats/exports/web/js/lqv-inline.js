@@ -1873,12 +1873,18 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
       if (name === 'parcel') lyr.bringToFront();
       // Hillshades stack — newer (Escobar) sits below parcel-scale.
       // bringToBack on the oldest first so the layering is correct.
+      // hillshade-parcel goes LAST so it stacks on TOP of the other rasters
+      // (then the parcel polygon outline is brought back to the very front).
       ['hillshade-escobar', 'color-relief-escobar', 'ndvi-backdrop',
-       'hillshade', 'color-relief', 'multi-hillshade', 'slope', 'aspect',
-       'hillshade-parcel'].forEach(n => {
+       'hillshade', 'color-relief', 'multi-hillshade', 'slope', 'aspect'].forEach(n => {
         const l = layers[n];
         if (l && map.hasLayer(l)) l.bringToBack();
       });
+      // hillshade-parcel stacks above the other rasters but still under the
+      // parcel polygon outline + corners + walking path + GPS features.
+      if (layers['hillshade-parcel'] && map.hasLayer(layers['hillshade-parcel'])) {
+        layers['hillshade-parcel'].bringToFront();
+      }
       // Bring parcel back to front after raster bring-to-back
       if (layers.parcel) layers.parcel.bringToFront();
     } else {
