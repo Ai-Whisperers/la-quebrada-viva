@@ -1061,6 +1061,54 @@
         together to read the full water story — the quebradas and creeks click cleanly into
         the elevation shading.
       </p>
+
+      <h4 style="margin: 16px 0 6px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.10em; color: var(--gold-dark);">
+        Geographic features — cerros, slopes, aspects
+      </h4>
+
+      <label class="layer-row" data-section="terrain" data-preset-group="terrain,context">
+        <input type="checkbox" data-layer="multi-hillshade" />
+        <span class="swatch" style="background: linear-gradient(135deg, #2a2a2a 25%, #ddd 25% 50%, #2a2a2a 50% 75%, #ddd 75%);"></span>
+        <span class="name">
+          <strong>Multi-directional hillshade</strong> · 4-azimuth blend · 10 km box
+          <span class="layer-source">Combines hillshade from 4 sun positions (NW · NE · E · S) so mountains stay readable from every direction · <code>multi_hillshade_10km.jpg</code></span>
+        </span>
+        <input type="range" class="opacity" data-opacity="multi-hillshade" min="0.2" max="0.9" step="0.05" value="0.55" />
+      </label>
+
+      <label class="layer-row" data-section="terrain" data-preset-group="terrain">
+        <input type="checkbox" data-layer="slope" />
+        <span class="swatch" style="background: linear-gradient(to right, #6488c8 0%, #94c864 25%, #f4d35e 55%, #e8804a 80%, #c14530 100%);"></span>
+        <span class="name">
+          <strong>Slope map</strong> · degrees · 10 km box
+          <span class="layer-source">Horn's slope from the 30 m DEM · green=flat · yellow=moderate · red=steep · click anywhere on the map for the local slope in the popup · <code>slope_10km.jpg</code></span>
+        </span>
+        <input type="range" class="opacity" data-opacity="slope" min="0.2" max="0.9" step="0.05" value="0.6" />
+      </label>
+
+      <label class="layer-row" data-section="terrain" data-preset-group="terrain">
+        <input type="checkbox" data-layer="aspect" />
+        <span class="swatch" style="background: conic-gradient(from 0deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);"></span>
+        <span class="name">
+          <strong>Aspect map</strong> · slope direction · 10 km box
+          <span class="layer-source">HSV color-wheel: red=N · yellow=E · green=S · cyan=W · purple=NW (interpolated) · which way each slope faces · <code>aspect_10km.jpg</code></span>
+        </span>
+        <input type="range" class="opacity" data-opacity="aspect" min="0.2" max="0.9" step="0.05" value="0.55" />
+      </label>
+
+      <label class="layer-row" data-section="terrain" data-preset-group="terrain,context">
+        <input type="checkbox" data-layer="cerros" />
+        <span class="swatch" style="background: radial-gradient(circle, #d4a154 30%, #8a6a3a 70%);"></span>
+        <span class="name">
+          <strong>Cerros &amp; peaks</strong> · <span data-count="cerros">—</span> detected summits · click for elevation
+          <span class="layer-source">DEM-derived local maxima from closed contour rings (Copernicus GLO-30, 30 m). Each cerro labelled by directional bearing from LQV parcel · <code>peaks_10km.geojson</code></span>
+        </span>
+        <a class="download" href="./data/peaks_10km.geojson" download title="Download cerros GeoJSON">↓</a>
+      </label>
+
+      <p class="help" style="margin-top: 8px; font-size: 0.75rem; color: var(--gold-dark);">
+        <strong>3D-feel recipe:</strong> <em>multi-hillshade</em> (0.55) + <em>aspect</em> (0.35) overlaid → mountains gain visible form even on a flat 2D map. Add <em>cerros</em> for clickable elevation labels.
+      </p>
     </div>
 
     <!-- ════════════════════════════════════════════════════════════════

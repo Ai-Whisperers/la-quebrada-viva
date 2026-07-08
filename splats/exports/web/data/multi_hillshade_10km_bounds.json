@@ -1,0 +1,21 @@
+{
+  "type": "bounds",
+  "bbox": [
+    -57.13,
+    -25.698,
+    -56.931,
+    -25.518
+  ],
+  "width_px": 108,
+  "height_px": 180,
+  "source": "elevation_grid.json (Copernicus GLO-30 DEM, downsampled to 30\" grid)",
+  "method": "hillshade",
+  "cell_size_m": [
+    186.7,
+    111.2
+  ],
+  "elevation_range_m": [
+    116.0,
+    391.0
+  ]
+}

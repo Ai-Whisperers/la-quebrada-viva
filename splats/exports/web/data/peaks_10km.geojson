@@ -1,0 +1,309 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03038124444444,
+          -25.608231444444446
+        ]
+      },
+      "properties": {
+        "name": "LQV Parcel (La Quebrada Viva)",
+        "elev_m": null,
+        "rank": 0,
+        "category": "property",
+        "source": "Client GPS polygon centroid",
+        "note": "Property boundary centroid."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.07580065129481,
+          -25.567700139206988
+        ]
+      },
+      "properties": {
+        "name": "Cerro NW de Escobar",
+        "elev_m": 400,
+        "rank": 1,
+        "area_ha": 2224.34,
+        "distance_from_lqv_km": 6.41,
+        "bearing_from_lqv_deg": 314.7,
+        "direction_from_lqv": "NW",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 400m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0547077217351,
+          -25.59029469228486
+        ]
+      },
+      "properties": {
+        "name": "Cerro NW de Escobar",
+        "elev_m": 400,
+        "rank": 2,
+        "area_ha": 14.25,
+        "distance_from_lqv_km": 3.15,
+        "bearing_from_lqv_deg": 309.3,
+        "direction_from_lqv": "NW",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 400m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.04088203967134,
+          -25.535607607437605
+        ]
+      },
+      "properties": {
+        "name": "Cerro N de Escobar",
+        "elev_m": 400,
+        "rank": 3,
+        "area_ha": 4.03,
+        "distance_from_lqv_km": 8.14,
+        "bearing_from_lqv_deg": 352.6,
+        "direction_from_lqv": "N",
+        "category": "hill",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 400m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.02326902908283,
+          -25.648188619935137
+        ]
+      },
+      "properties": {
+        "name": "Cerro S de Escobar",
+        "elev_m": 400,
+        "rank": 4,
+        "area_ha": 0.68,
+        "distance_from_lqv_km": 4.5,
+        "bearing_from_lqv_deg": 170.9,
+        "direction_from_lqv": "S",
+        "category": "hill",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 400m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.036798405464864,
+          -25.631664431814237
+        ]
+      },
+      "properties": {
+        "name": "Cerro SSW de Escobar",
+        "elev_m": 350,
+        "rank": 5,
+        "area_ha": 22.97,
+        "distance_from_lqv_km": 2.68,
+        "bearing_from_lqv_deg": 193.9,
+        "direction_from_lqv": "SSW",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 350m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.055013477122515,
+          -25.671937985925357
+        ]
+      },
+      "properties": {
+        "name": "Cerro SSW de Escobar",
+        "elev_m": 350,
+        "rank": 6,
+        "area_ha": 8.96,
+        "distance_from_lqv_km": 7.5,
+        "bearing_from_lqv_deg": 199.2,
+        "direction_from_lqv": "SSW",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 350m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.95453257878398,
+          -25.683882636908173
+        ]
+      },
+      "properties": {
+        "name": "Cerro SE de Escobar",
+        "elev_m": 350,
+        "rank": 7,
+        "area_ha": 0.68,
+        "distance_from_lqv_km": 11.34,
+        "bearing_from_lqv_deg": 137.9,
+        "direction_from_lqv": "SE",
+        "category": "hill",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 350m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0975724971352,
+          -25.639824898373867
+        ]
+      },
+      "properties": {
+        "name": "Cerro WSW de Escobar",
+        "elev_m": 300,
+        "rank": 8,
+        "area_ha": 64.43,
+        "distance_from_lqv_km": 7.6,
+        "bearing_from_lqv_deg": 242.4,
+        "direction_from_lqv": "WSW",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 300m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.11472127367404,
+          -25.680088811179107
+        ]
+      },
+      "properties": {
+        "name": "Cerro SW de Escobar",
+        "elev_m": 250,
+        "rank": 9,
+        "area_ha": 263.26,
+        "distance_from_lqv_km": 11.63,
+        "bearing_from_lqv_deg": 226.6,
+        "direction_from_lqv": "SW",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 250m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.076575068602864,
+          -25.526142054015686
+        ]
+      },
+      "properties": {
+        "name": "Cerro NNW de Escobar",
+        "elev_m": 250,
+        "rank": 10,
+        "area_ha": 1.86,
+        "distance_from_lqv_km": 10.24,
+        "bearing_from_lqv_deg": 333.1,
+        "direction_from_lqv": "NNW",
+        "category": "hill",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 250m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.03883581228093,
+          -25.571168313643867
+        ]
+      },
+      "properties": {
+        "name": "Cerro NNW de Escobar",
+        "elev_m": 250,
+        "rank": 11,
+        "area_ha": 0.86,
+        "distance_from_lqv_km": 4.21,
+        "bearing_from_lqv_deg": 348.4,
+        "direction_from_lqv": "NNW",
+        "category": "hill",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 250m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.963234962024764,
+          -25.619969027635303
+        ]
+      },
+      "properties": {
+        "name": "Cerro E de Escobar",
+        "elev_m": 150,
+        "rank": 12,
+        "area_ha": 156.17,
+        "distance_from_lqv_km": 6.86,
+        "bearing_from_lqv_deg": 101.0,
+        "direction_from_lqv": "E",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 150m. Local name not in OSM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.96264690545721,
+          -25.56337716746492
+        ]
+      },
+      "properties": {
+        "name": "Cerro NE de Escobar",
+        "elev_m": 100,
+        "rank": 13,
+        "area_ha": 33.24,
+        "distance_from_lqv_km": 8.43,
+        "bearing_from_lqv_deg": 53.7,
+        "direction_from_lqv": "NE",
+        "category": "summit",
+        "source": "DEM-derived (Copernicus GLO-30, closed contour rings)",
+        "note": "Auto-detected summit at 100m. Local name not in OSM."
+      }
+    }
+  ]
+}

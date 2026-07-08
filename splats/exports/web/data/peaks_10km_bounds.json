@@ -1,0 +1,20 @@
+{
+  "type": "bounds",
+  "bbox": [
+    -57.13,
+    -25.698,
+    -56.931,
+    -25.518
+  ],
+  "center_km": [
+    -57.03,
+    -25.62
+  ],
+  "source": "dem_contours_10km.geojson (Copernicus GLO-30)",
+  "cerros_count": 14,
+  "elevation_range_m": [
+    100,
+    400
+  ],
+  "naming": "Directional from LQV parcel centroid (no OSM names available in Paraguay rural)"
+}

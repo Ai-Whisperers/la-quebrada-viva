@@ -1045,6 +1045,121 @@ map.on('mousemove', (e) => {
     console.warn('color-relief load failed:', err);
   }
 
+  // 9d-bis. Multi-directional hillshade — 4-azimuth blend (315°+45°+90°+180°).
+  // Mountains stay readable from every direction; replaces single-azimuth hillshade
+  // as the primary terrain backdrop. Generated from elevation_grid.json (30m COP30).
+  try {
+    const r = await fetch('./data/multi_hillshade_10km_bounds.json');
+    if (!r.ok) throw new Error(`multi_hs bounds HTTP ${r.status}`);
+    const mhBounds = await r.json();
+    layers['multi-hillshade'] = L.imageOverlay(
+      './data/multi_hillshade_10km.jpg',
+      [
+        [mhBounds.bbox[1], mhBounds.bbox[0]],
+        [mhBounds.bbox[3], mhBounds.bbox[2]],
+      ],
+      { opacity: 0.55, interactive: false, className: 'multi-hillshade' },
+    );
+    data['multi-hillshade'] = { bounds: mhBounds };
+    console.info(`[LQV] Multi-hillshade loaded (4-azimuth blend, 10 km box)`);
+  } catch (err) {
+    console.warn('multi-hillshade load failed:', err);
+  }
+
+  // 9d-ter. Slope map (degrees, Horn's method from 30m COP30 DEM).
+  try {
+    const r = await fetch('./data/slope_10km_bounds.json');
+    if (!r.ok) throw new Error(`slope bounds HTTP ${r.status}`);
+    const slopeBounds = await r.json();
+    layers['slope'] = L.imageOverlay(
+      './data/slope_10km.jpg',
+      [
+        [slopeBounds.bbox[1], slopeBounds.bbox[0]],
+        [slopeBounds.bbox[3], slopeBounds.bbox[2]],
+      ],
+      { opacity: 0.6, interactive: false, className: 'slope' },
+    );
+    data['slope'] = { bounds: slopeBounds };
+    console.info(`[LQV] Slope map loaded (max ${(slopeBounds.elevation_range_m[0]).toFixed(0)}°-${(slopeBounds.elevation_range_m[1]).toFixed(0)}° in box)`);
+  } catch (err) {
+    console.warn('slope load failed:', err);
+  }
+
+  // 9d-quat. Aspect map (HSV color-wheel: which direction each slope faces).
+  try {
+    const r = await fetch('./data/aspect_10km_bounds.json');
+    if (!r.ok) throw new Error(`aspect bounds HTTP ${r.status}`);
+    const aspBounds = await r.json();
+    layers['aspect'] = L.imageOverlay(
+      './data/aspect_10km.jpg',
+      [
+        [aspBounds.bbox[1], aspBounds.bbox[0]],
+        [aspBounds.bbox[3], aspBounds.bbox[2]],
+      ],
+      { opacity: 0.55, interactive: false, className: 'aspect' },
+    );
+    data['aspect'] = { bounds: aspBounds };
+    console.info(`[LQV] Aspect map loaded (HSV color-wheel)`);
+  } catch (err) {
+    console.warn('aspect load failed:', err);
+  }
+
+  // 9d-quin. Cerros & peaks — DEM-derived local maxima with elevations.
+  // Source: closed contour rings clustered at 1.5km proximity; 13 cerros + 1 parcel ref.
+  try {
+    const peaksFc = await F('./data/peaks_10km.geojson');
+    if (peaksFc && peaksFc.features) {
+      data['cerros'] = peaksFc;
+      setLayerCount('cerros', peaksFc.features.length);
+      layers['cerros'] = L.geoJSON(peaksFc, {
+        pointToLayer: (feature, latlng) => {
+          const p = feature.properties || {};
+          const isLqv = p.category === 'property';
+          const elevM = p.elev_m;
+          // Marker size by elevation (small to large)
+          let radius = 6;
+          if (elevM !== null && elevM !== undefined) {
+            if (elevM >= 350) radius = 11;
+            else if (elevM >= 300) radius = 9;
+            else if (elevM >= 250) radius = 7;
+          }
+          const fillColor = isLqv ? '#d4a154' : (elevM >= 350 ? '#7c2d12' : elevM >= 300 ? '#c2410c' : '#ea580c');
+          return L.circleMarker(latlng, {
+            radius,
+            fillColor,
+            color: '#1c1917',
+            weight: 1.5,
+            opacity: 0.9,
+            fillOpacity: 0.85,
+            className: 'cerro-marker',
+          });
+        },
+        onEachFeature: (feature, lyr) => {
+          const p = feature.properties || {};
+          let html;
+          if (p.category === 'property') {
+            html = `<strong>${p.name}</strong><br><small>Property reference point (parcel centroid)</small>`;
+          } else {
+            const dist = p.distance_from_lqv_km !== undefined ? `${p.distance_from_lqv_km.toFixed(2)} km ${p.direction_from_lqv}` : '';
+            const area = p.area_ha ? `${p.area_ha.toFixed(1)} ha footprint` : '';
+            html = `<strong>${p.name}</strong><br>` +
+                   `<strong style="color:#d4a154;font-size:1.1em;">${p.elev_m}m</strong><br>` +
+                   `<small>${dist}</small><br>` +
+                   `<small>${area}</small><br>` +
+                   `<small style="opacity:0.7">${p.note || ''}</small>`;
+          }
+          lyr.bindPopup(html, { maxWidth: 280, className: 'lqv-cerro-popup' });
+          lyr.bindTooltip(`${p.name} — ${p.elev_m || '?'}m`, {
+            sticky: true, direction: 'top', className: 'lqv-tooltip'
+          });
+        },
+      });
+      console.info(`[LQV] Loaded ${peaksFc.features.length} cerros/peaks (DEM-derived)`);
+    }
+  } catch (err) {
+    console.warn('cerros load failed:', err);
+  }
+
   // 9e. Elevation contours (LineString, 50 m steps).
   const contoursFc = await F('./data/dem_contours_10km.geojson');
   if (contoursFc && contoursFc.features && contoursFc.features.length) {
@@ -1621,6 +1736,10 @@ const LEGEND_DATA = {
   'gps-corners': { swatch: '#fef3c7;border:1.5px solid var(--gold)', name: 'GPS corners', kind: 'point' },
   'gps-features': { swatch: '#1d4ed8', name: 'Named features', kind: 'point' },
   'hillshade': { swatch: 'linear-gradient(45deg,#444 25%,#aaa 25% 50%,#444 50% 75%,#aaa 75%)', name: 'Hillshade backdrop', kind: 'raster' },
+  'multi-hillshade': { swatch: 'linear-gradient(135deg,#2a2a2a 25%,#ddd 25% 50%,#2a2a2a 50% 75%,#ddd 75%)', name: 'Multi-directional hillshade (4-az blend)', kind: 'raster' },
+  'slope': { swatch: 'linear-gradient(to right,#6488c8 0%,#94c864 25%,#f4d35e 55%,#e8804a 80%,#c14530 100%)', name: 'Slope map (degrees)', kind: 'raster' },
+  'aspect': { swatch: 'conic-gradient(from 0deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000)', name: 'Aspect map (HSV)', kind: 'raster' },
+  'cerros': { swatch: 'radial-gradient(circle, #d4a154 30%, #8a6a3a 70%)', name: 'Cerros & peaks (DEM-derived)', kind: 'point' },
   'hillshade-parcel': { swatch: 'linear-gradient(135deg,#3a3a3a,#888 60%,#3a3a3a)', name: 'Hillshade (parcel-scale, 5m topology)', kind: 'raster' },
   'ndvi-backdrop': { swatch: 'linear-gradient(to right,#a16207 25%,#84cc16 25% 50%,#22c55e 50% 75%,#14532d 75%)', name: 'NDVI continuous backdrop', kind: 'raster' },
   'color-relief': { swatch: 'linear-gradient(to right,#94c864 0%,#c2c068 50%,#914530 100%)', name: 'Elevation colour-relief', kind: 'raster' },
@@ -1737,6 +1856,8 @@ const RASTER_LAYERS = new Set([
   'hillshade', 'hillshade-parcel', 'hillshade-escobar',
   'color-relief', 'color-relief-escobar',
   'ndvi-backdrop',
+  // Added 2026-07-08: 3D-feel terrain overlays (multi-az hillshade, slope, aspect)
+  'multi-hillshade', 'slope', 'aspect',
 ]);
 document.querySelectorAll('[data-layer]').forEach(cb => {
   cb.addEventListener('change', e => {
@@ -1753,7 +1874,8 @@ document.querySelectorAll('[data-layer]').forEach(cb => {
       // Hillshades stack — newer (Escobar) sits below parcel-scale.
       // bringToBack on the oldest first so the layering is correct.
       ['hillshade-escobar', 'color-relief-escobar', 'ndvi-backdrop',
-       'hillshade', 'color-relief', 'hillshade-parcel'].forEach(n => {
+       'hillshade', 'color-relief', 'multi-hillshade', 'slope', 'aspect',
+       'hillshade-parcel'].forEach(n => {
         const l = layers[n];
         if (l && map.hasLayer(l)) l.bringToBack();
       });
