@@ -96,12 +96,57 @@
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }
   .panel-section { border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 6px; }
   .tool-row {
-    display: flex; align-items: center; gap: 6px;
-    padding: 3px 0; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 8px; cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.15s;
   }
-  .tool-row:hover { color: var(--gold); }
-  .tool-row.active { color: var(--gold); font-weight: 600; }
-  .tool-row input[type="radio"] { accent-color: var(--gold); }
+  .tool-row:hover { background: rgba(212, 161, 84, 0.1); }
+  .tool-row.active { background: var(--gold); color: #1a1410; font-weight: 600; }
+  .tool-row .tool-icon { font-size: 1rem; width: 18px; text-align: center; }
+  .tool-row input[type="radio"] { display: none; }  // we use the visual state for the active class
+
+  .section-icon { display: inline-block; width: 22px; text-align: center; margin-right: 4px; }
+
+  .overlay-group {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .overlay-group > summary {
+    display: flex; align-items: center;
+    padding: 8px 0;
+    cursor: pointer;
+    color: var(--gold);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    list-style: none;
+    user-select: none;
+  }
+  .overlay-group > summary::-webkit-details-marker { display: none; }
+  .overlay-group > summary::after {
+    content: '▾';
+    margin-left: auto;
+    color: var(--fg-2);
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+  }
+  .overlay-group[open] > summary::after { transform: rotate(180deg); }
+  .overlay-group[open] > .overlay-list { padding: 4px 0 8px 4px; }
+
+  .tool-section { padding: 6px 0; }
+  .placed-list {
+    font-size: 0.75rem;
+    color: var(--fg-2);
+    max-height: 120px;
+    overflow-y: auto;
+    padding: 4px 0;
+  }
+  .placed-list > div {
+    padding: 3px 6px;
+    border-radius: 3px;
+    transition: background 0.15s;
+  }
+  .placed-list > div:hover { background: rgba(212, 161, 84, 0.1); }
 
   .overlay-list { display: flex; flex-direction: column; gap: 2px; }
   .overlay-row {
@@ -239,29 +284,29 @@
 </div>
 
 <div class="panel">
-  <div class="panel-section">
-    <h3>Tool</h3>
+  <div class="panel-section tool-section">
+    <h3><span class="section-icon">🔧</span>Tool</h3>
     <div class="tool-row active" data-tool="inspect">
-      <input type="radio" name="tool" checked> 🔍 Inspect
+      <span class="tool-icon">🔍</span><span>Inspect</span>
     </div>
     <div class="tool-row" data-tool="measure">
-      <input type="radio" name="tool"> 📏 Measure
+      <span class="tool-icon">📏</span><span>Measure</span>
     </div>
     <div class="tool-row" data-tool="place">
-      <input type="radio" name="tool"> 🏠 Place house
+      <span class="tool-icon">🏠</span><span>Place house</span>
     </div>
     <div class="tool-row" data-tool="remove">
-      <input type="radio" name="tool"> 🗑 Remove
+      <span class="tool-icon">🗑</span><span>Remove</span>
     </div>
   </div>
 
   <div class="panel-section" id="typo-section" style="display:none">
-    <h3>Typology</h3>
+    <h3><span class="section-icon">🏗</span>Typology</h3>
     <div class="typo-grid" id="typo-grid"></div>
   </div>
 
-  <div class="panel-section">
-    <h3>Site analysis</h3>
+  <details class="overlay-group" open>
+    <summary><span class="section-icon">📊</span>Site analysis</summary>
     <div class="overlay-list">
       <div class="overlay-row">
         <span><span class="overlay-swatch" style="background:#22c55e"></span>Buildability</span>
@@ -284,10 +329,10 @@
         <div class="toggle" data-overlay="contour"></div>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="panel-section">
-    <h3>Vegetation + Forest</h3>
+  <details class="overlay-group">
+    <summary><span class="section-icon">🌿</span>Vegetation + Forest</summary>
     <div class="overlay-list">
       <div class="overlay-row">
         <span><span class="overlay-swatch" style="background:#84cc16"></span>NDVI canopy</span>
@@ -306,10 +351,10 @@
         <div class="toggle" data-overlay="hand"></div>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="panel-section">
-    <h3>Context (OSM + regional)</h3>
+  <details class="overlay-group">
+    <summary><span class="section-icon">🗺</span>Context (OSM + regional)</summary>
     <div class="overlay-list">
       <div class="overlay-row">
         <span><span class="overlay-swatch" style="background:#fbbf24"></span>OSM roads</span>
@@ -324,7 +369,7 @@
         <div class="toggle" data-overlay="water_surface"></div>
       </div>
       <div class="overlay-row">
-        <span><span class="overlay-swatch" style="background:#d4a154"></span>Wes's rocks (80)</span>
+        <span><span class="overlay-swatch" style="background:#94a3b8"></span>Wes's rocks (80)</span>
         <div class="toggle on" data-overlay="wes_rock"></div>
       </div>
       <div class="overlay-row">
@@ -336,10 +381,10 @@
         <div class="toggle on" data-overlay="wes_poi"></div>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="panel-section">
-    <h3>Outlines</h3>
+  <details class="overlay-group">
+    <summary><span class="section-icon">📐</span>Outlines</summary>
     <div class="overlay-list">
       <div class="overlay-row">
         <span><span class="overlay-swatch" style="background:#d4a154"></span>Property polygon (62 ha)</span>
@@ -350,11 +395,11 @@
         <div class="toggle" data-overlay="aoi_bbox"></div>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="panel-section">
-    <h3>Placed houses (<span id="placed-count">0</span>)</h3>
-    <div id="placed-list" style="font-size:0.74rem;color:var(--fg-2);max-height:100px;overflow-y:auto">
+  <div class="panel-section tool-section">
+    <h3><span class="section-icon">📦</span>Placed houses (<span id="placed-count">0</span>)</h3>
+    <div id="placed-list" class="placed-list">
       <em>None yet — switch to Place tool above.</em>
     </div>
   </div>
@@ -431,7 +476,7 @@ if (!hasWebGL()) {
 // ============================================================
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xe8d8b0);
-scene.fog = new THREE.Fog(0xe8d8b0, 6000, 25000);
+scene.fog = new THREE.Fog(0x9bb8d4, 8000, 25000);  // realistic atmospheric haze (was warm sepia)
 
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 50000);
 camera.position.set(0, 480, 800);
@@ -442,10 +487,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
 document.getElementById('scene').appendChild(renderer.domElement);
 
-// Lighting
-const sun = new THREE.DirectionalLight(0xfff8e8, 2.0);  // less warm sun, was 0xfff0d0
+// Lighting (natural: cool sun, neutral ground tint)
+const sun = new THREE.DirectionalLight(0xfff8eb, 2.2);
 sun.position.set(2000, 2500, 1500);
 sun.castShadow = true;
 sun.shadow.mapSize.set(2048, 2048);
@@ -457,13 +504,14 @@ sun.shadow.camera.near = 1;
 sun.shadow.camera.far = 8000;
 scene.add(sun);
 
-const ambient = new THREE.HemisphereLight(0xcce0ff, 0x6a7050, 0.6);  // cooler ground tint (was 0x6a4a30, too orange)
+// Hemisphere light with neutral (not orange) ground tint
+const ambient = new THREE.HemisphereLight(0xb4d4e8, 0x6a7050, 0.5);  // cool sky, neutral ground, was 0x6a4a30 (orange)
 scene.add(ambient);
 
-// Sky
+// Sky gradient (realistic blue/white, not sepia)
 const skyGeo = new THREE.SphereGeometry(25000, 32, 16);
 const skyMat = new THREE.ShaderMaterial({
-  uniforms: { topColor: { value: new THREE.Color(0xfce8b0) }, bottomColor: { value: new THREE.Color(0xd4a154) }, offset: { value: 1000 }, exponent: { value: 0.6 } },
+  uniforms: { topColor: { value: new THREE.Color(0x4a7fb8) }, bottomColor: { value: new THREE.Color(0xc8d8e8) }, offset: { value: 1000 }, exponent: { value: 0.6 } },
   vertexShader: `varying vec3 vWP; void main() { vWP = (modelMatrix * vec4(position, 1.0)).xyz; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
   fragmentShader: `uniform vec3 topColor; uniform vec3 bottomColor; uniform float offset; uniform float exponent; varying vec3 vWP; void main() { float h = normalize(vWP + offset).y; gl_FragColor = vec4(mix(bottomColor, topColor, max(pow(max(h, 0.0), exponent), 0.0)), 1.0); }`,
   side: THREE.BackSide
@@ -613,6 +661,11 @@ async function boot() {
   drawPolygonOutline(worldData.aoi_bbox, 0xa3a3a3, overlayGroups.aoi_bbox, 1);
 
   // === 7. Load real cob house (the 13MB riverstone one) ===
+  // OVERRIDE the default low-poly cob house with the real LQV cob house.
+  // The default_house placement in world.json uses coords (1.9, 4) which is
+  // the parcel centroid. The real house has the same position. We do NOT
+  // add the low-poly default to avoid the "stacked houses" bug. The real
+  // house is placed directly into the parcel.
   document.getElementById('progress').textContent = 'Loading real LQV cob house (13MB GLB)…';
   try {
     const realHouse = await loadGLB('riverstone_house_only');
@@ -656,6 +709,9 @@ function loadTexture(url) {
 async function placeWorld() {
   for (const p of worldData.placements) {
     const t = p.type;
+    // Skip default_house here - we load the REAL cob house separately in boot()
+    // to avoid the stacked-houses bug (low-poly + real cob at same coords)
+    if (t === 'default_house') continue;
     try {
       if (t === 'cerro') placeCerro(p);
       else if (t === 'default_house') await placeDefaultHouse();
@@ -703,7 +759,9 @@ function placeCerro(p) {
   pin.userData.name = p.name;
   pin.userData.elev = p.elev_m;
   overlayGroups.cerro.add(pin);
-  addLabel(pin.position.x, pin.position.y + h + 30, pin.position.z, `${p.name}\n${p.elev_m}m`, overlayGroups.cerro);
+  addLabel(pin.position.x, pin.position.y + h + 30, pin.position.z,
+    `${p.name}\n${p.elev_m}m · ${p.distance_from_lqv_km}km ${p.direction_from_lqv}`,
+    overlayGroups.cerro);
 }
 
 function placeQuebradaBox(p) {
@@ -983,28 +1041,44 @@ function drawPolygonOutline(coords, color, group, lineWidth) {
 }
 
 function addLabel(x, y, z, text, parent) {
+  // Use a larger, higher-contrast canvas with a dark card backing for readability
+  const isMulti = text.includes('\n');
+  const w = 320, h = isMulti ? 84 : 50;
   const canvas = document.createElement('canvas');
-  canvas.width = 320; canvas.height = 80;
+  canvas.width = w;
+  canvas.height = h;
   const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'rgba(14,20,34,0.88)';
-  ctx.fillRect(0, 0, 320, 80);
+  // Dark semi-transparent card backing
+  ctx.fillStyle = 'rgba(14, 20, 34, 0.92)';
+  ctx.fillRect(0, 0, w, h);
+  // Gold border
   ctx.strokeStyle = '#d4a154';
   ctx.lineWidth = 2;
-  ctx.strokeRect(2, 2, 316, 76);
+  ctx.strokeRect(2, 2, w - 4, h - 4);
+  // Title text
   ctx.fillStyle = '#d4a154';
-  ctx.font = 'bold 18px Georgia';
+  ctx.font = 'bold 16px Georgia, serif';
   ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
   const lines = text.split('\n');
-  ctx.fillText(lines[0], 160, 32);
+  ctx.fillText(lines[0], w / 2, 10);
   if (lines[1]) {
     ctx.fillStyle = '#e8e3d8';
-    ctx.font = '14px Inter';
-    ctx.fillText(lines[1], 160, 56);
+    ctx.font = '13px "Inter", sans-serif';
+    ctx.fillText(lines[1], w / 2, 36);
+  }
+  if (lines[2]) {
+    ctx.fillStyle = '#a8a195';
+    ctx.font = '11px "Inter", sans-serif';
+    ctx.fillText(lines[2], w / 2, 58);
   }
   const tex = new THREE.CanvasTexture(canvas);
-  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
-  sprite.scale.set(120, 30, 1);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }));
+  // Scale: fixed-size labels at consistent size
+  sprite.scale.set(isMulti ? 100 : 80, isMulti ? 26 : 12, 1);
   sprite.position.set(x, y, z);
+  sprite.renderOrder = 999;  // draw on top
   parent.add(sprite);
 }
 
