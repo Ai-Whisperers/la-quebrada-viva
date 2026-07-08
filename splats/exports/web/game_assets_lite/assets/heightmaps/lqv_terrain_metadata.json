@@ -1,0 +1,31 @@
+{
+  "dem_source": "docs/site_data/extended_aoi/dem/alos_aw3d30_dem.tif",
+  "output_png": "docs/game_assets/heightmaps/lqv_terrain_height_16bit.png",
+  "shape_native": [
+    180,
+    108
+  ],
+  "bounds_wgs84": [
+    -57.04499999998285,
+    -25.645000000015596,
+    -57.01499999998285,
+    -25.595000000015588
+  ],
+  "elevation_m": {
+    "min": 116.0,
+    "max": 395.0,
+    "range": 279.0
+  },
+  "pixel_resolution_deg": 0.0002777777777778173,
+  "pixel_resolution_m_at_centroid": 27.80185072348678,
+  "import_settings": {
+    "ue_landscape": {
+      "section_size": 255,
+      "components_per_section": 1,
+      "resolution_m_per_pixel": 1.5,
+      "total_components": 225,
+      "z_scale_multiplier": 100,
+      "xy_scale": 100
+    }
+  }
+}

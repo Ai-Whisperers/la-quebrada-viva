@@ -1,0 +1,7 @@
+# Don't deploy Blender test scenes — 395MB exceeds CF Pages 25MB limit
+docs/site_data_monday/**
+docs/site_data_monday*
+# Also exclude local cache files
+.wrangler/**
+.wrangler*
+*.blend

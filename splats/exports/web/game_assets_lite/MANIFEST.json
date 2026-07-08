@@ -1,0 +1,36 @@
+{
+  "site_name": "La Quebrada Viva",
+  "site_location": "Escobar, Paraguar\u00ed, Paraguay",
+  "centroid_wgs84": [
+    -57.03,
+    -25.63
+  ],
+  "cesium_anchor_lon_lat_alt": [
+    -57.03,
+    -25.63,
+    200
+  ],
+  "engine_target": "Unreal Engine 5.7",
+  "plugin_required": "Cesium for Unreal 2.x (free, MIT core)",
+  "world_partition_grid_m": 255,
+  "nanite_landscape": true,
+  "lumen_global_illumination": true,
+  "assets": [
+    "geodata/lqv_aoi_bbox.geojson",
+    "geodata/lqv_aoi_extended.geojson",
+    "geodata/lqv_buildability_zones.geojson",
+    "geodata/lqv_osm_roads.geojson",
+    "geodata/lqv_osm_waterways.geojson",
+    "geodata/lqv_property_polygon.geojson",
+    "geodata/lqv_quebrada_polygon.geojson",
+    "geodata/lqv_solar_pv_zones.geojson",
+    "geodata/lqv_waterfall_candidates.geojson",
+    "heightmaps/lqv_flow_accumulation.png",
+    "heightmaps/lqv_terrain_height_16bit.png",
+    "heightmaps/lqv_terrain_height_meters.csv",
+    "heightmaps/lqv_terrain_metadata.json"
+  ],
+  "asset_bytes": 3395448,
+  "pipeline_version": "1.0.0",
+  "generated_by": "tools/lqv_to_ue.py"
+}

@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "lqv_waterfall_candidates",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "rank": 1, "elevation_m": 287.0, "drop_m": 28.0, "estimated_waterfall_height_m": 28.0, "confidence": "high", "type": "waterfall_candidate" }, "geometry": { "type": "Point", "coordinates": [ -57.01902777776062, -25.625138888904488 ] } },
+{ "type": "Feature", "properties": { "rank": 2, "elevation_m": 296.0, "drop_m": 28.0, "estimated_waterfall_height_m": 28.0, "confidence": "high", "type": "waterfall_candidate" }, "geometry": { "type": "Point", "coordinates": [ -57.018749999982845, -25.625138888904488 ] } },
+{ "type": "Feature", "properties": { "rank": 3, "elevation_m": 235.0, "drop_m": 27.0, "estimated_waterfall_height_m": 27.0, "confidence": "high", "type": "waterfall_candidate" }, "geometry": { "type": "Point", "coordinates": [ -57.016527777760622, -25.626805555571156 ] } },
+{ "type": "Feature", "properties": { "rank": 4, "elevation_m": 234.0, "drop_m": 26.0, "estimated_waterfall_height_m": 26.0, "confidence": "high", "type": "waterfall_candidate" }, "geometry": { "type": "Point", "coordinates": [ -57.015972222205065, -25.626805555571156 ] } },
+{ "type": "Feature", "properties": { "rank": 5, "elevation_m": 275.0, "drop_m": 25.0, "estimated_waterfall_height_m": 25.0, "confidence": "high", "type": "waterfall_candidate" }, "geometry": { "type": "Point", "coordinates": [ -57.018472222205069, -25.625416666682266 ] } }
+]
+}
