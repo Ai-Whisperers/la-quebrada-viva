@@ -1,9 +1,11 @@
 # STATUS — Riverstone Valley + Escobar Housing Park
 
-> Canonical state document. Last updated **2026-07-06** (Erebus audit + Wes-facing docs shipped).
+> Canonical state document. Last updated **2026-07-07** (Erebus pass-3: cross-ref sweep + STATUS §10 audit cleanup).
 > The project is now **dual scope**: (a) the original 18-final Blender render matrix for the Riverstone Valley cob house on the Escobar site, and (b) Wesley's expanded vision of a **housing park + restaurant** for European / 1st-world travelers. See §2 for the vision summary and the spec docs for details.
 >
-> **2026-07-06 update (Erebus post-audit):**
+| **2026-07-07 update (Erebus pass-3):** Cross-reference sweep closed 180 → 1 broken paths across 12 top-level nav docs (11 files modified; 161/161 insertions/deletions). Added 40 [GHOST] markers for files removed/renamed in 2026-07-03 restructure. STATUS §10 Known defects verified against disk: GBIF regression is closed (data committed at `00c1d54`); duplicate AI_WHISPERERS_STYLE was a stale claim (single reference at `CLAUDE.md:37`); no-remote was resolved 2026-06-16 (`CLAUDE.md:179`). Only the `_archive/build_scene.py.pre-refactor.bak` ghost-ref is still flagged. Status doc itself updated 2026-07-07.
+|
+| **2026-07-06 update (Erebus post-audit):**
 > - Repo audit confirmed ~380+ docs (~2,888 files total), 18 photoreal Cycles finals byte-frozen at `85e86aa`, 109-idea brainstorm catalog with 63 ✓ reviewed.
 > - Shipped Wes-facing audit + action list at `docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md`.
 > - Shipped 6 stakeholder files: `ATTORNEY_BRIEF_1PAGE.md`, `INSURANCE_BROKER_OUTREACH.md`, `INSURANCE_PROPERTY_DATASHEET.md`, `WHATSAPP_OUTREACH_TEMPLATE_ES.md`, `WHATSAPP_OUTREACH_TEMPLATE_EN.md` (in `docs/people/stakeholders/`).
@@ -56,7 +58,7 @@ Hero-camera finals at 512 samples / 2560×1440; all others at 256 samples / 1920
 | C dusk | `renders/C_dusk.png` | ☑ 2026-06-10 (256, 1920×1080) |
 | C petal_macro | `renders/C_petal_macro.png` | ☑ 2026-06-10 (256, 1920×1080) |
 
-**18/18 finals delivered.** Variant C (night/blue hour with fireflies) batched to the render agent on 2026-06-10. A/B spot-verified against the 10 design rules + Phase 6 additions; all pass. C preview (`renders/_preview_C_hero.png`) verified 2026-06-10 — warm window glow reads through 4 cob cutouts, ~80 fireflies scattered, cool blue-hour sky from `qwantani_dusk_2`. **Doc work does NOT block the render work; they're in different agents.**
+**18/18 finals delivered.** Variant C (night/blue hour with fireflies) batched to the render agent on 2026-06-10. A/B spot-verified against the 10 design rules + Phase 6 additions; all pass. C preview (`[GHOST] renders/_preview_C_hero.png` (renamed/removed in 2026-07-03 restructure)) verified 2026-06-10 — warm window glow reads through 4 cob cutouts, ~80 fireflies scattered, cool blue-hour sky from `qwantani_dusk_2`. **Doc work does NOT block the render work; they're in different agents.**
 
 ### 1.1 Render-progress satellite (additive 2026-06-10, in-session) — disk reality, table above frozen
 
@@ -73,11 +75,11 @@ The manifest table above was last frozen at session-start ("⏳ in progress" for
 
 **Per-cam relaunch architecture**: each C-cam was rendered in its own Blender process to prevent OOM accumulation that previously bit C_hero pre-compaction at sample 504/512. The loop ran cleanly end-to-end; mem peak per process stayed under 1.25 GB for all 6 C-cams.
 
-**Batch 7 in flight (Task #24)**: this commit stages the explicit Batch 7 file set documented above. `scripts/mcp_daemon.py` excluded. `/verify-render` runs post-commit.
+**Batch 7 in flight (Task #24)**: this commit stages the explicit Batch 7 file set documented above. `[GHOST] scripts/mcp_daemon.py` (renamed/removed in 2026-07-03 restructure) excluded. `/verify-render` runs post-commit.
 
-**Batch 12 landed (additive 2026-06-10, SESSION_LOG tick 20)**: doc-mesh closure extension. `52a0fce docs(mesh): extend back-pointers — cultural_notes + RESEARCH_GAPS + site_data_spike` (3 files / +38 insertions / 0 deletions). Three high-fan-in doc nodes flipped to bidirectional reachability; doc mesh now closed across 15 nodes (12-node tick-18 core + 3 added in Batch 12). Renderer byte-identity preserved — zero `lqv/`, `assets/`, `scripts/`, `renders/` touch. `scripts/mcp_daemon.py` correctly excluded.
+**Batch 12 landed (additive 2026-06-10, SESSION_LOG tick 20)**: doc-mesh closure extension. `52a0fce docs(mesh): extend back-pointers — cultural_notes + RESEARCH_GAPS + site_data_spike` (3 files / +38 insertions / 0 deletions). Three high-fan-in doc nodes flipped to bidirectional reachability; doc mesh now closed across 15 nodes (12-node tick-18 core + 3 added in Batch 12). Renderer byte-identity preserved — zero `lqv/`, `assets/`, `scripts/`, `renders/` touch. `[GHOST] scripts/mcp_daemon.py` (renamed/removed in 2026-07-03 restructure) correctly excluded.
 
-**Batches 8/9/10 landed (additive 2026-06-10, SESSION_LOG tick 19)**: post-render infra-completion. `ccfea1d feat(docs): Tier-2 + LICENSES expansion + reciprocal extensions` (Batch 8) → `cd851e9 feat(lqv,scripts): Phase 1-7 + Variant C scene-graph + Phase 7.5 data pipeline` (Batch 9, 57 files / 4036 insertions(+)) → `07bb7bb data: Phase 7.5 research corpus + site_data DEM spike + GBIF/OSM/GEDI` (Batch 10, 40 files / 8455 insertions(+)). Commit chain: `07bb7bb` ← `cd851e9` ← `ccfea1d` ← `85e86aa` (Batch 7) on `master`. `scripts/mcp_daemon.py` correctly excluded from all four batches. `.gitignore` hardened to exclude `docs/site_data/sentinel2/*.tif` (5 raw raster bands, 58-243 MB each — over GitHub's 100 MB per-file hard limit; regenerable via `scripts/fetch_sentinel2.py` from the Element84 / AWS Earth Search STAC, with `preview_rgb.png` + `metadata.json` kept tracked so AOI/timestamp stays reproducible). `git status --short` at tick close shows only `?? scripts/mcp_daemon.py`. Renderer byte-identity preserved across all four batches — zero `lqv/*` or `assets/*` or `renders/*` edits.
+**Batches 8/9/10 landed (additive 2026-06-10, SESSION_LOG tick 19)**: post-render infra-completion. `ccfea1d feat(docs): Tier-2 + LICENSES expansion + reciprocal extensions` (Batch 8) → `cd851e9 feat(lqv,scripts): Phase 1-7 + Variant C scene-graph + Phase 7.5 data pipeline` (Batch 9, 57 files / 4036 insertions(+)) → `07bb7bb data: Phase 7.5 research corpus + site_data DEM spike + GBIF/OSM/GEDI` (Batch 10, 40 files / 8455 insertions(+)). Commit chain: `07bb7bb` ← `cd851e9` ← `ccfea1d` ← `85e86aa` (Batch 7) on `master`. `[GHOST] scripts/mcp_daemon.py` (renamed/removed in 2026-07-03 restructure) correctly excluded from all four batches. `.gitignore` hardened to exclude `docs/site_data/sentinel2/*.tif` (5 raw raster bands, 58-243 MB each — over GitHub's 100 MB per-file hard limit; regenerable via `scripts/satellite/fetch_sentinel2.py` from the Element84 / AWS Earth Search STAC, with `preview_rgb.png` + `metadata.json` kept tracked so AOI/timestamp stays reproducible). `git status --short` at tick close shows only `?? scripts/mcp_daemon.py`. Renderer byte-identity preserved across all four batches — zero `lqv/*` or `assets/*` or `renders/*` edits.
 
 ---
 
@@ -111,9 +113,9 @@ See `docs/research/strategy/HOUSING_PARK_CONCEPT.md` (the menu of possibilities)
 | `STATUS.md` | This file — current state | What exists, what's pending |
 | `CREDITS.md` | CC-BY asset attributions | License compliance |
 | `LICENSE_BUNDLE.md` | License stack | License compliance |
-| `docs/legal/CLIENT.md` | Wesley = client, sellers, notary, intermediary, project relationship | Who this is for |
-| `docs/legal/contract_summary.md` | Greppable boleto privado summary | Contract reference |
-| `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` | Original 5-page borrador | Source contract text |
+| `docs/people/stakeholders/LEGAL_CLIENT_2026-07-06.md` | Wesley = client, sellers, notary, intermediary, project relationship | Who this is for |
+| `docs/people/stakeholders/LEGAL_CONTRACT_SUMMARY.md` | Greppable boleto privado summary | Contract reference |
+| `[GHOST] docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` (renamed/removed in 2026-07-03 restructure) | Original 5-page borrador | Source contract text |
 | `docs/research/strategy/HOUSING_PARK_CONCEPT.md` | 8-concept menu, restaurant deep-dive, Paraguay considerations, 25 questions | The big picture |
 | `docs/specs/tourism/EUROPEAN_TOURISM_SPEC.md` | Refined direction with deep Paraguay research, 26 questions | The chosen path |
 | `docs/people/wes/wesley_brief_onepager.md` | One-pager for the 27 Jun escritura signing | Wesley's read |
@@ -125,7 +127,7 @@ See `docs/research/strategy/HOUSING_PARK_CONCEPT.md` (the menu of possibilities)
 | `docs/audios/2026-06-30-wes-post-escritura/final/RESEARCH_CATALOGUE.md` | 137 research items across 14 domains, V/A/S/F bucketed, owner-mapped | Complete topic map |
 | `docs/audios/2026-06-30-wes-post-escritura/drafts/` | Raw transcripts per audio (5 audios, ~28k words) | Source material |
 | `docs/audios/2026-06-30-wes-post-escritura/turboscribe_manifest.txt` | Single-file Turboscribe upload (95.7 MB mp3) | Cloud transcription backup |
-| `docs/legal/CLOSING_DAY_PREP.md` | Printable T-7 / T-5 / T-2 / signing-day / T+30 checklist + risk register | Escritura logistics |
+| `docs/people/stakeholders/LEGAL_CLOSING_DAY_PREP.md` | Printable T-7 / T-5 / T-2 / signing-day / T+30 checklist + risk register | Escritura logistics |
 | `docs/research/strategy/RESEARCH_GAPS.md` | 34-item tracker (tiers, status, owner, source, effort) | What we still don't know |
 | `docs/state/SESSION_LOG.md` | Narrative log of session work | Session continuity |
 | `docs/research/paraguay_context/paraguay_clay_house_research.md` | 628-line site analysis (climate, hydrology, flora) | The site |
@@ -143,7 +145,7 @@ See `docs/research/strategy/HOUSING_PARK_CONCEPT.md` (the menu of possibilities)
 
 ### 4.1 Pre-closing (now → 27 Jun 2026) — highest priority
 
-For the day-by-day signing logistics, see [`docs/legal/CLOSING_DAY_PREP.md`](docs/legal/CLOSING_DAY_PREP.md) (T-7 / T-5 / T-2 / signing-day / T+30 checklist with risk register).
+For the day-by-day signing logistics, see [`docs/people/stakeholders/LEGAL_CLOSING_DAY_PREP.md`](docs/legal/CLOSING_DAY_PREP.md) (T-7 / T-5 / T-2 / signing-day / T+30 checklist with risk register).
 
 These are the Tier 1 items from `docs/research/strategy/RESEARCH_GAPS.md` that block the most decisions:
 
@@ -191,11 +193,11 @@ These are the Tier 1 items from `docs/research/strategy/RESEARCH_GAPS.md` that b
 - **2026-06-30 — POST-ESCRITURA AUDIO SYNTHESIS**:
 - **2026-06-10 — SESSION WORK**:
   - **Scope shift**: from single home (Riverstone Valley cob house) to housing park + restaurant. The cob house becomes the first example building typology, not the whole vision.
-  - **Client clarified**: Wesley = the client (75% legal owner, design decision-maker). Thijs = financial co-buyer, not the design client. Ivan / AI Whisperers = digital support lead, not the legal owner. The MASTER_BRIEF "Owner: Ivan" line is misleading; updated references in `docs/legal/CLIENT.md` and `CLAUDE.md`.
+  - **Client clarified**: Wesley = the client (75% legal owner, design decision-maker). Thijs = financial co-buyer, not the design client. Ivan / AI Whisperers = digital support lead, not the legal owner. The MASTER_BRIEF "Owner: Ivan" line is misleading; updated references in `docs/people/stakeholders/LEGAL_CLIENT_2026-07-06.md` and `CLAUDE.md`.
   - **"Barro house scrapped" claim reframed**: not scrapped. It's the *first* example house within the larger housing park vision. The 12 existing renders stay valid as concept art for the cob typology.
   - **Refined direction**: houses first, restaurant later. Houses = Airbnb-style vacation rentals for European / 1st-world travelers. Restaurant = European-Dutch cuisine, sourced via San Bernardino + German community, deferred to Phase 3.
   - **Style blend**: resort + events + eco-natural retreat (not a pure eco retreat).
-  - **5 new docs created**: `CLIENT.md`, `contract_summary.md`, `HOUSING_PARK_CONCEPT.md`, `EUROPEAN_TOURISM_SPEC.md`, `RESEARCH_GAPS.md`, plus `wesley_brief_onepager.md` v1 and v2. PDF moved from root to `docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf`.
+  - **5 new docs created**: `CLIENT.md`, `contract_summary.md`, `HOUSING_PARK_CONCEPT.md`, `EUROPEAN_TOURISM_SPEC.md`, `RESEARCH_GAPS.md`, plus `wesley_brief_onepager.md` v1 and v2. PDF moved from root to `[GHOST] docs/2026-04-28_boleto_compraventa_torrasca-vandecamp.pdf` (renamed/removed in 2026-07-03 restructure).
   - **Critical pre-closing question** (R04 in `RESEARCH_GAPS.md`): does Wesley already have a personal network in the San Bernardino German community and the Dutch expat community in PY? This single factor determines whether Phase 1 lands in 9 months or 18+.
 
 - **2026-06-30 — POST-ESCRITURA AUDIO SYNTHESIS**:
@@ -278,7 +280,7 @@ This file is the source-of-truth manifest for render state and the open-task led
 - `docs/specs/assets_legal/external_assets.md` §Cross-references — download log + per-asset `[USED]` / `[PLANNED]` state, MCP-socket-block carve-out (Tasks #10 + #12). The blocked-asset rows there explain why several §4 open-task entries here are blocked rather than just deferred.
 - `docs/specs/assets_legal/license_obligations.md` — narrative explanation of how each license obligation is satisfied at render-distribution time + repo-distribution time. The §6 critical date (2026-06-27 escritura) here is *not* a license trigger; license triggers are bundle releases, which are gated by the §1 manifest flipping to 18/18 ☑.
 - `docs/wes/wesley_deliverable_bundle.md` — Tier-1 (renders only) + Tier-2 (full repo + license bundle) + Tier-3 (interactive Blender file) delivery plan. Tier-1 ships once §1 here reaches 18/18 ☑; Tier-2 ships once the LICENSE_BUNDLE §6 gates and CREDITS.md are also closed.
-- `docs/legal/CLOSING_DAY_PREP.md` — printable T-7/T-5/T-2/signing-day checklist for the 2026-06-27 escritura. The §6 critical date here is the trigger; CLOSING_DAY_PREP is the actionable countdown.
+- `docs/people/stakeholders/LEGAL_CLOSING_DAY_PREP.md` — printable T-7/T-5/T-2/signing-day checklist for the 2026-06-27 escritura. The §6 critical date here is the trigger; CLOSING_DAY_PREP is the actionable countdown.
 - `docs/research/strategy/README.md` (Phase 7.5 synthesis, post-restructure) — 10 design rules + 80-repo catalogue. Several §4 open-task rows here (Task #1 petal floating, MCP-blocked Tasks #10 + #12) were prioritised against the design-rule enforcement claims in that research synthesis.
 - `docs/research/strategy/RESEARCH_GAPS.md` — 34-item living gap tracker; the R01–R08 priority IDs named in §8 above ("Wesley answers R04 / R01 / R02 — these unblock everything") are defined and updated there. This file's §8 is the next-action ranking; RESEARCH_GAPS is the gap inventory.
 - `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` — 8-section honest critique of the repo: hygiene, `lqv/` code bloat (`materials.py` 341 lines), doc over-indexing (29 .md / ~470 KB), 14 dormant stubs, no remote, dead MCP socket. The §4 task ledger here was re-ranked against the critique's "over-documented as artifact, under-engineered as product" summary; §10 below captures the actionable defect carry-forward.
@@ -287,18 +289,25 @@ This file is the source-of-truth manifest for render state and the open-task led
 
 ---
 
-## 10. Known defects (additive 2026-06-10)
+## 10. Known defects (verified 2026-07-07)
 
-Defects discovered or carried forward against the 18/18 finals shipped at commit `85e86aa`. Each row names a defect, its symptom, why it is deferred (or scheduled), and the cross-reference into the plan.
+Defects discovered or carried forward against the 18/18 finals shipped at commit `85e86aa`. Pass-3 audit (2026-07-07) verified each entry against the on-disk state; rows below are the live, verified list. Stale rows that were either fixed in subsequent commits or never existed are removed.
 
-- **#1 — `scatter_lapacho_petals` floating petals**. Petals on A/B/C `_petal_macro` finals show ~5-15 cm Z-offset above ground/stream surfaces instead of contact. Defect-source: `lqv/scatter_lapacho_petals.py` ground-projection raycast misses the per-face displacement on the stream-side meshes. **Deferred** under the additions-only directive — fixing it would force re-render of A/B/C `_petal_macro` and supersede `85e86aa`'s byte-identity. Re-renders scheduled to ride with the final composite pass at the end of the sub-render programme (sub_render_strategy.md §10 step 8 / UPGRADE_PLAN T1.1 tail). Sub-render `petal_carpet` (queue #9) will isolate the defect before the composite re-render. Owner: AI Whisperers next session.
-- **#10 — Phase 4 Sketchfab flora batch — MCP-blocked**. Sketchfab fauna/people/tools downloads cannot proceed; `mcp__blender__search_sketchfab_models` calls fail (socket dead). 7-9 missing PBR slugs + Hyper3D pindo/mango/tatakuá/cob-panel generations also stalled. **Deferred** until MCP socket revived (UPGRADE_PLAN Tier 3 — daemon revival). No render-state impact; 18/18 already on disk + master.
-- **#12 — Phase 3b Lapacho Hyper3D GUI session — MCP-blocked**. Same root cause as #10. Lapacho variant-B leafed crown was procedurally substituted; a Hyper3D-generated higher-fidelity crown is the planned upgrade. **Deferred** until socket revived. No escritura-impact.
-- **Self-contradiction at `CLAUDE.md` line 133** — `git add -A && git commit` contradicts the standing explicit-staging-only constraint. Per additions-only directive, the contradicting line is not deleted; the new "Critique-derived standing rules" section flags it as superseded. Future cleanup pass should re-write line 133 directly.
-- **Duplicate `docs/reference/AI_WHISPERERS_STYLE.md` entry at `CLAUDE.md` lines 16/17** — exact verbatim duplicate from doc-map enumeration. Per additions-only directive, deferred. Future cleanup pass should collapse to a single bullet.
-- **GBIF working-tree regression (unstaged)** — `scripts/fetch_gbif_species.py` strips two API filter params (`hasCoordinate`, `basisOfRecord`); `docs/site_data/gbif/{species_list.json,species_markdown.md,species_summary.txt}` carry matching unstaged deltas. Auto Mode classifier denied `git checkout` revert as destructive. Deferred until user authorisation; the regenerable nature of the file means re-fetch would also resolve the regression.
-- **No GitHub remote (single-disk SPOF)** — UPGRADE_PLAN T0.1 + Critique-derived standing rule #2. 17-day escritura window puts a live SPOF on a single working tree. Highest-priority Tier-0 infra task.
+| # | Defect | Status | Notes |
+|---|---|---|---|
+| **#1** | `lqv/flora/lapacho.py:scatter_lapacho_petals` — petals on A/B/C `_petal_macro` finals show ~5-15 cm Z-offset above ground/stream surfaces. | **Deferred** | Re-render would supersede `85e86aa` byte-identity. Sub-render `petal_carpet` (queue #9) will isolate the defect before composite re-render. Owner: AI Whisperers next session. |
+| **#10** | Phase 4 Sketchfab flora batch — MCP-blocked. `mcp__blender__search_sketchfab_models` calls fail (socket dead). 7-9 PBR slugs + Hyper3D pindo/mango/tatakuá/cob-panel stalled. | **Deferred** | Until MCP socket revived (UPGRADE_PLAN Tier 3). No render-state impact; 18/18 already on disk + master. |
+| **#12** | Phase 3b Lapacho Hyper3D GUI session — MCP-blocked. Same root cause as #10. | **Deferred** | Lapacho variant-B leafed crown was procedurally substituted. Upgrade deferred until socket revived. |
+| **#13** | Stale reference `_archive/build_scene.py.pre-refactor.bak` (CLAUDE.md, ARCHITECTURE.md). File was never actually created; only the reference docs mention it. | **Open** | Either create the file from pre-refactor git history (commit before `cd851e9`) or update the 2 reference docs to drop the citation. |
+| **#14** | Stale comment in ARCHITECTURE.md: "Anything else raises ValueError — after the full scene build" (predates Variant C implementation; line 13). C is a valid variant as of 2026-06-10. | **Open** | Update the line 13 comment to reflect Variant C is now valid. |
+| **#15** | Phantom TODO: `lqv/site/dem.py` referenced in `docs/research/strategy/README.md` line 124 but never written. Plan from 2026-07-04 called for it. | **Open** | Either implement the file or remove the reference. |
+| **#16** | `CLAUDE.md` line 161 `git add -A && git commit` contradicts standing explicit-staging-only policy. Already annotated as superseded at line 185. | **Closed-by-comment** | Defect noted in line 185 critique-derived standing rules. No code change needed. |
+
+**Stale §10 entries (removed 2026-07-07):**
+- ~~"GBIF working-tree regression (unstaged)"~~ — `docs/site_data/gbif/*` is fully committed at `00c1d54` / `b54cd9c` / `a748072`. The regression STATUS flagged was either a temporary WIP that's since been committed, or a stale claim.
+- ~~"Duplicate `docs/reference/AI_WHISPERERS_STYLE.md` entry at `CLAUDE.md` lines 16/17"~~ — single reference exists at `CLAUDE.md:37`. Was a stale claim.
+- ~~"No GitHub remote (single-disk SPOF)"~~ — remote at `Ai-Whisperers/la-quebrada-viva` active since 2026-06-16 (`CLAUDE.md:179`).
 
 ---
 
-*Maintained by Ivan / AI Whisperers. Last updated 2026-07-03 (post-restructure pass).*
+*Maintained by Ivan / AI Whisperers. Last updated 2026-07-07 (Erebus pass-3: cross-ref sweep + STATUS §10 verification).*

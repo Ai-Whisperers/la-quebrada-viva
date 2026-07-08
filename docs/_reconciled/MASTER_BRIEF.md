@@ -232,7 +232,7 @@ Wes's working files mention a "founder-controlled structure with 3-5 passive inv
 16. Hand tools
 17. Transport, import & logistics 🚛
 
-**Ivan's NL prices doc has pricing for 13 of these categories** (cement, sand, gravel, bricks, iron, etc.) — see `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`. This can be **merged into the master template** to start filling in real numbers.
+**Ivan's NL prices doc has pricing for 13 of these categories** (cement, sand, gravel, bricks, iron, etc.) — see `../../docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`. This can be **merged into the master template** to start filling in real numbers.
 
 **See:** [`MATERIALS_PRICE_TEMPLATE.md`](business/MATERIALS_PRICE_TEMPLATE.md) for the full 14-sheet master with Ivan's existing prices filled in where available.
 
@@ -316,10 +316,10 @@ Ivan has built a 3DGS self-host pipeline (Vast.ai + COLMAP + gsplat) + Three.js 
 | What's the business structure? | `BUSINESS_STRUCTURE.md` |
 | What land + escritura details are known? | `LAND_PARCEL.md` |
 | What are the open decisions? | `OPEN_DECISIONS.md` |
-| What does each idea in the catalog look like? | `docs/ideas/INDEX.md` (109 ideas, 12-section format) |
-| What are the 20 patterns from reading the catalog? | `docs/ideas/INSIGHTS.md` |
-| What 20 ideas did Erebus push into the catalog? | `docs/ideas/SUGGESTED.md` |
-| What are the construction prices in NL/Gs/USD? | `docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` |
+| What does each idea in the catalog look like? | `../../docs/ideas/_meta/INDEX.md` (renamed/removed in 2026-07-03 restructure) (109 ideas, 12-section format) |
+| What are the 20 patterns from reading the catalog? | `../../docs/ideas/_meta/INSIGHTS.md` (renamed/removed in 2026-07-03 restructure) |
+| What 20 ideas did Erebus push into the catalog? | `../../docs/ideas/_meta/SUGGESTED.md` (renamed/removed in 2026-07-03 restructure) |
+| What are the construction prices in NL/Gs/USD? | `../../docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md` |
 | What did Wes say in his brainstorms? | `../audios/2026-06-30-wes-post-escritura/final/{SYNTHESIS, DREAMLIST_NL, ACTIONLIST_ES_EN, RESEARCH_CATALOGUE, IDEAS_LOG, KEY_POINTS, REPO_UPDATES}.md` |
 
 ---
@@ -337,7 +337,7 @@ The reconciled view surfaces decisions, not makes them. The bridge from reconcil
    - The Sonja-weekend brief (operational by 2030) for Phase 1 spec
 4. **After 4-entity decision is made**, build a 1-page financial summary that both EUR (Wes's model) and PYG (PY local cost) reference
 
-**One critical guard:** the escritura-frozen BoQ at `docs/boq/boq_rollup.md` (SHA `2e4c265c…01137`) is **not** in this reconciled view. It was the legal scope frozen at signing. It remains the legal baseline. The €5.5M Phase 1 buildout is the **next phase** — what happens after escritura closes.
+**One critical guard:** the escritura-frozen BoQ at `[GHOST] docs/boq/boq_rollup.md` (renamed/removed in 2026-07-03 restructure) (SHA `2e4c265c…01137`) is **not** in this reconciled view. It was the legal scope frozen at signing. It remains the legal baseline. The €5.5M Phase 1 buildout is the **next phase** — what happens after escritura closes.
 
 ---
 

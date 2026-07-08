@@ -16,7 +16,7 @@
 >
 > **Last updated:** 2026-07-06 (post-audit, 9 days after signing).
 >
-> 👉 **NEW (2026-07-06): For the 1-page map + all 9 working research files, see [`docs/research/RESULTS/CHEATSHEET.md`](../research/RESULTS/CHEATSHEET.md). It's the fastest way to navigate the project.**
+> 👉 **NEW (2026-07-06): For the 1-page map + all 9 working research files, see [`../../docs/research/RESULTS/CHEATSHEET.md`](../research/RESULTS/CHEATSHEET.md). It's the fastest way to navigate the project.**
 
 ---
 
@@ -32,16 +32,16 @@
 
 | # | Document | What it answers |
 |---|---|---|
-| 1 | **`docs/HOUSING_PARK_CONCEPT.md`** | What the housing park vision is, what changed since escritura, what's still open |
-| 2 | **`docs/_reconciled/README.md`** | Single page summary of the reconciled Wes-files + Ivan-RV merged view |
-| 3 | **`docs/_reconciled/OPEN_DECISIONS.md`** | The 30 open decisions that block Phase 1 (each with a recommended default) |
-| 4 | **`docs/audios/2026-06-30-wes-post-escritura/final/KEY_POINTS.md`** | Your 20 bullet points from the 5 audio sessions (3 min read) |
-| 5 | **`docs/people/WES_ACTIONS.md`** | The 5 things only you can do this week |
-| 6 | **`docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md`** | Erebus audit (post-escritura state) — repo map, current issues, what to read first |
-| 7 | **`docs/wes/SESSION_DIGEST_2026-07-06_CAPEX_LIDAR.md`** 🆕 | 5-min digest of today's capex + drone LiDAR research |
-| 8 | **`docs/research/RESULTS/CAPEX_QUICK_REFERENCE.md`** 🆕 | 1-page capex matrix for Phase 1 (€216K recommended) |
-| 9 | **`docs/research/RESULTS/DRONE_LIDAR_QUICK_REFERENCE.md`** 🆕 | 1-page drone LiDAR pricing + side business analysis |
-| 10 | **`docs/research/RESULTS/INDEX.md`** 🆕 | Master catalog of all 151 research files (organized by topic prefix) |
+| 1 | **`../../docs/research/strategy/HOUSING_PARK_CONCEPT.md`** | What the housing park vision is, what changed since escritura, what's still open |
+| 2 | **`../../docs/_reconciled/README.md`** | Single page summary of the reconciled Wes-files + Ivan-RV merged view |
+| 3 | **`../../docs/_reconciled/OPEN_DECISIONS.md`** | The 30 open decisions that block Phase 1 (each with a recommended default) |
+| 4 | **`../../docs/audios/2026-06-30-wes-post-escritura/final/KEY_POINTS.md`** | Your 20 bullet points from the 5 audio sessions (3 min read) |
+| 5 | **`../../docs/people/wes/WES_ACTIONS.md`** | The 5 things only you can do this week |
+| 6 | **`../../docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md`** | Erebus audit (post-escritura state) — repo map, current issues, what to read first |
+| 7 | **`../../docs/wes/SESSION_DIGEST_2026-07-06_CAPEX_LIDAR.md`** 🆕 | 5-min digest of today's capex + drone LiDAR research |
+| 8 | **`../../docs/research/RESULTS/CAPEX_QUICK_REFERENCE.md`** 🆕 | 1-page capex matrix for Phase 1 (€216K recommended) |
+| 9 | **`../../docs/research/RESULTS/DRONE_LIDAR_QUICK_REFERENCE.md`** 🆕 | 1-page drone LiDAR pricing + side business analysis |
+| 10 | **`[GHOST] docs/research/RESULTS/INDEX.md` (renamed/removed in 2026-07-03 restructure)** 🆕 | Master catalog of all 151 research files (organized by topic prefix) |
 
 ---
 
@@ -52,28 +52,28 @@ These are the 7 documents distilled from your 5 audios. They are the
 
 | Document | Language | What it is |
 |---|---|---|
-| `docs/audios/.../DREAMLIST_NL.md` | Nederlands | The 15 dream domains (D1-D15) — what you want the place to BE |
-| `docs/audios/.../KEY_POINTS.md` | EN | 20 bullet highlights from the audios |
-| `docs/audios/.../IDEAS_LOG.md` | EN | 89 ideas across 10 categories (the brainstorm raw) |
-| `docs/audios/.../ACTIONLIST_ES_EN.md` | ES + EN | 30 action items, 5 priority tiers, who owns each |
-| `docs/audios/.../RESEARCH_CATALOGUE.md` | EN | 128 research questions (the AI worklist) |
-| `docs/audios/.../REPO_UPDATES.md` | EN | What the repo got from your audios (deltas to existing docs) |
-| `docs/audios/.../SYNTHESIS.md` | EN | The full synthesis (1 long page) |
+| `[GHOST] docs/audios/.../DREAMLIST_NL.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*) | Nederlands | The 15 dream domains (D1-D15) — what you want the place to BE |
+| `[GHOST] docs/audios/.../KEY_POINTS.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*) | EN | 20 bullet highlights from the audios |
+| `[GHOST] docs/audios/.../IDEAS_LOG.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*) | EN | 89 ideas across 10 categories (the brainstorm raw) |
+| `[GHOST] docs/audios/.../ACTIONLIST_ES_EN.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*) | ES + EN | 30 action items, 5 priority tiers, who owns each |
+| `[GHOST] docs/audios/.../RESEARCH_CATALOGUE.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*) | EN | 128 research questions (the AI worklist) |
+| `[GHOST] docs/audios/.../REPO_UPDATES.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*) | EN | What the repo got from your audios (deltas to existing docs) |
+| `[GHOST] docs/audios/.../SYNTHESIS.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*) | EN | The full synthesis (1 long page) |
 
 ---
 
 ## 3. The 5 things only YOU can do this week
 
 These unblock 25 of 30 P1-blockers. **Each takes 1-2 hours.** Details
-and step-by-step scripts in `docs/people/WES_ACTIONS.md`.
+and step-by-step scripts in `../../docs/people/wes/WES_ACTIONS.md`.
 
 | # | Action | Unblocks | Time | Cost |
 |---|---|---|---|---|
-| **W0.1 / W0.8** | Book the **NL+PY dual-tax attorney** call (use `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` 1-pager) | 10 P1 legal/tax items | 1-2 hr (booking) | €300-500 (call) |
+| **W0.1 / W0.8** | Book the **NL+PY dual-tax attorney** call (use `../../docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` 1-pager) | 10 P1 legal/tax items | 1-2 hr (booking) | €300-500 (call) |
 | **W0.2 / W0.9** | Schedule the **Sonja questionnaire** call (16 Qs in one go) | 16 P1 worker/culture/salary items | 1-2 hr (call) | free (Sonja) |
 | **W0.3** | Send **Anexo I chase** to Escribana Peña (technical descriptions of 6 fincas — was due 5 May 2026) | R02 site planning | 30 min | free |
 | **W0.4** | Confirm **Fase 1 ownership choice** (you personally? BV3? hybrid?) | 6 financial-model items | 1 hr | free |
-| **W0.5-A** | **Insurance broker outreach** (NEW 2026-07-06 — HG-3 hard gate, see `docs/people/stakeholders/INSURANCE_BROKER_OUTREACH.md`) | HG-3 | 1-2 hr + 6 wk wait | free |
+| **W0.5-A** | **Insurance broker outreach** (NEW 2026-07-06 — HG-3 hard gate, see `../../docs/people/stakeholders/INSURANCE_BROKER_OUTREACH.md`) | HG-3 | 1-2 hr + 6 wk wait | free |
 | **W0.5-B** | 5-of-15 materials topics (Sprint-1 picks — actually DONE 2026-07-06, see §4 below) | Sprint-1 research | 15 min | free |
 | **W0.6** | Pick the **project name** (Riverstone Valley vs 4 Spanish alternatives) | Brand/URL/D14 | 5 min | free |
 | **W0.7** | **Tundra vs Presio** + insurance follow-up | Phase 1 mobility | 30 min | free |
@@ -90,19 +90,19 @@ Each is 2-4 KB, with sources + cost ranges + PY-specific notes.
 
 | ID | Topic | File |
 |---|---|---|
-| F09 | Solar PV sizing for Phase 1 | `docs/research/RESULTS/F09_solar_pv.md` |
-| F11 | Cell coverage (Tigo/Personal/Claro at site) | `docs/research/RESULTS/F11_cell_coverage.md` |
-| F12 | Starlink PY + multi-dish for 30-cabin park | `docs/research/RESULTS/F12_starlink.md` |
-| L05 | NL BV > IB at €70k threshold | `docs/research/RESULTS/L05_NL_BV_threshold_70k.md` |
-| M04 | Cement + rebar pricing | `docs/research/RESULTS/M04_cement_rebar_pricing.md` |
-| M05 | Aluminum + glass (windows) | `docs/research/RESULTS/M05_aluminum_glass.md` |
-| M08 | Septic + reed-bed greywater | `docs/research/RESULTS/M08_septic_reed_bed.md` |
-| M22 | Kitchen equipment import (PY vs CDE vs BR-PY) | `docs/research/RESULTS/M22_kitchen_equipment_import.md` |
-| Bundle | Insurance (fire + storm + liability) | `docs/research/RESULTS/insurance_fire_bundle.md` |
+| F09 | Solar PV sizing for Phase 1 | `../../docs/research/RESULTS/F09_solar_pv.md` |
+| F11 | Cell coverage (Tigo/Personal/Claro at site) | `../../docs/research/RESULTS/F11_cell_coverage.md` |
+| F12 | Starlink PY + multi-dish for 30-cabin park | `../../docs/research/RESULTS/F12_starlink.md` |
+| L05 | NL BV > IB at €70k threshold | `../../docs/research/RESULTS/L05_NL_BV_threshold_70k.md` |
+| M04 | Cement + rebar pricing | `../../docs/research/RESULTS/M04_cement_rebar_pricing.md` |
+| M05 | Aluminum + glass (windows) | `../../docs/research/RESULTS/M05_aluminum_glass.md` |
+| M08 | Septic + reed-bed greywater | `../../docs/research/RESULTS/M08_septic_reed_bed.md` |
+| M22 | Kitchen equipment import (PY vs CDE vs BR-PY) | `../../docs/research/RESULTS/M22_kitchen_equipment_import.md` |
+| Bundle | Insurance (fire + storm + liability) | `../../docs/research/RESULTS/insurance_fire_bundle.md` |
 
 ### 12 new research items from your audios (R39-R50)
 
-Added to `docs/RESEARCH_GAPS.md` — hovenier, Ipoh-Karai railroad,
+Added to `../../docs/research/strategy/RESEARCH_GAPS.md` — hovenier, Ipoh-Karai railroad,
 Tundra vs Presio, LiDAR drone pilots, restaurant equipment, car
 insurance, Starlink kit, local quarries, Sonja salary bands, cement
 price-over-time, AI-as-price-negotiator.
@@ -118,7 +118,7 @@ Grouped by who's blocked waiting. **Read the bold ones first.**
 1. **Werknaam**: "Riverstone Valley" of een van de Spaanse alternatieven
    (Villa del Cielo, Cielo Azul, Lluvia Dorada)? — URL/brand/voice
 2. **5-of-15 materials onderwerpen**: welke 5 eerst? (zie
-   `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md`)
+   `[GHOST] docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md` (renamed/removed in 2026-07-03 restructure))
 3. **Hovenier contact**: heb je de naam van de Nederlandse forester in
    Kuikopee, of moet ik die zoeken?
 4. **Toyota Tundra vs Presio** voor de bouwfase — finaliseren of
@@ -127,7 +127,7 @@ Grouped by who's blocked waiting. **Read the bold ones first.**
 
 ### 🟡 Important (sharpens plan)
 
-6-33: zie `docs/HOUSING_PARK_CONCEPT.md` §8 — full list with 5 sections
+6-33: zie `../../docs/research/strategy/HOUSING_PARK_CONCEPT.md` §8 — full list with 5 sections
 (Concept / Restaurant / Operational / Personal / Financial) + 8
 post-escritura audio-sourced questions.
 
@@ -161,23 +161,23 @@ post-escritura audio-sourced questions.
 
 | Doc | Purpose |
 |---|---|
-| **`docs/WES_INDEX.md`** (this file) | One-page Wes nav |
-| **`docs/WES_FAQ.md`** | First-timer questions, plain language |
-| **`docs/WES_GLOSSARY.md`** | NL / ES / EN vocabulary |
-| **`docs/WES_WARNINGS.md`** | Things that might surprise you |
-| **`docs/WES_HOW_WE_WORK.md`** | How AI Whisperers + Wes collaborate |
-| **`docs/WES_NEXT_30_DAYS.md`** | Your calendar, week by week |
-| **`docs/POST_ESCRITURA_NOW.md`** | What blocks Fase 1 right now |
-| **`docs/CRITIQUE_FOR_WES.md`** | Short roast — what's good / what's broken |
-| **`docs/people/WES_ACTIONS.md`** | The 5 things only you can do |
-| **`docs/audios/.../final/SYNTHESIS.md`** | The full vision, distilled |
+| **`../../docs/wes/WES_INDEX.md`** (this file) | One-page Wes nav |
+| **`[GHOST] docs/WES_FAQ.md` (target doesn't exist on disk)** | First-timer questions, plain language |
+| **`[GHOST] docs/WES_GLOSSARY.md` (target doesn't exist on disk)** | NL / ES / EN vocabulary |
+| **`[GHOST] docs/WES_WARNINGS.md` (target doesn't exist on disk)** | Things that might surprise you |
+| **`[GHOST] docs/WES_HOW_WE_WORK.md` (target doesn't exist on disk)** | How AI Whisperers + Wes collaborate |
+| **`[GHOST] docs/WES_NEXT_30_DAYS.md` (target doesn't exist on disk)** | Your calendar, week by week |
+| **`../../docs/state/POST_ESCRITURA_NOW.md`** | What blocks Fase 1 right now |
+| **`../../docs/wes/CRITIQUE_FOR_WES.md`** | Short roast — what's good / what's broken |
+| **`../../docs/people/wes/WES_ACTIONS.md`** | The 5 things only you can do |
+| **`[GHOST] docs/audios/.../final/SYNTHESIS.md` (ellipsis shorthand — actual: docs/audios/2026-06-30-wes-post-escritura/final/*)** | The full vision, distilled |
 
 After reading this index, **read in this order**:
-1. `docs/WES_FAQ.md` (10 min)
-2. `docs/WES_GLOSSARY.md` (5 min, refer back as needed)
-3. `docs/WES_NEXT_30_DAYS.md` (5 min)
-4. `docs/WES_WARNINGS.md` (5 min)
-5. `docs/WES_HOW_WE_WORK.md` (5 min)
+1. `../../docs/wes/WES_FAQ.md` (10 min)
+2. `../../docs/wes/WES_GLOSSARY.md` (5 min, refer back as needed)
+3. `../../docs/wes/WES_NEXT_30_DAYS.md` (5 min)
+4. `../../docs/wes/WES_WARNINGS.md` (5 min)
+5. `../../docs/wes/WES_HOW_WE_WORK.md` (5 min)
 
 Total: 30 min. After that, you're caught up.
 
@@ -185,7 +185,7 @@ Total: 30 min. After that, you're caught up.
 
 ## 8. The single most important file for THIS WEEK
 
-**`docs/people/WES_ACTIONS.md`** — print it, schedule the 5 calls,
+**`../../docs/people/wes/WES_ACTIONS.md`** — print it, schedule the 5 calls,
 mark ✅ as done. Each ✅ unblocks a chunk of the rest.
 
 ---

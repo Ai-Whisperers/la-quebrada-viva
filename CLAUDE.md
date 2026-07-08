@@ -1,72 +1,72 @@
 # la-quebrada-viva — project instructions
 
-This project supports **Wesley van de Camp** in visualizing a real 62-ha property in **Escobar District, Paraguarí, Paraguay**, on which Wesley plans a **housing park + restaurant + amenities**. The current 3D work renders **Riverstone Valley**, a cob/bottle earthen house that's the first example building typology on the site. Renders are concept art; the site model is the durable deliverable. See `docs/HOUSING_PARK_CONCEPT.md` for the full vision and `docs/CLIENT.md` for who Wesley is.
+This project supports **Wesley van de Camp** in visualizing a real 62-ha property in **Escobar District, Paraguarí, Paraguay**, on which Wesley plans a **housing park + restaurant + amenities**. The current 3D work renders **Riverstone Valley**, a cob/bottle earthen house that's the first example building typology on the site. Renders are concept art; the site model is the durable deliverable. See `docs/research/strategy/HOUSING_PARK_CONCEPT.md` for the full vision and `docs/people/stakeholders/LEGAL_CLIENT_2026-07-06.md` for who Wesley is.
 
 ## Document map — which file is authoritative for what
 
 > **2026-07-03 restructure notes (Erebus addendum):**
-> - The canonical Master Brief is now `docs/_reconciled/MASTER_BRIEF.md` (post-Wes-share, housing-park scope). The top-level `docs/MASTER_BRIEF.md` is a 1-line pointer to it.
-> - The canonical decisions view is now split: `docs/_reconciled/OPEN_DECISIONS.md` (open) + `docs/people/DECISIONS_LOG.md` (closed, housing-park) + `docs/_archive/DECISIONS_LOG_escritura_week_2026-06.md` (closed, escritura-week).
-> - The canonical "what to do next" is now `docs/POST_ESCRITURA_NOW.md` + `docs/WES_INDEX.md` + `docs/MASTER_TODO.md` (now a 1-line pointer stub). The full escritura-week master-TODO is archived at `docs/_archive/MASTER_TODO_escritura_week_2026-06-25.md`.
-> - The 109-idea catalog is split: 63 ✓ reviewed files in `docs/ideas/`, 46 ○ auto-fill files in `docs/ideas/_archive/2026-06-30_autofill/`. See `docs/ideas/_archive/2026-06-30_autofill/MANIFEST.md`.
-> - `people/wesley_brief_onepager.md` → moved to `docs/people/`. Same for `4ENTITY_BV_CASCADE.md`, `post_escritura_one_pager.md` (renamed).
-> - 10 closed-session docs (`WES_TODO.md`, `WES_TODO_UPDATE.md`, `WES_5_THIS_WEEK.md`, `PRIORITIES_NEXT.md`, `CRITICAL_PATH.md`, `STATUS_REPORT.md`, `IMPLEMENTATION_COMPLETE.md`, `IMPLEMENTATION_PROGRESS.md`, `FINAL_SUMMARY.md`, `COMPREHENSIVE_REMAINING_RESEARCH.md`) → `docs/_archive/2026-06-30_session/`. Canonical "what to do next" is `docs/POST_ESCRITURA_NOW.md` + `docs/WES_INDEX.md`.
-> - Pass 3 archive additions: `docs/patches/` (2 files, patches already applied), `_archive/REPO_STRUCTURE_2026-06-30.md` (stale), `docs/MASTER_TODO.md` → stub, `_archive/T_PLUS_1_DEBRIEF_2026-06-28.md`, `_archive/PR_BACK_TO_BASE_workflow_note.md`, `_archive/GAPS_ANALYSIS_2026-06-04.md`, `_archive/IDEAS_CATALOG_PATCH_PLAN_2026-07-30.md`. All in `docs/_archive/`.
+> - The canonical Master Brief is now `docs/_reconciled/MASTER_BRIEF.md` (post-Wes-share, housing-park scope). The top-level `docs/_reconciled/MASTER_BRIEF.md` is a 1-line pointer to it.
+> - The canonical decisions view is now split: `docs/_reconciled/OPEN_DECISIONS.md` (open) + `docs/people/decisions/DECISIONS_LOG.md` (closed, housing-park) + `docs/_archive/2026-06-04_escritura_week/REPO_STRUCTURE_2026-06-30.md` (closed, escritura-week).
+> - The canonical "what to do next" is now `docs/state/POST_ESCRITURA_NOW.md` + `docs/wes/WES_INDEX.md` + `docs/state/MASTER_TODO.md` (now a 1-line pointer stub). The full escritura-week master-TODO is archived at `docs/_archive/2026-06-04_escritura_week/REPO_STRUCTURE_2026-06-30.md`.
+> - The 109-idea catalog is split: 63 ✓ reviewed files in `docs/ideas/`, 46 ○ auto-fill files in `docs/ideas/_archive/2026-06-30_autofill/`. See `docs/_archive/2026-06-30_session/MANIFEST.md`.
+> - `docs/people/wes/wesley_brief_onepager.md` → moved to `docs/people/`. Same for `4ENTITY_BV_CASCADE.md`, `post_escritura_one_pager.md` (renamed).
+> - 10 closed-session docs (`WES_TODO.md`, `WES_TODO_UPDATE.md`, `WES_5_THIS_WEEK.md`, `PRIORITIES_NEXT.md`, `CRITICAL_PATH.md`, `STATUS_REPORT.md`, `IMPLEMENTATION_COMPLETE.md`, `IMPLEMENTATION_PROGRESS.md`, `FINAL_SUMMARY.md`, `COMPREHENSIVE_REMAINING_RESEARCH.md`) → `docs/_archive/2026-06-30_session/`. Canonical "what to do next" is `docs/state/POST_ESCRITURA_NOW.md` + `docs/wes/WES_INDEX.md`.
+> - Pass 3 archive additions: `docs/patches/` (2 files, patches already applied), `docs/_archive/2026-06-04_escritura_week/REPO_STRUCTURE_2026-06-30.md` (stale), `docs/state/MASTER_TODO.md` → stub, `docs/_archive/2026-06-04_escritura_week/T_PLUS_1_DEBRIEF_2026-06-28.md`, `docs/_archive/2026-06-04_escritura_week/PR_BACK_TO_BASE_workflow_note.md`, `docs/_archive/2026-06-04_escritura_week/GAPS_ANALYSIS_2026-06-04.md`, `[GHOST] _archive/IDEAS_CATALOG_PATCH_PLAN_2026-07-30.md` (renamed/removed in 2026-07-03 restructure). All in `docs/_archive/`.
 > - **2026-07-06 addendum (Erebus):** WES_ACTIONS.md renumbered (W0.5-A insurance, W0.5-B LiDAR, W0.8 attorney, W0.9 Sonja) — preserves canonical W0.1-W0.7. Cross-refs in 13+ other docs reconciled in commit `d4fc5e2`. 8 research files added (NEW01/02/03, M_WOOD/COB/BEV/VLOER/VERF_01). 6 stakeholder files added (attorney 1-pager + insurance pack).`
 
-- `docs/CLIENT.md` — **Wesley van de Camp = client & 75% owner** (Thijs = 25% co-buyer, not the design client); AI Whisperers (Ivan) = digital support lead. Sellers, notary, intermediary, **escritura signed 2026-06-27**. Read first for "who is this for".
-- `docs/HOUSING_PARK_CONCEPT.md` — **Wesley's expanded vision (2026-06-10, post-escritura update 2026-06-30)**: 62 ha as a housing park + restaurant + amenities in Escobar, Paraguarí. 8 concept models + post-escritura deltas (4-BV, wellness pool, Sonja-canonical, hovenier AI delegation, 2030 horizon). 25 open questions + 8 post-escritura audio-sourced questions.
-- `docs/WES_INDEX.md` — **One-page Wes-facing index** (post-2026-07-03 restructure). The 5-minute read for the human. Read first if your stakeholder is Wesley.
-- `docs/POST_ESCRITURA_NOW.md` — **Single ranked list of what blocks Phase 1 break-ground**, post-escritura. 5 hard gates + 12 soft gates + 9 done + 8 dropped. The action list.
-- `docs/CRITIQUE_FOR_WES.md` — **Short roast aimed at Wes**, post-restructure. What's working / what's broken / 3-phase fix plan.
+- `docs/people/stakeholders/LEGAL_CLIENT_2026-07-06.md` — **Wesley van de Camp = client & 75% owner** (Thijs = 25% co-buyer, not the design client); AI Whisperers (Ivan) = digital support lead. Sellers, notary, intermediary, **escritura signed 2026-06-27**. Read first for "who is this for".
+- `docs/research/strategy/HOUSING_PARK_CONCEPT.md` — **Wesley's expanded vision (2026-06-10, post-escritura update 2026-06-30)**: 62 ha as a housing park + restaurant + amenities in Escobar, Paraguarí. 8 concept models + post-escritura deltas (4-BV, wellness pool, Sonja-canonical, hovenier AI delegation, 2030 horizon). 25 open questions + 8 post-escritura audio-sourced questions.
+- `docs/wes/WES_INDEX.md` — **One-page Wes-facing index** (post-2026-07-03 restructure). The 5-minute read for the human. Read first if your stakeholder is Wesley.
+- `docs/state/POST_ESCRITURA_NOW.md` — **Single ranked list of what blocks Phase 1 break-ground**, post-escritura. 5 hard gates + 12 soft gates + 9 done + 8 dropped. The action list.
+- `docs/wes/CRITIQUE_FOR_WES.md` — **Short roast aimed at Wes**, post-restructure. What's working / what's broken / 3-phase fix plan.
 - `docs/_reconciled/MASTER_BRIEF.md` — **Canonical post-Wes-share Master Brief** (reconciled view, 18 KB). Financial model, cabin catalog, infrastructure 8 phases, equipment strategy, business structure, materials price template, open decisions, master brief. The "single source of truth" for the housing-park scope.
-- `docs/people/wesley_brief_onepager.md` — **DRAFT one-pager for the 27 Jun escritura signing** (short version of HOUSING_PARK_CONCEPT). Moved to `people/` 2026-07-03 (Wes+stakeholder audience).
-- `docs/people/wesley_post_escritura_one_pager.md` — Post-escritura one-pager (Wes-facing brief, post-signing).
-- `docs/people/4ENTITY_BV_CASCADE.md` — 4-BV corporate structure visual diagram + final spec (Wes+attorney audience).
-- `docs/people/WES_ACTIONS.md` — 5 things-only-Wes-can-do this week (with action scripts).
-- `docs/people/ATTORNEY_BRIEF.md` — Full NL+PY dual-tax brief for the 4-BV cascade (24 questions, MERCOSUR holding structure).
-- `docs/people/SONJA_QUESTIONNAIRE.md` — 16 questions, 1 call. Covers wage bands for 7 worker roles + culture + worker contracts + IPS/aguinaldo.
-- `docs/people/CONTACTS.md` — RV human network (Wes + Ivan + Kiki + Sonja + others). Living doc.
-- `docs/people/SITE_VISIT_BRIEF.md` — Day-by-day plan for Wes's next PY visit (W1.2 in WES_TODO history).
-- `docs/EUROPEAN_TOURISM_SPEC.md` — **Refined direction (2026-06-10, latest)**: houses-first vacation rentals for European / 1st-world travelers, restaurant later (European + Dutch, sourced via San Bernardino + German community). Style blend: resort + events + eco-natural retreat. 26 open questions.
-- `docs/RESEARCH_GAPS.md` — **Living tracker of what we still need to find out**. 34 base items + R39-R50 audio-synthesized (46 total), with status (🔴 open / 🟡 in-progress / 🟢 done / ⚫ blocked), owner (W / I / A / H / L), source, effort.
-- `docs/SESSION_LOG.md` — Narrative log of the 2026-06-10 mega-session. Read after a break to re-orient.
-- `docs/research/README.md` — Research synthesis 2026-06-10 (5 sub-reports, ~80 repos catalogued). 10 design rules, 5 site-selection criteria, 5 case studies, Tier-1/2/3 GIS layers. **The single best entry-point for the research layer.**
-- `docs/site_data/DATA_INVENTORY.md` — Clear-language reference of all the data we got from NASA + OpenTopography (4 DEMs, GEDI L2A, derived analyses).
+- `docs/people/wes/wesley_brief_onepager.md` — **DRAFT one-pager for the 27 Jun escritura signing** (short version of HOUSING_PARK_CONCEPT). Moved to `people/` 2026-07-03 (Wes+stakeholder audience).
+- `docs/people/wes/wesley_post_escritura_one_pager.md` — Post-escritura one-pager (Wes-facing brief, post-signing).
+- `docs/people/decisions/4ENTITY_BV_CASCADE.md` — 4-BV corporate structure visual diagram + final spec (Wes+attorney audience).
+- `docs/people/wes/WES_ACTIONS.md` — 5 things-only-Wes-can-do this week (with action scripts).
+- `docs/people/stakeholders/ATTORNEY_BRIEF.md` — Full NL+PY dual-tax brief for the 4-BV cascade (24 questions, MERCOSUR holding structure).
+- `docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` — 16 questions, 1 call. Covers wage bands for 7 worker roles + culture + worker contracts + IPS/aguinaldo.
+- `docs/people/stakeholders/CONTACTS.md` — RV human network (Wes + Ivan + Kiki + Sonja + others). Living doc.
+- `docs/people/stakeholders/SITE_VISIT_BRIEF.md` — Day-by-day plan for Wes's next PY visit (W1.2 in WES_TODO history).
+- `docs/specs/tourism/EUROPEAN_TOURISM_SPEC.md` — **Refined direction (2026-06-10, latest)**: houses-first vacation rentals for European / 1st-world travelers, restaurant later (European + Dutch, sourced via San Bernardino + German community). Style blend: resort + events + eco-natural retreat. 26 open questions.
+- `docs/research/strategy/RESEARCH_GAPS.md` — **Living tracker of what we still need to find out**. 34 base items + R39-R50 audio-synthesized (46 total), with status (🔴 open / 🟡 in-progress / 🟢 done / ⚫ blocked), owner (W / I / A / H / L), source, effort.
+- `docs/state/SESSION_LOG.md` — Narrative log of the 2026-06-10 mega-session. Read after a break to re-orient.
+- `docs/research/strategy/README.md` — Research synthesis 2026-06-10 (5 sub-reports, ~80 repos catalogued). 10 design rules, 5 site-selection criteria, 5 case studies, Tier-1/2/3 GIS layers. **The single best entry-point for the research layer.**
+- `docs/site_data/_briefs/DATA_INVENTORY.md` — Clear-language reference of all the data we got from NASA + OpenTopography (4 DEMs, GEDI L2A, derived analyses).
 - `docs/research/SOURCES/REPO_CATALOG.md` — 141 GitHub repos across 6 domains, each with verdict (adopt / reference / skip / dead).
-- `docs/AI_WHISPERERS_STYLE.md` — Ivan's communication & execution rules. Read first by every AI Whisperers session.
+- `docs/reference/AI_WHISPERERS_STYLE.md` — Ivan's communication & execution rules. Read first by every AI Whisperers session.
 - `docs/_reconciled/MASTER_BRIEF.md` §16-19 — Vacation-rental synthesis: 5 site-selection criteria, 5 case studies, 10 eco-retreat design rules, Tier-1/2/3 GIS layers.
-- `docs/contract_summary.md` — quick-reference for the 2026-04-28 boleto privado.
-- `docs/CLOSING_DAY_PREP.md` — printable T-7 / T-5 / T-2 / signing-day / T+30 checklist for the 27 Jun escritura (historical, post-signing).
-- `docs/paraguay_clay_house_research.md` — v2 research, site CONFIRMED (Escobar, Paraguarí). Authoritative for location, stream/hydrology, orientation.
-- `docs/_archive/MASTER_BRIEF_cob_house_v1_2026-06-11.md` — **Pre-Wes-share cob-house-only master brief** (33 KB). Archived 2026-07-03; superseded by `_reconciled/MASTER_BRIEF.md`.
-- `docs/prompt_house_render.md` / `docs/prompt_location_scene.md` — shot-level art direction. They describe a **Variant C (night/blue hour with fireflies) that IS implemented in code** (as of 2026-06-10) — see Variants below.
+- `docs/people/stakeholders/LEGAL_CONTRACT_SUMMARY.md` — quick-reference for the 2026-04-28 boleto privado.
+- `docs/people/stakeholders/LEGAL_CLOSING_DAY_PREP.md` — printable T-7 / T-5 / T-2 / signing-day / T+30 checklist for the 27 Jun escritura (historical, post-signing).
+- `docs/research/paraguay_context/paraguay_clay_house_research.md` — v2 research, site CONFIRMED (Escobar, Paraguarí). Authoritative for location, stream/hydrology, orientation.
+- `docs/_archive/2026-06-11_cob_house_v1/MASTER_BRIEF_cob_house_v1_2026-06-11.md` — **Pre-Wes-share cob-house-only master brief** (33 KB). Archived 2026-07-03; superseded by `_reconciled/MASTER_BRIEF.md`.
+- `docs/specs/render/prompt_house_render.md` / `docs/comms/prompt_location_scene.md` — shot-level art direction. They describe a **Variant C (night/blue hour with fireflies) that IS implemented in code** (as of 2026-06-10) — see Variants below.
 - `ARCHITECTURE.md` — map of the `lqv/` package + fragility notes. **Read before editing any code.**
 - `STATUS.md` — canonical current state (render manifest, vision summary, doc inventory, open tasks, decisions log, critical dates, next session priorities). **Read at session start, update at session end.**
 - `docs/audit/BEFORE_AFTER_METRICS.md` — quantified result of the 2026-07-03 restructure pass.
 - `docs/audit/CRITIQUE_V2_ADDENDUM.md` — what the 2026-06-30 audit missed (M1-M8) + what this pass did differently.
 - `docs/audit/RESTRUCTURE_PASS_2_RECOMMENDATIONS.md` — what's still on the table for further consolidation.
-- `docs/claude_code_blender_best_practices.md` — generic tooling reference; read on demand only.
+- `docs/specs/render/claude_code_blender_best_practices.md` — generic tooling reference; read on demand only.
 
 ### Supplementary docs (Tier 2 — planning + research artefacts, 2026-06-10 mega-session)
 
 These supplement the primary Document map above; named here so future sessions can discover them without grep. Authority remains with the primary-map docs when they conflict.
 
-- `docs/master_plan.md` — original asset-import + phase plan that drove the 2026-06-10 work (Phases 1-8). Forward source-of-truth for the import ordering; downstream consumers are `asset_plan.md` §G and `external_assets.md`.
-- `docs/asset_plan.md` — per-phase asset shortlist with §§A/B/C breakdowns and §C.4 Hyper3D prompt archive. §G is the phase plan.
-- `docs/external_assets.md` — per-asset download register; `[USED]` vs `[PLANNED]` ledger. Cross-references `LICENSES/README.md` (legal-text backing-store) and `CREDITS.md` (attribution lines).
-- `docs/research_index.md` — index of the ~80 catalogued repos from `docs/research/`; ASCII-tree navigation.
-- `docs/photographic_references.md` — separate license framework for reference photography in `assets/references/` (parallel to `LICENSES/README.md`, but for reference photos not assets).
-- `docs/cultural_notes.md` — Paraguayan cultural specifics underlying Rule 8 (corredor / tatakuá / tereré / mate / lapacho timber semantics). Reciprocal of CLAUDE.md "Plant species" + "Material color references" sections.
-- `docs/build_sequence.md` — physical construction phasing for the cob/bottle house (foundation → cob courses → bottle wall → roof → finishes). Pairs with `docs/bom.md`.
-- `docs/floor_plan.md` / `docs/section_view.md` — 2D drawings (plan + section) backing the procedural geometry in `lqv/house/`.
-- `docs/site_data_spike.md` — site survey constants (UTM coordinates, elevation, stream profile, escarpment line y=20, footbridge y=−25.5). Reciprocal to `ARCHITECTURE.md` "Positional coupling" invariant.
-- `docs/bom.md` — bill of materials for the cob house (rough quantities). Pairs with `build_sequence.md`.
-- `docs/energy_budget.md` — Rule 7 + Rule 9 energy stack (micro-hydro + LiFePO4 + PV) sizing notes.
-- `docs/license_obligations.md` — narrative of how each license obligation (CC0 traceability, CC-BY 4.0 attribution, CC-BY-SA exclusion) is satisfied at distribution time. Reciprocal of `LICENSE_BUNDLE.md` §§1-6 and `LICENSES/README.md`.
-- `docs/housing_park_phasing.md` — 5-year phase plan for the broader 62-ha housing park (downstream of `HOUSING_PARK_CONCEPT.md`). Independent of the cob-house render delivery.
-- `docs/wesley_deliverable_bundle.md` — Tier 1 / Tier 2 / Tier 3 packaging spec for the Wesley deliverable. Tier 2 USB bundle includes `CREDITS.md`, `LICENSE_BUNDLE.md`, `LICENSES/` directory.
-- `docs/research/README.md` is the synthesis; `docs/research/{METHODS,SOURCES,TOOLING,RESULTS}/` are the sub-reports (already linked via that README).
+- `docs/state/master_plan.md` — original asset-import + phase plan that drove the 2026-06-10 work (Phases 1-8). Forward source-of-truth for the import ordering; downstream consumers are `asset_plan.md` §G and `external_assets.md`.
+- `docs/specs/render/asset_plan.md` — per-phase asset shortlist with §§A/B/C breakdowns and §C.4 Hyper3D prompt archive. §G is the phase plan.
+- `docs/specs/assets_legal/external_assets.md` — per-asset download register; `[USED]` vs `[PLANNED]` ledger. Cross-references `LICENSES/README.md` (legal-text backing-store) and `CREDITS.md` (attribution lines).
+- `docs/research/paraguay_context/research_index.md` — index of the ~80 catalogued repos from `docs/research/`; ASCII-tree navigation.
+- `docs/reference/photographic_references.md` — separate license framework for reference photography in `assets/references/` (parallel to `LICENSES/README.md`, but for reference photos not assets).
+- `docs/research/paraguay_context/cultural_notes.md` — Paraguayan cultural specifics underlying Rule 8 (corredor / tatakuá / tereré / mate / lapacho timber semantics). Reciprocal of CLAUDE.md "Plant species" + "Material color references" sections.
+- `docs/specs/render/build_sequence.md` — physical construction phasing for the cob/bottle house (foundation → cob courses → bottle wall → roof → finishes). Pairs with `docs/specs/house/bom.md`.
+- `docs/specs/house/floor_plan.md` / `docs/specs/render/section_view.md` — 2D drawings (plan + section) backing the procedural geometry in `lqv/house/`.
+- `docs/reference/site_data_spike.md` — site survey constants (UTM coordinates, elevation, stream profile, escarpment line y=20, footbridge y=−25.5). Reciprocal to `ARCHITECTURE.md` "Positional coupling" invariant.
+- `docs/specs/house/bom.md` — bill of materials for the cob house (rough quantities). Pairs with `build_sequence.md`.
+- `docs/specs/house/energy_budget.md` — Rule 7 + Rule 9 energy stack (micro-hydro + LiFePO4 + PV) sizing notes.
+- `docs/specs/assets_legal/license_obligations.md` — narrative of how each license obligation (CC0 traceability, CC-BY 4.0 attribution, CC-BY-SA exclusion) is satisfied at distribution time. Reciprocal of `LICENSE_BUNDLE.md` §§1-6 and `LICENSES/README.md`.
+- `docs/research/strategy/housing_park_phasing.md` — 5-year phase plan for the broader 62-ha housing park (downstream of `HOUSING_PARK_CONCEPT.md`). Independent of the cob-house render delivery.
+- `docs/wes/wesley_deliverable_bundle.md` — Tier 1 / Tier 2 / Tier 3 packaging spec for the Wesley deliverable. Tier 2 USB bundle includes `CREDITS.md`, `LICENSE_BUNDLE.md`, `LICENSES/` directory.
+- `docs/research/strategy/README.md` is the synthesis; `docs/research/{METHODS,SOURCES,TOOLING,RESULTS}/` are the sub-reports (already linked via that README).
 - `CREDITS.md` (repo root) — per-asset attribution lines (CC-BY 4.0 required, CC0 traceability).
 - `LICENSE_BUNDLE.md` (repo root) — per-license summary + bundle-readiness checklist. Cross-references CLAUDE.md "Things to refuse / push back on" for the CC-BY-SA exclusion rationale.
 - `LICENSES/README.md` — verbatim CC0-1.0 + CC-BY-4.0 legal-code mirror (offline-complete legal corpus for the redistribution bundle). The triple `CREDITS.md` + `LICENSE_BUNDLE.md` + `LICENSES/README.md` together satisfies CC-BY 4.0 attribution at distribution time (this is *why* the bundle-readiness gates in LICENSE_BUNDLE.md §6 are written the way they are).
@@ -75,7 +75,7 @@ These supplement the primary Document map above; named here so future sessions c
 ## Current state of the code — do not "fix" what already works
 
 - The renderer is **already Cycles** (`lqv/engine.py:15`) with GPU autodetect, OptiX/OIDN denoise, AgX "Punchy", caustics on. There is no EEVEE anywhere. If a doc says otherwise it is stale.
-- `build_scene.py` is a thin driver over the `lqv/` package. The pre-refactor monolith lives at `_archive/build_scene.py.pre-refactor.bak` — **reference only, never edit or import it**. `_archive/` holds stale artifacts; ignore it.
+- `build_scene.py` is a thin driver over the `lqv/` package. The pre-refactor monolith lives at `[GHOST] _archive/build_scene.py.pre-refactor.bak` (renamed/removed in 2026-07-03 restructure) — **reference only, never edit or import it**. `_archive/` holds stale artifacts; ignore it.
 
 ## How to run (use the scripts — they back up scene.blend first)
 
@@ -103,7 +103,7 @@ Env vars (full reference in `build_scene.py` docstring):
 
 ## The 10 design rules (MASTER_BRIEF §14) — never violate
 
-> **Canonical source (T1.5 promoted 2026-06-11):** `docs/MASTER_BRIEF.md` §14 is the single
+> **Canonical source (T1.5 promoted 2026-06-11):** `docs/_reconciled/MASTER_BRIEF.md` §14 is the single
 > authoritative copy. The list below stays in-place per the additions-only directive (this is
 > the active-session quick reference and removing it would force every session to open a
 > second file). When the two diverge, `MASTER_BRIEF.md` §14 wins.
@@ -141,7 +141,7 @@ Env vars (full reference in `build_scene.py` docstring):
 ## Code invariants — break these and renders silently change
 
 1. **RNG seed ordering**: `random.seed()` in `build_scene.py` must stay AFTER `materials.build_materials()` and BEFORE the first `build_*` call. Never reorder the build calls, never add `random.*` upstream of the seed.
-2. **`MAT` registry** (`lqv/materials.py`): string-keyed global; builders do `MAT['key']` at call time. `build_materials()` must run first; a typo'd key is a runtime KeyError.
+2. **`MAT` registry** (`lqv/materials/`): string-keyed global; builders do `MAT['key']` at call time. `build_materials()` must run first; a typo'd key is a runtime KeyError.
 3. **Positional coupling**: hero camera aim ↔ pool position ↔ footbridge y=−25.5 ↔ escarpment y=20 are mutually tuned. Don't move one without checking the others (see ARCHITECTURE.md).
 4. **Hidden `WindowCut_*` objects** are live Boolean cutters — never unhide, rename, or delete them.
 5. Previews skip the canopy volume, so preview atmosphere ≠ final atmosphere. Eyeball geometry/materials on previews; judge volumetrics only on finals.
@@ -173,15 +173,15 @@ Check `STATUS.md`, then `ARCHITECTURE.md`, then the doc map above. If the docs a
 
 ## Critique-derived standing rules (additive 2026-06-10)
 
-Synthesised from `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` + `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` (both archived) + `docs/sub_render_strategy.md` (live). These are additive; they supersede any conflicting older guidance above without removing it (per the additions-only directive).
+Synthesised from `docs/_archive/2026-06-1X/CRITIQUE_2026-06-10.md` + `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` (both archived) + `docs/specs/render/sub_render_strategy.md` (live). These are additive; they supersede any conflicting older guidance above without removing it (per the additions-only directive).
 
-1. **Sub-render-first is the default workflow** for any new asset / typology / amenity. The monolithic `build_scene.py` is only for the final composite. See `docs/sub_render_strategy.md` — `lqv/subscene/<asset>.py` drivers + per-asset RNG derivation + `renders/sub/<asset>_<variant>.png` outputs. 31-target queue covers 5 house + 5 landscape + 7 flora + 8 typology + 6 amenity.
+1. **Sub-render-first is the default workflow** for any new asset / typology / amenity. The monolithic `build_scene.py` is only for the final composite. See `docs/specs/render/sub_render_strategy.md` — `lqv/subscene/<asset>.py` drivers + per-asset RNG derivation + `renders/sub/<asset>_<variant>.png` outputs. 31-target queue covers 5 house + 5 landscape + 7 flora + 8 typology + 6 amenity.
 2. **Push to GitHub remote** before further doc work — escritura is 2026-06-27 (single-disk SPOF risk on a 17-day window). `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` T0.1. **Landed 2026-06-16:** remote at `Ai-Whisperers/la-quebrada-viva` (private). Keep pushing on commit; do not let the working tree become the sole copy.
 3. **RNG invariant must be tested** (archived UPGRADE_PLAN T1.2 → `tests/test_rng_invariants.py`) before any `build_scene.py` reorder or touch. The composite seed ordering is load-bearing for byte-identity across the 18 finals at `85e86aa`.
 4. **Doc consolidation > doc extension** — before adding a back-pointer or new research doc, check if an existing doc can absorb it. The mesh has reached 15-node bidirectional closure; further extensions risk over-indexing.
 
 **Standing reminders (additive)**:
-- Escritura date: **2026-06-27**. Tier 0 of the archived plan at `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` is everything that had to land before that date (all closed; carry-forward in `docs/DEFERRED_BUGS.md` + TaskList).
-- Line 133's `git add -A && git commit` is **superseded** by the explicit-staging-only policy (NEVER `git add -A` or `git add .`). Stage files by name; `scripts/mcp_daemon.py` always excluded; `docs/site_data/sentinel2/*.tif` gitignored as regenerable; `docs/*_boleto_*.pdf` / `docs/*_escritura_*.pdf` / `docs/2026-*_*.pdf` always excluded.
+- Escritura date: **2026-06-27**. Tier 0 of the archived plan at `docs/_archive/2026-06-1X/UPGRADE_PLAN.md` is everything that had to land before that date (all closed; carry-forward in `docs/operations/DEFERRED_BUGS.md` + TaskList).
+- Line 133's `git add -A && git commit` is **superseded** by the explicit-staging-only policy (NEVER `git add -A` or `git add .`). Stage files by name; `[GHOST] scripts/mcp_daemon.py` (renamed/removed in 2026-07-03 restructure) always excluded; `docs/site_data/sentinel2/*.tif` gitignored as regenerable; `docs/*_boleto_*.pdf` / `docs/*_escritura_*.pdf` / `docs/2026-*_*.pdf` always excluded.
 - Renderer byte-identity invariant: do not touch `lqv/scatter_lapacho_petals` without explicit user authorization. Task #1 (floating petals on `_petal_macro` finals) is deferred for the same reason — fixing it would supersede `85e86aa`.
 - MCP socket is dead this session — `mcp__blender__*` calls will fail. Tasks #10 + #12 remain blocked until the socket is revived.

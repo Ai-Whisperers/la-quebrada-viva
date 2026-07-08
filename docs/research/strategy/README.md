@@ -40,17 +40,17 @@ Detailed report: see `EARTHDATA_AUTH_RESEARCH.md` (this directory, written 2026-
 - Test command + reference implementation in the full report.
 - The cloud-pool EULA is a *separate* layer from the collection EULA. The user's profile page snippet only shows collection-level EULAs; that's why the GEDI appears "accepted" but S3 still 403s.
 
-### 3. DEM tooling — `docs/site_data/DEM_TOOLING_RESEARCH.md`
+### 3. DEM tooling — `[GHOST] docs/site_data/DEM_TOOLING_RESEARCH.md` (target doesn't exist on disk)
 
 - **Top libs for our scale (12k pixels):** `pysheds` (watershed/HAND/stream order) + `pyviewshed` (viewshed, pure Python) + `gdaldem` (hillshade/contours via subprocess) + `richdem` (slopier/aspect/fill — C++ compile). Keep `rasterio` for I/O.
-- **Heightmap pipeline** (§3) drops into `lqv/site/terrain_62ha.py` (the dormant stub). Produces 16-bit PNG + 32-bit EXR + normal map + sidecar JSON.
+- **Heightmap pipeline** (§3) drops into `../../lqv/site/terrain_62ha.py` (the dormant stub). Produces 16-bit PNG + 32-bit EXR + normal map + sidecar JSON.
 - **v1 review (§6):** critical issues are no DEM conditioning (`fill_pits → fill_depressions → resolve_flats` mandatory before watershed) and no UTM reproject. `M_PER_DEG_LON` hack is wrong by 5 m at bbox edges.
 - **v2 roadmap (§7):** 5 phases, ~2.5 days total. Phase 1 = richdem + DEM conditioning.
 
 ### 4. Blender GIS integration — full inline report in this session
 
 - **Skip BlenderGIS** (Blender 5.x hostile, unmaintained).
-- **Use a custom Blender script** with `rasterio` + `numpy` (both already installed). Full drop-in `lqv/site/dem.py` code in the report.
+- **Use a custom Blender script** with `rasterio` + `numpy` (both already installed). Full drop-in `[GHOST] lqv/site/dem.py` (file doesn't exist on disk) code in the report.
 - **CRS for Paraguarí:** `EPSG:32721` (WGS 84 / UTM zone 21S).
 - **Integration plan:** coexist (Phase 1) → clip-and-blend (Phase 2) → real-DEM soil (Phase 3) → high-res 5 m swap (Phase 4).
 - **RNG ordering invariant:** `build_dem_terrain` must not call `random.*` or the downstream flora draw order shifts.
@@ -91,7 +91,7 @@ Detailed report: see `EARTHDATA_AUTH_RESEARCH.md` (this directory, written 2026-
 - `domlysz/BlenderGIS` — **SKIP** (Blender 5.x hostile, unmaintained)
 - `vvoovv/blender-osm` — **SKIP** (city-scale OSM, not terrain mesh)
 - `brysonbw/blender-heightmap`, `kaiaeberli/Blender-GIS`, `cgcai/Blender-Terrain-Generator`, `EarthX/Blender-GIS-Importer` — **SKIP** (unmaintained, single-file toys)
-- **WRITE OURS** — drop-in `lqv/site/dem.py` (see inline report)
+- **WRITE OURS** — drop-in `[GHOST] lqv/site/dem.py` (file doesn't exist; check lqv/site/ for actual module) (see inline report)
 
 ### Real estate / vacation rental
 - `zillow/zillow-prize` (housing data) — **REFERENCE** (hedonic pricing data structures)
@@ -107,7 +107,7 @@ Detailed report: see `EARTHDATA_AUTH_RESEARCH.md` (this directory, written 2026-
 - `globalforestwatch/gfw-data-api` — **REFERENCE** (forest change monitoring API)
 
 ### Cob / earthen construction
-- **No direct open-source cob design tool exists** (most are blogs, courses, or print books). For our purposes: use the existing `lqv/house/cob.py` as the source of truth, and the 10 design rules in `MASTER_BRIEF.md` for compliance.
+- **No direct open-source cob design tool exists** (most are blogs, courses, or print books). For our purposes: use the existing `../../lqv/house/cob.py` as the source of truth, and the 10 design rules in `MASTER_BRIEF.md` for compliance.
 
 ## Cross-cutting insights (where 2+ reports agree)
 
@@ -120,9 +120,9 @@ Detailed report: see `EARTHDATA_AUTH_RESEARCH.md` (this directory, written 2026-
 
 | Change | Source research | Effort |
 |---|---|---|
-| Update `scripts/extract_gedi_s3.py` to use the Cumulus `s3-credentials` endpoint | EARTHDATA_AUTH | 5 min |
-| Add `lqv/site/dem.py` with the draft code from the Blender GIS report | BLENDER_GIS | 30 min, requires render agent to integrate |
-| Add Tier-1 GIS layers (viewshed, NDWI, solar) to `scripts/analyze_dem.py` | DEM_TOOLING + VACATION_RENTAL | 2-3 hours |
+| Update `[GHOST] scripts/extract_gedi_s3.py` (file doesn't exist on disk) to use the Cumulus `s3-credentials` endpoint | EARTHDATA_AUTH | 5 min |
+| Add `lqv/site/dem.py` [NEVER WRITTEN — phantom TODO from 2026-07-04 plan] with the draft code from the Blender GIS report | BLENDER_GIS | 30 min, requires render agent to integrate |
+| Add Tier-1 GIS layers (viewshed, NDWI, solar) to `[GHOST] scripts/analyze_dem.py` (file doesn't exist on disk) | DEM_TOOLING + VACATION_RENTAL | 2-3 hours |
 | Update `MASTER_BRIEF.md` to reference the synthesized 10 design rules + 5 site-selection criteria | VACATION_RENTAL | 1 hour |
 | Update `EUROPEAN_TOURISM_SPEC.md` with the Awasi + Inkaterra + Chaa Creek + San Bernardino case studies (parallels) | VACATION_RENTAL | 30 min |
 | Add a new R-item to `RESEARCH_GAPS.md`: "R35 — Drone LiDAR 1 m DEM of the 62 ha" (the missing dataset for everything Tier-1+ in the GIS analysis) | VACATION_RENTAL | 10 min |

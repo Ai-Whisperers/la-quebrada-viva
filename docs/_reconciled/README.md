@@ -22,7 +22,7 @@ The reconciled docs here are the **bridge** — what Wes, Ivan, Kiki, Erebus rea
 
 **If you have 30 minutes:** read `MASTER_BRIEF.md` + `OPEN_DECISIONS.md`
 
-**If you have 2 hours:** read everything below + cross-reference to `docs/ideas/INDEX.md` for the 109-idea catalog
+**If you have 2 hours:** read everything below + cross-reference to `../../docs/ideas/_meta/INDEX.md` (renamed/removed in 2026-07-03 restructure) for the 109-idea catalog
 
 ## The documents
 

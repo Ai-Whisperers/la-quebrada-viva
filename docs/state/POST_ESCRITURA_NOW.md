@@ -21,9 +21,9 @@
 
 | # | Item | Why it gates | Owner | Time | Status | Path |
 |---|---|---|---|---|---|---|
-| **HG-1** | **NL+PY dual-tax attorney call** — validate 4-BV cascade + 24 legal questions | Without valid BV structure, every investor decision is risky; €70k+ income can't go through IB | W + L | 1-2 hr call | 🔴 | `docs/people/ATTORNEY_BRIEF.md` |
-| **HG-2** | **Fase 1 ownership choice** — Wes personally? BV3 (PY)? hybrid? | Determines tax treatment, insurance structure, who signs contracts, liability | W | 1 hr | 🔴 | §W0.4 in `docs/people/WES_ACTIONS.md` |
-| **HG-3** | **Insurance broker pre-qualification** — forest fire (82% canopy) + storm + liability | PY market is thin; international brokers (Marsh/Aon/WTW) likely needed | W | 1-2 days | 🔴 | `docs/research/RESULTS/insurance_fire_bundle.md` |
+| **HG-1** | **NL+PY dual-tax attorney call** — validate 4-BV cascade + 24 legal questions | Without valid BV structure, every investor decision is risky; €70k+ income can't go through IB | W + L | 1-2 hr call | 🔴 | `../../docs/people/stakeholders/ATTORNEY_BRIEF.md` |
+| **HG-2** | **Fase 1 ownership choice** — Wes personally? BV3 (PY)? hybrid? | Determines tax treatment, insurance structure, who signs contracts, liability | W | 1 hr | 🔴 | §W0.4 in `../../docs/people/wes/WES_ACTIONS.md` |
+| **HG-3** | **Insurance broker pre-qualification** — forest fire (82% canopy) + storm + liability | PY market is thin; international brokers (Marsh/Aon/WTW) likely needed | W | 1-2 days | 🔴 | `../../docs/research/RESULTS/insurance_fire_bundle.md` |
 | **HG-4** | **Py site visit** — walk all 6 fincas, photo stream/escarpment/structures/road | Capex + zoning + cabin placement ALL depend on ground truth | W + H | 1 day | 🔴 | R01 in `RESEARCH_GAPS.md` |
 | **HG-5** | **Anexo I** — technical descriptions of 6 fincas (linderos, rumbos, medidas) | Subdivision, build placement, financing all gated | W + L | 1 day | 🔴 | R02 in `RESEARCH_GAPS.md` |
 
@@ -36,11 +36,11 @@
 | # | Item | Why | Owner | Time | Status | Path |
 |---|---|---|---|---|---|---|
 | **SG-W1** | Werknaam decision (Riverstone Valley vs 4 Spanish options) | URL, brand voice, marketing, all collateral | W | 15 min | 🔴 | HOUSING_PARK_CONCEPT §8 #26 |
-| **SG-W2** | 5-of-15 materials topics pick | Unblocks Sprint 1 research | W | 15 min | 🔴 | `docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md` |
+| **SG-W2** | 5-of-15 materials topics pick | Unblocks Sprint 1 research | W | 15 min | 🔴 | `[GHOST] docs/research/TOOLING/5_ONDERWERPEN_MATERIALS.md` (renamed/removed in 2026-07-03 restructure) |
 | **SG-W3** | Hovenier contact in Kuikopee — does Wes have a name? | Unblocks R39 (Wes's first explicit AI delegation) | W | 5 min | 🔴 | HOUSING_PARK_CONCEPT §8 #28 |
 | **SG-W4** | Tundra vs Presio final call | Operational decision for Fase 1 | W | 30 min | 🔴 | HOUSING_PARK_CONCEPT §8 #29 |
 | **SG-W5** | Railroad Ipoh-Karai — research or has local contact | Phase 2+ tailwind verification | W | 5 min | 🔴 | HOUSING_PARK_CONCEPT §8 #30 |
-| **SG-W6** | Sonja questionnaire call (16 questions) | 16 P1 worker/salary/culture items | W + S | 2 hr | 🔴 | `docs/people/SONJA_QUESTIONNAIRE.md` |
+| **SG-W6** | Sonja questionnaire call (16 questions) | 16 P1 worker/salary/culture items | W + S | 2 hr | 🔴 | `../../docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` |
 | **SG-W7** | Phase 1 capex target (rough order) | Sizes the financial model | W | 30 min | 🔴 | HOUSING_PARK_CONCEPT §8 #21 |
 | **SG-W8** | Year-1 revenue target ("success" definition) | Anchors occupancy/pricing | W | 30 min | 🔴 | HOUSING_PARK_CONCEPT §8 #23 |
 
@@ -59,7 +59,7 @@
 
 These unblock soft gates, no work needed:
 
-- ✅ F09 Solar PV sizing — `docs/research/RESULTS/F09_solar_pv.md`
+- ✅ F09 Solar PV sizing — `../../docs/research/RESULTS/F09_solar_pv.md`
 - ✅ F11 Cell coverage (Tigo/Personal/Claro at site)
 - ✅ F12 Starlink PY + 30-cabin park scaling
 - ✅ L05 NL BV > IB €70k threshold

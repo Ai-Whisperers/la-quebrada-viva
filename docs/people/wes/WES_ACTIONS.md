@@ -50,7 +50,7 @@ Wes-facing docs use **two coexisting numbering schemes**, resolved as follows:
    - **Need:** dual-qualified (NL + PY) OR firm with both NL and PY partners
 
 2. **Send the brief in advance** (1-2 days before call)
-   - File: `docs/people/ATTORNEY_BRIEF.md`
+   - File: `../../../docs/people/stakeholders/ATTORNEY_BRIEF.md`
    - Include the 4-BV diagram, financial model, research catalogue
 
 3. **Run the 1-2 hour call** (within 7 days)
@@ -74,7 +74,7 @@ Wes-facing docs use **two coexisting numbering schemes**, resolved as follows:
 ### Steps
 
 1. **Schedule the call** (today)
-   - Send `docs/people/SONJA_QUESTIONNAIRE.md` in advance
+   - Send `../../../docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` in advance
    - Give Sonja 2-3 days to prepare
 
 2. **Run the call** (within 7 days)
@@ -133,7 +133,7 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
    - If still missing: get written commitment date
    - If available: arrange pickup or delivery
 
-2. **Log the call in** `docs/people/escribana_status.md`
+2. **Log the call in** `[GHOST] docs/people/escribana_status.md` (renamed/removed in 2026-07-03 restructure)
 
 3. **Mark W0.4 ✅ in WES_TODO**
 
@@ -154,7 +154,7 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 4. **Send the WhatsApp outreach template** (`../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` for PY-domestic, `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` for international).
 5. **Target 3 quotes within 6 weeks** — fire, storm, general liability.
 6. **Mark W0.5 ✅ in WES_TODO** when 3 quotes in hand.
-7. Update `docs/research/RESULTS/W07_insurance_quotes.md` with the 3 quotes (Erebus compiles).
+7. Update `../../../docs/research/RESULTS/R-LQV15_insurance_quotes_comparison_2026-07-06.md` with the 3 quotes (Erebus compiles).
 
 **Files to use (this pack):**
 - `../stakeholders/INSURANCE_BROKER_OUTREACH.md` — master playbook + 5 broker targets + tiered questions
@@ -163,13 +163,13 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 - `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` — EN WhatsApp for international brokers
 - `../../research/RESULTS/PRICE_GAP_MASTER.md` — 95-item price-gap inventory (~40% vendor-priced, ~45% range-only, ~15% blind). Pairs with this outreach — broker quotes fill the gaps.
 
-**Reference:** `docs/research/RESULTS/insurance_fire_bundle.md` (Sprint 0 research, already done) + `docs/research/RESULTS/R01_fire_safety_plan.md`.
+**Reference:** `../../../docs/research/RESULTS/insurance_fire_bundle.md` (Sprint 0 research, already done) + `[GHOST] docs/research/RESULTS/R01_fire_safety_plan.md` (renamed/removed in 2026-07-03 restructure).
 
 ---
 
 ## W0.6 — Pick the project name (5 minutes)
 
-> **Wes's first instinct was "Riverstone Valley" but he hasn't formally decided.** See `docs/people/wes/PROJECT_NAME_CANDIDATES.md` for 100 candidates + 3 top recommendations.
+> **Wes's first instinct was "Riverstone Valley" but he hasn't formally decided.** See `../../../docs/people/wes/PROJECT_NAME_CANDIDATES.md` for 100 candidates + 3 top recommendations.
 
 **Time:** 5 minutes decision + 1 day to check domains
 **Cost:** $0
@@ -203,7 +203,7 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 **Unblocks:** Phase 1 mobility decision
 
 **Steps**
-1. Read existing research: `docs/research/RESULTS/AH01_hilux_pricing.md`, `AH02_tundra_parts.md`, `AH03_used_vs_new.md`.
+1. Read existing research: `../../../docs/research/RESULTS/AH01_hilux_pricing.md`, `AH02_tundra_parts.md`, `AH03_used_vs_new.md`.
 2. Decide: **Toyota Hilux SRV 4x4 used** (~$30k landed, parts in PY, jungle-agile) **OR Tundra SR5** (~$50k, more capable but rare in PY).
 3. Tell Erebus the choice.
 
@@ -238,7 +238,7 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 | `../stakeholders/ATTORNEY_BRIEF_1PAGE.md` | **Print 2 copies — one for you, one for the attorney** |
 | `../stakeholders/ATTORNEY_BRIEF.md` | Full 24-question brief — digital, projector if available |
 
-**Reference:** `docs/_reconciled/OPEN_DECISIONS.md` D1+D9, `BUSINESS_STRUCTURE.md`, `_reconciled/MASTER_BRIEF.md`.
+**Reference:** `../../../docs/_reconciled/OPEN_DECISIONS.md` D1+D9, `BUSINESS_STRUCTURE.md`, `_reconciled/MASTER_BRIEF.md`.
 
 ---
 
@@ -251,13 +251,13 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 **Unblocks:** 16 P1 worker/culture/salary items (W01-W19)
 
 **Steps**
-1. Send `docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` to Sonja 2-3 days before call.
+1. Send `../../../docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` to Sonja 2-3 days before call.
 2. Schedule 1-2 hour call.
 3. Capture 16 answers on the call.
 4. Send answers to Erebus (audio file or written summary).
 5. **Mark W0.9 ✅ in WES_TODO**.
 
-**Reference:** `docs/people/stakeholders/SONJA_QUESTIONNAIRE.md` (existing, 16 questions).
+**Reference:** `../../people/stakeholders/SONJA_QUESTIONNAIRE.md` (existing, 16 questions).
 
 ---
 

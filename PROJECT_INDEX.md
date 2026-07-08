@@ -61,7 +61,7 @@ A Blender-driven photoreal model of a 62-ha parcel in Escobar/Paraguarí, Paragu
 - **Renderer byte-freeze at `85e86aa`**: do not modify `lqv/` modules that affect the 18 final PNGs without an unwritten-renderer pass.
 - **`MASTER_BRIEF.md` §14** is the source-of-truth for the 10 design rules (mirrored in `CLAUDE.md`).
 - **The 109-idea catalog** was quality-marked in 2026-07-03. 63 ✓ reviewed files in `docs/ideas/`, 46 ○ auto-fill files in `docs/ideas/_archive/2026-06-30_autofill/`.
-- **Wes-facing nav** = `docs/WES_INDEX.md` (5-min read). **Post-escritura priorities** = `docs/POST_ESCRITURA_NOW.md` (5 hard gates). **Honest critique** = `docs/CRITIQUE_FOR_WES.md`.
+- **Wes-facing nav** = `docs/wes/WES_INDEX.md` (5-min read). **Post-escritura priorities** = `docs/state/POST_ESCRITURA_NOW.md` (5 hard gates). **Honest critique** = `docs/wes/CRITIQUE_FOR_WES.md`.
 
 ## 6. Where to start (cold-start reading order)
 
@@ -69,7 +69,7 @@ A Blender-driven photoreal model of a 62-ha parcel in Escobar/Paraguarí, Paragu
 2. **`STATUS.md`** — current state (last updated 2026-07-03)
 3. **`CLAUDE.md`** — operating playbook for AI sessions
 4. **`ARCHITECTURE.md`** — only if you're editing `lqv/`
-5. **`docs/WES_INDEX.md`** — only if your stakeholder is Wes
+5. **`docs/wes/WES_INDEX.md`** — only if your stakeholder is Wes
 6. **`docs/_reconciled/README.md`** — the merged Wes-files + RV view
 7. **`docs/audit/BEFORE_AFTER_METRICS.md`** — only if you want repo restructure history
 

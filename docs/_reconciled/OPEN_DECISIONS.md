@@ -288,7 +288,7 @@ Each open decision has:
 
 **Recommendation:** Chase this WEEK. A 2-month overdue Anexo I is a flag that something is wrong. Best case: paperwork delay at Peña's office. Worst case: a seller doesn't have clear title.
 
-**Status:** OPEN. See `docs/research/RESULTS/W04_anexo_I_status.md` for full context.
+**Status:** OPEN. See `[GHOST] docs/research/RESULTS/W04_anexo_I_status.md` (renamed/removed in 2026-07-03 restructure) for full context.
 
 **Tracked in:** WES_TODO W0.4
 
@@ -310,7 +310,7 @@ Each open decision has:
 
 **Recommendation:** Pick one, check domain (Erebus does the whois via local command), defensively register .com + .com.py + .io variants
 
-**Status:** OPEN. Domain check procedure in `docs/research/RESULTS/W03_project_name_check.md`.
+**Status:** OPEN. Domain check procedure in `../../docs/research/RESULTS/BR01_name_pick.md`.
 
 **Tracked in:** WES_TODO W0.3
 
