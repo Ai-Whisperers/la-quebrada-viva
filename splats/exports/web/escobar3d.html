@@ -105,6 +105,20 @@
   }
   .lqv-tools button:hover { background: rgba(194, 168, 120, 0.2); border-color: #c2a878; color: #c2a878; }
   .lqv-tools button.active { background: rgba(194, 168, 120, 0.4); border-color: #c2a878; color: #fff; }
+  .lqv-tools .lqv-alt-input {
+    display: flex; align-items: center; gap: 4px;
+    color: #e8e0d0; font-size: 10px;
+  }
+  .lqv-tools input[type=number] {
+    background: rgba(194, 168, 120, 0.08); color: #c2a878;
+    border: 1px solid rgba(194, 168, 120, 0.3);
+    border-radius: 2px; padding: 3px 6px;
+    width: 70px;
+    font-family: 'Courier New', monospace; font-size: 11px;
+  }
+  .lqv-tools input[type=number]:focus {
+    outline: none; border-color: #c2a878; color: #fff;
+  }
 
   /* === Ruler readout === */
   .lqv-ruler {
@@ -202,6 +216,13 @@
   <button id="toolHelp" title="Show keyboard shortcuts">? Help</button>
   <button id="toolRuler" title="Measure distance between two clicks">📏 Ruler</button>
   <button id="toolShare" title="Copy a URL that restores this camera">🔗 Share</button>
+  <button id="toolContours" title="Toggle 5m contour line overlay">📐 Contours</button>
+  <button id="toolHillshade" title="Toggle hillshade relief overlay">⛰️ Hillshade</button>
+  <button id="toolWaterfalls" title="Toggle waterfall candidates">💧 Waterfalls</button>
+  <label class="lqv-alt-input">
+    Alt&nbsp;<input type="number" id="altInput" min="70" max="30000" step="10" value="1500" title="Camera altitude in metres (clamped to terrain)">
+    m
+  </label>
   <button id="toolExport" title="Download current view as PNG">💾 Export PNG</button>
 </div>
 
@@ -322,7 +343,23 @@ if (!hasWebGL()) {
 Cesium.Ion.defaultAccessToken = '';
 
 // === LOD configuration ===
+// 5-tier LOD: each level's imagery and resolution tuned to camera height
+// (not distance to centroid — see lodFromHeight).
 const LODS = [
+  {
+    // LOD3: at-surface. Heightmap is LOD0 (1.5m/pix) but imagery is the
+    // high-resolution color relief + hillshade overlay so detail appears
+    // visually rich without needing drone LiDAR.
+    id: 3, name: 'Surface',
+    desc: '1.5 m / pixel · 1.5 km × 1.5 km · HD overlay',
+    heightmapUrl: './game_assets_lite/assets/heightmaps/lod0_terrain.png',
+    heightmapBounds: [-57.037494, -25.636757, -57.022506, -25.623243],
+    heightmapSize: [1024, 1024], heightmapRange: [124.9, 182.3],
+    imageryUrl: './game_assets_lite/assets/heightmaps/lod0_terrain.png',
+    imageryBounds: [-57.041, -25.642, -57.019, -25.618],
+    imagerySize: [1792, 1792],
+    exaggeration: 220, viewRadius: 280, maxCameraAlt: 350,
+  },
   {
     id: 0, name: 'Parcel',
     desc: '1.5 m / pixel · 1.5 km × 1.5 km',
@@ -332,7 +369,7 @@ const LODS = [
     imageryUrl: './game_assets_lite/assets/textures/lqv_esri_z17_2km.png',
     imageryBounds: [-57.041, -25.642, -57.019, -25.618],
     imagerySize: [1792, 1792],
-    exaggeration: 100, viewRadius: 500,
+    exaggeration: 130, viewRadius: 1500, maxCameraAlt: 1500,
   },
   {
     id: 1, name: 'Escobar',
@@ -343,7 +380,7 @@ const LODS = [
     imageryUrl: './game_assets_lite/assets/textures/lods/lod1_imagery.jpg',
     imageryBounds: [-57.0685, -25.6647, -56.9915, -25.5953],
     imagerySize: [1024, 1024],
-    exaggeration: 30, viewRadius: 5000,
+    exaggeration: 30, viewRadius: 5000, maxCameraAlt: 6000,
   },
   {
     id: 2, name: 'Regional',
@@ -354,7 +391,7 @@ const LODS = [
     imageryUrl: './game_assets_lite/assets/textures/lods/lod2_imagery.jpg',
     imageryBounds: [-57.1449, -25.7336, -56.9151, -25.5263],
     imagerySize: [512, 512],
-    exaggeration: 10, viewRadius: 30000,
+    exaggeration: 10, viewRadius: 30000, maxCameraAlt: 30000,
   },
 ];
 
@@ -522,9 +559,21 @@ function cameraDistanceToCentroidM() {
   return geodesic.surfaceDistance;
 }
 
-function lodFromDistance(distM) {
-  if (distM < 750) return 0;
-  if (distM < 7500) return 1;
+// LOD selection by camera HEIGHT (not distance to centroid — that's the bug
+// that caused the terrain to disappear when zooming in past the parcel).
+//
+//   camera height < 350m   → LOD3 Surface   (1.5m, 280m AOI, exaggeration 220)
+//   350–1500m             → LOD0 Parcel    (1.5m, 1.5km AOI, exaggeration 130)
+//   1500–6000m            → LOD1 Escobar   (15m, 7.7km AOI, exaggeration 30)
+//   > 6000m               → LOD2 Regional  (60m, 23km AOI, exaggeration 10)
+const LOD_BY_HEIGHT = [
+  { maxHeight: 350,  lodId: 3 },
+  { maxHeight: 1500, lodId: 0 },
+  { maxHeight: 6000, lodId: 1 },
+  { maxHeight: Infinity, lodId: 2 },
+];
+function lodFromHeight(heightM) {
+  for (const tier of LOD_BY_HEIGHT) if (heightM < tier.maxHeight) return tier.lodId;
   return 2;
 }
 
@@ -534,9 +583,21 @@ function updateLodIfNeeded() {
   if (now - lastLodUpdate < 250) return;
   lastLodUpdate = now;
   updateCameraReadout();
-  const dist = cameraDistanceToCentroidM();
-  const desired = lodFromDistance(dist);
+  const cam = viewer.camera.positionCartographic;
+  const heightM = cam.height;
+  const desired = lodFromHeight(heightM);
   if (desired !== activeLodId) applyLod(desired);
+
+  // Also auto-scale exaggeration within a LOD tier as we get closer —
+  // extreme close-up gets absurd vertical exaggeration for visible relief.
+  if (activeLodId === 3) {
+    const lod = LODS.find(l => l.id === activeLodId);
+    if (lod) {
+      // 220 at surface (200m), ramp down to 100 at 350m
+      const t = Math.max(0, Math.min(1, (heightM - 60) / 290));
+      viewer.scene.verticalExaggeration = 100 + (1 - t) * 120;
+    }
+  }
 }
 
 viewer.scene.postRender.addEventListener(updateLodIfNeeded);
@@ -984,9 +1045,11 @@ function restoreCameraFromUrl() {
   const h = parseFloat(params.get('h'));
   const p = parseFloat(params.get('p'));
   if (!isNaN(lon) && !isNaN(lat) && !isNaN(alt)) {
+    // Clamp altitude so the user never lands underground
+    const safeAlt = clampAltitudeToTerrain(lon, lat, alt);
     setTimeout(() => {
       viewer.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(lon, lat, alt),
+        destination: Cesium.Cartesian3.fromDegrees(lon, lat, safeAlt),
         orientation: { heading: Cesium.Math.toRadians(isNaN(h) ? 0 : h), pitch: Cesium.Math.toRadians(isNaN(p) ? -30 : p), roll: 0 },
         duration: 0,
       });
@@ -995,6 +1058,181 @@ function restoreCameraFromUrl() {
   }
   return false;
 }
+
+// Clamp a requested altitude so the camera ends up at least
+// MIN_CAMERA_ALT_M above the local terrain (and at most MAX_CAMERA_ALT_M).
+const MIN_CAMERA_ALT_M = 70;     // 70m above ground minimum
+const MAX_CAMERA_ALT_M = 30000;  // 30km max
+function clampAltitudeToTerrain(lon, lat, requestedAltM) {
+  const clampedTop = Math.min(requestedAltM, MAX_CAMERA_ALT_M);
+  // Find terrain elevation at this lon/lat — use LOD3 heightmap if available.
+  // Fallback: lod3 heightmapRange midpoint if outside AOI.
+  const sample = sampleElevationFromCache(lon, lat);
+  const groundAlt = sample != null ? sample : 150;
+  return Math.max(MIN_CAMERA_ALT_M + groundAlt, Math.min(clampedTop, groundAlt + 5000));
+}
+
+// Sample LOD3 (or fallback LOD0) heightmap cache for an elevation at lon/lat
+const _eleCache = {};
+function sampleElevationFromCache(lon, lat) {
+  // Try LOD3 first (high-detail cache) — but for now use LOD0 since it's
+  // the same heightmap. We can later split into a dedicated near-surface
+  // heightmap when LiDAR is available.
+  const cacheKey = `0_${lon.toFixed(5)}_${lat.toFixed(5)}`;
+  if (_eleCache[cacheKey]) return _eleCache[cacheKey];
+  const data = heightmapDataCache[0];
+  if (!data) return null;
+  const [w, s, e, n] = data.bounds;
+  if (lon < w || lon > e || lat < s || lat > n) return null;
+  const px = ((lon - w) / (e - w)) * (data.width - 1);
+  const py = ((n - lat) / (n - s)) * (data.height - 1);
+  const ix = Math.floor(px), iy = Math.floor(py);
+  // Bilinear sample
+  const fx = px - ix, fy = py - iy;
+  const v00 = data.elev[iy * data.width + ix];
+  const v10 = data.elev[iy * data.width + Math.min(ix+1, data.width-1)];
+  const v01 = data.elev[Math.min(iy+1, data.height-1) * data.width + ix];
+  const v11 = data.elev[Math.min(iy+1, data.height-1) * data.width + Math.min(ix+1, data.width-1)];
+  const v = (v00*(1-fx) + v10*fx)*(1-fy) + (v01*(1-fx) + v11*fx)*fy;
+  _eleCache[cacheKey] = v;
+  return v;
+}
+
+// === Overlay toggles (contours, hillshade, waterfalls) ===
+const overlayLayers = {
+  contours: null,
+  hillshade: null,
+  waterfalls: null,
+};
+
+async function toggleContours(btn) {
+  if (overlayLayers.contours) {
+    viewer.scene.primitives.remove(overlayLayers.contours);
+    overlayLayers.contours = null;
+    btn.classList.remove('active');
+    return;
+  }
+  btn.classList.add('active');
+  showLoading(true);
+  try {
+    // 5m contours — generated by Cesium + the contour generation code.
+    // We can use the same algorithm (turf isolines) but a precomputed
+    // 1.6MB file exists in data/dem_contours_parcel_5m.geojson.
+    const url = 'https://lqv-walkthrough.pages.dev/data/dem_contours_parcel_5m.geojson';
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const geo = await r.json();
+    // Split into major (every 25m) and minor contours
+    const minor = [], major = [];
+    for (const f of geo.features || []) {
+      const e = f.properties?.elevation ?? f.properties?.ELEV ?? 0;
+      const interval = e % 25 < 1 ? 25 : 5;
+      f.properties.kind = interval;
+      if (interval === 25) major.push(f); else minor.push(f);
+    }
+    overlayLayers.contours = new Cesium.GeoJsonDataSource.load(
+      { type: 'FeatureCollection', features: [...minor, ...major] },
+      {
+        stroke: Cesium.Color.fromCssColorString('#7d6a4a'),
+        strokeWidth: 1,
+        fill: Cesium.Color.TRANSPARENT,
+        clampToGround: true,
+      }
+    );
+    viewer.dataSources.add(await overlayLayers.contours);
+  } catch (e) {
+    console.warn('Contours load failed:', e);
+    btn.classList.remove('active');
+  }
+  showLoading(false);
+}
+
+async function toggleHillshade(btn) {
+  if (overlayLayers.hillshade) {
+    viewer.imageryLayers.remove(overlayLayers.hillshade, true);
+    overlayLayers.hillshade = null;
+    btn.classList.remove('active');
+    return;
+  }
+  btn.classList.add('active');
+  // Hillshade as a translucent overlay (alpha 0.4) over the active imagery.
+  const provider = new Cesium.SingleTileImageryProvider({
+    url: 'https://lqv-walkthrough.pages.dev/data/hillshade_parcel.jpg',
+    rectangle: Cesium.Rectangle.fromDegrees(-57.041, -25.642, -57.019, -25.618),
+    credit: 'LQV hillshade (ALOS-derived)',
+  });
+  overlayLayers.hillshade = viewer.imageryLayers.addImageryProvider(provider);
+  overlayLayers.hillshade.alpha = 0.45;
+}
+
+async function toggleWaterfalls(btn) {
+  if (overlayLayers.waterfalls) {
+    viewer.entities.removeAll();
+    overlayLayers.waterfalls = null;
+    btn.classList.remove('active');
+    return;
+  }
+  btn.classList.add('active');
+  try {
+    const r = await fetch('https://lqv-walkthrough.pages.dev/data/water_features_final.geojson');
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const geo = await r.json();
+    // Re-collect only waterfall candidates (not streams)
+    const features = (geo.features || []).filter(f =>
+      f.properties?.kind === 'waterfall' ||
+      f.properties?.type === 'waterfall' ||
+      /waterfall|cascada/i.test(JSON.stringify(f.properties || {}))
+    );
+    overlayLayers.waterfalls = viewer.dataSources.add(
+      await Cesium.GeoJsonDataSource.load(
+        { type: 'FeatureCollection', features },
+        {
+          stroke: Cesium.Color.AQUA,
+          strokeWidth: 3,
+          fill: Cesium.Color.fromCssColorString('rgba(0, 255, 255, 0.4)'),
+          clampToGround: true,
+        }
+      )
+    );
+  } catch (e) {
+    console.warn('Waterfalls load failed:', e);
+    btn.classList.remove('active');
+  }
+}
+
+document.getElementById('toolContours').addEventListener('click', e => toggleContours(e.currentTarget));
+document.getElementById('toolHillshade').addEventListener('click', e => toggleHillshade(e.currentTarget));
+document.getElementById('toolWaterfalls').addEventListener('click', e => toggleWaterfalls(e.currentTarget));
+
+// === Altitude input — keyboard field that flies the camera there ===
+const altInput = document.getElementById('altInput');
+altInput.addEventListener('change', () => {
+  const requested = parseFloat(altInput.value);
+  if (!isFinite(requested)) return;
+  const cam = viewer.camera.positionCartographic;
+  const lon = Cesium.Math.toDegrees(cam.longitude);
+  const lat = Cesium.Math.toDegrees(cam.latitude);
+  const safeAlt = clampAltitudeToTerrain(lon, lat, requested);
+  altInput.value = Math.round(safeAlt);
+  viewer.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(lon, lat, safeAlt),
+    orientation: {
+      heading: viewer.camera.heading,
+      pitch: viewer.camera.pitch,
+      roll: 0,
+    },
+    duration: 1.2,
+  });
+});
+
+// Keep altitude input in sync with camera position
+viewer.scene.postRender.addEventListener(() => {
+  const cam = viewer.camera.positionCartographic;
+  if (cam && document.activeElement !== altInput) {
+    const alt = Math.round(cam.height);
+    if (altInput.value !== String(alt)) altInput.value = alt;
+  }
+});
 
 // === Export PNG ===
 const exportBtn = document.getElementById('toolExport');
