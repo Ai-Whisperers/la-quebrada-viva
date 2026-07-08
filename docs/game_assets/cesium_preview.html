@@ -71,6 +71,8 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
   fullscreenButton: true,
   infoBox: false,
   selectionIndicator: false,
+  // Skip terrain entirely — we use a flat ellipsoid (no 3D terrain in JS preview)
+  terrainProvider: new Cesium.EllipsoidTerrainProvider(),
   imageryProvider: new Cesium.SingleTileImageryProvider({
     url: './textures/lqv_esri_z17_2km.png',
     rectangle: Cesium.Rectangle.fromDegrees(-57.041, -25.642, -57.019, -25.618),
@@ -87,19 +89,20 @@ viewer.camera.flyTo({
 });
 
 // Property polygon (62 ha escritura polygon) — from lqv_property_polygon.geojson
+// Note: clampToGround requires terrain. We use the default ellipsoid and
+// let the polygon float slightly above; visually fine for a 2D top-down preview.
 Cesium.GeoJsonDataSource.load('./geodata/lqv_property_polygon.geojson', {
   stroke: Cesium.Color.fromCssColorString('#c2a878'),
   fill: Cesium.Color.fromCssColorString('#c2a878').withAlpha(0.3),
-  strokeWidth: 2,
-  clampToGround: true
-}).then(ds => viewer.dataSources.add(ds));
+  strokeWidth: 2
+}).then(ds => viewer.dataSources.add(ds)).catch(e => console.warn('property polygon:', e));
 
 // AOI bbox (1100 ha) — lighter color
 Cesium.GeoJsonDataSource.load('./geodata/lqv_aoi_bbox.geojson', {
   stroke: Cesium.Color.fromCssColorString('#7d6a4a'),
   fill: Cesium.Color.TRANSPARENT,
   strokeWidth: 1
-}).then(ds => viewer.dataSources.add(ds));
+}).then(ds => viewer.dataSources.add(ds)).catch(e => console.warn('aoi bbox:', e));
 
 // Waterfall candidates (top 5)
 fetch('./geodata/lqv_waterfall_candidates.geojson').then(r => r.json()).then(gj => {
@@ -126,17 +129,15 @@ fetch('./geodata/lqv_waterfall_candidates.geojson').then(r => r.json()).then(gj 
 Cesium.GeoJsonDataSource.load('./geodata/lqv_quebrada_polygon.geojson', {
   stroke: Cesium.Color.fromCssColorString('#3d7da3'),
   fill: Cesium.Color.fromCssColorString('#3d7da3').withAlpha(0.4),
-  strokeWidth: 1,
-  clampToGround: true
-}).then(ds => viewer.dataSources.add(ds));
+  strokeWidth: 1
+}).then(ds => viewer.dataSources.add(ds)).catch(e => console.warn('quebrada:', e));
 
 // Solar PV zones (north-facing slopes)
 Cesium.GeoJsonDataSource.load('./geodata/lqv_solar_pv_zones.geojson', {
   stroke: Cesium.Color.fromCssColorString('#d4a52a'),
   fill: Cesium.Color.fromCssColorString('#d4a52a').withAlpha(0.3),
-  strokeWidth: 1,
-  clampToGround: true
-}).then(ds => viewer.dataSources.add(ds));
+  strokeWidth: 1
+}).then(ds => viewer.dataSources.add(ds)).catch(e => console.warn('solar:', e));
 
 </script>
 </body>
