@@ -1,0 +1,9 @@
+{
+  "west": -57.03749413328386,
+  "south": -25.637494133283855,
+  "east": -57.022505866716145,
+  "north": -25.622505866716143,
+  "width": 2048,
+  "height": 2048,
+  "source": "ALOS AW3D30 + 500x v.exag + 3-azimuth horn hillshade + 5m contours"
+}

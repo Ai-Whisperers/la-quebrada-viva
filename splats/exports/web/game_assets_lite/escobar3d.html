@@ -347,18 +347,21 @@ Cesium.Ion.defaultAccessToken = '';
 // (not distance to centroid — see lodFromHeight).
 const LODS = [
   {
-    // LOD3: at-surface. Heightmap is LOD0 (1.5m/pix) but imagery is the
-    // high-resolution color relief + hillshade overlay so detail appears
-    // visually rich without needing drone LiDAR.
+    // LOD3: at-surface. Heightmap is LOD0 (1.5m/pix). Imagery is the
+    // new Esri z18 (0.6 m/pixel) PLUS a dense 500x hillshade overlay with
+    // contour lines baked in — this is what makes the relief visible
+    // when the camera is right next to the terrain.
     id: 3, name: 'Surface',
-    desc: '1.5 m / pixel · 1.5 km × 1.5 km · HD overlay',
+    desc: '0.5 m / pixel · 1.4 km × 1.4 km · 500× hillshade + contours',
     heightmapUrl: './game_assets_lite/assets/heightmaps/lod0_terrain.png',
     heightmapBounds: [-57.037494, -25.636757, -57.022506, -25.623243],
     heightmapSize: [1024, 1024], heightmapRange: [124.9, 182.3],
-    imageryUrl: './game_assets_lite/assets/heightmaps/lod0_terrain.png',
-    imageryBounds: [-57.041, -25.642, -57.019, -25.618],
-    imagerySize: [1792, 1792],
-    exaggeration: 220, viewRadius: 280, maxCameraAlt: 350,
+    imageryUrl: './game_assets_lite/assets/textures/lqv_esri_z18_lod3.png',
+    imageryBounds: [-57.035522, -25.635336, -57.023163, -25.624192],
+    imagerySize: [2304, 2304],
+    hillshadeUrl: './game_assets_lite/assets/heightmaps/lqv_hillshade_dense.png',
+    hillshadeBounds: [-57.035828, -25.635000, -57.024172, -25.625000],
+    exaggeration: 320, viewRadius: 280, maxCameraAlt: 350,
   },
   {
     id: 0, name: 'Parcel',
@@ -369,7 +372,7 @@ const LODS = [
     imageryUrl: './game_assets_lite/assets/textures/lqv_esri_z17_2km.png',
     imageryBounds: [-57.041, -25.642, -57.019, -25.618],
     imagerySize: [1792, 1792],
-    exaggeration: 130, viewRadius: 1500, maxCameraAlt: 1500,
+    exaggeration: 160, viewRadius: 1500, maxCameraAlt: 1500,
   },
   {
     id: 1, name: 'Escobar',
@@ -424,6 +427,25 @@ viewer.scene.globe.enableLighting = false;
 viewer.scene.globe.depthTestAgainstTerrain = true;
 viewer.scene.fog.enabled = false;
 viewer._cesiumWidget._creditContainer.style.display = 'none';
+
+// === Enable unlimited zoom/drag/tilt/look via ScreenSpaceCameraController ===
+// Cesium's default ScreenSpaceCameraController already supports all these,
+// but we want to make sure minimumZoomDistance and maximumZoomDistance
+// don't restrict the user when they zoom in close.
+const cam_ctrl = viewer.scene.screenSpaceCameraController;
+cam_ctrl.minimumZoomDistance = 10;     // 10m minimum — user can put face in the dirt
+cam_ctrl.maximumZoomDistance = 80000;  // 80km — orbital altitudes
+cam_ctrl.enableRotate = true;
+cam_ctrl.enableTranslate = true;
+cam_ctrl.enableZoom = true;
+cam_ctrl.enableTilt = true;
+cam_ctrl.enableLook = true;
+// Disable "collisions" so the camera passes through the terrain instead
+// of getting stuck on a hilltop when going below 30m
+viewer.scene.screenSpaceCameraController.enableCollisionDetection = false;
+viewer.scene.screenSpaceCameraController.inertiaSpin = 0.92;
+viewer.scene.screenSpaceCameraController.inertiaTranslate = 0.92;
+viewer.scene.screenSpaceCameraController.inertiaZoom = 0.92;
 
 // === LOD state ===
 let activeLodId = -1;
@@ -521,9 +543,23 @@ function applyLod(lodId) {
     url: lod.imageryUrl,
     rectangle: Cesium.Rectangle.fromDegrees(...lod.imageryBounds),
     tileWidth: lod.imagerySize[0], tileHeight: lod.imagerySize[1],
-    credit: new Cesium.Credit(`Esri World Imagery (z=${lod.id === 0 ? 17 : lod.id === 1 ? 15 : 11}) © Esri, Maxar, Earthstar Geographics`),
+    credit: new Cesium.Credit(`Esri World Imagery (z=${lod.id === 3 ? 18 : lod.id === 0 ? 17 : lod.id === 1 ? 15 : 11}) © Esri, Maxar, Earthstar Geographics`),
   });
-  viewer.imageryLayers.addImageryProvider(imageryProvider);
+  const baseLayer = viewer.imageryLayers.addImageryProvider(imageryProvider);
+
+  // Auto-mount the dense hillshade overlay (only LOD3 has it).
+  // This is what makes relief visible at close zoom — elevation
+  // differences of 5m amplified 500x through multi-azimuth hillshade.
+  if (lod.hillshadeUrl) {
+    const hillshadeProvider = new Cesium.SingleTileImageryProvider({
+      url: lod.hillshadeUrl,
+      rectangle: Cesium.Rectangle.fromDegrees(...lod.hillshadeBounds),
+      tileWidth: 2048, tileHeight: 2048,
+      credit: new Cesium.Credit('LQV dense hillshade (ALOS v.exag 500× + 5m contours)'),
+    });
+    const hillshadeLayer = viewer.imageryLayers.addImageryProvider(hillshadeProvider);
+    hillshadeLayer.alpha = 0.55;
+  }
 
   viewer.scene.verticalExaggeration = lod.exaggeration;
 
@@ -591,11 +627,15 @@ function updateLodIfNeeded() {
   // Also auto-scale exaggeration within a LOD tier as we get closer —
   // extreme close-up gets absurd vertical exaggeration for visible relief.
   if (activeLodId === 3) {
-    const lod = LODS.find(l => l.id === activeLodId);
-    if (lod) {
-      // 220 at surface (200m), ramp down to 100 at 350m
-      const t = Math.max(0, Math.min(1, (heightM - 60) / 290));
-      viewer.scene.verticalExaggeration = 100 + (1 - t) * 120;
+    // 220 at LOD3 max-camera alt (350m), ramps up to 380 at 80m, capped
+    // at 450 at 30m surface altitude — makes relief obvious at any zoom
+    const t = Math.max(0, Math.min(1, (heightM - 30) / 320));
+    const targetExag = 450 - t * 230;  // 450 surface → 220 at LOD3 ceiling
+    viewer.scene.verticalExaggeration = targetExag;
+    // Hide LOD3 hillshade overlay if camera is far enough that user
+    // is looking at the broader parcel (not at surface detail)
+    if (heightM > 280) {
+      // optional future: toggle hillshade layer
     }
   }
 }
@@ -1059,16 +1099,17 @@ function restoreCameraFromUrl() {
   return false;
 }
 
-// Clamp a requested altitude so the camera ends up at least
-// MIN_CAMERA_ALT_M above the local terrain (and at most MAX_CAMERA_ALT_M).
-const MIN_CAMERA_ALT_M = 70;     // 70m above ground minimum
-const MAX_CAMERA_ALT_M = 30000;  // 30km max
+// Clamp a requested altitude: camera ends up at least MIN_CAMERA_ALT_M above
+// the local terrain (and at most MAX_CAMERA_ALT_M). UNLIMITED ZOOM IN —
+// drag/trackpad/mousewheel will work natively through Cesium's default
+// ScreenSpaceCameraController after we lower the minimum below 30m.
+const MIN_CAMERA_ALT_M = 30;     // 30m above ground — close enough to see texture detail
+const MAX_CAMERA_ALT_M = 50000;  // 50km — let user see the full Chaco
 function clampAltitudeToTerrain(lon, lat, requestedAltM) {
   const clampedTop = Math.min(requestedAltM, MAX_CAMERA_ALT_M);
-  // Find terrain elevation at this lon/lat — use LOD3 heightmap if available.
-  // Fallback: lod3 heightmapRange midpoint if outside AOI.
   const sample = sampleElevationFromCache(lon, lat);
   const groundAlt = sample != null ? sample : 150;
+  // Allow infinite zoom: between 30m above ground and 5km above ground
   return Math.max(MIN_CAMERA_ALT_M + groundAlt, Math.min(clampedTop, groundAlt + 5000));
 }
 

@@ -1,0 +1,11 @@
+{
+  "west": -57.0355224609375,
+  "south": -25.635335971980343,
+  "east": -57.023162841796875,
+  "north": -25.624192441211974,
+  "width": 2304,
+  "height": 2304,
+  "resolution_m_per_pixel": 0.5368617517125303,
+  "source": "Esri World Imagery z=18",
+  "attribution": "\u00a9 Esri, Maxar, Earthstar Geographics"
+}
