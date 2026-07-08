@@ -369,22 +369,26 @@
     <div class="modal-section">
       <h3>Tools</h3>
       <ul>
-        <li><kbd>?</kbd> — open this help</li>
-        <li><kbd>📏</kbd> — measure geodesic distance between two points</li>
-        <li><kbd>🔗</kbd> — copy a URL that restores your current camera position</li>
-        <li><kbd>💾</kbd> — download current view as PNG</li>
-        <li><kbd>Esc</kbd> — exit current tool</li>
+        <li><kbd>📏</kbd> Measure: geodesic distance, line-of-sight, elevation gain, slope angle (%), bearing</li>
+        <li><kbd>🔗</kbd> Copy a URL restoring the current camera + heading + pitch</li>
+        <li><kbd>📐</kbd> Toggle 5 m / 25 m contour lines (labels appear on every 25 m)</li>
+        <li><kbd>⛰️</kbd> Toggle dense hillshade relief overlay</li>
+        <li><kbd>💧</kbd> Toggle waterfall candidates (cyan)</li>
+        <li><kbd>Alt</kbd> field — type any altitude in metres + Enter to fly there</li>
+        <li><kbd>💾</kbd> Download current view as PNG</li>
+        <li><kbd>?</kbd> Open this help · <kbd>Esc</kbd> exit current tool</li>
       </ul>
     </div>
 
     <div class="modal-section">
-      <h3>Distance-based LOD</h3>
+      <h3>5-tier LOD by camera height</h3>
       <p style="font-size: 13px; line-height: 1.6; color: #7d6a4a;">
-        The terrain auto-switches between 3 levels of detail:
-        <b style="color:#c2a878">Parcel</b> (close, 1.5 m/px),
-        <b style="color:#c2a878">Escobar</b> (mid, 15 m/px),
-        <b style="color:#c2a878">Regional</b> (far, 60 m/px).
-        Watch the badge in the top-right.
+        The terrain auto-switches based on your altitude, not distance:
+        <b style="color:#c2a878">Surface</b> (&lt;350 m, 1.5 m/px + 500× hillshade),
+        <b style="color:#c2a878">Parcel</b> (350–1500 m, 1.5 m/px),
+        <b style="color:#c2a878">Escobar</b> (1500–6000 m, 15 m/px),
+        <b style="color:#c2a878">Regional</b> (&gt;6000 m, 60 m/px).
+        Vertical exaggeration ramps 220× → 450× as you descend into Surface.
       </p>
     </div>
 
