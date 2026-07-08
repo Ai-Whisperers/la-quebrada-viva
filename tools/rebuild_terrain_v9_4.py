@@ -117,6 +117,7 @@ def build_terrain_from_dem():
 
     # Build mesh — write (x, y_elev, z_south) so glTF's Y-up convention is correct
     # (Y = up, so we put elevation in Y for the glTF reader to render as "up")
+    # NO vertex colors here — we drape the Esri satellite PNG as a texture in play.html
     verts = []
     j_keep = list(range(0, h, DECIMATION))
     if j_keep[-1] != h - 1:
@@ -125,7 +126,13 @@ def build_terrain_from_dem():
     if i_keep[-1] != w - 1:
         i_keep.append(w - 1)
 
+    # Track UVs to map the Esri satellite image onto the terrain
+    uvs = []
+    h_eff = len(j_keep)
+    w_eff = len(i_keep)
+    n_j = 0
     for j in j_keep:
+        n_i = 0
         for i in i_keep:
             lon = bounds[0] + (i / (w - 1)) * (bounds[2] - bounds[0])
             lat = bounds[3] - (j / (h - 1)) * (bounds[3] - bounds[1])  # row j=0 is top (north)
@@ -135,10 +142,13 @@ def build_terrain_from_dem():
             elev_q = round(elev / STEP) * STEP
             y = (elev_q - elev_min_real) * Z_EXAG
             verts.append((x, y, z))
-
-    # Update effective grid dimensions for vertex colors
-    h_eff = len(j_keep)
-    w_eff = len(i_keep)
+            # UV: map (i, j) to (u, v) in [0,1] for the Esri satellite texture
+            # Use normalized grid coords so the texture stretches over the terrain
+            u = n_i / (w_eff - 1) if w_eff > 1 else 0
+            v = 1 - (n_j / (h_eff - 1)) if h_eff > 1 else 0  # flip v (image Y vs mesh Z)
+            uvs.append((u, v))
+            n_i += 1
+        n_j += 1
 
     faces = []
     for jj in range(h_eff - 1):
@@ -152,89 +162,31 @@ def build_terrain_from_dem():
     mesh = bpy.data.meshes.new("LQV_Terrain")
     mesh.from_pydata(verts, [], faces)
     mesh.update()
+
+    # Add UV layer
+    uv_layer = mesh.uv_layers.new(name="UVMap")
+    for poly in mesh.polygons:
+        for loop_idx in poly.loop_indices:
+            vi = mesh.loops[loop_idx].vertex_index
+            uv_layer.data[loop_idx].uv = uvs[vi]
+
     obj = bpy.data.objects.new("LQV_Terrain", mesh)
     bpy.context.collection.objects.link(obj)
 
     # FLAT SHADING — the whole point of low-poly
     set_flat_shading(obj)
 
-    # Vertex colors: grass (low) → earth (mid) → rock (high+steep) → snow (peaks)
-    slp = [[0.0] * w_eff for _ in range(h_eff)]
-    for jj in range(1, h_eff):
-        for ii in range(w_eff):
-            j_src = j_keep[jj]
-            i_src = i_keep[ii]
-            j_prev = j_keep[jj-1]
-            i_prev = i_keep[ii]
-            slp[jj][ii] = abs(dem[j_src][i_src] - dem[j_prev][i_src])
-    for jj in range(h_eff):
-        for ii in range(1, w_eff):
-            j_src = j_keep[jj]
-            i_src = i_keep[ii]
-            i_prev = i_keep[ii-1]
-            slp[jj][ii] = max(slp[jj][ii], abs(dem[j_src][i_src] - dem[j_src][i_prev]))
-
-    vc = mesh.vertex_colors.new(name="Col")
-    # Zelda palette
-    grass = (0.478, 0.608, 0.306)        # #7a9b4e
-    grass_dk = (0.239, 0.353, 0.165)     # #3d5a2a
-    earth = (0.541, 0.416, 0.227)        # #8a6a3a
-    earth_lt = (0.690, 0.561, 0.376)     # #ad8f60
-    rock = (0.431, 0.384, 0.345)         # #6e6258
-    rock_dk = (0.290, 0.271, 0.251)     # #4a4540
-    snow = (0.95, 0.95, 0.97)
-    lapacho = (0.831, 0.584, 0.416)      # for stylized high points
-
-    for poly in mesh.polygons:
-        avg_e = sum(verts[mesh.loops[l].vertex_index][1] for l in poly.loop_indices) / len(poly.loop_indices)
-        avg_s = 0.0
-        for l in poly.loop_indices:
-            vi = mesh.loops[l].vertex_index
-            ii = vi % w_eff
-            jj = vi // w_eff
-            if 0 < jj < h_eff - 1 and 0 < ii < w_eff - 1:
-                avg_s += slp[jj][ii]
-        avg_s /= max(1, len(poly.loop_indices))
-
-        # Real elevation (in metres) from vertex Y
-        avg_elev_real = avg_e / Z_EXAG + elev_min_real
-        # Normalize to 0-1
-        t = (avg_elev_real - elev_min_real) / max(1, elev_max_real - elev_min_real)
-
-        if avg_s > 4.0:  # steep cliff
-            r, g, b = rock
-        elif t > 0.92:  # very high peaks
-            r, g, b = snow
-        elif t > 0.7:
-            # High terrain — blend earth → rock by slope
-            blend = min(1.0, avg_s / 3.0)
-            r = earth[0] * (1-blend) + rock[0] * blend
-            g = earth[1] * (1-blend) + rock[1] * blend
-            b = earth[2] * (1-blend) + rock[2] * blend
-        elif t < 0.25:
-            blend = 1.0 - t * 4
-            r = grass_dk[0] * blend + grass[0] * (1-blend)
-            g = grass_dk[1] * blend + grass[1] * (1-blend)
-            b = grass_dk[2] * blend + grass[2] * (1-blend)
-        elif t < 0.5:
-            r, g, b = earth_lt
-        else:
-            r, g, b = earth
-
-        for l in poly.loop_indices:
-            vc.data[l].color = (r, g, b, 1.0)
-
-    # Material with vertex colors
-    mat = make_material("Terrain_VertexColor", (1, 1, 1))
+    # NO vertex colors anymore — we use UV-mapped Esri satellite texture in play.html.
+    # We still keep a plain material for fallback rendering.
+    mat = bpy.data.materials.new("Terrain_Base")
+    mat.use_nodes = True
     bsdf = mat.node_tree.nodes.get("Principled BSDF")
     if bsdf:
-        vc_node = mat.node_tree.nodes.new("ShaderNodeVertexColor")
-        vc_node.layer_name = "Col"
-        vc_node.location = (-300, 200)
-        mat.node_tree.links.new(vc_node.outputs["Color"], bsdf.inputs["Base Color"])
+        bsdf.inputs["Base Color"].default_value = (0.541, 0.416, 0.227, 1.0)  # earth fallback
+        bsdf.inputs["Roughness"].default_value = 0.95
     obj.data.materials.append(mat)
 
-    print(f"  Terrain mesh: {len(verts)} verts, {len(faces)} faces")
+    print(f"  Terrain mesh: {len(verts)} verts, {len(faces)} faces (UV-mapped, no vertex colors)")
     return obj, verts, elev_min_real, elev_max_real, bounds, w, h
 
 
