@@ -1,0 +1,20 @@
+# robots.txt — La Quebrada Viva walkthrough
+# Updated 2026-07-08: explicitly include sitemap, allow everything (it's a public buyer walkthrough).
+
+User-agent: *
+Allow: /
+Disallow: /lqv-secrets/
+Disallow: /data/private/
+
+Sitemap: https://lqv-walkthrough.pages.dev/sitemap.xml
+Host: https://lqv-walkthrough.pages.dev
+
+# Specific bots
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /

@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LQV Ideas — Wesley's 76-idea catalog</title>
+<meta name="description" content="Wesley van de Camp's 76 idea catalog for La Quebrada Viva (Riverstone Valley) — housing park + restaurant + amenities in Escobar, Paraguay. Filterable by category, priority, and status.">
+<link rel="canonical" href="https://lqv-walkthrough.pages.dev/ideas.html">
+<meta property="og:title" content="LQV Ideas — Wesley's 76-idea catalog">
+<meta property="og:description" content="Wesley van de Camp's 76 idea catalog for La Quebrada Viva. Housing park + restaurant + amenities in Paraguay.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lqv-walkthrough.pages.dev/ideas.html">
+<meta name="theme-color" content="#0b1020">
+<style>
+:root {
+  --bg: #0b1020;
+  --bg-2: #131a2e;
+  --bg-3: #1a2342;
+  --fg: #e5e7eb;
+  --fg-2: #94a3b8;
+  --accent: #38bdf8;
+  --border: #1f2937;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
+body { min-height: 100vh; }
+header { padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--bg-2); position: sticky; top: 0; z-index: 10; }
+header h1 { margin: 0; font-size: 1.2rem; color: var(--accent); font-weight: 600; }
+header .sub { font-size: 0.85rem; color: var(--fg-2); margin-top: 4px; }
+header .crumbs { margin-top: 8px; font-size: 0.8rem; }
+header .crumbs a { color: var(--accent); text-decoration: none; }
+header .crumbs a:hover { text-decoration: underline; }
+
+main { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 24px; max-width: 1400px; margin: 0 auto; }
+@media (max-width: 768px) { main { grid-template-columns: 1fr; } }
+
+aside { background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; height: fit-content; position: sticky; top: 110px; }
+@media (max-width: 768px) { aside { position: static; } }
+aside h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fg-2); margin: 8px 0 6px; }
+aside ul { list-style: none; padding: 0; margin: 0 0 16px; }
+aside li.nav-cat { padding: 8px 10px; cursor: pointer; border-radius: 6px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; transition: background 0.1s; }
+aside li.nav-cat:hover { background: var(--bg-3); }
+aside li.nav-cat.active { background: var(--bg-3); color: var(--accent); font-weight: 600; }
+aside .nav-count { background: var(--bg); color: var(--fg-2); font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; }
+
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.filter-bar input, .filter-bar select { background: var(--bg-2); color: var(--fg); border: 1px solid var(--border); padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; }
+.filter-bar input { flex: 1; min-width: 200px; }
+
+.stats { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.stat { background: var(--bg-2); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); flex: 1; min-width: 80px; text-align: center; }
+.stat-num { font-size: 1.5rem; font-weight: 700; }
+.stat-lbl { font-size: 0.7rem; color: var(--fg-2); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.idea { background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; transition: border-color 0.15s; }
+.idea:hover { border-color: var(--accent); }
+.idea-head { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.idea-id { font-size: 0.7rem; color: var(--fg-2); font-family: monospace; background: var(--bg); padding: 2px 6px; border-radius: 4px; }
+.badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; color: #fff; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+.idea-title { font-size: 0.95rem; margin: 4px 0 6px; line-height: 1.35; }
+.idea-meta { font-size: 0.75rem; color: var(--fg-2); }
+
+.idea.hidden { display: none; }
+.empty { padding: 40px; text-align: center; color: var(--fg-2); }
+
+footer { padding: 20px 24px; border-top: 1px solid var(--border); text-align: center; color: var(--fg-2); font-size: 0.8rem; }
+footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>La Quebrada Viva — Idea Catalog</h1>
+  <div class="sub">Wesley van de Camp's 63-idea brainstorm for Riverstone Valley · housing park + restaurant + amenities in Escobar, Paraguay</div>
+  <div class="crumbs"><a href="./index.html">← Walkthrough home</a> · <a href="./mapa.html">Interactive map →</a></div>
+</header>
+
+<main>
+  <aside>
+    <h2>Categories</h2>
+    <ul>
+      <li class="nav-cat" data-cat="all"><span class="nav-count">63</span>All ideas</li><li class="nav-cat" data-cat="vision"><span class="nav-count">3</span>Project Vision</li><li class="nav-cat" data-cat="buyer_experience"><span class="nav-count">8</span>Buyer / Investor Experience</li><li class="nav-cat" data-cat="amenities"><span class="nav-count">8</span>Site Amenities &amp; Experiences</li><li class="nav-cat" data-cat="construction"><span class="nav-count">9</span>Construction, Materials &amp; Site Tech</li><li class="nav-cat" data-cat="house_typologies"><span class="nav-count">2</span>House Typologies</li><li class="nav-cat" data-cat="operations"><span class="nav-count">12</span>Operations, Team &amp; Workflow</li><li class="nav-cat" data-cat="finance_legal"><span class="nav-count">8</span>Finance, Legal &amp; Insurance</li><li class="nav-cat" data-cat="site_specifics"><span class="nav-count">3</span>Site-Specific Decisions</li><li class="nav-cat" data-cat="marketing"><span class="nav-count">7</span>Marketing, Distribution &amp; Sales</li><li class="nav-cat" data-cat="risk_mitigation"><span class="nav-count">3</span>Risk Mitigation &amp; Safety</li>
+    </ul>
+    <h2>Status legend</h2>
+    <ul style="font-size:0.8rem; color:var(--fg-2);">
+      <li>● shipped · live</li>
+      <li>● in_progress · building now</li>
+      <li>● planned · queued</li>
+      <li>● research_needed · blocking</li>
+      <li>● decided · closed</li>
+    </ul>
+    <h2>Read first</h2>
+    <ul style="font-size:0.8rem;">
+      <li><a href="./mapa.html" style="color:var(--accent)">Interactive site map</a></li>
+      <li><a href="./escobar3d.html" style="color:var(--accent)">3D viewer</a></li>
+    </ul>
+  </aside>
+
+  <section>
+    <div class="stats"><div class="stat"><div class="stat-num" style="color:#ef4444">17</div><div class="stat-lbl">P0</div></div><div class="stat"><div class="stat-num" style="color:#f97316">29</div><div class="stat-lbl">P1</div></div><div class="stat"><div class="stat-num" style="color:#eab308">15</div><div class="stat-lbl">P2</div></div><div class="stat"><div class="stat-num" style="color:#94a3b8">2</div><div class="stat-lbl">P3</div></div></div>
+    <div class="filter-bar">
+      <input id="search" type="search" placeholder="Search ideas by title or ID…" autocomplete="off">
+      <select id="pri-filter">
+        <option value="">All priorities</option>
+        <option value="P0">P0 only</option>
+        <option value="P1">P1 only</option>
+        <option value="P2">P2 only</option>
+        <option value="P3">P3 only</option>
+      </select>
+      <select id="status-filter">
+        <option value="">All statuses</option>
+        <option value="shipped">Shipped</option>
+        <option value="in_progress">In progress</option>
+        <option value="planned">Planned</option>
+        <option value="research_needed">Research needed</option>
+        <option value="decided">Decided</option>
+      </select>
+    </div>
+
+    <div class="grid" id="grid">
+      
+<article class="idea" data-cat="vision" data-pri="P0" data-status="shipped">
+  <div class="idea-head">
+    <span class="idea-id">v01_lqv_as_housing_park_+_restaurant_+_events_venue</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#22c55e;color:#000">shipped</span>
+  </div>
+  <h3 class="idea-title">V01: RV as housing park + restaurant + events venue</h3>
+  <div class="idea-meta">owner: Wesley+Ivan</div>
+</article>
+
+<article class="idea" data-cat="vision" data-pri="P0" data-status="confirmed">
+  <div class="idea-head">
+    <span class="idea-id">v02_2030_operational_milestone_(sonja&#x27;s_60th)</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#0ea5e9;color:#000">confirmed</span>
+  </div>
+  <h3 class="idea-title">V02: 2030 operational milestone (Sonja&#x27;s 60th)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="vision" data-pri="P0" data-status="shipped">
+  <div class="idea-head">
+    <span class="idea-id">v03_first_typology_=_la_quebrada_viva_cob_bottle_house</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#22c55e;color:#000">shipped</span>
+  </div>
+  <h3 class="idea-title">V03: First typology = Riverstone Valley cob/bottle house</h3>
+  <div class="idea-meta">owner: Erebus+Ivan</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P0" data-status="shipped">
+  <div class="idea-head">
+    <span class="idea-id">b04_buyer-facing_live_site_map</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#22c55e;color:#000">shipped</span>
+  </div>
+  <h3 class="idea-title">B04: Buyer-facing live site map</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P0" data-status="shipped_waiting_on_Wes">
+  <div class="idea-head">
+    <span class="idea-id">b07_phone_capture_pipeline_(luma_self-host)</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">shipped waiting on Wes</span>
+  </div>
+  <h3 class="idea-title">B07: Phone capture pipeline (Luma self-host)</h3>
+  <div class="idea-meta">owner: Wesley+Erebus</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P1" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">b01_vr_walkthrough_before_building</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">B01: VR walkthrough before building</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P1" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">b02_interactive_site-placement_tool_(move_houses_5m)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">B02: Interactive site-placement tool (move houses 5m)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">b03_satellite-driven_optimal_placement_(sun,_view,_pri</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">B03: Satellite-driven optimal placement (sun, view, privacy)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">b06_lidar_drone_survey_vs_hi-res_satellite_decision</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">B06: LiDAR drone survey vs hi-res satellite decision</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i12_vr_what-if_scenarios_for_investors</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I12: VR &quot;what-if&quot; scenarios for investors</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="buyer_experience" data-pri="P2" data-status="partial">
+  <div class="idea-head">
+    <span class="idea-id">b05_vr_with_local_wildlife_as_ambient_(lapacho,_jaguar</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#f97316;color:#000">partial</span>
+  </div>
+  <h3 class="idea-title">B05: VR with local wildlife as ambient (lapacho, jaguar, birds)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">a01_wellness_pools_with_natural_water,_no_chlorine</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">A01: Wellness pools with natural water, no chlorine</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">a02_romantic_tables_by_the_quebrada</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">A02: Romantic tables by the quebrada</h3>
+  <div class="idea-meta">owner: Erebus+Wesley</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">a03_weddings_&amp;_ceremonies_venue</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">A03: Weddings &amp; ceremonies venue</h3>
+  <div class="idea-meta">owner: Erebus+Wesley</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">a04_birthdays___family___corporate_events</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">A04: Birthdays / family / corporate events</h3>
+  <div class="idea-meta">owner: Erebus+Wesley</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">a08_moestuin_(vegetable_garden)_+_farmer_partnership</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">A08: Moestuin (vegetable garden) + farmer partnership</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i11_farm-to-table_pilot_1_vegetable_bed_and_1_chef_weekend</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I11: Farm-to-table pilot (1 vegetable bed + 1 chef weekend)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P3" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">a05_bird-watching_+_medicinal_plant_tours</span>
+    <span class="badge pri" style="background:#94a3b8">P3</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">A05: Bird-watching + medicinal plant tours</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="amenities" data-pri="P3" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">a06_dutch-german_restaurant_(san_bernardino_supply)</span>
+    <span class="badge pri" style="background:#94a3b8">P3</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">A06: Dutch-German restaurant (San Bernardino supply)</h3>
+  <div class="idea-meta">owner: Erebus+Wesley</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P0" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">c02_honey-color_bamboo_impregnation</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">C02: Honey-color bamboo impregnation</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P0" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">c07_ande_power_upgrade_(3-phase_plan)</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">C07: ANDE power upgrade (3-phase plan)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P0" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">c10_well_vs_stream_potable_water_decision</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">C10: Well vs stream potable water decision</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P0" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">c13_park_development_permits_+_licenses</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">C13: Park development permits + licenses</h3>
+  <div class="idea-meta">owner: Wesley+Erebus</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P0" data-status="decided">
+  <div class="idea-head">
+    <span class="idea-id">c14_gated_vs_open_community_(decision:_open_+_minimal_</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#06b6d4;color:#000">decided</span>
+  </div>
+  <h3 class="idea-title">C14: Gated vs open community (decision: open + minimal security)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">c05_water_purification_(concrete-chemical_vs_natural_w</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">C05: Water purification (concrete-chemical vs natural wetland)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">c08_phone_tower_for_cell_coverage</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">C08: Phone tower for cell coverage</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i08_construction_playbook_1_typology_end-to-end</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I08: Construction playbook (1 typology, end-to-end)</h3>
+  <div class="idea-meta">owner: Wesley+Erebus</div>
+</article>
+
+<article class="idea" data-cat="construction" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i17_local_labor_exchange_with_san_bernardino_builders</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I17: Local labor exchange with San Bernardino builders</h3>
+  <div class="idea-meta">owner: Wesley+Erebus</div>
+</article>
+
+<article class="idea" data-cat="house_typologies" data-pri="P0" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i03_glamping_tent_prototype_revenue-positive_in_3_months</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I03: Glamping tent prototype (revenue-positive in 3 months)</h3>
+  <div class="idea-meta">owner: Erebus+Wesley</div>
+</article>
+
+<article class="idea" data-cat="house_typologies" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">t04_type_w_—_worker_housing_(8_rooms_×_25-30_m²_long_h</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">T04: Type W — Worker housing (8 rooms × 25-30 m² long house)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P0" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">o01_jos_+_thijs_onboarding_(first_months)</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">O01: Jos + Thijs onboarding (first months)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i01_reservation_widget_and_whatsapp_handoff</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I01: Reservation widget + WhatsApp handoff</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i02_operations_dashboard_multi-calendar_view</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I02: Operations dashboard (multi-calendar view)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">o02_hire_previous_owner&#x27;s_caretaker_(new_contract)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">O02: Hire previous owner&#x27;s caretaker (new contract)</h3>
+  <div class="idea-meta">owner: Wesley+Sonja</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">o03_cow_takeover_(terrain_maintenance)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">O03: Cow takeover (terrain maintenance)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">o08_farmer_(terrain_maintenance)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">O08: Farmer (terrain maintenance)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P1" data-status="ongoing">
+  <div class="idea-head">
+    <span class="idea-id">o10_cultural_adaptation_(nl_direct_vs_py_indirect)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#eab308;color:#000">ongoing</span>
+  </div>
+  <h3 class="idea-title">O10: Cultural adaptation (NL direct vs PY indirect)</h3>
+  <div class="idea-meta">owner: Wesley+Sonja</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P1" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">o14_whatsapp_lqv_group_(wes+thijs+josh+ivan+kiki+erebu</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">O14: WhatsApp RV group (Wes+Thijs+Josh+Ivan+Kiki+Erebus)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P2" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">o11_ai_&#x27;wish_genie&#x27;_assistant_(open-ended_ideation)</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">O11: AI &#x27;wish genie&#x27; assistant (open-ended ideation)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P2" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">o12_iterative_research_methodology_(idea_-&gt;_topics_-&gt;_</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">O12: Iterative research methodology (idea -&gt; topics -&gt; research -&gt; gaps -&gt; plan)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">o13_quarterly_questionnaire_to_wes</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">O13: Quarterly questionnaire to Wes</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="operations" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">o15_recording_sessions_with_thijs_+_josh_(3-5h_smoke_e</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">O15: Recording sessions with Thijs + Josh (3-5h smoke/eat/talk)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P0" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">f01_4-entity_bv_cascade_(land_py_+_finance_nl_+_phase_</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">F01: 4-entity BV cascade (land PY + finance NL + Phase 1 + Phase 2 + Phase 3)</h3>
+  <div class="idea-meta">owner: Wesley+Erebus+accountant</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P0" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">f05_insurance_stack_(fire_+_storm_+_hurricane_+_liabil</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">F05: Insurance stack (fire + storm + hurricane + liability + interruption + key-person)</h3>
+  <div class="idea-meta">owner: Wesley+broker</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P0" data-status="partial">
+  <div class="idea-head">
+    <span class="idea-id">f08_first-pass_cost_estimate_(whole_project)</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#f97316;color:#000">partial</span>
+  </div>
+  <h3 class="idea-title">F08: First-pass cost estimate (whole project)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">f03_py_s.a._vs_s.r.l._vs_e.a.s._decision</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">F03: PY S.A. vs S.R.L. vs E.A.S. decision</h3>
+  <div class="idea-meta">owner: Wesley+accountant</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">f04_nl_holding_+_py_subsidiary_vs_parallel_entities</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">F04: NL holding + PY subsidiary vs parallel entities</h3>
+  <div class="idea-meta">owner: Wesley+accountant</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P1" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">f10_bank_account_opening_(py_local_bank)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">F10: Bank account opening (PY local bank)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">f11_tax_advisor_consultation_(nl_+_py)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">F11: Tax advisor consultation (NL + PY)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="finance_legal" data-pri="P1" data-status="in_progress">
+  <div class="idea-head">
+    <span class="idea-id">f12_interpol_documents_for_wes</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#eab308;color:#000">in progress</span>
+  </div>
+  <h3 class="idea-title">F12: Interpol documents for Wes</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="site_specifics" data-pri="P0" data-status="decided">
+  <div class="idea-head">
+    <span class="idea-id">s02_eco_positioning_(not_&#x27;ecopark&#x27;_-_politically_loade</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#06b6d4;color:#000">decided</span>
+  </div>
+  <h3 class="idea-title">S02: Eco positioning (NOT &#x27;ecopark&#x27; - politically loaded)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="site_specifics" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">s03_locate_depot_on_terrain</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">S03: Locate depot on terrain</h3>
+  <div class="idea-meta">owner: Wesley+Thijs</div>
+</article>
+
+<article class="idea" data-cat="site_specifics" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">s04_moestuin_piketten_with_gps_(for_watering_routes)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">S04: Moestuin piketten with GPS (for watering routes)</h3>
+  <div class="idea-meta">owner: Wesley+Jos+Thijs</div>
+</article>
+
+<article class="idea" data-cat="marketing" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i06_drone_hero_video_90-sec_park_tour</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I06: Drone hero video (90-sec park tour)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="marketing" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">m01_booking.com_+_airbnb_listings_(post-first-build)</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">M01: Booking.com + Airbnb listings (post-first-build)</h3>
+  <div class="idea-meta">owner: Wesley+Erebus</div>
+</article>
+
+<article class="idea" data-cat="marketing" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">m02_pr_push_to_german_dutch_expat_community_in_py</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">M02: PR push to German/Dutch expat community in PY</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="marketing" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">m06_eu_traveler_audience_signals_(booking_airbnb_rural</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">M06: EU traveler audience signals (Booking/Airbnb rural PY data)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="marketing" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i16_bilingual_content_hub_nl_and_en_and_es</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I16: Bilingual content hub (NL + EN + ES)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="marketing" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">m03_video_walkthrough_(90-sec_ken-burns_pan)</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">M03: Video walkthrough (90-sec ken-burns pan)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="marketing" data-pri="P2" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">m04_interactive_web_showcase_(paragu-ai.com_s_lqv)</span>
+    <span class="badge pri" style="background:#eab308">P2</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">M04: Interactive web showcase (paragu-ai.com/s/lqv)</h3>
+  <div class="idea-meta">owner: Erebus</div>
+</article>
+
+<article class="idea" data-cat="risk_mitigation" data-pri="P0" data-status="decided">
+  <div class="idea-head">
+    <span class="idea-id">r04_minimal_security_(gate_+_camera,_not_full_gated)</span>
+    <span class="badge pri" style="background:#ef4444">P0</span>
+    <span class="badge status" style="background:#06b6d4;color:#000">decided</span>
+  </div>
+  <h3 class="idea-title">R04: Minimal security (gate + camera, not full gated)</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+
+<article class="idea" data-cat="risk_mitigation" data-pri="P1" data-status="planned">
+  <div class="idea-head">
+    <span class="idea-id">i18_water_security_audit_drought_and_contamination</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#94a3b8;color:#000">planned</span>
+  </div>
+  <h3 class="idea-title">I18: Water security audit (drought + contamination)</h3>
+  <div class="idea-meta">owner: Wesley+Erebus</div>
+</article>
+
+<article class="idea" data-cat="risk_mitigation" data-pri="P1" data-status="research_needed">
+  <div class="idea-head">
+    <span class="idea-id">r03_storm_+_hurricane_season_prep</span>
+    <span class="badge pri" style="background:#f97316">P1</span>
+    <span class="badge status" style="background:#a855f7;color:#000">research needed</span>
+  </div>
+  <h3 class="idea-title">R03: Storm + hurricane season prep</h3>
+  <div class="idea-meta">owner: Wesley</div>
+</article>
+    </div>
+    <div class="empty hidden" id="empty">No ideas match your filter.</div>
+  </section>
+</main>
+
+<footer>
+  La Quebrada Viva · Escobar, Paraguarí, Paraguay · Built by Erebus · 63 ideas across 10 categories
+</footer>
+
+<script>
+(function() {
+  const cards = Array.from(document.querySelectorAll('.idea'));
+  const search = document.getElementById('search');
+  const priFilter = document.getElementById('pri-filter');
+  const statusFilter = document.getElementById('status-filter');
+  const navCats = Array.from(document.querySelectorAll('li.nav-cat'));
+  const empty = document.getElementById('empty');
+  let activeCat = 'all';
+
+  function applyFilters() {
+    const q = (search.value || '').toLowerCase();
+    const pri = priFilter.value;
+    const st = statusFilter.value;
+    let visible = 0;
+    for (const c of cards) {
+      const title = c.querySelector('.idea-title').textContent.toLowerCase();
+      const id = c.dataset.id || c.querySelector('.idea-id').textContent.toLowerCase();
+      const matchSearch = !q || title.includes(q) || id.includes(q);
+      const matchCat = activeCat === 'all' || c.dataset.cat === activeCat;
+      const matchPri = !pri || c.dataset.pri === pri;
+      const matchSt = !st || c.dataset.status === st;
+      const show = matchSearch && matchCat && matchPri && matchSt;
+      c.classList.toggle('hidden', !show);
+      if (show) visible++;
+    }
+    empty.classList.toggle('hidden', visible > 0);
+  }
+
+  for (const li of navCats) {
+    li.addEventListener('click', () => {
+      navCats.forEach(x => x.classList.remove('active'));
+      li.classList.add('active');
+      activeCat = li.dataset.cat;
+      applyFilters();
+    });
+  }
+  search.addEventListener('input', applyFilters);
+  priFilter.addEventListener('change', applyFilters);
+  statusFilter.addEventListener('change', applyFilters);
+
+  // Activate "All" by default
+  navCats[0].classList.add('active');
+})();
+</script>
+
+</body>
+</html>
