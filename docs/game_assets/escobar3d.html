@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Quebrada Viva — Escobar 3D</title>
-<link href="https://cesium.com/downloads/cesiumjs/releases/1.121/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-<script src="https://cesium.com/downloads/cesiumjs/releases/1.121/Build/Cesium/Cesium.js"></script>
+<link href="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Cesium.js"></script>
 <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 <style>
   html, body, #cesiumContainer { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; }
@@ -399,21 +399,84 @@ function showLoading(show) {
   document.getElementById('loading').classList.toggle('show', show);
 }
 
+// === Pre-decode heightmap PNG → Float32Array (one per LOD) ===
+// CustomHeightmapTerrainProvider needs raw elevation data via callback,
+// not a URL. We decode the 16-bit grayscale PNG to a Float32Array once
+// per LOD, then the callback samples from it.
+const heightmapDataCache = {}; // lodId → Float32Array(w*h)
+
+async function preloadHeightmap(lodId) {
+  if (heightmapDataCache[lodId]) return heightmapDataCache[lodId];
+  const lod = LODS[lodId];
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      const c = document.createElement('canvas');
+      c.width = img.width; c.height = img.height;
+      const ctx = c.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      const data = ctx.getImageData(0, 0, img.width, img.height).data;
+      const elev = new Float32Array(img.width * img.height);
+      const [emin, emax] = lod.heightmapRange;
+      for (let i = 0; i < img.width * img.height; i++) {
+        // 16-bit PNG stored as RGBA: R = low byte, G = high byte
+        const r1 = data[i * 4], g1 = data[i * 4 + 1];
+        const uint16 = (g1 << 8) | r1;
+        elev[i] = emin + (uint16 / 65535) * (emax - emin);
+      }
+      heightmapDataCache[lodId] = {
+        elev, width: img.width, height: img.height,
+        bounds: lod.heightmapBounds,
+        lod,
+      };
+      console.log(`[heightmap] decoded LOD${lodId} (${img.width}x${img.height})`);
+      resolve(heightmapDataCache[lodId]);
+    };
+    img.onerror = e => reject(new Error(`Failed to load ${lod.heightmapUrl}: ${e}`));
+    img.src = lod.heightmapUrl;
+  });
+}
+
 function applyLod(lodId) {
   if (lodId === activeLodId) return;
   const lod = LODS[lodId];
   console.log(`[LOD] Switching to LOD${lod.id} (${lod.name})`);
   showLoading(true);
 
-  const heightmapProvider = new Cesium.HeightmapTerrainProvider({
-    url: lod.heightmapUrl,
+  // Use CustomHeightmapTerrainProvider (available in Cesium 1.122+).
+  // Callback returns Float32Array(w*h) of elevation values for the tile (x, y, level).
+  // We pre-decoded the full heightmap; callback samples from it.
+  const provider = new Cesium.CustomHeightmapTerrainProvider({
+    width: lod.heightmapSize[0],
+    height: lod.heightmapSize[1],
     credit: new Cesium.Credit(`LQV heightmap LOD${lod.id} (ALOS + AWS terrain-rgb)`),
-    width: lod.heightmapSize[0], height: lod.heightmapSize[1],
     tilingScheme: new Cesium.GeographicTilingScheme(),
-    rectangle: Cesium.Rectangle.fromDegrees(...lod.heightmapBounds),
-    minimumLevel: 0, maximumLevel: lod.id,
+    callback: (x, y, level) => {
+      // For our 3 LODs, the entire AOI fits in a single tile at level 0.
+      // Return the full heightmap; for higher levels we upsample via bilinear.
+      const data = heightmapDataCache[lodId];
+      if (!data) return new Float32Array(lod.heightmapSize[0] * lod.heightmapSize[1]);
+      if (level === 0 && x === 0 && y === 0) {
+        // Return raw data
+        return data.elev;
+      }
+      // For higher detail levels, bilinear upsample
+      const w = lod.heightmapSize[0], h = lod.heightmapSize[1];
+      const scale = Math.pow(2, level);
+      const out = new Float32Array(w * h);
+      for (let py = 0; py < h; py++) {
+        for (let px = 0; px < w; px++) {
+          // Map output (px, py) → source via simple nearest-neighbor with scale
+          const sx = Math.min(w - 1, Math.floor(px / scale));
+          const sy = Math.min(h - 1, Math.floor(py / scale));
+          out[py * w + px] = data.elev[sy * w + sx];
+        }
+      }
+      return out;
+    },
   });
-  viewer.terrainProvider = heightmapProvider;
+  viewer.terrainProvider = provider;
 
   viewer.imageryLayers.removeAll();
   const imageryProvider = new Cesium.SingleTileImageryProvider({
@@ -434,6 +497,13 @@ function applyLod(lodId) {
   updateOverlayVisibilityByLod();
   // Hide loading after tiles render
   setTimeout(() => showLoading(false), 800);
+}
+
+// Pre-load all 3 LOD heightmaps at startup (parallel)
+async function preloadAllHeightmaps() {
+  console.log('[heightmap] pre-loading all LODs in parallel...');
+  await Promise.all([0, 1, 2].map(id => preloadHeightmap(id).catch(e => console.warn(`LOD${id} preload failed:`, e))));
+  console.log('[heightmap] all LODs ready');
 }
 
 function updateCameraReadout() {
@@ -959,8 +1029,13 @@ if (!restored) {
 }
 
 // === Kick off ===
+// Pre-load all 3 heightmaps in parallel, then apply LOD0 and start overlays
+preloadAllHeightmaps().then(() => {
+  applyLod(0);
+  loadOverlays();
+});
+// Apply LOD0 immediately so the flat ellipsoid + imagery render while heightmap loads
 applyLod(0);
-loadOverlays();
 
 // Update URL every 5 seconds while user navigates
 setInterval(updateUrlWithCamera, 5000);
