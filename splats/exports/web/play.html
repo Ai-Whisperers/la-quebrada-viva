@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LQV 3D World — Client Planning Tool</title>
-<meta name="description" content="Interactive 3D world of La Quebrada Viva property in Escobar, Paraguay. Walk around, place houses, measure distances, analyze slopes. Built for client planning meetings.">
+<title>LQV 3D World — Client Planning Tool v9</title>
+<meta name="description" content="Interactive 3D world of La Quebrada Viva 62-hectare property in Escobar, Paraguay. Walk, place houses, measure, analyze. Real terrain + cerros from DEM data.">
 <link rel="canonical" href="https://lqv-walkthrough.pages.dev/play.html">
 <style>
   :root {
@@ -14,24 +14,21 @@
     --fg-2: #a8a195;
     --gold: #d4a154;
     --gold-dk: #8a6a3a;
-    --grass: #7a9b4e;
     --water: #5b9dd9;
-    --cob: #d4a154;
     --rock: #6e6258;
-    --lapacho: #d4956a;
     --warning: #c87f3e;
+    --success: #84cc16;
   }
   * { box-sizing: border-box; }
   html, body {
     margin: 0; padding: 0; height: 100%; overflow: hidden;
     background: var(--bg);
     color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
   }
   #scene { position: absolute; inset: 0; }
   canvas { display: block; }
 
-  /* Header */
   .topbar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 10;
     background: rgba(14, 20, 34, 0.92);
@@ -43,67 +40,74 @@
   .topbar h1 {
     margin: 0; font-size: 1.1rem; color: var(--gold);
     font-family: "Cormorant Garamond", "Georgia", serif; font-weight: 500;
-    letter-spacing: 0.02em;
   }
   .topbar .sub {
     font-size: 0.7rem; color: var(--fg-2); margin-top: 2px;
-    letter-spacing: 0.04em;
   }
   .topbar-right { display: flex; gap: 8px; }
   .btn {
     background: var(--bg-2); color: var(--fg);
     border: 1px solid var(--gold-dk);
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-family: inherit;
-    transition: background 0.15s;
   }
   .btn:hover { background: var(--gold-dk); }
   .btn.primary { background: var(--gold); color: #1a1410; border-color: var(--gold); }
   .btn.primary:hover { background: #e8c178; }
+  .btn.small { padding: 4px 8px; font-size: 0.75rem; }
 
-  /* Camera mode chips */
-  .mode-chips {
+  /* Camera mode chips + zoom presets */
+  .bottom-bar {
     position: fixed; bottom: 18px; left: 18px; z-index: 10;
-    display: flex; gap: 6px;
+    display: flex; flex-direction: column; gap: 8px;
   }
+  .chip-row { display: flex; gap: 6px; flex-wrap: wrap; }
   .chip {
     background: rgba(14, 20, 34, 0.85);
     border: 1px solid var(--gold-dk);
     color: var(--fg-2);
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    padding: 7px 12px;
+    border-radius: 16px;
+    font-size: 0.78rem;
     cursor: pointer;
     backdrop-filter: blur(8px);
     user-select: none;
+    white-space: nowrap;
   }
+  .chip:hover { color: var(--gold); border-color: var(--gold); }
   .chip.active {
     background: var(--gold);
     color: #1a1410;
     border-color: var(--gold);
     font-weight: 600;
   }
+  .chip-label {
+    font-size: 0.65rem; color: var(--fg-2);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 2px;
+    margin-left: 4px;
+  }
 
-  /* Right panel: tools + analysis */
   .panel {
     position: fixed; top: 60px; right: 0; bottom: 0;
-    width: 280px; z-index: 9;
+    width: 270px; z-index: 9;
     background: rgba(14, 20, 34, 0.92);
     backdrop-filter: blur(12px);
     border-left: 1px solid rgba(212, 161, 84, 0.2);
     padding: 14px 16px;
     overflow-y: auto;
     font-size: 0.85rem;
-    display: flex; flex-direction: column; gap: 12px;
+    display: flex; flex-direction: column; gap: 10px;
   }
   .panel h3 {
-    margin: 8px 0 4px; color: var(--gold);
-    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+    margin: 6px 0 4px; color: var(--gold);
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
   }
-  .panel-section { border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 10px; }
+  .panel-section { border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; }
   .tool-row {
     display: flex; align-items: center; gap: 8px;
     padding: 4px 0; cursor: pointer;
@@ -111,10 +115,25 @@
   .tool-row:hover { color: var(--gold); }
   .tool-row.active { color: var(--gold); font-weight: 600; }
   .tool-row input[type="radio"] { accent-color: var(--gold); }
-  .overlay-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 4px 0;
+
+  .typo-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
+  .typo-card {
+    background: var(--bg-2);
+    border: 1px solid rgba(212, 161, 84, 0.2);
+    border-radius: 6px;
+    padding: 6px 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+  .typo-card:hover { border-color: var(--gold); }
+  .typo-card.selected { background: var(--gold); color: #1a1410; border-color: var(--gold); }
+  .typo-card .icon { font-size: 1.3rem; line-height: 1; }
+  .typo-card .name { font-size: 0.7rem; margin-top: 3px; }
+
   .toggle {
     position: relative;
     width: 32px; height: 18px;
@@ -133,73 +152,45 @@
   }
   .toggle.on { background: var(--gold); }
   .toggle.on::after { transform: translateX(14px); background: #1a1410; }
+  .overlay-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 3px 0;
+  }
   .overlay-swatch {
-    display: inline-block; width: 14px; height: 14px;
-    border-radius: 3px; margin-right: 6px; vertical-align: middle;
+    display: inline-block; width: 12px; height: 12px;
+    border-radius: 2px; margin-right: 6px; vertical-align: middle;
     border: 1px solid rgba(255,255,255,0.1);
   }
 
-  .typo-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 6px;
-  }
-  .typo-card {
-    background: var(--bg-2);
-    border: 1px solid rgba(212, 161, 84, 0.2);
-    border-radius: 6px;
-    padding: 8px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.15s;
-  }
-  .typo-card:hover { border-color: var(--gold); }
-  .typo-card.selected { background: var(--gold); color: #1a1410; border-color: var(--gold); }
-  .typo-card .icon { font-size: 1.5rem; line-height: 1; }
-  .typo-card .name { font-size: 0.75rem; margin-top: 4px; }
-
-  /* HUD: site analysis */
+  /* HUD: site analysis (smaller + compact) */
   .hud {
     position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
     z-index: 10;
-    background: rgba(14, 20, 34, 0.92);
+    background: rgba(14, 20, 34, 0.94);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 161, 84, 0.3);
+    border: 1px solid rgba(212, 161, 84, 0.4);
     border-radius: 8px;
-    padding: 10px 18px;
-    font-size: 0.85rem;
-    min-width: 400px;
-    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    min-width: 380px;
+    max-width: 90vw;
     display: none;
+    pointer-events: none;
   }
   .hud.show { display: block; }
-  .hud .hud-pin { color: var(--gold); font-weight: 600; }
+  .hud .hud-pin { color: var(--gold); font-weight: 600; margin-bottom: 4px; font-size: 0.85rem; }
   .hud .hud-row {
-    display: flex; justify-content: space-between; gap: 18px;
-    margin-top: 4px;
+    display: flex; justify-content: space-between; gap: 16px;
+    margin-top: 3px;
   }
+  .hud .hud-label { color: var(--fg-2); font-size: 0.72rem; }
   .hud .hud-val { color: var(--fg); font-weight: 500; }
   .hud .hud-warn { color: var(--warning); }
+  .hud .hud-good { color: var(--success); }
 
-  /* Measure overlay */
-  .measure-line {
-    stroke: var(--gold);
-    stroke-width: 2;
-    stroke-dasharray: 6 4;
-  }
-  .measure-label {
-    fill: var(--gold);
-    font-size: 14px;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    paint-order: stroke fill;
-    stroke: rgba(14, 20, 34, 0.9);
-    stroke-width: 4;
-    stroke-linejoin: round;
-  }
-
-  /* Footer */
+  /* Cerros labels (sprites in 3D, but also visible) */
   .footer {
-    position: fixed; bottom: 0; left: 0; right: 280px; z-index: 8;
+    position: fixed; bottom: 0; left: 0; right: 270px; z-index: 8;
     padding: 6px 18px;
     font-size: 0.7rem; color: var(--fg-2);
     background: linear-gradient(to top, rgba(14, 20, 34, 0.85), transparent);
@@ -213,7 +204,6 @@
     color: var(--gold);
   }
 
-  /* Loading banner */
   #loading {
     position: fixed; inset: 0; z-index: 100;
     background: var(--bg);
@@ -236,16 +226,17 @@
     animation: spin 1s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* Hidden HUD for screenshot */
-  .hide-for-shot { display: none !important; }
+  #loading .progress {
+    margin-top: 16px; color: var(--fg-2); font-size: 0.82rem;
+    min-height: 1.2em;
+  }
 </style>
 </head>
 <body>
 <div id="loading">
   <div class="title">La Quebrada Viva · 3D World</div>
   <div class="spinner"></div>
-  <div style="margin-top:14px;color:var(--fg-2);font-size:0.85rem">Loading terrain + trees + houses…</div>
+  <div class="progress" id="progress">Loading terrain (20 km × 20 km DEM)…</div>
 </div>
 
 <div id="scene"></div>
@@ -253,32 +244,46 @@
 <div class="topbar">
   <div>
     <h1>La Quebrada Viva — Client Planning Tool</h1>
-    <div class="sub">62-hectare property · Escobar, Paraguarí, Paraguay · Low-poly retro world</div>
+    <div class="sub" id="sub">62-ha property · 20 km context · DEM-derived terrain</div>
   </div>
   <div class="topbar-right">
-    <button class="btn" id="btn-screenshot">📷 Screenshot</button>
-    <button class="btn" id="btn-save">💾 Save Layout</button>
-    <button class="btn primary" id="btn-load">↻ Load Layout</button>
+    <button class="btn" id="btn-screenshot">📷</button>
+    <button class="btn" id="btn-save">💾</button>
+    <button class="btn primary" id="btn-load">↻ Load</button>
   </div>
 </div>
 
-<div class="mode-chips">
-  <div class="chip" data-camera="walk">🚶 Walk</div>
-  <div class="chip active" data-camera="orbit">🛰 Orbit</div>
-  <div class="chip" data-camera="cinematic">🎬 Cinematic</div>
+<div class="bottom-bar">
+  <div>
+    <div class="chip-label">Camera</div>
+    <div class="chip-row">
+      <div class="chip" data-camera="walk">🚶 Walk</div>
+      <div class="chip active" data-camera="orbit">🛰 Orbit</div>
+      <div class="chip" data-camera="cinematic">🎬 Cinematic</div>
+    </div>
+  </div>
+  <div>
+    <div class="chip-label">Zoom presets</div>
+    <div class="chip-row">
+      <div class="chip" data-zoom="context">🌍 Full context (10km)</div>
+      <div class="chip" data-zoom="property">📍 Property (500m)</div>
+      <div class="chip" data-zoom="parcel">🏞 Parcel (100m)</div>
+      <div class="chip" data-zoom="house">🏠 House (10m)</div>
+      <div class="chip" data-zoom="monte">⛰ Cerro (2km)</div>
+    </div>
+  </div>
 </div>
 
 <div class="hud" id="hud">
   <div class="hud-pin" id="hud-pin">📍 —</div>
   <div class="hud-row">
-    <span>Elevation <span class="hud-val" id="hud-elev">—</span></span>
-    <span>Slope <span class="hud-val" id="hud-slope">—</span></span>
-    <span>Aspect <span class="hud-val" id="hud-aspect">—</span></span>
+    <span><span class="hud-label">Elev</span> <span class="hud-val" id="hud-elev">—</span></span>
+    <span><span class="hud-label">Slope</span> <span class="hud-val" id="hud-slope">—</span></span>
+    <span><span class="hud-label">Aspect</span> <span class="hud-val" id="hud-aspect">—</span></span>
   </div>
   <div class="hud-row">
-    <span>Buildability <span class="hud-val" id="hud-build">—</span></span>
-    <span>Nearest quebrada <span class="hud-val" id="hud-quebrada">—</span></span>
-    <span>NDVI <span class="hud-val" id="hud-ndvi">—</span></span>
+    <span><span class="hud-label">Build</span> <span class="hud-val" id="hud-build">—</span></span>
+    <span><span class="hud-label">Lon/Lat</span> <span class="hud-val" id="hud-lonlat">—</span></span>
   </div>
 </div>
 
@@ -286,77 +291,70 @@
   <div class="panel-section">
     <h3>Tool</h3>
     <div class="tool-row active" data-tool="inspect">
-      <input type="radio" name="tool" checked> 🔍 Inspect — click terrain to read elevation/slope
+      <input type="radio" name="tool" checked> 🔍 Inspect
     </div>
     <div class="tool-row" data-tool="measure">
-      <input type="radio" name="tool"> 📏 Measure — click 2 points → distance + slope
+      <input type="radio" name="tool"> 📏 Measure (2 clicks)
     </div>
     <div class="tool-row" data-tool="place">
-      <input type="radio" name="tool"> 🏠 Place — click terrain to drop a typology
+      <input type="radio" name="tool"> 🏠 Place house
     </div>
     <div class="tool-row" data-tool="remove">
-      <input type="radio" name="tool"> 🗑 Remove — click a placed house to remove it
+      <input type="radio" name="tool"> 🗑 Remove
     </div>
   </div>
 
   <div class="panel-section" id="typo-section" style="display:none">
-    <h3>Typology to place</h3>
+    <h3>Typology</h3>
     <div class="typo-grid">
       <div class="typo-card selected" data-typo="lqv_lowpoly_house_cob">
-        <div class="icon">🏠</div><div class="name">Cob House</div>
+        <div class="icon">🏠</div><div class="name">Cob</div>
       </div>
       <div class="typo-card" data-typo="lqv_lowpoly_typo_tatakua">
         <div class="icon">🔥</div><div class="name">Tatakua</div>
       </div>
       <div class="typo-card" data-typo="lqv_lowpoly_typo_worker">
-        <div class="icon">🏘</div><div class="name">Worker Housing</div>
+        <div class="icon">🏘</div><div class="name">Worker</div>
       </div>
       <div class="typo-card" data-typo="lqv_lowpoly_typo_wigwam">
         <div class="icon">⛺</div><div class="name">Wigwam</div>
       </div>
       <div class="typo-card" data-typo="lqv_lowpoly_typo_glamping">
-        <div class="icon">🎪</div><div class="name">Glamping Tent</div>
-      </div>
-      <div class="typo-card" data-typo="remove">
-        <div class="icon">❌</div><div class="name">Undo Last</div>
+        <div class="icon">🎪</div><div class="name">Glamping</div>
       </div>
     </div>
   </div>
 
   <div class="panel-section">
-    <h3>Site Analysis Overlays</h3>
+    <h3>Overlays</h3>
     <div class="overlay-row">
-      <span><span class="overlay-swatch" style="background:#dc2626"></span>Buildability (slope)</span>
-      <div class="toggle on" data-overlay="buildability"></div>
-    </div>
-    <div class="overlay-row">
-      <span><span class="overlay-swatch" style="background:#06b6d4"></span>Solar PV zones</span>
-      <div class="toggle" data-overlay="solar"></div>
-    </div>
-    <div class="overlay-row">
-      <span><span class="overlay-swatch" style="background:#5b9dd9"></span>Quebrada + 50m buffer</span>
+      <span><span class="overlay-swatch" style="background:#dc2626"></span>Quebrada + 50m buffer</span>
       <div class="toggle on" data-overlay="quebrada"></div>
     </div>
     <div class="overlay-row">
-      <span><span class="overlay-swatch" style="background:#7c2d12"></span>Cerros / peaks</span>
+      <span><span class="overlay-swatch" style="background:#7c2d12"></span>Cerros (cone markers)</span>
       <div class="toggle on" data-overlay="cerros"></div>
     </div>
     <div class="overlay-row">
-      <span><span class="overlay-swatch" style="background:#22c55e"></span>NDVI canopy</span>
-      <div class="toggle" data-overlay="ndvi"></div>
+      <span><span class="overlay-swatch" style="background:#d4a154"></span>Wes's walking path</span>
+      <div class="toggle on" data-overlay="trail"></div>
+    </div>
+    <div class="overlay-row">
+      <span><span class="overlay-swatch" style="background:#22c55e"></span>Property polygon</span>
+      <div class="toggle" data-overlay="property"></div>
     </div>
   </div>
 
   <div class="panel-section">
-    <h3>Placed Houses</h3>
-    <div id="placed-list" style="font-size:0.8rem;color:var(--fg-2);max-height:140px;overflow-y:auto">
-      <em>None yet — pick "Place" tool above, choose a typology, then click terrain.</em>
+    <h3>Placed houses (<span id="placed-count">0</span>)</h3>
+    <div id="placed-list" style="font-size:0.78rem;color:var(--fg-2);max-height:120px;overflow-y:auto">
+      <em>None yet — switch to Place tool above.</em>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  <kbd>WASD</kbd> walk · <kbd>Shift</kbd> sprint · <kbd>Mouse</kbd> look · <kbd>Space</kbd> up · <kbd>C</kbd> down · <kbd>Esc</kbd> release mouse · <kbd>1/2/3</kbd> camera modes
+  <kbd>WASD</kbd> walk · <kbd>Shift</kbd> sprint · <kbd>Space/C</kbd> up/down · <kbd>1/2/3</kbd> camera · <kbd>Esc</kbd> release mouse
 </div>
 
 <script type="importmap">
@@ -374,472 +372,385 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
 
 // ============================================================
-// CONFIG
+// CONFIG — all coords in METRES from parcel centroid
 // ============================================================
 const ASSET_BASE = './game_assets_lite/assets/lowpoly/';
-const DATA_BASE = './game_assets_lite/';  // for elevation_grid.json + GeoJSONs
+const TERRAIN_GLTF = ASSET_BASE + 'lqv_lowpoly_terrain.glb';
+const TERRAIN_DATA = ASSET_BASE + 'terrain_mesh_data.json';
+const WORLD_JSON = ASSET_BASE + 'lqv_lowpoly_world.json';
 
-// Property anchor (real-world coords): parcel centroid
-const PARCEL_LON = -57.0304;
-const PARCEL_LAT = -25.6082;
-// The terrain mesh from Blender: X 0-107m, Y -179-0m, Z 116-395m
-// We treat the terrain as local coords (no WGS84 mapping — it's already in metres)
+// World bounds (from elevation_grid.json — 20km × 20km)
+const WORLD_MIN_X = -10000, WORLD_MAX_X = 10000;
+const WORLD_MIN_Z = -10000, WORLD_MAX_Z = 10000;
+const WORLD_CENTER_Y = 250;  // approximate average terrain elevation (visual mid-point)
 
 // ============================================================
-// THREE.JS SCENE
+// WEBGL PROBE
+// ============================================================
+function hasWebGL() {
+  try {
+    const c = document.createElement('canvas');
+    return !!(c.getContext('webgl2') || c.getContext('webgl') || c.getContext('experimental-webgl'));
+  } catch (e) { return false; }
+}
+if (!hasWebGL()) {
+  document.getElementById('loading').innerHTML = `
+    <div style="color:var(--fg);max-width:600px;padding:32px;text-align:center">
+      <div class="title" style="color:var(--warning)">WebGL not available</div>
+      <p style="margin:18px 0;color:var(--fg-2)">Try Chrome / Firefox / Safari (latest) with hardware acceleration enabled.</p>
+      <p><a href="./mapa.html" style="color:var(--gold)">→ Try the 2D map instead</a></p>
+    </div>`;
+  throw new Error('WebGL not supported');
+}
+
+// ============================================================
+// THREE.JS SETUP
 // ============================================================
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xe8d8b0);  // warm hazy sky
-scene.fog = new THREE.Fog(0xe8d8b0, 600, 3000);
+scene.background = new THREE.Color(0xe8d8b0);
+scene.fog = new THREE.Fog(0xe8d8b0, 8000, 25000);  // fog kicks in at 8km, full at 25km
 
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.5, 8000);
-camera.position.set(60, -100, 250);
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 50000);
+camera.position.set(0, 300, 800);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.getElementById('scene').appendChild(renderer.domElement);
 
-// Lighting (cel-shaded warm sun + ambient)
+// Lighting
 const sun = new THREE.DirectionalLight(0xfff0d0, 2.5);
-sun.position.set(200, -200, 400);
+sun.position.set(2000, 1500, 3000);
 sun.castShadow = true;
 sun.shadow.mapSize.set(2048, 2048);
-sun.shadow.camera.left = -500;
-sun.shadow.camera.right = 500;
-sun.shadow.camera.top = 500;
-sun.shadow.camera.bottom = -500;
+sun.shadow.camera.left = -3000;
+sun.shadow.camera.right = 3000;
+sun.shadow.camera.top = 3000;
+sun.shadow.camera.bottom = -3000;
 sun.shadow.camera.near = 1;
-sun.shadow.camera.far = 1500;
+sun.shadow.camera.far = 8000;
 scene.add(sun);
 
 const ambient = new THREE.HemisphereLight(0xcce0ff, 0x6a4a30, 1.0);
 scene.add(ambient);
 
-// Sky gradient (warm dusk via large back-facing sphere)
-const skyGeo = new THREE.SphereGeometry(4000, 32, 16);
+// Sky
+const skyGeo = new THREE.SphereGeometry(25000, 32, 16);
 const skyMat = new THREE.ShaderMaterial({
-  uniforms: {
-    topColor: { value: new THREE.Color(0xfce8b0) },
-    bottomColor: { value: new THREE.Color(0xd4a154) },
-    offset: { value: 33 },
-    exponent: { value: 0.6 }
-  },
-  vertexShader: `
-    varying vec3 vWorldPosition;
-    void main() {
-      vec4 worldPosition = modelMatrix * vec4(position, 1.0);
-      vWorldPosition = worldPosition.xyz;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-    }
-  `,
-  fragmentShader: `
-    uniform vec3 topColor;
-    uniform vec3 bottomColor;
-    uniform float offset;
-    uniform float exponent;
-    varying vec3 vWorldPosition;
-    void main() {
-      float h = normalize(vWorldPosition + offset).y;
-      gl_FragColor = vec4(mix(bottomColor, topColor, max(pow(max(h, 0.0), exponent), 0.0)), 1.0);
-    }
-  `,
+  uniforms: { topColor: { value: new THREE.Color(0xfce8b0) }, bottomColor: { value: new THREE.Color(0xd4a154) }, offset: { value: 1000 }, exponent: { value: 0.6 } },
+  vertexShader: `varying vec3 vWP; void main() { vWP = (modelMatrix * vec4(position, 1.0)).xyz; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+  fragmentShader: `uniform vec3 topColor; uniform vec3 bottomColor; uniform float offset; uniform float exponent; varying vec3 vWP; void main() { float h = normalize(vWP + offset).y; gl_FragColor = vec4(mix(bottomColor, topColor, max(pow(max(h, 0.0), exponent), 0.0)), 1.0); }`,
   side: THREE.BackSide
 });
 scene.add(new THREE.Mesh(skyGeo, skyMat));
 
 // ============================================================
-// CONTROLS
+// CONTROLS — wide zoom range for 20km view ↔ 10m house view
 // ============================================================
 const orbit = new OrbitControls(camera, renderer.domElement);
-orbit.target.set(50, -90, 200);
+orbit.target.set(0, 250, 0);  // parcel centroid at terrain mid-elevation
 orbit.enableDamping = true;
 orbit.dampingFactor = 0.08;
-orbit.minDistance = 5;
-orbit.maxDistance = 2000;
-orbit.maxPolarAngle = Math.PI / 2.1;
+orbit.minDistance = 2;        // can zoom to within 2m of a house
+orbit.maxDistance = 18000;    // can zoom out to 18km — see all cerros
+orbit.maxPolarAngle = Math.PI / 2.05;  // just below horizon (don't go under terrain)
 
 const walk = new PointerLockControls(camera, renderer.domElement);
 const walkState = { forward: false, back: false, left: false, right: false, up: false, down: false, sprint: false };
-const walkVelocity = new THREE.Vector3();
 
 let cameraMode = 'orbit';
 let currentTool = 'inspect';
 let selectedTypo = 'lqv_lowpoly_house_cob';
-const placedHouses = [];
+const placedHouses = [];  // {obj, typo, pos, rot}
 
 // ============================================================
-// GLB LOADER
+// ASSET LOADER
 // ============================================================
 const loader = new GLTFLoader();
-const loadedGLBs = {};  // name -> THREE.Group (cloned per placement)
+const loadedGLBs = {};
 
-async function loadGLB(name) {
-  if (loadedGLBs[name]) return loadedGLBs[name];
+function loadGLB(name) {
+  if (loadedGLBs[name]) return Promise.resolve(loadedGLBs[name]);
   return new Promise((resolve, reject) => {
-    loader.load(
-      ASSET_BASE + name + '.glb',
-      (gltf) => {
-        gltf.scene.traverse((o) => {
-          if (o.isMesh) {
-            o.castShadow = true;
-            o.receiveShadow = true;
-          }
-        });
-        loadedGLBs[name] = gltf.scene;
-        resolve(gltf.scene);
-      },
-      undefined,
-      reject
-    );
+    loader.load(ASSET_BASE + name + '.glb', (gltf) => {
+      gltf.scene.traverse((o) => {
+        if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; }
+      });
+      loadedGLBs[name] = gltf.scene;
+      resolve(gltf.scene);
+    }, undefined, reject);
   });
 }
 
 // ============================================================
-// TERRAIN
+// TERRAIN — also loads elevation grid for click-to-inspect
 // ============================================================
-const terrainGroup = new THREE.Group();
-scene.add(terrainGroup);
+let terrainMesh = null;
+let terrainData = null;
+let elevationGrid = null;  // bilinear-sampled
+let elevationMinM = 116;
+let elevationMaxM = 391;
 
 async function loadTerrain() {
+  document.getElementById('progress').textContent = 'Loading terrain mesh (20 km × 20 km)…';
   const terrain = await loadGLB('lqv_lowpoly_terrain');
-  // Mesh from Blender: X 0-107, Y -179-0, Z 116-395
-  // Scale up 8x → X 0-856, Y -1432-0, Z 116-395 (still need to translate to center)
-  terrain.scale.set(8, 8, 1);
-  terrain.position.set(0, 0, 0);
-  terrainGroup.add(terrain);
-  return terrain;
+  scene.add(terrain);
+  terrainMesh = terrain;
+
+  // Load metadata
+  const r = await fetch(TERRAIN_DATA);
+  terrainData = await r.json();
+  elevationMinM = terrainData.elev_min_m;
+  elevationMaxM = terrainData.elev_max_m;
+
+  // Load DEM for click-to-inspect (we still need raw elevations)
+  document.getElementById('progress').textContent = 'Loading DEM for analysis…';
+  const r2 = await fetch('./game_assets_lite/elevation_grid.json');
+  elevationGrid = await r2.json();
+
+  document.getElementById('progress').textContent = `Terrain loaded · ${terrainData.verts_count.toLocaleString()} vertices`;
+  console.log('Terrain mesh verts:', terrainData.verts_count);
 }
 
-// ============================================================
-// ELEVATION GRID — for click-to-inspect HUD
-// ============================================================
-let elevationGrid = null;  // {width, height, bounds, dem}
-async function loadElevationGrid() {
-  try {
-    const r = await fetch(DATA_BASE + 'elevation_grid.json');
-    elevationGrid = await r.json();
-    console.log('elevation_grid loaded', elevationGrid.width, 'x', elevationGrid.height);
-  } catch (e) {
-    console.warn('elevation_grid.json not found — click-to-inspect will be approximate');
-  }
-}
-
-// Sample elevation at a (x, z) world coord using the Blender terrain extents.
-// Terrain mesh after scale 8x: X [0, 856], Y [-1432, 0], Z [116, 395]
-// We use Z (Blender y) to find lat/lon equivalent then sample elevation_grid.
-const TERRAIN_X_MIN = 0, TERRAIN_X_MAX = 856;
-const TERRAIN_Y_MIN = -1432, TERRAIN_Y_MAX = 0;
-
-function sampleElevation(x, y) {
-  // Linear interp of the underlying DEM at the same x/y ratio as elevation_grid
-  // (rough — for HUD purposes only)
-  if (!elevationGrid) {
-    // Fallback: assume terrain Z is interpolated from mesh extents
-    const u = (x - TERRAIN_X_MIN) / (TERRAIN_X_MAX - TERRAIN_X_MIN);
-    const v = (y - TERRAIN_Y_MIN) / (TERRAIN_Y_MAX - TERRAIN_Y_MIN);
-    // Approximate elevation profile: lower in north (more quebrada), higher in south (monte)
-    return 130 + (1 - v) * 200 + Math.sin(u * 8) * 30;
-  }
+// Sample real elevation at (x, z) in world coords
+function sampleElevationAt(x, z) {
+  if (!elevationGrid) return null;
+  const bnd = elevationGrid.bounds;
   const w = elevationGrid.width, h = elevationGrid.height;
-  const u = (x - TERRAIN_X_MIN) / (TERRAIN_X_MAX - TERRAIN_X_MIN);
-  const v = 1 - (y - TERRAIN_Y_MIN) / (TERRAIN_Y_MAX - TERRAIN_Y_MIN);  // flip
-  if (u < 0 || u > 1 || v < 0 || v > 1) return null;
-  const i = Math.min(w - 1, Math.max(0, Math.floor(u * (w - 1))));
-  const j = Math.min(h - 1, Math.max(0, Math.floor(v * (h - 1))));
-  return elevationGrid.dem[j][i];
+  const dem = elevationGrid.dem;
+  // Convert world (x, z) to lon/lat
+  const lon = terrainData.parcel_center_lon + x / terrainData.m_per_deg_lon;
+  const lat = terrainData.parcel_center_lat - z / terrainData.m_per_deg_lat;
+  // Convert lon/lat to grid indices
+  const u = (lon - bnd[0]) / (bnd[2] - bnd[0]) * (w - 1);
+  const v = (bnd[3] - lat) / (bnd[3] - bnd[1]) * (h - 1);
+  if (u < 0 || u > w - 1 || v < 0 || v > h - 1) return null;
+  const i = Math.floor(u), j = Math.floor(v);
+  if (i >= w - 1 || j >= h - 1) return dem[j][i];
+  const fx = u - i, fy = v - j;
+  return dem[j][i] * (1-fx) * (1-fy) + dem[j][i+1] * fx * (1-fy) +
+         dem[j+1][i] * (1-fx) * fy + dem[j+1][i+1] * fx * fy;
 }
 
-function slopeAt(x, y) {
-  // Estimate slope from elevation grid (m / m)
-  const dx = 5;
-  const e1 = sampleElevation(x + dx, y), e2 = sampleElevation(x - dx, y);
-  const e3 = sampleElevation(x, y + dx), e4 = sampleElevation(x, y - dx);
+function slopeAt(x, z) {
+  const dx = 30;  // 30m grid → sample at this scale
+  const e1 = sampleElevationAt(x + dx, z), e2 = sampleElevationAt(x - dx, z);
+  const e3 = sampleElevationAt(x, z + dx), e4 = sampleElevationAt(x, z - dx);
   if (e1 == null || e2 == null) return null;
   const slopeRad = Math.atan2(Math.hypot(e1 - e2, e3 - e4), 2 * dx);
   return Math.degrees(slopeRad);
 }
 
-function aspectAt(x, y) {
-  const dx = 5;
-  const e1 = sampleElevation(x + dx, y), e2 = sampleElevation(x - dx, y);
-  const e3 = sampleElevation(x, y + dx), e4 = sampleElevation(x, y - dx);
+function aspectAt(x, z) {
+  const dx = 30;
+  const e1 = sampleElevationAt(x + dx, z), e2 = sampleElevationAt(x - dx, z);
+  const e3 = sampleElevationAt(x, z + dx), e4 = sampleElevationAt(x, z - dx);
   if (e1 == null) return null;
   const a = Math.atan2(e4 - e3, e1 - e2) * 180 / Math.PI;
   return (a + 360) % 360;
 }
 
 // ============================================================
-// ASSET PLACEMENT — Monte, Waterfall, Trees, House
+// WORLD PLACEMENT — from lqv_lowpoly_world.json
 // ============================================================
-async function placeWorldAssets() {
-  // Monte — highlight the escarpment in the south of property
-  const monte = await loadGLB('lqv_lowpoly_monte');
-  const m = monte.clone();
-  m.scale.set(60, 60, 6);
-  m.position.set(-700, -1200, 130);  // SW region
-  m.rotation.z = 0.4;
-  terrainGroup.add(m);
+const worldObjects = new THREE.Group();
+scene.add(worldObjects);
 
-  // Waterfall — quebrada corridor
-  const falls = await loadGLB('lqv_lowpoly_waterfall');
-  const f = falls.clone();
-  f.scale.set(3, 3, 5);
-  f.position.set(100, -300, 140);
-  terrainGroup.add(f);
+async function placeWorld() {
+  document.getElementById('progress').textContent = 'Loading world placements…';
+  const r = await fetch(WORLD_JSON);
+  const world = await r.json();
+  console.log('World placements:', world.placements.length);
 
-  // Rock clusters on the cliffs
-  for (const [x, y, z, s] of [
-    [-650, -1100, 130, 12],
-    [-580, -1150, 140, 10],
-    [-720, -1050, 120, 14],
-  ]) {
-    const r = (await loadGLB('lqv_lowpoly_rock_cluster')).clone();
-    r.position.set(x, y, z);
-    r.scale.set(s, s, s * 0.6);
-    terrainGroup.add(r);
+  const PLACEMENTS = {
+    cerro: 'cone',  // we'll use ConeGeometry as cerro marker
+    default_house: 'lqv_lowpoly_house_cob',
+    monte: 'lqv_lowpoly_monte',
+    waterfall: 'lqv_lowpoly_waterfall',
+    gate: 'lqv_lowpoly_gate',
+    tree: 'species',  // from placement.species
+    quebrada_segment: 'ribbon',  // flat box on terrain
+    trail_polyline: 'polyline',
+  };
+
+  for (const p of world.placements) {
+    const t = p.type;
+    if (t === 'cerro') {
+      // Build a cone marker for each cerro
+      const r = p.scale.radius;
+      const h = p.scale.height;
+      const cone = new THREE.Mesh(
+        new THREE.ConeGeometry(r, h, 8),
+        new THREE.MeshStandardMaterial({
+          color: 0x7c2d12, roughness: 0.95,
+          emissive: 0x441a06, emissiveIntensity: 0.2,
+        })
+      );
+      cone.position.set(p.x, p.y + h / 2, p.z);
+      cone.userData.kind = 'cerros';
+      cone.userData.name = p.name;
+      cone.userData.elev = p.elev_m;
+      worldObjects.add(cone);
+
+      // Sprite label
+      const canvas = document.createElement('canvas');
+      canvas.width = 320; canvas.height = 80;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = 'rgba(14,20,34,0.88)';
+      ctx.fillRect(0, 0, 320, 80);
+      ctx.strokeStyle = '#d4a154';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(2, 2, 316, 76);
+      ctx.fillStyle = '#d4a154';
+      ctx.font = 'bold 22px Georgia';
+      ctx.textAlign = 'center';
+      ctx.fillText(`${p.name}`, 160, 32);
+      ctx.fillStyle = '#e8e3d8';
+      ctx.font = '16px Inter';
+      ctx.fillText(`${p.elev_m}m · ${p.distance_from_ltov_km || 0}km ${p.direction_from_lqv}`, 160, 56);
+      const tex = new THREE.CanvasTexture(canvas);
+      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
+      sprite.scale.set(120, 30, 1);
+      sprite.position.set(p.x, p.y + h + 35, p.z);
+      sprite.userData.kind = 'cerros';
+      worldObjects.add(sprite);
+
+    } else if (t === 'default_house') {
+      const proto = await loadGLB(p.typo);
+      const obj = proto.clone();
+      obj.scale.setScalar(p.scale);
+      obj.position.set(p.x, p.y, p.z);
+      obj.rotation.y = p.rotation_y || 0;
+      obj.userData.placed = true;
+      obj.userData.id = p.id;
+      obj.userData.typo = p.typo;
+      obj.userData.kind = 'placed_house';
+      worldObjects.add(obj);
+      placedHouses.push({ obj, typo: p.typo, pos: obj.position.clone(), id: p.id });
+      refreshPlacedList();
+
+    } else if (t === 'monte' || t === 'waterfall' || t === 'gate') {
+      const proto = await loadGLB(`lqv_lowpoly_${t === 'monte' ? 'monte' : t}`);
+      const obj = proto.clone();
+      obj.scale.setScalar(p.scale || 1);
+      obj.position.set(p.x, p.y, p.z);
+      obj.rotation.y = p.rotation_y || 0;
+      obj.userData.kind = t;
+      worldObjects.add(obj);
+
+    } else if (t === 'tree') {
+      const proto = await loadGLB(p.species);
+      const obj = proto.clone();
+      obj.scale.setScalar(p.scale);
+      obj.position.set(p.x, p.y, p.z);
+      obj.rotation.y = p.rotation_y || 0;
+      obj.userData.kind = 'tree';
+      worldObjects.add(obj);
+
+    } else if (t === 'quebrada_segment') {
+      // Small flat box per segment
+      const w = 10, l = 8;
+      const mesh = new THREE.Mesh(
+        new THREE.BoxGeometry(w, 1, l),
+        new THREE.MeshBasicMaterial({ color: 0x5b9dd9, transparent: true, opacity: 0.8 })
+      );
+      mesh.position.set(p.x, p.y, p.z);
+      mesh.userData.kind = 'quebrada';
+      worldObjects.add(mesh);
+
+    } else if (t === 'trail_polyline') {
+      // Build a continuous ribbon from polyline
+      const points = p.coords.map(([x, z]) => new THREE.Vector3(x, sampleElevationAt(x, z) || 250, z));
+      const curve = new THREE.CatmullRomCurve3(points);
+      const tube = new THREE.Mesh(
+        new THREE.TubeGeometry(curve, points.length * 2, 4, 6, false),
+        new THREE.MeshBasicMaterial({ color: 0xa8895a })
+      );
+      tube.userData.kind = 'trail';
+      worldObjects.add(tube);
+    }
   }
-
-  // Trees — scatter 35 trees avoiding the parcel center
-  const treePool = [
-    ['lqv_lowpoly_tree_lapacho', 0.45],
-    ['lqv_lowpoly_tree_pino', 0.35],
-    ['lqv_lowpoly_tree_palmera', 0.20],
-  ];
-  for (let i = 0; i < 35; i++) {
-    const angle = Math.random() * Math.PI * 2;
-    const r = 350 + Math.random() * 500;  // 350-850m radius
-    const x = 400 + Math.cos(angle) * r;
-    const y = -700 + Math.sin(angle) * r;
-    const elev = sampleElevation(x, y) || 200;
-    // Pick species
-    const w = Math.random();
-    let cum = 0, species = treePool[0][0];
-    for (const [s, p] of treePool) { cum += p; if (w <= cum) { species = s; break; } }
-    const t = (await loadGLB(species)).clone();
-    t.position.set(x, y, elev);
-    const s = 0.8 + Math.random() * 0.6;
-    t.scale.set(s, s, s);
-    t.rotation.y = Math.random() * Math.PI * 2;
-    terrainGroup.add(t);
-  }
-
-  // Trail — Wes's walking path
-  const trail = (await loadGLB('lqv_lowpoly_trail')).clone();
-  trail.scale.set(15, 15, 1);
-  trail.position.set(0, -700, 200);
-  terrainGroup.add(trail);
-
-  // Gate — entrance from road
-  const gate = (await loadGLB('lqv_lowpoly_gate')).clone();
-  gate.scale.set(3, 3, 3);
-  gate.position.set(700, -100, 130);
-  gate.rotation.z = -0.5;
-  terrainGroup.add(gate);
-
-  // Default cob house at the planned buildable spot
-  const defaultHouse = (await loadGLB('lqv_lowpoly_house_cob')).clone();
-  defaultHouse.position.set(400, -700, 200);
-  defaultHouse.scale.set(3, 3, 3);
-  defaultHouse.userData.typo = 'lqv_lowpoly_house_cob';
-  defaultHouse.userData.placed = true;
-  defaultHouse.userData.id = 'demo-cob';
-  terrainGroup.add(defaultHouse);
-  placedHouses.push({ obj: defaultHouse, typo: 'lqv_lowpoly_house_cob', pos: defaultHouse.position.clone(), id: 'demo-cob' });
-  refreshPlacedList();
+  document.getElementById('progress').textContent = `World loaded · ${placedHouses.length} house + ${world.placements.length} placements`;
 }
 
 // ============================================================
-// ANALYSIS OVERLAYS
+// OVERLAY TOGGLES
 // ============================================================
-const overlayGroup = new THREE.Group();
-scene.add(overlayGroup);
-
-async function loadOverlays() {
-  // Buildability — color code by slope class
-  // For demo: approximate. Full impl: load lqv_buildability_zones.geojson polygons
-  // and render as semi-transparent meshes.
-  // For v0: shade the whole terrain with a slope-based color overlay
-  // (procedural via terrain vertex colors — already done in Blender GLB).
-  // We just toggle a tinted plane overlay.
-
-  const ovTerrain = new THREE.Mesh(
-    new THREE.PlaneGeometry(TERRAIN_X_MAX - TERRAIN_X_MIN, TERRAIN_Y_MAX - TERRAIN_Y_MIN),
-    new THREE.MeshBasicMaterial({
-      color: 0xdc2626, transparent: true, opacity: 0.0, depthWrite: false, side: THREE.DoubleSide
-    })
-  );
-  ovTerrain.rotation.x = -Math.PI / 2;
-  ovTerrain.position.set((TERRAIN_X_MAX + TERRAIN_X_MIN) / 2, (TERRAIN_Y_MAX + TERRAIN_Y_MIN) / 2, 200);
-  ovTerrain.userData.kind = 'buildability';
-  overlayGroup.add(ovTerrain);
-
-  // Solar PV zones
-  const ovSolar = new THREE.Mesh(
-    new THREE.PlaneGeometry(TERRAIN_X_MAX - TERRAIN_X_MIN, TERRAIN_Y_MAX - TERRAIN_Y_MIN),
-    new THREE.MeshBasicMaterial({
-      color: 0x06b6d4, transparent: true, opacity: 0.0, depthWrite: false, side: THREE.DoubleSide
-    })
-  );
-  ovSolar.rotation.x = -Math.PI / 2;
-  ovSolar.position.set((TERRAIN_X_MAX + TERRAIN_X_MIN) / 2, (TERRAIN_Y_MAX + TERRAIN_Y_MIN) / 2, 210);
-  ovSolar.userData.kind = 'solar';
-  overlayGroup.add(ovSolar);
-
-  // Quebrada (blue ribbon — approximate)
-  const quebradaPoints = [];
-  for (let t = 0; t <= 1; t += 0.02) {
-    const x = -200 + Math.sin(t * Math.PI * 4) * 100 + t * 600;
-    const y = -1300 + t * 1100;
-    quebradaPoints.push(new THREE.Vector3(x, y, 200));
-  }
-  const quebradaCurve = new THREE.CatmullRomCurve3(quebradaPoints);
-  const quebradaTube = new THREE.Mesh(
-    new THREE.TubeGeometry(quebradaCurve, 80, 5, 8, false),
-    new THREE.MeshBasicMaterial({ color: 0x5b9dd9, transparent: true, opacity: 0.7 })
-  );
-  quebradaTube.userData.kind = 'quebrada';
-  overlayGroup.add(quebradaTube);
-
-  // Buffer (red hatched 50m around quebrada) — approximate as a wider transparent tube
-  const bufferTube = new THREE.Mesh(
-    new THREE.TubeGeometry(quebradaCurve, 80, 55, 8, false),
-    new THREE.MeshBasicMaterial({
-      color: 0xdc2626, transparent: true, opacity: 0.0,
-      depthWrite: false, side: THREE.DoubleSide
-    })
-  );
-  bufferTube.userData.kind = 'quebrada';
-  overlayGroup.add(bufferTube);
-
-  // Cerros — points from peaks_10km.geojson (DEM-derived, this session's deliverable)
-  const cerrosData = [
-    { name: 'Cerro NW', x: -400, y: -1100, z: 200, elev: 350 },
-    { name: 'Cerro S', x: -300, y: -1350, z: 180, elev: 320 },
-    { name: 'Cerro WNW', x: 250, y: -1000, z: 220, elev: 380 },
-  ];
-  for (const c of cerrosData) {
-    const cone = new THREE.Mesh(
-      new THREE.ConeGeometry(12, 30, 6),
-      new THREE.MeshBasicMaterial({ color: 0x7c2d12 })
-    );
-    cone.position.set(c.x, c.y, c.z + 15);
-    cone.userData.kind = 'cerros';
-    cone.userData.name = c.name;
-    cone.userData.elev = c.elev;
-    overlayGroup.add(cone);
-
-    // Label (sprite)
-    const canvas = document.createElement('canvas');
-    canvas.width = 256; canvas.height = 64;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = 'rgba(14,20,34,0.85)';
-    ctx.fillRect(0, 0, 256, 64);
-    ctx.fillStyle = '#d4a154';
-    ctx.font = 'bold 24px Georgia';
-    ctx.textAlign = 'center';
-    ctx.fillText(`${c.name} · ${c.elev}m`, 128, 38);
-    const tex = new THREE.CanvasTexture(canvas);
-    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
-    sprite.scale.set(50, 12.5, 1);
-    sprite.position.set(c.x, c.y, c.z + 40);
-    sprite.userData.kind = 'cerros';
-    overlayGroup.add(sprite);
-  }
-}
-
-function setOverlay(name, on) {
-  const opa = on ? (name === 'quebrada' ? 0.18 : name === 'cerros' ? 1.0 : 0.3) : 0;
-  overlayGroup.traverse((o) => {
-    if (o.userData?.kind === name) {
-      if (o.material) o.material.opacity = opa;
+function setOverlayVisible(kind, on) {
+  worldObjects.traverse((o) => {
+    if (o.userData?.kind === kind) {
+      o.visible = on;
     }
   });
 }
 
 // ============================================================
-// RAYCAST / CLICK-TO-INTERACT
+// RAYCAST / INTERACTION
 // ============================================================
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
-const measureMarkers = [];  // [{pos: Vector3, mesh: Mesh}]
-const measureLines = [];   // [{line: Line, label: Sprite}]
+const measureMarkers = [];
+const measureLines = [];
 
 function onCanvasClick(e) {
-  // Skip if locked (PointerLockControls = walk mode)
   if (walk.isLocked) return;
   pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
   pointer.y = -(e.clientY / window.innerHeight) * 2 + 1;
   raycaster.setFromCamera(pointer, camera);
-  // Intersect only with terrain + placed houses (avoid overlay meshes)
-  const targets = [terrainGroup];
-  for (const ph of placedHouses) targets.push(ph.obj);
-  const hits = raycaster.intersectObjects(targets, true);
+  const hits = raycaster.intersectObjects([terrainMesh, ...worldObjects.children], true);
   if (!hits.length) return;
   const hit = hits[0];
-  // Walk up to find world position on terrain
-  const worldPt = hit.point.clone();
+  const pt = hit.point.clone();
 
-  if (currentTool === 'inspect') {
-    showInspectHUD(worldPt);
-  } else if (currentTool === 'measure') {
-    addMeasureMarker(worldPt);
-  } else if (currentTool === 'place') {
-    placeHouseAt(worldPt);
-  } else if (currentTool === 'remove') {
-    removeHouseAt(hit.object);
-  }
+  if (currentTool === 'inspect') showInspectHUD(pt);
+  else if (currentTool === 'measure') addMeasureMarker(pt);
+  else if (currentTool === 'place') placeHouseAt(pt);
+  else if (currentTool === 'remove') removeHouseAt(hit.object);
 }
 
 function showInspectHUD(worldPt) {
-  const elev = sampleElevation(worldPt.x, worldPt.y);
-  const slope = slopeAt(worldPt.x, worldPt.y);
-  const aspect = aspectAt(worldPt.x, worldPt.y);
+  const elev = sampleElevationAt(worldPt.x, worldPt.z);
+  const slope = slopeAt(worldPt.x, worldPt.z);
+  const aspect = aspectAt(worldPt.x, worldPt.z);
+
+  // Lon/lat
+  const lon = terrainData.parcel_center_lon + worldPt.x / terrainData.m_per_deg_lon;
+  const lat = terrainData.parcel_center_lat - worldPt.z / terrainData.m_per_deg_lat;
+
   document.getElementById('hud-pin').innerHTML =
-    `📍 (${worldPt.x.toFixed(0)}, ${worldPt.y.toFixed(0)}) · elevation <span class="hud-val">${elev ? elev.toFixed(0) + ' m' : '—'}</span>`;
-  document.getElementById('hud-elev').textContent = elev ? elev.toFixed(0) + ' m' : '—';
+    `📍 x=${worldPt.x.toFixed(0)}m z=${worldPt.z.toFixed(0)}m`;
+  document.getElementById('hud-elev').textContent = elev ? `${elev.toFixed(0)} m` : '—';
+  document.getElementById('hud-lonlat').textContent = `${lon.toFixed(5)}°, ${lat.toFixed(5)}°`;
 
-  let slopeClass = 'hud-val';
-  let slopeText = slope != null ? slope.toFixed(1) + '°' : '—';
-  let buildText = '—';
+  let buildClass = 'hud-val', buildText = '—', slopeText = slope != null ? `${slope.toFixed(1)}°` : '—';
   if (slope != null) {
-    if (slope < 5) { slopeClass = 'hud-val'; buildText = '✓ Buildable (flat)'; }
-    else if (slope < 15) { slopeClass = 'hud-val'; buildText = '✓ Buildable'; }
-    else if (slope < 30) { slopeClass = 'hud-warn'; buildText = '⚠ Caution (15-30°)'; }
-    else { slopeClass = 'hud-warn'; buildText = '✗ Too steep (>30°)'; }
+    if (slope < 5) { buildClass = 'hud-good'; buildText = '✓ Buildable (flat)'; }
+    else if (slope < 15) { buildClass = 'hud-good'; buildText = '✓ Buildable'; }
+    else if (slope < 30) { buildClass = 'hud-warn'; buildText = '⚠ Caution'; }
+    else { buildClass = 'hud-warn'; buildText = '✗ Too steep'; }
   }
-  document.getElementById('hud-slope').innerHTML =
-    `<span class="${slopeClass}">${slopeText}</span>`;
-  document.getElementById('hud-build').innerHTML =
-    `<span class="${slopeClass}">${buildText}</span>`;
-
+  document.getElementById('hud-slope').innerHTML = `<span class="${buildClass}">${slopeText}</span>`;
+  document.getElementById('hud-build').innerHTML = `<span class="${buildClass}">${buildText}</span>`;
   if (aspect != null) {
-    const dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE',
-                   'S','SSW','SW','WSW','W','WNW','NW','NNW'];
-    const compass = dirs[Math.floor(((aspect + 11.25) % 360) / 22.5)];
-    document.getElementById('hud-aspect').textContent = `${aspect.toFixed(0)}° ${compass}`;
+    const dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+    document.getElementById('hud-aspect').textContent = `${aspect.toFixed(0)}° ${dirs[Math.floor(((aspect + 11.25) % 360) / 22.5)]}`;
   }
-
-  document.getElementById('hud-quebrada').textContent = '—';
-  document.getElementById('hud-ndvi').textContent = '—';
   document.getElementById('hud').classList.add('show');
 }
 
 function addMeasureMarker(worldPt) {
   const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(2, 8, 8),
+    new THREE.SphereGeometry(5, 8, 8),
     new THREE.MeshBasicMaterial({ color: 0xd4a154 })
   );
   sphere.position.copy(worldPt);
   scene.add(sphere);
   measureMarkers.push({ pos: worldPt.clone(), mesh: sphere });
-  if (measureMarkers.length === 2) {
-    drawMeasureLine();
-  } else if (measureMarkers.length > 2) {
-    // Reset — start a new measurement
+  if (measureMarkers.length === 2) drawMeasureLine();
+  else if (measureMarkers.length > 2) {
     for (const m of measureMarkers) scene.remove(m.mesh);
     for (const l of measureLines) { scene.remove(l.line); scene.remove(l.label); }
     measureMarkers.length = 0;
@@ -851,85 +762,107 @@ function addMeasureMarker(worldPt) {
 function drawMeasureLine() {
   const [a, b] = measureMarkers;
   const dist = a.pos.distanceTo(b.pos);
-  const dElev = (sampleElevation(b.pos.x, b.pos.y) || 0) - (sampleElevation(a.pos.x, a.pos.y) || 0);
+  const eA = sampleElevationAt(a.pos.x, a.pos.z) || 0;
+  const eB = sampleElevationAt(b.pos.x, b.pos.z) || 0;
+  const dElev = eB - eA;
   const slope = (Math.atan2(dElev, dist) * 180 / Math.PI).toFixed(1);
 
-  // Line
   const geo = new THREE.BufferGeometry().setFromPoints([a.pos, b.pos]);
-  const line = new THREE.Line(geo, new THREE.LineDashedMaterial({
-    color: 0xd4a154, dashSize: 6, gapSize: 4
-  }));
+  const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color: 0xd4a154, dashSize: 30, gapSize: 20 }));
   line.computeLineDistances();
   scene.add(line);
 
-  // Label at midpoint
   const mid = a.pos.clone().lerp(b.pos, 0.5);
-  mid.z += 20;
+  mid.y += 50;
   const canvas = document.createElement('canvas');
-  canvas.width = 320; canvas.height = 80;
+  canvas.width = 380; canvas.height = 90;
   const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'rgba(14,20,34,0.92)';
-  ctx.fillRect(0, 0, 320, 80);
+  ctx.fillStyle = 'rgba(14,20,34,0.94)';
+  ctx.fillRect(0, 0, 380, 90);
   ctx.fillStyle = '#d4a154';
-  ctx.font = 'bold 22px Inter';
+  ctx.font = 'bold 26px Inter';
   ctx.textAlign = 'center';
-  ctx.fillText(`${dist.toFixed(0)} m`, 160, 32);
-  ctx.font = '16px Inter';
+  ctx.fillText(`${dist.toFixed(0)} m`, 190, 38);
+  ctx.font = '17px Inter';
   ctx.fillStyle = '#e8e3d8';
-  ctx.fillText(`Δ elev ${dElev >= 0 ? '+' : ''}${dElev.toFixed(0)} m · slope ${slope}°`, 160, 60);
+  ctx.fillText(`Δ elev ${dElev >= 0 ? '+' : ''}${dElev.toFixed(0)} m · slope ${slope}°`, 190, 66);
   const tex = new THREE.CanvasTexture(canvas);
   const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
-  sprite.scale.set(60, 15, 1);
+  sprite.scale.set(80, 19, 1);
   sprite.position.copy(mid);
   scene.add(sprite);
-
   measureLines.push({ line, label: sprite });
 }
 
 async function placeHouseAt(worldPt) {
-  if (selectedTypo === 'remove') {
-    // undo last
-    if (placedHouses.length > 0) {
-      const last = placedHouses.pop();
-      terrainGroup.remove(last.obj);
-      refreshPlacedList();
-    }
-    return;
-  }
   const proto = await loadGLB(selectedTypo);
   const obj = proto.clone();
-  // Sit it on the terrain at worldPt.z + tiny offset
-  const elev = sampleElevation(worldPt.x, worldPt.y) || worldPt.z;
-  obj.position.set(worldPt.x, worldPt.y, elev);
-  obj.scale.set(3, 3, 3);
+  obj.scale.setScalar(8);  // consistent scale for all placed typologies
+  // Sit on terrain
+  const elev = sampleElevationAt(worldPt.x, worldPt.z) || worldPt.y;
+  obj.position.set(worldPt.x, elev, worldPt.z);
   obj.rotation.y = Math.random() * Math.PI * 2;
-  obj.userData.typo = selectedTypo;
   obj.userData.placed = true;
-  obj.userData.id = 'place-' + Date.now();
-  terrainGroup.add(obj);
+  obj.userData.id = 'placed-' + Date.now();
+  obj.userData.typo = selectedTypo;
+  obj.userData.kind = 'placed_house';
+  worldObjects.add(obj);
   placedHouses.push({ obj, typo: selectedTypo, pos: obj.position.clone(), id: obj.userData.id });
   refreshPlacedList();
 }
 
 function removeHouseAt(obj) {
-  if (!obj?.userData?.placed) return;
-  terrainGroup.remove(obj);
-  const idx = placedHouses.findIndex(h => h.obj === obj);
+  // Walk up to find a placed_house ancestor
+  let target = obj;
+  while (target && target.userData?.kind !== 'placed_house' && target.parent) target = target.parent;
+  if (!target || !target.userData?.placed) return;
+  worldObjects.remove(target);
+  const idx = placedHouses.findIndex(h => h.obj === target);
   if (idx >= 0) placedHouses.splice(idx, 1);
   refreshPlacedList();
 }
 
 function refreshPlacedList() {
   const el = document.getElementById('placed-list');
+  document.getElementById('placed-count').textContent = placedHouses.length;
   if (!placedHouses.length) {
-    el.innerHTML = '<em>None yet — pick "Place" tool above, choose a typology, then click terrain.</em>';
+    el.innerHTML = '<em>None yet — switch to Place tool above.</em>';
     return;
   }
   el.innerHTML = placedHouses.map((h, i) => {
     const name = h.typo.replace('lqv_lowpoly_', '').replace(/_/g, ' ');
-    const elev = sampleElevation(h.pos.x, h.pos.y) || 0;
-    return `<div>${i+1}. <strong>${name}</strong> @ (${h.pos.x.toFixed(0)}, ${h.pos.y.toFixed(0)}) · ${elev.toFixed(0)}m</div>`;
+    return `<div>${i+1}. <strong>${name}</strong> @ (${h.pos.x.toFixed(0)}, ${h.pos.z.toFixed(0)})</div>`;
   }).join('');
+}
+
+// ============================================================
+// CAMERA ZOOM PRESETS
+// ============================================================
+function zoomPreset(name) {
+  // Each preset: target + camera position relative to target
+  const presets = {
+    context: { target: new THREE.Vector3(0, 250, 0), cam: new THREE.Vector3(0, 2500, 6000), label: '🌍 Full context (10 km)' },
+    property: { target: new THREE.Vector3(0, 280, 0), cam: new THREE.Vector3(0, 320, 600), label: '📍 Property (500 m)' },
+    parcel: { target: new THREE.Vector3(0, 260, 0), cam: new THREE.Vector3(0, 270, 100), label: '🏞 Parcel (100 m)' },
+    house: { target: new THREE.Vector3(0, 265, 0), cam: new THREE.Vector3(0, 268, 10), label: '🏠 House (10 m)' },
+    monte: { target: new THREE.Vector3(-4558, 550, -4477), cam: new THREE.Vector3(-2000, 700, -2000), label: '⛰ Cerro NW (6.4 km)' },
+  };
+  const p = presets[name];
+  if (!p) return;
+  document.getElementById('sub').textContent = p.label;
+  // Smooth transition
+  const startPos = camera.position.clone();
+  const startTarget = orbit.target.clone();
+  const t0 = performance.now();
+  const dur = 800;
+  function step() {
+    const t = Math.min(1, (performance.now() - t0) / dur);
+    const ease = t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2)/2;
+    camera.position.lerpVectors(startPos, p.cam, ease);
+    orbit.target.lerpVectors(startTarget, p.target, ease);
+    if (t < 1) requestAnimationFrame(step);
+  }
+  step();
 }
 
 // ============================================================
@@ -938,37 +871,38 @@ function refreshPlacedList() {
 document.querySelectorAll('.chip[data-camera]').forEach(c => {
   c.addEventListener('click', () => setCameraMode(c.dataset.camera));
 });
+document.querySelectorAll('.chip[data-zoom]').forEach(c => {
+  c.addEventListener('click', () => {
+    document.querySelectorAll('.chip[data-zoom]').forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    zoomPreset(c.dataset.zoom);
+  });
+});
 
 function setCameraMode(mode) {
   cameraMode = mode;
   document.querySelectorAll('.chip[data-camera]').forEach(c =>
     c.classList.toggle('active', c.dataset.camera === mode));
-  if (mode === 'orbit') {
-    orbit.enabled = true;
-    walk.unlock();
-  } else if (mode === 'walk') {
+  if (mode === 'walk') {
     orbit.enabled = false;
     renderer.domElement.requestPointerLock();
-  } else if (mode === 'cinematic') {
-    orbit.enabled = true;
+  } else {
     walk.unlock();
-    startCinematic();
+    orbit.enabled = true;
   }
 }
 
-document.querySelectorAll('.tool-row[data-tool]').forEach(r => {
+document.querySelectorAll('.tool-row').forEach(r => {
   r.addEventListener('click', () => setTool(r.dataset.tool));
 });
-
 function setTool(t) {
   currentTool = t;
   document.querySelectorAll('.tool-row').forEach(r =>
     r.classList.toggle('active', r.dataset.tool === t));
   document.getElementById('typo-section').style.display = t === 'place' ? 'block' : 'none';
-  // Also uncheck other radios
   document.querySelectorAll('input[type="radio"][name="tool"]').forEach(r => r.checked = false);
-  const activeRadio = document.querySelector(`.tool-row[data-tool="${t}"] input[type="radio"]`);
-  if (activeRadio) activeRadio.checked = true;
+  const active = document.querySelector(`.tool-row[data-tool="${t}"] input[type="radio"]`);
+  if (active) active.checked = true;
 }
 
 document.querySelectorAll('.typo-card').forEach(c => {
@@ -982,20 +916,16 @@ document.querySelectorAll('.typo-card').forEach(c => {
 document.querySelectorAll('.toggle[data-overlay]').forEach(t => {
   t.addEventListener('click', () => {
     t.classList.toggle('on');
-    setOverlay(t.dataset.overlay, t.classList.contains('on'));
+    setOverlayVisible(t.dataset.overlay, t.classList.contains('on'));
   });
 });
 
-// Camera mode keyboard
+// Keyboard
 document.addEventListener('keydown', (e) => {
   if (e.key === '1') setCameraMode('walk');
   else if (e.key === '2') setCameraMode('orbit');
   else if (e.key === '3') setCameraMode('cinematic');
   else if (e.key === 'Escape') walk.unlock();
-});
-
-// Walk controls (WASD)
-document.addEventListener('keydown', (e) => {
   if (!walk.isLocked) return;
   switch (e.code) {
     case 'KeyW': case 'ArrowUp': walkState.forward = true; break;
@@ -1019,41 +949,34 @@ document.addEventListener('keyup', (e) => {
   }
 });
 
-// Save / Load layout
+// Save / Load / Screenshot
 document.getElementById('btn-save').addEventListener('click', () => {
-  const layout = placedHouses.map(h => ({
-    typo: h.typo,
-    x: h.pos.x, y: h.pos.y, z: h.pos.z,
-    id: h.id
-  }));
+  const layout = placedHouses.map(h => ({ typo: h.typo, x: h.pos.x, y: h.pos.y, z: h.pos.z, id: h.id }));
   const blob = new Blob([JSON.stringify(layout, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url;
-  a.download = `lqv_layout_${new Date().toISOString().slice(0, 10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
+  a.href = url; a.download = `lqv_layout_${new Date().toISOString().slice(0,10)}.json`;
+  a.click(); URL.revokeObjectURL(url);
 });
 
 document.getElementById('btn-load').addEventListener('click', () => {
   const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'application/json';
+  input.type = 'file'; input.accept = 'application/json';
   input.addEventListener('change', async (e) => {
-    const f = e.target.files[0];
-    if (!f) return;
+    const f = e.target.files[0]; if (!f) return;
     const layout = JSON.parse(await f.text());
-    for (const h of placedHouses) terrainGroup.remove(h.obj);
+    for (const h of placedHouses) worldObjects.remove(h.obj);
     placedHouses.length = 0;
     for (const item of layout) {
       const proto = await loadGLB(item.typo);
       const obj = proto.clone();
+      obj.scale.setScalar(8);
       obj.position.set(item.x, item.y, item.z);
-      obj.scale.set(3, 3, 3);
-      obj.userData.typo = item.typo;
       obj.userData.placed = true;
       obj.userData.id = item.id || ('loaded-' + Date.now());
-      terrainGroup.add(obj);
+      obj.userData.typo = item.typo;
+      obj.userData.kind = 'placed_house';
+      worldObjects.add(obj);
       placedHouses.push({ obj, typo: item.typo, pos: obj.position.clone(), id: obj.userData.id });
     }
     refreshPlacedList();
@@ -1062,40 +985,35 @@ document.getElementById('btn-load').addEventListener('click', () => {
 });
 
 document.getElementById('btn-screenshot').addEventListener('click', () => {
-  // Hide UI for a clean shot
-  document.querySelectorAll('.topbar, .panel, .mode-chips, .hud, .footer').forEach(el => el.classList.add('hide-for-shot'));
+  document.querySelectorAll('.topbar, .panel, .bottom-bar, .hud, .footer').forEach(el => el.classList.add('hide-for-shot'));
   setTimeout(() => {
     renderer.render(scene, camera);
     const a = document.createElement('a');
     a.href = renderer.domElement.toDataURL('image/png');
-    a.download = `lqv_view_${new Date().toISOString().slice(0, 16).replace(/[T:]/g, '_')}.png`;
+    a.download = `lqv_view_${new Date().toISOString().slice(0,16).replace(/[T:]/g, '_')}.png`;
     a.click();
     document.querySelectorAll('.hide-for-shot').forEach(el => el.classList.remove('hide-for-shot'));
   }, 100);
 });
 
-// Cinematic orbit
+// Cinematic auto-orbit
 let cinematicRunning = false;
 function startCinematic() {
   if (cinematicRunning) return;
   cinematicRunning = true;
   const t0 = Date.now();
-  const originalTarget = orbit.target.clone();
   function step() {
-    if (!cinematicRunning || cameraMode !== 'cinematic') {
-      cinematicRunning = false; return;
-    }
+    if (!cinematicRunning || cameraMode !== 'cinematic') { cinematicRunning = false; return; }
     const t = (Date.now() - t0) / 1000;
     const a = t * 0.15;
-    const r = 350 + Math.sin(t * 0.2) * 100;
-    camera.position.set(400 + Math.cos(a) * r, -700 + Math.sin(a) * r, 280 + Math.sin(t * 0.3) * 40);
-    orbit.target.set(400, -700, 200);
+    const r = 800 + Math.sin(t * 0.2) * 200;
+    camera.position.set(Math.cos(a) * r, 320, Math.sin(a) * r);
+    orbit.target.set(0, 270, 0);
     requestAnimationFrame(step);
   }
   step();
 }
 
-// Resize
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
@@ -1110,23 +1028,16 @@ function animate() {
   requestAnimationFrame(animate);
   const dt = Math.min(clock.getDelta(), 0.1);
 
-  // Walk movement
   if (walk.isLocked) {
-    walkVelocity.x -= walkVelocity.x * 8 * dt;
-    walkVelocity.z -= walkVelocity.z * 8 * dt;
-    walkVelocity.y = 0;
-    const speed = (walkState.sprint ? 12 : 5) * dt;
+    const speed = (walkState.sprint ? 50 : 20) * dt;
     const dir = new THREE.Vector3();
     dir.z = Number(walkState.forward) - Number(walkState.back);
     dir.x = Number(walkState.right) - Number(walkState.left);
     dir.normalize();
-    if (walkState.forward || walkState.back) walkVelocity.z -= dir.z * speed * 4;
-    if (walkState.left || walkState.right) walkVelocity.x -= dir.x * speed * 4;
-    walk.moveRight(-walkVelocity.x * dt);
-    walk.moveForward(-walkVelocity.z * dt);
-    // Up/down (Space/C)
-    if (walkState.up) camera.position.y += 5 * dt;
-    if (walkState.down) camera.position.y -= 5 * dt;
+    if (walkState.forward || walkState.back) walk.moveForward(-dir.z * speed);
+    if (walkState.left || walkState.right) walk.moveRight(dir.x * speed);
+    if (walkState.up) camera.position.y += 30 * dt;
+    if (walkState.down) camera.position.y -= 30 * dt;
   }
   orbit.update();
   renderer.render(scene, camera);
@@ -1138,31 +1049,21 @@ function animate() {
 async function boot() {
   try {
     await loadTerrain();
-    await loadElevationGrid();
-    await loadOverlays();
-    await placeWorldAssets();
-    // Initial overlays state
-    setOverlay('buildability', true);
-    setOverlay('quebrada', true);
-    setOverlay('cerros', true);
-    // Done — hide loader
+    await placeWorld();
     setTimeout(() => document.getElementById('loading').classList.add('hidden'), 400);
     animate();
+    // Start at property zoom
+    setTimeout(() => zoomPreset('property'), 500);
   } catch (err) {
     console.error('Boot error:', err);
     document.getElementById('loading').innerHTML =
       `<div style="color:var(--warning);max-width:600px;padding:20px;text-align:center">
-        <strong>Could not load the world.</strong><br><br>
-        <code>${err.message}</code><br><br>
-        Try refreshing. If this persists, the assets may not have deployed yet.
+        <strong>Could not load the world.</strong><br><br><code>${err.message}</code>
        </div>`;
   }
 }
 
-// Click handler — only register once, dispatches based on current tool
 renderer.domElement.addEventListener('click', onCanvasClick);
-
-// Prevent right-click context menu (we use right-click for orbit pan)
 renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
 
 boot();
