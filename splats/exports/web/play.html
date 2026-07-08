@@ -277,7 +277,7 @@
       </div>
       <div class="overlay-row">
         <span><span class="overlay-swatch" style="background:#7c2d12"></span>Cerros (peaks)</span>
-        <div class="toggle on" data-overlay="cerros"></div>
+        <div class="toggle on" data-overlay="cerro"></div>
       </div>
       <div class="overlay-row">
         <span><span class="overlay-swatch" style="background:#a8a195"></span>Contour lines</span>
@@ -679,6 +679,8 @@ async function placeWorld() {
       else if (t === 'hansen_loss') placeHansenLoss(p);
       else if (t === 'mapbiomas') placeMapbiomas(p);
       else if (t === 'hand') placeHand(p);
+      else if (t === 'flow_arrow') placeFlowArrow(p);
+      else if (t === 'walking_session') placeWalkingSession(p);
     } catch (e) {
       console.warn(`Failed to place ${t}:`, e);
     }
@@ -920,6 +922,40 @@ function placeHand(p) {
   const lightness = Math.floor(180 - t * 100);
   const color = (lightness << 16) | (lightness << 8) | 0xff;
   placePolygonFromCoords(p.coords, color, 0.4, overlayGroups.hand, p.y);
+}
+
+function placeFlowArrow(p) {
+  // Small triangle pointing in flow direction
+  const angle = ((p.direction_deg || 0) - 90) * Math.PI / 180;
+  const shape = new THREE.Shape();
+  shape.moveTo(0, 4);
+  shape.lineTo(3, -2);
+  shape.lineTo(-3, -2);
+  shape.closePath();
+  const geo = new THREE.ShapeGeometry(shape);
+  geo.rotateX(-Math.PI / 2);  // shape in XY → XZ plane
+  geo.rotateZ(-angle);  // rotate to flow direction
+  const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+    color: 0x3b82f6, transparent: true, opacity: 0.85, side: THREE.DoubleSide
+  }));
+  mesh.position.set(p.x, p.y, p.z);
+  mesh.userData.kind = 'flow_arrow';
+  overlayGroups.hand.add(mesh);  // share the hand overlay group
+}
+
+function placeWalkingSession(p) {
+  // Multi-color trail tube for each walking session
+  const pts = p.coords.map(c => new THREE.Vector3(c[0], c[1], c[2]));
+  if (pts.length < 2) return;
+  // Color based on session index
+  const sessionIdx = worldData.placements.filter(x => x.type === 'walking_session').indexOf(p);
+  const color = sessionIdx === 0 ? 0xef4444 : 0xfb923c;
+  const curve = new THREE.CatmullRomCurve3(pts);
+  const tube = new THREE.Mesh(
+    new THREE.TubeGeometry(curve, pts.length * 2, 1.5, 6, false),
+    new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.8 })
+  );
+  worldObjects.add(tube);
 }
 
 function placePolygonFromCoords(coords, color, opacity, group, y) {
