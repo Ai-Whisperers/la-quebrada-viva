@@ -410,8 +410,12 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xe8d8b0);
 scene.fog = new THREE.Fog(0xe8d8b0, 8000, 25000);  // fog kicks in at 8km, full at 25km
 
+// ============================================================
+// CAMERA + ZOOM PRESETS — calibrated for new terrain (REAL data, 347m relief)
+// ============================================================
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 50000);
-camera.position.set(0, 320, 600);  // default property view (rotated terrain: Y=up)
+// Default: orbit the property at 600m altitude — sees the cob house + nearby cerros
+camera.position.set(0, 480, 800);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -447,11 +451,9 @@ const skyMat = new THREE.ShaderMaterial({
 });
 scene.add(new THREE.Mesh(skyGeo, skyMat));
 
-// ============================================================
-// CONTROLS — wide zoom range for 20km view ↔ 10m house view
-// ============================================================
 const orbit = new OrbitControls(camera, renderer.domElement);
-orbit.target.set(0, 280, 0);  // parcel centroid at terrain mid-elevation
+// Target: parcel centroid, mid-elevation (y ≈ 350 in mesh coords)
+orbit.target.set(0, 350, 0);
 orbit.enableDamping = true;
 orbit.dampingFactor = 0.08;
 orbit.minDistance = 2;        // can zoom to within 2m of a house
@@ -632,23 +634,28 @@ async function placeWorld() {
   for (const p of world.placements) {
     const t = p.type;
     if (t === 'cerro') {
-      // Build a cone marker for each cerro
-      const r = p.scale.radius;
-      const h = p.scale.height;
-      const cone = new THREE.Mesh(
-        new THREE.ConeGeometry(r, h, 8),
+      // Cerro visual marker — a small obelisk/pin that sits ON the cerro peak.
+      // We use a CYLINDER (not cone) so it doesn't look like a pyramid,
+      // and we make it visibly tall (15-25m in mesh units ≈ 7-12m IRL) so
+      // the user can see it from the property zoom.
+      const prominence = p.prominence_m || 30;
+      const marker_height = Math.max(20, prominence * 0.5);  // tall enough to see
+      const marker_radius = 6 + prominence * 0.1;
+      const pin = new THREE.Mesh(
+        new THREE.CylinderGeometry(marker_radius * 0.3, marker_radius, marker_height, 8),
         new THREE.MeshStandardMaterial({
-          color: 0x7c2d12, roughness: 0.95,
-          emissive: 0x441a06, emissiveIntensity: 0.2,
+          color: 0x7c2d12, roughness: 0.9,
+          emissive: 0x441a06, emissiveIntensity: 0.4,
         })
       );
-      cone.position.set(p.x, p.y + h / 2, p.z);
-      cone.userData.kind = 'cerros';
-      cone.userData.name = p.name;
-      cone.userData.elev = p.elev_m;
-      worldObjects.add(cone);
+      // Position the marker so its base sits at the cerro peak (p.y)
+      pin.position.set(p.x, p.y + marker_height / 2, p.z);
+      pin.userData.kind = 'cerros';
+      pin.userData.name = p.name;
+      pin.userData.elev = p.elev_m;
+      worldObjects.add(pin);
 
-      // Sprite label
+      // Sprite label above
       const canvas = document.createElement('canvas');
       canvas.width = 320; canvas.height = 80;
       const ctx = canvas.getContext('2d');
@@ -663,11 +670,11 @@ async function placeWorld() {
       ctx.fillText(`${p.name}`, 160, 32);
       ctx.fillStyle = '#e8e3d8';
       ctx.font = '16px Inter';
-      ctx.fillText(`${p.elev_m}m · ${p.distance_from_ltov_km || 0}km ${p.direction_from_lqv}`, 160, 56);
+      ctx.fillText(`${p.elev_m}m · ${p.distance_from_lqv_km}km ${p.direction_from_lqv}`, 160, 56);
       const tex = new THREE.CanvasTexture(canvas);
       const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true }));
-      sprite.scale.set(120, 30, 1);
-      sprite.position.set(p.x, p.y + h + 35, p.z);
+      sprite.scale.set(140, 35, 1);
+      sprite.position.set(p.x, p.y + marker_height + 30, p.z);
       sprite.userData.kind = 'cerros';
       worldObjects.add(sprite);
 
@@ -903,17 +910,18 @@ function refreshPlacedList() {
 function zoomPreset(name) {
   // Each preset: target + camera position relative to target
   // All values in WORLD COORDS: (x_east, y_mesh, z_south)
-  // Mesh Y=0 is the lowest terrain point; Y=552 is the highest (with Z_EXAG=2).
+  // Mesh Y=0 is the lowest terrain point; Y=700 is the highest (with Z_EXAG=2).
   const presets = {
-    context: { target: new THREE.Vector3(0, 250, 0), cam: new THREE.Vector3(0, 2500, 6000), label: '🌍 Full context (10 km)' },
-    property: { target: new THREE.Vector3(0, 280, 0), cam: new THREE.Vector3(0, 320, 600), label: '📍 Property (500 m)' },
-    parcel: { target: new THREE.Vector3(0, 260, 0), cam: new THREE.Vector3(0, 270, 100), label: '🏞 Parcel (100 m)' },
-    house: { target: new THREE.Vector3(0, 265, 0), cam: new THREE.Vector3(0, 268, 10), label: '🏠 House (10 m)' },
-    // Cerro NW: world (x=-4558, z=-4477, elev=400m)
+    // Default start: orbit the property at 600m altitude
+    context: { target: new THREE.Vector3(0, 350, 0), cam: new THREE.Vector3(0, 1800, 5000), label: '🌍 Full context (5 km)' },
+    property: { target: new THREE.Vector3(0, 350, 0), cam: new THREE.Vector3(0, 480, 800), label: '📍 Property (800 m)' },
+    parcel: { target: new THREE.Vector3(0, 320, 0), cam: new THREE.Vector3(0, 340, 150), label: '🏞 Parcel (150 m)' },
+    house: { target: new THREE.Vector3(0, 310, 0), cam: new THREE.Vector3(0, 318, 12), label: '🏠 House (10 m)' },
+    // Cerro NW: at world (x=-4558, z=-4477) with REAL elevation 395m
     monte: {
-      target: new THREE.Vector3(-4558, elevToMeshY(400), -4477),
-      cam: new THREE.Vector3(-2000, 700, -2000),
-      label: '⛰ Cerro NW (6.4 km)'
+      target: new THREE.Vector3(-4558, elevToMeshY(395), -4477),
+      cam: new THREE.Vector3(-2500, 1000, -2000),
+      label: '⛰ Cerro NW (real: 395m)'
     },
   };
   const p = presets[name];
