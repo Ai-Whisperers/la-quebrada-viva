@@ -631,6 +631,19 @@ document.querySelectorAll('.lqv-presets button').forEach(btn => {
   btn.addEventListener('click', () => flyToPreset(btn.dataset.preset));
 });
 
+// Also handle ?preset=foo URL param — pre-set on initial load if specified.
+// This lets the index page link to escobar3d?preset=parcel-oblique and have
+// the camera land on that view immediately on load, without animation.
+const _presetParam = new URLSearchParams(window.location.search).get('preset');
+if (_presetParam && PRESETS[_presetParam]) {
+  // Mark the matching preset button as active
+  setTimeout(() => {
+    const btn = document.querySelector(`[data-preset="${_presetParam}"]`);
+    if (btn) btn.classList.add('active');
+  }, 500);
+  flyToPreset(_presetParam);
+}
+
 // === Help modal ===
 const helpModal = document.getElementById('helpModal');
 document.getElementById('toolHelp').addEventListener('click', () => helpModal.classList.toggle('hidden'));
