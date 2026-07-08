@@ -1,0 +1,45 @@
+{
+    "FileVersion": 3,
+    "EngineAssociation": "5.7",
+    "Category": "Games",
+    "Description": "La Quebrada Viva — 3D world builder (low-poly retro). Created by Erebus / Ai-Whisperers. See docs/game_assets/GAME_DESIGN_v2_3dworld.md for the design intent.",
+    "Modules": [
+        {
+            "Name": "LQV3DWorld",
+            "Type": "Runtime",
+            "LoadingPhase": "Default",
+            "AdditionalDependencies": [
+                "Engine",
+                "CoreUObject"
+            ]
+        }
+    ],
+    "Plugins": [
+        {
+            "Name": "EnhancedInput",
+            "Enabled": true
+        },
+        {
+            "Name": "ModelingToolsEditorMode",
+            "Enabled": true,
+            "TargetAllowList": [ "Editor" ]
+        },
+        {
+            "Name": "PythonScriptPlugin",
+            "Enabled": true
+        },
+        {
+            "Name": "WorldPartitionEditor",
+            "Enabled": true,
+            "TargetAllowList": [ "Editor" ]
+        },
+        {
+            "Name": "Niagara",
+            "Enabled": true
+        },
+        {
+            "Name": "Water",
+            "Enabled": true
+        }
+    ]
+}
