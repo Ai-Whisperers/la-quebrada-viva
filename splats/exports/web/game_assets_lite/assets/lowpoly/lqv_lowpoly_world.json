@@ -1,0 +1,712 @@
+{
+  "placements": [
+    {
+      "type": "cerro",
+      "id": "Cerro_NW_de_Escobar",
+      "name": "Cerro NW de Escobar",
+      "elev_m": 400,
+      "x": -4557.5,
+      "y": 568.0,
+      "z": -4476.9,
+      "scale": {
+        "radius": 80,
+        "height": 160
+      },
+      "category": "summit",
+      "direction_from_lqv": "NW",
+      "distance_from_lqv_km": 6.41
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_NW_de_Escobar",
+      "name": "Cerro NW de Escobar",
+      "elev_m": 400,
+      "x": -2440.1,
+      "y": 568.0,
+      "z": -1979.3,
+      "scale": {
+        "radius": 30.7,
+        "height": 61.1
+      },
+      "category": "summit",
+      "direction_from_lqv": "NW",
+      "distance_from_lqv_km": 3.15
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_N_de_Escobar",
+      "name": "Cerro N de Escobar",
+      "elev_m": 400,
+      "x": -1052.2,
+      "y": 568.0,
+      "z": -8024.4,
+      "scale": {
+        "radius": 30.2,
+        "height": 60.3
+      },
+      "category": "hill",
+      "direction_from_lqv": "N",
+      "distance_from_lqv_km": 8.14
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_S_de_Escobar",
+      "name": "Cerro S de Escobar",
+      "elev_m": 400,
+      "x": 715.8,
+      "y": 568.0,
+      "z": 4420.3,
+      "scale": {
+        "radius": 30.0,
+        "height": 60.1
+      },
+      "category": "hill",
+      "direction_from_lqv": "S",
+      "distance_from_lqv_km": 4.5
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_SSW_de_Escobar",
+      "name": "Cerro SSW de Escobar",
+      "elev_m": 350,
+      "x": -642.3,
+      "y": 468.0,
+      "z": 2593.8,
+      "scale": {
+        "radius": 31.1,
+        "height": 61.8
+      },
+      "category": "summit",
+      "direction_from_lqv": "SSW",
+      "distance_from_lqv_km": 2.68
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_SSW_de_Escobar",
+      "name": "Cerro SSW de Escobar",
+      "elev_m": 350,
+      "x": -2470.8,
+      "y": 468.0,
+      "z": 7045.6,
+      "scale": {
+        "radius": 30.4,
+        "height": 60.7
+      },
+      "category": "summit",
+      "direction_from_lqv": "SSW",
+      "distance_from_lqv_km": 7.5
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_SE_de_Escobar",
+      "name": "Cerro SE de Escobar",
+      "elev_m": 350,
+      "x": 7616.0,
+      "y": 468.0,
+      "z": 8366.0,
+      "scale": {
+        "radius": 30.0,
+        "height": 60.1
+      },
+      "category": "hill",
+      "direction_from_lqv": "SE",
+      "distance_from_lqv_km": 11.34
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_WSW_de_Escobar",
+      "name": "Cerro WSW de Escobar",
+      "elev_m": 300,
+      "x": -6743.1,
+      "y": 368.0,
+      "z": 3495.8,
+      "scale": {
+        "radius": 33.2,
+        "height": 65.2
+      },
+      "category": "summit",
+      "direction_from_lqv": "WSW",
+      "distance_from_lqv_km": 7.6
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_SW_de_Escobar",
+      "name": "Cerro SW de Escobar",
+      "elev_m": 250,
+      "x": -8464.6,
+      "y": 268.0,
+      "z": 7946.6,
+      "scale": {
+        "radius": 43.2,
+        "height": 81.1
+      },
+      "category": "summit",
+      "direction_from_lqv": "SW",
+      "distance_from_lqv_km": 11.63
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_NNW_de_Escobar",
+      "name": "Cerro NNW de Escobar",
+      "elev_m": 250,
+      "x": -4635.3,
+      "y": 268.0,
+      "z": -9070.7,
+      "scale": {
+        "radius": 30.1,
+        "height": 60.1
+      },
+      "category": "hill",
+      "direction_from_lqv": "NNW",
+      "distance_from_lqv_km": 10.24
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_NNW_de_Escobar",
+      "name": "Cerro NNW de Escobar",
+      "elev_m": 250,
+      "x": -846.8,
+      "y": 268.0,
+      "z": -4093.5,
+      "scale": {
+        "radius": 30.0,
+        "height": 60.1
+      },
+      "category": "hill",
+      "direction_from_lqv": "NNW",
+      "distance_from_lqv_km": 4.21
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_E_de_Escobar",
+      "name": "Cerro E de Escobar",
+      "elev_m": 150,
+      "x": 6742.4,
+      "y": 68.0,
+      "z": 1300.9,
+      "scale": {
+        "radius": 37.8,
+        "height": 72.5
+      },
+      "category": "summit",
+      "direction_from_lqv": "E",
+      "distance_from_lqv_km": 6.86
+    },
+    {
+      "type": "cerro",
+      "id": "Cerro_NE_de_Escobar",
+      "name": "Cerro NE de Escobar",
+      "elev_m": 100,
+      "x": 6801.4,
+      "y": -32.0,
+      "z": -4954.7,
+      "scale": {
+        "radius": 31.7,
+        "height": 62.7
+      },
+      "category": "summit",
+      "direction_from_lqv": "NE",
+      "distance_from_lqv_km": 8.43
+    },
+    {
+      "type": "default_house",
+      "id": "lqv_default_cob",
+      "typo": "lqv_lowpoly_house_cob",
+      "name": "LQV Cob House (default)",
+      "x": 1.9,
+      "y": 40.1,
+      "z": 3.5,
+      "rotation_y": 0,
+      "scale": 8
+    },
+    {
+      "type": "quebrada_segment",
+      "x": 30.4,
+      "y": 43.7,
+      "z": 829.0
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -104.6,
+      "y": 40.9,
+      "z": -124.2,
+      "scale": 9.3,
+      "rotation_y": 265.1
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -322.5,
+      "y": 168.0,
+      "z": -650.4,
+      "scale": 10.5,
+      "rotation_y": 10.7
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 95.6,
+      "y": 168.0,
+      "z": 472.7,
+      "scale": 9.2,
+      "rotation_y": 234.0
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": -279.8,
+      "y": 168.0,
+      "z": -78.2,
+      "scale": 12.9,
+      "rotation_y": 2.3
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 209.3,
+      "y": 168.0,
+      "z": -563.6,
+      "scale": 8.9,
+      "rotation_y": 344.6
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -107.0,
+      "y": 168.0,
+      "z": 183.4,
+      "scale": 13.1,
+      "rotation_y": 217.3
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 221.2,
+      "y": 168.0,
+      "z": -581.1,
+      "scale": 13.8,
+      "rotation_y": 136.3
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": -650.7,
+      "y": 168.0,
+      "z": -217.9,
+      "scale": 13.2,
+      "rotation_y": 207.8
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -48.7,
+      "y": 168.0,
+      "z": -169.0,
+      "scale": 9.7,
+      "rotation_y": 28.7
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 25.2,
+      "y": 168.0,
+      "z": 217.9,
+      "scale": 11.8,
+      "rotation_y": 131.3
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -194.3,
+      "y": 168.0,
+      "z": 211.9,
+      "scale": 13.6,
+      "rotation_y": 233.3
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": -200.3,
+      "y": 168.0,
+      "z": -161.9,
+      "scale": 9.0,
+      "rotation_y": 136.6
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 566.7,
+      "y": 168.0,
+      "z": -33.8,
+      "scale": 12.1,
+      "rotation_y": 303.4
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 50.5,
+      "y": 168.0,
+      "z": -291.4,
+      "scale": 9.9,
+      "rotation_y": 96.4
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_palmera",
+      "x": 187.0,
+      "y": 168.0,
+      "z": 743.6,
+      "scale": 9.9,
+      "rotation_y": 236.0
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": -588.2,
+      "y": 168.0,
+      "z": 457.4,
+      "scale": 9.6,
+      "rotation_y": 88.8
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": -295.3,
+      "y": 168.0,
+      "z": -117.2,
+      "scale": 13.4,
+      "rotation_y": 143.8
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 154.8,
+      "y": 168.0,
+      "z": 787.1,
+      "scale": 8.5,
+      "rotation_y": 17.0
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 432.5,
+      "y": 168.0,
+      "z": 358.1,
+      "scale": 10.5,
+      "rotation_y": 22.9
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": -585.0,
+      "y": 168.0,
+      "z": 543.4,
+      "scale": 13.8,
+      "rotation_y": 309.9
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 618.7,
+      "y": 168.0,
+      "z": 48.1,
+      "scale": 11.2,
+      "rotation_y": 96.1
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -138.9,
+      "y": 168.0,
+      "z": -168.8,
+      "scale": 10.7,
+      "rotation_y": 343.4
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 230.2,
+      "y": 168.0,
+      "z": -222.4,
+      "scale": 9.1,
+      "rotation_y": 328.5
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 238.2,
+      "y": 168.0,
+      "z": -246.5,
+      "scale": 11.7,
+      "rotation_y": 55.0
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 41.2,
+      "y": 168.0,
+      "z": -495.6,
+      "scale": 11.2,
+      "rotation_y": 0.2
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_palmera",
+      "x": -71.2,
+      "y": 168.0,
+      "z": 148.8,
+      "scale": 13.3,
+      "rotation_y": 299.4
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_palmera",
+      "x": -64.5,
+      "y": 168.0,
+      "z": 179.0,
+      "scale": 13.7,
+      "rotation_y": 30.8
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": -192.4,
+      "y": 168.0,
+      "z": 20.6,
+      "scale": 12.6,
+      "rotation_y": 46.2
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -499.4,
+      "y": 168.0,
+      "z": 82.0,
+      "scale": 13.2,
+      "rotation_y": 152.3
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 120.9,
+      "y": 168.0,
+      "z": 489.7,
+      "scale": 9.2,
+      "rotation_y": 112.2
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 574.0,
+      "y": 168.0,
+      "z": -14.0,
+      "scale": 11.1,
+      "rotation_y": 43.6
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 60.4,
+      "y": 168.0,
+      "z": 368.6,
+      "scale": 9.4,
+      "rotation_y": 79.3
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 507.3,
+      "y": 168.0,
+      "z": 245.2,
+      "scale": 13.4,
+      "rotation_y": 309.5
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 276.9,
+      "y": 168.0,
+      "z": 134.7,
+      "scale": 9.3,
+      "rotation_y": 47.6
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_pino",
+      "x": 480.9,
+      "y": 168.0,
+      "z": -202.0,
+      "scale": 12.7,
+      "rotation_y": 290.7
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 79.8,
+      "y": 168.0,
+      "z": 201.7,
+      "scale": 10.5,
+      "rotation_y": 168.1
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_palmera",
+      "x": -75.2,
+      "y": 168.0,
+      "z": -579.1,
+      "scale": 8.6,
+      "rotation_y": 144.9
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -376.0,
+      "y": 168.0,
+      "z": 604.7,
+      "scale": 9.1,
+      "rotation_y": 161.5
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": -290.1,
+      "y": 168.0,
+      "z": 159.5,
+      "scale": 13.5,
+      "rotation_y": 159.5
+    },
+    {
+      "type": "tree",
+      "species": "lqv_lowpoly_tree_lapacho",
+      "x": 328.8,
+      "y": 168.0,
+      "z": -385.0,
+      "scale": 14.0,
+      "rotation_y": 301.0
+    },
+    {
+      "type": "monte",
+      "id": "lqv_monte_main",
+      "name": "Cerro del LQV (escarpment)",
+      "x": -278.1,
+      "y": 268.0,
+      "z": 3.5,
+      "scale": 35,
+      "rotation_y": 0
+    },
+    {
+      "type": "waterfall",
+      "id": "lqv_waterfall_main",
+      "x": -411.6,
+      "y": 228.0,
+      "z": 199.0,
+      "scale": 1.5,
+      "rotation_y": 0
+    },
+    {
+      "type": "gate",
+      "id": "lqv_gate_main",
+      "x": 441.7,
+      "y": 208.0,
+      "z": 530.6,
+      "scale": 3,
+      "rotation_y": -25
+    },
+    {
+      "type": "trail_polyline",
+      "id": "wes_walking_path",
+      "coords": [
+        [
+          30.4,
+          829.0
+        ],
+        [
+          119.3,
+          682.6
+        ],
+        [
+          271.9,
+          421.2
+        ],
+        [
+          228.2,
+          421.2
+        ],
+        [
+          169.4,
+          403.9
+        ],
+        [
+          -320.0,
+          343.2
+        ],
+        [
+          429.0,
+          198.0
+        ],
+        [
+          423.5,
+          189.5
+        ],
+        [
+          484.5,
+          61.2
+        ],
+        [
+          401.8,
+          -87.3
+        ],
+        [
+          298.5,
+          -170.0
+        ],
+        [
+          295.5,
+          -9.7
+        ],
+        [
+          76.8,
+          -88.6
+        ],
+        [
+          99.1,
+          -414.0
+        ],
+        [
+          -238.8,
+          -598.0
+        ],
+        [
+          -312.2,
+          -536.5
+        ],
+        [
+          -251.1,
+          -169.4
+        ],
+        [
+          -375.3,
+          -154.2
+        ],
+        [
+          -410.3,
+          -342.2
+        ],
+        [
+          -592.6,
+          10.6
+        ]
+      ]
+    }
+  ],
+  "parcel_center": {
+    "lon": -57.0304,
+    "lat": -25.6082
+  },
+  "elev_min_m": 116.0,
+  "elev_max_m": 392.0,
+  "z_exag": 2.0,
+  "m_per_deg_lon": 100385.11191435724,
+  "m_per_deg_lat": 110540.0
+}
