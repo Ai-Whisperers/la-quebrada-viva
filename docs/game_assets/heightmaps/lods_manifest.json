@@ -1,0 +1,72 @@
+{
+  "site_name": "La Quebrada Viva",
+  "centroid_wgs84": [
+    -57.03,
+    -25.63
+  ],
+  "lods": [
+    {
+      "lod": 0,
+      "view_radius_m": 500,
+      "elevation_m": {
+        "min": 124.87239837646484,
+        "max": 182.3091278076172,
+        "range": 57.436729431152344
+      },
+      "resolution_m_per_pixel": 1.5,
+      "size_pixels": [
+        1024,
+        1024
+      ],
+      "bounds_wgs84": [
+        -57.03749413328386,
+        -25.636756756756757,
+        -57.022505866716145,
+        -25.62324324324324
+      ],
+      "png": "docs/game_assets/heightmaps/lod0_terrain.png"
+    },
+    {
+      "lod": 1,
+      "view_radius_m": 5000,
+      "elevation_m": {
+        "min": 100.92200469970703,
+        "max": 436.2966613769531,
+        "range": 335.3746566772461
+      },
+      "resolution_m_per_pixel": 15,
+      "size_pixels": [
+        512,
+        512
+      ],
+      "bounds_wgs84": [
+        -57.06846988419047,
+        -25.664684684684683,
+        -56.99153011580953,
+        -25.595315315315315
+      ],
+      "png": "docs/game_assets/heightmaps/lod1_terrain.png"
+    },
+    {
+      "lod": 2,
+      "view_radius_m": 30000,
+      "elevation_m": {
+        "min": 87.96355438232422,
+        "max": 492.44903564453125,
+        "range": 404.48548126220703
+      },
+      "resolution_m_per_pixel": 60,
+      "size_pixels": [
+        384,
+        384
+      ],
+      "bounds_wgs84": [
+        -57.14491004368581,
+        -25.7336036036036,
+        -56.91508995631419,
+        -25.526396396396397
+      ],
+      "png": "docs/game_assets/heightmaps/lod2_terrain.png"
+    }
+  ]
+}

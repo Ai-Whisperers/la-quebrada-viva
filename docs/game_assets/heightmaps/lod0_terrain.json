@@ -1,0 +1,35 @@
+{
+  "bounds_wgs84": [
+    -57.03749413328386,
+    -25.636756756756757,
+    -57.022505866716145,
+    -25.62324324324324
+  ],
+  "transform": [
+    0.00027756049199467725,
+    0.0,
+    -57.03749413328386,
+    0.0,
+    -0.0002757859900717514,
+    -25.62324324324324
+  ],
+  "shape": [
+    49,
+    54
+  ],
+  "pixel_resolution_deg": 0.00027756049199467725,
+  "pixel_resolution_m_at_centroid": 27.7777777777736,
+  "lod": 0,
+  "view_radius_m": 500,
+  "target_resolution_m_per_pixel": 1.5,
+  "target_size_pixels": [
+    1024,
+    1024
+  ],
+  "elevation_m": {
+    "min": 124.87239837646484,
+    "max": 182.3091278076172,
+    "range": 57.436729431152344
+  },
+  "output_png": "docs/game_assets/heightmaps/lod0_terrain.png"
+}
