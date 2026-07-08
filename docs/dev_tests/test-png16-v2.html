@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head>
+<body>
+<pre id="out"></pre>
+<script>
+async function probe() {
+  const out = document.getElementById('out');
+  const r = await fetch('https://lqv-walkthrough.pages.dev/game_assets_lite/assets/heightmaps/lod0_terrain.png');
+  const buf = await r.arrayBuffer();
+  // Parse PNG signature and IHDR
+  const u8 = new Uint8Array(buf);
+  const dv = new DataView(buf);
+  out.textContent = `PNG signature: ${Array.from(u8.slice(0, 8)).map(x => x.toString(16).padStart(2,'0')).join(' ')}\n`;
+  // IHDR starts at byte 8: length(4) + 'IHDR'(4) + width(4) + height(4) + bitDepth(1) + colorType(1) + ...
+  const width = dv.getUint32(16);
+  const height = dv.getUint32(20);
+  const bitDepth = u8[24];
+  const colorType = u8[25];
+  out.textContent += `IHDR: ${width}x${height}, bitDepth=${bitDepth}, colorType=${colorType}\n`;
+  out.textContent += `  bitDepth 16 + colorType 0 = grayscale 16-bit\n`;
+  out.textContent += `  bitDepth 8  + colorType 0 = grayscale 8-bit\n`;
+
+  // Now try Image() to see what browser converts to
+  const blob = new Blob([buf]);
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = url; });
+  const c = document.createElement('canvas');
+  c.width = img.width; c.height = img.height;
+  c.getContext('2d').drawImage(img, 0, 0);
+  const data = c.getContext('2d').getImageData(0, 0, img.width, img.height).data;
+  out.textContent += `\nCanvas decode (browser's interpretation):\n`;
+  out.textContent += `  pixel 0: R=${data[0]} G=${data[1]} B=${data[2]} (note R==G==B for grayscale)\n`;
+  out.textContent += `  pixel 500: R=${data[2000]} G=${data[2001]} B=${data[2002]}\n`;
+  out.textContent += `\nFor I;16 → RGBA conversion by browser:\n`;
+  out.textContent += `  Browser does: R = G = B = floor(uint16_value / 256)\n`;
+  out.textContent += `  So G should equal R always for grayscale I;16\n`;
+  out.textContent += `  R=196 means uint16 ~= 196 * 256 = 50176\n`;
+
+  // Try alternative: compute uint16 = R (since R already = floor(uint16/256))
+  // Or: uint16 = R * 256 + (some leftover bit)
+  // Actually for I;16 PNG, the canvas-encoded RGBA stores it as R = (uint16 >> 8) & 0xFF
+  // So real uint16 = R * 256 + ??? — but R was 196 (= 0b11000100), so real might be 50176 + lower bits
+  out.textContent += `\nCORRECT interpretation:\n`;
+  out.textContent += `  uint16_value = R * 256 + 0  (R is high byte, lower byte lost in canvas)\n`;
+  out.textContent += `  This LOSES the lower byte. We get 8-bit resolution only.\n`;
+  out.textContent += `  For our heights 124.9–182.3m: 8-bit gives 57 distinct values (vs 65536 with I;16)\n`;
+  out.textContent += `  That's still useful! 57 elevation levels is fine for visual terrain.\n`;
+}
+probe();
+</script>
+</body></html>

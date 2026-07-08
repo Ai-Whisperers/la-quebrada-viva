@@ -420,10 +420,11 @@ async function preloadHeightmap(lodId) {
       const elev = new Float32Array(img.width * img.height);
       const [emin, emax] = lod.heightmapRange;
       for (let i = 0; i < img.width * img.height; i++) {
-        // 16-bit PNG stored as RGBA: R = low byte, G = high byte
-        const r1 = data[i * 4], g1 = data[i * 4 + 1];
-        const uint16 = (g1 << 8) | r1;
-        elev[i] = emin + (uint16 / 65535) * (emax - emin);
+        // Browser canvas decodes I;16 PNG → RGBA by dividing the uint16 by 256
+        // and writing the same value to R, G, B (low byte lost). So:
+        //   real_uint16 ≈ R * 256   (8-bit resolution, but still useful)
+        const r1 = data[i * 4];
+        elev[i] = emin + (r1 / 255) * (emax - emin);
       }
       heightmapDataCache[lodId] = {
         elev, width: img.width, height: img.height,
@@ -640,15 +641,15 @@ async function computeHillshade() {
       const w = img.width, h = img.height;
       const elev = new Float32Array(w * h);
       for (let i = 0; i < w * h; i++) {
-        // 16-bit PNG stored as RGBA: R = low byte, G = high byte
-        const r1 = data[i * 4], g1 = data[i * 4 + 1];
-        elev[i] = (g1 << 8 | r1);
+        // Browser canvas decodes I;16 → RGBA by /256, R=G=B=high byte
+        const r1 = data[i * 4];
+        elev[i] = r1 / 255;  // 0..1 normalised
       }
       // Normalise to metres
       const [emin, emax] = LODS[0].heightmapRange;
       const norm = emax - emin;
       for (let i = 0; i < elev.length; i++) {
-        elev[i] = emin + (elev[i] / 65535) * norm;
+        elev[i] = emin + elev[i] * norm;
       }
       // Compute hillshade: Horn's method, single sun azimuth 315° NW, alt 45°
       const sunAz = Math.PI * 5 / 4; // 315°
@@ -732,13 +733,13 @@ async function computeContours() {
       const w = img.width, h = img.height;
       const elev = new Float32Array(w * h);
       for (let i = 0; i < w * h; i++) {
-        const r1 = data[i * 4], g1 = data[i * 4 + 1];
-        elev[i] = (g1 << 8 | r1);
+        const r1 = data[i * 4];
+        elev[i] = r1 / 255;  // 0..1
       }
       const [emin, emax] = LODS[0].heightmapRange;
       const norm = emax - emin;
       for (let i = 0; i < elev.length; i++) {
-        elev[i] = emin + (elev[i] / 65535) * norm;
+        elev[i] = emin + elev[i] * norm;
       }
       // Build a GeoJSON grid feature collection (turf will compute isolines)
       // Reduce resolution for turf performance (use 256x256)

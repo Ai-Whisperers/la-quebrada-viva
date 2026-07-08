@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>PNG16 heightmap decode test</title></head>
+<body>
+<h3>PNG16 heightmap decode test</h3>
+<pre id="out">running...</pre>
+<script>
+async function testDecode() {
+  const out = document.getElementById('out');
+  out.textContent = 'starting...\n';
+  try {
+    const r = await fetch('https://lqv-walkthrough.pages.dev/game_assets_lite/assets/heightmaps/lod0_terrain.png');
+    const buf = await r.arrayBuffer();
+    const blob = new Blob([buf]);
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = url; });
+    out.textContent += `image loaded: ${img.width}x${img.height}\n`;
+
+    // Try canvas decode
+    const c = document.createElement('canvas');
+    c.width = img.width; c.height = img.height;
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const data = ctx.getImageData(0, 0, img.width, img.height).data;
+
+    // Sample pixels
+    out.textContent += `rgba bytes: ${data.length}\n`;
+    out.textContent += `pixel 0: R=${data[0]} G=${data[1]} B=${data[2]} A=${data[3]}\n`;
+    out.textContent += `pixel 100: R=${data[400]} G=${data[401]} B=${data[402]} A=${data[403]}\n`;
+    out.textContent += `pixel 500: R=${data[2000]} G=${data[2001]} B=${data[2002]} A=${data[2003]}\n`;
+    out.textContent += `pixel 1k: R=${data[4000]} G=${data[4001]} B=${data[4002]} A=${data[4003]}\n`;
+
+    // Compute range of values
+    let mn = 99999, mx = -1;
+    for (let i = 0; i < img.width * img.height; i++) {
+      const r1 = data[i*4], g1 = data[i*4+1];
+      const v = (g1 << 8) | r1;
+      if (v < mn) mn = v;
+      if (v > mx) mx = v;
+    }
+    out.textContent += `uint16 range: ${mn} – ${mx}\n`;
+    out.textContent += `expected ~ [125, 182] for LOD0 (124.9–182.3 m AMSL → 0–65535 normalised)\n`;
+
+    // Check if range is all zero (browser can't decode I;16 via canvas)
+    if (mn === 0 && mx === 0) {
+      out.textContent += '\n*** CRITICAL: Browser decoded I;16 PNG as all zeros ***\n';
+      out.textContent += '*** Canvas API cannot decode 16-bit grayscale PNGs on most browsers ***\n';
+      out.textContent += '*** Need to decode via raw PNG bytes instead ***\n';
+    } else if (mn === mx) {
+      out.textContent += `\n*** WARNING: All pixels same value ${mn} (file may not be loading as image) ***\n`;
+    } else {
+      out.textContent += '\n✓ Decode works — values vary as expected\n';
+    }
+  } catch (e) {
+    out.textContent += `\nERROR: ${e.message}\n${e.stack}\n`;
+  }
+}
+testDecode();
+</script>
+</body>
+</html>

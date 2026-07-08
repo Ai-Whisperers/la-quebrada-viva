@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head>
+<body>
+<pre id="out">running...</pre>
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Cesium.js"></script>
+<script>
+async function test() {
+  const out = document.getElementById('out');
+  out.textContent = '';
+
+  const r = await fetch('https://lqv-walkthrough.pages.dev/game_assets_lite/assets/heightmaps/lod0_terrain.png');
+  const buf = await r.arrayBuffer();
+  const blob = new Blob([buf]);
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = url; });
+
+  const c = document.createElement('canvas');
+  c.width = img.width; c.height = img.height;
+  const ctx = c.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  const data = ctx.getImageData(0, 0, img.width, img.height).data;
+
+  const [emin, emax] = [124.9, 182.3];
+  const elev = new Float32Array(img.width * img.height);
+  let mn = 999, mx = -1;
+  for (let i = 0; i < img.width * img.height; i++) {
+    const r1 = data[i * 4];
+    elev[i] = emin + (r1 / 255) * (emax - emin);
+    if (elev[i] < mn) mn = elev[i];
+    if (elev[i] > mx) mx = elev[i];
+  }
+  out.textContent = `Float32 elevation range: ${mn.toFixed(1)} – ${mx.toFixed(1)} m\n`;
+  out.textContent += `Expected: 124.9 – 182.3 m (LOD0 heightmap range)\n`;
+
+  // Check distribution: should have many distinct values, not all the same
+  const distinct = new Set();
+  for (let i = 0; i < 10000; i++) {
+    distinct.add(elev[Math.floor(Math.random() * elev.length)].toFixed(1));
+  }
+  out.textContent += `Distinct values in 10k random samples: ${distinct.size}\n`;
+  out.textContent += (distinct.size > 50 ? '✓' : '✗') + ' good variation (would be 1 if all same)\n';
+
+  // Sample 5 points and report
+  for (let i of [0, 1000, 5000, 50000, 500000]) {
+    out.textContent += `  elev[${i}] = ${elev[i].toFixed(1)} m\n`;
+  }
+
+  out.textContent += '\nNow constructing CustomHeightmapTerrainProvider...\n';
+  try {
+    const provider = new Cesium.CustomHeightmapTerrainProvider({
+      width: img.width,
+      height: img.height,
+      tilingScheme: new Cesium.GeographicTilingScheme(),
+      callback: (x, y, level) => elev,
+    });
+    out.textContent += '✓ provider constructed (no error)\n';
+
+    // Check if we can get the ready state
+    out.textContent += `provider.ready: ${provider.ready}\n`;
+    out.textContent += `provider.hasWaterMask: ${provider.hasWaterMask}\n`;
+    out.textContent += `provider.tilingScheme.rectangle: ${JSON.stringify(provider.tilingScheme.rectangle)}\n`;
+
+    out.textContent += '\n✓ All checks passed — terrain data should now render\n';
+  } catch (e) {
+    out.textContent += `\n✗ FAILED: ${e.message}\n${e.stack}\n`;
+  }
+}
+test().catch(e => {
+  document.getElementById('out').textContent = 'CRASH: ' + e.message + '\n' + e.stack;
+});
+</script>
+</body></html>
