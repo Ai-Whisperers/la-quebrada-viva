@@ -411,7 +411,7 @@ scene.background = new THREE.Color(0xe8d8b0);
 scene.fog = new THREE.Fog(0xe8d8b0, 8000, 25000);  // fog kicks in at 8km, full at 25km
 
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 50000);
-camera.position.set(0, 300, 800);
+camera.position.set(0, 320, 600);  // default property view (rotated terrain: Y=up)
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -421,9 +421,9 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.getElementById('scene').appendChild(renderer.domElement);
 
-// Lighting
+// Lighting (positioned for Y-up world: sun above terrain casts shadows down)
 const sun = new THREE.DirectionalLight(0xfff0d0, 2.5);
-sun.position.set(2000, 1500, 3000);
+sun.position.set(2000, 2500, 1500);  // sun high in the sky, offset east+south
 sun.castShadow = true;
 sun.shadow.mapSize.set(2048, 2048);
 sun.shadow.camera.left = -3000;
@@ -451,7 +451,7 @@ scene.add(new THREE.Mesh(skyGeo, skyMat));
 // CONTROLS — wide zoom range for 20km view ↔ 10m house view
 // ============================================================
 const orbit = new OrbitControls(camera, renderer.domElement);
-orbit.target.set(0, 250, 0);  // parcel centroid at terrain mid-elevation
+orbit.target.set(0, 280, 0);  // parcel centroid at terrain mid-elevation
 orbit.enableDamping = true;
 orbit.dampingFactor = 0.08;
 orbit.minDistance = 2;        // can zoom to within 2m of a house
@@ -471,6 +471,36 @@ const placedHouses = [];  // {obj, typo, pos, rot}
 // ============================================================
 const loader = new GLTFLoader();
 const loadedGLBs = {};
+
+// After terrain is rotated +π/2 X, the world coordinate system is:
+//   +X = east
+//   +Y = up (elevation above the lowest point)
+//   +Z = south
+//
+// All archetype GLBs were exported with Blender's Z-up → glTF's Y-up conversion,
+// so they're already in Three.js Y-up form. When placed at a world position,
+// we set:
+//   obj.position = (x_east, y_elev, -z_south)
+// because the user's "south" axis (positive z_south in world) maps to
+// NEGATIVE z in Three.js (Three.js +Z = back of camera = south conventionally).
+// Wait — actually the standard Three.js convention is +Z = south (out of screen).
+// So world "south_m" (positive when going south) should be +Z.
+// → worldToAssetPos(x, y_elev, z_south) = (x, y_elev, z_south)
+//
+// For archetypes whose "up" direction is their local Y, no rotation needed —
+// their position becomes their world position with Y=ground level.
+//
+// For archetypes whose "up" direction is their local Z (the 4 Z-up assets: 
+// glamping, wigwam, worker, tatakua), we rotate them -π/2 on X so their
+// local Z (up) becomes world Y (up). After rotation, placement position works
+// the same way.
+function fixAxisConvention(obj) {
+  obj.rotation.x = -Math.PI / 2;
+}
+
+function worldToAssetPos(x, y_elev, z_south) {
+  return new THREE.Vector3(x, y_elev, z_south);
+}
 
 function loadGLB(name) {
   if (loadedGLBs[name]) return Promise.resolve(loadedGLBs[name]);
@@ -497,6 +527,22 @@ let elevationMaxM = 391;
 async function loadTerrain() {
   document.getElementById('progress').textContent = 'Loading terrain mesh (20 km × 20 km)…';
   const terrain = await loadGLB('lqv_lowpoly_terrain');
+
+  // CRITICAL AXIS FIX (after extensive bug hunt):
+  // The GLB was exported with Y-up convention. In the GLB:
+  //   X = east (horizontal, -10km to +10km)
+  //   Y = south (horizontal, -10km to +10km)  ← Three.js sees this as "up" by default = vertical wall!
+  //   Z = -elevation (vertical, -552m to 0m)
+  //
+  // Apply rotation +π/2 on X axis to map to Three.js Y-up:
+  //   new X = old X (east unchanged)
+  //   new Y = -old Z = elevation (positive, above ground)
+  //   new Z = old Y = south
+  // Result: terrain lies horizontal, elevations point up.
+  terrain.rotation.x = Math.PI / 2;
+
+  // After rotation, Y is 0 to 552 (elev above lowest). The mesh's
+  // lowest point is at world Y=0; highest at Y=552 (with Z_EXAG=2).
   scene.add(terrain);
   terrainMesh = terrain;
 
@@ -516,6 +562,7 @@ async function loadTerrain() {
 }
 
 // Sample real elevation at (x, z) in world coords
+// Returns RAW elevation in metres (116-391 m AMSL), NOT scaled to the terrain mesh Y.
 function sampleElevationAt(x, z) {
   if (!elevationGrid) return null;
   const bnd = elevationGrid.bounds;
@@ -535,8 +582,14 @@ function sampleElevationAt(x, z) {
          dem[j+1][i] * (1-fx) * fy + dem[j+1][i+1] * fx * fy;
 }
 
+// Convert RAW elevation (metres AMSL) to the terrain mesh's Y coordinate
+// (which is 0 at the lowest point of the mesh, ~552 at highest with Z_EXAG=2).
+function elevToMeshY(elevM) {
+  return (elevM - terrainData.elev_min_m) * terrainData.z_exag;
+}
+
 function slopeAt(x, z) {
-  const dx = 30;  // 30m grid → sample at this scale
+  const dx = 30;
   const e1 = sampleElevationAt(x + dx, z), e2 = sampleElevationAt(x - dx, z);
   const e3 = sampleElevationAt(x, z + dx), e4 = sampleElevationAt(x, z - dx);
   if (e1 == null || e2 == null) return null;
@@ -651,19 +704,24 @@ async function placeWorld() {
       worldObjects.add(obj);
 
     } else if (t === 'quebrada_segment') {
-      // Small flat box per segment
+      // Small flat box per segment, sitting on terrain surface
       const w = 10, l = 8;
       const mesh = new THREE.Mesh(
         new THREE.BoxGeometry(w, 1, l),
         new THREE.MeshBasicMaterial({ color: 0x5b9dd9, transparent: true, opacity: 0.8 })
       );
-      mesh.position.set(p.x, p.y, p.z);
+      // p.y is already in mesh coords; lift slightly above surface
+      mesh.position.set(p.x, p.y + 1, p.z);
       mesh.userData.kind = 'quebrada';
       worldObjects.add(mesh);
 
     } else if (t === 'trail_polyline') {
       // Build a continuous ribbon from polyline
-      const points = p.coords.map(([x, z]) => new THREE.Vector3(x, sampleElevationAt(x, z) || 250, z));
+      const points = p.coords.map(([x, z]) => {
+        const elevRaw = sampleElevationAt(x, z);
+        const y = elevRaw != null ? elevToMeshY(elevRaw) : 100;
+        return new THREE.Vector3(x, y, z);
+      });
       const curve = new THREE.CatmullRomCurve3(points);
       const tube = new THREE.Mesh(
         new THREE.TubeGeometry(curve, points.length * 2, 4, 6, false),
@@ -713,6 +771,7 @@ function onCanvasClick(e) {
 
 function showInspectHUD(worldPt) {
   const elev = sampleElevationAt(worldPt.x, worldPt.z);
+  const meshY = elev != null ? elevToMeshY(elev) : null;
   const slope = slopeAt(worldPt.x, worldPt.z);
   const aspect = aspectAt(worldPt.x, worldPt.z);
 
@@ -797,10 +856,11 @@ function drawMeasureLine() {
 async function placeHouseAt(worldPt) {
   const proto = await loadGLB(selectedTypo);
   const obj = proto.clone();
-  obj.scale.setScalar(8);  // consistent scale for all placed typologies
-  // Sit on terrain
-  const elev = sampleElevationAt(worldPt.x, worldPt.z) || worldPt.y;
-  obj.position.set(worldPt.x, elev, worldPt.z);
+  obj.scale.setScalar(8);
+  // Sit on terrain — convert raw elevation to mesh Y
+  const elevRaw = sampleElevationAt(worldPt.x, worldPt.z);
+  const y = elevRaw != null ? elevToMeshY(elevRaw) : worldPt.y;
+  obj.position.set(worldPt.x, y, worldPt.z);
   obj.rotation.y = Math.random() * Math.PI * 2;
   obj.userData.placed = true;
   obj.userData.id = 'placed-' + Date.now();
@@ -831,7 +891,9 @@ function refreshPlacedList() {
   }
   el.innerHTML = placedHouses.map((h, i) => {
     const name = h.typo.replace('lqv_lowpoly_', '').replace(/_/g, ' ');
-    return `<div>${i+1}. <strong>${name}</strong> @ (${h.pos.x.toFixed(0)}, ${h.pos.z.toFixed(0)})</div>`;
+    // Y in mesh coords → raw elevation in metres
+    const elevM = h.pos.y / terrainData.z_exag + terrainData.elev_min_m;
+    return `<div>${i+1}. <strong>${name}</strong> @ (${h.pos.x.toFixed(0)}, ${h.pos.z.toFixed(0)}) · ${elevM.toFixed(0)}m</div>`;
   }).join('');
 }
 
@@ -840,12 +902,19 @@ function refreshPlacedList() {
 // ============================================================
 function zoomPreset(name) {
   // Each preset: target + camera position relative to target
+  // All values in WORLD COORDS: (x_east, y_mesh, z_south)
+  // Mesh Y=0 is the lowest terrain point; Y=552 is the highest (with Z_EXAG=2).
   const presets = {
     context: { target: new THREE.Vector3(0, 250, 0), cam: new THREE.Vector3(0, 2500, 6000), label: '🌍 Full context (10 km)' },
     property: { target: new THREE.Vector3(0, 280, 0), cam: new THREE.Vector3(0, 320, 600), label: '📍 Property (500 m)' },
     parcel: { target: new THREE.Vector3(0, 260, 0), cam: new THREE.Vector3(0, 270, 100), label: '🏞 Parcel (100 m)' },
     house: { target: new THREE.Vector3(0, 265, 0), cam: new THREE.Vector3(0, 268, 10), label: '🏠 House (10 m)' },
-    monte: { target: new THREE.Vector3(-4558, 550, -4477), cam: new THREE.Vector3(-2000, 700, -2000), label: '⛰ Cerro NW (6.4 km)' },
+    // Cerro NW: world (x=-4558, z=-4477, elev=400m)
+    monte: {
+      target: new THREE.Vector3(-4558, elevToMeshY(400), -4477),
+      cam: new THREE.Vector3(-2000, 700, -2000),
+      label: '⛰ Cerro NW (6.4 km)'
+    },
   };
   const p = presets[name];
   if (!p) return;

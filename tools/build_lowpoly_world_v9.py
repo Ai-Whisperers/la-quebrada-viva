@@ -133,8 +133,12 @@ def build_terrain():
     elev_min_real = float(elev_q.min())
     print(f"  quantized range: {elev_min_real:.0f}m to {elev_q.max():.0f}m")
 
-    # Build mesh — vertex at (x, y, z) where y is the elevation (in mesh coords)
-    # We use Z-UP convention (Blender default) — easier than Y-up with custom rotations
+    # Build mesh — vertex at (x, y, z)
+    # We write (x, z, y_swap) so that:
+    #   - GLB X = east (unchanged)
+    #   - GLB Y = up (gets the elevation value, so glTF's Y-up convention is correct)
+    #   - GLB Z = horizontal (was south_m, becomes a horizontal axis)
+    # This way the GLB file comes out Y-up with the terrain lying horizontal.
     verts = []
     h, w = elev_q.shape
     for j in range(h):
@@ -144,6 +148,7 @@ def build_terrain():
             lat = GRID_BOUNDS[3] - (j / (h - 1)) * h_lat  # row j=0 is top (north)
             x, z = lonlat_to_xz(lon, lat)
             y = (elev_q[j, i] - elev_min_real) * Z_EXAG
+            # GLB needs Y = up = elevation. So write Y first.
             verts.append((x, y, z))
 
     faces = []
