@@ -5,7 +5,7 @@
 **Purpose:** Single source of truth for everything we have a topic for but DON'T have a 2026 vendor-confirmed price yet. Organized by Phase 1 urgency → Phase 2 → nice-to-have. Distinguishes (a) things we've researched (range estimates, frameworks) from (b) things needing actual quotes from PY vendors.
 **Companion files:**
 - `2026-06-30_construction_prices_paraguay_nl.md` — Ivan's master NL-language price doc (mostly priced ✅)
-- `NEW01_ai_price_negotiator.md` — vendor outreach method (AI-drafted WhatsApp/email quotes)
+- `NEW01_ai_price_negotiator.md` — vendor outreach method (AI-drafted Messaging/email quotes)
 - `M_*/F_*/PR_*` files in `docs/research/RESULTS/` — per-topic research, some priced, some not
 - `RESEARCH_GAPS.md` — R-series gap tracker (decision-blocking items, NOT all price-related)
 
@@ -225,7 +225,7 @@ These are on the W1.x roadmap but no research file exists yet. Pricing can only 
 | Wes/Kiki action | Unblocks | Effort |
 |---|---|---|
 | **W0.1 — Attorney call (Escribana Cynthia Peña)** | Anexo I, 4-BV costs, permit timeline | 1-2 hours |
-| **W0.5 — Outbound WhatsApp from Wes's phone (per NEW01 method)** | 41 🟡 range items → 5-10 ✅ priced quotes | 1-2 days of Wes-time |
+| **W0.5 — Outbound Messaging from Wes's phone (per NEW01 method)** | 41 🟡 range items → 5-10 ✅ priced quotes | 1-2 days of Wes-time |
 | **W1.1 — Site visit to Escobar (drive all 6 fincas)** | R01-R04, R07 site-specific items | 1-2 days on-site |
 | **W1.2 — Visit San Ber supply chain + AHK Paraguay** | R09, R13, restaurant supply chain | 1 day |
 | **W1.5 — Pilot test (1 cob wall + 1 bamboo accent)** | M_COB_01 + M_VERF_01 actual material quantities | 1 week |

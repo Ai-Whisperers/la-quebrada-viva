@@ -16,7 +16,7 @@
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep"_
+> _"[Action list 2026-06-30]: VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | Messaging-groep automation — RV-groep"_
 
 > _"[Action list 2026-06-30]: Owner | |---|---|---|---| | H1 | **Bamboe-honing kleur behandeling onderzoek + eerste samples** | Week 2 | Erebus + Wesley | | H2 | **Locatie eerste cob-huis bepalen** (boven op de quebrada, uitzicht) | Week 3-4 | Wesley + Erebus | | H3 | **Capex eerste huis** (~ $18.040 USD per RV calc, + bamboe-import) | Week 4 | Erebus | | H4 | **Bouw eerste huis** starten | Maand 2-3 | Wesley + team | | H5 | **"_
 

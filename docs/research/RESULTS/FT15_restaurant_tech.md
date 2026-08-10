@@ -60,7 +60,7 @@ For RV (Fase 1 expanding into Fase 2/3):
 
 **Add later:**
 - **Square** for the wellness center + gift shop
-- **WhatsApp Business API** for guest communication
+- **Messaging Business API** for guest communication
 - **Google Workspace** for team email + documents
 
 ## What Wes needs to do

@@ -37,7 +37,7 @@
 
 ## 3. Chase cadence
 
-- **T+1 (2026-06-28):** Open this file. Note what was handed over at the signing table. WhatsApp Peña to confirm what she received from the seller side.
+- **T+1 (2026-06-28):** Open this file. Note what was handed over at the signing table. Messaging Peña to confirm what she received from the seller side.
 - **T+2 (2026-06-29):** First chase email to Torrasca + cc Peña. Polite, factual: "Recordando la entrega prevista por Cl. OCTAVA (ii)…"
 - **T+3 (2026-06-30):** No reply → second chase. cc Burgos (intermediario).
 - **T+4 (2026-07-01):** Escalate to Wesley + Peña: missing items in writing.

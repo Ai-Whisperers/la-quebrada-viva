@@ -1,4 +1,4 @@
-# O14: WhatsApp RV group (Wes+Thijs+Josh+Ivan+Kiki+Erebus)
+# O14: Messaging RV group (Wes+Thijs+Josh+Ivan+Kiki+Erebus)
 
 **Category:** [Operations, Team & Workflow](../operations/README.md)
 **Priority:** P1
@@ -16,13 +16,13 @@ group created + invite sent
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: onnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Wee"_
+> _"[Action list 2026-06-30]: onnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | Messaging-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Wee"_
 
-> _"[Action list 2026-06-30]: kill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Week 3 |"_
+> _"[Action list 2026-06-30]: kill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | Messaging-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Week 3 |"_
 
-> _"[Dream list 2026-06-30]: ain research | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de WhatsApp-groep" | Auto-message naar RV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat We"_
+> _"[Dream list 2026-06-30]: ain research | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de Messaging-groep" | Auto-message naar RV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat We"_
 
-> _"[Dream list 2026-06-30]: rch | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de WhatsApp-groep" | Auto-message naar RV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat Wesley z"_
+> _"[Dream list 2026-06-30]: rch | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de Messaging-groep" | Auto-message naar RV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat Wesley z"_
 
 ## Why this matters
 

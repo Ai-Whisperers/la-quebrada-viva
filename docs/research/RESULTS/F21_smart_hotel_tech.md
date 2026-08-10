@@ -14,7 +14,7 @@
 ## Categories
 
 ### Guest-facing
-- **AI chatbot** (WhatsApp Business API) for inquiries
+- **AI chatbot** (Messaging Business API) for inquiries
 - **Smart room controls** (lights, temperature, locks via app)
 - **Personalized recommendations** (which cabin, which activities)
 - **Digital concierge** (multi-language)
@@ -37,7 +37,7 @@
 ## Tools + cost
 
 **For Fase 1 (Y1):**
-- WhatsApp Business API: $50-100/month
+- Messaging Business API: $50-100/month
 - Cloudbeds (PMS + channel): $30/month
 - Lightspeed (POS): $70/month
 - Email marketing (Mailchimp or similar): $50/month
@@ -79,7 +79,7 @@
 
 ## What Wes needs to do
 
-- [ ] Y1: WhatsApp Business API + Cloudbeds + Lightspeed
+- [ ] Y1: Messaging Business API + Cloudbeds + Lightspeed
 - [ ] Y2: smart room controls (pilot in 1 cabin first)
 - [ ] Y3: full IoT integration
 - [ ] Track ROI: energy savings, occupancy, reviews

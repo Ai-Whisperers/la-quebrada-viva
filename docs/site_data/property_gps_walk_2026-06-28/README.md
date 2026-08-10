@@ -270,4 +270,4 @@ Coordinate system: WGS84. Area calculation: shoelace formula on
 lat/lon (good for small parcels like this).*
 
 *If you (Wes) find any errors or have additional context, ping Erebus
-on WhatsApp and this will be updated in the next commit.*
+on Messaging and this will be updated in the next commit.*

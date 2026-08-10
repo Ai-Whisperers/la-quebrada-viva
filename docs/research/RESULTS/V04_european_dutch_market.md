@@ -112,7 +112,7 @@ RV's primary target market is European/Dutch/German travelers visiting PY. Witho
 - Instagram (visual, strong for nature)
 
 **For PY-resident expats (weekend market):**
-- Direct via WhatsApp + Instagram
+- Direct via Messaging + Instagram
 - Facebook (popular with expats)
 - Personal referrals
 - German community in San Bernardino

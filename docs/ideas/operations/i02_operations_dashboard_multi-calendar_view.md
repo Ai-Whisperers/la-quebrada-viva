@@ -30,7 +30,7 @@ When Wes has 5+ houses + events + maintenance windows, the mental load of "what'
 
 _This is a suggested idea from Erebus's insights pass 2026-06-30. It fills a gap in Wes's original 89 ideas. See [SUGGESTED.md](../_meta/SUGGESTED.md) for the rationale._
 
-See related existing ideas: [`I01`](../operations/i01_reservation_widget_and_whatsapp_handoff.md), [`I14`](../_archive/2026-06-30_autofill/operations/i14_off-season_pricing_strategy.md)
+See related existing ideas: [`I01`](../operations/i01_reservation_widget_and_messaging_handoff.md), [`I14`](../_archive/2026-06-30_autofill/operations/i14_off-season_pricing_strategy.md)
 
 ## What we know already (research summary)
 
@@ -46,7 +46,7 @@ _Suggested addition — see [SUGGESTED.md](../_meta/SUGGESTED.md) for context. R
 
 **This idea depends on / is informed by:**
 
-- [`I01`](../operations/i01_reservation_widget_and_whatsapp_handoff.md) — booking
+- [`I01`](../operations/i01_reservation_widget_and_messaging_handoff.md) — booking
 - [`I14`](../_archive/2026-06-30_autofill/operations/i14_off-season_pricing_strategy.md) — pricing
 
 

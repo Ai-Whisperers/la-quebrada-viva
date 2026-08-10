@@ -51,7 +51,7 @@ session template + transcription pipeline
 
 **This idea depends on / is informed by:**
 
-- [`O14`](o14_whatsapp_lqv_group_(wes+thijs+josh+ivan+kiki+erebu.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
+- [`O14`](o14_messaging_lqv_group_(wes+thijs+josh+ivan+kiki+erebu.md), [RESEARCH_GAPS.md](../../research/strategy/RESEARCH_GAPS.md)
 
 ## Changelog
 

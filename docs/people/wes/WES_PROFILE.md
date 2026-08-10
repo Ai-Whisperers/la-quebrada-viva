@@ -170,7 +170,7 @@ Wes's own pattern (from working with him since 2026-04-28):
 3. **A/B/C questionnaires** — give him 3 options to pick, not 30
 4. **Transcribe words verbatim** — what he said matters, paraphrase = lose signal
 5. **Read don't lecture** — he doesn't want to be taught, he wants to be heard
-6. **Async by default** — WhatsApp + repo, not calls. Sync only for attorney / Sonja questionnaire / first 3 investors.
+6. **Async by default** — Messaging + repo, not calls. Sync only for attorney / Sonja questionnaire / first 3 investors.
 7. **5/15/30 minute questionnaires** — not 80-question monolithic. (Tiered by complexity.)
 8. **No emojis / kaomoji unless he uses them first** — formal voice
 9. **Spanish cultural content where possible** — he's integrating, not just translating
@@ -234,7 +234,7 @@ Based on his 5 audios + ACTIONS + cadence:
 - **1-thing-at-a-time delivery** (he literally said this)
 - **Read his words, don't lecture** (his main complaint if violated)
 - **Transcribe verbatim** (paraphrase loses his signal)
-- **Async over sync** (WhatsApp + repo, not Zoom)
+- **Async over sync** (Messaging + repo, not Zoom)
 
 ### Quality
 - **Honest critique** — pros AND cons, no sugar-coating
@@ -333,7 +333,7 @@ These are the implicit + explicit rules from working with Wes:
 2. **Read, don't lecture** — quote his words back
 3. **Transcribe verbatim** — paraphrase = lose signal
 4. **3-5 options** — never 1, never 30
-5. **Async by default** — WhatsApp + repo
+5. **Async by default** — Messaging + repo
 6. **Spanish/PY where possible** — he's integrating, not translating
 7. **NL when emotional** — family, Sonja, naming
 8. **No emojis** unless he uses them first

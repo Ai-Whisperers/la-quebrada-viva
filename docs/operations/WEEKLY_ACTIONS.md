@@ -102,7 +102,7 @@
 ## Standing operational items (recurring)
 
 ### Daily
-- Check Wes's WhatsApp for messages
+- Check Wes's Messaging for messages
 - Process any incoming vendor/architect/broker inquiries
 
 ### Weekly (Mondays)
@@ -142,7 +142,7 @@ If any of these come up, flag within 1 hour:
 
 - ❌ Don't add more research — the research is done
 - ❌ Don't rebuild the repo organization — it's already organized
-- ❌ Don't send WhatsApp to Wes on Ivan's behalf — Ivan sends personally
+- ❌ Don't send Messaging to Wes on Ivan's behalf — Ivan sends personally
 - ❌ Don't make architectural/design decisions without Wes's approval
 - ❌ Don't promise completion dates without buffer (build takes 3-4 months)
 

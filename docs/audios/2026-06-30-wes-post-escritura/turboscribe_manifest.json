@@ -15,7 +15,7 @@
     "channels": 1,
     "bitrate_bps": 64000
   },
-  "ordering_rule": "chronological by WhatsApp arrival timestamp (local cache)",
+  "ordering_rule": "chronological by Messaging arrival timestamp (local cache)",
   "silence_gap_between_parts": "1 second",
   "language_strategy": "auto-detect per segment; Wes code-switches NL↔EN↔ES mid-sentence — preserve as-is",
   "parts": [

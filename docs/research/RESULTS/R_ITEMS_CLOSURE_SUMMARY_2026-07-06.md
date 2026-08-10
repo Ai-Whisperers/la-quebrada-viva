@@ -55,10 +55,10 @@ After 5 successful parallel subagents + 1 failed subagent (HTTP 402) completed b
 
 | File | What |
 |---|---|
-| `R07_COB_BUILDER_CONTACT_TEMPLATES.md` | Pre-written Spanish WhatsApp messages to Roberto Abente + Cooperativa Ñandutí (the 2 main PY cob builders per M_COB_01) |
-| `R35_CARTOMEX_WHATSAPP_TEMPLATE.md` | Pre-written Spanish WhatsApp message to Cartomex (the main PY drone LiDAR provider) |
+| `R07_COB_BUILDER_CONTACT_TEMPLATES.md` | Pre-written Spanish Messaging messages to Roberto Abente + Cooperativa Ñandutí (the 2 main PY cob builders per M_COB_01) |
+| `R35_CARTOMEX_MESSAGING_TEMPLATE.md` | Pre-written Spanish Messaging message to Cartomex (the main PY drone LiDAR provider) |
 
-These are ready-to-send WhatsApp templates — the 5-minute copy-paste action items.
+These are ready-to-send Messaging templates — the 5-minute copy-paste action items.
 
 ## Note on R36 + R38 ledger conflict
 

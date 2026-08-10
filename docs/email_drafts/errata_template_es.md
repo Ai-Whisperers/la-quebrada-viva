@@ -23,7 +23,7 @@ Detectamos una corrección menor en el paquete técnico v-final enviado anterior
 - Sustituir el adjunto previo por `escritura_deck_v6_2.pdf` en su archivo digital.
 - En la mesa: utilizar la copia impresa nueva (la traigo físicamente). La copia previa puede destruirse o conservarse marcada como "superada".
 
-Quedo a disposición por WhatsApp para confirmar recepción.
+Quedo a disposición por Messaging para confirmar recepción.
 
 Saludos cordiales,
 

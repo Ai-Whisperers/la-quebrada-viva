@@ -61,7 +61,7 @@ Paraguay has quarry-friendly geology concentrated in **Cordillera department** (
 
 **Sprint 1 action items:**
 1. **W1.1** — Request 1 m³ sample from Piribebuy (Wes or capataz site visit on next PY trip).
-2. **W1.2** — Get 3 written quotes: Piribebuy, Sapucai, Itá (use WHATSAPP_OUTREACH_TEMPLATE_ES.md pattern).
+2. **W1.2** — Get 3 written quotes: Piribebuy, Sapucai, Itá (use MESSAGING_OUTREACH_TEMPLATE_ES.md pattern).
 3. **W2.1** — Negotiate 30-day delivery window + 20% bulk discount at > 50 m³ order.
 
 **Estimated Phase 1 stone need:** 60-90 m³ (5 cabins × 12-18 m³ each including foundation perimeters). Bulk discount vs spot pricing: ~$1,500-3,000 savings.

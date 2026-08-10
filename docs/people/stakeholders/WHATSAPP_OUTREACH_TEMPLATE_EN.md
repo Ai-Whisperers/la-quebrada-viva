@@ -1,6 +1,6 @@
-# WhatsApp Outreach Template — EN (international brokers)
+# Messaging Outreach Template — EN (international brokers)
 
-> **Use for:** Marsh Brazil, Aon Argentina, WTW, and any other international/regional broker with English-speaking reps. **Send via Wes's own WhatsApp**, not Erebus/Ivan (per `WES_HOW_WE_WORK.md`).
+> **Use for:** Marsh Brazil, Aon Argentina, WTW, and any other international/regional broker with English-speaking reps. **Send via Wes's own Messaging**, not Erebus/Ivan (per `WES_HOW_WE_WORK.md`).
 > For Marsh Brazil reps — Spanish is also fine if they're based in PY/São Paulo. Send EN first; they'll reply in whichever language they prefer.
 
 ---
@@ -15,7 +15,7 @@
 1. Send as **single brief message** (no wall of text)
 2. Attach `INSURANCE_PROPERTY_DATASHEET.md` as PDF
 3. Include opt-out line at the end
-4. PHI (escritura scans, padron, contract details) NEVER on WhatsApp — only via secure in-person or password-protected email
+4. PHI (escritura scans, padron, contract details) NEVER on Messaging — only via secure in-person or password-protected email
 5. Follow up by LinkedIn message if no reply in 5 business days
 
 ---
@@ -74,7 +74,7 @@ and schedule a 30-min call this week? Thanks.
 
 - ❌ Don't send the property datasheet body inline — attach as PDF
 - ❌ Don't mention the 4-BV entity structure on first contact (that's for the formal RfQ call, after vet)
-- ❌ Don't send any escritura scan or padron numbers on WhatsApp
+- ❌ Don't send any escritura scan or padron numbers on Messaging
 - ❌ Don't ask for "best price" — ask for "indicative quote, first round"
 - ❌ Don't write about the €5.5M build cost (only €1.1M Phase 1 insurable value — that's what brokers need)
 - ❌ Don't include guest photos or identifying faces (PHI safety)
@@ -82,7 +82,7 @@ and schedule a 30-min call this week? Thanks.
 ## After the broker replies
 
 1. Move to a 30-45 min call within 1 week
-2. Send the datasheet PDF + 5-10 landscape photos via secure email (not on WhatsApp for the photos)
+2. Send the datasheet PDF + 5-10 landscape photos via secure email (not on Messaging for the photos)
 3. Ask for **binding indication** within 4 weeks
 4. Keep Ivan and Erebus informed — they update the master open-decision tracker
 5. If broker declines (PY risk too thin), ask: **"Who in your network handles this — can you refer?"**
@@ -96,4 +96,4 @@ and schedule a 30-min call this week? Thanks.
 
 ---
 
-*Draft 2026-07-06 by Erebus — send via Wes's own WhatsApp after operator confirmation.*
+*Draft 2026-07-06 by Erebus — send via Wes's own Messaging after operator confirmation.*

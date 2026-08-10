@@ -194,7 +194,7 @@ The property descends in steps from north to south:
 
 ## 5. Site Photographs — Reference Index
 
-All 28 photographs taken June 9, 2026 (overcast winter morning). EXIF/GPS stripped by WhatsApp before upload.
+All 28 photographs taken June 9, 2026 (overcast winter morning). EXIF/GPS stripped by Messaging before upload.
 
 ### Batch 1 (8:25:43 PM — 8:26:03 PM)
 
@@ -377,7 +377,7 @@ Does NOT work in high humidity:
 
 - Night ventilation: auto-open stack vents when exterior temp < interior AND no rain detected
 - Storm lockdown: close all motorised vents when rain rate exceeds threshold
-- **Flood alert: three-level escalation triggered by stream level sensor — watch / warning / evacuate — WhatsApp notification**
+- **Flood alert: three-level escalation triggered by stream level sensor — watch / warning / evacuate — Messaging notification**
 - Battery low: shed non-essential loads below 30% SOC, protect water pump and comms
 - Dengue watch: pull SENEPA outbreak data feed via n8n, alert when neighbourhood risk elevated
 - Pre-cool: run AC in sleeping areas 17:00–21:00 during solar peak hours
@@ -388,7 +388,7 @@ Does NOT work in high humidity:
 - Home Assistant as local hub — all automations run offline
 - Zigbee mesh (better clay wall penetration than WiFi; repeaters in bottle wall sections)
 - MQTT as internal message bus
-- n8n bridges Home Assistant to WhatsApp, SENEPA feeds, external APIs
+- n8n bridges Home Assistant to Messaging, SENEPA feeds, external APIs
 
 ---
 

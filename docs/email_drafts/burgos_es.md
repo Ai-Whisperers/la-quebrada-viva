@@ -25,7 +25,7 @@ A modo de constancia de cara a la firma de hoy **27 de junio de 2026** en la esc
 **Logística:**
 
 - Cita en escribanía Peña a las **09:45 -03** (firma 10:00). Confirmamos su presencia en la mesa.
-- Cualquier consulta previa o ajuste sobre la mecánica de pago, le pido que coordine directamente con Wesley van de Camp (en copia) o conmigo por WhatsApp.
+- Cualquier consulta previa o ajuste sobre la mecánica de pago, le pido que coordine directamente con Wesley van de Camp (en copia) o conmigo por Messaging.
 
 Saludos cordiales,
 

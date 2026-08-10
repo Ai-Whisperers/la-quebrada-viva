@@ -249,7 +249,7 @@
 
 **URL:** https://www.ferreteriatotal.com.py/producto/cemento-cecon-cpii-f-32-50kg
 **Phone:** +595 983 719 440
-**WhatsApp:** +595 983 719 440 (same)
+**Messaging:** +595 983 719 440 (same)
 
 **Verbatim Spanish:**
 > "CEMENTO CECON CPII F-32 50KG — Gs. 58.000"
@@ -258,7 +258,7 @@
 
 **URL:** https://www.ferremas.com.py/productos/pintura-sherwin-williams-18lt-marfil
 **Phone:** +595 981 800 068
-**WhatsApp:** wa.me/595981800068
+**Messaging:** wa.me/595981800068
 
 **Verbatim Spanish:**
 > "PINTURA SHERWIN WILLIAMS 18LT MARFIL — Gs. 300.000"
@@ -530,7 +530,7 @@ PY tradition; cob is the right first typology choice per PR03.
 2. **PY-domestic PUERTA prices vary 3.5x** (Gs. 200K-700K for the same 0.80x2.10m placa) — quote 3-5 vendors before committing
 3. **Tornillo prices vary 3.8x** (Gs. 85-320 for 2" tirafondo) — bulk pricing is critical
 4. **Labor costs ~$9K for shell only** — if Bali craftsmen cost $155K, that's 17x more — need to clarify scope
-5. **No Clasipar/MercadoLibre data captured** (anti-bot blocked us) — vendor outreach via WhatsApp (per NEW01 method) is the unblocker
+5. **No Clasipar/MercadoLibre data captured** (anti-bot blocked us) — vendor outreach via Messaging (per NEW01 method) is the unblocker
 
 ---
 
@@ -629,7 +629,7 @@ PY tradition; cob is the right first typology choice per PR03.
 
 These remain 🟡 or 🔴 from PRICE_GAP_MASTER.md and need new research methods:
 
-1. **Clasipar classified listings** — need WhatsApp outreach (per NEW01 method) since browser-blocked
+1. **Clasipar classified listings** — need Messaging outreach (per NEW01 method) since browser-blocked
 2. **Booking.com / Airbnb comparables** — need paid proxy or VPN
 3. **AHK Paraguay directory** — needs Wes-network call
 4. **Mennonite colony supply chain** — needs Wes/Sonja site visit

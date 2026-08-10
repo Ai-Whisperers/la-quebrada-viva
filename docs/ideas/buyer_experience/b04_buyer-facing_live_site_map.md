@@ -52,7 +52,7 @@ https://lqv-walkthrough.pages.dev (12 layers, 3DGS viewer)
 
 **This idea depends on / is informed by:**
 
-- [`I01`](../operations/i01_reservation_widget_and_whatsapp_handoff.md) — booking widget
+- [`I01`](../operations/i01_reservation_widget_and_messaging_handoff.md) — booking widget
 - [`I02`](../operations/i02_operations_dashboard_multi-calendar_view.md) — operations dashboard
 
 

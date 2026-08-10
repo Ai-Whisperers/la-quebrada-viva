@@ -8,7 +8,7 @@ Duration: 3h 19m 18s (11958.77s)
 Format:   mp3, 1ch, 16000Hz, 64kbps
 MD5:      bc169b55c63d82508eaffc866478ff2c
 
-ORDER (chronological by WhatsApp arrival):
+ORDER (chronological by Messaging arrival):
 ----------------------------------------------------------------------
   A_14-52_39min          0.0min →   39.3min  ( 39.3min)
       src: doc_d6daa2988938_06-30-2026_14.52.m4a

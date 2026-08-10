@@ -16,7 +16,7 @@ cron + questionnaire template
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: lyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipelin"_
+> _"[Action list 2026-06-30]: lyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder uitbreiden (escobar_dieren, escobar_bloemen, etc.) | Week 2 | ⚪ | | E5 | Questionnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | Messaging-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipelin"_
 
 > _"[Dream list 2026-06-30]: topic: identificeer wat ontbreekt, stel vervolg-vraag | | A5 | "Vat de hele plan samen" | Synthese van brainstorm → 1 samenvatting | | A6 | "Maak een questionnaire voor jullie" | Periodiek lijstje dat team moet beantwoorden | | A7 | "Roleplay like Ironman" | Jarvis-stijl: kort, actie, geen preambule | | A8 | "Jarvis, onderzoek X" | Direct onderzoek-commando's, resultaat in 1 minuut | | A9 | "Geef prijzen" | Au"_
 

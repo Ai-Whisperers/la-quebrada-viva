@@ -21,7 +21,7 @@
 
 ## Channels
 
-### WhatsApp (primary, real-time)
+### Messaging (primary, real-time)
 
 - **Wes ↔ Ivan** = main channel for day-to-day
 - **Wes ↔ Kiki** = NL network + sales pipeline
@@ -165,7 +165,7 @@ audio messages or chat replies.
 - ❌ Wes doesn't review every commit (only the major ones; trust Ivan/Erebus to keep small stuff clean)
 - ❌ No "weekly meeting" — async by default
 - ❌ No formal project management tool (GitHub Issues + the repo is the source of truth)
-- ❌ No Slack / Discord / Notion (everything in the repo + WhatsApp)
+- ❌ No Slack / Discord / Notion (everything in the repo + Messaging)
 
 ## What TO expect
 

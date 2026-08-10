@@ -309,7 +309,7 @@
 {"start": 787.3, "end": 788.3, "text": "Voor een dentist vriend van Sonja.", "lang": "nl", "avg_logprob": -0.317}
 {"start": 788.3, "end": 793.3, "text": "Ik bouw de hele website en businessplan voor wanneer ze zich bevindt in haar eigen", "lang": "nl", "avg_logprob": -0.317}
 {"start": 793.3, "end": 794.3, "text": "dentistische plaats.", "lang": "nl", "avg_logprob": -0.317}
-{"start": 794.3, "end": 799.3, "text": "We maken ook automatische WhatsApp-messages voor wanneer mensen je messagen.", "lang": "nl", "avg_logprob": -0.317}
+{"start": 794.3, "end": 799.3, "text": "We maken ook automatische Messaging-messages voor wanneer mensen je messagen.", "lang": "nl", "avg_logprob": -0.317}
 {"start": 799.3, "end": 803.3, "text": "Ze geven je een meer menselijke message van...", "lang": "nl", "avg_logprob": -0.317}
 {"start": 803.3, "end": 804.3, "text": "Dit is ons.", "lang": "nl", "avg_logprob": -0.317}
 {"start": 804.3, "end": 805.3, "text": "Dit zijn de prijzen.", "lang": "nl", "avg_logprob": -0.317}
@@ -392,13 +392,13 @@
 {"start": 1009.99, "end": 1010.65, "text": "Zo is het.", "lang": "nl", "avg_logprob": -0.476}
 {"start": 1010.87, "end": 1011.53, "text": "Ja, ja.", "lang": "nl", "avg_logprob": -0.476}
 {"start": 1013.38, "end": 1013.84, "text": "Goed, goed.", "lang": "nl", "avg_logprob": -0.476}
-{"start": 1013.88, "end": 1017.88, "text": "Voor de contest. Dit is mijn WhatsApp agent.", "lang": "nl", "avg_logprob": -0.426}
+{"start": 1013.88, "end": 1017.88, "text": "Voor de contest. Dit is mijn Messaging agent.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1017.88, "end": 1020.88, "text": "Dit is een beetje moeilijker om te gebruiken.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1020.88, "end": 1025.56, "text": "Omdat je zoveel extra dingen gebruikt die je niet bezig bent.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1025.56, "end": 1027.56, "text": "Het is hetzelfde als hier in de VPS.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1027.56, "end": 1030.56, "text": "Hier heb ik direct gesproken in de Braziliëse server.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1030.56, "end": 1033.56, "text": "Omdat het een computer is die in Brazilië werkt.", "lang": "nl", "avg_logprob": -0.426}
-{"start": 1033.56, "end": 1036.29, "text": "Hier kan ik dezelfde dingen geven als in WhatsApp.", "lang": "nl", "avg_logprob": -0.426}
+{"start": 1033.56, "end": 1036.29, "text": "Hier kan ik dezelfde dingen geven als in Messaging.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1036.29, "end": 1039.29, "text": "Maar het is een beetje een mooie interface.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1039.29, "end": 1043.29, "text": "Ik vind die interface niet leuk, maar je hebt een mooie interface.", "lang": "nl", "avg_logprob": -0.426}
 {"start": 1043.29, "end": 1045.29, "text": "Deze ben ik nog steeds een beetje aan het fixen.", "lang": "nl", "avg_logprob": -0.442}
@@ -410,7 +410,7 @@
 {"start": 1061.22, "end": 1066.22, "text": "Als je volledig op je eigen VPS hebt, heb je alleen je eigen dingen te hebben.", "lang": "nl", "avg_logprob": -0.442}
 {"start": 1066.22, "end": 1070.22, "text": "Maar we kopiëren alles wat relevant is van mij naar jou.", "lang": "nl", "avg_logprob": -0.442}
 {"start": 1070.22, "end": 1073.22, "text": "En hier is jouw versie met al jouw data.", "lang": "nl", "avg_logprob": -0.442}
-{"start": 1073.22, "end": 1077.6, "text": "Het kan via WhatsApp antwoorden, zonder problemen.", "lang": "nl", "avg_logprob": -0.409}
+{"start": 1073.22, "end": 1077.6, "text": "Het kan via Messaging antwoorden, zonder problemen.", "lang": "nl", "avg_logprob": -0.409}
 {"start": 1077.6, "end": 1081.6, "text": "Het kan alles op een computer doen wat je een persoon kan vragen.", "lang": "nl", "avg_logprob": -0.409}
 {"start": 1081.6, "end": 1085.12, "text": "Ik gebruik het om satellietdata en Blender te krijgen.", "lang": "nl", "avg_logprob": -0.409}
 {"start": 1085.12, "end": 1089.12, "text": "Om de prijzen van cement, bruggen of andere dingen in Paraguay te krijgen.", "lang": "nl", "avg_logprob": -0.409}
@@ -916,15 +916,15 @@
 {"start": 2268.04, "end": 2269.04, "text": "Maar het geeft je een estimatie of idee van waar je het kunt krijgen.", "lang": "nl", "avg_logprob": -0.404}
 {"start": 2269.04, "end": 2270.04, "text": "Misschien kun je Sonja gewoon noemen, in plaats van daar te gaan en goed genoeg.", "lang": "nl", "avg_logprob": -0.404}
 {"start": 2270.04, "end": 2271.04, "text": "Want naar de plek te gaan om gewoon te zeggen, alstublieft, doe niet dit.", "lang": "nl", "avg_logprob": -0.404}
-{"start": 2271.04, "end": 2272.04, "text": "Het ding is, als ze een WhatsApp hebben, dan kun je ze niet in de mail geven.", "lang": "nl", "avg_logprob": -0.404}
-{"start": 2272.04, "end": 2273.04, "text": "Maar als je een WhatsApp hebt, dan kun je ze niet in de mail geven.", "lang": "nl", "avg_logprob": -0.404}
-{"start": 2273.04, "end": 2274.04, "text": "Maar als je een WhatsApp hebt, dan kun je ze niet in de mail geven.", "lang": "nl", "avg_logprob": -0.404}
+{"start": 2271.04, "end": 2272.04, "text": "Het ding is, als ze een Messaging hebben, dan kun je ze niet in de mail geven.", "lang": "nl", "avg_logprob": -0.404}
+{"start": 2272.04, "end": 2273.04, "text": "Maar als je een Messaging hebt, dan kun je ze niet in de mail geven.", "lang": "nl", "avg_logprob": -0.404}
+{"start": 2273.04, "end": 2274.04, "text": "Maar als je een Messaging hebt, dan kun je ze niet in de mail geven.", "lang": "nl", "avg_logprob": -0.404}
 {"start": 2274.04, "end": 2275.04, "text": "Ja.", "lang": "nl", "avg_logprob": -0.404}
 {"start": 2275.04, "end": 2276.04, "text": "Dus dit is altijd zonder te negotieeren.", "lang": "nl", "avg_logprob": -0.843}
 {"start": 2276.04, "end": 2277.04, "text": "Maar het geeft je een estimatie of idee van waar je het kunt krijgen.", "lang": "nl", "avg_logprob": -0.843}
 {"start": 2277.04, "end": 2278.04, "text": "Misschien kun je Sonja gewoon noemen, in plaats van daar te gaan en goed genoeg.", "lang": "nl", "avg_logprob": -0.843}
 {"start": 2278.04, "end": 2279.04, "text": "Want naar de plek te gaan om gewoon te zeggen, alstublieft, doe niet dit.", "lang": "nl", "avg_logprob": -0.843}
-{"start": 2279.04, "end": 2280.04, "text": "Het ding is, als ze een WhatsApp hebben, dan kun je ze natuurlijk hangen met WhatsApp.", "lang": "nl", "avg_logprob": -0.843}
+{"start": 2279.04, "end": 2280.04, "text": "Het ding is, als ze een Messaging hebben, dan kun je ze natuurlijk hangen met Messaging.", "lang": "nl", "avg_logprob": -0.843}
 {"start": 2280.04, "end": 2281.04, "text": "Ja.", "lang": "nl", "avg_logprob": -0.843}
 {"start": 2281.04, "end": 2282.04, "text": "Je kunt ze dan...", "lang": "nl", "avg_logprob": -0.843}
 {"start": 2282.04, "end": 2285.52, "text": "En ze hangen beter dan Sonja zelf.", "lang": "nl", "avg_logprob": -0.843}

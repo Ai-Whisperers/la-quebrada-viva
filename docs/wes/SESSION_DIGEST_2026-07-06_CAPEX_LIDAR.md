@@ -34,7 +34,7 @@ Two big research outputs that directly affect Phase 1 planning + a potential sid
 **The question:** "Should we buy a drone LiDAR setup, or hire Cartomex?"
 
 **The answer:**
-- **For LQV Phase 1 alone (62 ha)**: **HIRE Cartomex** (~$5K-$8K, quote-only via WhatsApp). Cartomex is the dominant PY provider with Itaipú/Yacyretá/soya experience. No public pricing.
+- **For LQV Phase 1 alone (62 ha)**: **HIRE Cartomex** (~$5K-$8K, quote-only via Messaging). Cartomex is the dominant PY provider with Itaipú/Yacyretá/soya experience. No public pricing.
 - **For a side business**: only buy if you have **4+ external client needs** in 12 months. $35K capex (DJI L3 + M400 RTK + EMLID base station) pays back after 4-5 hires. After that, every additional survey is profit.
 - **Strategic play** (if you want to become the PY LiDAR provider): market window is open — Cartomex has no real competition. 3-year horizon: $200K-$500K cumulative revenue if you hit 30-40 surveys/year by Year 2.
 
@@ -62,7 +62,7 @@ Until today, the 151 files in `docs/research/RESULTS/` had no catalog. Wes could
 
 **Immediate actions** (this week):
 1. **Print `CAPEX_QUICK_REFERENCE.md`** — 1 page, the capex matrix in your pocket
-2. **Call Cartomex on WhatsApp** — get a real quote for the 62-ha LQV Phase 1 survey. Use the message template: "Auditores de la Guerra del Chaco style — we're 62 ha in Escobar, Paraguarí, want LiDAR survey before construction starts, 5 cabin sites + restaurant + pool area, need MDT + classified point cloud, when can you fly + what's your rate?"
+2. **Call Cartomex on Messaging** — get a real quote for the 62-ha LQV Phase 1 survey. Use the message template: "Auditores de la Guerra del Chaco style — we're 62 ha in Escobar, Paraguarí, want LiDAR survey before construction starts, 5 cabin sites + restaurant + pool area, need MDT + classified point cloud, when can you fly + what's your rate?"
 3. **Decide on the cob cabin call** — Roberto Abente in Asunción is the first builder to contact (most active in PY, 20+ projects 2018-2026). Say "60-70 m² cob cabin in Escobar, Paraguarí, 5 cabins in Phase 1, want a per-cabin quote + crew availability"
 4. **Talk to Ivan about the side-business play** — is there appetite in Ai-Whisperers to develop LiDAR as a service line? Gaby + future eco-retreat clients + Riverstone Valley = 3 potential needs in 12 months.
 

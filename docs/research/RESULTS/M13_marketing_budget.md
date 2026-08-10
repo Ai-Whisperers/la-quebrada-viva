@@ -14,7 +14,7 @@
 | Website (Wix/Squarespace) | $20/month | $240/year | Annual: $240 + setup $200 |
 | Domain registration | (one-time) | $80/year | 3 TLDs |
 | Instagram + Facebook | $0-200/month | $0-2,400 | Optional boosted posts |
-| WhatsApp Business | $0/month | $0 | Free |
+| Messaging Business | $0/month | $0 | Free |
 | Google Workspace (5 accounts) | $6/user/month | $360/year | Email + docs |
 | PR (3-4 features in PY press) | (one-time) | $500-1,000 | Year 1 only |
 | Print materials (5-star rating card, in-cabin guide) | (one-time) | $200-500 | Year 1 only |

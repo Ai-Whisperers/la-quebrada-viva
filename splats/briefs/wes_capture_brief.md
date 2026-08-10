@@ -73,7 +73,7 @@ apart gelogd zodat we kunnen beslissen of ze toch bruikbaar zijn.
 
 ## Vragen?
 
-Stuur ze via WhatsApp in het NL — Ivan leest het snelst terug in het NL.
+Stuur ze via Messaging in het NL — Ivan leest het snelst terug in het NL.
 Of spreek ze in op een voice-note in de projectchat, dan transcribeert
 de agent ze en zet ze in `WES_ACTIONS.md`.
 

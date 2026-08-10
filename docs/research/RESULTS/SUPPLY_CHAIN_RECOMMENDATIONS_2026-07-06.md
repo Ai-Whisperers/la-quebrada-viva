@@ -241,11 +241,11 @@ For each category, the recommended split:
 
 The 5-step vendor negotiation script (from `NEW01_ai_price_negotiator.md`):
 
-### Step 1: WhatsApp first, never call
-- Open every vendor relationship with a WhatsApp message
-- Voice calls = high-pressure; WhatsApp = the vendor can take time to respond
+### Step 1: Messaging first, never call
+- Open every vendor relationship with a Messaging message
+- Voice calls = high-pressure; Messaging = the vendor can take time to respond
 - Send the requirement, the volume, the timeline, the budget
-- Get a written quote in WhatsApp (the receipt of price)
+- Get a written quote in Messaging (the receipt of price)
 
 ### Step 2: Anchor high, walk away
 - Quote 3 vendors, get 3 written quotes

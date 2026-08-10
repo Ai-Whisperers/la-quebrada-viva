@@ -43,7 +43,7 @@ VR showroom mode in 3DGS viewer
 
 - [`B02`](../buyer_experience/b02_interactive_site-placement_tool_(move_houses_5m).md) — placement
 - [`B01`](../buyer_experience/b01_vr_walkthrough_before_building.md) — VR
-- [`I01`](../operations/i01_reservation_widget_and_whatsapp_handoff.md) — booking
+- [`I01`](../operations/i01_reservation_widget_and_messaging_handoff.md) — booking
 
 
 

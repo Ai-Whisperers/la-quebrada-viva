@@ -5,7 +5,7 @@
 > ge-eindigd 2026-07-06). Er blijven **6 open voor W1.1**. Kies **5 van de 6**
 > om deze 2 weken te laten onderzoeken. De 6e gaat naar Sprint 1-2.
 
-> **How to answer:** WhatsApp voice note (je dyslexie) van 60-90 seconden:
+> **How to answer:** Messaging voice note (je dyslexie) van 60-90 seconden:
 > "Ik kies [nummers] en de reden is [kort]". Of reply in deze thread.
 > The remaining item automatically slots into Sprint 1-2.
 
@@ -59,7 +59,7 @@ import the materials).
 ## What you do with this
 
 ```
-WhatsApp voice note (60-90 sec):
+Messaging voice note (60-90 sec):
 "Materialen picker. Ik kies [nummers] en de reden is [kort]."
 ```
 

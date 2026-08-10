@@ -60,7 +60,7 @@ will be the local one with Turboscribe used as a comparison.
 
 ## Reproducing the Turboscribe bundle
 
-From a shell with the original 5 .m4a files in the WhatsApp document
+From a shell with the original 5 .m4a files in the Messaging document
 cache, run:
 
 ```bash

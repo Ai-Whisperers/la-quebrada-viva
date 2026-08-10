@@ -158,12 +158,12 @@ not research-grade questions. But 3 of them ARE researchable now:
 the buyer"). Not researched.
 
 **What needs research:**
-- Which PY vendors accept AI-initiated quote requests (whatsapp vs email)
+- Which PY vendors accept AI-initiated quote requests (messaging vs email)
 - What's the typical PY markup over wholesale for the 3 cost pillars (cob/wood/bamboo)
 - Whether PY vendors quote in PYG or USD (matters for FX hedging plan)
 - Whether they're willing to ship to Escobar or require pickup
 
-**Effort:** 1 day. 1 Erebus session. 10 vendor whatsapp messages.
+**Effort:** 1 day. 1 Erebus session. 10 vendor messaging messages.
 
 **Why it matters:** Phase 1 capex depends on getting these quotes right.
 
@@ -195,7 +195,7 @@ railway project he's familiar with). The PY equivalent question is
 - ANNP river freight (Paraná-Paraguay waterway) — does it serve PY ports?
 - What's the economics of road vs river vs rail for shipping bricks, cement, steel from Asunción?
 
-**Effort:** 1 day. ANNP + Ferrocarril del Paraguay websites + WhatsApp
+**Effort:** 1 day. ANNP + Ferrocarril del Paraguay websites + Messaging
 to logistics providers.
 
 **Why it matters:** For Phase 1 imports (cement, rebar, kitchen

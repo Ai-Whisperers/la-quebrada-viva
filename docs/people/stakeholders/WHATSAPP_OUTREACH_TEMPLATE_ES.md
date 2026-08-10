@@ -1,6 +1,6 @@
-# WhatsApp Outreach Template — ES (PY-domestic brokers)
+# Messaging Outreach Template — ES (PY-domestic brokers)
 
-> **Use for:** Mapfre PY, La Consolidada, Seguros Atlántida, and any other PY-domestic insurer. **Send via Wes's own WhatsApp**, not Erebus/Ivan (per `WES_HOW_WE_WORK.md`).
+> **Use for:** Mapfre PY, La Consolidada, Seguros Atlántida, and any other PY-domestic insurer. **Send via Wes's own Messaging**, not Erebus/Ivan (per `WES_HOW_WE_WORK.md`).
 
 ---
 
@@ -68,7 +68,7 @@ Wesley
 
 - ❌ Don't dump the full datasheet body in the chat — attach as PDF
 - ❌ Don't mention NL holding / 4-BV structure on first contact — that's for the formal quote call
-- ❌ Don't send any PHI (escritura scan, padron, contract) on WhatsApp
+- ❌ Don't send any PHI (escritura scan, padron, contract) on Messaging
 - ❌ Don't ask for "best price" — ask for "indicative quote, first round"
 - ❌ Don't write in English (Los brokers PY responden en español primero)
 
@@ -88,6 +88,6 @@ Wesley
 
 ---
 
-*Draft 2026-07-06 by Erebus — send via Wes's own WhatsApp after operator confirmation.*
+*Draft 2026-07-06 by Erebus — send via Wes's own Messaging after operator confirmation.*
 </content>
 </invoke>

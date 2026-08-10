@@ -72,7 +72,7 @@ PMS (Property Management Software) is **the operational backbone** of the LQV's 
 |---|---|---|
 | **Payment gateways** | Stripe, MercadoPago, MP | Built into the PMS or $20-50/mo |
 | **Channel manager (Booking.com API)** | Real-time room availability sync | Included in PMS |
-| **Guest messaging (WhatsApp Business API)** | Automated messages, pre-arrival | $0-100/mo |
+| **Guest messaging (Messaging Business API)** | Automated messages, pre-arrival | $0-100/mo |
 | **Dynamic pricing (PriceLabs)** | Yield management | $20-50/mo |
 | **Accounting (Xero, QuickBooks)** | Revenue, expense tracking | $30-80/mo |
 
@@ -84,7 +84,7 @@ PMS (Property Management Software) is **the operational backbone** of the LQV's 
 |---|---|---:|
 | **PMS + Channel Manager + Booking Engine** | Cloudbeds | $250 |
 | **POS (restaurant)** | MercadoPago + SumUp | 4-6% per txn (variable) |
-| **Guest messaging** | WhatsApp Business API (via Twilio or 360dialog) | $30-50 |
+| **Guest messaging** | Messaging Business API (via Twilio or 360dialog) | $30-50 |
 | **Dynamic pricing** | PriceLabs | $30-50 |
 | **Accounting** | Xero (NL-PY connection) | $35 |
 | **Website** | WordPress + Wix + Custom | $30-100 |
@@ -101,7 +101,7 @@ PMS (Property Management Software) is **the operational backbone** of the LQV's 
 | **Now (Jul 2026)** | Sign up for Cloudbeds + Channel Manager (free trial, setup help) |
 | **Q3 2026** | Connect Airbnb, Booking.com, Wix website |
 | **Q4 2026** | Connect MercadoPago + SumUp POS |
-| **Q1 2027** | Connect WhatsApp Business for guest messaging |
+| **Q1 2027** | Connect Messaging Business for guest messaging |
 | **Phase 1 opening (Q2 2027)** | Full stack live |
 
 ---

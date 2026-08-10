@@ -69,7 +69,7 @@ steps and acceptance criteria.
 | # | Gap | Who notices | Cost of leaving |
 |---|-----|-------------|----------------|
 | **S1** | **No sell-ask price.** Nowhere on the site does it say "for sale at $X" or "looking for $Y investment." Buyers can't act. | Buyer / investor | The site is a passive brochure that doesn't convert |
-| **S2** | **No contact form or "let's talk" CTA.** Topbar has "Repo" / "Full analysis" / "Walkthrough" links, but no `info@`, WhatsApp link, Calendly, or contact submission. | Anyone who wants to reach Ivan/Wes | 90% of qualified-interest leads drop off |
+| **S2** | **No contact form or "let's talk" CTA.** Topbar has "Repo" / "Full analysis" / "Walkthrough" links, but no `info@`, Messaging link, Calendly, or contact submission. | Anyone who wants to reach Ivan/Wes | 90% of qualified-interest leads drop off |
 | **S3** | **No investor pitch deck surface.** The 18 photoreal Blender renders are the strongest single asset on the project, but `index.html` only references one preview image. The renders themselves don't show up anywhere on the live site. | Investor, journalist, designer | The $10,000s of Cycles rendering work is invisible to buyers |
 | **S4** | **No name finalization.** README §provisional banner propagates everywhere. Site still says "La Quebrada Viva" in the URL, the 404 page, the bottom of the analysis page, every fetch path. Wes has not picked — soft-gate SG-W1. | Everyone | The whole site is in "limbo" voice — it's neither Riverstone Valley nor LQV. Confusing for buyers who Google either |
 | **S5** | **Only EN.** Land buyers in Paraguay are Spanish-speakers. European buyers are EN. Wes's own network is NL. The site has no language toggle, no Spanish version of the hero stats, no localized download links. | PY buyers, NL network | Lose 70%+ of the local market |
@@ -103,7 +103,7 @@ The killer features that are missing — these are not polish:
 | **K1** | **No investor 1-pager as a lead magnet.** Stakeholder brief exists at `docs/people/wes/wesley_post_escritura_one_pager.md` but is not on the public site. The "Sell this 30-cabin, 5.5M-euro vision in 1 PDF" asset is the most-sendable thing Ivan owns. | He has it; nobody can find it |
 | **K2** | **No cabin-typology catalogue on the site.** Specs live in `docs/specs/house/floor_plan.md` and `renders/`. The buyer who lands on the site sees numbers but no pictures of the 30 cabins planned. | Investment pitch loses 80% of its impact without visuals |
 | **K3** | **No testimonials or social proof.** This is a personal sale (Wes buying), but the housing-park vision is investor-facing. Zero credibility markup: no "trusted by", no prior-project gallery, no advisor names. | Trust deficit |
-| **K4** | **No "make an offer" or "request a tour" CTA in the hero.** Even if it's a Typeform / Calendly / email-link / WhatsApp-link, there must be ONE button at the top of the hero that says "Let's talk". | This is the gap that converts |
+| **K4** | **No "make an offer" or "request a tour" CTA in the hero.** Even if it's a Typeform / Calendly / email-link / Messaging-link, there must be ONE button at the top of the hero that says "Let's talk". | This is the gap that converts |
 | **K5** | **No site-search.** A 27 KB analysis page plus the index plus mapa means 3 pages; small enough to navigate. But once we add cabin typology, investor brief, research summaries, FAQ, etc., we'll want a `/search` overlay. | Future-scaling |
 | **K6** | **No Spanish version of any buyer-facing page.** The 404 says "LQV walkthrough" — even mentioning Paraguay buyers in Spanish would change nothing in English. | Kills the PY market |
 
@@ -123,7 +123,7 @@ The repo has ~24 MB of buyer-relevant artefacts that **never reach the site**:
 | 4 short data videos (`C_hero_reel.mp4` × 4) | ~50 MB (estimate) | `renders/site_overview/` | **No** |
 | 109 idea catalog (filtered) | ~6 MB markdown | `docs/ideas/` | **No** (only `docs/ideas/_meta/` referenced) |
 | 146 research results | ~3 MB markdown | `docs/research/RESULTS/` | **No** — none, anywhere on the site |
-| 4 stakeholder 1-pagers (attorney, insurance, WhatsApp, Sonja) | ~150 KB | `docs/people/stakeholders/` | **No** — strictly internal |
+| 4 stakeholder 1-pagers (attorney, insurance, Messaging, Sonja) | ~150 KB | `docs/people/stakeholders/` | **No** — strictly internal |
 | Wes's `wesley_post_escritura_one_pager.pdf` | ~50 KB | `docs/wes/` | **No** |
 | 33 spec docs | ~2 MB markdown | `docs/specs/` | **No** |
 | 4 BV-cascade + financial model | ~400 KB | `docs/_reconciled/business/` | **No** |
@@ -191,7 +191,7 @@ Each item has: **goal**, **owner** (W=1-2h Wes, I=Ivan, A=AI subagent), **effort
 | **A2** | **Register the chosen domain** (`.com` and `.com.py` ideally). Cloudflare Registrar. | I | 15 min | domain added to Cloudflare, propagates 200 | A1 |
 | **A3** | **Add CNAME to Cloudflare Pages.** Pages project → `lqv-walkthrough` → custom domain = chosen.com. | I | 15 min | `https://chosen.com/` returns the same HTML as the .pages.dev URL | A2 |
 | **A4** | **Standardize brand palette + typography.** Three pages → one design token set. | I + A | 4 hr | All three pages use: 1 font family, 1 color tokens file, 1 button shape | nothing |
-| **A5** | **Add contact info top-right of every page:** `info@chosen.com` (or mailto) + WhatsApp deeplink. | A | 30 min | Visible on all 3 pages, mobile-clickable to WhatsApp | A3 |
+| **A5** | **Add contact info top-right of every page:** `info@chosen.com` (or mailto) + Messaging deeplink. | A | 30 min | Visible on all 3 pages, mobile-clickable to Messaging | A3 |
 | **A6** | **Add `<meta>` SEO.** `description`, `og:title`, `og:image`, `og:url`, `twitter:card`, `canonical`, `<link rel="alternate" hreflang="en">` (and `hreflang="es"` once Spanish page exists). | A | 1 hr | All 3 pages have unique meta + og:image renders properly on social previews | nothing |
 | **A7** | **Generate sitemap.xml + robots.txt.** | A | 30 min | `https://chosen.com/sitemap.xml` lists all 3 public pages; `robots.txt` references it | A3 |
 | **A8** | **Add `/_redirects` cleanup.** Remove old `mapa-10km` etc. stubs (already done 2026-07-06). Add `www.chosen.com → chosen.com`. | I | 15 min | `https://www.chosen.com/` 301s to apex | A3 |

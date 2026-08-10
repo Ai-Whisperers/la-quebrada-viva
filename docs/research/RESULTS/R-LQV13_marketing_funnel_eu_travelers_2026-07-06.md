@@ -31,7 +31,7 @@
 
 ### Stage 4 — Intent
 
-13. **WhatsApp click-to-chat**: most NL/DE prefer WhatsApp over email
+13. **Messaging click-to-chat**: most NL/DE prefer Messaging over email
 14. **Quick response time**: <2 hr during business hours
 15. **Open questions answered via direct message**
 

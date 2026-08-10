@@ -58,7 +58,7 @@ Full timeline: [`TIMELINE.md`](../state/TIMELINE.md).
 - Open the per-asset `render_catalogue/by_asset/` to see what each typology looks like
 
 **Edit access is limited** to Ivan / Kiki / Erebus. To request edit access
-or to suggest changes, message Erebus on WhatsApp.
+or to suggest changes, message Erebus on Messaging.
 
 ## 5. What's the most important thing to look at first?
 
@@ -139,12 +139,12 @@ Phase 5 (2030): operational milestone (Sonja's 60th) — first major public even
 
 ## 12. How do I contact the team?
 
-- **Wes** → via the AI Whisperers WhatsApp group (Ivan has the group ID)
-- **Ivan** → via WhatsApp
-- **Kiki** (sales/marketing) → via WhatsApp
+- **Wes** → via the AI Whisperers Messaging group (Ivan has the group ID)
+- **Ivan** → via Messaging
+- **Kiki** (sales/marketing) → via Messaging
 - **Erebus** (the AI agent building this) → via Ivan or Kiki
 
-For technical questions about the repo, use WhatsApp to ask Ivan to ping
+For technical questions about the repo, use Messaging to ask Ivan to ping
 Erebus.
 
 ---

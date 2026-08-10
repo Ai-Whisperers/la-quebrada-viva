@@ -22,7 +22,7 @@ static site export
 
 > _"[Raw transcript 2026-06-30]: soms een beetje ongemakkelijk." > > "Maar het werkt beter dan OpenCloud. Maar we kunnen naar binnen. Hoeveel prijzen zijn er? Ja, deze." > > "En deze weblink stuurt naar... Laten we eens kijken. Nee, fuck. Het is deze." > > "Dit moet ik weer opnieuwen. Maar het heeft een... Dit is de webapp. Dat John ook niet zo leuk vindt." > > "Dat is ongeveer hetzelfde als deze chat die ik eerder had laten zien. H"_
 
-> _"[Raw transcript 2026-06-30]: erbrengt naar iets zoals dit. In plaats van je de hele verhaal van dat vervelende deel te sturen. Omdat het de... AI-command is voor de computer." *(Webapp demo, vergelijking met WhatsApp)* > "Dat je dit niet zal begrijpen. Het is gecomputeerd tot menselijke tekeningen. Dit kun je interageren met op de website die ik gestuurd heb." > > "Ik moet het weer opnieuw opnieuwen. Omdat het afgesloten is. N"_
+> _"[Raw transcript 2026-06-30]: erbrengt naar iets zoals dit. In plaats van je de hele verhaal van dat vervelende deel te sturen. Omdat het de... AI-command is voor de computer." *(Webapp demo, vergelijking met Messaging)* > "Dat je dit niet zal begrijpen. Het is gecomputeerd tot menselijke tekeningen. Dit kun je interageren met op de website die ik gestuurd heb." > > "Ik moet het weer opnieuw opnieuwen. Omdat het afgesloten is. N"_
 
 ## Why this matters
 
@@ -34,7 +34,7 @@ static site export
 
 ## Full picture — context, constraints, history
 
-**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via WhatsApp saves Booking.com commission (15%) per [Insight #7](../_meta/INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
+**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via Messaging saves Booking.com commission (15%) per [Insight #7](../_meta/INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
 
 ## What we know already (research summary)
 
@@ -52,7 +52,7 @@ static site export
 **This idea depends on / is informed by:**
 
 - [`B04`](../buyer_experience/b04_buyer-facing_live_site_map.md) — live site map
-- [`I01`](../operations/i01_reservation_widget_and_whatsapp_handoff.md) — booking
+- [`I01`](../operations/i01_reservation_widget_and_messaging_handoff.md) — booking
 - [`I02`](../operations/i02_operations_dashboard_multi-calendar_view.md) — dashboard
 
 

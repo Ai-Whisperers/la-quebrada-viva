@@ -364,7 +364,7 @@ The right answer depends on the eventual scope. AI Whisperers can map this in de
 ### 9.2 Direct
 - **Property website** (premium, multilingual, with booking engine)
 - **Email / newsletter** (post-stay capture)
-- **WhatsApp Business** (essential for the Latin American market + European expats in PY)
+- **Messaging Business** (essential for the Latin American market + European expats in PY)
 
 ### 9.3 PR / travel media
 - **Condé Nast Traveller, Travel + Leisure, Monocle, AFAR** — for the design + eco + food angle
@@ -388,7 +388,7 @@ The right answer depends on the eventual scope. AI Whisperers can map this in de
 - **Dutch Stichting** if one exists
 - **InterNations Asunción** (expat social platform)
 - **Facebook groups** ("Expats in Paraguay", "German in Paraguay", etc.)
-- **WhatsApp groups** of the same communities
+- **Messaging groups** of the same communities
 
 ### 9.6 What to invest in first
 Year 1 priorities, in order:

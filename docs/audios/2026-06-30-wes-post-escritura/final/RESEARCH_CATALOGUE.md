@@ -248,7 +248,7 @@ Wes's working research on Toyota Tundra/Presio + AI-haggling precedent
 | AH03 | Used vs new for bouwfase (cost-benefit) | A | Mercado Libre PY, dealers | A | 1 week | D11 |
 | AH04 | Insurance cost for Tundra/Presio | V | Insurers | W | 1 day | I06 |
 | AH05 | AI-as-price-negotiator voor vendor relations (Wes's $4,000 precedent) | A | Build on existing AI tooling | I+A | 2 weeks | D11, R50 |
-| AH06 | Vendor WhatsApp outreach pattern (cement sellers precedent) | A | Cement sellers, local contacts | A+I | 2 weeks | R50 |
+| AH06 | Vendor Messaging outreach pattern (cement sellers precedent) | A | Cement sellers, local contacts | A+I | 2 weeks | R50 |
 
 ---
 

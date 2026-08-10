@@ -39,7 +39,7 @@ Today is the day. Attached is the final technical pack for the escritura signing
 **Pelton micro-hydro headline** (if asked about the autonomy/Rule 7 critical-systems story):
 On the 62 ha parcel, **31.2 %** of the footprint sits above the 30 m head minimum for Pelton turbines; **10.7 %** sits above the 80 m "good" head threshold. Max head 182.6 m. **Named candidate sites P1/P2/P3** with coordinates are on page 27 of the deck (P3 is the recommended first pilot — penstock 295.5 m, fully within the 300 m radius). All from COP30 DEM data, derivable independently — full evidence in `06_pelton_feasibility/` inside the bundle.
 
-Any last questions before tomorrow morning, ping me on WhatsApp.
+Any last questions before tomorrow morning, ping me on Messaging.
 
 Cheers,
 

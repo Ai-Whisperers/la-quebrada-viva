@@ -182,7 +182,7 @@ Does NOT work in high humidity:
 
 - **Night ventilation:** auto-open stack vents when exterior temp < interior AND no rain detected
 - **Storm lockdown:** close all motorised vents when rain rate exceeds threshold
-- **Flood alert:** WhatsApp notification at 3 escalating thresholds (watch / warning / evacuate)
+- **Flood alert:** Messaging notification at 3 escalating thresholds (watch / warning / evacuate)
 - **Battery low:** shed non-essential loads below 30% SOC, protect water pump and comms
 - **Dengue watch:** pull SENEPA outbreak data feed via n8n, alert when neighbourhood risk elevated
 - **Pre-cool:** run AC in sleeping areas 17:00–21:00 during solar peak hours
@@ -192,7 +192,7 @@ Does NOT work in high humidity:
 - **Home Assistant** as local hub — all automations run offline
 - **Zigbee** mesh for sensors (better clay wall penetration than WiFi; repeaters in bottle wall sections which have less mass)
 - **MQTT** as internal message bus
-- **n8n** bridges Home Assistant to WhatsApp, external APIs, logging, SENEPA feeds
+- **n8n** bridges Home Assistant to Messaging, external APIs, logging, SENEPA feeds
 
 ---
 

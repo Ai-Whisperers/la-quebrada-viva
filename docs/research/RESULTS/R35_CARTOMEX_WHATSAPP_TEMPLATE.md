@@ -1,20 +1,20 @@
-# Cartomex WhatsApp Template — LQV LiDAR Survey Quote Request
+# Cartomex Messaging Template — LQV LiDAR Survey Quote Request
 
-> **For Wesley van de Camp.** Pre-written message in Spanish for Wes to copy-paste to Cartomex's WhatsApp.
-> Cartomex is the main drone LiDAR provider in Paraguay. They quote on WhatsApp — public quote flow.
+> **For Wesley van de Camp.** Pre-written message in Spanish for Wes to copy-paste to Cartomex's Messaging.
+> Cartomex is the main drone LiDAR provider in Paraguay. They quote on Messaging — public quote flow.
 
 ---
 
 ## Cartomex contact
 
-- **WhatsApp**: +55 11 770-9888 (Brazil area code — their Brazil office also covers PY; verify or ask for the PY contact when they reply)
+- **Messaging**: +55 11 770-9888 (Brazil area code — their Brazil office also covers PY; verify or ask for the PY contact when they reply)
 - **Email**: info@cartomex.com
 - **Website**: https://www.cartomex.com/lidar-paraguay.html
 - **Response time**: "less than 1 business hour" per their site
 
 ---
 
-## WhatsApp message to send (Spanish)
+## Messaging message to send (Spanish)
 
 ```
 Hola! Soy Wesley van de Camp, tengo una finca de 62 hectáreas en
@@ -36,7 +36,7 @@ Necesito cotización para levantamiento LiDAR con dron de:
 de entrega?
 
 Mi contacto:
-- WhatsApp: +XX XXX XXX XXX (Wes's number)
+- Messaging: +XX XXX XXX XXX (Wes's number)
 - Email: wes@theriverstonevalley.com (or current email)
 
 Quedo atento a su respuesta.
@@ -79,4 +79,4 @@ Wesley van de Camp
 
 ---
 
-*Pre-written by Erebus 2026-07-06 for Wes to use. Send via WhatsApp, save the response in the research results folder, commit to git.*
+*Pre-written by Erebus 2026-07-06 for Wes to use. Send via Messaging, save the response in the research results folder, commit to git.*

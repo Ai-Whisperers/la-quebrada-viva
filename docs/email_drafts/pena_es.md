@@ -31,7 +31,7 @@ Adjunto el paquete técnico v-final correspondiente a la escritura de compravent
 
 Llegaré con el Sr. van de Camp y el Sr. Hendricus a las **09:45 -03**. Llevaré copia impresa de la portada del deck, la página de BoQ y la hoja Pelton (Regla 7 — sistemas críticos), además de USB con el bundle y su sidecar `.sha256` por si se requiere verificación de integridad.
 
-Quedo a disposición para cualquier consulta previa por este medio o por WhatsApp.
+Quedo a disposición para cualquier consulta previa por este medio o por Messaging.
 
 Saludos cordiales,
 

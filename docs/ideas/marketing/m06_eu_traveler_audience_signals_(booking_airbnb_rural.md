@@ -30,7 +30,7 @@ rural PY ADR + occupancy benchmarks
 
 ## Full picture — context, constraints, history
 
-**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via WhatsApp saves Booking.com commission (15%) per [Insight #7](../_meta/INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
+**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via Messaging saves Booking.com commission (15%) per [Insight #7](../_meta/INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
 
 ## What we know already (research summary)
 

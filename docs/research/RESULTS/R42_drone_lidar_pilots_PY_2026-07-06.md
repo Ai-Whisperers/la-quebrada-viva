@@ -1,6 +1,6 @@
 # R42 — Drone LiDAR Pilot Quotes (PY)
 
-> **For Wesley van de Camp.** Generated 2026-07-06 by Erebus. Builds on `R35_CARTOMEX_WHATSAPP_TEMPLATE.md` (the pre-written message) + the existing site data inventory.
+> **For Wesley van de Camp.** Generated 2026-07-06 by Erebus. Builds on `R35_CARTOMEX_MESSAGING_TEMPLATE.md` (the pre-written message) + the existing site data inventory.
 
 ---
 
@@ -26,7 +26,7 @@
 
 **Cartomex**:
 - **Website**: https://www.cartomex.com/lidar-paraguay.html
-- **WhatsApp**: +55 11 770-9888 (Brazil office also covers PY; verify PY contact on first message)
+- **Messaging**: +55 11 770-9888 (Brazil office also covers PY; verify PY contact on first message)
 - **Email**: info@cartomex.com
 - **Response time**: "less than 1 business hour"
 - **Hardware**: DJI Matrice 300 RTK + DJI L1 LiDAR sensor (the latest DJI LiDAR combo)
@@ -54,7 +54,7 @@
 
 ---
 
-## Cartomex WhatsApp template (per R35_CARTOMEX_WHATSAPP_TEMPLATE.md)
+## Cartomex Messaging template (per R35_CARTOMEX_MESSAGING_TEMPLATE.md)
 
 The full Spanish template is in the dedicated file. The English version for Wes:
 
@@ -85,7 +85,7 @@ ejecutar el levantamiento antes del [date].
 
 ## Recommended plan
 
-1. **Send WhatsApp to Cartomex** (use the Spanish template from R35)
+1. **Send Messaging to Cartomex** (use the Spanish template from R35)
 2. **Wait 1-2 business hours** for response (per their site SLA)
 3. **Schedule the LiDAR flight** for **before the W+4 site visit** (per WES_30_DAY_PLAN)
 4. **Cost target**: $2,500-5,000 USD for standard package
@@ -111,11 +111,11 @@ ejecutar el levantamiento antes del [date].
 ## Sources
 
 - https://www.cartomex.com/lidar-paraguay.html — Cartomex PY page
-- R35_CARTOMEX_WHATSAPP_TEMPLATE.md (new today) — Spanish WhatsApp template
+- R35_CARTOMEX_MESSAGING_TEMPLATE.md (new today) — Spanish Messaging template
 - R23_road_conditions_formal_2026-07-06.md (new today) — access road for the LiDAR team
 - Site data: `/docs/site_data/dem/` (the existing 30m ALOS DEM, to be supplemented by 1m LiDAR)
 - Site data: `/docs/site_data/digital_analysis_2026-07-04/` (existing analysis, will be enhanced)
 
 ---
 
-*Erebus, 2026-07-06. Cartomex is the primary recommendation. $3-5K for 62 ha. Send the Spanish template (R35) to Cartomex WhatsApp; flight within 2 wk; deliverable data joins the existing site_data inventory.*
+*Erebus, 2026-07-06. Cartomex is the primary recommendation. $3-5K for 62 ha. Send the Spanish template (R35) to Cartomex Messaging; flight within 2 wk; deliverable data joins the existing site_data inventory.*
