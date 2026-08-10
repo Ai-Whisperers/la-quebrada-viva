@@ -66,7 +66,7 @@
 ### Operational detail research (10 items)
 - OP01: Restaurant POS + payment integration (beyond Cloudbeds)
 - OP02: Booking.com channel manager setup details
-- OP03: WhatsApp Business API for guest communication
+- OP03: Messaging Business API for guest communication
 - OP04: Guest check-in/check-out process (operational SOP)
 - OP05: Cleaning protocol per cabin
 - OP06: Maintenance schedule per cabin (per material)

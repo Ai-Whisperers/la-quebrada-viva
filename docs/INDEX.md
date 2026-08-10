@@ -15,7 +15,7 @@ What changed in this directory in this session:
 - `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` — print-ready A4 attorney brief (replaces some 24-Q-folder-only references)
 - `docs/people/stakeholders/INSURANCE_BROKER_OUTREACH.md` — broker outreach playbook
 - `docs/people/stakeholders/INSURANCE_PROPERTY_DATASHEET.md` — PHI-safe broker datasheet
-- `docs/people/stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` + `..._EN.md` — outreach templates
+- `docs/people/stakeholders/MESSAGING_OUTREACH_TEMPLATE_ES.md` + `..._EN.md` — outreach templates
 - `docs/people/wes/WES_ACTIONS.md` — renumbered to W0.5-A/W0.5-B/W0.8/W0.9 (preserves original W0.1-W0.7 alongside)
 - `docs/research/RESULTS/NEW01-03_*.md` (3) — NEW-tier research: AI negotiator, steengroeve, river freight
 - `docs/research/RESULTS/M_WOOD/COB/BEV/VLOER/VERF_01_*.md` (5) — Sprint-1 materials
@@ -97,7 +97,7 @@ Net change in this session: +11 files (~57 KB markdown), 0 deletes, 1 doc rewrit
 | [`audios/`](./audios/) | 5 audio transcripts (Wes recordings) + drafts + final | 27 |
 | [`ideas/`](./ideas/) | 109 idea brainstorm catalog (63 ✓ reviewed + 46 in _archive) | 123 |
 | [`render_catalogue/`](./render_catalogue/) | 18 final PNGs + by_asset/ + contact_sheets/ | 108 |
-| [`references/`](./references/) | Wes's original WhatsApp photos (2026-06-11) | 41 |
+| [`references/`](./references/) | Wes's original Messaging photos (2026-06-11) | 41 |
 
 ### Data + GIS (technical, mostly machine-readable)
 

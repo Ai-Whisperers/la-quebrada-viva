@@ -93,4 +93,4 @@
 
 ---
 
-*Maintained by Erebus (AI Whisperers). Reorganized 2026-07-03 alongside the docs restructure pass. Compiled from Wes's 5 audio recordings + the project repo. If you (Wes) find a missing term or have a correction, ping Erebus on WhatsApp.*
+*Maintained by Erebus (AI Whisperers). Reorganized 2026-07-03 alongside the docs restructure pass. Compiled from Wes's 5 audio recordings + the project repo. If you (Wes) find a missing term or have a correction, ping Erebus on Messaging.*

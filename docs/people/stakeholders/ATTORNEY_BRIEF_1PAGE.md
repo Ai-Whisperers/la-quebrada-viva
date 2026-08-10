@@ -84,7 +84,7 @@ Wes is a Dutch NL resident. Phase 1 capex **~€5.5M**.
 
 ## 6. After the call
 
-1. Send 1-page summary of decisions to Erebus (WhatsApp Ivan or directly).
+1. Send 1-page summary of decisions to Erebus (Messaging Ivan or directly).
 2. Erebus updates each L01-L29 item + `BUSINESS_STRUCTURE.md`.
 3. Marks `W0.1` ✅ in `WES_ACTIONS.md`.
 4. Attorney invoice: €300-500 typical.

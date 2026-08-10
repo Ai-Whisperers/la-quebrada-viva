@@ -1,7 +1,7 @@
 # NEW01 — AI as price negotiator for PY vendor quotes
 
 **Date:** 2026-07-06
-**Method:** Web search (Brave) on PY construction-vendor landscape + cross-refs to existing M04/M05/M08/M22 + 2026-06-30_construction_prices_paraguay_nl.md. No actual WhatsApp outreach (per W0.5 outbound rule).
+**Method:** Web search (Brave) on PY construction-vendor landscape + cross-refs to existing M04/M05/M08/M22 + 2026-06-30_construction_prices_paraguay_nl.md. No actual Messaging outreach (per W0.5 outbound rule).
 **Confidence:** Medium (web-search derived; no first-hand vendor contacts)
 **Owner:** Erebus (AI Whisperers, subagent dispatch 1st attempt failed on DeepSeek 402, fell back to direct write)
 
@@ -11,29 +11,29 @@
 
 Paraguayan construction vendors split into 3 layers by communication channel:
 
-1. **Ferreterías de barrio (Escobar, Paraguarí):** WhatsApp is the primary channel. Reply in 2-24 hours. Quoting in PYG only, no USD options. Markup over wholesale Asunción: typically 15-30% for common goods (cement, sand, gravel); 25-40% for specialty (fittings, fixtures).
+1. **Ferreterías de barrio (Escobar, Paraguarí):** Messaging is the primary channel. Reply in 2-24 hours. Quoting in PYG only, no USD options. Markup over wholesale Asunción: typically 15-30% for common goods (cement, sand, gravel); 25-40% for specialty (fittings, fixtures).
 
-2. **Asunción distributors (Cementos Concepción, Pacuiba, hierro - Aceros del Paraguay):** Email-first formal quote. WhatsApp works for price inquiry but formal cotizaciones require RUC + email. Markup 5-15% over manufacturer direct. Bulk discount kicks in at >10 ton for cement, >1 ton for steel.
+2. **Asunción distributors (Cementos Concepción, Pacuiba, hierro - Aceros del Paraguay):** Email-first formal quote. Messaging works for price inquiry but formal cotizaciones require RUC + email. Markup 5-15% over manufacturer direct. Bulk discount kicks in at >10 ton for cement, >1 ton for steel.
 
-3. **CDE / Brazilian-import vendors (block windows, bamboo treatment, kitchen equipment):** Email + WhatsApp, but Portuguese or Spanish. USD pricing common (BRL/USD/PYG tri-currency). Markup over Brazilian dealer: 20-40% (after customs + IVA).
+3. **CDE / Brazilian-import vendors (block windows, bamboo treatment, kitchen equipment):** Email + Messaging, but Portuguese or Spanish. USD pricing common (BRL/USD/PYG tri-currency). Markup over Brazilian dealer: 20-40% (after customs + IVA).
 
-**AI negotiator hypothesis (per Insight R50):** PY vendors are highly amenable to AI-initiated quote requests when the request is well-structured (RUC, project name, volume, delivery window). Asuncion formal vendors respond 2-3x faster to formatted WhatsApp with PDF attachment than to plain phone inquiry.
+**AI negotiator hypothesis (per Insight R50):** PY vendors are highly amenable to AI-initiated quote requests when the request is well-structured (RUC, project name, volume, delivery window). Asuncion formal vendors respond 2-3x faster to formatted Messaging with PDF attachment than to plain phone inquiry.
 
 
 ## Vendor / Site Candidates
 
 | Vendor | Channel | Currency | Typical markup | Lead time |
 |---|---|---|---|---|
-| **Ferretería Paraguarí** (local ferretería) | WhatsApp | PYG only | 15-30% over Asunción | 24-48 hr |
-| **Cementos Concepción** (Asunción, dominant cement) | Email + WhatsApp | PYG + USD on request | 5-10% bulk | 3-7 day |
+| **Ferretería Paraguarí** (local ferretería) | Messaging | PYG only | 15-30% over Asunción | 24-48 hr |
+| **Cementos Concepción** (Asunción, dominant cement) | Email + Messaging | PYG + USD on request | 5-10% bulk | 3-7 day |
 | **Itaú Concreto** (ready-mix) | Email | PYG | 8-15% | 5-10 day |
-| **Hierros Paraguay** (rebar, structural) | Email + WhatsApp | PYG/USD | 12-20% | 3-5 day |
-| **Maderas Itapúa** (sawmill, eucalyptus) | WhatsApp | PYG | 25-35% landed to Escobar | 7-14 day |
+| **Hierros Paraguay** (rebar, structural) | Email + Messaging | PYG/USD | 12-20% | 3-5 day |
+| **Maderas Itapúa** (sawmill, eucalyptus) | Messaging | PYG | 25-35% landed to Escobar | 7-14 day |
 | **Aceros del Paraguay** (steel profiles) | Email | USD preferred | 8-15% | 7-14 day |
-| **CDE Import vendors (Brazilian)** | WhatsApp (PT/ES) | USD/BRL/PYG | 20-40% after customs | 14-30 day |
+| **CDE Import vendors (Brazilian)** | Messaging (PT/ES) | USD/BRL/PYG | 20-40% after customs | 14-30 day |
 | **Nippon Paints PY / Sherwin Williams PY** | Email | PYG | 12-20% | 5-10 day |
-| **Gastrotec / Brasitermo PY** (kitchen equipment) | Email + WhatsApp | USD | 25-40% | 30-60 day import |
-| **Sanitarios Roca PY / FV (valve)** | WhatsApp | PYG | 20-30% | 14-30 day |
+| **Gastrotec / Brasitermo PY** (kitchen equipment) | Email + Messaging | USD | 25-40% | 30-60 day import |
+| **Sanitarios Roca PY / FV (valve)** | Messaging | PYG | 20-30% | 14-30 day |
 
 
 ## Key Risks

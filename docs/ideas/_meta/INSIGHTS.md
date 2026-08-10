@@ -115,11 +115,11 @@ Concrete next step: Ivan/Kiki, send the brief **again** to Wes this week. Sugges
 
 Why this is a gap:
 - M01 (Booking.com + Airbnb) assumes listings exist
-- But Phase 1 has 1-3 houses for the first 6 months. Direct bookings (WhatsApp + website form) are **simpler and higher-margin** than Booking for that volume
-- A **simple reservation widget** (calendar + price + form + WhatsApp handoff) is 1 day of dev work and saves 15% Booking commission for the first year
+- But Phase 1 has 1-3 houses for the first 6 months. Direct bookings (Messaging + website form) are **simpler and higher-margin** than Booking for that volume
+- A **simple reservation widget** (calendar + price + form + Messaging handoff) is 1 day of dev work and saves 15% Booking commission for the first year
 - Also: a multi-calendar showing all 13 houses + worker housing + events + weddings in one view is **essential for Wes to plan operations**
 
-Concrete suggestion: add idea **I01 — Reservation widget** (calendar + price + WhatsApp handoff) + **I02 — Operations dashboard** (multi-calendar for all Wes's units).
+Concrete suggestion: add idea **I01 — Reservation widget** (calendar + price + Messaging handoff) + **I02 — Operations dashboard** (multi-calendar for all Wes's units).
 
 ---
 

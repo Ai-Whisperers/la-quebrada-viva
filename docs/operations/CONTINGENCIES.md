@@ -122,13 +122,13 @@ If BCP site is down: use yesterday's rate, note "TC T-1" in the email body, proc
 **Pre-decided action:**
 
 - **Escalation budget:** if no confirmation by **T-0 08:00** (30 min after send), assume the email did not land and switch channels. Do not wait until 09:00.
-- **WhatsApp the share link directly** (`SHARE_LINKS.md` Drive folder). All four recipients have WhatsApp numbers on file (Peña Ros, Wesley, Thijs, Burgos — fill at T-1, see WALLET_CARD CONTACTOS block).
-- **WhatsApp message template (ES, copy-paste ready):**
+- **Messaging the share link directly** (`SHARE_LINKS.md` Drive folder). All four recipients have Messaging numbers on file (Peña Ros, Wesley, Thijs, Burgos — fill at T-1, see WALLET_CARD CONTACTOS block).
+- **Messaging message template (ES, copy-paste ready):**
   > "Buenos días Dra. Peña — confirmo envío del pack para la escritura de hoy. Enlace: [SHARE_LINK]. SHA-256 bundle: `…724a53c` (últimos 8). Cualquier cosa, +595 [Ivan teléfono]. Gracias, Ivan."
 - **Second-line fallback:** SMS the SHA-256 last-8 as fingerprint (`724a53c` bundle, `0701137` deck) + a shortened Drive link. SMS is byte-limited so omit the long explanation.
-- **Verify receipt explicitly** — do not rely on WhatsApp read receipts (✓✓ blue can be a glance). Ask for a one-word reply ("recibido"). Note the confirmation in `MORNING_RUNBOOK_2026-06-27.md` log section with channel + timestamp.
-- **Provider failover:** if Peña confirms by WhatsApp but the email never arrives → resend from a different email provider (Ivan has both `weissvanderpol.ivan@gmail.com` and the AI Whisperers business address). Document which channel was used in the runbook log so the audit trail is reconstructible post-signing.
-- **Do not delay 10:00 for an email failure.** The notary having the bundle on their phone via WhatsApp is sufficient for the at-table reference; the email is the durable archival channel, not the working channel.
+- **Verify receipt explicitly** — do not rely on Messaging read receipts (✓✓ blue can be a glance). Ask for a one-word reply ("recibido"). Note the confirmation in `MORNING_RUNBOOK_2026-06-27.md` log section with channel + timestamp.
+- **Provider failover:** if Peña confirms by Messaging but the email never arrives → resend from a different email provider (Ivan has both `weissvanderpol.ivan@gmail.com` and the AI Whisperers business address). Document which channel was used in the runbook log so the audit trail is reconstructible post-signing.
+- **Do not delay 10:00 for an email failure.** The notary having the bundle on their phone via Messaging is sufficient for the at-table reference; the email is the durable archival channel, not the working channel.
 
 ---
 

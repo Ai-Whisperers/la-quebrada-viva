@@ -22,7 +22,7 @@
 
 **The repo is over-built and under-curated.** It grew from 0 → 2,159 files in 6 weeks across 4 build phases. Each phase was a different "voice" (Wes recordings → render pipeline → escritura freeze → reconciled view) and they piled up rather than integrating. The result: 5 ways to find the same answer, 3 contradictory "current state" docs, and ~310 MB of files that could be gitignored or LFS'd without losing anything.
 
-**Wes's actual UX of the repo right now:** he doesn't read the repo. He reads WhatsApp messages and Ivan's summaries. The repo is operational infrastructure, not a document. That's OK — but the audit needs to make it navigable for the next person (which is Ivan, post-handover).
+**Wes's actual UX of the repo right now:** he doesn't read the repo. He reads Messaging messages and Ivan's summaries. The repo is operational infrastructure, not a document. That's OK — but the audit needs to make it navigable for the next person (which is Ivan, post-handover).
 
 **The 3 highest-leverage fixes** (in order):
 1. Consolidate "current state" into 1 doc (not 3)

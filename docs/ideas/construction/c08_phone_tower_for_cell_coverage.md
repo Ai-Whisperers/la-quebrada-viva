@@ -18,7 +18,7 @@ Tigo/Personal/Claro coverage map + tower options
 
 > _"[Dream list 2026-06-30]: arijs" | Zijdelingse brainstorm over data-sales | Niet RV-relevant, niet Acme-relevant | | F7 | "Marketing met 1M followers" | Hyperbool voor "groot bereik" | Realistisch: niche-targeted SEO + Booking.com | | F8 | "De audio moet ik luider zeggen" | Opname-instructie, niet wens | Geen actie nodig | --- ## §4 — Wensen voor de site / ervaring (geldig, lange termijn) | # | Wens | Wie | Termijn | |---|--"_
 
-> _"[Raw transcript 2026-06-30]: ar dan WhatsApp je. Niet WhatsApp." > > "Chatty butty. Maar dan tegen je eigen agent. Dus niet dat je... Ja, ja, ja." > > "Maar dat is... Ja, maar de phone app. Ik kon het een keer werken. En dan moest ik het weer configureren." > > "Het werkt niet zo goed. Nog niet. Ja, het is een nieuwe technologie." *(Phone-app demo, WhatsApp-bot uitleg)* > "Het duurt een beetje tijd. Hetzelfde met de Hermes deskt"_
+> _"[Raw transcript 2026-06-30]: ar dan Messaging je. Niet Messaging." > > "Chatty butty. Maar dan tegen je eigen agent. Dus niet dat je... Ja, ja, ja." > > "Maar dat is... Ja, maar de phone app. Ik kon het een keer werken. En dan moest ik het weer configureren." > > "Het werkt niet zo goed. Nog niet. Ja, het is een nieuwe technologie." *(Phone-app demo, Messaging-bot uitleg)* > "Het duurt een beetje tijd. Hetzelfde met de Hermes deskt"_
 
 ## Why this matters
 

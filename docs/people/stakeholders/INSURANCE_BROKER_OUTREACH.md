@@ -22,13 +22,13 @@
 ### For BR / AR / international brokers (B1-B3)
 1. LinkedIn search `Marsh Brazil commercial insurance` / `Aon Argentina risk` / `WTW Latin America`
 2. Find senior broker with "Latin America" or "Mercosur" in their title
-3. Send EN WhatsApp template (below) + attached property datasheet PDF
+3. Send EN Messaging template (below) + attached property datasheet PDF
 4. If no response in 5 business days, escalate to 1 level up (Managing Director LatAm)
 
 ### For PY-domestic brokers (B4-B5)
 1. Ask Kiki for 2-3 personal contacts in her Asunción network
-2. Call instead of WhatsApp (PY brokers respond faster to phone + voice note)
-3. Send ES WhatsApp template
+2. Call instead of Messaging (PY brokers respond faster to phone + voice note)
+3. Send ES Messaging template
 4. **Kiki has the PY broker rolodex** — she is the fastest path here
 
 ### What to attach (digital)
@@ -51,7 +51,7 @@
 - **Multi-year discounts:** 2-3 year bind vs annual
 
 ### Tier 3 — operational
-- **Claims process:** in-country adjusters? WhatsApp claims?
+- **Claims process:** in-country adjusters? Messaging claims?
 - **Premium financing:** quarterly, monthly?
 - **Compliance:** INFONA, MADES, bomberos inspection documented as required?
 
@@ -95,8 +95,8 @@
 ## 8. Cross-references
 
 - `INSURANCE_PROPERTY_DATASHEET.md` — attach to every broker outreach
-- `WHATSAPP_OUTREACH_TEMPLATE_ES.md` — for PY-domestic brokers
-- `WHATSAPP_OUTREACH_TEMPLATE_EN.md` — for BR/AR/NL/international brokers
+- `MESSAGING_OUTREACH_TEMPLATE_ES.md` — for PY-domestic brokers
+- `MESSAGING_OUTREACH_TEMPLATE_EN.md` — for BR/AR/NL/international brokers
 - `docs/wes/WES_ACTIONS.md` — W0.7 task pointing here (added 2026-07-06)
 - `docs/research/RESULTS/insurance_fire_bundle.md` — Sprint 0 research (already covered fire + storm)
 - `docs/research/strategy/RESEARCH_GAPS.md` R01 (fire safety plan) + R23 (road access for emergency)

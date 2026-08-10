@@ -6,9 +6,9 @@
 
 ## Summary
 
-**Booking.com** and **Airbnb** dominate the **international tourist** segment in Paraguay (~70% combined). For the **Mercosur domestic** segment, **WhatsApp + direct booking** dominates (~60%). For the **EU expat** segment, **Instagram + word-of-mouth + niche sites** dominate (~70%, Booking.com secondary).
+**Booking.com** and **Airbnb** dominate the **international tourist** segment in Paraguay (~70% combined). For the **Mercosur domestic** segment, **Messaging + direct booking** dominates (~60%). For the **EU expat** segment, **Instagram + word-of-mouth + niche sites** dominate (~70%, Booking.com secondary).
 
-**For RV:** Don't rely on Booking.com alone — need a **multi-channel strategy** with WhatsApp as primary for Mercosur + direct relationships for EU expats + Booking.com/Airbnb for international tourists.
+**For RV:** Don't rely on Booking.com alone — need a **multi-channel strategy** with Messaging as primary for Mercosur + direct relationships for EU expats + Booking.com/Airbnb for international tourists.
 
 ## Key Data Points
 
@@ -18,7 +18,7 @@
   - **Alojate.com.py** (PY-built, 2018) — niche but growing
   - **MERCADO** (Facebook marketplace) — informal but high-volume
   - **No dominant local OTA** like Despegar in Argentina or Decolar in Brazil
-- **WhatsApp:** Used by 95%+ of PY rural hosts for direct communication + booking confirmation
+- **Messaging:** Used by 95%+ of PY rural hosts for direct communication + booking confirmation
 - **Direct booking via website:** ~10% (PY tourists are cautious about online payment)
 - **Pay-on-arrival:** ~70% of PY rural bookings (vs ~20% for EU/NA tourists)
 - **Platform fees:**
@@ -40,7 +40,7 @@
   - Booking.com (primary for international tourists, 15-18% commission)
   - Airbnb (secondary for international tourists, 14-16% commission)
   - Instagram + Facebook (primary for EU expats + Mercosur, organic reach)
-  - WhatsApp Business (primary for direct booking, payment confirmation)
+  - Messaging Business (primary for direct booking, payment confirmation)
   - RV website (secondary, for SEO + brand authority)
 - **Pricing strategy:**
   - Booking.com: USD 220-280/night (after commission, ~USD 190-240 net)

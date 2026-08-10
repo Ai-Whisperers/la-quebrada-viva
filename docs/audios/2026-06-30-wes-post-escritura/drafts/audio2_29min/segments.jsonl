@@ -178,12 +178,12 @@
 {"start": 648.4, "end": 679.39, "text": "Bedankt Jerold.", "lang": "nl", "avg_logprob": -0.365}
 {"start": 679.39, "end": 690.5, "text": "Ja, wat is er?", "lang": "nl", "avg_logprob": -0.365}
 {"start": 690.5, "end": 697.68, "text": "Voor context.", "lang": "nl", "avg_logprob": -0.365}
-{"start": 697.68, "end": 700.68, "text": "Ik stel je deze WhatsApp-invite.", "lang": "nl", "avg_logprob": -0.365}
+{"start": 697.68, "end": 700.68, "text": "Ik stel je deze Messaging-invite.", "lang": "nl", "avg_logprob": -0.365}
 {"start": 700.68, "end": 703.68, "text": "Die kan je aan George en Thijs sturen.", "lang": "nl", "avg_logprob": -0.365}
 {"start": 703.68, "end": 704.68, "text": "Ja.", "lang": "nl", "avg_logprob": -0.365}
-{"start": 704.68, "end": 706.68, "text": "En dan kunnen ze ook deze WhatsApp-groep aanbrengen.", "lang": "nl", "avg_logprob": -0.365}
-{"start": 706.68, "end": 709.68, "text": "Dat is de WhatsApp voor het project met mijn AI.", "lang": "nl", "avg_logprob": -0.365}
-{"start": 709.68, "end": 710.68, "text": "Die kan je gewoon op WhatsApp sturen.", "lang": "nl", "avg_logprob": -0.365}
+{"start": 704.68, "end": 706.68, "text": "En dan kunnen ze ook deze Messaging-groep aanbrengen.", "lang": "nl", "avg_logprob": -0.365}
+{"start": 706.68, "end": 709.68, "text": "Dat is de Messaging voor het project met mijn AI.", "lang": "nl", "avg_logprob": -0.365}
+{"start": 709.68, "end": 710.68, "text": "Die kan je gewoon op Messaging sturen.", "lang": "nl", "avg_logprob": -0.365}
 {"start": 710.68, "end": 712.68, "text": "En dan sturen ze ook zonder problemen.", "lang": "nl", "avg_logprob": -0.365}
 {"start": 712.68, "end": 715.68, "text": "Ja, dus als we een ID hebben of zoiets...", "lang": "nl", "avg_logprob": -0.365}
 {"start": 715.68, "end": 716.68, "text": "Iedere keer kun je...", "lang": "nl", "avg_logprob": -0.365}
@@ -210,7 +210,7 @@
 {"start": 741.79, "end": 742.79, "text": "Ja.", "lang": "nl", "avg_logprob": -0.365}
 {"start": 742.79, "end": 743.79, "text": "Maar ja, je kunt...", "lang": "nl", "avg_logprob": -0.325}
 {"start": 743.79, "end": 744.79, "text": "Je kunt gewoon een message sturen zoals...", "lang": "nl", "avg_logprob": -0.325}
-{"start": 744.79, "end": 745.79, "text": "Easy via WhatsApp.", "lang": "nl", "avg_logprob": -0.325}
+{"start": 744.79, "end": 745.79, "text": "Easy via Messaging.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 745.79, "end": 746.79, "text": "Het kan ook audio's ontvangen.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 746.79, "end": 747.79, "text": "Maar het is een beetje angstaanjagend.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 747.79, "end": 748.79, "text": "Omdat je de audio moet sturen.", "lang": "nl", "avg_logprob": -0.325}
@@ -221,7 +221,7 @@
 {"start": 752.92, "end": 753.92, "text": "Eh...", "lang": "nl", "avg_logprob": -0.325}
 {"start": 753.92, "end": 754.92, "text": "Beter is de app.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 754.92, "end": 755.92, "text": "Er is een speciale app voor je.", "lang": "nl", "avg_logprob": -0.325}
-{"start": 755.92, "end": 756.92, "text": "Een beetje vies als WhatsApp.", "lang": "nl", "avg_logprob": -0.325}
+{"start": 755.92, "end": 756.92, "text": "Een beetje vies als Messaging.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 756.92, "end": 757.92, "text": "Als een chat-tp-t-ding.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 757.92, "end": 758.92, "text": "Ja, ja.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 758.92, "end": 759.92, "text": "Ik zou...", "lang": "nl", "avg_logprob": -0.325}
@@ -231,10 +231,10 @@
 {"start": 762.92, "end": 763.92, "text": "Nee.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 763.92, "end": 764.92, "text": "Het is...", "lang": "nl", "avg_logprob": -0.325}
 {"start": 764.92, "end": 765.92, "text": "Het is...", "lang": "nl", "avg_logprob": -0.325}
-{"start": 765.92, "end": 766.92, "text": "WhatsApp.", "lang": "nl", "avg_logprob": -0.325}
-{"start": 766.92, "end": 767.92, "text": "Maar dan WhatsApp je.", "lang": "nl", "avg_logprob": -0.325}
+{"start": 765.92, "end": 766.92, "text": "Messaging.", "lang": "nl", "avg_logprob": -0.325}
+{"start": 766.92, "end": 767.92, "text": "Maar dan Messaging je.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 767.92, "end": 768.92, "text": "Niet...", "lang": "nl", "avg_logprob": -0.325}
-{"start": 768.92, "end": 769.92, "text": "Of niet WhatsApp.", "lang": "nl", "avg_logprob": -0.325}
+{"start": 768.92, "end": 769.92, "text": "Of niet Messaging.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 769.92, "end": 770.92, "text": "Chat-tp-t.", "lang": "nl", "avg_logprob": -0.325}
 {"start": 770.92, "end": 771.92, "text": "Het is een...", "lang": "nl", "avg_logprob": -0.325}
 {"start": 771.92, "end": 772.92, "text": "Het is een...", "lang": "nl", "avg_logprob": -0.325}
@@ -277,13 +277,13 @@
 {"start": 863.91, "end": 864.91, "text": "Die lijkt er ook niet zo erg op.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 864.91, "end": 865.91, "text": "Dat is ongeveer hetzelfde als deze chat die ik eerder heb gezien.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 865.91, "end": 866.91, "text": "Het is direct naar de agent.", "lang": "nl", "avg_logprob": -0.362}
-{"start": 866.91, "end": 867.91, "text": "Het werkt beter dan WhatsApp.", "lang": "nl", "avg_logprob": -0.362}
+{"start": 866.91, "end": 867.91, "text": "Het werkt beter dan Messaging.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 867.91, "end": 868.91, "text": "Omdat het minder van die ongelooflijke messages heeft.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 868.91, "end": 869.91, "text": "Omdat het ze gewoon naar iets zoals dit schakelt.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 869.91, "end": 871.42, "text": "In plaats van je de hele gesprek over dat ongelooflijke deel te sturen.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 871.42, "end": 872.42, "text": "Omdat het...", "lang": "nl", "avg_logprob": -0.362}
 {"start": 872.42, "end": 873.42, "text": "Het is zoals de...", "lang": "nl", "avg_logprob": -0.362}
-{"start": 873.42, "end": 874.42, "text": "Het werkt beter dan WhatsApp.", "lang": "nl", "avg_logprob": -0.362}
+{"start": 873.42, "end": 874.42, "text": "Het werkt beter dan Messaging.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 874.42, "end": 875.42, "text": "Omdat het minder van die ongelooflijke messages heeft.", "lang": "nl", "avg_logprob": -0.362}
 {"start": 875.42, "end": 876.42, "text": "Omdat het minder van die ongelooflijke deel te sturen.", "lang": "nl", "avg_logprob": -0.035}
 {"start": 876.42, "end": 877.42, "text": "Omdat het minder van die ongelooflijke deel te sturen.", "lang": "nl", "avg_logprob": -0.035}

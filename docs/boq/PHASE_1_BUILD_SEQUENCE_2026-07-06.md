@@ -99,7 +99,7 @@
 | 33 | 1-2 staff | Pre-opening: landscaping (Mbyá-partnered), signage, welcome baskets, guest materials | Site polished |
 | 33 | 1 manager | Staff onboarding (6 staff: 1 manager, 1 cook, 2 housekeeping, 1 maintenance, 1 groundskeeper) | Staff ready |
 | 34 | 1 manager | Soft launch: 1-2 test guests (friends/family); system debugging | First 2-4 guest stays logged |
-| 35 | 1 manager | Marketing push: Booking.com listing, Instagram, WhatsApp broadcast | Bookings start |
+| 35 | 1 manager | Marketing push: Booking.com listing, Instagram, Messaging broadcast | Bookings start |
 | 36 | 1 manager | Public opening | First paying guests |
 
 **End of Week 36 (Dec 2027)**: Phase 1 fully operational.

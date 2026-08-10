@@ -475,5 +475,5 @@ Prijzen op Clasipar van 2+ jaar geleden: **vermenigvuldig met × 1,18 voor 2026*
 
 ---
 
-**Beheerder:** Erebus / Ai-Whisperers · **Contact:** Ivan via WhatsApp
+**Beheerder:** Erebus / Ai-Whisperers · **Contact:** Ivan via Messaging
 **Aanbevolen volgende update:** 30-09-2026 (na regens, seizoensaanpassing)

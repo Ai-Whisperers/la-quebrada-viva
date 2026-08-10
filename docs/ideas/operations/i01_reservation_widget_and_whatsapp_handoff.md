@@ -1,4 +1,4 @@
-# I01: Reservation widget + WhatsApp handoff
+# I01: Reservation widget + Messaging handoff
 
 **Category:** [Operations](../operations/README.md)
 **Priority:** P1
@@ -6,27 +6,27 @@
 **Status:** `planned`
 **Quality:** `✓ reviewed`
 **Source:** Erebus insights pass 2026-06-30
-**Deliverable:** A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that captures guest name, dates, house preference, and hands off to Wes via WhatsApp. Avoid Booking.com 15% commission for the fi
+**Deliverable:** A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that captures guest name, dates, house preference, and hands off to Wes via Messaging. Avoid Booking.com 15% commission for the fi
 
 ---
 
 ## What Wes wants
 
-A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that captures guest name, dates, house preference, and hands off to Wes via WhatsApp. Avoid Booking.com 15% commission for the first year.
+A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that captures guest name, dates, house preference, and hands off to Wes via Messaging. Avoid Booking.com 15% commission for the first year.
 
 **From Wes's words:**
 
-> _"[Action list 2026-06-30]: onnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Wee"_
+> _"[Action list 2026-06-30]: onnaire-skill — periodieke vragen aan Wesley | Week 2 | ⚪ | | E6 | Persoonlijke CRM voor Wesley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | Messaging-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Wee"_
 
-> _"[Dream list 2026-06-30]: ain research | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de WhatsApp-groep" | Auto-message naar RV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat We"_
+> _"[Dream list 2026-06-30]: ain research | | A13 | "Maak een lijst van mijn stappen" | Personal CRM / actielijst met deadlines | | A14 | "Stuur berichten naar Jos en Thijs in de Messaging-groep" | Auto-message naar RV-groep | | A15 | "Google One upgrade + foto-sync" | Concrete IT-actie vandaag gedaan | --- ## §3 — Wensen die NIET letterlijk moeten (filter) Deze waren brainstorm-asides / hyperbool / cannabis-context: | # | Wat We"_
 
-> _"[Raw transcript 2026-06-30]: # Wesley Brainstorm Recording — Raw Transcript (NL) **Datum:** 2026-06-30 **Bron:** WhatsApp voice notes van Wesley van de Camp naar Erebus **Transcriptie:** TurboScribe (auto) — kan hallucinatie bevatten op namen/details **Doel:** ideeëncapture, niet letterlijk te nemen. Wesley was aan het brainstormen tijdens consumptie van cannabis — ope"_
+> _"[Raw transcript 2026-06-30]: # Wesley Brainstorm Recording — Raw Transcript (NL) **Datum:** 2026-06-30 **Bron:** Messaging voice notes van Wesley van de Camp naar Erebus **Transcriptie:** TurboScribe (auto) — kan hallucinatie bevatten op namen/details **Doel:** ideeëncapture, niet letterlijk te nemen. Wesley was aan het brainstormen tijdens consumptie van cannabis — ope"_
 
-> _"[Raw transcript 2026-06-30]: n is het geregeld. Tuurlijk." > > "Dankjewel. Hier maar. Lekker waar." *(Korte onderbreking — credit card actie)* > "Voor context. Ik stuur je deze WhatsApp-invite. Die je kunt sturen naar George en Thijs." > > "Ja. En dan kunnen ze ook in deze WhatsApp-groep toekomen. Dat is de WhatsApp voor het project met MyAI." > > "Je kunt ook gewoon WhatsApp-messages sturen zonder problemen. Ja, dus als we een ide"_
+> _"[Raw transcript 2026-06-30]: n is het geregeld. Tuurlijk." > > "Dankjewel. Hier maar. Lekker waar." *(Korte onderbreking — credit card actie)* > "Voor context. Ik stuur je deze Messaging-invite. Die je kunt sturen naar George en Thijs." > > "Ja. En dan kunnen ze ook in deze Messaging-groep toekomen. Dat is de Messaging voor het project met MyAI." > > "Je kunt ook gewoon Messaging-messages sturen zonder problemen. Ja, dus als we een ide"_
 
 ## Why this matters
 
-For 1-3 houses in Phase 1, Booking is overkill and eats margin. Direct booking via WhatsApp is higher-converting for the European expat audience Wes is targeting.
+For 1-3 houses in Phase 1, Booking is overkill and eats margin. Direct booking via Messaging is higher-converting for the European expat audience Wes is targeting.
 
 **Related insights from the catalog pass:**
 
@@ -67,7 +67,7 @@ $500-2000 (dev time, simple Next.js embed)
 
 ## Done = shipped
 
-Single-page reservation form on the live site; WhatsApp handoff; SMS backup if WhatsApp fails
+Single-page reservation form on the live site; Messaging handoff; SMS backup if Messaging fails
 
 ## Recommended next action
 

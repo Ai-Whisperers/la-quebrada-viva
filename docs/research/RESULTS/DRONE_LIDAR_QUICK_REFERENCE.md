@@ -9,7 +9,7 @@
 
 ## TL;DR
 
-- **For LQV Phase 1 alone (62 ha)**: **HIRE Cartomex (PY)** — quote-only, est. **$5K-$8K USD**. No public pricing; ask WhatsApp.
+- **For LQV Phase 1 alone (62 ha)**: **HIRE Cartomex (PY)** — quote-only, est. **$5K-$8K USD**. No public pricing; ask Messaging.
 - **For a side business**: only buy if you have **4+ external client needs** in 12 months. $35K capex (DJI L3 + M400 RTK) pays back after 4-5 hires.
 - **Strategic play** (Wes becomes the PY LiDAR provider): market window is open (Cartomex has no competition). 3-year horizon: **$200K-$500K cumulative revenue**.
 

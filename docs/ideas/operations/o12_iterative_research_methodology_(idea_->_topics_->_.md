@@ -20,7 +20,7 @@
 
 > _"[Action list 2026-06-30]: nneer | Status | |---|---|---|---| | E1 | Onderzoeksmethode-skill `/onderzoek <idee>` bouwen in Hermes | Week 1 | ⚪ | | E2 | Prijzen-documenet (`docs/research/RESULTS/2026-06-30_construction_prices_paraguay_nl.md`) onderhouden + maandelijks update | Lopend | ✅ Nu live | | E3 | VR-viewer itereren — voeg typology-plaatsing + viewshed-analyse toe | Week 2-3 | 🟡 Pipeline klaar | | E4 | RV-onderzoeks-corpus verder ui"_
 
-> _"[Action list 2026-06-30]: sley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | WhatsApp-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Week 3 | ⚪ | --- ## §4 — THIJS + WESLEY (eerste maanden — operationeel op de site) | # | Ta"_
+> _"[Action list 2026-06-30]: sley — acties, deadlines, follow-ups | Week 1 | ⚪ | | E7 | Messaging-groep automation — RV-groep berichten sturen namens Wesley | Week 2 | ⚪ | | E8 | Research-pipeline — elke week 5 nieuwe topics onderzocht + gerapporteerd | Lopend | ⚪ | | E9 | Prijs-offertes automatisch opvragen bij leveranciers via templates | Week 3 | ⚪ | --- ## §4 — THIJS + WESLEY (eerste maanden — operationeel op de site) | # | Ta"_
 
 > _"[Dream list 2026-06-30]: T-3.5 jaar | | D10 | **AI assistent weet alle prijzen, is expert grondonderzoek, expert bouwen** — buddy niet tool | Erebus-context met capex-data + research-synthese | Erebus | ✅ Nu: 13 NL-prijzen-doc online + research corpus | --- ## §2 — Wensen voor AI assistent (geldig, kan AI) | # | Wens | AI-actie | |---|---|---| | A1 | "Stel je voor dat het een wensgenie is" | Open-ended ideatie-modus: acceptee"_
 

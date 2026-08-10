@@ -86,7 +86,7 @@ For each shipment:
 - [ ] Choose 1 primary despachante + 1 backup
 - [ ] Pre-share the import pipeline (B07, M-series, AH-series) with them
 - [ ] Get HS code classifications for each upcoming import
-- [ ] Establish the despachante's communication channel (WhatsApp preferred in PY)
+- [ ] Establish the despachante's communication channel (Messaging preferred in PY)
 
 ## Sources to verify
 - Cadiem: search "Cadiem despachante Paraguay"

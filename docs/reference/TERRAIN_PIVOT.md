@@ -53,7 +53,7 @@ The reference photos sorted into thirteen typologies and four amenities. Each on
 Each entry below is what gets built under `lqv/typologies/<name>.py` plus a matching subscene driver under `lqv/subscene/<name>.py`. All entries carry a `MATERIAL_TAKEOFF` dict whose keys are materials and values are `{quantity_field, unit_cost_usd}` for the BoQ rollup.
 
 ### 3.1 Hobbit House (`hobbit_house`)
-Earth-bermed circular hut, ~6 m external diameter, ~3.2 m crown height, round timber door, oeil-de-boeuf window, green roof. Cuts into a hill — `place_house(..., snap='cut')`. Reference: WhatsApp ... PM (1).jpeg, two angles. Materials: cob walls 12 m³, sod roof 28 m², round door + frame 1 unit, hobbit window 1 unit.
+Earth-bermed circular hut, ~6 m external diameter, ~3.2 m crown height, round timber door, oeil-de-boeuf window, green roof. Cuts into a hill — `place_house(..., snap='cut')`. Reference: Messaging ... PM (1).jpeg, two angles. Materials: cob walls 12 m³, sod roof 28 m², round door + frame 1 unit, hobbit window 1 unit.
 
 ### 3.2 Italian Stone Small v1 (`italian_stone_small_v1`)
 Stone-clad single-volume hut, ~4 m × 5 m, tile roof, single chimney. Pads onto a flat lawn. Material vocabulary borrowed from the dry-stone Tuscan farmhouses Wesley referenced.

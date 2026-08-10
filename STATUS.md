@@ -8,7 +8,7 @@
 | **2026-07-06 update (Erebus post-audit):**
 > - Repo audit confirmed ~380+ docs (~2,888 files total), 18 photoreal Cycles finals byte-frozen at `85e86aa`, 109-idea brainstorm catalog with 63 ✓ reviewed.
 > - Shipped Wes-facing audit + action list at `docs/wes/AI_WHISPERERS_WES_DIGEST_2026-07-06.md`.
-> - Shipped 6 stakeholder files: `ATTORNEY_BRIEF_1PAGE.md`, `INSURANCE_BROKER_OUTREACH.md`, `INSURANCE_PROPERTY_DATASHEET.md`, `WHATSAPP_OUTREACH_TEMPLATE_ES.md`, `WHATSAPP_OUTREACH_TEMPLATE_EN.md` (in `docs/people/stakeholders/`).
+> - Shipped 6 stakeholder files: `ATTORNEY_BRIEF_1PAGE.md`, `INSURANCE_BROKER_OUTREACH.md`, `INSURANCE_PROPERTY_DATASHEET.md`, `MESSAGING_OUTREACH_TEMPLATE_ES.md`, `MESSAGING_OUTREACH_TEMPLATE_EN.md` (in `docs/people/stakeholders/`).
 > - Shipped 8 research files: NEW01/02/03 (AI negotiator, steengroeve, river freight), M-wood-01, M-cob-01, M-bev-01, M-vloer-01, M-verf-01 in `docs/research/RESULTS/`.
 > - Renumbered + reconciled `WES_ACTIONS.md` (W0.5-A insurance, W0.5-B LiDAR, W0.6 name, W0.7 Tundra/Presio, W0.8 attorney, W0.9 Sonja — supersedes partial-renumbered old W0.x in some existing files).
 > - Fixed live deploy drift at `lqv-walkthrough.pages.dev/` (was showing stale v17 viewer; now serves v19 HEAD).

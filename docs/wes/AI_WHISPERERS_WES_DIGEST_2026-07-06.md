@@ -17,7 +17,7 @@
 
 **8 research files shipped (Sprint-1 + 3 NEW):** see `docs/research/RESULTS/NEW01-03_*.md` + `M_WOOD_01_*.md` + `M_COB_01_*.md` + `M_BEV_01_*.md` + `M_VLOER_01_*.md` + `M_VERF_01_*.md`. Total ~55 KB.
 
-**6 stakeholder files shipped:** `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` (1-page print version) + `INSURANCE_BROKER_OUTREACH.md` + `INSURANCE_PROPERTY_DATASHEET.md` + `WHATSAPP_OUTREACH_TEMPLATE_ES.md` + `WHATSAPP_OUTREACH_TEMPLATE_EN.md` + renumbered `WES_ACTIONS.md` (W0.5-A insurance / W0.5-B LiDAR / W0.8 attorney / W0.9 Sonja).
+**6 stakeholder files shipped:** `docs/people/stakeholders/ATTORNEY_BRIEF_1PAGE.md` (1-page print version) + `INSURANCE_BROKER_OUTREACH.md` + `INSURANCE_PROPERTY_DATASHEET.md` + `MESSAGING_OUTREACH_TEMPLATE_ES.md` + `MESSAGING_OUTREACH_TEMPLATE_EN.md` + renumbered `WES_ACTIONS.md` (W0.5-A insurance / W0.5-B LiDAR / W0.8 attorney / W0.9 Sonja).
 
 ---
 
@@ -105,7 +105,7 @@ I can copy the missing file, run the redeploy cron manually, and verify all 18 l
 
 These are queued but waiting for a green light:
 
-1. **NEW-01: AI as price negotiator for PY vendors** — 10 WhatsApp messages to cob/wood/bamboo suppliers, get PYG vs USD pricing, markups, lead times. 1 day.
+1. **NEW-01: AI as price negotiator for PY vendors** — 10 Messaging messages to cob/wood/bamboo suppliers, get PYG vs USD pricing, markups, lead times. 1 day.
 2. **NEW-02: Steengroeve (stone quarry) in Paraguarí** — local quarries, stone types, prices, lead time. Could become 4th cost pillar. 1 day.
 3. **NEW-03: PY railroad + river freight (ANNP)** — bulk material transport cost optimization. ~30% cost saving if viable. 1 day.
 
@@ -114,7 +114,7 @@ Total: 3 days of AI subagent work, no Wes input needed, output lands in `docs/re
 ### C. Insurance broker outreach prep
 
 For W0.7 (insurance broker pre-qualification), I can:
-- Draft the WhatsApp outreach message (ES + EN)
+- Draft the Messaging outreach message (ES + EN)
 - Identify Marsh Brazil, Aon Argentina, Mapfre PY, La Consolidada, Seguros Atlántida contact paths
 - Compile the property data sheet brokers will ask for (62 ha, 82% forest, 6 fincas, escritura date, flood/fire exposure)
 
@@ -190,7 +190,7 @@ If you have **2 hours:** Add `HOUSING_PARK_CONCEPT.md` + `_reconciled/MASTER_BRI
 
 ## What I will NOT do without your explicit ✅
 
-- Outbound WhatsApp / email to attorneys, brokers, Escribana (per `WES_HOW_WE_WORK.md`)
+- Outbound Messaging / email to attorneys, brokers, Escribana (per `WES_HOW_WE_WORK.md`)
 - Modify the byte-frozen escritura artifacts (`85e86aa`, `escritura-2026-06-27` tag)
 - Pick the project name for you (W0.6, yours)
 - Commit to your Fase 1 ownership structure (W0.4, yours + Thijs)

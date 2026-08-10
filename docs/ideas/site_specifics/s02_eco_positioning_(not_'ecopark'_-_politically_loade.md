@@ -22,7 +22,7 @@ framing memo: 'biological/ecological' not activist
 
 > _"[Dream list 2026-06-30]: emonies met kapel/ruimte | Erebus + Wesley | Fase 2-3 | | S4 | Events — verjaardagen, familie-feesten, retreats | Erebus + Wesley | Fase 2-3 | | S5 | Eco-tourism — wandel-routes, vogelobservatie, medicinale planten-tour | Erebus + Wesley | Fase 3 | | S6 | VR-tour voor investeerders vóór de bouw | Erebus (3DGS pipeline) | Nu | | S7 | Lokaal personeel in dienst (Jos, Thijs, plus nieuwe medewerker) | We"_
 
-> _"[Raw transcript 2026-06-30]: # Wesley Brainstorm Recording — Raw Transcript (NL) **Datum:** 2026-06-30 **Bron:** WhatsApp voice notes van Wesley van de Camp naar Erebus **Transcriptie:** TurboScribe (auto) — kan hallucinatie bevatten op namen/details **Doel:** ideeëncapture, niet letterlijk te nemen."_
+> _"[Raw transcript 2026-06-30]: # Wesley Brainstorm Recording — Raw Transcript (NL) **Datum:** 2026-06-30 **Bron:** Messaging voice notes van Wesley van de Camp naar Erebus **Transcriptie:** TurboScribe (auto) — kan hallucinatie bevatten op namen/details **Doel:** ideeëncapture, niet letterlijk te nemen."_
 
 ## Why this matters
 

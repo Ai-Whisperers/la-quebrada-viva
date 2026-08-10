@@ -32,7 +32,7 @@ Discretionary errata default to "do not rollback unless ≥3 are stacked"; one i
 ## Procedure — mandatory rollback
 
 1. **Within 5 min of detection:**
-   - Hard-stop further sends. WhatsApp Peña / Wesley / Thijs / Burgos (in that order) with literal text: "Pausa: detecté error en el deck enviado. Reenviaré versión corregida en <ETA> min. Por favor no abrir el adjunto anterior."
+   - Hard-stop further sends. Messaging Peña / Wesley / Thijs / Burgos (in that order) with literal text: "Pausa: detecté error en el deck enviado. Reenviaré versión corregida en <ETA> min. Por favor no abrir el adjunto anterior."
    - Do NOT delete sent emails — leaves audit trail.
 
 2. **Within 30 min:**
@@ -59,12 +59,12 @@ Discretionary errata default to "do not rollback unless ≥3 are stacked"; one i
 
 ## Procedure — discretionary rollback (rare)
 
-Same as mandatory, but skip step 1 WhatsApp. Send corrected version with subject prefix `[fe de erratas]` referring to specific page(s) and what changed.
+Same as mandatory, but skip step 1 Messaging. Send corrected version with subject prefix `[fe de erratas]` referring to specific page(s) and what changed.
 
 ## Procedure — postponement
 
 If escritura is postponed > 7 days:
-1. WhatsApp all parties: postponement confirmed, new date TBC.
+1. Messaging all parties: postponement confirmed, new date TBC.
 2. Revoke share links (Drive: remove public access; WeTransfer: expire).
 3. Tag the pinned print-pack commit as postponed (annotated; same anchor as the pre-event tag):
    ```bash

@@ -74,7 +74,7 @@ The 28 directories under `docs/` + how Wes-relevant each is:
 
 | Directory | Files | What |
 |---|---:|---|
-| `docs/comms/` | 5 | Awasi outreach draft, WhatsApp drafts |
+| `docs/comms/` | 5 | Awasi outreach draft, Messaging drafts |
 | `docs/email_drafts/` | 7 | Email drafts (mostly for outreach) |
 
 **Deploy artifacts (technical, never edited by hand)**:

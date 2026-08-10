@@ -83,7 +83,7 @@ The two candidates:
 
 - **Coverage**: Región Oriental + Chaco, all of Paraguay and LATAM.
 - **Service**: Drone-mounted LiDAR — specifically markets 5–15 cm vertical accuracy, 100+ pts/m² density, vegetation-penetrating.
-- **Pricing**: Vendor offers quote via WhatsApp "in less than 1 hour". Compare to US benchmarks: 62 ha = 153 acres. At US rate $150–$300/acre for SfM or $150–$500/acre for LiDAR, expect **$2,500–$7,500 USD** for a full LiDAR survey of 62 ha in Paraguay. Paraguay pricing is typically 30–50% below US rates.
+- **Pricing**: Vendor offers quote via Messaging "in less than 1 hour". Compare to US benchmarks: 62 ha = 153 acres. At US rate $150–$300/acre for SfM or $150–$500/acre for LiDAR, expect **$2,500–$7,500 USD** for a full LiDAR survey of 62 ha in Paraguay. Paraguay pricing is typically 30–50% below US rates.
 - **Deliverables**: classified point cloud (.LAS), DTM, DSM, contours, cross-section profiles, technical report.
 - **They fly the drone**: Wes doesn't need to be on site for the data capture; he is for the boundary approval.
 

@@ -148,10 +148,10 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 **Unblocks:** HG-3, Phase 1 break-ground, D15 in `OPEN_DECISIONS.md`
 
 **Steps**
-1. **Print `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` as PDF** (do not send via WhatsApp — bulky).
+1. **Print `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` as PDF** (do not send via Messaging — bulky).
 2. **Ask Kiki for 2-3 PY broker contacts** in her Asunción network (Mapfre PY, La Consolidada, Seguros Atlántida).
 3. **Find 2-3 international broker contacts** via LinkedIn search "Marsh Brazil commercial", "Aon Argentina risk", "WTW Latin America".
-4. **Send the WhatsApp outreach template** (`../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` for PY-domestic, `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` for international).
+4. **Send the Messaging outreach template** (`../stakeholders/MESSAGING_OUTREACH_TEMPLATE_ES.md` for PY-domestic, `../stakeholders/MESSAGING_OUTREACH_TEMPLATE_EN.md` for international).
 5. **Target 3 quotes within 6 weeks** — fire, storm, general liability.
 6. **Mark W0.5 ✅ in WES_TODO** when 3 quotes in hand.
 7. Update `../../../docs/research/RESULTS/R-LQV15_insurance_quotes_comparison_2026-07-06.md` with the 3 quotes (Erebus compiles).
@@ -159,8 +159,8 @@ The Anexo I of the boleto is the technical description of each finca (linderos, 
 **Files to use (this pack):**
 - `../stakeholders/INSURANCE_BROKER_OUTREACH.md` — master playbook + 5 broker targets + tiered questions
 - `../stakeholders/INSURANCE_PROPERTY_DATASHEET.md` — 2-page datasheet — attach as PDF
-- `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_ES.md` — ES WhatsApp for PY brokers
-- `../stakeholders/WHATSAPP_OUTREACH_TEMPLATE_EN.md` — EN WhatsApp for international brokers
+- `../stakeholders/MESSAGING_OUTREACH_TEMPLATE_ES.md` — ES Messaging for PY brokers
+- `../stakeholders/MESSAGING_OUTREACH_TEMPLATE_EN.md` — EN Messaging for international brokers
 - `../../research/RESULTS/PRICE_GAP_MASTER.md` — 95-item price-gap inventory (~40% vendor-priced, ~45% range-only, ~15% blind). Pairs with this outreach — broker quotes fill the gaps.
 
 **Reference:** `../../../docs/research/RESULTS/insurance_fire_bundle.md` (Sprint 0 research, already done) + `[GHOST] docs/research/RESULTS/R01_fire_safety_plan.md` (renamed/removed in 2026-07-03 restructure).

@@ -24,7 +24,7 @@ This is the only work that matters right now. Everything else waits.
 
 ### P0a.2 — T-0 morning (2026-06-27, ≤08:00 -03)
 - [ ] **Send PDF v-final** — `docs/escritura_deck/escritura_deck_v6.pdf` to Wesley + Peña inboxes. Owner: Ivan. Reply-To: Ivan.
-- [ ] **Share-link fallback** — WhatsApp upload (per C9 in CONTINGENCIES). Owner: Ivan.
+- [ ] **Share-link fallback** — Messaging upload (per C9 in CONTINGENCIES). Owner: Ivan.
 - [ ] **WALLET_CARD in pocket** — `dist/print_pack_2026-06-27/WALLET_CARD.txt` printed bifold (plain-text card; ~½ A4 folded). Owner: Ivan.
 
 ### P0a.3 — In-room (10:00 -03 at Escribanía Peña)
@@ -39,7 +39,7 @@ This is the only work that matters right now. Everything else waits.
 
 ### P0b.1 — Same-day
 - [ ] **T+1 debrief stub** — fill `docs/T_PLUS_1_DEBRIEF.md` §1 (outcome) within 2 h of signing. Owner: Ivan.
-- [ ] **Bundle delivered confirmation** — Peña confirms USB read clean (text/WhatsApp OK). Owner: Ivan.
+- [ ] **Bundle delivered confirmation** — Peña confirms USB read clean (text/Messaging OK). Owner: Ivan.
 
 ### P0b.2 — 2026-06-28 (T+1)
 - [ ] **Full debrief** — sections 2–6 of `docs/T_PLUS_1_DEBRIEF.md`. Owner: Ivan + AI.

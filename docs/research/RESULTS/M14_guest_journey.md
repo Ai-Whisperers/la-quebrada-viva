@@ -26,7 +26,7 @@
 - Read the RV website (cabins, food, location)
 - Check reviews on Booking, TripAdvisor, Google
 - Compare with other PY eco-lodges
-- Contact RV (WhatsApp, email) for questions
+- Contact RV (Messaging, email) for questions
 - Talk to friends who may have visited
 
 **Conversion goal:** booking
@@ -47,7 +47,7 @@
 - 24 hours before: check-in time, contact for any questions
 - Optional: pre-arrival consultation (dietary, accessibility, special requests)
 
-**RV's tools:** automated emails (Cloudbeds), WhatsApp Business API, pre-arrival guide PDF
+**RV's tools:** automated emails (Cloudbeds), Messaging Business API, pre-arrival guide PDF
 
 ### 5. Arrival (first impression → orientation)
 **RV's protocol:**
@@ -101,7 +101,7 @@
 - TripAdvisor + Google Maps presence
 
 ### Pre-arrival
-- Multi-channel confirmation (email + WhatsApp + SMS)
+- Multi-channel confirmation (email + Messaging + SMS)
 - Personal touch (Sonja's voice for local guests)
 - Driving directions in local language + GPS
 - Anticipate questions (food allergies, kids, accessibility)

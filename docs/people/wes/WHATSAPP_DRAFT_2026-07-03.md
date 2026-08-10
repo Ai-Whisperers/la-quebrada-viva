@@ -1,8 +1,8 @@
-# WhatsApp message draft — for Ivan to send to Wes's group
+# Messaging message draft — for Ivan to send to Wes's group
 
-> **Read this first:** I (Erebus) cannot send WhatsApp messages on your
+> **Read this first:** I (Erebus) cannot send Messaging messages on your
 > behalf, and I don't have Wes's phone number / group ID in the repo to
-> verify the recipient. **You need to send this manually** via WhatsApp
+> verify the recipient. **You need to send this manually** via Messaging
 > Web or your phone.
 >
 > This draft is structured so you can:
@@ -10,17 +10,17 @@
 >    "Wes + Ivan + Kiki" or your team channel — pick the right group!)
 > 2. **Copy the message body** below
 > 3. **Edit anything** you want to personalize or shorten
-> 4. **Send via WhatsApp**
+> 4. **Send via Messaging**
 
 ---
 
 ## ⚠️ Before sending — verify the group
 
 **Steps:**
-1. Open WhatsApp Web (web.whatsapp.com) or your phone
+1. Open Messaging Web (web.messaging.com) or your phone
 2. Look at your chat list — find the Wes group (you'll know it by name)
 3. Click into the group, verify the participants include Wes
-4. (If unsure which group: ask Wes via WhatsApp first, "which group should
+4. (If unsure which group: ask Wes via Messaging first, "which group should
    I send the big RV update to?")
 5. Once verified: copy the message below, paste, send
 
@@ -188,7 +188,7 @@ W0.6 name pick — A/B/C/Other. — Ivan
 ## Notes for Ivan (don't send to Wes)
 
 1. **Verify the group first.** Don't blast this to the wrong Wes or
-   to a customer/stranger. Open WhatsApp, find the right group,
+   to a customer/stranger. Open Messaging, find the right group,
    confirm it's Wes.
 
 2. **Consider the tone.** The message above is structured for clarity
@@ -209,7 +209,7 @@ W0.6 name pick — A/B/C/Other. — Ivan
    that Wes reads weekly digest on Monday 8am PY.** The message will
    be seen then, which is good timing.
 
-6. **Save the message to drafts first.** Open WhatsApp Web → your
+6. **Save the message to drafts first.** Open Messaging Web → your
    Wes group → attach file (paste from clipboard) or just paste the
    message → don't send yet → review one more time → send.
 

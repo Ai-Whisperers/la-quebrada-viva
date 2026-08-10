@@ -15,7 +15,7 @@
 
 ### 1. AI for guest communication (Chatlayer or similar)
 - Multilingual chatbot (Dutch, German, English, Spanish)
-- WhatsApp Business API integration
+- Messaging Business API integration
 - 24/7 response for booking inquiries
 - Personalized recommendations based on guest preferences
 - Cost: $50-200/month
@@ -92,7 +92,7 @@
 
 ## What Wes needs to do
 
-- [ ] Y1: deploy WhatsApp Business chatbot (high impact, low cost)
+- [ ] Y1: deploy Messaging Business chatbot (high impact, low cost)
 - [ ] Y2: build smart hotel tech per F21
 - [ ] Y2-3: deploy dynamic pricing + AI marketing content
 - [ ] Continuous measurement: response time, occupancy, review scores

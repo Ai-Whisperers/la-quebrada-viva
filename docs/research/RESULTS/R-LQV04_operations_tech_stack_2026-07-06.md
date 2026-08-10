@@ -35,7 +35,7 @@
 10. **Smart locks** (igloohome, Salto, Assa Abloy) — $200-400 per door
 11. **Energy management** (Vingcard, Honeywell) — $100-500 per room
 12. **Self check-in kiosks** — overkill for 5 cabins
-13. **Guest messaging** (WhatsApp Business) — free
+13. **Guest messaging** (Messaging Business) — free
 
 ### Operations tools
 

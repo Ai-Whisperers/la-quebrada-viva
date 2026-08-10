@@ -28,7 +28,7 @@
 *The pre-decided playbook items that actually fired and helped:*
 
 - [ ] VERIFY.sh 3-check at T-0 morning
-- [ ] WhatsApp fallback for share link (C9 path)
+- [ ] Messaging fallback for share link (C9 path)
 - [ ] WALLET_CARD pocket-reference at the table
 - [ ] Deck v6 28-page format
 - [ ] Bundle USB #1 read clean on Peña's machine

@@ -174,10 +174,10 @@ Each open decision has:
 
 ## Decision 8 — Marketing channel strategy
 
-**What it is:** Where do the first guests come from? Direct WhatsApp? Booking.com? Airbnb? Tour operators?
+**What it is:** Where do the first guests come from? Direct Messaging? Booking.com? Airbnb? Tour operators?
 
 **Options:**
-- (a) Direct WhatsApp + website form only (save 15% Booking.com commission, Phase 1 only)
+- (a) Direct Messaging + website form only (save 15% Booking.com commission, Phase 1 only)
 - (b) Booking.com + Airbnb (reach, but commission)
 - (c) Tour operators (NL/DE San Bernardino network) (lower volume, higher touch)
 

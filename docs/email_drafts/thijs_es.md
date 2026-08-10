@@ -27,7 +27,7 @@ Te paso el paquete técnico v-final para la escritura de hoy **27 de junio de 20
 
 - SHA-256: `9ce96b859620201bee7dadc7e8f164c4177613e69e7fb66e30bc14085724a53c`
 
-Cualquier consulta antes de la firma, por WhatsApp.
+Cualquier consulta antes de la firma, por Messaging.
 
 Saludos,
 

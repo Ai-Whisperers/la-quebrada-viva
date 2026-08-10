@@ -31,10 +31,10 @@
 
 | Source | Cost | Service | Notes |
 |---|---:|---|---|
-| **Cartomex Paraguay** ([cartomex.com/lidar-paraguay](https://www.cartomex.com/lidar-paraguay.html)) | **Quote on WhatsApp** (no public price) | "Lidar con dron" — hasta 5,000 ha, 5–15 cm precisión vertical, 100+ pts/m², penetra vegetación | Main competitor. Covers Región Oriental + Chaco. Experience: agricultura soya, ganadería, hidroeléctricas (Itaipú, Yacyretá) |
-| **Pycomex** ([pycomex.com](https://www.pycomex.com/topografia-con-drone-lidar)) | **Quote on WhatsApp** | Topografía + fotogrametría + catastro | Mexican-Monterrey based but operates in PY. Less detailed public info |
+| **Cartomex Paraguay** ([cartomex.com/lidar-paraguay](https://www.cartomex.com/lidar-paraguay.html)) | **Quote on Messaging** (no public price) | "Lidar con dron" — hasta 5,000 ha, 5–15 cm precisión vertical, 100+ pts/m², penetra vegetación | Main competitor. Covers Región Oriental + Chaco. Experience: agricultura soya, ganadería, hidroeléctricas (Itaipú, Yacyretá) |
+| **Pycomex** ([pycomex.com](https://www.pycomex.com/topografia-con-drone-lidar)) | **Quote on Messaging** | Topografía + fotogrametría + catastro | Mexican-Monterrey based but operates in PY. Less detailed public info |
 
-**Estimated PY pricing** (no public PY rates available — must request WhatsApp quote from Cartomex):
+**Estimated PY pricing** (no public PY rates available — must request Messaging quote from Cartomex):
 - PY market likely **30–50% below US rates** due to lower labor cost
 - Estimated range: **$80–$250/ha** (PY equivalent of US $150–$500/ha)
 - **Recommended PY benchmark**: ask Cartomex for a 62-ha quote (matches LQV Phase 1) and budget **$5,000–$15,000 USD** for the first survey
@@ -201,7 +201,7 @@
 3. **thefuture3d.com** — 2026 aerial survey cost guide (per-acre rates, project size tiers) — https://www.thefuture3d.com/blog/aerial-survey-cost-guide/
 4. **thedroneu.com** — 2026 drone service pricing guide (hourly rates) — https://www.thedroneu.com/blog/drone-service-cost-guide/
 5. **dronenerdslatam.com** — DJI Zenmuse L1/L2 pricing, GreenValley LiAir X3 pricing, total cost breakdown — https://dronenerdslatam.com/antes-de-comprar-un-lidar-debes-leer-esto/
-6. **cartomex.com** — Cartomex Paraguay LiDAR drone service (no public price, quote on WhatsApp) — https://www.cartomex.com/lidar-paraguay.html
+6. **cartomex.com** — Cartomex Paraguay LiDAR drone service (no public price, quote on Messaging) — https://www.cartomex.com/lidar-paraguay.html
 7. **pycomex.com** — Pycomex (Mexican-Monterrey based, operates in PY) — https://www.pycomex.com/topografia-con-drone-lidar
 8. **lidar.pe** — LiDAR Peru (subscription + rental + sales model) — https://lidar.pe/drones/
 9. **re20s.com** — RE20S Peru survey service price (S/ 17,250 ≈ $4,580 USD) — https://re20s.com/producto/levantamiento-topografico-con-drones-lidar-en-peru-re20s/

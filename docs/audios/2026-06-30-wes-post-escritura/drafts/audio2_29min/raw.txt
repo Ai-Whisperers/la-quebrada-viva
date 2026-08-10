@@ -178,12 +178,12 @@ Lekker waar.
 Bedankt Jerold.
 Ja, wat is er?
 Voor context.
-Ik stel je deze WhatsApp-invite.
+Ik stel je deze Messaging-invite.
 Die kan je aan George en Thijs sturen.
 Ja.
-En dan kunnen ze ook deze WhatsApp-groep aanbrengen.
-Dat is de WhatsApp voor het project met mijn AI.
-Die kan je gewoon op WhatsApp sturen.
+En dan kunnen ze ook deze Messaging-groep aanbrengen.
+Dat is de Messaging voor het project met mijn AI.
+Die kan je gewoon op Messaging sturen.
 En dan sturen ze ook zonder problemen.
 Ja, dus als we een ID hebben of zoiets...
 Iedere keer kun je...
@@ -210,7 +210,7 @@ Maar hij doet het.
 Ja.
 Maar ja, je kunt...
 Je kunt gewoon een message sturen zoals...
-Easy via WhatsApp.
+Easy via Messaging.
 Het kan ook audio's ontvangen.
 Maar het is een beetje angstaanjagend.
 Omdat je de audio moet sturen.
@@ -221,7 +221,7 @@ Beter schrijven.
 Eh...
 Beter is de app.
 Er is een speciale app voor je.
-Een beetje vies als WhatsApp.
+Een beetje vies als Messaging.
 Als een chat-tp-t-ding.
 Ja, ja.
 Ik zou...
@@ -231,10 +231,10 @@ Telegram.
 Nee.
 Het is...
 Het is...
-WhatsApp.
-Maar dan WhatsApp je.
+Messaging.
+Maar dan Messaging je.
 Niet...
-Of niet WhatsApp.
+Of niet Messaging.
 Chat-tp-t.
 Het is een...
 Het is een...
@@ -277,13 +277,13 @@ Dit is de webapp.
 Die lijkt er ook niet zo erg op.
 Dat is ongeveer hetzelfde als deze chat die ik eerder heb gezien.
 Het is direct naar de agent.
-Het werkt beter dan WhatsApp.
+Het werkt beter dan Messaging.
 Omdat het minder van die ongelooflijke messages heeft.
 Omdat het ze gewoon naar iets zoals dit schakelt.
 In plaats van je de hele gesprek over dat ongelooflijke deel te sturen.
 Omdat het...
 Het is zoals de...
-Het werkt beter dan WhatsApp.
+Het werkt beter dan Messaging.
 Omdat het minder van die ongelooflijke messages heeft.
 Omdat het minder van die ongelooflijke deel te sturen.
 Omdat het minder van die ongelooflijke deel te sturen.

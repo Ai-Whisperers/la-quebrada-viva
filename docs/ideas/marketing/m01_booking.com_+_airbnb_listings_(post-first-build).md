@@ -34,7 +34,7 @@ listings live + first bookings
 
 ## Full picture — context, constraints, history
 
-**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via WhatsApp saves Booking.com commission (15%) per [Insight #7](../_meta/INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
+**Marketing + distribution.** Wes's target market is European/Dutch/German per V04. Direct booking via Messaging saves Booking.com commission (15%) per [Insight #7](../_meta/INSIGHTS.md). Booking.com + Airbnb assumed for Phase 2+ once inventory justifies the platform.
 
 ## What we know already (research summary)
 
@@ -52,7 +52,7 @@ listings live + first bookings
 **This idea depends on / is informed by:**
 
 - [`T01`](../_archive/2026-06-30_autofill/house_typologies/t01_type_a_—_romantic_2p_(30-40_m²).md) — first typology
-- [`I01`](../operations/i01_reservation_widget_and_whatsapp_handoff.md) — direct booking
+- [`I01`](../operations/i01_reservation_widget_and_messaging_handoff.md) — direct booking
 - [`V04`](../_archive/2026-06-30_autofill/vision/v04_european_dutch_traveler_target_market.md) — EU market
 
 

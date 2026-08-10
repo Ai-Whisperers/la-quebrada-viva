@@ -106,7 +106,7 @@ The reason this is forgiving for DIY: **arches don't bend.** As long as the abut
 **For LQV Phase 1:**
 
 1. **Build ONE bridge as a prototype** before committing to 3-4 spans. Budget: $7,500 DIY or $15K turnkey.
-2. **Hire an Italian-trained mason** if you can find one in PY — there are Italian-descendant communities in Encarnación (Itapúa) and San Bernardino. Even 2 weeks of consulting + WhatsApp-support during construction is gold. Ask Sonja's network (W0.9).
+2. **Hire an Italian-trained mason** if you can find one in PY — there are Italian-descendant communities in Encarnación (Itapúa) and San Bernardino. Even 2 weeks of consulting + Messaging-support during construction is gold. Ask Sonja's network (W0.9).
 3. **Photograph every stage** — the construction sequence itself becomes marketing content ("built by hand, inspired by 2,000-year-old Roman techniques").
 4. **Lime mortar cure is the bottleneck** — don't try to rush it. Plan the bridge for **W+8 to W+20 of Phase 1** (during the cabin-construction lull).
 5. **Insurance:** call your insurer **before** building. Some policies require engineer-stamped drawings for vehicular bridges even on private land. R-LQV15 (insurance) cross-ref.

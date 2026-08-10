@@ -39,7 +39,7 @@ contact in Kuikopee, university ecology contacts.
 - **Pedagogical content (large fraction):** Wes explaining Hermes/OpenCode
   to another person. How to organize files, name your AI agent, run agents
   for business (cement seller outreach, booking agent), phone number strategy
-  for WhatsApp, multi-agent setup, Chinese vs Dutch response quality
+  for Messaging, multi-agent setup, Chinese vs Dutch response quality
 - High fraction of VAD silence hallucinations ("yeah yeah yeah" / "bye bye")
   that faster-whisper emits at the start/end of long audios
 
@@ -283,7 +283,7 @@ Items die **wel in de audio staan maar niet in de actionlist horen**:
   tutorial voor anderen" repo of sessie.
 - Audio B (2 min) horse/donkey verhaal — off-topic, skip.
 - Wes's "Asterix / Oblix" brainstorm voor AI-namen — gezellig, niet RV.
-- "20.000 guaraníes voor een chip" en "5000 per maand" prepaid WhatsApp
+- "20.000 guaraníes voor een chip" en "5000 per maand" prepaid Messaging
   nummers — operationeel interessant maar geen RV blocker.
 
 ---

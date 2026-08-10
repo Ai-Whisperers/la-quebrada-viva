@@ -26,9 +26,9 @@ The 2 primary contacts per research:
 
 ## Template 1 — Roberto Abente (Asunción)
 
-**Channel**: WhatsApp first (if number known), then email follow-up. If no contact info is available, ask Kiki or Ivan to intros through their network.
+**Channel**: Messaging first (if number known), then email follow-up. If no contact info is available, ask Kiki or Ivan to intros through their network.
 
-### WhatsApp / SMS (Spanish, Paraguay-friendly)
+### Messaging / SMS (Spanish, Paraguay-friendly)
 
 ```
 Hola Roberto! Soy Wesley van de Camp, estoy desarrollando un parque
@@ -49,14 +49,14 @@ Vi que sos el constructor de cob más activo de Paraguay por los
 flexibilidad horaria.
 
 Mi contacto:
-- WhatsApp: +XX XXX XXX XXX
+- Messaging: +XX XXX XXX XXX
 - Email: wes@theriverstonevalley.com
 
 Muchas gracias,
 Wesley van de Camp
 ```
 
-### Email follow-up (if WhatsApp doesn't reach)
+### Email follow-up (if Messaging doesn't reach)
 
 ```
 Asunto: Cotización cabañas de cob — 5 unidades en Escobar, Paraguay
@@ -98,7 +98,7 @@ Wesley van de Camp
 
 ## Template 2 — Cooperativa Ñandutí (Caaguazú)
 
-**Channel**: web form on https://nanduti.coop.py/solicitudes.php or direct phone/WhatsApp to the cooperativa. Cooperativa Ñandutí is primarily a **financial cooperative** (savings + credit), but the research says they have 5-6 trained cob artisans. Contact them via their formal channels first, then ask for the artisan coordinator.
+**Channel**: web form on https://nanduti.coop.py/solicitudes.php or direct phone/Messaging to the cooperativa. Cooperativa Ñandutí is primarily a **financial cooperative** (savings + credit), but the research says they have 5-6 trained cob artisans. Contact them via their formal channels first, then ask for the artisan coordinator.
 
 ### Web form message (Spanish)
 
@@ -123,7 +123,7 @@ de cob? Estoy disponible para una llamada esta semana.
 
 Muchas gracias,
 Wesley van de Camp
-+XX XXX XXX XXX (WhatsApp)
++XX XXX XXX XXX (Messaging)
 wes@theriverstonevalley.com
 ```
 

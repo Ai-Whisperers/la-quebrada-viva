@@ -40,12 +40,12 @@
 
 ## Tier 2 - Address gaps that unblock Phase 1 execution (P1)
 
-### [I01: Reservation widget + WhatsApp handoff]../operations/i01_reservation_widget_and_whatsapp_handoff.mdd)
+### [I01: Reservation widget + Messaging handoff]../operations/i01_reservation_widget_and_messaging_handoff.mdd)
 **P1** | Operations | Erebus
 
-> A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that captures guest name, dates, house preference, and hands off to Wes via WhatsApp. Avoid Booking.com 15% commission for the first year.
+> A simple embedded calendar + price + form on lqv-walkthrough.pages.dev that captures guest name, dates, house preference, and hands off to Wes via Messaging. Avoid Booking.com 15% commission for the first year.
 
-**Shipped = Single-page reservation form on the live site; WhatsApp handoff; SMS backup if WhatsApp fails**
+**Shipped = Single-page reservation form on the live site; Messaging handoff; SMS backup if Messaging fails**
 
 ---
 
@@ -199,7 +199,7 @@
 
 | ID | Idea | Priority | Category |
 |---|---|---|---|
-| I01 | Reservation widget + WhatsApp handoff | P1 | Operations |
+| I01 | Reservation widget + Messaging handoff | P1 | Operations |
 | I02 | Operations dashboard (multi-calendar view) | P1 | Operations |
 | I03 | Glamping tent prototype (revenue-positive in 3 months) | P0 | House Typologies |
 | I04 | Treehouse / elevated cabin prototype | P2 | House Typologies |
